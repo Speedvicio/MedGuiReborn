@@ -1,0 +1,85 @@
+This is a quick command "How-To" for MedGui Reborn
+
+<Main command>:
+- Select the Mednafen "folder" at startup (not the exe).
+- You can choose a single file ("ROM" icon) in compressed .zip, .rar, .7z, format or uncompressed format. 
+	By clicking on the "folder" icon you can choose an entire folder with ROMs inside it, in .zip format or uncompressed format.
+	If you click with the right mouse button on "folder" icon you can scan and save selected folder on a custom path visible on <Rom Path 2> tab.
+	*MedGuiR will always recognize the selected file type by itself.
+- You can choose an image CD file in .bin/cue, .toc/.bin, .ccd/.img/.sub and .iso or.ecm file format, or a multiple image file (multi CD) in .m3u format.
+	*In this case you must select the console type from PSX, PCE-CD, PC-FX and Saturn. 
+	** For .iso and .ecm file MedGui Reborn will convert and create a generic .cue file to try to load this format not supported by Mednafen.
+- After selecting a single file or an entire folder, the respective ROM will appear into the main grid with detailed informations. 
+	To run a game without setting the advanced options, just double left-click (or press the enter key) on a ROM reported on the list.
+- To open per console advanced options, right-click (or press the shift key) on a ROM reported on the grid (remember to click on the "save button" icon to save your settings).
+- "Two Arrows" icon will download and update Roms DATs.
+- "Clock" icon will load recent rom played by user (right mouse button on icon to clear all entries).
+- The "F" key on the keyboard will add the selected ROM from the main grid to your favourite ROM section (star button - right mouse button on icon to clear all entries).
+- The "Del" key on the keyboard will remove the selected ROM from the grid of your favourite ROM section (star button).
+- You can auto-connect ("World" icon) at emulation start to a server previously specified in Advanced> Net-Play> Net-Play Host.
+- You can start a Net-Play server by clicking the button with two monitors and a LAN icon (for more infos, please read the Mednafen FAQ).
+- "Baloon" icon will open a small IRC client called "Ultra Crappy IRC", you can add your favourite channel and chat with your nerd friends (UCI not allow query message)
+
+<Tabs>
+<General Info>:
+- This section provides detailed informations about the selected game (console, real ROM name, version, size in Megabit and No-Intro status)
+- By clicking on the arrow icon, you can download (when available on my server) the respective ROM box art.
+	*If you check the related box, any missing box art will be automatically downloaded as soon as you select a game.
+- By clicking on the various vertical buttons, you will be redirected to some site that contains more informations about the game, or that opens a link of a video posted on YouTube.
+- The viewfinder icon will show the selected file in Windows Explorer.
+- The "S" icon wll open a new windows with many informations getted from "TheGamesDatabase" server, front and rear boxart will be downloaded and used in boxart section.
+
+<General>
+- In this section you can see the current MedGui Reborn and Mednafen versions installed on your system.
+- The balloon icon lets you see the MedGuiR "About" window.
+- "Select Dat": selects the appropriate folder containing the database of the game; by default the No-Intro database will be loaded, but you can also select a custom database (if any). 
+	The refresh button updates the database when new changes have been made.
+- "Custom Dat Maker (icon)": is a small utility that will create a custom database of your ROM set. To use it you will need to extrat your ROM set (if compressed) in a folder, and point to this 
+	(the combo box automatically filters games and creates the appropriate files depending on the chosen system).
+- "Backup/Restore Config": will perform a backup or restore of the Mednafen configuration file within an internal MedGuiR folder. 
+- "Recursive Scan": Checking this option MedGui Reborn will scan folder in recursive mode, anyway the scan will not consider .cue/.toc/.ccd and .m3u file.
+* "Remember that the recursive scanning is sperimental and can report errors. 
+- "Force" - "Update Arrow (icon): by clicking on this icon MedGuiR will look for any available frontend updates on the server. 
+	They will be offered to the user to be downloaded and set up, when 	availables. The "Force" option ignores version control and performs the update anyway; it can be useful when you want to test intermediate versions of MedGuiR that I upload on the server.
+- "Grid Columns": this section offers to the user the possibility to apply various filters to the grid containing the list of games.
+	As well as hiding some items and resizing the grid, you can also sort games by various criteria.
+
+<Rom Path 1/2>
+- In this section you can set the folder paths containing your games, sorted by console. 
+	This option is useful to quickly open the folder path when you select a single game and to perform a pre-scan of games contained within a folder.
+
+<Audio Utility>
+- This is a small utility to manage audio files of PC-Engine CD games (cue-sheet version).
+- Click with the right mouse button inside the ListBox to open a pop-up menu for the audio options.
+	* Add audio folder file: select an audio format from the combo box; a Windows Explorer window will open to let you choose the folder containing the audio file type you specified (before confirming, make sure the audio files in the folder are in the format you specified)
+	* Convert Sigle/Folder Audio to: the audio files will appear in the listbox, hence you can convert a single selected file or all files in a format compatible with Mednafen (.ogg or .wav).
+	* Delete After Conversion: this option has to be selected before conversion, and it will move into the trash all audio files when conversion is done (to use with caution).
+	* Multimedia: if you prefer you can also listen to files using the appropriate menu or by double left-clicking the specified file.
+
+<Game Utility>
+- PSX Cue/Toc/M3U Maker: you can create a .cue, .toc, or .m3u file from a .bin file; essential for the proper functioning of PSX games with Mednafen.
+	M3U files are used by Mednafen to manage multi-disc games (like Metal Gear Solid). 
+	When you select a bin file, the utility will verify if the file has a correct name through an internal database, and will propose to rename it if necessary.(this is optional but remember that if you want to rename the file you must then adjust the respective .cue or .toc file via a text editor)
+	* Remember that this utility will just create a plain .cue /.toc file, without considering any sub-audio tracks; so games that use subchannels will work regularly, but Mednafen will not play audio subchannels (e.g.: Dead Or Alive).
+- PC-CD Cue Renamer: most cue/sheet files refer to compressed audio files in .mp3, .ape, .mpc or .wav format; 
+	this utility will rename all references to these files in the .cue file to .ogg or .wav, compatibles with Mednafen.
+- Open Custom GB Palette Maker: Mednafen offers support to custom palettes, through which you can apply color layers to those Game Boy games developed in monochrome mode.
+	With this utility you can act on background colours only (BGP) or on object colours (OBP0/1) as well. After selecting the colours you want, you can save a specific file for the selected game or save a generic file which will be used by all the Game Boy games emulated by Mednafen. Files are stored in the "Palette" folder, within the Mednafen folder. You can manually create a plain text file and enter a series of 4/8/12 colours in Hex format (e.g. series of 4: FFFFFF ADAD84 42737B 000000). This file needs to be placed at the following MedGui Reborn path: "...\MedGuiR\Palettes\GB".
+- GB/GBA Utility: some Game Boy Advance games require the correct save type to be specified in a plain text file, without it these games will not work. 
+	Such examples are "Super Mario Advance 4" and "Super Mario Bros. 3", which use a 128 flash file type. This utility will create these files according to user requests.
+
+<Snaps Manager>
+- In this section you can manage the snpas made by Mednafen. 
+	T = Titled Snaps (Main screen of the game)
+	S = Snap (In game Snap)
+	You can load Snaps from "Mednafen Snaps folder" or by your custom folder, and rename the image in the same NoIntro standard Rom name from "Grid Rom List" or with respective Rom CRC (MedGuiR support this format).
+	All renamed CRC snaps will be placed correctly in the MedGuiR Snaps folder, if you select NoIntro name, snaps will be placed on the same folder of original not renamed snap.
+
+MedGui Reborn does not have a section given to gamepad settings. 
+If you want to assign your controller buttons, just use the keyboard setup inside the emulator: ALT + SHIFT + (n).
+For a quick overview of the options that can be set by Mednafen, press the F1 key at emulation start..
+	
+Please report any bugs at:
+http://forum.fobby.net/index.php?t=tree&goto=3057&#msg_3057
+
+How-To revised by Scall

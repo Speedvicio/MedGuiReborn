@@ -1,0 +1,5 @@
+MedGui Reborn Stable v0.094
+- Improved Recursive Scan
+- Fixed Modchip Driver download for that file that used more than 1 lib
+- Prepared for next mednafen version
+

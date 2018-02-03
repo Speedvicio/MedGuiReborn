@@ -1,0 +1,56 @@
+﻿Public Class About
+    Private AudioAbout As New Audio
+
+    Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PictureBox1.Load(MedExtra & "Resource\Gui\MedGuiR.png")
+        Label2.Text = "Version: " & Replace(MedGuiR.Label6.Text, "MedGuiR v.", "")
+
+        'tProcess = "xmplay"
+        'KillProcess()
+        'Arg = " module.zip" & " -play -tray"
+        'wDir = (MedExtra & "Resource\Music")
+        'StartProcess()
+
+        F1 = Me
+        CenterForm()
+
+        If IO.File.Exists(Application.StartupPath & "\fmod.dll") Then
+            AudioAbout.SOUNDDIR = GetRandomFilePath(MedExtra & "Resource\Music\module")
+            AudioAbout.PlaySound()
+        End If
+    End Sub
+
+    Public Function GetRandomFilePath(ByVal folderPath As String) As String
+        Dim files() As String = IO.Directory.GetFiles(folderPath, "*.*")
+        Dim random As Random = New Random()
+        Return files(random.Next(0, files.Length - 1))
+    End Function
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        _link = "https://github.com/Asnivor"
+        open_link()
+    End Sub
+
+    Private Sub LinkLabel9_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel9.LinkClicked
+        _link = "http://www.mednafen-it.org/"
+        open_link()
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        _link = "https://github.com/zeromus"
+        open_link()
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        _link = "https://discord.gg/qVvsxjg"
+        open_link()
+    End Sub
+
+    Private Sub About_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        If IO.File.Exists(Application.StartupPath & "\fmod.dll") Then
+            AudioAbout.StopMusic()
+        End If
+        'KillProcess()
+    End Sub
+
+End Class

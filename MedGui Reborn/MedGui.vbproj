@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC2704EF-2C59-4FF8-930C-73BE62F376B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MedGuiR.My.MyApplication</StartupObject>
+    <RootNamespace>MedGuiR</RootNamespace>
+    <AssemblyName>MedGuiR</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MedGuiR.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42108,42109</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MedGuiR.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42108,42109</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MedGuiR.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscTools">
+      <HintPath>.\DiscTools.dll</HintPath>
+    </Reference>
+    <Reference Include="FTPclient">
+      <HintPath>.\FTPclient.dll</HintPath>
+    </Reference>
+    <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\IrcClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=c583e50831f52ea1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Audio.vb" />
+    <Compile Include="BoxArt.vb" />
+    <Compile Include="Chase.vb" />
+    <Compile Include="ChipTAG.Designer.vb">
+      <DependentUpon>ChipTAG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChipTAG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPM.Designer.vb">
+      <DependentUpon>CPM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cripto.vb" />
+    <Compile Include="CUE.vb" />
+    <Compile Include="c_hash.vb" />
+    <Compile Include="Dat.vb" />
+    <Compile Include="DetecTAG.vb" />
+    <Compile Include="DetectJoypad.vb" />
+    <Compile Include="ErLog.Designer.vb">
+      <DependentUpon>ErLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extract.vb" />
+    <Compile Include="ListChip.vb" />
+    <Compile Include="MedBrowser.Designer.vb">
+      <DependentUpon>MedBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MedBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedClient.Designer.vb">
+      <DependentUpon>MedClient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MedClient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedPlay.vb" />
+    <Compile Include="MJoyConfig.Designer.vb">
+      <DependentUpon>MJoyConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MJoyConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModLand.Designer.vb">
+      <DependentUpon>ModLand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModLand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MPCG.designer.vb">
+      <DependentUpon>MPCG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MPCG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoDesync.vb" />
+    <Compile Include="PopUP.Designer.vb">
+      <DependentUpon>PopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PvtForm.vb" />
+    <Compile Include="Reset.Designer.vb">
+      <DependentUpon>Reset.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reset.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaturnName.vb" />
+    <Compile Include="Sbi.vb" />
+    <Compile Include="Scrape.vb" />
+    <Compile Include="ScreenRes.vb" />
+    <Compile Include="Shortcut.vb" />
+    <Compile Include="Snaps.vb" />
+    <Compile Include="SoundList.Designer.vb">
+      <DependentUpon>SoundList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SoundList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheGamesDB.Designer.vb">
+      <DependentUpon>TheGamesDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TheGamesDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UCI.designer.vb">
+      <DependentUpon>UCI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UCI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalVar.vb" />
+    <Compile Include="Ini.vb" />
+    <Compile Include="IsoSelector.Designer.vb">
+      <DependentUpon>IsoSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IsoSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeyAssign.designer.vb">
+      <DependentUpon>KeyAssign.vb</DependentUpon>
+    </Compile>
+    <Compile Include="KeyAssign.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Link.vb" />
+    <Compile Include="MDM.Designer.vb">
+      <DependentUpon>MDM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedGuiR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedGuiR.Designer.vb">
+      <DependentUpon>MedGuiR.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Message.Designer.vb">
+      <DependentUpon>Message.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Message.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerConf.Designer.vb">
+      <DependentUpon>PerConf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PerConf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prescanned.vb" />
+    <Compile Include="PSX_Name.vb" />
+    <Compile Include="RData.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="NetPlay.vb" />
+    <Compile Include="Resource.vb" />
+    <Compile Include="ManageIni.vb" />
+    <Compile Include="Scan.vb" />
+    <Compile Include="MgrSetting.Designer.vb">
+      <DependentUpon>MgrSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MgrSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoxConverter.vb" />
+    <Compile Include="SoxStatus.Designer.vb">
+      <DependentUpon>SoxStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SoxStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Standard Conf.Designer.vb">
+      <DependentUpon>Standard Conf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Standard Conf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateMednafen.vb" />
+    <Compile Include="Updater.vb" />
+    <Compile Include="verProcess.vb" />
+    <Compile Include="VSTripleDES.vb" />
+    <Compile Include="Writelog.vb" />
+    <Compile Include="xSetting.vb" />
+    <Compile Include="ySetting.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChipTAG.resx">
+      <DependentUpon>ChipTAG.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPM.resx">
+      <DependentUpon>CPM.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErLog.resx">
+      <DependentUpon>ErLog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedBrowser.resx">
+      <DependentUpon>MedBrowser.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedClient.resx">
+      <DependentUpon>MedClient.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MJoyConfig.resx">
+      <DependentUpon>MJoyConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModLand.resx">
+      <DependentUpon>ModLand.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MPCG.resx">
+      <DependentUpon>MPCG.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerConf.resx">
+      <DependentUpon>PerConf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp.resx">
+      <DependentUpon>PopUp.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reset.resx">
+      <DependentUpon>Reset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundList.resx">
+      <DependentUpon>SoundList.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheGamesDB.resx">
+      <DependentUpon>TheGamesDB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCI.resx">
+      <DependentUpon>UCI.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IsoSelector.resx">
+      <DependentUpon>IsoSelector.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KeyAssign.resx">
+      <DependentUpon>KeyAssign.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDM.resx">
+      <DependentUpon>MDM.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedGuiR.resx">
+      <DependentUpon>MedGuiR.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message.resx">
+      <DependentUpon>Message.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MgrSetting.resx">
+      <DependentUpon>MgrSetting.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoxStatus.resx">
+      <DependentUpon>SoxStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Standard Conf.resx">
+      <DependentUpon>Standard Conf.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MedGuiR.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
