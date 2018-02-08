@@ -17,6 +17,15 @@
         If IO.File.Exists(Application.StartupPath & "\fmod.dll") Then
             AudioAbout.SOUNDDIR = GetRandomFilePath(MedExtra & "Resource\Music\module")
             AudioAbout.PlaySound()
+
+            If Environment.OSVersion.Version.Major >= 6 And IO.File.Exists(Application.StartupPath & "\CoreAudioApi.dll") And IO.File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") Then
+                StartPeak()
+                Timer1.Start()
+            Else
+                PeakMeterCtrl1.Dispose()
+                PeakMeterCtrl2.Dispose()
+            End If
+
         End If
     End Sub
 
@@ -51,6 +60,18 @@
             AudioAbout.StopMusic()
         End If
         'KillProcess()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        MovePeak()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        If IO.File.Exists(Application.StartupPath & "\fmod.dll") Then
+            AudioAbout.StopMusic()
+            AudioAbout.SOUNDDIR = GetRandomFilePath(MedExtra & "Resource\Music\module")
+            AudioAbout.PlaySound()
+        End If
     End Sub
 
 End Class

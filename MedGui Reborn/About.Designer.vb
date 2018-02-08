@@ -22,6 +22,7 @@ Partial Class About
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,6 +32,8 @@ Partial Class About
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PeakMeterCtrl2 = New Ernzo.WinForms.Controls.PeakMeterCtrl()
+        Me.PeakMeterCtrl1 = New Ernzo.WinForms.Controls.PeakMeterCtrl()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -40,6 +43,7 @@ Partial Class About
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -123,6 +127,8 @@ Partial Class About
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.Controls.Add(Me.PeakMeterCtrl2)
+        Me.Panel3.Controls.Add(Me.PeakMeterCtrl1)
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.Label5)
@@ -136,6 +142,46 @@ Partial Class About
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(286, 196)
         Me.Panel3.TabIndex = 5
+        '
+        'PeakMeterCtrl2
+        '
+        Me.PeakMeterCtrl2.BackColor = System.Drawing.Color.Black
+        Me.PeakMeterCtrl2.BandsCount = 2
+        Me.PeakMeterCtrl2.ColorHigh = System.Drawing.Color.White
+        Me.PeakMeterCtrl2.ColorHighBack = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.PeakMeterCtrl2.ColorMedium = System.Drawing.Color.DimGray
+        Me.PeakMeterCtrl2.ColorMediumBack = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.PeakMeterCtrl2.ColorNormal = System.Drawing.Color.Gray
+        Me.PeakMeterCtrl2.ColorNormalBack = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.PeakMeterCtrl2.FalloffColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.PeakMeterCtrl2.GridColor = System.Drawing.Color.Black
+        Me.PeakMeterCtrl2.LEDCount = 20
+        Me.PeakMeterCtrl2.Location = New System.Drawing.Point(6, 11)
+        Me.PeakMeterCtrl2.Name = "PeakMeterCtrl2"
+        Me.PeakMeterCtrl2.ShowGrid = False
+        Me.PeakMeterCtrl2.Size = New System.Drawing.Size(20, 158)
+        Me.PeakMeterCtrl2.TabIndex = 87
+        Me.PeakMeterCtrl2.Text = "PeakMeterCtrl2"
+        '
+        'PeakMeterCtrl1
+        '
+        Me.PeakMeterCtrl1.BackColor = System.Drawing.Color.Black
+        Me.PeakMeterCtrl1.BandsCount = 2
+        Me.PeakMeterCtrl1.ColorHigh = System.Drawing.Color.White
+        Me.PeakMeterCtrl1.ColorHighBack = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.PeakMeterCtrl1.ColorMedium = System.Drawing.Color.DimGray
+        Me.PeakMeterCtrl1.ColorMediumBack = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.PeakMeterCtrl1.ColorNormal = System.Drawing.Color.Gray
+        Me.PeakMeterCtrl1.ColorNormalBack = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.PeakMeterCtrl1.FalloffColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.PeakMeterCtrl1.GridColor = System.Drawing.Color.Black
+        Me.PeakMeterCtrl1.LEDCount = 20
+        Me.PeakMeterCtrl1.Location = New System.Drawing.Point(263, 11)
+        Me.PeakMeterCtrl1.Name = "PeakMeterCtrl1"
+        Me.PeakMeterCtrl1.ShowGrid = False
+        Me.PeakMeterCtrl1.Size = New System.Drawing.Size(20, 158)
+        Me.PeakMeterCtrl1.TabIndex = 86
+        Me.PeakMeterCtrl1.Text = "PeakMeterCtrl1"
         '
         'Label9
         '
@@ -248,6 +294,10 @@ Partial Class About
         Me.LinkLabel9.Text = "Scall"
         Me.LinkLabel9.VisitedLinkColor = System.Drawing.Color.Gold
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1
+        '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -291,4 +341,7 @@ Partial Class About
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents Label7 As Label
     Friend WithEvents LinkLabel9 As LinkLabel
+    Friend WithEvents PeakMeterCtrl2 As Ernzo.WinForms.Controls.PeakMeterCtrl
+    Friend WithEvents PeakMeterCtrl1 As Ernzo.WinForms.Controls.PeakMeterCtrl
+    Friend WithEvents Timer1 As Timer
 End Class

@@ -67,6 +67,9 @@
     <ApplicationIcon>MedGuiR.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoreAudioApi">
+      <HintPath>.\CoreAudioApi.dll</HintPath>
+    </Reference>
     <Reference Include="DiscTools">
       <HintPath>.\DiscTools.dll</HintPath>
     </Reference>
@@ -76,6 +79,9 @@
     <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\IrcClient.dll</HintPath>
+    </Reference>
+    <Reference Include="PeakMeterCtrl">
+      <HintPath>.\PeakMeterCtrl.dll</HintPath>
     </Reference>
     <Reference Include="SevenZipSharp, Version=0.64.3890.29348, Culture=neutral, PublicKeyToken=c583e50831f52ea1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -276,6 +282,7 @@
     <Compile Include="Updater.vb" />
     <Compile Include="verProcess.vb" />
     <Compile Include="VSTripleDES.vb" />
+    <Compile Include="VUMeter.vb" />
     <Compile Include="Writelog.vb" />
     <Compile Include="xSetting.vb" />
     <Compile Include="ySetting.vb" />

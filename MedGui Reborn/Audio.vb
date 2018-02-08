@@ -13,9 +13,14 @@
     Public Declare Function FMUSIC_SetLooping Lib "fmod.dll" Alias "_FMUSIC_SetLooping@8" (ByVal xmodule As Integer, ByVal looping As Byte) As Byte
     Public Declare Function FMUSIC_IsPlaying Lib "fmod.dll" Alias "_FMUSIC_IsPlaying@4" (ByVal xmodule As Integer) As Byte
     Public Declare Function FMUSIC_FreeSong Lib "fmod.dll" Alias "_FMUSIC_FreeSong@4" (ByVal xmodule As Integer) As Byte
+    Private Declare Function FSOUND_DSP_GetSpectrum Lib “fmod.dll” Alias “_FSOUND_DSP_GetSpectrum@0” () As Integer
+    Private Declare Function FSOUND_DSP_GetFFTUnit Lib “fmod.dll” Alias “_FSOUND_DSP_GetFFTUnit@0” () As Integer
+    Private Declare Function FSOUND_DSP_SetActive Lib “fmod.dll” Alias “_FSOUND_DSP_SetActive@8” (ByVal unit As Integer, ByVal active As Integer) As Integer
 
     Public Sub New()
         FSOUND_Init(44100, 128, 0)
+        FSOUND_DSP_GetFFTUnit
+        FSOUND_DSP_GetSpectrum
     End Sub
 
     Public Sub PlaySound()
@@ -33,6 +38,7 @@
         If booAbortMusic = True Then
             FMUSIC_StopSong(XMPointer)
             FMUSIC_FreeSong(XMPointer)
+            'FSOUND_Close
             booAbortMusic = False
         End If
     End Sub
