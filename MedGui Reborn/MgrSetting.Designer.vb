@@ -41,6 +41,19 @@ Partial Class MgrSetting
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox56 = New System.Windows.Forms.ComboBox()
+        Me.Label141 = New System.Windows.Forms.Label()
+        Me.ComboBox55 = New System.Windows.Forms.ComboBox()
+        Me.Label140 = New System.Windows.Forms.Label()
+        Me.NumericUpDown28 = New System.Windows.Forms.NumericUpDown()
+        Me.Label139 = New System.Windows.Forms.Label()
+        Me.Label138 = New System.Windows.Forms.Label()
+        Me.Label137 = New System.Windows.Forms.Label()
+        Me.Label136 = New System.Windows.Forms.Label()
+        Me.Label135 = New System.Windows.Forms.Label()
+        Me.CheckBox103 = New System.Windows.Forms.CheckBox()
+        Me.NumericUpDown27 = New System.Windows.Forms.NumericUpDown()
+        Me.Label134 = New System.Windows.Forms.Label()
         Me.ComboBox41 = New System.Windows.Forms.ComboBox()
         Me.Label100 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -466,6 +479,8 @@ Partial Class MgrSetting
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -756,6 +771,19 @@ Partial Class MgrSetting
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ComboBox56)
+        Me.GroupBox2.Controls.Add(Me.Label141)
+        Me.GroupBox2.Controls.Add(Me.ComboBox55)
+        Me.GroupBox2.Controls.Add(Me.Label140)
+        Me.GroupBox2.Controls.Add(Me.NumericUpDown28)
+        Me.GroupBox2.Controls.Add(Me.Label139)
+        Me.GroupBox2.Controls.Add(Me.Label138)
+        Me.GroupBox2.Controls.Add(Me.Label137)
+        Me.GroupBox2.Controls.Add(Me.Label136)
+        Me.GroupBox2.Controls.Add(Me.Label135)
+        Me.GroupBox2.Controls.Add(Me.CheckBox103)
+        Me.GroupBox2.Controls.Add(Me.NumericUpDown27)
+        Me.GroupBox2.Controls.Add(Me.Label134)
         Me.GroupBox2.Controls.Add(Me.ComboBox41)
         Me.GroupBox2.Controls.Add(Me.Label100)
         Me.GroupBox2.Controls.Add(Me.Label20)
@@ -784,13 +812,147 @@ Partial Class MgrSetting
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         '
+        'ComboBox56
+        '
+        Me.ComboBox56.FormattingEnabled = True
+        Me.ComboBox56.Items.AddRange(New Object() {"upper_left", "upper_right"})
+        Me.ComboBox56.Location = New System.Drawing.Point(134, 225)
+        Me.ComboBox56.Name = "ComboBox56"
+        Me.ComboBox56.Size = New System.Drawing.Size(74, 21)
+        Me.ComboBox56.TabIndex = 107
+        Me.ComboBox56.Text = "upper_left"
+        Me.ToolTip1.SetToolTip(Me.ComboBox56, "FPS display position.")
+        '
+        'Label141
+        '
+        Me.Label141.AutoSize = True
+        Me.Label141.Location = New System.Drawing.Point(88, 227)
+        Me.Label141.Name = "Label141"
+        Me.Label141.Size = New System.Drawing.Size(44, 13)
+        Me.Label141.TabIndex = 106
+        Me.Label141.Text = "Position"
+        '
+        'ComboBox55
+        '
+        Me.ComboBox55.FormattingEnabled = True
+        Me.ComboBox55.Items.AddRange(New Object() {"5x7", "6x9", "6x12", "6x13", "9x18"})
+        Me.ComboBox55.Location = New System.Drawing.Point(240, 225)
+        Me.ComboBox55.Name = "ComboBox55"
+        Me.ComboBox55.Size = New System.Drawing.Size(52, 21)
+        Me.ComboBox55.TabIndex = 105
+        Me.ComboBox55.Text = "5x7"
+        Me.ToolTip1.SetToolTip(Me.ComboBox55, "FPS display font." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "5x7 - 5x7" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x9 - 6x9" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x12 - 6x12" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x13 - 6x13. CJK supp" &
+        "ort." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "9x18 - 9x18; CJK support.")
+        '
+        'Label140
+        '
+        Me.Label140.AutoSize = True
+        Me.Label140.Location = New System.Drawing.Point(210, 228)
+        Me.Label140.Name = "Label140"
+        Me.Label140.Size = New System.Drawing.Size(28, 13)
+        Me.Label140.TabIndex = 104
+        Me.Label140.Text = "Font"
+        '
+        'NumericUpDown28
+        '
+        Me.NumericUpDown28.Location = New System.Drawing.Point(72, 248)
+        Me.NumericUpDown28.Maximum = New Decimal(New Integer() {32, 0, 0, 0})
+        Me.NumericUpDown28.Name = "NumericUpDown28"
+        Me.NumericUpDown28.Size = New System.Drawing.Size(43, 20)
+        Me.NumericUpDown28.TabIndex = 103
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown28, "FPS display scale factor." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A value of 0 enables auto-scaling.")
+        Me.NumericUpDown28.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'Label139
+        '
+        Me.Label139.AutoSize = True
+        Me.Label139.Location = New System.Drawing.Point(7, 250)
+        Me.Label139.Name = "Label139"
+        Me.Label139.Size = New System.Drawing.Size(57, 13)
+        Me.Label139.TabIndex = 102
+        Me.Label139.Text = "FPS Scale"
+        '
+        'Label138
+        '
+        Me.Label138.AutoSize = True
+        Me.Label138.Location = New System.Drawing.Point(210, 250)
+        Me.Label138.Name = "Label138"
+        Me.Label138.Size = New System.Drawing.Size(41, 13)
+        Me.Label138.TabIndex = 101
+        Me.Label138.Text = "B Color"
+        '
+        'Label137
+        '
+        Me.Label137.AutoSize = True
+        Me.Label137.Location = New System.Drawing.Point(123, 250)
+        Me.Label137.Name = "Label137"
+        Me.Label137.Size = New System.Drawing.Size(41, 13)
+        Me.Label137.TabIndex = 100
+        Me.Label137.Text = "T Color"
+        '
+        'Label136
+        '
+        Me.Label136.BackColor = System.Drawing.SystemColors.Control
+        Me.Label136.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label136.ForeColor = System.Drawing.Color.Transparent
+        Me.Label136.Location = New System.Drawing.Point(259, 250)
+        Me.Label136.Name = "Label136"
+        Me.Label136.Size = New System.Drawing.Size(30, 15)
+        Me.Label136.TabIndex = 99
+        Me.Label136.Text = "XXX"
+        Me.ToolTip1.SetToolTip(Me.Label136, "FPS display background color.")
+        '
+        'Label135
+        '
+        Me.Label135.BackColor = System.Drawing.SystemColors.Control
+        Me.Label135.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label135.ForeColor = System.Drawing.Color.Transparent
+        Me.Label135.Location = New System.Drawing.Point(172, 250)
+        Me.Label135.Name = "Label135"
+        Me.Label135.Size = New System.Drawing.Size(30, 15)
+        Me.Label135.TabIndex = 98
+        Me.Label135.Text = "XXX"
+        Me.ToolTip1.SetToolTip(Me.Label135, "FPS display text color.")
+        '
+        'CheckBox103
+        '
+        Me.CheckBox103.AutoSize = True
+        Me.CheckBox103.Location = New System.Drawing.Point(10, 226)
+        Me.CheckBox103.Name = "CheckBox103"
+        Me.CheckBox103.Size = New System.Drawing.Size(76, 17)
+        Me.CheckBox103.TabIndex = 97
+        Me.CheckBox103.Text = "Show F&PS"
+        Me.ToolTip1.SetToolTip(Me.CheckBox103, "Automatically enable FPS display on startup.")
+        Me.CheckBox103.UseVisualStyleBackColor = True
+        '
+        'NumericUpDown27
+        '
+        Me.NumericUpDown27.Location = New System.Drawing.Point(92, 20)
+        Me.NumericUpDown27.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
+        Me.NumericUpDown27.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
+        Me.NumericUpDown27.Name = "NumericUpDown27"
+        Me.NumericUpDown27.Size = New System.Drawing.Size(52, 20)
+        Me.NumericUpDown27.TabIndex = 33
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown27, "Display to use with fullscreen mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Specify -1 to use the display on which the " &
+        "center of the window lies in windowed mode.")
+        Me.NumericUpDown27.Value = New Decimal(New Integer() {1, 0, 0, -2147483648})
+        '
+        'Label134
+        '
+        Me.Label134.AutoSize = True
+        Me.Label134.Location = New System.Drawing.Point(6, 22)
+        Me.Label134.Name = "Label134"
+        Me.Label134.Size = New System.Drawing.Size(79, 13)
+        Me.Label134.TabIndex = 32
+        Me.Label134.Text = "Display To Use"
+        '
         'ComboBox41
         '
         Me.ComboBox41.FormattingEnabled = True
         Me.ComboBox41.Items.AddRange(New Object() {"weave", "bob", "bob_offset"})
-        Me.ComboBox41.Location = New System.Drawing.Point(136, 146)
+        Me.ComboBox41.Location = New System.Drawing.Point(153, 146)
         Me.ComboBox41.Name = "ComboBox41"
-        Me.ComboBox41.Size = New System.Drawing.Size(156, 21)
+        Me.ComboBox41.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox41.TabIndex = 31
         Me.ComboBox41.Text = "weave"
         Me.ToolTip1.SetToolTip(Me.ComboBox41, resources.GetString("ComboBox41.ToolTip"))
@@ -919,9 +1081,9 @@ Partial Class MgrSetting
         'ComboBox6
         '
         Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(136, 119)
+        Me.ComboBox6.Location = New System.Drawing.Point(153, 119)
         Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(156, 21)
+        Me.ComboBox6.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox6.TabIndex = 17
         Me.ComboBox6.Text = "0x0"
         Me.ToolTip1.SetToolTip(Me.ComboBox6, "Full-screen Resolution")
@@ -939,9 +1101,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"0", "full", "aspect", "aspect_int", "aspect_mult2"})
-        Me.ComboBox5.Location = New System.Drawing.Point(136, 92)
+        Me.ComboBox5.Location = New System.Drawing.Point(153, 92)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(156, 21)
+        Me.ComboBox5.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox5.TabIndex = 15
         Me.ComboBox5.Text = "aspect_mult2"
         Me.ToolTip1.SetToolTip(Me.ComboBox5, resources.GetString("ComboBox5.ToolTip"))
@@ -991,7 +1153,7 @@ Partial Class MgrSetting
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 22)
+        Me.Label6.Location = New System.Drawing.Point(151, 22)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 10
@@ -1000,10 +1162,11 @@ Partial Class MgrSetting
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"opengl", "sdl", "overlay"})
-        Me.ComboBox3.Location = New System.Drawing.Point(136, 19)
+        Me.ComboBox3.Items.AddRange(New Object() {"default", "opengl", "overlay", "sdl", "softfb"})
+        Me.ComboBox3.Location = New System.Drawing.Point(223, 19)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(156, 21)
+        Me.ComboBox3.Size = New System.Drawing.Size(67, 21)
+        Me.ComboBox3.Sorted = True
         Me.ComboBox3.TabIndex = 9
         Me.ComboBox3.Text = "opengl"
         Me.ToolTip1.SetToolTip(Me.ComboBox3, resources.GetString("ComboBox3.ToolTip"))
@@ -5050,7 +5213,7 @@ Partial Class MgrSetting
         'ComboBox44
         '
         Me.ComboBox44.FormattingEnabled = True
-        Me.ComboBox44.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard"})
+        Me.ComboBox44.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
         Me.ComboBox44.Location = New System.Drawing.Point(188, 115)
         Me.ComboBox44.Name = "ComboBox44"
         Me.ComboBox44.Size = New System.Drawing.Size(107, 21)
@@ -5070,7 +5233,7 @@ Partial Class MgrSetting
         'ComboBox45
         '
         Me.ComboBox45.FormattingEnabled = True
-        Me.ComboBox45.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard"})
+        Me.ComboBox45.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
         Me.ComboBox45.Location = New System.Drawing.Point(188, 88)
         Me.ComboBox45.Name = "ComboBox45"
         Me.ComboBox45.Size = New System.Drawing.Size(107, 21)
@@ -5333,6 +5496,8 @@ Partial Class MgrSetting
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5890,4 +6055,17 @@ Partial Class MgrSetting
     Friend WithEvents ComboBox52 As ComboBox
     Friend WithEvents ComboBox54 As ComboBox
     Friend WithEvents Label133 As Label
+    Friend WithEvents NumericUpDown27 As NumericUpDown
+    Friend WithEvents Label134 As Label
+    Friend WithEvents ComboBox56 As ComboBox
+    Friend WithEvents Label141 As Label
+    Friend WithEvents ComboBox55 As ComboBox
+    Friend WithEvents Label140 As Label
+    Friend WithEvents NumericUpDown28 As NumericUpDown
+    Friend WithEvents Label139 As Label
+    Friend WithEvents Label138 As Label
+    Friend WithEvents Label137 As Label
+    Friend WithEvents Label136 As Label
+    Friend WithEvents Label135 As Label
+    Friend WithEvents CheckBox103 As CheckBox
 End Class

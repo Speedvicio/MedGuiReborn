@@ -270,7 +270,7 @@ Public Class ModLand
                 Catch ex As Exception
                     If Dir(MedExtra & "/Media/Module/*.*") <> "" Then
                         MsgBox("File " & fil & " is die hard, please remove it manually or delete RomTemp folder.", MsgBoxStyle.OkCancel + MsgBoxStyle.Critical)
-                        System.Diagnostics.Process.Start(MedExtra & "/Media/Module")
+                        Process.Start(MedExtra & "/Media/Module")
                         End
                     End If
                 End Try

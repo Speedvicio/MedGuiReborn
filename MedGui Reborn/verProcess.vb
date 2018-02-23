@@ -52,15 +52,24 @@
     End Sub
 
     Public Sub StartProcess()
+
         Dim countstart As Integer = 0
 
 AGAIN:
 
         Try
             With execute.StartInfo
-                .FileName = tProcess
+
+                'If Val(vmedClear) > 9480 Then
+                .EnvironmentVariables("MEDNAFEN_NOPOPUPS") = "1"
+                .UseShellExecute = False
+                .FileName = wDir & "\" & tProcess
+                .WindowStyle = ProcessWindowStyle.Hidden
+                'Else
+                '.FileName = tProcess
+                '.WorkingDirectory = wDir
+                'End If
                 .Arguments = Arg
-                .WorkingDirectory = wDir
 
                 Select Case tProcess
                     Case "vgmplay", "GBS2GB"

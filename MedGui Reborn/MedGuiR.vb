@@ -375,11 +375,11 @@ Public Class MedGuiR
     Public Sub SetSpecialModule()
         Select Case consoles
             Case "pce"
-                If CheckBox1.Checked = True Then tpce = "_fast" Else tpce = ""
+                If CheckBox1.Checked = True Then tpce = "_fast" Else tpce = Nothing
             Case "snes"
-                If CheckBox15.Checked = True Then tpce = "_faust" : SnesSpecialChip() Else tpce = ""
+                If CheckBox15.Checked = True Then tpce = "_faust" : SnesSpecialChip() Else tpce = Nothing
             Case Else
-                tpce = ""
+                tpce = Nothing
         End Select
     End Sub
 
@@ -888,7 +888,7 @@ Public Class MedGuiR
     Private Sub LinkLabel10_LinkClicked(sender As System.Object, e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel10.LinkClicked
         Try
             If CheckBox17.Checked = False Then
-                System.Diagnostics.Process.Start(Chr(34) & TextBox4.Text & "\Documentation\mednafen.html" & Chr(34))
+                Process.Start(Chr(34) & TextBox4.Text & "\Documentation\mednafen.html" & Chr(34))
             Else
                 MedBrowser.Show()
                 MedBrowser.WebBrowser1.Navigate(TextBox4.Text & "\Documentation\mednafen.html")
@@ -1470,7 +1470,7 @@ Public Class MedGuiR
 
     Private Sub PictureBox1_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox1.DoubleClick
         Try
-            System.Diagnostics.Process.Start(pathimage)
+            Process.Start(pathimage)
             TopMost = False
         Catch
         End Try
@@ -1482,7 +1482,7 @@ Public Class MedGuiR
 
     Private Sub PictureBox4_DoubleClick(sender As Object, e As System.EventArgs) Handles PictureBox4.DoubleClick
         Try
-            System.Diagnostics.Process.Start(title)
+            Process.Start(title)
             TopMost = False
         Catch
         End Try
@@ -1494,7 +1494,7 @@ Public Class MedGuiR
 
     Private Sub PictureBox5_DoubleClick(sender As Object, e As System.EventArgs) Handles PictureBox5.DoubleClick
         Try
-            System.Diagnostics.Process.Start(snap)
+            Process.Start(snap)
             TopMost = False
         Catch
         End Try
@@ -1506,7 +1506,7 @@ Public Class MedGuiR
 
     Private Sub PictureBox6_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox6.DoubleClick
         Try
-            System.Diagnostics.Process.Start(SnapsFolder & ListBox1.Text)
+            Process.Start(SnapsFolder & ListBox1.Text)
             TopMost = False
         Catch
         End Try
@@ -1776,32 +1776,32 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     Private Sub StdOutBox()
         Try
             Dim sr As StreamReader = Nothing
-            Dim riga As String = Nothing
+            Dim Eriga As String = Nothing
 
-            ErLog.RichTextBox1.Clear()
+            ErLog.RichTextBox1.Text = ""
             sr = New StreamReader(TextBox4.Text & "\stdout.txt")
-            riga = sr.ReadLine()
+            Eriga = sr.ReadLine()
 
-            While Not riga Is Nothing
+            While Not Eriga Is Nothing
 
                 Select Case True
-                    Case riga.Contains("File format is unknown")
+                    Case Eriga.Contains("File format is unknown")
                         ErLog.RichTextBox1.SelectionColor = Color.Fuchsia
-                    Case riga.Contains("Error")
+                    Case Eriga.Contains("Error")
                         Select Case True
-                            Case LCase(riga.Contains(".sbi")), LCase(riga.Contains(".cfg")), LCase(riga.Contains(".cht"))
+                            Case LCase(Eriga.Contains(".sbi")), LCase(Eriga.Contains(".cfg")), LCase(Eriga.Contains(".cht")), LCase(Eriga.Contains(".ips"))
                                 ErLog.RichTextBox1.SelectionColor = Color.DarkGreen
                             Case Else
                                 ErLog.RichTextBox1.SelectionColor = Color.DarkRed
                         End Select
-                    Case riga.Contains("image is too large")
+                    Case Eriga.Contains("image is too large")
                         ErLog.RichTextBox1.SelectionColor = Color.DarkGoldenrod
                     Case Else
                         ErLog.RichTextBox1.SelectionColor = Color.Black
                 End Select
 
-                ErLog.RichTextBox1.AppendText(vbNewLine & riga)
-                riga = sr.ReadLine()
+                ErLog.RichTextBox1.AppendText(vbNewLine & Eriga)
+                Eriga = sr.ReadLine()
             End While
             ErLog.ShowDialog()
 
@@ -2287,7 +2287,7 @@ inputagain:
     End Sub
 
     Private Sub LinkLabel15_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel15.LinkClicked
-        System.Diagnostics.Process.Start("https://discord.gg/hDpSjMb")
+        Process.Start("https://discord.gg/hDpSjMb")
     End Sub
 
     Private Sub OnlineToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles OnlineToolStripMenuItem1.Click
@@ -2300,7 +2300,13 @@ inputagain:
         Dim MenuNet As String = ""
         MenuNet = "-netplay.nick " & NickToolStripTextBox1.Text.Trim & " -netplay.host " & ServerToolStripComboBox2.Text.Trim &
            " -netplay.port " & PortToolStripTextBox1.Text & " -netplay.gamekey " & gk & " -netplay.password " & pw
-        Process.Start(TextBox4.Text & "\mednafen.exe", MenuNet)
+
+        tProcess = "mednafen"
+        wDir = TextBox4.Text
+        Arg = MenuNet
+        StartProcess()
+
+        'Process.Start(TextBox4.Text & "\mednafen.exe", MenuNet)
         Threading.Thread.Sleep(500)
 
         NetToolStripButton.BackColor = Color.Red
@@ -2417,7 +2423,7 @@ inputagain:
                 If rn.Trim = (oRead.ReadLine().Trim) Then
                     MsgBox("Snes Faust Module at the moment not support Super NES enhancement chips" & vbCrLf &
                                             "I'm switching  to BSnes Module", vbOKOnly + vbInformation)
-                    tpce = ""
+                    tpce = Nothing
                 End If
             End While
 

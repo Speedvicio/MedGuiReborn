@@ -21,6 +21,8 @@ Public Class CPM
             If Len(HexB) < 2 Then HexB = "0" & HexB
 
             palette = HexB & HexG & HexR
+        Else
+            palette = Nothing
 ErrorHandler:
         End If
     End Sub
@@ -337,6 +339,7 @@ ErrorHandler:
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button1.BackColor = ColorDialog1.Color
         Button1.ForeColor = Button1.BackColor
         Button1.Text = palette
@@ -344,6 +347,7 @@ ErrorHandler:
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button2.BackColor = ColorDialog1.Color
         Button2.ForeColor = Button2.BackColor
         Button2.Text = palette
@@ -351,6 +355,7 @@ ErrorHandler:
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button3.BackColor = ColorDialog1.Color
         Button3.ForeColor = Button3.BackColor
         Button3.Text = palette
@@ -358,6 +363,7 @@ ErrorHandler:
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button4.BackColor = ColorDialog1.Color
         Button4.ForeColor = Button4.BackColor
         Button4.Text = palette
@@ -365,6 +371,7 @@ ErrorHandler:
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button9.BackColor = ColorDialog1.Color
         Button9.ForeColor = Button9.BackColor
         Button9.Text = palette
@@ -372,6 +379,7 @@ ErrorHandler:
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button11.BackColor = ColorDialog1.Color
         Button11.ForeColor = Button11.BackColor
         Button11.Text = palette
@@ -379,6 +387,7 @@ ErrorHandler:
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button10.BackColor = ColorDialog1.Color
         Button10.ForeColor = Button10.BackColor
         Button10.Text = palette
@@ -386,6 +395,7 @@ ErrorHandler:
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button8.BackColor = ColorDialog1.Color
         Button8.ForeColor = Button8.BackColor
         Button8.Text = palette
@@ -393,6 +403,7 @@ ErrorHandler:
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button13.BackColor = ColorDialog1.Color
         Button13.ForeColor = Button13.BackColor
         Button13.Text = palette
@@ -400,6 +411,7 @@ ErrorHandler:
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button15.BackColor = ColorDialog1.Color
         Button15.ForeColor = Button15.BackColor
         Button15.Text = palette
@@ -407,6 +419,7 @@ ErrorHandler:
 
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button14.BackColor = ColorDialog1.Color
         Button14.ForeColor = Button14.BackColor
         Button14.Text = palette
@@ -414,6 +427,7 @@ ErrorHandler:
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
         conv_col_pal()
+        If palette = Nothing Then Exit Sub
         Button12.BackColor = ColorDialog1.Color
         Button12.ForeColor = Button12.BackColor
         Button12.Text = palette

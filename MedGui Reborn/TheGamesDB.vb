@@ -5,7 +5,7 @@
             Dim mnb As String
             mnb = Replace(SBoxF, "/thumb", "")
             mnb = Replace(mnb, "tfront_", "front_")
-            System.Diagnostics.Process.Start(mnb)
+            Process.Start(mnb)
         Catch
         End Try
     End Sub
@@ -15,7 +15,7 @@
             Dim mnb As String
             mnb = Replace(SboxR, "/thumb", "")
             mnb = Replace(mnb, "tback_", "back_")
-            System.Diagnostics.Process.Start(mnb)
+            Process.Start(mnb)
         Catch
         End Try
     End Sub

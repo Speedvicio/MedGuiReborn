@@ -4,7 +4,7 @@
     Public Sub open_link()
         Try
             If MedGuiR.CheckBox17.Checked = False Then
-                System.Diagnostics.Process.Start(_link)
+                Process.Start(_link)
             Else
                 MedBrowser.Show()
                 MedBrowser.WebBrowser1.Navigate(_link)

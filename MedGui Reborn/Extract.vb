@@ -95,7 +95,7 @@ Module Extract
         Catch ex As Exception
             If Dir(MedExtra & "RomTemp\*.*") <> "" Then
                 MsgBox("File " & fil & " is die hard, please remove it manually or delete RomTemp folder.", MsgBoxStyle.OkCancel + MsgBoxStyle.Critical)
-                System.Diagnostics.Process.Start(MedExtra & "RomTemp")
+                Process.Start(MedExtra & "RomTemp")
                 End
             End If
         End Try

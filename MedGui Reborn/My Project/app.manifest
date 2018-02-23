@@ -5,14 +5,14 @@
     <security>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
         <!-- Opzioni manifesto Controllo account utente
-            Se si desidera modificare il livello di Controllo account utente di Windows, sostituire il 
+            Se si desidera modificare il livello di Controllo account utente di Windows, sostituire il
             nodo requestedExecutionLevel con uno dei seguenti.
 
         <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
         <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
         <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
 
-            Se si desidera utilizzare Virtualizzazione file system e registro di sistema per la 
+            Se si desidera utilizzare Virtualizzazione file system e registro di sistema per la
             compatibilità con le versioni precedenti, eliminare il nodo requestedExecutionLevel.
         -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />

@@ -9,10 +9,10 @@
         'If MedGuiR.CheckBox1.Checked = True And consoles = "pce" Then MedGuiR.tpce = "_fast" Else MedGuiR.tpce = ""
 
         If consoles = "pce" Then
-            If MedGuiR.CheckBox1.Checked = False Then MedGuiR.tpce = "" Else MedGuiR.tpce = "_fast"
+            If MedGuiR.CheckBox1.Checked = False Then MedGuiR.tpce = Nothing Else MedGuiR.tpce = "_fast"
         ElseIf consoles = "snes" Then
-            If MedGuiR.CheckBox15.Checked = False Then MedGuiR.tpce = "" Else MedGuiR.tpce = "_faust"
-        Else : MedGuiR.tpce = ""
+            If MedGuiR.CheckBox15.Checked = False Then MedGuiR.tpce = Nothing Else MedGuiR.tpce = "_faust"
+        Else : MedGuiR.tpce = Nothing
         End If
 
         If consoles = "nes" Then lfm = "" Else lfm = " -" & consoles & MedGuiR.tpce & ".forcemono " & MgrSetting.CheckBox13.CheckState
@@ -297,6 +297,10 @@
                         Next
                     End If
                     ss = ss & minput
+                Case Is = 12100
+                    video = video & " -video.fs.display " & CInt(MgrSetting.NumericUpDown27.Value) & " -fps.autoenable " & MgrSetting.CheckBox103.CheckState &
+                    " -fps.textcolor " & MgrSetting.Label135.Text & " -fps.bgcolor " & MgrSetting.Label136.Text &
+                    " -fps.font " & MgrSetting.ComboBox55.Text & " -fps.position " & MgrSetting.ComboBox56.Text & " -fps.scale " & CInt(MgrSetting.NumericUpDown28.Value)
             End Select
         Next
     End Sub

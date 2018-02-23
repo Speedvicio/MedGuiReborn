@@ -2,7 +2,7 @@
 Imports System.Net.NetworkInformation
 
 Public Class MgrSetting
-    Public tab_index, mxSet As Integer, colour, SpecificServer, per_conf_path_name As String, NetVerified, NoCheck, TPerC As Boolean
+    Public tab_index, mxSet As Integer, colour, SpecificServer, per_conf_path_name As String, NetVerified, NoCheck, TPerC, isARGB As Boolean
     Dim MuFolder As FolderBrowserDialog = New FolderBrowserDialog()
     Private tPath, fPath, pPath, xcv As String, sPath As OpenFileDialog = New OpenFileDialog(), versave As Boolean
 
@@ -135,7 +135,18 @@ Public Class MgrSetting
                     NumericUpDown26.Enabled = True
                 Case 9460
                     Label132.Visible = True
+                    Label135.Visible = True
+                    Label136.Visible = True
+                    Label137.Visible = True
+                    Label138.Visible = True
+                    Label139.Visible = True
+                    Label140.Visible = True
+                    Label141.Visible = True
                     ComboBox52.Visible = True
+                    ComboBox55.Visible = True
+                    ComboBox56.Visible = True
+                    CheckBox103.Visible = True
+                    NumericUpDown28.Visible = True
             End Select
         Next i
 
@@ -163,8 +174,36 @@ Public Class MgrSetting
         End If
 
         If Val(vmedClear) < 9450 Then
+            ComboBox3.Items.Remove("default")
+            ComboBox3.Items.Remove("softfb")
             ComboBox45.Items.Remove("gun")
             ComboBox44.Items.Remove("gun")
+        End If
+
+        If Val(vmedClear) <= 9480 Then
+            ComboBox3.Items.Remove("default")
+            ComboBox3.Items.Remove("softfb")
+            NumericUpDown27.Visible = False
+            NumericUpDown28.Visible = False
+            Label134.Visible = False
+            Label135.Visible = False
+            Label136.Visible = False
+            Label137.Visible = False
+            Label138.Visible = False
+            Label139.Visible = False
+            Label140.Visible = False
+            Label141.Visible = False
+            CheckBox103.Visible = False
+            ComboBox55.Visible = False
+            ComboBox56.Visible = False
+            ComboBox45.Items.Remove("jpkeyboard")
+            ComboBox44.Items.Remove("jpkeyboard")
+        End If
+
+        If Val(vmedClear) > 9480 Then
+            ComboBox3.Items.Remove("opengl")
+            ComboBox3.Items.Remove("overlay")
+            ComboBox3.Items.Remove("sdl")
         End If
     End Sub
 
@@ -208,10 +247,21 @@ Public Class MgrSetting
     Public Sub conv_col()
         If (ColorDialog1.ShowDialog() = Windows.Forms.DialogResult.OK) Then
             'Converte colore RGB in valore HEX
-            Dim HexR, HexB, HexG As Object
-            Dim sTemp As String
+            Dim HexR, HexB, HexG, HexA As Object
 
             On Error GoTo ErrorHandler
+
+            If isARGB = True Then
+                Dim coltas As String = "FF" & ColorDialog1.Color.R.ToHexString(2) & ColorDialog1.Color.G.ToHexString(2) & ColorDialog1.Color.B.ToHexString(2)
+                Alpha.TextBox1.Text = coltas
+                Alpha.PictureBox1.BackColor = ColorDialog1.Color
+                Alpha.ShowDialog()
+                ColorDialog1.Color = Alpha.ncolor
+                HexA = Hex(ColorDialog1.Color.A)
+                If Len(HexA) < 2 Then HexA = "0" & HexA
+            Else
+                HexA = Nothing
+            End If
 
             'R
             HexR = Hex(ColorDialog1.Color.R)
@@ -224,12 +274,16 @@ Public Class MgrSetting
             HexB = Hex(ColorDialog1.Color.B)
             If Len(HexB) < 2 Then HexB = "0" & HexB
 
-            colour = "0x" & HexR & HexG & HexB
+            colour = "0x" & HexA & HexR & HexG & HexB
+        Else
+
 ErrorHandler:
+
         End If
     End Sub
 
     Private Sub Label92_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Label92.Click
+        isARGB = False
         conv_col()
         Label92.BackColor = ColorDialog1.Color
         Label92.ForeColor = Label92.BackColor
@@ -237,28 +291,36 @@ ErrorHandler:
     End Sub
 
     Private Sub Label91_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Label91.Click
+        isARGB = False
         conv_col()
+        If colour = Nothing Then Exit Sub
         Label91.BackColor = ColorDialog1.Color
         Label91.ForeColor = Label91.BackColor
         Label91.Text = colour
     End Sub
 
     Private Sub Label93_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Label93.Click
+        isARGB = False
         conv_col()
+        If colour = Nothing Then Exit Sub
         Label93.BackColor = ColorDialog1.Color
         Label93.ForeColor = Label93.BackColor
         Label93.Text = colour
     End Sub
 
     Private Sub Label86_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label86.Click
+        isARGB = False
         conv_col()
+        If colour = Nothing Then Exit Sub
         Label86.BackColor = ColorDialog1.Color
         Label86.ForeColor = Label86.BackColor
         Label86.Text = colour
     End Sub
 
     Private Sub Label87_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label87.Click
+        isARGB = False
         conv_col()
+        If colour = Nothing Then Exit Sub
         Label87.BackColor = ColorDialog1.Color
         Label87.ForeColor = Label87.BackColor
         Label87.Text = colour
@@ -499,7 +561,7 @@ ErrorHandler:
     Private Sub Button14_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button14.Click
         Try
             If MedGuiR.CheckBox17.Checked = False Then
-                System.Diagnostics.Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\mednafen.html" & Chr(34))
+                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\mednafen.html" & Chr(34))
             Else
                 MedBrowser.Show()
                 MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\mednafen.html")
@@ -582,18 +644,18 @@ ErrorHandler:
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Call MedGuiR.DetectFolder()
-        System.Diagnostics.Process.Start(MedExtra & "Media\Movie")
+        Process.Start(MedExtra & "Media\Movie")
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Call MedGuiR.DetectFolder()
-        System.Diagnostics.Process.Start(MedExtra & "Media\Audio")
+        Process.Start(MedExtra & "Media\Audio")
     End Sub
 
     Private Sub Button15_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button15.Click
         Try
             If MedGuiR.CheckBox17.Checked = False Then
-                System.Diagnostics.Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\netplay.html" & Chr(34))
+                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\netplay.html" & Chr(34))
             Else
                 MedBrowser.Show()
                 MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\netplay.html")
@@ -614,6 +676,24 @@ ErrorHandler:
     Private Sub ComboBox54_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox54.SelectedIndexChanged
         SpecificServer = "=" & ComboBox54.Text
         PopulateNetplay()
+    End Sub
+
+    Private Sub Label135_Click(sender As Object, e As EventArgs) Handles Label135.Click
+        isARGB = True
+        conv_col()
+        If colour = Nothing Then Exit Sub
+        Label135.BackColor = ColorDialog1.Color
+        Label135.ForeColor = Label135.BackColor
+        Label135.Text = colour
+    End Sub
+
+    Private Sub Label136_Click(sender As Object, e As EventArgs) Handles Label136.Click
+        isARGB = True
+        conv_col()
+        If colour = Nothing Then Exit Sub
+        Label136.BackColor = ColorDialog1.Color
+        Label136.ForeColor = Label136.BackColor
+        Label136.Text = colour
     End Sub
 
     Private Sub Button23_Click(sender As Object, e As EventArgs)
@@ -790,7 +870,7 @@ ErrorHandler:
 
     Private Sub Label27_DoubleClick(sender As Object, e As EventArgs) Handles Label27.DoubleClick
         Try
-            System.Diagnostics.Process.Start(MedExtra & "ListServer.txt")
+            Process.Start(MedExtra & "ListServer.txt")
         Catch ex As Exception
             MGRWriteLog("Setting - " & sender & ": " & ex.Message)
         End Try

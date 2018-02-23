@@ -50,9 +50,9 @@ Module SaturnName
 
         Using reader As New StreamReader(MedExtra & "\Plugins\db\Sega - Saturn.txt")
             While Not reader.EndOfStream
-                Dim riga As String = reader.ReadLine
-                If riga.Contains(SnSaturn) And riga.Contains(cdn) Then
-                    r_ss = Trim((Replace(riga, SnSaturn, "")))
+                Dim Sriga As String = reader.ReadLine
+                If Sriga.Contains(SnSaturn) And Sriga.Contains(cdn) Then
+                    r_ss = Trim((Replace(Sriga, SnSaturn, "")))
 
                     Select Case True
                         Case SnSaturn.Contains("H") And clearregionsaturn.Contains("E")

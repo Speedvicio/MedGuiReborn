@@ -298,7 +298,7 @@ Public Class UCI
     End Sub
 
     Private Sub rtbOutput_LinkClicked(sender As Object, e As LinkClickedEventArgs) Handles rtbOutput.LinkClicked
-        p = System.Diagnostics.Process.Start(e.LinkText)
+        p = Process.Start(e.LinkText)
     End Sub
 
     Private Sub ToolTip1_Popup(sender As Object, e As PopupEventArgs) Handles ToolTip1.Popup
@@ -330,7 +330,7 @@ Public Class UCI
 
     Private Sub label1_DoubleClick(sender As Object, e As EventArgs) Handles label1.DoubleClick
         Try
-            System.Diagnostics.Process.Start(MedExtra & "UCI.txt")
+            Process.Start(MedExtra & "UCI.txt")
         Catch ex As Exception
             MGRWriteLog("UCI - " & sender & ":  " & ex.Message)
         End Try

@@ -225,14 +225,23 @@ Module GlobalVar
 
 CheckConfig:
 
-        If File.Exists(MedGuiR.TextBox4.Text & "\mednafen.cfg") Then
+        tProcess = "mednafen"
+        wDir = MedGuiR.TextBox4.Text
+        StartProcess()
+        'Process.Start(MedGuiR.TextBox4.Text & "\mednafen.exe")
+        Threading.Thread.Sleep(2000)
+
+        If File.Exists(MedGuiR.TextBox4.Text & "\mednafen.cfg") And File.Exists(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg") Then
+            If File.Exists(MedExtra & "\Backup\OLD_mednafen-09x.cfg") Then File.Delete(MedExtra & "\Backup\OLD_mednafen-09x.cfg")
+            File.Move(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg", MedExtra & "\Backup\OLD_mednafen-09x.cfg")
+            MsgBox("Old Mednafen Configuration File moved into Backup folder.", vbInformation + MsgBoxStyle.OkOnly)
+            DMedConf = "mednafen"
+        ElseIf File.Exists(MedGuiR.TextBox4.Text & "\mednafen.cfg") Then
             DMedConf = "mednafen"
         ElseIf File.Exists(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg") Then
             DMedConf = "mednafen-09x"
         Else
             MsgBox("No Mednafen Configuration File Found , I proceeded to create one myself.", vbInformation + MsgBoxStyle.OkOnly)
-            Process.Start(MedGuiR.TextBox4.Text & "\mednafen.exe")
-            Threading.Thread.Sleep(1000)
             GoTo CheckConfig
         End If
 
@@ -277,6 +286,7 @@ CheckMednafen:
             Message.ShowDialog()
             MedGuiR.Close()
         Else
+            vmedFull = Replace(vmedFull, "-UNSTABLE", "-U")
             MedGuiR.Label8.Text = "Mednafen v." & vmedFull
             MedGuiR.Label57.Text = x864
         End If

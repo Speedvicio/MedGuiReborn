@@ -13,9 +13,9 @@ Module PSX_Name
 
             Using reader As New StreamReader(MedExtra & "\Plugins\db\ps1titles_us_eu_jp.txt")
                 While Not reader.EndOfStream
-                    Dim riga As String = reader.ReadLine
-                    If riga.Contains(Serial_PSX) Then
-                        r_psx = Trim((Replace(riga, Serial_PSX, "")))
+                    Dim Priga As String = reader.ReadLine
+                    If Priga.Contains(Serial_PSX) Then
+                        r_psx = Trim((Replace(Priga, Serial_PSX, "")))
                         r_psx = r_psx & " [" & Serial_PSX & "]"
                         Exit While
                     End If

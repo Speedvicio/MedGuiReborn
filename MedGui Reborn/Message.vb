@@ -2,7 +2,7 @@
 
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Try
-            System.Diagnostics.Process.Start(LinkLabel1.Text)
+            Process.Start(LinkLabel1.Text)
         Catch ex As Exception
             MsgBox("No Internet Connection Available", MsgBoxStyle.Critical, "Error")
         End Try

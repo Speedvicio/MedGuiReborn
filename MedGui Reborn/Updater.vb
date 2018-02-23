@@ -53,7 +53,7 @@ Module Updater
                         OwMedinstR()
 
                         File.Delete(MedExtra & "Update\MedGuiR.zip")
-                        System.Diagnostics.Process.Start(Application.StartupPath & "\MedInstR.exe")
+                        Process.Start(Application.StartupPath & "\MedInstR.exe")
 
                     ElseIf upd_mr = vbNo Then
                         upd.Close()

@@ -296,7 +296,11 @@ Public Class KeyAssign
             'MedGuiR.TextBox4.Text & "\" & p_c & ".cfg", kParameter & vbCrLf, True)
             'pArg = " -" & kParameter
             Dim par As String = "-" & _KPar & " " & Chr(34) & "keyboard " & sdl & Chr(34)
-            Process.Start(MedGuiR.TextBox4.Text & "\mednafen.exe", par)
+            tProcess = "mednafen"
+            wDir = MedGuiR.TextBox4.Text
+            Arg = par
+            StartProcess()
+            'Process.Start(MedGuiR.TextBox4.Text & "\mednafen.exe", par)
             My.Computer.FileSystem.WriteAllText(
 MedExtra & "Backup\FunctionKeys.txt", _KPar & "=" & tasti & vbCrLf, True)
             'MgrSetting.Mednafen_Save_setting()

@@ -16,8 +16,8 @@
     End Sub
 
     Private Sub RichTextBox1_LinkClicked(sender As Object, e As LinkClickedEventArgs) Handles RichTextBox1.LinkClicked
-        Dim l As New System.Diagnostics.Process
-        l = System.Diagnostics.Process.Start(e.LinkText)
+        Dim l As New Process
+        l = Process.Start(e.LinkText)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

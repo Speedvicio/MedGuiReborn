@@ -267,15 +267,16 @@ Module xSetting
         If row.Contains("video.deinterlacer ") Then xValue = Trim(Replace(row, "video.deinterlacer", "")) : MgrSetting.ComboBox41.Text = xValue
         If row.Contains("video.frameskip ") Then xValue = Trim(Replace(row, "video.frameskip", "")) : MgrSetting.CheckBox3.Checked = CBool(xValue)
         If row.Contains("video.fs ") Then xValue = Trim(Replace(row, "video.fs", "")) : MgrSetting.CheckBox4.Checked = CBool(xValue)
+        If row.Contains("video.fs.display ") Then xValue = Trim(Replace(row, "video.fs.display", "")) : MgrSetting.NumericUpDown27.Value = xValue
         If row.Contains("video.glvsync ") Then xValue = Trim(Replace(row, "video.glvsync", "")) : MgrSetting.CheckBox5.Checked = CBool(xValue)
         If row.Contains("video.disable_composition ") Then xValue = Trim(Replace(row, "video.disable_composition", "")) : MgrSetting.CheckBox7.Checked = CBool(xValue)
 
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
+        If row.Contains("fps.autoenable ") Then xValue = Trim(Replace(row, "fps.autoenable", "")) : MgrSetting.CheckBox103.Checked = CBool(xValue)
+        If row.Contains("fps.font ") Then xValue = Trim(Replace(row, "fps.font", "")) : MgrSetting.ComboBox55.Text = xValue
+        If row.Contains("fps.position ") Then xValue = Trim(Replace(row, "fps.position", "")) : MgrSetting.ComboBox56.Text = xValue
+        If row.Contains("fps.scale ") Then xValue = Trim(Replace(row, "fps.scale", "")) : MgrSetting.NumericUpDown28.Value = Val(xValue)
+        If row.Contains("fps.textcolor ") Then xValue = Trim(Replace(row, "fps.textcolor ", "")) : MgrSetting.Label135.Text = (xValue) : MgrSetting.Label135.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label135.ForeColor = ColorTranslator.FromHtml(xValue)
+        If row.Contains("fps.bgcolor ") Then xValue = Trim(Replace(row, "fps.bgcolor ", "")) : MgrSetting.Label136.Text = (xValue) : MgrSetting.Label136.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label136.ForeColor = ColorTranslator.FromHtml(xValue)
 
         If row.Contains("netplay.host ") Then xValue = Trim(Replace(row, "netplay.host", "")) : MgrSetting.cmbServer.Text = xValue
         If row.Contains("netplay.localplayers ") Then xValue = Trim(Replace(row, "netplay.localplayers", "")) : MgrSetting.NumericUpDown7.Value = Val(xValue)
@@ -291,13 +292,21 @@ Module xSetting
         If row.Contains("qtrecord.vcodec ") Then xValue = Trim(Replace(row, "qtrecord.vcodec", "")) : MgrSetting.ComboBox4.Text = xValue
         If row.Contains("qtrecord.h_double_threshold ") Then xValue = Trim(Replace(row, "qtrecord.h_double_threshold", "")) : MgrSetting.TrackBar5.Value = Val(xValue)
         If row.Contains("qtrecord.w_double_threshold ") Then xValue = Trim(Replace(row, "qtrecord.w_double_threshold", "")) : MgrSetting.TrackBar4.Value = Val(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
-        'If row.Contains("cheats ") Then xValue = Trim(Replace(row, "cheats", "")) : MsgBox(xValue)
 
     End Sub
+
+    Public Function hexToRbgNew(ByVal Hex As String) As Color
+        Hex = Replace(Hex, "0x", "")
+        Dim alpha As String = "&H" & Hex.Substring(0, 2)
+        Hex = Replace(Hex, alpha, "", , 1)
+        Dim red As String = "&H" & Hex.Substring(0, 2)
+        Hex = Replace(Hex, red, "", , 1)
+        Dim green As String = "&H" & Hex.Substring(0, 2)
+        Hex = Replace(Hex, green, "", , 1)
+        Dim blue As String = "&H" & Hex.Substring(0, 2)
+        Hex = Replace(Hex, blue, "", , 1)
+        Return Color.FromArgb(alpha, red, green, blue)
+    End Function
 
     Public Sub pce()
 
@@ -366,12 +375,12 @@ Module xSetting
                             If row.Contains(consoles & ".input.pport" & i & ".multitap ") Then xValue = Trim(Replace(row, consoles & ".input.pport" & i & ".multitap", "")) : MgrSetting.CheckBox54.Checked = CBool(xValue)
                             If row.Contains(consoles & ".input.port" & i & " ") Then xValue = Trim(Replace(row, consoles & ".input.port" & i, "")) : MgrSetting.ComboBox37.Text = xValue
                             If row.Contains(consoles & ".input.port" & i & ".memcard ") Then xValue = Trim(Replace(row, consoles & ".input.port" & i & ".memcard", "")) : MgrSetting.CheckBox52.Checked = CBool(xValue)
-                            If row.Contains(consoles & ".input.port" & i & ".gun_chairs ") Then xValue = Trim(Replace(row, consoles & ".input.port" & i & ".gun_chairs", "")) : MgrSetting.Label86.Text = (xValue) : MgrSetting.Label86.Text = (xValue) : MgrSetting.Label86.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label86.ForeColor = ColorTranslator.FromHtml(xValue)
+                            If row.Contains(consoles & ".input.port" & i & ".gun_chairs ") Then xValue = Trim(Replace(row, consoles & ".input.port" & i & ".gun_chairs", "")) : MgrSetting.Label86.Text = (xValue) : MgrSetting.Label86.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label86.ForeColor = ColorTranslator.FromHtml(xValue)
                         Case 2
                             If row.Contains(consoles & ".input.pport" & i & ".multitap ") Then xValue = Trim(Replace(row, consoles & ".input.pport" & i & ".multitap", "")) : MgrSetting.CheckBox56.Checked = CBool(xValue)
                             If row.Contains(consoles & ".input.port" & i & " ") Then xValue = Trim(Replace(row, consoles & ".input.port" & i, "")) : MgrSetting.ComboBox38.Text = xValue
                             If row.Contains(consoles & ".input.port" & i & ".memcard ") Then xValue = Trim(Replace(row, consoles & ".input.port" & i & ".memcard", "")) : MgrSetting.CheckBox53.Checked = CBool(xValue)
-                            If row.Contains(consoles & ".input.port" & i & ".gun_chairs ") Then xValue = Trim(Replace(row, consoles & ".input.port" & i & ".gun_chairs", "")) : MgrSetting.Label87.Text = (xValue) : MgrSetting.Label87.Text = (xValue) : MgrSetting.Label87.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label87.ForeColor = ColorTranslator.FromHtml(xValue)
+                            If row.Contains(consoles & ".input.port" & i & ".gun_chairs ") Then xValue = Trim(Replace(row, consoles & ".input.port" & i & ".gun_chairs", "")) : MgrSetting.Label87.Text = (xValue) : MgrSetting.Label87.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label87.ForeColor = ColorTranslator.FromHtml(xValue)
                     End Select
 
                 Next
