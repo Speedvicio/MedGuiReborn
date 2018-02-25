@@ -117,88 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ComboBox52.ToolTip" xml:space="preserve">
-    <value>Default position for switch "Mode".
-Sets the position for the switch to the value specified upon startup and virtual input device change.
-
-digital - Digital(+)
-
-analog - Analog(○)
-Analog mode is not compatible with all games. For some compatible games, 
-analog mode reportedly must be enabled before the game boots up for the game to recognize it properly.</value>
-  </data>
-  <data name="TrackBar16.ToolTip" xml:space="preserve">
-    <value>SCSP output resampler quality.
-0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
-The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
-Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" may bypass the resampler, which can decrease CPU usage by Mednafen,
- and can increase or decrease audio quality, depending on various operating system and hardware factors.
-
- </value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
-  <data name="ComboBox44.ToolTip" xml:space="preserve">
-    <value>Input device for Virtual Port 
-none - none
-
-gamepad - Digital Gamepad
-Standard Saturn digital gamepad.
-
-3dpad - 3D Control Pad
-3D Control Pad
-
-mouse - Mouse
-Mouse
-
-wheel - Steering Wheel
-Arcade Racer/Racing Controller
-
-mission - Mission Stick
-Mission Stick
-
-dmission - Dual Mission
-Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
-
-keyboard - Keyboard (US)
-101-key US keyboard.
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
-
-jpkeyboard - Keyboard (JP)
-89-key Japanese keyboard(e.g. HSS-0129).
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
-  </data>
-  <data name="ComboBox45.ToolTip" xml:space="preserve">
-    <value>Input device for Virtual Port 1
-none - none
-
-gamepad - Digital Gamepad
-Standard Saturn digital gamepad.
-
-3dpad - 3D Control Pad
-3D Control Pad
-
-mouse - Mouse
-Mouse
-
-wheel - Steering Wheel
-Arcade Racer/Racing Controller
-
-mission - Mission Stick
-Mission Stick
-
-dmission - Dual Mission
-Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
-
-keyboard - Keyboard (US)
-101-key US keyboard.
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
-
-jpkeyboard - Keyboard (JP)
-89-key Japanese keyboard(e.g. HSS-0129).
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
-  </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
@@ -234,9 +152,6 @@ wasapi - WASAPI(Exclusive Mode)
 Experimental exclusive-mode WASAPI driver, usable on Windows Vista and newer.
  Use it for lower-latency sound. May not work properly on all sound cards.</value>
   </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
   <data name="ComboBox41.ToolTip" xml:space="preserve">
     <value>Deinterlacer to use for interlaced video.
 weave - Good for low-motion video; can be used in conjunction with negative .scanlines setting values.
@@ -820,6 +735,85 @@ as - China
 br - Brazil
 
 la - Latin America</value>
+  </data>
+  <data name="ComboBox52.ToolTip" xml:space="preserve">
+    <value>Default position for switch "Mode".
+Sets the position for the switch to the value specified upon startup and virtual input device change.
+
+digital - Digital(+)
+
+analog - Analog(○)
+Analog mode is not compatible with all games. For some compatible games, 
+analog mode reportedly must be enabled before the game boots up for the game to recognize it properly.</value>
+  </data>
+  <data name="TrackBar16.ToolTip" xml:space="preserve">
+    <value>SCSP output resampler quality.
+0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
+The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
+Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" may bypass the resampler, which can decrease CPU usage by Mednafen,
+ and can increase or decrease audio quality, depending on various operating system and hardware factors.
+
+ </value>
+  </data>
+  <data name="ComboBox44.ToolTip" xml:space="preserve">
+    <value>Input device for Virtual Port 
+none - none
+
+gamepad - Digital Gamepad
+Standard Saturn digital gamepad.
+
+3dpad - 3D Control Pad
+3D Control Pad
+
+mouse - Mouse
+Mouse
+
+wheel - Steering Wheel
+Arcade Racer/Racing Controller
+
+mission - Mission Stick
+Mission Stick
+
+dmission - Dual Mission
+Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
+
+keyboard - Keyboard (US)
+101-key US keyboard.
+Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
+
+jpkeyboard - Keyboard (JP)
+89-key Japanese keyboard(e.g. HSS-0129).
+Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
+  </data>
+  <data name="ComboBox45.ToolTip" xml:space="preserve">
+    <value>Input device for Virtual Port 1
+none - none
+
+gamepad - Digital Gamepad
+Standard Saturn digital gamepad.
+
+3dpad - 3D Control Pad
+3D Control Pad
+
+mouse - Mouse
+Mouse
+
+wheel - Steering Wheel
+Arcade Racer/Racing Controller
+
+mission - Mission Stick
+Mission Stick
+
+dmission - Dual Mission
+Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
+
+keyboard - Keyboard (US)
+101-key US keyboard.
+Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
+
+jpkeyboard - Keyboard (JP)
+89-key Japanese keyboard(e.g. HSS-0129).
+Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
   </data>
   <data name="CheckBox63.ToolTip" xml:space="preserve">
     <value>Hack to reduce input-&gt;output video latency by 1 frame.  

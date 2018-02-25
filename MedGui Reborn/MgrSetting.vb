@@ -201,9 +201,17 @@ Public Class MgrSetting
         End If
 
         If Val(vmedClear) > 9480 Then
-            ComboBox3.Items.Remove("opengl")
             ComboBox3.Items.Remove("overlay")
             ComboBox3.Items.Remove("sdl")
+            ToolTip1.SetToolTip(ComboBox3, "Video output driver.
+default - Default
+Selects the default video driver. Currently, this is OpenGL for all platforms, but may change in the future if better platform-specific drivers are added.
+
+opengl - OpenGL
+All video-related Mednafen features are available with this video driver.
+
+softfb - Software Blitting to Framebuffer
+Slower with lower-quality scaling than OpenGL, but if you don't have hardware-accelerated OpenGL rendering, it will probably be faster than software OpenGL rendering. Bilinear interpolation not available. OpenGL shaders do not work with this output method, of course.")
         End If
     End Sub
 

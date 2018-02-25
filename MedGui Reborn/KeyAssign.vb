@@ -5,6 +5,11 @@ Public Class KeyAssign
 
     Public Sub TransKeyToSdl()
 
+        If DMedConf = "mednafen" Then
+            TransKeyToSdl_2()
+            Exit Sub
+        End If
+
         'controllo di alcune lettere,IL PROGRAMMA ne segna solo una ma in
         'realtà il sistema permette di leggere anche più tasti contemporaneamente
         Select Case vbtasti
@@ -213,56 +218,460 @@ Public Class KeyAssign
         End Select
     End Sub
 
-    Private Sub SDLkeycode()
-        '* The keyboard syms have been cleverly chosen to map to ASCII */
-        'If UCase(i) = "UNKNOWN" Then sdl = 0
-        'If UCase(i) = "FIRST" Then sdl = 0
-        'If UCase(i) = "CLEAR" Then sdl = 12
-        'If UCase(i) = "EXCLAIM" Then sdl = 33
-        'If UCase(i) = "QUOTEDBL" Then sdl = 34
-        'If UCase(i) = "HASH" Then sdl = 35
-        'If UCase(i) = "DOLLAR" Then sdl = 36
-        'If UCase(i) = "AMPERSAND" Then sdl = 38
-        'If UCase(i) = "LEFTPAREN" Then sdl = 40
-        'If UCase(i) = "RIGHTPAREN" Then sdl = 41
-        'If UCase(i) = "ASTERISK" Then sdl = 42
-        'If UCase(i) = "PLUS" Then sdl = 43
+    Public Sub TransKeyToSdl_2()
+        Select Case vbtasti
+        'Escape
+            Case 27
+                sdl = 41
 
-        'If UCase(i) = "COLON" Then sdl = 58
+'F1
+            Case 112
+                sdl = 58
 
-        'If UCase(i) = "GREATER" Then sdl = 62
-        'If UCase(i) = "QUESTION" Then sdl = 63
-        'If UCase(i) = "AT" Then sdl = 64
+'F2
+            Case 113
+                sdl = 59
 
-        'If UCase(i) = "CARET" Then sdl = 94
-        'If UCase(i) = "UNDERSCORE" Then sdl = 95
+'F3
+            Case 114
+                sdl = 60
 
-        '/* Key state modifier keys */
-        'If UCase(i) = "NUMLOCK" Then sdl = 300
-        'If UCase(i) = "CAPSLOCK" Then sdl = 301
-        'If UCase(i) = "SCROLLOCK" Then sdl = 302
-        'If UCase(i) = "RSHIFT" Then sdl = 303
-        'If UCase(i) = "LSHIFT" Then sdl = 304
-        'If UCase(i) = "RCTRL" Then sdl = 305
-        'If UCase(i) = "LCTRL" Then sdl = 306
-        'If UCase(i) = "RALT" Then sdl = 307
-        'If UCase(i) = "LALT" Then sdl = 308
-        'If UCase(i) = "RMETA" Then sdl = 309
-        'If UCase(i) = "LMETA" Then sdl = 310
-        'If UCase(i) = "LSUPER" Then sdl = 311 '/* Left "Windows" key */
-        'If UCase(i) = "RSUPER" Then sdl = 312 '/* Right "Windows" key */
-        'If UCase(i) = "MODE" Then sdl = 313 '/* "Alt Gr" key */
-        'If UCase(i) = "COMPOSE" Then sdl = 314 '/* Multi-key compose key */
+'F4
+            Case 115
+                sdl = 61
 
-        '/* Miscellaneous function keys */
-        'If i = "Help" Then sdl = 315
-        'If i = "Print" Then sdl = 316
-        'If UCase(i) = "SYSREQ" Then sdl = 317
-        'If UCase(i) = "BREAK" Then sdl = 318
-        'If i = "Menu" Then sdl = 319
-        'If UCase(i) = "POWER" Then sdl = 320 '/* Power Macintosh power key */
-        'If UCase(i) = "EURO" Then sdl = 321 '/* Some european keyboards */
-        'If UCase(i) = "UNDO" Then sdl = 322
+'F5
+            Case 116
+                sdl = 62
+
+'F6
+            Case 117
+                sdl = 63
+
+'F7
+            Case 118
+                sdl = 64
+
+'F8
+            Case 119
+                sdl = 65
+
+'F9
+            Case 120
+                sdl = 66
+
+'F10
+            Case 121
+                sdl = 67
+
+'F11
+            Case 122
+                sdl = 68
+
+'F12
+            Case 123
+                sdl = 69
+
+'D1
+            Case 49
+                sdl = 30
+
+'D2
+            Case 50
+                sdl = 31
+
+'D3
+            Case 51
+                sdl = 32
+
+'D4
+            Case 52
+                sdl = 33
+
+'D5
+            Case 53
+                sdl = 34
+
+'D6
+            Case 54
+                sdl = 35
+
+'D7
+            Case 55
+                sdl = 36
+
+'D8
+            Case 56
+                sdl = 37
+
+'D9
+            Case 57
+                sdl = 38
+
+'D0
+            Case 48
+                sdl = 39
+
+'Q
+            Case 81
+                sdl = 20
+
+'W
+            Case 87
+                sdl = 26
+
+'E
+            Case 69
+                sdl = 8
+
+'R
+            Case 82
+                sdl = 21
+
+'T
+            Case 84
+                sdl = 23
+
+'Y
+            Case 89
+                sdl = 28
+
+'U
+            Case 85
+                sdl = 24
+
+'I
+            Case 73
+                sdl = 12
+
+'O
+            Case 79
+                sdl = 18
+
+'P
+            Case 80
+                sdl = 19
+
+'A
+            Case 65
+                sdl = 4
+
+'S
+            Case 83
+                sdl = 22
+
+'D
+            Case 68
+                sdl = 7
+
+'F
+            Case 70
+                sdl = 9
+
+'G
+            Case 71
+                sdl = 10
+
+'H
+            Case 72
+                sdl = 11
+
+'J
+            Case 74
+                sdl = 13
+
+'K
+            Case 75
+                sdl = 14
+
+'L
+            Case 76
+                sdl = 15
+
+'Z
+            Case 90
+                sdl = 29
+
+'X
+            Case 88
+                sdl = 27
+
+'C
+            Case 67
+                sdl = 6
+
+'V
+            Case 86
+                sdl = 25
+
+'B
+            Case 66
+                sdl = 5
+
+'N
+            Case 78
+                sdl = 17
+
+'M
+            Case 77
+                sdl = 16
+
+'Backslash
+            Case 220
+                sdl = 49
+
+'Unused/Generic
+            Case 223
+                sdl = 96
+
+'Back
+            Case 8
+                sdl = 42
+
+'Tab
+            Case 9
+                sdl = 43
+
+'Return
+            Case 13
+                sdl = 40
+
+'Capital
+            Case 20
+                sdl = 57
+
+'[
+            Case 219
+                sdl = 47
+
+']
+            Case 221
+                sdl = 48
+
+';
+            Case 186
+                sdl = 51
+
+'tilde
+            Case 192
+                sdl = 100
+
+''
+            Case 222
+                sdl = 52
+
+'ShiftKey
+            Case 16
+                sdl = 225
+
+'Bracket
+            Case 226
+                sdl = 47
+
+'comma
+            Case 188
+                sdl = 54
+
+'Period
+            Case 190
+                sdl = 55
+
+'Question
+            Case 191
+                'sdl =
+
+'ControlKey
+            Case 17
+                sdl = 224
+
+'LWin
+            Case 91
+                sdl = 227
+
+'Alt
+            Case 18
+                sdl = 226
+
+'Space
+            Case 32
+                sdl = 44
+
+'RWin
+            Case 92
+                sdl = 231
+
+'Apps
+            Case 93
+                sdl = 101
+
+'PrintScreen
+            Case 44
+                sdl = 70
+
+'Scroll
+            Case 145
+                sdl = 71
+
+'Pause
+            Case 19
+                sdl = 72
+
+'Insert
+            Case 45
+                sdl = 73
+
+'Home
+            Case 36
+                sdl = 74
+
+'PageUp
+            Case 33
+                sdl = 75
+
+'PageDown
+            Case 34
+                sdl = 78
+
+'End
+            Case 35
+                sdl = 77
+
+'Delete
+            Case 46
+                sdl = 76
+
+'Up
+            Case 38
+                sdl = 82
+
+'Down
+            Case 40
+                sdl = 81
+
+'Left
+            Case 37
+                sdl = 80
+
+'Right
+            Case 39
+                sdl = 79
+
+'SelectMedia
+            Case 181
+                sdl = 263
+
+'VolumeMute
+            Case 173
+                sdl = 262
+
+'VolumeDown
+            Case 174
+                sdl = 129
+
+'VolumeUp
+            Case 175
+                sdl = 128
+
+'MediaStop
+            Case 178
+                sdl = 260
+
+'MediaPreviousTrack
+            Case 177
+                sdl = 259
+
+'MediaPlayPause
+            Case 179
+                sdl = 261
+
+'MediaNextTrack
+            Case 176
+                sdl = 258
+
+'LaunchMail
+            Case 180
+                sdl = 265
+
+'BrowserHome
+            Case 172
+                sdl = 264
+
+'LaunchApplication2
+            Case 183
+                'sdl =
+
+'NumLock
+            Case 144
+                sdl = 83
+
+'KP_0
+            Case 96
+                sdl = 98
+
+'KP_1
+            Case 97
+                sdl = 89
+
+'KP_2
+            Case 98
+                sdl = 90
+
+'KP_3
+            Case 99
+                sdl = 91
+
+'KP_4
+            Case 100
+                sdl = 92
+
+'KP_5
+            Case 101
+                sdl = 93
+
+'KP_6
+            Case 102
+                sdl = 94
+
+'KP_7
+            Case 103
+                sdl = 95
+
+'KP_8
+            Case 104
+                sdl = 96
+
+'KP_9
+            Case 105
+                sdl = 97
+
+'Divide
+            Case 111
+                sdl = 84
+
+'Multiply
+            Case 106
+                sdl = 85
+
+'Subtract
+            Case 109
+                sdl = 86
+
+'Add
+            Case 107
+                sdl = 87
+
+'Decimal
+            Case 110
+                sdl = 220
+
+'Clear
+            Case 12
+                sdl = 156
+            Case Else
+                MsgBox(tasti & " with code " & vbtasti & " is not assigned" &
+                vbCrLf & "Please report KEYCODE " & vbtasti & " to MedGuiR topic to add it in the next release", MsgBoxStyle.Information) : tasti = ""
+        End Select
+        sdl = "0x0 " & sdl
     End Sub
 
     Private Sub WriteKeyConf()
@@ -273,11 +682,11 @@ Public Class KeyAssign
         If File.Exists(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg") Then
 
             Dim keylinee As String() = IO.File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
-            For i As Integer = 0 To keylinee.Length - 1
-                If keylinee(i) = kParameter Then
-                    MsgBox(tasti & " already assigned to this Mednafen parameter") : Exit Sub
-                End If
-            Next
+            'For i As Integer = 0 To keylinee.Length - 1
+            'If keylinee(i) = kParameter Then
+            'MsgBox(tasti & " already assigned to this Mednafen parameter") : Exit Sub
+            'End If
+            'Next
 
             For i As Integer = 0 To keylinee.Length - 1
                 If keylinee(i).Contains("command.") And keylinee(i).Contains(" keyboard " & sdl) And keylinee(i).Contains("+") = False Then

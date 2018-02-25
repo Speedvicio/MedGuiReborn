@@ -855,7 +855,7 @@ Partial Class MgrSetting
         '
         'NumericUpDown28
         '
-        Me.NumericUpDown28.Location = New System.Drawing.Point(72, 248)
+        Me.NumericUpDown28.Location = New System.Drawing.Point(72, 250)
         Me.NumericUpDown28.Maximum = New Decimal(New Integer() {32, 0, 0, 0})
         Me.NumericUpDown28.Name = "NumericUpDown28"
         Me.NumericUpDown28.Size = New System.Drawing.Size(43, 20)
@@ -866,7 +866,7 @@ Partial Class MgrSetting
         'Label139
         '
         Me.Label139.AutoSize = True
-        Me.Label139.Location = New System.Drawing.Point(7, 250)
+        Me.Label139.Location = New System.Drawing.Point(7, 252)
         Me.Label139.Name = "Label139"
         Me.Label139.Size = New System.Drawing.Size(57, 13)
         Me.Label139.TabIndex = 102
@@ -875,7 +875,7 @@ Partial Class MgrSetting
         'Label138
         '
         Me.Label138.AutoSize = True
-        Me.Label138.Location = New System.Drawing.Point(210, 250)
+        Me.Label138.Location = New System.Drawing.Point(210, 252)
         Me.Label138.Name = "Label138"
         Me.Label138.Size = New System.Drawing.Size(41, 13)
         Me.Label138.TabIndex = 101
@@ -884,7 +884,7 @@ Partial Class MgrSetting
         'Label137
         '
         Me.Label137.AutoSize = True
-        Me.Label137.Location = New System.Drawing.Point(123, 250)
+        Me.Label137.Location = New System.Drawing.Point(123, 252)
         Me.Label137.Name = "Label137"
         Me.Label137.Size = New System.Drawing.Size(41, 13)
         Me.Label137.TabIndex = 100
@@ -895,7 +895,7 @@ Partial Class MgrSetting
         Me.Label136.BackColor = System.Drawing.SystemColors.Control
         Me.Label136.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label136.ForeColor = System.Drawing.Color.Transparent
-        Me.Label136.Location = New System.Drawing.Point(259, 250)
+        Me.Label136.Location = New System.Drawing.Point(259, 252)
         Me.Label136.Name = "Label136"
         Me.Label136.Size = New System.Drawing.Size(30, 15)
         Me.Label136.TabIndex = 99
@@ -907,7 +907,7 @@ Partial Class MgrSetting
         Me.Label135.BackColor = System.Drawing.SystemColors.Control
         Me.Label135.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label135.ForeColor = System.Drawing.Color.Transparent
-        Me.Label135.Location = New System.Drawing.Point(172, 250)
+        Me.Label135.Location = New System.Drawing.Point(172, 252)
         Me.Label135.Name = "Label135"
         Me.Label135.Size = New System.Drawing.Size(30, 15)
         Me.Label135.TabIndex = 98
@@ -927,7 +927,7 @@ Partial Class MgrSetting
         '
         'NumericUpDown27
         '
-        Me.NumericUpDown27.Location = New System.Drawing.Point(92, 20)
+        Me.NumericUpDown27.Location = New System.Drawing.Point(92, 19)
         Me.NumericUpDown27.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
         Me.NumericUpDown27.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumericUpDown27.Name = "NumericUpDown27"
