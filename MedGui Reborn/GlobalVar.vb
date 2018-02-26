@@ -221,12 +221,13 @@ Module GlobalVar
     End Sub
 
     Public Sub MednafenV()
-        If MedGuiR.TextBox4.Text = "" Then Exit Sub
+        If MedGuiR.TextBox4.Text = "" Or File.Exists(MedGuiR.TextBox4.Text & "\mednafen.exe") = False Then Exit Sub
 
 CheckConfig:
 
         tProcess = "mednafen"
         wDir = MedGuiR.TextBox4.Text
+        Arg = Nothing
         StartProcess()
         'Process.Start(MedGuiR.TextBox4.Text & "\mednafen.exe")
         Threading.Thread.Sleep(2000)
@@ -252,6 +253,7 @@ CheckConfig:
         Dim CountAttemp As Integer = 0
 
 CheckMednafen:
+        Threading.Thread.Sleep(500)
 
         'If File.Exists(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg") = True Then
         'Threading.Thread.Sleep(1000)
