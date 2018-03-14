@@ -75,7 +75,7 @@ You can found the last stable release on:
 * [DiscTools.dll](https://github.com/Asnivor/DiscTools) to detect PSX serial number and PC-FX cue/ccd file
 * ps1titles_us_eu_jp.txt from CaptainCPS-X for get real PSX Name
 * [vgmPlay.exe](http://mjsstuf.x10host.com/pages/vgmPlay/vgmPlay.htm) to convert vgm/vgz file in bin format
-* [Modland](ftp://ftp.modland.com/) server for get all chip music
+* [Modland](http://ftp.modland.com/) server for get all chip music
 * [An FTP client library for .NET 2.0](https://www.codeproject.com/Articles/11991/An-FTP-client-library-for-NET) for perform all ftp job on MedClient session
 * [Mico and Sico](https://sourceforge.net/projects/micosico/?source=directory) to convert png to ico
 * A modified version of [GBS2GB](http://www.angelfire.com/nc/ugetab/) to convert gbs in gb format
