@@ -60,3 +60,22 @@ You can found the last stable release on:
 * [Release](https://github.com/Speedvicio/MedGuiReborn/releases) GitHub section
 * [Official MedGui Reborn topic](https://forum.fobby.net/index.php?t=msg&th=924&start=0&)
 * [SourceForge](https://sourceforge.net/projects/medguireborn/files/Exe/) page
+
+### MedGui Reborn in addiction use this external exe/library:
+* [SevenZipSharp.dll](https://sevenzipsharp.codeplex.com/) for the support at compressed archive
+* [7z.dll](http://www.7-zip.org/download.html) for the support at compressed archive
+* [NoIntro DATs](http://datomatic.no-intro.org/?page=download) for get real name of the rom
+* A modified version of [IrcClient.dll](http://tech.reboot.pro/showthread.php?tid=1706) for IRC Chat support
+* [TheGamesDB](http://thegamesdb.net/) API for Boxart Scraping
+* [SoX](http://sox.sourceforge.net/) for convert/play wav<>ogg file
+* [FMod.dll](https://www.fmod.com/) to play mod in About screen
+* [CoreAudioApi](https://msdn.microsoft.com/en-us/library/windows/desktop/dd370802(v=vs.85).aspx) to manage volume peak for left and right channel on About screen (only on Vista and upper OS)
+* [Multimedia PeakMeter Control](https://www.codeproject.com/Articles/26357/Multimedia-PeakMeter-Control) dll to visualize volume peak on About screen
+* [unecm.exe](https://web.archive.org/web/20130504220128/http://www.neillcorlett.com/cmdpack) to unpack ecm file format
+* [DiscTools.dll](https://github.com/Asnivor/DiscTools) to detect PSX serial number and PC-FX cue/ccd file
+* ps1titles_us_eu_jp.txt from CaptainCPS-X for get real PSX Name
+* [vgmPlay.exe](http://mjsstuf.x10host.com/pages/vgmPlay/vgmPlay.htm) to convert vgm/vgz file in bin format
+* [Modland](ftp://ftp.modland.com/) server for get all chip music
+* [An FTP client library for .NET 2.0](https://www.codeproject.com/Articles/11991/An-FTP-client-library-for-NET) for perform all ftp job on MedClient session
+* [Mico and Sico](https://sourceforge.net/projects/micosico/?source=directory) to convert png to ico
+* A modified version of [GBS2GB](http://www.angelfire.com/nc/ugetab/) to convert gbs in gb format
