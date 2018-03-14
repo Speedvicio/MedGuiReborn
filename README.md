@@ -1,5 +1,4 @@
-# MedGuiReborn
-MedGui Reborn is a frontend (GUI) for Mednafen multi emulator, written in Microsoft Visual Studio Community
+# MedGui Reborn
 
 **MedGui Reborn** ia a Windows Front-End/Gui for [Mednafen](http://mednafen.fobby.net/) multi-system emulator.
 
@@ -47,12 +46,12 @@ For Bugs/Suggestions/Feature Requests or simply to request help, you can refer t
 
 #### First Running
 * Extract MedGuiReborn archive into a folder, run the 'MedGuiR.exe' executable and choose your Mednafen directory.
-* You can import a single file or a entire folder by pressing icon on top left of GUI, or by set defcustom folder on 'Rom Path' section or by drag & drop file/folder into main grid.
+* You can import a single file or a entire folder by pressing icon on top left of GUI, or by set def/custom folder on 'Rom Path' section or by drag & drop file/folder into main grid.
 
 #### Auto Update
-* Automatically download and upgrade using the 'Updates button' (blue icon) locatel into 'General' tab
+* Automatically download and upgrade using the 'Updates button' (blue icon) located into 'General' tab
 ** You can tick 'Force' to update MedGuiR into intermediate version
-* You can update also Mednafen to the last version by 'Updates button' (blue icon) locatel into 'General' tab
+* You can update also Mednafen to the last version by 'Updates button' (blue icon) located into 'General' tab
 * Tick 'Auto' to perform a update control at MedGuiR start (it control the last available MedGuiR and Mednafen release)
 
 ### Download
