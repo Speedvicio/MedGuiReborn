@@ -301,6 +301,10 @@
                     video = video & " -video.fs.display " & CInt(MgrSetting.NumericUpDown27.Value) & " -fps.autoenable " & MgrSetting.CheckBox103.CheckState &
                     " -fps.textcolor " & MgrSetting.Label135.Text & " -fps.bgcolor " & MgrSetting.Label136.Text &
                     " -fps.font " & MgrSetting.ComboBox55.Text & " -fps.position " & MgrSetting.ComboBox56.Text & " -fps.scale " & CInt(MgrSetting.NumericUpDown28.Value)
+
+                    If IO.File.Exists(MedGuiR.TextBox4.Text & "\emu4crt_RESOLUTIONS_NATIVE.txt") Or IO.File.Exists(MedGuiR.TextBox4.Text & "\emu4crt_RESOLUTIONS_SUPER.txt") Then
+                        video = video & " -video.resolution_switch " & MgrSetting.ComboBox57.Text
+                    End If
             End Select
         Next
     End Sub

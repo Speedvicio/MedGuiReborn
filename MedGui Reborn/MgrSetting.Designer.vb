@@ -471,6 +471,8 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.Label142 = New System.Windows.Forms.Label()
+        Me.ComboBox57 = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -1194,6 +1196,8 @@ Partial Class MgrSetting
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Label142)
+        Me.GroupBox5.Controls.Add(Me.ComboBox57)
         Me.GroupBox5.Controls.Add(Me.CheckBox15)
         Me.GroupBox5.Controls.Add(Me.CheckBox14)
         Me.GroupBox5.Controls.Add(Me.TrackBar9)
@@ -5468,6 +5472,30 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'Label142
+        '
+        Me.Label142.AutoSize = True
+        Me.Label142.Location = New System.Drawing.Point(12, 251)
+        Me.Label142.Name = "Label142"
+        Me.Label142.Size = New System.Drawing.Size(115, 13)
+        Me.Label142.TabIndex = 24
+        Me.Label142.Text = "Video resolution switch"
+        Me.Label142.Visible = False
+        '
+        'ComboBox57
+        '
+        Me.ComboBox57.FormattingEnabled = True
+        Me.ComboBox57.Items.AddRange(New Object() {"0", "native", "super"})
+        Me.ComboBox57.Location = New System.Drawing.Point(171, 248)
+        Me.ComboBox57.Name = "ComboBox57"
+        Me.ComboBox57.Size = New System.Drawing.Size(127, 21)
+        Me.ComboBox57.TabIndex = 23
+        Me.ComboBox57.Text = "0"
+        Me.ToolTip1.SetToolTip(Me.ComboBox57, "Video resolution switch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Standard Mednafen resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Native Resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
+        "Same resolution as emulated system." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Super Resolution: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Requires only four 25" &
+        "60 pixel width resolutions." & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9))
+        Me.ComboBox57.Visible = False
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -6068,4 +6096,6 @@ Partial Class MgrSetting
     Friend WithEvents Label136 As Label
     Friend WithEvents Label135 As Label
     Friend WithEvents CheckBox103 As CheckBox
+    Friend WithEvents Label142 As Label
+    Friend WithEvents ComboBox57 As ComboBox
 End Class

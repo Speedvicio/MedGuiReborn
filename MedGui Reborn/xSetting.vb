@@ -271,6 +271,8 @@ Module xSetting
         If row.Contains("video.glvsync ") Then xValue = Trim(Replace(row, "video.glvsync", "")) : MgrSetting.CheckBox5.Checked = CBool(xValue)
         If row.Contains("video.disable_composition ") Then xValue = Trim(Replace(row, "video.disable_composition", "")) : MgrSetting.CheckBox7.Checked = CBool(xValue)
 
+        If row.Contains("video.resolution_switch ") Then xValue = Trim(Replace(row, "video.resolution_switch", "")) : MgrSetting.ComboBox57.Text = xValue
+
         If row.Contains("fps.autoenable ") Then xValue = Trim(Replace(row, "fps.autoenable", "")) : MgrSetting.CheckBox103.Checked = CBool(xValue)
         If row.Contains("fps.font ") Then xValue = Trim(Replace(row, "fps.font", "")) : MgrSetting.ComboBox55.Text = xValue
         If row.Contains("fps.position ") Then xValue = Trim(Replace(row, "fps.position", "")) : MgrSetting.ComboBox56.Text = xValue

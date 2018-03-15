@@ -184,21 +184,24 @@ Module Resource
     End Sub
 
     Public Sub MissingResource()
-        If My.Computer.Network.IsAvailable = True Then
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Resource.zip", MedExtra & "Update\Resource.zip", "anonymous", "anonymous", True, 500, True)
-            SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
-            Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\Resource.zip")
-            szip.ExtractArchive(Application.StartupPath)
+        Try
+            If My.Computer.Network.IsAvailable = True Then
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Resource.zip", MedExtra & "Update\Resource.zip", "anonymous", "anonymous", True, 500, True)
+                SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
+                Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\Resource.zip")
+                szip.ExtractArchive(Application.StartupPath)
 
-            Threading.Thread.Sleep(1000)
+                Threading.Thread.Sleep(1000)
 
-            IO.File.Delete(MedExtra & "Update\Resource.zip")
-            Read_Resource()
-        Else
-            Message.Label1.Text = "Resource file missing, download full MedGui Reborn package from here:" & vbCrLf
-            Message.LinkLabel1.Text = "https://img.shields.io/sourceforge/dt/medguireborn.svg" & vbCrLf
-            Message.ShowDialog()
-        End If
+                IO.File.Delete(MedExtra & "Update\Resource.zip")
+                Read_Resource()
+            Else
+                Message.Label1.Text = "Resource file missing, download full MedGui Reborn package from here:" & vbCrLf
+                Message.LinkLabel1.Text = "https://img.shields.io/sourceforge/dt/medguireborn.svg" & vbCrLf
+                Message.ShowDialog()
+            End If
+        Catch
+        End Try
     End Sub
 
 End Module

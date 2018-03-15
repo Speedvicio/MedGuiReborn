@@ -69,11 +69,13 @@ Module UpdateMednafen
 
     Public Sub UpdateLastMednafen()
         contr_os()
-
-        My.Computer.Network.DownloadFile(UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", MedExtra & "Update\LastMednafen.zip", "", "", True, 500, True)
-        SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
-        Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\LastMednafen.zip")
-        szip.ExtractArchive(MedGuiR.TextBox4.Text)
+        Try
+            My.Computer.Network.DownloadFile(UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", MedExtra & "Update\LastMednafen.zip", "", "", True, 500, True)
+            SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
+            Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\LastMednafen.zip")
+            szip.ExtractArchive(MedGuiR.TextBox4.Text)
+        Catch
+        End Try
 
         Threading.Thread.Sleep(2000)
 

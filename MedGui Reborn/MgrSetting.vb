@@ -212,6 +212,15 @@ All video-related Mednafen features are available with this video driver.
 
 softfb - Software Blitting to Framebuffer
 Slower with lower-quality scaling than OpenGL, but if you don't have hardware-accelerated OpenGL rendering, it will probably be faster than software OpenGL rendering. Bilinear interpolation not available. OpenGL shaders do not work with this output method, of course.")
+
+            If IO.File.Exists(MedGuiR.TextBox4.Text & "\emu4crt_RESOLUTIONS_NATIVE.txt") Or IO.File.Exists(MedGuiR.TextBox4.Text & "\emu4crt_RESOLUTIONS_SUPER.txt") Then
+                Label142.Visible = True
+                ComboBox57.Visible = True
+            Else
+                Label142.Visible = False
+                ComboBox57.Visible = False
+            End If
+
         End If
     End Sub
 
