@@ -63,7 +63,6 @@ AGAIN:
                 'If Val(vmedClear) > 9480 Then
                 If tProcess = "mednafen" Then
                     System.Environment.SetEnvironmentVariable("MEDNAFEN_NOPOPUPS", 1, EnvironmentVariableTarget.Process)
-                    .UseShellExecute = False
                     .FileName = wDir & "\" & tProcess
                     .WindowStyle = ProcessWindowStyle.Hidden
                 Else
@@ -92,7 +91,7 @@ AGAIN:
                 MsgBox("Unable to start " & tProcess, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Process Error")
                 exit sub
             Else
-                countstart += countstart + 1
+                countstart +=  1
                 GoTo AGAIN
             End If
         End Try
