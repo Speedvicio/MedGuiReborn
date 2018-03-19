@@ -61,14 +61,18 @@ AGAIN:
             With execute.StartInfo
 
                 'If Val(vmedClear) > 9480 Then
-                .EnvironmentVariables("MEDNAFEN_NOPOPUPS") = "1"
-                .UseShellExecute = False
-                .FileName = wDir & "\" & tProcess
-                .WindowStyle = ProcessWindowStyle.Hidden
-                'Else
-                '.FileName = tProcess
-                '.WorkingDirectory = wDir
-                'End If
+                If tProcess = "mednafen" Then
+                    System.Environment.SetEnvironmentVariable("MEDNAFEN_NOPOPUPS", 1, EnvironmentVariableTarget.Process)
+                    .UseShellExecute = False
+                    .FileName = wDir & "\" & tProcess
+                    .WindowStyle = ProcessWindowStyle.Hidden
+                Else
+                    System.Environment.SetEnvironmentVariable("MEDNAFEN_NOPOPUPS", Nothing, EnvironmentVariableTarget.Process)
+                    .FileName = tProcess
+                    .WorkingDirectory = wDir
+                    .WindowStyle = ProcessWindowStyle.Normal
+                End If
+                
                 .Arguments = Arg
 
                 Select Case tProcess
@@ -86,7 +90,9 @@ AGAIN:
         Catch ex As Exception
             If countstart > 5 Then
                 MsgBox("Unable to start " & tProcess, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Process Error")
+                exit sub
             Else
+                countstart += countstart + 1
                 GoTo AGAIN
             End If
         End Try
