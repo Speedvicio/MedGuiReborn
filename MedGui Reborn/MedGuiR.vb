@@ -336,10 +336,19 @@ Public Class MedGuiR
         If Len(TextBox1.Text) >= 3 Then LoadCD = "" Else percorso = "\\.\" & percorso
         'If TextBox1.Text.Contains("\\.\*") Then  Else  : LoadCD = ""
 
-        If DataGridView1.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = "" Then
-            M3UDisk = InputBox("Input the disk that you want to load from 1 to " & System.IO.File.ReadAllLines(TextBox1.Text).Length, "Select a CD", "1")
-            If M3UDisk = "" Then Exit Sub
-            M3UDisk = " -which_medium " & (M3UDisk - 1)
+        Dim skipm3u As Boolean = False
+        If MgrSetting.NoCheck = False Then
+            skipm3u = False
+        Else
+            skipm3u = True
+        End If
+
+        If skipm3u = False Then
+            If DataGridView1.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = "" Then
+                M3UDisk = InputBox("Input the disk that you want to load from 1 to " & System.IO.File.ReadAllLines(TextBox1.Text).Length, "Select a CD", "1")
+                If M3UDisk = "" Then Exit Sub
+                M3UDisk = " -which_medium " & (M3UDisk - 1)
+            End If
         End If
 
         Arg = pArg & " " & net & custom & LoadCD & " -force_module " & consoles & tpce & M3UDisk & " " & Chr(34) & percorso & Chr(34)

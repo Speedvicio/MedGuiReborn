@@ -71,7 +71,7 @@ AGAIN:
                     .WorkingDirectory = wDir
                     .WindowStyle = ProcessWindowStyle.Normal
                 End If
-                
+
                 .Arguments = Arg
 
                 Select Case tProcess
@@ -89,9 +89,9 @@ AGAIN:
         Catch ex As Exception
             If countstart > 5 Then
                 MsgBox("Unable to start " & tProcess, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Process Error")
-                exit sub
+                Exit Sub
             Else
-                countstart +=  1
+                countstart += 1
                 GoTo AGAIN
             End If
         End Try
