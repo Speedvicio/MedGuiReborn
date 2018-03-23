@@ -108,9 +108,10 @@ Public Class ModLand
             Button3.Enabled = False
         ElseIf f.Length < 10 Then
             MsgBox("There were problems downloading the file, try again or change the server.", vbOKOnly + vbExclamation, "Error on download...")
-            PictureBox1.BackColor = Color.ForestGreen
-            Button2.Enabled = True
-            Button3.Enabled = True
+            If f.Exists Then f.Delete()
+            PictureBox1.BackColor = Color.DarkRed
+            Button2.Enabled = False
+            Button3.Enabled = False
         Else
             PictureBox1.BackColor = Color.ForestGreen
             Button2.Enabled = True
@@ -146,7 +147,13 @@ Public Class ModLand
                         SingleScan()
                         MedGuiR.DataGridView1.CurrentCell = MedGuiR.DataGridView1(0, MedGuiR.DataGridView1.RowCount - 1)
                         MedGuiR.DataGridView1.Focus()
-                        'Case ".mod", ".s3m", ".xm", ".it", ".midi"
+                    Case ".mod", ".s3m", ".xm", ".it", ".midi"
+                        If File.Exists(Path.Combine(MedExtra, "Plugins\Player\AmicoX.exe")) Then
+                            DownloadDriver()
+                            StartAmicoX()
+                        Else
+                            MsgBox("Mednafen still can not play this format, try an alternative player for your OS", vbOKOnly + MsgBoxStyle.Information)
+                        End If
                     Case Else
                         MsgBox("Mednafen still can not play this format, try an alternative player for your OS", vbOKOnly + MsgBoxStyle.Information)
                 End Select
@@ -157,6 +164,19 @@ Public Class ModLand
 
         End Try
 
+    End Sub
+
+    Private Sub StartAmicoX()
+        Dim FileParameter As String = "-chipfile=" & Chr(34) & MedExtra & "Media/Module" & download & Chr(34)
+
+        If File.Exists(MedExtra & "\Plugins\Player\AmicoX.exe") Then
+            tProcess = "AmicoX"
+            KillProcess()
+            Process.Start(MedExtra & "\Plugins\Player\AmicoX.exe", FileParameter)
+        Else
+            MsgBox("AmicoX Not detected!", vbAbort + vbExclamation, "AmicoX Not detected...")
+        End If
+        FileParameter = ""
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -171,7 +191,7 @@ Public Class ModLand
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim dels As MsgBoxResult = MsgBox("Do you want to delete """ & Path.GetFileName(MedExtra & "/Media/Module" & download) & """ ?", vbOKCancel + vbExclamation)
         If dels = vbOK Then
-            System.IO.File.Delete((MedExtra & "/Media/Module" & download))
+            File.Delete((MedExtra & "/Media/Module" & download))
         End If
     End Sub
 
@@ -180,7 +200,7 @@ Public Class ModLand
         Try
             'Select Case Path.GetExtension(download)
             'Case ".minigsf", ".minipsf", ".psf", ".ssf", ".minissf"
-            Using objReader As New System.IO.StreamReader(MedExtra & "/Media/Module" & download)
+            Using objReader As New StreamReader(MedExtra & "/Media/Module" & download)
                 While objReader.Peek() <> -1
                     Dim LINE As String = objReader.ReadLine()
                     If LINE.Contains("_lib") Then
@@ -264,8 +284,8 @@ Public Class ModLand
                         f.Delete()
                     Next
 
-                    If (System.IO.Directory.GetDirectories(MedExtra & "/Media/Module").Length) > 0 Then
-                        System.IO.Directory.Delete(MedExtra & "/Media/Module/", True)
+                    If (Directory.GetDirectories(MedExtra & "/Media/Module").Length) > 0 Then
+                        Directory.Delete(MedExtra & "/Media/Module/", True)
                     End If
                 Catch ex As Exception
                     If Dir(MedExtra & "/Media/Module/*.*") <> "" Then
@@ -327,7 +347,7 @@ Public Class ModLand
                     End If
                 Next i
                 changechipstate()
-            Catch ex As System.Runtime.InteropServices.ExternalException
+            Catch ex As Runtime.InteropServices.ExternalException
             End Try
         End If
     End Sub
