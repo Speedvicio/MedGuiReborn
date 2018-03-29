@@ -1,5 +1,10 @@
-MedGui Reborn Stable v0.094
-- Improved Recursive Scan
-- Fixed Modchip Driver download for that file that used more than 1 lib
-- Prepared for next mednafen version
+MedGui Reborn Stable v0.095
+- Fixed a bug on Mednafen detection to prevent loop
+- Added support for emu4crt mednafen fork (rename emu4crt into mednafen.exe)
+- Changed Environment Variable setting, to remove it when others process will be recalled from MedGui Reborn.
+- Remove the cd selection popup on M3U when a user save Mednafen setting
+- Added the support to AmicoX player in ModLand Scraper to play ".mod…", ".s3m", ".xm", ".it", ".midi" chiptune file
+
+
+
 
