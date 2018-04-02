@@ -2203,6 +2203,7 @@ inputagain:
     End Sub
 
     Private Sub CheckBox18_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox18.CheckedChanged
+
         If CheckBox18.Checked = True And File.Exists(TextBox4.Text & "\" & DMedConf & ".cfg") Then
             NetIn = True
             ParseMednafenConfig()

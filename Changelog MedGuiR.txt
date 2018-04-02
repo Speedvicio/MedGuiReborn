@@ -4,6 +4,7 @@ MedGui Reborn Stable v0.095
 - Changed Environment Variable setting, to remove it when others process will be recalled from MedGui Reborn.
 - Remove the cd selection popup on M3U when a user save Mednafen setting
 - Added the support to AmicoX player in ModLand Scraper to play ".mod…", ".s3m", ".xm", ".it", ".midi" chiptune file
+- Updated MetroMed to make it compatible with last Mednafen release
 
 
 
