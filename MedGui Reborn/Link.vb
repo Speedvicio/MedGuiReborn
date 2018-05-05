@@ -23,7 +23,7 @@
             Case "EMUPARADISE"
                 _link = "http://www.emuparadise.org/roms/search.php?query=" & MedGuiR.TextBox35.Text
             Case "Free-ISO"
-                _link = "http://free-iso.org/search/?q=" & MedGuiR.TextBox35.Text & "+&t=0"
+                _link = "http://free-iso.org/search/?q=" & MedGuiR.TextBox35.Text & "+&t=0#"
             Case "NITROROMS"
                 _link = "http://nitroroms.com/search/All/" & MedGuiR.TextBox35.Text & "/page-1"
             Case "Planet Emu"

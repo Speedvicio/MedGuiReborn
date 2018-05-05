@@ -87,11 +87,12 @@ AGAIN:
             End With
             execute.Start()
         Catch ex As Exception
-            If countstart > 5 Then
+            If countstart > 10 Then
                 MsgBox("Unable to start " & tProcess, MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Process Error")
                 Exit Sub
             Else
                 countstart += 1
+                'Threading.Thread.Sleep(500)
                 GoTo AGAIN
             End If
         End Try

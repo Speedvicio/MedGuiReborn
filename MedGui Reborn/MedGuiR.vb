@@ -840,7 +840,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
-        _link = "http://sevenzipsharp.codeplex.com/"
+        _link = "https://github.com/speedvicio"
         open_link()
     End Sub
 
@@ -854,12 +854,12 @@ Public Class MedGuiR
         open_link()
     End Sub
 
-    Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel6.LinkClicked
+    Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         _link = "http://emumovies.com/forums/index.php/page/portal"
         open_link()
     End Sub
 
-    Private Sub LinkLabel7_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel7.LinkClicked
+    Private Sub LinkLabel7_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         _link = "http://tech.reboot.pro/showthread.php?tid=1706"
         open_link()
     End Sub
@@ -2317,7 +2317,7 @@ inputagain:
         StartProcess()
 
         'Process.Start(TextBox4.Text & "\mednafen.exe", MenuNet)
-        Threading.Thread.Sleep(500)
+        Threading.Thread.Sleep(2000)
 
         NetToolStripButton.BackColor = Color.Red
         StartStatic_emu()

@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -84,7 +84,6 @@ Partial Class MedGuiR
         Me.Button30 = New System.Windows.Forms.Button()
         Me.Button31 = New System.Windows.Forms.Button()
         Me.Button32 = New System.Windows.Forms.Button()
-        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
         Me.Button42 = New System.Windows.Forms.Button()
         Me.WS = New System.Windows.Forms.ComboBox()
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
@@ -97,7 +96,6 @@ Partial Class MedGuiR
         Me.Button33 = New System.Windows.Forms.Button()
         Me.Button34 = New System.Windows.Forms.Button()
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
         Me.Button35 = New System.Windows.Forms.Button()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
@@ -394,23 +392,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle14
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle15
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -418,9 +416,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle13
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -891,22 +889,10 @@ Partial Class MedGuiR
         Me.ToolTip1.SetToolTip(Me.Button32, "Make a generic Cue/Toc or M3U file")
         Me.Button32.UseVisualStyleBackColor = True
         '
-        'LinkLabel6
-        '
-        Me.LinkLabel6.AutoSize = True
-        Me.LinkLabel6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel6.Location = New System.Drawing.Point(3, 79)
-        Me.LinkLabel6.Name = "LinkLabel6"
-        Me.LinkLabel6.Size = New System.Drawing.Size(62, 13)
-        Me.LinkLabel6.TabIndex = 70
-        Me.LinkLabel6.TabStop = True
-        Me.LinkLabel6.Text = "EmuMovies"
-        Me.ToolTip1.SetToolTip(Me.LinkLabel6, "A great resource for Game Multimedia")
-        '
         'Button42
         '
         Me.Button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button42.Location = New System.Drawing.Point(221, 171)
+        Me.Button42.Location = New System.Drawing.Point(221, 151)
         Me.Button42.Name = "Button42"
         Me.Button42.Size = New System.Drawing.Size(23, 23)
         Me.Button42.TabIndex = 69
@@ -917,7 +903,7 @@ Partial Class MedGuiR
         '
         Me.WS.FormattingEnabled = True
         Me.WS.Items.AddRange(New Object() {"CoolROM", "DOPEROMS", "EMUPARADISE", "Free-ISO", "Planet Emu", "Rom Find", "Rom Hustler", "ROMULATION", "Hacks", "Translations", "Mednafen Bios", "MedGui BoxArt Pack", "MedGui Snaps Pack"})
-        Me.WS.Location = New System.Drawing.Point(6, 146)
+        Me.WS.Location = New System.Drawing.Point(6, 126)
         Me.WS.Name = "WS"
         Me.WS.Size = New System.Drawing.Size(118, 21)
         Me.WS.TabIndex = 67
@@ -952,13 +938,13 @@ Partial Class MedGuiR
         '
         Me.LinkLabel3.AutoSize = True
         Me.LinkLabel3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel3.Location = New System.Drawing.Point(163, 33)
+        Me.LinkLabel3.Location = New System.Drawing.Point(202, 33)
         Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(81, 13)
+        Me.LinkLabel3.Size = New System.Drawing.Size(40, 13)
         Me.LinkLabel3.TabIndex = 63
         Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "SevenZipSharp"
-        Me.ToolTip1.SetToolTip(Me.LinkLabel3, "Great .Net library for support all compression format")
+        Me.LinkLabel3.Text = "GitHub"
+        Me.ToolTip1.SetToolTip(Me.LinkLabel3, "My GitHub project page")
         '
         'LinkLabel2
         '
@@ -1038,23 +1024,11 @@ Partial Class MedGuiR
         Me.ToolTip1.SetToolTip(Me.CheckBox9, "Force update MedGui Reborn to the last intermediate version")
         Me.CheckBox9.UseVisualStyleBackColor = True
         '
-        'LinkLabel7
-        '
-        Me.LinkLabel7.AutoSize = True
-        Me.LinkLabel7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel7.Location = New System.Drawing.Point(166, 79)
-        Me.LinkLabel7.Name = "LinkLabel7"
-        Me.LinkLabel7.Size = New System.Drawing.Size(78, 13)
-        Me.LinkLabel7.TabIndex = 73
-        Me.LinkLabel7.TabStop = True
-        Me.LinkLabel7.Text = "TechLifeForum"
-        Me.ToolTip1.SetToolTip(Me.LinkLabel7, "A great resource for VB .Net programmer and the Home of IrcClient library")
-        '
         'LinkLabel8
         '
         Me.LinkLabel8.AutoSize = True
         Me.LinkLabel8.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel8.Location = New System.Drawing.Point(16, 256)
+        Me.LinkLabel8.Location = New System.Drawing.Point(53, 206)
         Me.LinkLabel8.Name = "LinkLabel8"
         Me.LinkLabel8.Size = New System.Drawing.Size(141, 13)
         Me.LinkLabel8.TabIndex = 74
@@ -1237,7 +1211,7 @@ Partial Class MedGuiR
         '
         Me.CheckBox11.AutoSize = True
         Me.CheckBox11.Enabled = False
-        Me.CheckBox11.Location = New System.Drawing.Point(184, 148)
+        Me.CheckBox11.Location = New System.Drawing.Point(184, 128)
         Me.CheckBox11.Name = "CheckBox11"
         Me.CheckBox11.Size = New System.Drawing.Size(60, 17)
         Me.CheckBox11.TabIndex = 72
@@ -1248,7 +1222,7 @@ Partial Class MedGuiR
         'CheckBox10
         '
         Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(132, 148)
+        Me.CheckBox10.Location = New System.Drawing.Point(132, 128)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(46, 17)
         Me.CheckBox10.TabIndex = 71
@@ -1260,7 +1234,7 @@ Partial Class MedGuiR
         '
         Me.LinkLabel10.AutoSize = True
         Me.LinkLabel10.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel10.Location = New System.Drawing.Point(38, 279)
+        Me.LinkLabel10.Location = New System.Drawing.Point(38, 181)
         Me.LinkLabel10.Name = "LinkLabel10"
         Me.LinkLabel10.Size = New System.Drawing.Size(170, 13)
         Me.LinkLabel10.TabIndex = 78
@@ -1403,7 +1377,7 @@ Partial Class MedGuiR
         '
         Me.LinkLabel11.AutoSize = True
         Me.LinkLabel11.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel11.Location = New System.Drawing.Point(3, 101)
+        Me.LinkLabel11.Location = New System.Drawing.Point(3, 79)
         Me.LinkLabel11.Name = "LinkLabel11"
         Me.LinkLabel11.Size = New System.Drawing.Size(46, 13)
         Me.LinkLabel11.TabIndex = 79
@@ -1415,7 +1389,7 @@ Partial Class MedGuiR
         '
         Me.LinkLabel12.AutoSize = True
         Me.LinkLabel12.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel12.Location = New System.Drawing.Point(184, 101)
+        Me.LinkLabel12.Location = New System.Drawing.Point(182, 79)
         Me.LinkLabel12.Name = "LinkLabel12"
         Me.LinkLabel12.Size = New System.Drawing.Size(60, 13)
         Me.LinkLabel12.TabIndex = 80
@@ -1474,7 +1448,7 @@ Partial Class MedGuiR
         '
         Me.LinkLabel14.AutoSize = True
         Me.LinkLabel14.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel14.Location = New System.Drawing.Point(54, 233)
+        Me.LinkLabel14.Location = New System.Drawing.Point(54, 281)
         Me.LinkLabel14.Name = "LinkLabel14"
         Me.LinkLabel14.Size = New System.Drawing.Size(139, 13)
         Me.LinkLabel14.TabIndex = 81
@@ -1566,7 +1540,7 @@ Partial Class MedGuiR
         '
         Me.LinkLabel15.AutoSize = True
         Me.LinkLabel15.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel15.Location = New System.Drawing.Point(57, 210)
+        Me.LinkLabel15.Location = New System.Drawing.Point(57, 256)
         Me.LinkLabel15.Name = "LinkLabel15"
         Me.LinkLabel15.Size = New System.Drawing.Size(133, 13)
         Me.LinkLabel15.TabIndex = 82
@@ -1612,7 +1586,7 @@ Partial Class MedGuiR
         '
         Me.LinkLabel9.AutoSize = True
         Me.LinkLabel9.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel9.Location = New System.Drawing.Point(163, 256)
+        Me.LinkLabel9.Location = New System.Drawing.Point(87, 231)
         Me.LinkLabel9.Name = "LinkLabel9"
         Me.LinkLabel9.Size = New System.Drawing.Size(72, 13)
         Me.LinkLabel9.TabIndex = 83
@@ -1774,7 +1748,7 @@ Partial Class MedGuiR
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 13)
         Me.Label6.TabIndex = 30
-        Me.Label6.Text = "MedGuiR v.0.095"
+        Me.Label6.Text = "MedGuiR v.0.096"
         '
         'Label7
         '
@@ -3061,10 +3035,8 @@ Partial Class MedGuiR
         Me.Panel6.Controls.Add(Me.LinkLabel11)
         Me.Panel6.Controls.Add(Me.LinkLabel10)
         Me.Panel6.Controls.Add(Me.LinkLabel8)
-        Me.Panel6.Controls.Add(Me.LinkLabel7)
         Me.Panel6.Controls.Add(Me.CheckBox11)
         Me.Panel6.Controls.Add(Me.CheckBox10)
-        Me.Panel6.Controls.Add(Me.LinkLabel6)
         Me.Panel6.Controls.Add(Me.Button42)
         Me.Panel6.Controls.Add(Me.TextBox35)
         Me.Panel6.Controls.Add(Me.WS)
@@ -3082,7 +3054,7 @@ Partial Class MedGuiR
         '
         'TextBox35
         '
-        Me.TextBox35.Location = New System.Drawing.Point(6, 173)
+        Me.TextBox35.Location = New System.Drawing.Point(6, 153)
         Me.TextBox35.Name = "TextBox35"
         Me.TextBox35.Size = New System.Drawing.Size(209, 20)
         Me.TextBox35.TabIndex = 68
@@ -3090,7 +3062,7 @@ Partial Class MedGuiR
         'Label52
         '
         Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(3, 126)
+        Me.Label52.Location = New System.Drawing.Point(3, 106)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(84, 13)
         Me.Label52.TabIndex = 66
@@ -3682,7 +3654,6 @@ Partial Class MedGuiR
     Friend WithEvents RadioButton3 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents LinkLabel6 As System.Windows.Forms.LinkLabel
     Friend WithEvents Button42 As System.Windows.Forms.Button
     Friend WithEvents TextBox35 As System.Windows.Forms.TextBox
     Friend WithEvents WS As System.Windows.Forms.ComboBox
@@ -3714,7 +3685,6 @@ Partial Class MedGuiR
     Friend WithEvents CheckBox10 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox11 As System.Windows.Forms.CheckBox
     Friend WithEvents PDToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LinkLabel7 As System.Windows.Forms.LinkLabel
     Friend WithEvents IRCToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents NetToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents LinkLabel8 As System.Windows.Forms.LinkLabel
