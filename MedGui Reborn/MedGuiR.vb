@@ -276,7 +276,7 @@ Public Class MedGuiR
 
         If consoles = "psx" Then Sbi_Scan()
 
-        If ssetting = 0 Then percorso = ""
+        If ssetting = 0 Then percorso = " "
         tProcess = "mednafen"
         wDir = TextBox4.Text
 
@@ -350,7 +350,7 @@ Public Class MedGuiR
         End If
 
         If skipm3u = False Then
-            If DataGridView1.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = "" Then
+            If DataGridView1.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = Nothing Then
                 M3UDisk = InputBox("Input the disk that you want to load from 1 to " & System.IO.File.ReadAllLines(TextBox1.Text).Length, "Select a CD", "1")
                 If M3UDisk = "" Then Exit Sub
                 M3UDisk = " -which_medium " & (M3UDisk - 1)
@@ -369,7 +369,7 @@ Public Class MedGuiR
         TimerControlMednafen.Enabled = True
         TimerControlMednafen.Start()
 
-        M3UDisk = ""
+        M3UDisk = Nothing
     End Sub
 
     Private Sub VerifyPerSystem()
