@@ -63,7 +63,7 @@ AGAIN:
                 'If Val(vmedClear) > 9480 Then
                 If tProcess = "mednafen" Then
                     System.Environment.SetEnvironmentVariable("MEDNAFEN_NOPOPUPS", 1, EnvironmentVariableTarget.Process)
-                    .FileName = wDir & "\" & tProcess
+                    .FileName = IO.Path.Combine(wDir, tProcess)
                     .WindowStyle = ProcessWindowStyle.Hidden
                 Else
                     System.Environment.SetEnvironmentVariable("MEDNAFEN_NOPOPUPS", Nothing, EnvironmentVariableTarget.Process)

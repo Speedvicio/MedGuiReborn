@@ -332,7 +332,7 @@ Public Class MedGuiR
                 File.Copy(MedExtra & "\NoDesync\" & consoles & tpce & wjoy & ".cfg", TextBox4.Text & "\" & consoles & tpce & ".cfg", True)
             End If
         Else
-            net = ""
+            net = Nothing
             RebuilDesync()
         End If
 
