@@ -279,7 +279,12 @@ Public Class MedGuiR
         If ssetting = 0 Then percorso = ""
         tProcess = "mednafen"
         wDir = TextBox4.Text
-        custom = TextBox2.Text
+
+        If TextBox2.Text.Trim <> "" And TextBox2.Text.Contains("-") Then
+            custom = " " & TextBox2.Text.Trim
+        Else
+            custom = Nothing
+        End If
 
         'Enable NoDesync option
         Dim net As String
@@ -334,6 +339,7 @@ Public Class MedGuiR
         If LoadCD = "" And DataGridView1.SelectedRows.Count <> 0 Then consoles = DataGridView1.CurrentRow.Cells(6).Value()
 
         If Len(TextBox1.Text) >= 3 Then LoadCD = "" Else percorso = "\\.\" & percorso
+        LoadCD = Nothing
         'If TextBox1.Text.Contains("\\.\*") Then  Else  : LoadCD = ""
 
         Dim skipm3u As Boolean = False
@@ -351,7 +357,7 @@ Public Class MedGuiR
             End If
         End If
 
-        Arg = pArg & " " & net & custom & LoadCD & " -force_module " & consoles & tpce & M3UDisk & " " & Chr(34) & percorso & Chr(34)
+        Arg = pArg & net & custom & LoadCD & " -force_module " & consoles & tpce & M3UDisk & " " & Chr(34) & percorso & Chr(34)
 
         'VerifyPerSystem()
 
