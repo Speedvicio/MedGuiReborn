@@ -226,37 +226,37 @@
         Select Case consoles
 
             Case "lynx"
-                pArg = sound & video & filters & various & bios & netplay_ & lynx
+                pArg = sound & video & filters & various & netplay_ & lynx
             Case "gb", "gbc"
-                pArg = sound & video & filters & various & bios & netplay_ & gameboy
+                pArg = sound & video & filters & various & netplay_ & gameboy
             Case "gg"
-                pArg = sound & video & filters & various & bios & netplay_
+                pArg = sound & video & filters & various & netplay_
             Case "gba"
-                pArg = sound & video & filters & various & bios & netplay_
+                pArg = sound & video & filters & various & " -gba.bios " & Chr(34) & MgrSetting.TextBox10.Text & Chr(34) & netplay_
             Case "md"
-                pArg = sound & video & filters & various & bios & netplay_ & genesis
+                pArg = sound & video & filters & various & " -md.cdbios " & Chr(34) & MgrSetting.TextBox14.Text & Chr(34) & netplay_ & genesis
             Case "ngp"
-                pArg = sound & video & filters & various & bios & netplay_ & neogeop
+                pArg = sound & video & filters & various & netplay_ & neogeop
             Case "nes"
-                pArg = sound & video & filters & various & bios & netplay_ & famicom
+                pArg = sound & video & filters & various & " -nes.ggrom " & Chr(34) & MgrSetting.TextBox11.Text & Chr(34) & netplay_ & famicom
             Case "pce", "pce_fast"
-                pArg = sound & video & filters & various & bios & netplay_ & pcengine
+                pArg = sound & video & filters & various & " -pce" & biospce & ".cdbios " & Chr(34) & MgrSetting.TextBox12.Text & Chr(34) & " -pce.gecdbios " & Chr(34) & MgrSetting.TextBox18.Text & Chr(34) & netplay_ & pcengine
             Case "psx"
-                pArg = sound & video & filters & various & bios & netplay_ & psx
+                pArg = sound & video & filters & various & " -psx.bios_eu " & Chr(34) & MgrSetting.TextBox15.Text & Chr(34) & " -psx.bios_jp " & Chr(34) & MgrSetting.TextBox16.Text & Chr(34) & " -psx.bios_na " & Chr(34) & MgrSetting.TextBox17.Text & Chr(34) & netplay_ & psx
             Case "sms"
-                pArg = sound & video & filters & various & bios & netplay_ & mastersystem
+                pArg = sound & video & filters & various & netplay_ & mastersystem
             Case "snes", "snes_faust"
-                pArg = sound & video & filters & various & bios & netplay_ & snes
+                pArg = sound & video & filters & various & netplay_ & snes
             Case "ss"
-                pArg = sound & video & filters & various & bios & netplay_ & ss
+                pArg = sound & video & filters & various & " -ss.bios_jp " & Chr(34) & MgrSetting.TextBox22.Text & Chr(34) & " -ss.bios_na_eu " & Chr(34) & MgrSetting.TextBox23.Text & Chr(34) & netplay_ & ss
             Case "ssfplay"
-                pArg = sound & video & filters & various & bios & netplay_
+                pArg = sound & video & filters & various & netplay_
             Case "vb"
-                pArg = sound & video & filters & various & bios & netplay_ & vboy
+                pArg = sound & video & filters & various & netplay_ & vboy
             Case "wswan"
-                pArg = sound & video & filters & various & bios & netplay_ & wswan
+                pArg = sound & video & filters & various & netplay_ & wswan
             Case "pcfx"
-                pArg = sound & video & filters & various & bios & netplay_ & pcfx
+                pArg = sound & video & filters & various & " -pcfx.bios " & Chr(34) & MgrSetting.TextBox13.Text & Chr(34) & netplay_ & pcfx
             Case "cdplay"
                 pArg = sound & video & filters & various
         End Select
