@@ -117,90 +117,108 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="TrackBar15.ToolTip" xml:space="preserve">
+    <value>SPU output resampler quality.
+
+0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
+The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
+Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" will bypass the resampler, 
+which will decrease CPU usage by Mednafen, and can increase or decrease audio quality, 
+depending on various operating system and hardware factors.</value>
+  </data>
+  <data name="CheckBox51.ToolTip" xml:space="preserve">
+    <value>Enable analog mode combo-button alternate toggle.
+
+When enabled, instead of the configured Analog mode toggle button for the emulated DualShock, 
+use a combination of buttons to toggle it instead. 
+When Select, Start, and all four shoulder buttons are held down for about 1 second, the mode will toggle.</value>
+  </data>
+  <data name="ComboBox38.ToolTip" xml:space="preserve">
+    <value>Input device for Port 2/2A
+
+none - none
+
+gamepad - Digital Gamepad
+PlayStation digital gamepad; SCPH-1080.
+
+dualshock - DualShock
+DualShock gamepad; SCPH-1200. Emulation in Mednafen includes the analog mode toggle button. 
+Rumble is emulated, but currently only supported on Linux, and MS Windows via the XInput API and XInput-compatible gamepads/joysticks. 
+If you're having trouble getting rumble to work on Linux, see if Mednafen is printing out error messages during startup regarding /dev/input/event*, and resolve the issue(s) as necessary.
+
+dualanalog - Dual Analog
+Dual Analog gamepad; SCPH-1180. It is the predecessor/prototype to the more advanced DualShock. Emulated in Mednafen as forced to analog mode, and without rumble.
+
+analogjoy - Analog Joystick
+Flight-game-oriented dual-joystick controller; SCPH-1110. Emulated in Mednafen as forced to analog mode.
+
+mouse - Mouse
+
+negcon - neGcon
+Namco's unconventional twisty racing-game-oriented gamepad; NPC-101.
+
+guncon - GunCon
+Namco's light gun; NPC-103.
+
+justifier - Konami Justifier
+Konami's light gun; SLUH-00017. Rumored to be wrought of the coagulated rage of all who tried to shoot The Dog. 
+If the game you want to play supports the "GunCon", you should use that instead. 
+NOTE: Currently does not work properly when on any of ports 1B-1D and 2B-2D.
+
+dancepad - Dance Pad
+Dingo Dingo Rodeo!</value>
+  </data>
+  <data name="ComboBox37.ToolTip" xml:space="preserve">
+    <value>Input device for Port 1/1A
+
+none - none
+
+gamepad - Digital Gamepad
+PlayStation digital gamepad; SCPH-1080.
+
+dualshock - DualShock
+DualShock gamepad; SCPH-1200. Emulation in Mednafen includes the analog mode toggle button. 
+Rumble is emulated, but currently only supported on Linux, and MS Windows via the XInput API and XInput-compatible gamepads/joysticks. 
+If you're having trouble getting rumble to work on Linux, see if Mednafen is printing out error messages during startup regarding /dev/input/event*, and resolve the issue(s) as necessary.
+
+dualanalog - Dual Analog
+Dual Analog gamepad; SCPH-1180. It is the predecessor/prototype to the more advanced DualShock. Emulated in Mednafen as forced to analog mode, and without rumble.
+
+analogjoy - Analog Joystick
+Flight-game-oriented dual-joystick controller; SCPH-1110. Emulated in Mednafen as forced to analog mode.
+
+mouse - Mouse
+
+negcon - neGcon
+Namco's unconventional twisty racing-game-oriented gamepad; NPC-101.
+
+guncon - GunCon
+Namco's light gun; NPC-103.
+
+justifier - Konami Justifier
+Konami's light gun; SLUH-00017. Rumored to be wrought of the coagulated rage of all who tried to shoot The Dog. 
+If the game you want to play supports the "GunCon", you should use that instead. 
+NOTE: Currently does not work properly when on any of ports 1B-1D and 2B-2D.
+
+dancepad - Dance Pad
+Dingo Dingo Rodeo!</value>
+  </data>
+  <data name="CheckBox63.ToolTip" xml:space="preserve">
+    <value>Hack to reduce input-&gt;output video latency by 1 frame.  
+
+Enabling will increase CPU usage, and may cause video glitches(such as \"jerkiness\") in some oddball games,
+ but most commercially-released games should be fine</value>
+  </data>
+  <data name="NumericUpDown18.ToolTip" xml:space="preserve">
+    <value>0 is lowest quality and latency and CPU usage, 5 is highest quality and latency and CPU usage.
+
+Higher values correspond to better SNR and better preservation of higher frequencies, at the cost of increased computational complexity and a negligible increase in latency.
+Higher values will also slightly increase the probability of sample clipping(relevant if Mednafen's volume control settings are set too high), 
+due to increased (time-domain) ringing.</value>
+  </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
-  <data name="TrackBar8.ToolTip" xml:space="preserve">
-    <value>Enable scanlines with specified opacity.
-Opacity is specified in %; IE a value of "100" will give entirely black scanlines.
-
-Negative values are the same as positive values for non-interlaced video,
-but for interlaced video will cause the scanlines to be overlaid over the previous field's lines
-(only if the video.deinterlacer setting is set to "weave", the default).</value>
-  </data>
-  <data name="ComboBox8.ToolTip" xml:space="preserve">
-    <value>Enable specified special video scaler.
-
-The destination rectangle is NOT altered by this setting, so if you have xscale and yscale set to "2", 
-and try to use a 3x scaling filter like hq3x, the image is not going to look that great. 
-The nearest-neighbor scalers are intended for use with bilinear interpolation enabled, at high resolutions
-(such as 1280x1024; nn2x(or nny2x) + bilinear interpolation + fullscreen stretching at this resolution looks quite nice).
-
-none - None/Disabled
-
-hq2x - hq2x
-
-hq3x - hq3x
-
-hq4x - hq4x
-
-scale2x - scale2x
-
-scale3x - scale3x
-
-scale4x - scale4x
-
-2xsai - 2xSaI
-
-super2xsai - Super 2xSaI
-
-supereagle - Super Eagle
-
-nn2x - Nearest-neighbor 2x
-
-nn3x - Nearest-neighbor 3x
-
-nn4x - Nearest-neighbor 4x
-
-nny2x - Nearest-neighbor 2x, y axis only
-
-nny3x - Nearest-neighbor 3x, y axis only
-
-nny4x - Nearest-neighbor 4x, y axis only</value>
-  </data>
-  <data name="ComboBox7.ToolTip" xml:space="preserve">
-    <value>Enable specified OpenGL shader.
-Obviously, this will only work with the OpenGL "video.driver" setting, and only on cards and OpenGL implementations that support shaders, 
-otherwise you will get a black screen, or Mednafen may display an error message when starting up. 
-When a shader is enabled, the ".videoip" setting is ignored.
-
-none - None/Disabled
-
-autoip - Auto Interpolation
-Will automatically interpolate on each axis if the corresponding effective scaling factor is not an integer.
-
-autoipsharper - Sharper Auto Interpolation
-Same as "autoip", but when interpolation is done, it is done in a manner that will reduce blurriness if possible.
-
-scale2x - Scale2x
-
-sabr - SABR v3.0
-GPU-intensive.
-
-ipsharper - Sharper bilinear interpolation.
-
-ipxnoty - Linear interpolation on X axis only.
-
-ipynotx - Linear interpolation on Y axis only.
-
-ipxnotysharper - Sharper version of "ipxnoty".
-
-ipynotxsharper - Sharper version of "ipynotx".
-
-goat - Simple approximation of a color TV CRT look.
-Intended for fullscreen modes with a vertical resolution of around 1000 to 1500 pixels. 
-Doesn't simulate halation and electron beam energy distribution nuances.</value>
-  </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
@@ -291,6 +309,87 @@ with the maximum reduction in latency being about 1 video frame's time.
  Will work best with emulated systems that are not very computationally expensive to emulate, 
 combined with running on a relatively fast CPU</value>
   </data>
+  <data name="TrackBar8.ToolTip" xml:space="preserve">
+    <value>Enable scanlines with specified opacity.
+Opacity is specified in %; IE a value of "100" will give entirely black scanlines.
+
+Negative values are the same as positive values for non-interlaced video,
+but for interlaced video will cause the scanlines to be overlaid over the previous field's lines
+(only if the video.deinterlacer setting is set to "weave", the default).</value>
+  </data>
+  <data name="ComboBox8.ToolTip" xml:space="preserve">
+    <value>Enable specified special video scaler.
+
+The destination rectangle is NOT altered by this setting, so if you have xscale and yscale set to "2", 
+and try to use a 3x scaling filter like hq3x, the image is not going to look that great. 
+The nearest-neighbor scalers are intended for use with bilinear interpolation enabled, at high resolutions
+(such as 1280x1024; nn2x(or nny2x) + bilinear interpolation + fullscreen stretching at this resolution looks quite nice).
+
+none - None/Disabled
+
+hq2x - hq2x
+
+hq3x - hq3x
+
+hq4x - hq4x
+
+scale2x - scale2x
+
+scale3x - scale3x
+
+scale4x - scale4x
+
+2xsai - 2xSaI
+
+super2xsai - Super 2xSaI
+
+supereagle - Super Eagle
+
+nn2x - Nearest-neighbor 2x
+
+nn3x - Nearest-neighbor 3x
+
+nn4x - Nearest-neighbor 4x
+
+nny2x - Nearest-neighbor 2x, y axis only
+
+nny3x - Nearest-neighbor 3x, y axis only
+
+nny4x - Nearest-neighbor 4x, y axis only</value>
+  </data>
+  <data name="ComboBox7.ToolTip" xml:space="preserve">
+    <value>Enable specified OpenGL shader.
+Obviously, this will only work with the OpenGL "video.driver" setting, and only on cards and OpenGL implementations that support shaders, 
+otherwise you will get a black screen, or Mednafen may display an error message when starting up. 
+When a shader is enabled, the ".videoip" setting is ignored.
+
+none - None/Disabled
+
+autoip - Auto Interpolation
+Will automatically interpolate on each axis if the corresponding effective scaling factor is not an integer.
+
+autoipsharper - Sharper Auto Interpolation
+Same as "autoip", but when interpolation is done, it is done in a manner that will reduce blurriness if possible.
+
+scale2x - Scale2x
+
+sabr - SABR v3.0
+GPU-intensive.
+
+ipsharper - Sharper bilinear interpolation.
+
+ipxnoty - Linear interpolation on X axis only.
+
+ipynotx - Linear interpolation on Y axis only.
+
+ipxnotysharper - Sharper version of "ipxnoty".
+
+ipynotxsharper - Sharper version of "ipynotx".
+
+goat - Simple approximation of a color TV CRT look.
+Intended for fullscreen modes with a vertical resolution of around 1000 to 1500 pixels. 
+Doesn't simulate halation and electron beam energy distribution nuances.</value>
+  </data>
   <data name="ComboBox53.ToolTip" xml:space="preserve">
     <value>Enable specified OpenGL shader.
 Obviously, this will only work with the OpenGL "video.driver" setting, and only on cards and OpenGL implementations that support shaders, 
@@ -317,6 +416,9 @@ for certain characters that can be used in directory traversal, and if found, lo
 Set it to "0" if you want to allow constructs like absolute paths in CUE sheets, but only if you understand the security implications of doing so
 (see "Security Issues" section in the documentation)</value>
   </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
   <data name="CheckBox10.ToolTip" xml:space="preserve">
     <value>Cache entire CD images in memory.
 
@@ -633,92 +735,6 @@ auto - Auto Mode
 Selects "fast" or "accurate" automatically based on an internal database. 
 If the CD image is not recognized, defaults to "fast".</value>
   </data>
-  <data name="TrackBar15.ToolTip" xml:space="preserve">
-    <value>SPU output resampler quality.
-
-0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
-The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
-Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" will bypass the resampler, 
-which will decrease CPU usage by Mednafen, and can increase or decrease audio quality, 
-depending on various operating system and hardware factors.</value>
-  </data>
-  <data name="CheckBox51.ToolTip" xml:space="preserve">
-    <value>Enable analog mode combo-button alternate toggle.
-
-When enabled, instead of the configured Analog mode toggle button for the emulated DualShock, 
-use a combination of buttons to toggle it instead. 
-When Select, Start, and all four shoulder buttons are held down for about 1 second, the mode will toggle.</value>
-  </data>
-  <data name="ComboBox38.ToolTip" xml:space="preserve">
-    <value>Input device for Port 2/2A
-
-none - none
-
-gamepad - Digital Gamepad
-PlayStation digital gamepad; SCPH-1080.
-
-dualshock - DualShock
-DualShock gamepad; SCPH-1200. Emulation in Mednafen includes the analog mode toggle button. 
-Rumble is emulated, but currently only supported on Linux, and MS Windows via the XInput API and XInput-compatible gamepads/joysticks. 
-If you're having trouble getting rumble to work on Linux, see if Mednafen is printing out error messages during startup regarding /dev/input/event*, and resolve the issue(s) as necessary.
-
-dualanalog - Dual Analog
-Dual Analog gamepad; SCPH-1180. It is the predecessor/prototype to the more advanced DualShock. Emulated in Mednafen as forced to analog mode, and without rumble.
-
-analogjoy - Analog Joystick
-Flight-game-oriented dual-joystick controller; SCPH-1110. Emulated in Mednafen as forced to analog mode.
-
-mouse - Mouse
-
-negcon - neGcon
-Namco's unconventional twisty racing-game-oriented gamepad; NPC-101.
-
-guncon - GunCon
-Namco's light gun; NPC-103.
-
-justifier - Konami Justifier
-Konami's light gun; SLUH-00017. Rumored to be wrought of the coagulated rage of all who tried to shoot The Dog. 
-If the game you want to play supports the "GunCon", you should use that instead. 
-NOTE: Currently does not work properly when on any of ports 1B-1D and 2B-2D.
-
-dancepad - Dance Pad
-Dingo Dingo Rodeo!</value>
-  </data>
-  <data name="ComboBox37.ToolTip" xml:space="preserve">
-    <value>Input device for Port 1/1A
-
-none - none
-
-gamepad - Digital Gamepad
-PlayStation digital gamepad; SCPH-1080.
-
-dualshock - DualShock
-DualShock gamepad; SCPH-1200. Emulation in Mednafen includes the analog mode toggle button. 
-Rumble is emulated, but currently only supported on Linux, and MS Windows via the XInput API and XInput-compatible gamepads/joysticks. 
-If you're having trouble getting rumble to work on Linux, see if Mednafen is printing out error messages during startup regarding /dev/input/event*, and resolve the issue(s) as necessary.
-
-dualanalog - Dual Analog
-Dual Analog gamepad; SCPH-1180. It is the predecessor/prototype to the more advanced DualShock. Emulated in Mednafen as forced to analog mode, and without rumble.
-
-analogjoy - Analog Joystick
-Flight-game-oriented dual-joystick controller; SCPH-1110. Emulated in Mednafen as forced to analog mode.
-
-mouse - Mouse
-
-negcon - neGcon
-Namco's unconventional twisty racing-game-oriented gamepad; NPC-101.
-
-guncon - GunCon
-Namco's light gun; NPC-103.
-
-justifier - Konami Justifier
-Konami's light gun; SLUH-00017. Rumored to be wrought of the coagulated rage of all who tried to shoot The Dog. 
-If the game you want to play supports the "GunCon", you should use that instead. 
-NOTE: Currently does not work properly when on any of ports 1B-1D and 2B-2D.
-
-dancepad - Dance Pad
-Dingo Dingo Rodeo!</value>
-  </data>
   <data name="ComboBox43.ToolTip" xml:space="preserve">
     <value>Default region to use.
 
@@ -817,19 +833,6 @@ Emulated keyboard key state is not updated unless input grabbing(by default, map
 jpkeyboard - Keyboard (JP)
 89-key Japanese keyboard(e.g. HSS-0129).
 Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
-  </data>
-  <data name="CheckBox63.ToolTip" xml:space="preserve">
-    <value>Hack to reduce input-&gt;output video latency by 1 frame.  
-
-Enabling will increase CPU usage, and may cause video glitches(such as \"jerkiness\") in some oddball games,
- but most commercially-released games should be fine</value>
-  </data>
-  <data name="NumericUpDown18.ToolTip" xml:space="preserve">
-    <value>0 is lowest quality and latency and CPU usage, 5 is highest quality and latency and CPU usage.
-
-Higher values correspond to better SNR and better preservation of higher frequencies, at the cost of increased computational complexity and a negligible increase in latency.
-Higher values will also slightly increase the probability of sample clipping(relevant if Mednafen's volume control settings are set too high), 
-due to increased (time-domain) ringing.</value>
   </data>
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

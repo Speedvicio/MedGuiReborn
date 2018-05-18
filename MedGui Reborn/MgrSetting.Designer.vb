@@ -78,6 +78,8 @@ Partial Class MgrSetting
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label142 = New System.Windows.Forms.Label()
+        Me.ComboBox57 = New System.Windows.Forms.ComboBox()
         Me.CheckBox15 = New System.Windows.Forms.CheckBox()
         Me.CheckBox14 = New System.Windows.Forms.CheckBox()
         Me.TrackBar9 = New System.Windows.Forms.TrackBar()
@@ -471,8 +473,7 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.Label142 = New System.Windows.Forms.Label()
-        Me.ComboBox57 = New System.Windows.Forms.ComboBox()
+        Me.Label143 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -616,10 +617,10 @@ Partial Class MgrSetting
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 23)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage1.Size = New System.Drawing.Size(310, 283)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Sound"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -763,10 +764,10 @@ Partial Class MgrSetting
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 23)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage2.Size = New System.Drawing.Size(310, 283)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Video"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -1187,9 +1188,9 @@ Partial Class MgrSetting
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.GroupBox5)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 23)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage3.Size = New System.Drawing.Size(310, 283)
         Me.TabPage3.TabIndex = 4
         Me.TabPage3.Text = "Filters"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1215,6 +1216,30 @@ Partial Class MgrSetting
         Me.GroupBox5.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox5.TabIndex = 1
         Me.GroupBox5.TabStop = False
+        '
+        'Label142
+        '
+        Me.Label142.AutoSize = True
+        Me.Label142.Location = New System.Drawing.Point(12, 251)
+        Me.Label142.Name = "Label142"
+        Me.Label142.Size = New System.Drawing.Size(115, 13)
+        Me.Label142.TabIndex = 24
+        Me.Label142.Text = "Video resolution switch"
+        Me.Label142.Visible = False
+        '
+        'ComboBox57
+        '
+        Me.ComboBox57.FormattingEnabled = True
+        Me.ComboBox57.Items.AddRange(New Object() {"0", "native", "super"})
+        Me.ComboBox57.Location = New System.Drawing.Point(171, 248)
+        Me.ComboBox57.Name = "ComboBox57"
+        Me.ComboBox57.Size = New System.Drawing.Size(127, 21)
+        Me.ComboBox57.TabIndex = 23
+        Me.ComboBox57.Text = "0"
+        Me.ToolTip1.SetToolTip(Me.ComboBox57, "Video resolution switch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Standard Mednafen resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Native Resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
+        "Same resolution as emulated system." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Super Resolution: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Requires only four 25" &
+        "60 pixel width resolutions." & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9))
+        Me.ComboBox57.Visible = False
         '
         'CheckBox15
         '
@@ -1341,10 +1366,10 @@ Partial Class MgrSetting
         'TabPage28
         '
         Me.TabPage28.Controls.Add(Me.GroupBox21)
-        Me.TabPage28.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage28.Location = New System.Drawing.Point(4, 23)
         Me.TabPage28.Name = "TabPage28"
         Me.TabPage28.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage28.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage28.Size = New System.Drawing.Size(310, 283)
         Me.TabPage28.TabIndex = 27
         Me.TabPage28.Text = "Goat Filter"
         Me.TabPage28.UseVisualStyleBackColor = True
@@ -1472,15 +1497,16 @@ Partial Class MgrSetting
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.GroupBox4)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 23)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage4.Size = New System.Drawing.Size(310, 283)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Various"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Label143)
         Me.GroupBox4.Controls.Add(Me.CheckBox72)
         Me.GroupBox4.Controls.Add(Me.Button19)
         Me.GroupBox4.Controls.Add(Me.CheckBox60)
@@ -1517,7 +1543,7 @@ Partial Class MgrSetting
         'Button19
         '
         Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button19.Location = New System.Drawing.Point(6, 249)
+        Me.Button19.Location = New System.Drawing.Point(147, 249)
         Me.Button19.Name = "Button19"
         Me.Button19.Size = New System.Drawing.Size(23, 23)
         Me.Button19.TabIndex = 16
@@ -1676,9 +1702,9 @@ Partial Class MgrSetting
         'TabPage5
         '
         Me.TabPage5.Controls.Add(Me.GroupBox19)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 23)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage5.Size = New System.Drawing.Size(310, 283)
         Me.TabPage5.TabIndex = 18
         Me.TabPage5.Text = "Bios"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1952,10 +1978,10 @@ Partial Class MgrSetting
         'TabPage24
         '
         Me.TabPage24.Controls.Add(Me.GroupBox22)
-        Me.TabPage24.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage24.Location = New System.Drawing.Point(4, 23)
         Me.TabPage24.Name = "TabPage24"
         Me.TabPage24.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage24.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage24.Size = New System.Drawing.Size(310, 283)
         Me.TabPage24.TabIndex = 23
         Me.TabPage24.Text = "Bios"
         Me.TabPage24.UseVisualStyleBackColor = True
@@ -2030,9 +2056,9 @@ Partial Class MgrSetting
         'TabPage6
         '
         Me.TabPage6.Controls.Add(Me.GroupBox6)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 23)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage6.Size = New System.Drawing.Size(310, 283)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Net-Play"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -2330,9 +2356,9 @@ Partial Class MgrSetting
         'TabPage7
         '
         Me.TabPage7.Controls.Add(Me.GroupBox3)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 23)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage7.Size = New System.Drawing.Size(310, 283)
         Me.TabPage7.TabIndex = 2
         Me.TabPage7.Text = "Record"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -2536,9 +2562,9 @@ Partial Class MgrSetting
         'TabPage9
         '
         Me.TabPage9.Controls.Add(Me.GroupBox9)
-        Me.TabPage9.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage9.Location = New System.Drawing.Point(4, 23)
         Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage9.Size = New System.Drawing.Size(310, 283)
         Me.TabPage9.TabIndex = 8
         Me.TabPage9.Text = "Neo Geo Pocket"
         Me.TabPage9.UseVisualStyleBackColor = True
@@ -2577,9 +2603,9 @@ Partial Class MgrSetting
         'TabPage10
         '
         Me.TabPage10.Controls.Add(Me.GroupBox10)
-        Me.TabPage10.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage10.Location = New System.Drawing.Point(4, 23)
         Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage10.Size = New System.Drawing.Size(310, 283)
         Me.TabPage10.TabIndex = 9
         Me.TabPage10.Text = "NES"
         Me.TabPage10.UseVisualStyleBackColor = True
@@ -2794,9 +2820,9 @@ Partial Class MgrSetting
         'TabPage11
         '
         Me.TabPage11.Controls.Add(Me.GroupBox11)
-        Me.TabPage11.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage11.Location = New System.Drawing.Point(4, 23)
         Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage11.Size = New System.Drawing.Size(310, 283)
         Me.TabPage11.TabIndex = 10
         Me.TabPage11.Text = "PC Engine/TurboGrafx 16/SuperGrafx"
         Me.TabPage11.UseVisualStyleBackColor = True
@@ -2941,9 +2967,9 @@ Partial Class MgrSetting
         'TabPage12
         '
         Me.TabPage12.Controls.Add(Me.GroupBox12)
-        Me.TabPage12.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage12.Location = New System.Drawing.Point(4, 23)
         Me.TabPage12.Name = "TabPage12"
-        Me.TabPage12.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage12.Size = New System.Drawing.Size(310, 283)
         Me.TabPage12.TabIndex = 11
         Me.TabPage12.Text = "PC Engine/TurboGrafx 16/SuperGrafx"
         Me.TabPage12.UseVisualStyleBackColor = True
@@ -3136,9 +3162,9 @@ Partial Class MgrSetting
         'TabPage13
         '
         Me.TabPage13.Controls.Add(Me.GroupBox13)
-        Me.TabPage13.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage13.Location = New System.Drawing.Point(4, 23)
         Me.TabPage13.Name = "TabPage13"
-        Me.TabPage13.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage13.Size = New System.Drawing.Size(310, 283)
         Me.TabPage13.TabIndex = 12
         Me.TabPage13.Text = "Genesis/MegaDrive"
         Me.TabPage13.UseVisualStyleBackColor = True
@@ -3330,9 +3356,9 @@ Partial Class MgrSetting
         'TabPage14
         '
         Me.TabPage14.Controls.Add(Me.GroupBox14)
-        Me.TabPage14.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage14.Location = New System.Drawing.Point(4, 23)
         Me.TabPage14.Name = "TabPage14"
-        Me.TabPage14.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage14.Size = New System.Drawing.Size(310, 283)
         Me.TabPage14.TabIndex = 13
         Me.TabPage14.Text = "Master System"
         Me.TabPage14.UseVisualStyleBackColor = True
@@ -3475,9 +3501,9 @@ Partial Class MgrSetting
         'TabPage15
         '
         Me.TabPage15.Controls.Add(Me.GroupBox15)
-        Me.TabPage15.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage15.Location = New System.Drawing.Point(4, 23)
         Me.TabPage15.Name = "TabPage15"
-        Me.TabPage15.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage15.Size = New System.Drawing.Size(310, 283)
         Me.TabPage15.TabIndex = 14
         Me.TabPage15.Text = "Super Nintendo"
         Me.TabPage15.UseVisualStyleBackColor = True
@@ -3633,9 +3659,9 @@ Partial Class MgrSetting
         'TabPage16
         '
         Me.TabPage16.Controls.Add(Me.GroupBox16)
-        Me.TabPage16.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage16.Location = New System.Drawing.Point(4, 23)
         Me.TabPage16.Name = "TabPage16"
-        Me.TabPage16.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage16.Size = New System.Drawing.Size(310, 283)
         Me.TabPage16.TabIndex = 15
         Me.TabPage16.Text = "Virtual Boy"
         Me.TabPage16.UseVisualStyleBackColor = True
@@ -3836,9 +3862,9 @@ Partial Class MgrSetting
         'TabPage17
         '
         Me.TabPage17.Controls.Add(Me.GroupBox17)
-        Me.TabPage17.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage17.Location = New System.Drawing.Point(4, 23)
         Me.TabPage17.Name = "TabPage17"
-        Me.TabPage17.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage17.Size = New System.Drawing.Size(310, 283)
         Me.TabPage17.TabIndex = 16
         Me.TabPage17.Text = "Virtual Boy"
         Me.TabPage17.UseVisualStyleBackColor = True
@@ -3927,9 +3953,9 @@ Partial Class MgrSetting
         'TabPage18
         '
         Me.TabPage18.Controls.Add(Me.GroupBox18)
-        Me.TabPage18.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage18.Location = New System.Drawing.Point(4, 23)
         Me.TabPage18.Name = "TabPage18"
-        Me.TabPage18.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage18.Size = New System.Drawing.Size(310, 283)
         Me.TabPage18.TabIndex = 17
         Me.TabPage18.Text = "WonderSwan"
         Me.TabPage18.UseVisualStyleBackColor = True
@@ -4126,9 +4152,9 @@ Partial Class MgrSetting
         'TabPage20
         '
         Me.TabPage20.Controls.Add(Me.GroupBox20)
-        Me.TabPage20.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage20.Location = New System.Drawing.Point(4, 23)
         Me.TabPage20.Name = "TabPage20"
-        Me.TabPage20.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage20.Size = New System.Drawing.Size(310, 283)
         Me.TabPage20.TabIndex = 19
         Me.TabPage20.Text = "PC-FX"
         Me.TabPage20.UseVisualStyleBackColor = True
@@ -4308,9 +4334,9 @@ Partial Class MgrSetting
         Me.TabPage21.Controls.Add(Me.ComboBox35)
         Me.TabPage21.Controls.Add(Me.Label81)
         Me.TabPage21.Controls.Add(Me.ComboBox36)
-        Me.TabPage21.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage21.Location = New System.Drawing.Point(4, 23)
         Me.TabPage21.Name = "TabPage21"
-        Me.TabPage21.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage21.Size = New System.Drawing.Size(310, 283)
         Me.TabPage21.TabIndex = 20
         Me.TabPage21.Text = "PC-FX"
         Me.TabPage21.UseVisualStyleBackColor = True
@@ -4390,9 +4416,9 @@ Partial Class MgrSetting
         Me.TabPage22.Controls.Add(Me.CheckBox53)
         Me.TabPage22.Controls.Add(Me.CheckBox52)
         Me.TabPage22.Controls.Add(Me.CheckBox51)
-        Me.TabPage22.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage22.Location = New System.Drawing.Point(4, 23)
         Me.TabPage22.Name = "TabPage22"
-        Me.TabPage22.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage22.Size = New System.Drawing.Size(310, 283)
         Me.TabPage22.TabIndex = 21
         Me.TabPage22.Text = "PlayStation"
         Me.TabPage22.UseVisualStyleBackColor = True
@@ -4700,10 +4726,10 @@ Partial Class MgrSetting
         Me.TabPage23.Controls.Add(Me.Label83)
         Me.TabPage23.Controls.Add(Me.NumericUpDown13)
         Me.TabPage23.Controls.Add(Me.Label82)
-        Me.TabPage23.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage23.Location = New System.Drawing.Point(4, 23)
         Me.TabPage23.Name = "TabPage23"
         Me.TabPage23.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage23.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage23.Size = New System.Drawing.Size(310, 283)
         Me.TabPage23.TabIndex = 22
         Me.TabPage23.Text = "PlayStation"
         Me.TabPage23.UseVisualStyleBackColor = True
@@ -4845,10 +4871,10 @@ Partial Class MgrSetting
         'TabPage25
         '
         Me.TabPage25.Controls.Add(Me.GroupBox24)
-        Me.TabPage25.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage25.Location = New System.Drawing.Point(4, 23)
         Me.TabPage25.Name = "TabPage25"
         Me.TabPage25.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage25.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage25.Size = New System.Drawing.Size(310, 283)
         Me.TabPage25.TabIndex = 24
         Me.TabPage25.Text = "Saturn"
         Me.TabPage25.UseVisualStyleBackColor = True
@@ -5035,10 +5061,10 @@ Partial Class MgrSetting
         'TabPage27
         '
         Me.TabPage27.Controls.Add(Me.GroupBox23)
-        Me.TabPage27.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage27.Location = New System.Drawing.Point(4, 23)
         Me.TabPage27.Name = "TabPage27"
         Me.TabPage27.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage27.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage27.Size = New System.Drawing.Size(310, 283)
         Me.TabPage27.TabIndex = 26
         Me.TabPage27.Text = "Saturn"
         Me.TabPage27.UseVisualStyleBackColor = True
@@ -5268,10 +5294,10 @@ Partial Class MgrSetting
         Me.TabPage26.Controls.Add(Me.ComboBox46)
         Me.TabPage26.Controls.Add(Me.Label109)
         Me.TabPage26.Controls.Add(Me.ComboBox47)
-        Me.TabPage26.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage26.Location = New System.Drawing.Point(4, 23)
         Me.TabPage26.Name = "TabPage26"
         Me.TabPage26.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage26.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage26.Size = New System.Drawing.Size(310, 283)
         Me.TabPage26.TabIndex = 25
         Me.TabPage26.Text = "Super Nintendo Faust"
         Me.TabPage26.UseVisualStyleBackColor = True
@@ -5472,29 +5498,14 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'Label142
+        'Label143
         '
-        Me.Label142.AutoSize = True
-        Me.Label142.Location = New System.Drawing.Point(12, 251)
-        Me.Label142.Name = "Label142"
-        Me.Label142.Size = New System.Drawing.Size(115, 13)
-        Me.Label142.TabIndex = 24
-        Me.Label142.Text = "Video resolution switch"
-        Me.Label142.Visible = False
-        '
-        'ComboBox57
-        '
-        Me.ComboBox57.FormattingEnabled = True
-        Me.ComboBox57.Items.AddRange(New Object() {"0", "native", "super"})
-        Me.ComboBox57.Location = New System.Drawing.Point(171, 248)
-        Me.ComboBox57.Name = "ComboBox57"
-        Me.ComboBox57.Size = New System.Drawing.Size(127, 21)
-        Me.ComboBox57.TabIndex = 23
-        Me.ComboBox57.Text = "0"
-        Me.ToolTip1.SetToolTip(Me.ComboBox57, "Video resolution switch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Standard Mednafen resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Native Resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
-        "Same resolution as emulated system." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Super Resolution: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Requires only four 25" &
-        "60 pixel width resolutions." & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9))
-        Me.ComboBox57.Visible = False
+        Me.Label143.AutoSize = True
+        Me.Label143.Location = New System.Drawing.Point(3, 254)
+        Me.Label143.Name = "Label143"
+        Me.Label143.Size = New System.Drawing.Size(138, 13)
+        Me.Label143.TabIndex = 18
+        Me.Label143.Text = "Mednafen Key Assignments"
         '
         'MgrSetting
         '
@@ -6098,4 +6109,5 @@ Partial Class MgrSetting
     Friend WithEvents CheckBox103 As CheckBox
     Friend WithEvents Label142 As Label
     Friend WithEvents ComboBox57 As ComboBox
+    Friend WithEvents Label143 As Label
 End Class
