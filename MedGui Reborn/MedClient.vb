@@ -20,6 +20,7 @@ Public Class MedClient
         ParseMednafenConfig()
         TextBox1.Text = Nick
         ParseUsedData()
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerNetPlay.Tick
@@ -219,6 +220,19 @@ tryagain:
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
         TimerRefresh.Interval = NumericUpDown1.Value * 1000
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If UCI.Visible = True Then
+            UCI.Close()
+            UCI.Show()
+        Else
+            UCI.Show()
+        End If
+
+        UCI.txtNick.Text = TextBox1.Text
+        UCI.cmbChannel.Text = "#MedPlay"
+        UCI.btnIRCConnect()
     End Sub
 
     Private Sub StartNetPath()

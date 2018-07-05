@@ -39,7 +39,7 @@
             Case "SnesOrama"
                 _link = "http://snesorama.us/ROMS/?s=%2A&q=" & MedGuiR.TextBox35.Text
             Case "Mednafen Bios"
-                '_link = "ftp://anonymous@speedvicio.dtdns.net/update/firmware.zip"
+                '_link = "ftp://anonymous@speedvicio.ddns.net/update/firmware.zip"
                 DownExtractBios()
             Case "MedGui BoxArt Pack"
                 _link = "https://mega.nz/#!Z2IiWBhC!wovHeRzvXLe8OtFTnIODf4nOxPmKevq0pwdPffGFJlA"
@@ -48,7 +48,7 @@
             Case "Hacks", "Translations"
                 SelectHack()
                 'Case "Test"
-                '_link = "ftp://anonymous@speedvicio.dtdns.net/update/Test/test.rar"
+                '_link = "ftp://anonymous@speedvicio.ddns.net/update/Test/test.rar"
         End Select
     End Sub
 

@@ -263,11 +263,11 @@ Partial Class UCI
     Private WithEvents LabelPort As System.Windows.Forms.Label
     Private WithEvents LabelServer As System.Windows.Forms.Label
     Friend WithEvents cmbChannel As System.Windows.Forms.ComboBox
-    Private WithEvents txtNick As System.Windows.Forms.TextBox
     Private WithEvents txtPort As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmbServer As ComboBox
+    Friend WithEvents txtNick As TextBox
 End Class

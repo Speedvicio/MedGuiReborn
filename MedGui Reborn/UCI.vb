@@ -5,6 +5,10 @@ Public Class UCI
     Public p As New System.Diagnostics.Process
 
     Private Sub btnConnect_Click(sender As System.Object, e As System.EventArgs) Handles btnConnect.Click
+        btnIRCConnect()
+    End Sub
+
+    Public Sub btnIRCConnect()
         If (String.IsNullOrEmpty(cmbServer.Text.Trim())) Then MessageBox.Show("Please specify a server") : Return
         If (String.IsNullOrEmpty(cmbChannel.Text.Trim())) Then MessageBox.Show("Please specify a channel") : Return
         If (String.IsNullOrEmpty(txtNick.Text.Trim())) Then MessageBox.Show("Please specify a nick") : Return
@@ -302,6 +306,10 @@ Public Class UCI
     End Sub
 
     Private Sub ToolTip1_Popup(sender As Object, e As PopupEventArgs) Handles ToolTip1.Popup
+
+    End Sub
+
+    Private Sub rtbOutput_TextChanged(sender As Object, e As EventArgs) Handles rtbOutput.TextChanged
 
     End Sub
 

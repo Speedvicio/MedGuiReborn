@@ -38,6 +38,7 @@ Public Class MedGuiR
         ParseCommandLineArgs()
         FirstStart = False
 
+        If TextBox26.Text = "Speedvicio.dtdns.net" Then TextBox26.Text = "speedvicio.ddns.net"
     End Sub
 
     Private Sub ParseCommandLineArgs()
@@ -2688,7 +2689,8 @@ MisScan:
     Private Sub Button56_MouseClick(sender As Object, e As MouseEventArgs) Handles Button56.MouseDown
         Try
             If e.Button = Windows.Forms.MouseButtons.Right Then
-                TextBox26.Text = "Speedvicio.dtdns.net"
+
+                TextBox26.Text = "speedvicio.ddns.net"
                 TextBox25.Text = "medguir"
                 TextBox24.Text = "Mednafen"
                 TextBox23.Text = "NetPlay"

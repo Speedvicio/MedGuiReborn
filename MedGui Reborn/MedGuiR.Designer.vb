@@ -2256,7 +2256,7 @@ Partial Class MedGuiR
         Me.TextBox26.Name = "TextBox26"
         Me.TextBox26.Size = New System.Drawing.Size(170, 20)
         Me.TextBox26.TabIndex = 41
-        Me.TextBox26.Text = "Speedvicio.dtdns.net"
+        Me.TextBox26.Text = "speedvicio.ddns.net"
         '
         'TabPage3
         '

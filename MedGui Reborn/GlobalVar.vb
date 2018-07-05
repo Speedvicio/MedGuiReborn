@@ -44,7 +44,7 @@ Module GlobalVar
                 If My.Computer.Network.Ping("speedvicio.esy.es") = True Then
                     UpdateServer = "http://speedvicio.esy.es"
                 Else
-                    UpdateServer = "ftp://anonymous@speedvicio.dtdns.net"
+                    UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
                 End If
             End If
         Catch ex As Exception
