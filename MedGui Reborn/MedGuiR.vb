@@ -663,6 +663,7 @@ Public Class MedGuiR
             DataGridView1.Rows.Clear()
             Datagrid_filter()
             RebuildToolStripButton.Enabled = False
+            type_csv = SY.Text
             Exit Sub
         Else
             Button55.Enabled = False

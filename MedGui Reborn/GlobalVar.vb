@@ -18,7 +18,12 @@ Module GlobalVar
         'Startup_Path = ""
         'End If
 
-        MedGuiR.SY.SelectedItem = Startup_Path
+        If Startup_Path = "fav" Then
+            MedGuiR.FavouritesToolStripButton.PerformClick()
+        Else
+            MedGuiR.SY.SelectedItem = Startup_Path
+        End If
+
         GridRMIni()
         NetPlayMini()
 
