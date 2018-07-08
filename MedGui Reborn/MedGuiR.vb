@@ -1402,6 +1402,8 @@ Public Class MedGuiR
                     webSystem = "35"
                 Case "Super Nintendo Entertainment System"
                     webSystem = "6"
+                Case "Sony PlayStation"
+                    webSystem = "10"
                 Case "Sega Saturn"
                     webSystem = "17"
                 Case "PC Engine - TurboGrafx 16"
@@ -1413,7 +1415,7 @@ Public Class MedGuiR
             '<option value="18">Sega Genesis</option>
             '<option value="36">Sega Mega Drive</option>
 
-            _link = "http://thegamesdb.net/search/?searchview=listing&string=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") & "&function=Advanced%20Search&sortBy=&limit=20&page=1&updateview=yes&stringPlatform=" & webSystem
+            _link = "https://thegamesdb.net/search.php?name=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") & "&platformID%5B%5D=" & webSystem
             open_link()
         Catch
         End Try
