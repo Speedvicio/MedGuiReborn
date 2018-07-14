@@ -120,8 +120,8 @@ Module Scrape
 
             If File.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml") And ScrapeForce = 3 Then
                 Dim W As New Net.WebClient
-                'Dim site_scrape As String = "http://thegamesdb.net/api/GetGame.php?exactname=" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "&platform=" & ConsoleID
-                W.DownloadFile("http://thegamesdb.net/api/GetGame.php?" & search & cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                'Dim site_scrape As String = "http://legacy.thegamesdb.net/api/GetGame.php?exactname=" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "&platform=" & ConsoleID
+                W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
 
                 Dim infoReader As System.IO.FileInfo
                 Dim OldXML, NewXML As Integer
@@ -140,8 +140,8 @@ Module Scrape
             ElseIf ScrapeForce = 0 Then
             ElseIf ScrapeForce = 1 Then
                 Dim W As New Net.WebClient
-                'Dim site_scrape As String = "http://thegamesdb.net/api/GetGame.php?exactname=" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "&platform=" & ConsoleID
-                W.DownloadFile("http://thegamesdb.net/api/GetGame.php?" & search & cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                'Dim site_scrape As String = "http://legacy.thegamesdb.net/api/GetGame.php?exactname=" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "&platform=" & ConsoleID
+                W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
             End If
 
             ReadXml()
