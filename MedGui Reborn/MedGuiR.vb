@@ -1382,6 +1382,14 @@ Public Class MedGuiR
             '_link = "http://thegamesdb.net/search/?string=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & " function=Search"
             Dim webSystem As String
             Select Case DataGridView1.CurrentRow.Cells(5).Value()
+                Case "Atari - Lynx"
+                    webSystem = "4924"
+                Case "Bandai - WonderSwan"
+                    webSystem = "4925"
+                Case "Bandai - WonderSwan Color"
+                    webSystem = "4926"
+                Case "Nintendo - Famicom Disk System"
+                    webSystem = "4936"
                 Case "SNK - Neo Geo Pocket"
                     webSystem = "4922"
                 Case "SNK - Neo Geo Pocket Color"
@@ -1398,6 +1406,12 @@ Public Class MedGuiR
                     webSystem = "4918"
                 Case "Sega - Game Gear"
                     webSystem = "20"
+                Case "Sega - Mega Drive - Genesis"
+                    If LCase(DataGridView1.CurrentRow.Cells(2).Value().ToString).Contains("us") Then
+                        webSystem = "18"
+                    Else
+                        webSystem = "36"
+                    End If
                 Case "Sega - Master System - Mark III"
                     webSystem = "35"
                 Case "Super Nintendo Entertainment System"
@@ -1408,6 +1422,8 @@ Public Class MedGuiR
                     webSystem = "17"
                 Case "PC Engine - TurboGrafx 16"
                     webSystem = "34"
+                Case "Virtual Boy"
+                    webSystem = "4918"
             End Select
 
             '<option value="33">Sega 32X</option>
