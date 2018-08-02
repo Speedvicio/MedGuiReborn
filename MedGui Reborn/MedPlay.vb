@@ -256,8 +256,13 @@ Module MedPlay
     End Sub
 
     Public Sub ReadNetPlaySession()
-        CheckPing()
-        MedClient.DataGridView1.Rows.Add(Nick, NGameName, NModule, ping, Server, port, Password, Gamekey, NCRC, NRomName, NMednafenV)
+        Try
+            CheckPing()
+            ping = "Unknown"
+        Catch
+        Finally
+            MedClient.DataGridView1.Rows.Add(Nick, NGameName, NModule, ping, Server, port, Password, Gamekey, NCRC, NRomName, NMednafenV)
+        End Try
     End Sub
 
 End Module

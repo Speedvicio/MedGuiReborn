@@ -556,6 +556,8 @@ Public Class MedGuiR
             record = ""
             'SelectRom()
             'ReadPSValue()
+            consoles = DataGridView1.CurrentRow.Cells(6).Value()
+
             If CheckBox10.Checked = True Then TextBox35.Text = rn
             If CheckBox10.Checked = True And CheckBox11.Checked = True Then TextBox35.Text = rn & " " & DataGridView1.CurrentRow.Cells(2).Value()
 
