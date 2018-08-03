@@ -258,7 +258,7 @@ Module MedPlay
     Public Sub ReadNetPlaySession()
         Try
             CheckPing()
-            ping = "Unknown"
+            If ping = "" Or ping = Nothing Then ping = "Unknown"
         Catch
         Finally
             MedClient.DataGridView1.Rows.Add(Nick, NGameName, NModule, ping, Server, port, Password, Gamekey, NCRC, NRomName, NMednafenV)
