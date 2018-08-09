@@ -121,7 +121,9 @@ Module MedPlay
                     End Select
                 End While
 
-                If NetIn = False Then WriteNetPlaySession()
+                If NetIn = False Then
+                    WriteNetPlaySession()
+                End If
 
                 reader.Dispose()
                 reader.Close()
@@ -129,6 +131,17 @@ Module MedPlay
         Catch
         End Try
     End Sub
+
+    Public Function VerifyForm(ByVal nameForm As String) _
+           As Boolean
+        Dim f As Form
+        For Each f In Application.OpenForms
+            If f.Name = nameForm Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 
     Public Sub WriteNetPlaySession()
 
@@ -151,6 +164,16 @@ Module MedPlay
         fiso.Flush()
         fiso.Dispose()
         fiso.Close()
+
+        'Enable it the next attemp
+        'SendState()
+    End Sub
+
+    Public Sub SendState()
+        If VerifyForm("UCI") And UCI.cmbChannel.Text = "#MedPlay" And UCI.btnConnect.Text = "&Disconnect" Then
+            UCI.txtSend.Text = "/notice " & Nick & " has started a " & NGameName & " session with Mednafen " & NModule & " module"
+            UCI.btnSend.PerformClick()
+        End If
     End Sub
 
     Public Sub CheckCRCNet()

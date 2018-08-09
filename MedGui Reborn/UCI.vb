@@ -134,6 +134,10 @@ Public Class UCI
     End Sub
 
     Private Sub irc_sendnotice(Channel As String, Message As String) Handles irc.NoticeMessage
+        If MedPlay.VerifyForm("MedClient") And cmbChannel.Text = "#MedPlay" Then
+            My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+        End If
+
         rtbOutput.SelectionColor = Color.Goldenrod
         rtbOutput.AppendText(Message & vbNewLine)
         rtbOutput.ScrollToCaret()
