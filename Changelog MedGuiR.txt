@@ -1,4 +1,6 @@
--- Intermediate pre v0.098 --
+MedGui Reborn Stable v0.098
+
+- Fixed bad detection of file extenction (not low case) on compressed file
 - Changed main MedClient server to speedvicio.ddns.net
 - Added favourites as folder selectable at MedGuiR startup (you must to close the GUI with favourites selected)
 - Fixed thegamesdb search button
@@ -8,10 +10,5 @@
 - Fixed a bug detected any times, on wrong "force_mode" parameter passed on Mednafen
 - Fixed a bug on MedClient when a server is not pingable.
 - Fixed a bug on MedInstR.exe, now can overwrite server list and uci correctly
-
-
-MedGui Reborn Stable v0.097
-- Fixed a bug for not saved faust and fast setting on win XP
-- Others bugfix (I've lost track of)
 
 
