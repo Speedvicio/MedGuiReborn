@@ -126,7 +126,7 @@ Module Extract
 
             fileTXT = ""
             For Each ArchiveFileInfo In szip.ArchiveFileData
-                ext = LCase(Path.GetExtension(ArchiveFileInfo.FileName))
+                ext = Path.GetExtension(ArchiveFileInfo.FileName)
                 Select Case LCase(ext)
                     Case ".iso", ".ecm", ".zip", ".rar", ".7z", ".m3u", ".toc", ".cue", ".ccd"
                         consoles = ""

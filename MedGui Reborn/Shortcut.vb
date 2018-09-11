@@ -75,16 +75,6 @@ Module Shortcut
         Else
             DJ = True
             TargetKey.Close()
-            Exit Sub
-        End If
-
-        TargetKey = Registry.LocalMachine.OpenSubKey("SOFTWARE\WOW6432Node\JavaSoft")
-        If TargetKey Is Nothing Then
-            DJ = False
-        Else
-            DJ = True
-            TargetKey.Close()
-            Exit Sub
         End If
     End Sub
 

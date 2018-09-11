@@ -49,11 +49,11 @@ Partial Class MedClient
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.TimerRefresh = New System.Windows.Forms.Timer(Me.components)
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -253,17 +253,6 @@ Partial Class MedClient
         Me.Column11.ReadOnly = True
         Me.Column11.Width = 80
         '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Location = New System.Drawing.Point(762, 238)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(200, 23)
-        Me.Button3.TabIndex = 45
-        Me.Button3.Text = "&Open UCI Client"
-        Me.ToolTip1.SetToolTip(Me.Button3, "Open UCI client and join into MedPlay Channel")
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'TimerRefresh
         '
         Me.TimerRefresh.Interval = 30000
@@ -304,7 +293,17 @@ Partial Class MedClient
         Me.CheckBox2.TabIndex = 44
         Me.CheckBox2.Text = "&Autojoin MedPlay IRC Channel"
         Me.CheckBox2.UseVisualStyleBackColor = True
-        Me.CheckBox2.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.Location = New System.Drawing.Point(762, 238)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(200, 23)
+        Me.Button3.TabIndex = 45
+        Me.Button3.Text = "&Open UCI Client"
+        Me.ToolTip1.SetToolTip(Me.Button3, "Open UCI client and join into MedPlay Channel")
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'MedClient
         '

@@ -1,14 +1,11 @@
-MedGui Reborn Stable v0.098
+MedGui Reborn Stable v0.095
+- Fixed a bug on Mednafen detection to prevent loop
+- Added support for emu4crt mednafen fork (rename emu4crt into mednafen.exe)
+- Changed Environment Variable setting, to remove it when others process will be recalled from MedGui Reborn.
+- Remove the cd selection popup on M3U when a user save Mednafen setting
+- Added the support to AmicoX player in ModLand Scraper to play ".mod…", ".s3m", ".xm", ".it", ".midi" chiptune file
+- Updated MetroMed to make it compatible with last Mednafen release
 
-- Fixed bad detection of file extenction (not low case) on compressed file
-- Changed main MedClient server to speedvicio.ddns.net
-- Added favourites as folder selectable at MedGuiR startup (you must to close the GUI with favourites selected)
-- Fixed thegamesdb search button
-- Swapped thegamesdb games scraper link to (temporany) legacy website 
-- Added missing system on TGDB - Search rom info
-- Fixed detection of java runtime in any circumstance on win 10 
-- Fixed a bug detected any times, on wrong "force_mode" parameter passed on Mednafen
-- Fixed a bug on MedClient when a server is not pingable.
-- Fixed a bug on MedInstR.exe, now can overwrite server list and uci correctly
+
 
 
