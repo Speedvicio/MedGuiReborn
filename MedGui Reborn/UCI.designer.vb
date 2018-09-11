@@ -253,10 +253,7 @@ Partial Class UCI
         Me.PerformLayout()
 
     End Sub
-    Private WithEvents btnConnect As System.Windows.Forms.Button
     Private WithEvents rtbOutput As System.Windows.Forms.RichTextBox
-    Private WithEvents btnSend As System.Windows.Forms.Button
-    Private WithEvents txtSend As System.Windows.Forms.TextBox
     Private WithEvents lstUsers As System.Windows.Forms.ListBox
     Private WithEvents label2 As System.Windows.Forms.Label
     Private WithEvents label1 As System.Windows.Forms.Label
@@ -270,4 +267,7 @@ Partial Class UCI
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmbServer As ComboBox
     Friend WithEvents txtNick As TextBox
+    Public WithEvents btnConnect As Button
+    Public WithEvents txtSend As TextBox
+    Public WithEvents btnSend As Button
 End Class
