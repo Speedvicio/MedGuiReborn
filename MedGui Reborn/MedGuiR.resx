@@ -180,12 +180,6 @@ START = Swap from list rom to Tabcontrol</value>
 Useful on any ostic GBA game with "save backup message error" for Example:
 - Pokemon - Versione Smeraldo (Italy)</value>
   </data>
-  <data name="Button48.ToolTip" xml:space="preserve">
-    <value>Search PSX Cue Sheet in Redump.org on your default browser
-- Click on Download: SHA1 • MD5 • SFV • """"Cuesheet""""
-to download the correct PSX Cue, and put it in the same path of original
-.bin file.</value>
-  </data>
   <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>
   </metadata>
