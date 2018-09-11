@@ -213,7 +213,7 @@ Module xSetting
         If row.Contains(p_c & ".videoip ") Then xValue = Trim(Replace(row, p_c & ".videoip", "")) : MgrSetting.ComboBox9.Text = xValue
         If row.Contains(p_c & ".xres ") Then xValue = Trim(Replace(row, p_c & ".xres", "")) : MgrSetting.ComboBox6.Text = xValue
         If row.Contains(p_c & ".xscale ") Then xValue = Trim(Replace(row, p_c & ".xscale", "")) : MgrSetting.NumericUpDown3.Value = Val(xValue)
-        If row.Contains(p_c & ".xscalefs ") Then xValue = Trim(Replace(row, p_c & ".xscalefs", "")) : MgrSetting.NumericUpDown6.Value = Val(xValue)
+        If row.Contains(p_c & ".xscalefs ") Then xValue = Trim(Replace(row, p_c & ".xscalefs", "")) : MgrSetting.NumericUpDown5.Value = Val(xValue)
 
         If row.Contains(p_c & ".yres ") Then
             xValue = Trim(Replace(row, p_c & ".yres", ""))
@@ -224,7 +224,7 @@ Module xSetting
         End If
 
         If row.Contains(p_c & ".yscale ") Then xValue = Trim(Replace(row, p_c & ".yscale", "")) : MgrSetting.NumericUpDown4.Value = Val(xValue)
-        If row.Contains(p_c & ".yscalefs ") Then xValue = Trim(Replace(row, p_c & ".yscalefs", "")) : MgrSetting.NumericUpDown5.Value = Val(xValue)
+        If row.Contains(p_c & ".yscalefs ") Then xValue = Trim(Replace(row, p_c & ".yscalefs", "")) : MgrSetting.NumericUpDown6.Value = Val(xValue)
 
         'BIOS
         If row.Contains("gba.bios ") Then xValue = Trim(Replace(row, "gba.bios", "")) : MgrSetting.TextBox10.Text = xValue
