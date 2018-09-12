@@ -91,6 +91,25 @@ Public Class IsoSelector
         End Select
     End Sub
 
+    Public Sub DetectM3U()
+        Dim percorsoM3U As String = percorso
+
+        Dim righe As String() = File.ReadAllLines(percorso)
+
+        For i = 0 To 10
+            If LCase(righe(i)).Contains("\") Then
+                percorso = righe(i)
+                Exit For
+            ElseIf Trim(righe(i)) <> "" Then
+                percorso = Path.Combine(Path.GetDirectoryName(percorso), righe(i))
+                Exit For
+            End If
+        Next
+
+        detectcdtype()
+        percorso = percorsoM3U
+    End Sub
+
     Private Sub unrecognizedwithAsni()
 
         Dim offset As Long

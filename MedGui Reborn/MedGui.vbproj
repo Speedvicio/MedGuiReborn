@@ -76,9 +76,8 @@
     <Reference Include="FTPclient">
       <HintPath>.\FTPclient.dll</HintPath>
     </Reference>
-    <Reference Include="IrcClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\IrcClient.dll</HintPath>
+    <Reference Include="IrcClient">
+      <HintPath>.\IrcClient.dll</HintPath>
     </Reference>
     <Reference Include="PeakMeterCtrl">
       <HintPath>.\PeakMeterCtrl.dll</HintPath>

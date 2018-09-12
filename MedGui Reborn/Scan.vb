@@ -309,7 +309,21 @@ Module scan
                         End If
                     End If
                 End If
-            Case ".toc", ".m3u"
+            Case ".m3u"
+                If skipother = True Then
+                    IsoSelector.DetectM3U()
+                Else
+                    If stopiso = False Then
+                        If stopscan = False Then
+                            If MedGuiR.CheckBox21.Checked = True Then
+                                IsoSelector.DetectM3U()
+                            Else
+                                cd_consoles()
+                            End If
+                        End If
+                    End If
+                End If
+            Case ".toc"
                 If skipother = False Then
                     If stopiso = False Then
                         If stopscan = False Then cd_consoles()

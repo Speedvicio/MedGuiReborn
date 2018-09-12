@@ -130,6 +130,24 @@ Module GlobalVar
                 End If
             End If
 
+            If File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") = False Then
+                If My.Computer.Network.IsAvailable = True Then
+                    My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/PeakMeterCtrl.txt", Application.StartupPath & "\PeakMeterCtrl.dll", "anonymous", "anonymous", True, 500, True)
+                End If
+            End If
+
+            If File.Exists(Application.StartupPath & "\CoreAudioApi.dll") = False Then
+                If My.Computer.Network.IsAvailable = True Then
+                    My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/CoreAudioApi.txt", Application.StartupPath & "\CoreAudioApi.dll", "anonymous", "anonymous", True, 500, True)
+                End If
+            End If
+
+            If File.Exists(Application.StartupPath & "\fmod.dll") = False Then
+                If My.Computer.Network.IsAvailable = True Then
+                    My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/fmod.txt", Application.StartupPath & "\fmod.dll", "anonymous", "anonymous", True, 500, True)
+                End If
+            End If
+
             If File.Exists(Application.StartupPath & "\LinqBridge.dll") = False Then
                 If My.Computer.Network.IsAvailable = True Then
                     My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/LinqBridge.txt", Application.StartupPath & "\LinqBridge.dll", "anonymous", "anonymous", True, 500, True)
