@@ -522,7 +522,7 @@ Module scan
                 gif = "pce"
             Case "Sega - Master System - Mark III"
                 gif = "sms"
-            Case "Super Nintendo Entertainment System", "Super Nintendo Entertainment System - Music Module"
+            Case "Super Nintendo Entertainment System", "Super Nintendo - Music Module"
                 gif = "snes"
             Case "Sega Saturn", "Sega Saturn - Music Module"
                 gif = "ss"
