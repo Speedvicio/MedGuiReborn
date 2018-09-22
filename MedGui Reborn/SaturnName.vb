@@ -7,18 +7,23 @@ Module SaturnName
 
     Public Function cleansaturn(ByVal cleanstring As String) As String
         Dim i1, i2, i3 As Integer
-
+        Dim i4() As String
         i3 = cleanstring.IndexOf("-1/")
         If i3 < 0 Then i3 = cleanstring.IndexOf("-1\")
         clearregionsaturn = Mid(cleanstring, i3 + 5, 10).Trim
         i1 = cleanstring.IndexOf("V") - 10
         cleanstring = cleanstring.Remove(0, i1).Trim
+        i4 = Split(cleanstring, "CD-")
+        cdn = "CD-" & i4(1).Substring(0, 3)
+
         i2 = cleanstring.IndexOf(" ")
         cleanstring = cleanstring.Remove(i2, Len(cleanstring) - i2).Trim
         cleansaturn = cleanstring
     End Function
 
     Public Sub ReadIsoSaturn()
+        cdn = ""
+
         Try
             DetectIsoSaturn()
             Dim buffer As String
@@ -45,7 +50,6 @@ Module SaturnName
     End Sub
 
     Private Sub ReadDbSaturn()
-        cdn = ""
         SaturnUndetected()
 
         Using reader As New StreamReader(MedExtra & "\Plugins\db\Sega - Saturn.txt")
@@ -84,15 +88,18 @@ Module SaturnName
         Try
             Dim CDinspector = DiscInspector.ScanSaturn(percorso)
             cdn = " " & CDinspector.Data.DeviceInformation
+        Catch
+        End Try
+
+        If cdn <> "" Then
             Select Case cdn.Trim
                 Case "CD-1/1", "CD-1\1"
                     cdn = ""
                 Case Else
                     cdn = Replace(Left(cdn.Trim, 4), "-", "")
             End Select
-        Catch
-            cdn = ""
-        End Try
+        End If
+
         '��������
     End Sub
 

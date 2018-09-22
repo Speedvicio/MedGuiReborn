@@ -1794,7 +1794,7 @@ Partial Class MedGuiR
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SY, Me.RebuildToolStripButton, Me.toolStripSeparator, Me.RecentToolStripButton1, Me.LoadCDToolStripButton, Me.FavouritesToolStripButton, Me.FoldeRomToolStripButton, Me.LoadRomToolStripButton, Me.TextBox1, Me.toolStripSeparator1, Me.NetToolStripButton, Me.ServerToolStripButton, Me.IRCToolStripButton, Me.ModLandToolStripButton, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.TextBox3, Me.FlagToolStripSplitButton, Me.FindToolStripButton})
         Me.ToolStrip1.Location = New System.Drawing.Point(12, 6)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(755, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(701, 25)
         Me.ToolStrip1.TabIndex = 34
         Me.ToolStrip1.Text = "ToolStrip1"
         '
