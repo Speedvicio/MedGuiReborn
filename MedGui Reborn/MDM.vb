@@ -131,6 +131,7 @@ Public Class MDM
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         cleaning()
         ComboBox1.Items.Clear()
         Read_Resource()

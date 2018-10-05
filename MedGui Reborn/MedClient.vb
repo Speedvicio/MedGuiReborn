@@ -10,6 +10,7 @@ Public Class MedClient
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         If Directory.Exists(MedExtra & "\MedPlay") = False Then Directory.CreateDirectory(MedExtra & "\MedPlay")
         Label4.Text = MedGuiR.Label8.Text & " " & MedGuiR.Label57.Text
         NMedVersion = MedGuiR.Label8.Text.Split("v.")

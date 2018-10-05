@@ -990,6 +990,7 @@ MedExtra & "Backup\" & p_c & ".cfg", _KPar & "= " & tasti & vbCrLf, True)
     End Sub
 
     Private Sub KeyAssign_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         LoadKeyForm()
         F1 = Me
         CenterForm()

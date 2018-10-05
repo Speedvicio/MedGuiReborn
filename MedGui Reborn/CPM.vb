@@ -225,6 +225,7 @@ ErrorHandler:
     End Sub
 
     Private Sub CPM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         Read_Resource()
         Load_Def_Pal()
         Refresh_listbox()

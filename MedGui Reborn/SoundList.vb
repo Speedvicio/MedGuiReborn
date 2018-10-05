@@ -80,6 +80,7 @@
     End Sub
 
     Private Sub SoundList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         Read_Resource()
         F1 = Me
         CenterForm()

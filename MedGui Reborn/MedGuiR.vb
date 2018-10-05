@@ -6,6 +6,8 @@ Public Class MedGuiR
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart As Boolean
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        gIcon = My.Resources.MedGuiR
+        Me.Icon = gIcon
         'Dim process_med() As Process
         'process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
         'If process_med.Length > 0 Then

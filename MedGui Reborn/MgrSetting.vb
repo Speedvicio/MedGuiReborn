@@ -246,6 +246,7 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
     End Sub
 
     Private Sub Setting_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         ComboBox6.Items.Clear()
         ComboBox6.Items.Add("0x0")
         ComboBox6.Items.AddRange(SupportedScrnSizes.GetSizesAsStrings)

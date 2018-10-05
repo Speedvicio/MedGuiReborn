@@ -2,6 +2,7 @@
     Private AudioAbout As New Audio
 
     Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         PictureBox1.Load(MedExtra & "Resource\Gui\MedGuiR.png")
         Label2.Text = "Version: " & Replace(MedGuiR.Label6.Text, "MedGuiR v.", "")
 

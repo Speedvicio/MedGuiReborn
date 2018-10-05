@@ -5,6 +5,8 @@ Module GlobalVar
     Public Startup_Path, UCInick, UCIserver, UCIport, UCIchannel, vmedClear, MedShader, UpdateServer, MGRH,
     JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf As String, forMax, stopiso, noftp As Boolean
 
+    Public gIcon As Icon
+
     Public Sub Startup_setting()
         GeneralRMIni()
         DirectoryRMIni()

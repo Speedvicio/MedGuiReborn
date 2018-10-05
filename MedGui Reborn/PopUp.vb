@@ -7,7 +7,7 @@
 
     Private Sub PopUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' BackgroundImage = New Bitmap(PopupPic)
-
+        Me.Icon = gIcon
         MedGuiR.TopMost = False
         TopMost = True
 

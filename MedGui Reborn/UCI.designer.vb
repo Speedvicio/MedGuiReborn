@@ -23,7 +23,6 @@ Partial Class UCI
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCI))
         Me.btnConnect = New System.Windows.Forms.Button()
         Me.rtbOutput = New System.Windows.Forms.RichTextBox()
         Me.btnSend = New System.Windows.Forms.Button()
@@ -245,7 +244,6 @@ Partial Class UCI
         Me.Controls.Add(Me.btnSend)
         Me.Controls.Add(Me.txtSend)
         Me.Controls.Add(Me.lstUsers)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "UCI"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ultra Crappy IRC"

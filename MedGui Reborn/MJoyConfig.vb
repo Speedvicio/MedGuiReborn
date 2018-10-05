@@ -2,6 +2,7 @@
     Dim buttonjoypad, povjoypad As String, ArrTxt(11) As TextBox, yi As Integer
 
     Private Sub MJoyConfig_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         If MedGuiR.CheckBox16.Checked = True Then MedGuiR.TimerControlJoy.Stop()
         SetPad()
         InitJoy()

@@ -23,7 +23,6 @@ Partial Class Standard_Conf
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Standard_Conf))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.S_PASS = New System.Windows.Forms.TextBox()
         Me.Label96 = New System.Windows.Forms.Label()
@@ -230,7 +229,6 @@ Partial Class Standard_Conf
         Me.Controls.Add(Me.Label93)
         Me.Controls.Add(Me.Button1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Standard_Conf"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

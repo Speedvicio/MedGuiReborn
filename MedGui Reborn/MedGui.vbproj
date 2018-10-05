@@ -64,7 +64,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>MedGuiR.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\MedGuiR.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CoreAudioApi">
@@ -439,6 +439,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MedGuiR.ico" />
+    <None Include="Resources\MedGuiR.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

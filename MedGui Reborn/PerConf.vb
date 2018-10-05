@@ -3,6 +3,7 @@
 Public Class PerConf
 
     Private Sub PerConf_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         Refresh_listbox()
         F1 = Me
         CenterForm()

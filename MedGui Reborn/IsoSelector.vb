@@ -6,6 +6,7 @@ Public Class IsoSelector
     Dim cd_button As Integer
 
     Private Sub IsoSelector_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         Read_Resource()
         If Val(vmedClear) >= 9440 Then
             If LCase(ext) = ".m3u" Then

@@ -3,6 +3,7 @@
     Public ncolor As Color
 
     Private Sub Alpha_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         PictureBox1.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\alpha.png"))
         ncolor = Nothing
         ocolor = PictureBox1.BackColor

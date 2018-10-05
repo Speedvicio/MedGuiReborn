@@ -249,6 +249,7 @@ Public Class UCI
     End Sub
 
     Private Sub SIrClient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         Dim rnd1 As New Random()
 
         If GlobalVar.UCInick = "" Then

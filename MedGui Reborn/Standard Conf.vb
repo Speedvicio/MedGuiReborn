@@ -24,6 +24,7 @@ Public Class Standard_Conf
     End Sub
 
     Private Sub Standard_Conf_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
         F1 = Me
         CenterForm()
     End Sub

@@ -23,7 +23,6 @@ Partial Class About
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -32,6 +31,8 @@ Partial Class About
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.PeakMeterCtrl2 = New Ernzo.WinForms.Controls.PeakMeterCtrl()
         Me.PeakMeterCtrl1 = New Ernzo.WinForms.Controls.PeakMeterCtrl()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -44,8 +45,7 @@ Partial Class About
         Me.Label7 = New System.Windows.Forms.Label()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -87,12 +87,14 @@ Partial Class About
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox1.Location = New System.Drawing.Point(6, 10)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(70, 70)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Click to change random music ")
         '
         'Panel2
         '
@@ -146,6 +148,31 @@ Partial Class About
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(286, 196)
         Me.Panel3.TabIndex = 5
+        '
+        'LinkLabel4
+        '
+        Me.LinkLabel4.AutoSize = True
+        Me.LinkLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel4.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LinkLabel4.LinkColor = System.Drawing.Color.MediumOrchid
+        Me.LinkLabel4.Location = New System.Drawing.Point(104, 107)
+        Me.LinkLabel4.Name = "LinkLabel4"
+        Me.LinkLabel4.Size = New System.Drawing.Size(78, 16)
+        Me.LinkLabel4.TabIndex = 89
+        Me.LinkLabel4.TabStop = True
+        Me.LinkLabel4.Text = "Beatkitchen"
+        Me.LinkLabel4.VisitedLinkColor = System.Drawing.Color.Gold
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(120, 91)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(47, 16)
+        Me.Label10.TabIndex = 88
+        Me.Label10.Text = "Logo:"
         '
         'PeakMeterCtrl2
         '
@@ -302,31 +329,6 @@ Partial Class About
         '
         Me.Timer1.Interval = 1
         '
-        'LinkLabel4
-        '
-        Me.LinkLabel4.AutoSize = True
-        Me.LinkLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel4.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel4.LinkColor = System.Drawing.Color.MediumOrchid
-        Me.LinkLabel4.Location = New System.Drawing.Point(104, 107)
-        Me.LinkLabel4.Name = "LinkLabel4"
-        Me.LinkLabel4.Size = New System.Drawing.Size(78, 16)
-        Me.LinkLabel4.TabIndex = 89
-        Me.LinkLabel4.TabStop = True
-        Me.LinkLabel4.Text = "Beatkitchen"
-        Me.LinkLabel4.VisitedLinkColor = System.Drawing.Color.Gold
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(120, 91)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(47, 16)
-        Me.Label10.TabIndex = 88
-        Me.Label10.Text = "Logo:"
-        '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -337,7 +339,6 @@ Partial Class About
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "About"
@@ -375,4 +376,5 @@ Partial Class About
     Friend WithEvents Timer1 As Timer
     Friend WithEvents LinkLabel4 As LinkLabel
     Friend WithEvents Label10 As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
