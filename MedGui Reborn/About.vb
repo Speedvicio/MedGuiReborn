@@ -55,6 +55,11 @@
         open_link()
     End Sub
 
+    Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
+        _link = "https://www.instagram.com/da_beatkitchen/"
+        open_link()
+    End Sub
+
     Private Sub About_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         If IO.File.Exists(Application.StartupPath & "\fmod.dll") Then
             AudioAbout.StopMusic()

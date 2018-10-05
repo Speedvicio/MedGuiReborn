@@ -44,6 +44,8 @@ Partial Class About
         Me.Label7 = New System.Windows.Forms.Label()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -127,6 +129,8 @@ Partial Class About
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.Controls.Add(Me.LinkLabel4)
+        Me.Panel3.Controls.Add(Me.Label10)
         Me.Panel3.Controls.Add(Me.PeakMeterCtrl2)
         Me.Panel3.Controls.Add(Me.PeakMeterCtrl1)
         Me.Panel3.Controls.Add(Me.Label9)
@@ -199,7 +203,7 @@ Partial Class About
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(108, 115)
+        Me.Label6.Location = New System.Drawing.Point(182, 45)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(70, 16)
         Me.Label6.TabIndex = 84
@@ -222,7 +226,7 @@ Partial Class About
         Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel3.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.LinkLabel3.LinkColor = System.Drawing.Color.MediumOrchid
-        Me.LinkLabel3.Location = New System.Drawing.Point(111, 97)
+        Me.LinkLabel3.Location = New System.Drawing.Point(185, 27)
         Me.LinkLabel3.Name = "LinkLabel3"
         Me.LinkLabel3.Size = New System.Drawing.Size(65, 16)
         Me.LinkLabel3.TabIndex = 82
@@ -235,7 +239,7 @@ Partial Class About
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(113, 81)
+        Me.Label8.Location = New System.Drawing.Point(187, 11)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(57, 16)
         Me.Label8.TabIndex = 81
@@ -247,7 +251,7 @@ Partial Class About
         Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel2.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.LinkLabel2.LinkColor = System.Drawing.Color.MediumOrchid
-        Me.LinkLabel2.Location = New System.Drawing.Point(113, 59)
+        Me.LinkLabel2.Location = New System.Drawing.Point(55, 59)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(61, 16)
         Me.LinkLabel2.TabIndex = 80
@@ -261,7 +265,7 @@ Partial Class About
         Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.LinkLabel1.LinkColor = System.Drawing.Color.MediumOrchid
-        Me.LinkLabel1.Location = New System.Drawing.Point(117, 27)
+        Me.LinkLabel1.Location = New System.Drawing.Point(59, 27)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(53, 16)
         Me.LinkLabel1.TabIndex = 79
@@ -274,7 +278,7 @@ Partial Class About
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(100, 11)
+        Me.Label7.Location = New System.Drawing.Point(42, 11)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(87, 16)
         Me.Label7.TabIndex = 78
@@ -286,7 +290,7 @@ Partial Class About
         Me.LinkLabel9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel9.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.LinkLabel9.LinkColor = System.Drawing.Color.MediumOrchid
-        Me.LinkLabel9.Location = New System.Drawing.Point(124, 43)
+        Me.LinkLabel9.Location = New System.Drawing.Point(66, 43)
         Me.LinkLabel9.Name = "LinkLabel9"
         Me.LinkLabel9.Size = New System.Drawing.Size(38, 16)
         Me.LinkLabel9.TabIndex = 77
@@ -297,6 +301,31 @@ Partial Class About
         'Timer1
         '
         Me.Timer1.Interval = 1
+        '
+        'LinkLabel4
+        '
+        Me.LinkLabel4.AutoSize = True
+        Me.LinkLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel4.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LinkLabel4.LinkColor = System.Drawing.Color.MediumOrchid
+        Me.LinkLabel4.Location = New System.Drawing.Point(104, 107)
+        Me.LinkLabel4.Name = "LinkLabel4"
+        Me.LinkLabel4.Size = New System.Drawing.Size(78, 16)
+        Me.LinkLabel4.TabIndex = 89
+        Me.LinkLabel4.TabStop = True
+        Me.LinkLabel4.Text = "Beatkitchen"
+        Me.LinkLabel4.VisitedLinkColor = System.Drawing.Color.Gold
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(120, 91)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(47, 16)
+        Me.Label10.TabIndex = 88
+        Me.Label10.Text = "Logo:"
         '
         'About
         '
@@ -344,4 +373,6 @@ Partial Class About
     Friend WithEvents PeakMeterCtrl2 As Ernzo.WinForms.Controls.PeakMeterCtrl
     Friend WithEvents PeakMeterCtrl1 As Ernzo.WinForms.Controls.PeakMeterCtrl
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents LinkLabel4 As LinkLabel
+    Friend WithEvents Label10 As Label
 End Class

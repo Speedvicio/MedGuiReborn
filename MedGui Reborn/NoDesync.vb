@@ -12,7 +12,9 @@ Module NoDesync
 
         If File.Exists(MedGuiR.TextBox4.Text & "\" & p_c & ".cfg”) = False Then Exit Sub
         Try
+#Disable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
             oRead = oFile.OpenText(MedGuiR.TextBox4.Text & "\" & p_c & ".cfg”) 'MedExtra & "\NoDesync\" & consoles & " .cfg”)
+#Enable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
 
             While oRead.Peek <> -1
                 If oRead.ReadLine().Contains("#NoDesync") = True Then

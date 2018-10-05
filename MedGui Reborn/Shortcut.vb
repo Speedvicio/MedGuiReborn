@@ -131,7 +131,10 @@ Module Shortcut
 
     Private Function ThumbnailCallback() As Boolean
 
+#Disable Warning BC42353 ' La funzione 'ThumbnailCallback' non restituisce alcun valore per tutti i percorsi del codice. Probabilmente manca un'istruzione 'Return'.
     End Function
+
+#Enable Warning BC42353 ' La funzione 'ThumbnailCallback' non restituisce alcun valore per tutti i percorsi del codice. Probabilmente manca un'istruzione 'Return'.
 
     Private Sub CreateThumbnail()
         Dim myCallback As Image.GetThumbnailImageAbort = AddressOf ThumbnailCallback

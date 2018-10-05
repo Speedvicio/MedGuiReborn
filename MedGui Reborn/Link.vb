@@ -36,8 +36,14 @@
                 _link = "http://romhustler.net/roms/search/?q=" & MedGuiR.TextBox35.Text
             Case "ROMULATION"
                 _link = "https://www.romulation.net/roms/search?query=" & MedGuiR.TextBox35.Text
+            Case "Roms Universe"
+                _link = "http://www.romsuniverse.com/search.php?q=" & MedGuiR.TextBox35.Text
             Case "SnesOrama"
                 _link = "http://snesorama.us/ROMS/?s=%2A&q=" & MedGuiR.TextBox35.Text
+            Case "Viim's Lair"
+                _link = "http://vimm.net/vault/?p=list&search=" & MedGuiR.TextBox35.Text & "&submitButton=Go"
+            Case "WoWroMs"
+                _link = "https://wowroms.com/en/roms/list?search=" & MedGuiR.TextBox35.Text
             Case "Mednafen Bios"
                 '_link = "ftp://anonymous@speedvicio.ddns.net/update/firmware.zip"
                 DownExtractBios()

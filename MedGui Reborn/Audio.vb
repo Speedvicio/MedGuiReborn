@@ -13,6 +13,8 @@
     Public Declare Function FMUSIC_SetLooping Lib "fmod.dll" Alias "_FMUSIC_SetLooping@8" (ByVal xmodule As Integer, ByVal looping As Byte) As Byte
     Public Declare Function FMUSIC_IsPlaying Lib "fmod.dll" Alias "_FMUSIC_IsPlaying@4" (ByVal xmodule As Integer) As Byte
     Public Declare Function FMUSIC_FreeSong Lib "fmod.dll" Alias "_FMUSIC_FreeSong@4" (ByVal xmodule As Integer) As Byte
+    Public Declare Function FMUSIC_GetMasterVolume Lib "fmod.dll" Alias "_FMUSIC_GetMasterVolume@4" (ByVal xxmodule As Integer) As Integer
+    Public Declare Function FMUSIC_SetMasterVolume Lib "fmod.dll" Alias "_FMUSIC_SetMasterVolume@8" (ByVal xxmodule As Integer, ByVal volume As Integer) As Byte
     Private Declare Function FSOUND_DSP_GetSpectrum Lib “fmod.dll” Alias “_FSOUND_DSP_GetSpectrum@0” () As Integer
     Private Declare Function FSOUND_DSP_GetFFTUnit Lib “fmod.dll” Alias “_FSOUND_DSP_GetFFTUnit@0” () As Integer
     Private Declare Function FSOUND_DSP_SetActive Lib “fmod.dll” Alias “_FSOUND_DSP_SetActive@8” (ByVal unit As Integer, ByVal active As Integer) As Integer
@@ -26,11 +28,22 @@
     Public Sub PlaySound()
         If booAbortMusic = False Then
             XMPointer = FMUSIC_LoadSong(SOUNDDIR) ' path to the xm file in the temp folder
+            normalise()
             FMUSIC_SetLooping(XMPointer, 1)
             FMUSIC_OptimizeChannels(XMPointer, 256, 10)
             FMUSIC_PlaySong(XMPointer) ' play the music
             booAbortMusic = True
         End If
+
+    End Sub
+
+    Public Sub normalise()
+        Try
+            If FMUSIC_GetMasterVolume(XMPointer) < 256 Then
+                FMUSIC_SetMasterVolume(XMPointer, 256)
+            End If
+        Catch
+        End Try
     End Sub
 
     Public Sub StopMusic()

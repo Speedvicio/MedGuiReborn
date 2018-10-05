@@ -748,7 +748,9 @@ ErrorHandler:
                 Dim salias() As String
 
                 Try
+#Disable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
                     oRead = oFile.OpenText(fullPath)
+#Enable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
 
                     While oRead.Peek <> -1
                         Dim xtest As String = oRead.ReadLine()
