@@ -178,11 +178,11 @@ Partial Class About
         '
         Me.PeakMeterCtrl2.BackColor = System.Drawing.Color.Black
         Me.PeakMeterCtrl2.BandsCount = 2
-        Me.PeakMeterCtrl2.ColorHigh = System.Drawing.Color.White
+        Me.PeakMeterCtrl2.ColorHigh = System.Drawing.Color.Red
         Me.PeakMeterCtrl2.ColorHighBack = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.PeakMeterCtrl2.ColorMedium = System.Drawing.Color.DimGray
+        Me.PeakMeterCtrl2.ColorMedium = System.Drawing.Color.DarkViolet
         Me.PeakMeterCtrl2.ColorMediumBack = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.PeakMeterCtrl2.ColorNormal = System.Drawing.Color.Gray
+        Me.PeakMeterCtrl2.ColorNormal = System.Drawing.Color.MidnightBlue
         Me.PeakMeterCtrl2.ColorNormalBack = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer))
         Me.PeakMeterCtrl2.FalloffColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.PeakMeterCtrl2.GridColor = System.Drawing.Color.Black
@@ -198,11 +198,11 @@ Partial Class About
         '
         Me.PeakMeterCtrl1.BackColor = System.Drawing.Color.Black
         Me.PeakMeterCtrl1.BandsCount = 2
-        Me.PeakMeterCtrl1.ColorHigh = System.Drawing.Color.White
+        Me.PeakMeterCtrl1.ColorHigh = System.Drawing.Color.Red
         Me.PeakMeterCtrl1.ColorHighBack = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.PeakMeterCtrl1.ColorMedium = System.Drawing.Color.DimGray
+        Me.PeakMeterCtrl1.ColorMedium = System.Drawing.Color.DarkViolet
         Me.PeakMeterCtrl1.ColorMediumBack = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.PeakMeterCtrl1.ColorNormal = System.Drawing.Color.Gray
+        Me.PeakMeterCtrl1.ColorNormal = System.Drawing.Color.MidnightBlue
         Me.PeakMeterCtrl1.ColorNormalBack = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(150, Byte), Integer))
         Me.PeakMeterCtrl1.FalloffColor = System.Drawing.Color.FromArgb(CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.PeakMeterCtrl1.GridColor = System.Drawing.Color.Black
