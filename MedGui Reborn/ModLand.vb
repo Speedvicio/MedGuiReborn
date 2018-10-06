@@ -240,8 +240,8 @@ Public Class ModLand
 
             ServerLink()
 
-            If LCase(str).Contains(LCase(cex)) Then
-                client.DownloadFile(ModServer & "/pub/modules/" & Path.GetDirectoryName(download) & "/" & str, MedExtra & "/Media/Module" & Path.GetDirectoryName(download) & "/" & str)
+            If LCase(str).Contains(LCase(Path.GetExtension(cex))) Then
+                client.DownloadFile(ModServer & "/pub/modules/" & Path.GetDirectoryName(download) & "/" & str, MedExtra & "/Media/Module" & Path.GetDirectoryName(download) & "/" & cex)
             End If
 
             str = sr.ReadLine()
@@ -327,10 +327,12 @@ Public Class ModLand
                 ModServer = "ftp://ftp.modland.com"
             Case "Exotica"
                 ModServer = "ftp://aero.exotica.org.uk/pub/mirrors/modland"
-            Case "Ziphoid"
+            Case "Scenesat"
                 ModServer = "ftp://modland.ziphoid.com"
             Case "AmigaScne"
                 ModServer = "ftp://ftp.amigascne.org/mirrors/ftp.modland.com"
+            Case "Antarctica"
+                ModServer = "http://modland.antarctica.no"
             Case Else
                 ModServer = "ftp://ftp.modland.com"
         End Select
