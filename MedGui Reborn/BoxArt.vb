@@ -196,7 +196,7 @@ Module BoxArt
                 Case UCase(rn.Contains("SCES")), UCase(rn.Contains("SLES"))
                     'MedGuiR.DataGridView1.CurrentRow.Cells(2).Value() = "(EUR)"
                     country = "(EUR)"
-                Case UCase(rn.Contains("SCPS")), UCase(rn.Contains("SCPM")), UCase(rn.Contains("SLPS")), UCase(rn.Contains("SLPM"))
+                Case UCase(rn.Contains("SCPS")), UCase(rn.Contains("SCPM")), UCase(rn.Contains("SLPS")), UCase(rn.Contains("SLPM")), UCase(rn.Contains("SIPS"))
                     'MedGuiR.DataGridView1.CurrentRow.Cells(2).Value() = "(JAP)"
                     country = "(JAP)"
             End Select

@@ -1,5 +1,17 @@
-MedGui Reborn Stable v0.098
+MedGui Reborn "Pre" v0.099
+- Fixed inverted xscalefs, yscalefs values on reading mednafen config file.
+- Added autodownload for any missing dll
+- First attemp for m3u autodetection
+- Fixed Main form layout
+- Fixed wrong icon assignment on Super Nintendo - Music Module file (.rsn) on prescan
+- Fixed wrong cd detection in any Saturn games
+- Changed main MedGuiR logo
+- Significantly reduced the size of the executable
+- Added new Antarctica mirror on Modland Scraper
+- Now Modland Scraper should be download module driver also when there is incongruence from file recognized on Modland mirror and the file specified on main music module
+- Changed VuMeter colors on About Screen
 
+MedGui Reborn Stable v0.098
 - Fixed bad detection of file extenction (not low case) on compressed file
 - Changed main MedClient server to speedvicio.ddns.net
 - Added favourites as folder selectable at MedGuiR startup (you must to close the GUI with favourites selected)
