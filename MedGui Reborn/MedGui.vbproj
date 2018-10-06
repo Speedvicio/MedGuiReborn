@@ -64,7 +64,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\MedGuiR.ico</ApplicationIcon>
+    <ApplicationIcon>MedGuiR.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CoreAudioApi">

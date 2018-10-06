@@ -239,14 +239,17 @@ Public Class ModLand
             client.Credentials = New Net.NetworkCredential("anonymous", "")
 
             ServerLink()
-
-            If LCase(str).Contains(LCase(Path.GetExtension(cex))) Then
+            'Dim fsc As String = Path.GetFileNameWithoutExtension(cex)
+            'If LCase(str).Contains(LCase(fsc.Substring((fsc.Length - 2), 2) & Path.GetExtension(cex))) Then
+            If LCase(str).Contains(LCase(cex)) Or LCase(Replace(str, " ", "_")).Contains(LCase(cex)) Then
                 client.DownloadFile(ModServer & "/pub/modules/" & Path.GetDirectoryName(download) & "/" & str, MedExtra & "/Media/Module" & Path.GetDirectoryName(download) & "/" & cex)
+                GoTo ENDSCRAPE
             End If
 
             str = sr.ReadLine()
         End While
 
+ENDSCRAPE:
         sr.Close()
         sr = Nothing
         req = Nothing
