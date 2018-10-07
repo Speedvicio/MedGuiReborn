@@ -5,6 +5,7 @@ Public Class MgrSetting
     Public tab_index, mxSet As Integer, colour, SpecificServer, per_conf_path_name As String, NetVerified, NoCheck, TPerC, isARGB As Boolean
     Dim MuFolder As FolderBrowserDialog = New FolderBrowserDialog()
     Private tPath, fPath, pPath, xcv As String, sPath As OpenFileDialog = New OpenFileDialog(), versave As Boolean
+    Private ostr, ofsr, oxfsr, oyfsr As String
 
     Public Sub add_tabs()
         Select Case tab_index
@@ -256,6 +257,16 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         'If My.Computer.Network.IsAvailable = True And NetVerified = False Then check_NetPlayServer()
         F1 = Me
         CenterForm()
+
+        Select Case True
+            Case UCase(rn.Contains("SCES")), UCase(rn.Contains("SLES"))
+                CheckBox104.Enabled = True
+        End Select
+
+        ostr = ComboBox5.Text
+        ofsr = ComboBox6.Text
+        oxfsr = NumericUpDown6.Value
+        oyfsr = NumericUpDown6.Value
     End Sub
 
     Private Sub Button41_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button41.Click
@@ -712,6 +723,24 @@ ErrorHandler:
         Label136.BackColor = ColorDialog1.Color
         Label136.ForeColor = Label136.BackColor
         Label136.Text = colour
+    End Sub
+
+    Private Sub CheckBox104_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox104.CheckedChanged
+
+        If CheckBox104.Checked = True Then
+            ComboBox5.Text = "0"
+            ComboBox6.Text = "0x0"
+            NumericUpDown6.Value = "4,3"
+            NumericUpDown5.Value = "4,3"
+            CheckBox59.Checked = True
+        Else
+            ComboBox5.Text = ostr
+            ComboBox6.Text = ofsr
+            NumericUpDown6.Value = oxfsr
+            NumericUpDown5.Value = oyfsr
+            CheckBox59.Checked = False
+        End If
+
     End Sub
 
     Private Sub Button23_Click(sender As Object, e As EventArgs)

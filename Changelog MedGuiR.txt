@@ -10,6 +10,7 @@ MedGui Reborn "Pre" v0.099
 - Added new Antarctica mirror on Modland Scraper
 - Now Modland Scraper should be download module driver also when there is incongruence from file recognized on Modland mirror and the file specified on main music module
 - Changed VuMeter colors on About Screen
+- Added missing SIPS psx regional code into psx cd detection
 
 MedGui Reborn Stable v0.098
 - Fixed bad detection of file extenction (not low case) on compressed file

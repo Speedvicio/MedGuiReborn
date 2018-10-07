@@ -474,6 +474,7 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox104 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -4414,6 +4415,7 @@ Partial Class MgrSetting
         '
         'TabPage22
         '
+        Me.TabPage22.Controls.Add(Me.CheckBox104)
         Me.TabPage22.Controls.Add(Me.Panel1)
         Me.TabPage22.Controls.Add(Me.CheckBox58)
         Me.TabPage22.Controls.Add(Me.CheckBox57)
@@ -5509,6 +5511,17 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'CheckBox104
+        '
+        Me.CheckBox104.AutoSize = True
+        Me.CheckBox104.Enabled = False
+        Me.CheckBox104.Location = New System.Drawing.Point(185, 77)
+        Me.CheckBox104.Name = "CheckBox104"
+        Me.CheckBox104.Size = New System.Drawing.Size(92, 17)
+        Me.CheckBox104.TabIndex = 92
+        Me.CheckBox104.Text = "&Fix Video PAL"
+        Me.CheckBox104.UseVisualStyleBackColor = True
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -6111,4 +6124,5 @@ Partial Class MgrSetting
     Friend WithEvents Label142 As Label
     Friend WithEvents ComboBox57 As ComboBox
     Friend WithEvents Label143 As Label
+    Friend WithEvents CheckBox104 As CheckBox
 End Class
