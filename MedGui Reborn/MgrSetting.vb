@@ -80,6 +80,9 @@ Public Class MgrSetting
             Case 20
                 TabControl1.TabPages.Insert(9, TabPage26)
                 TabControl1.SelectedTab = TabPage26
+            Case 21
+                TabControl1.TabPages.Insert(9, TabPage29)
+                TabControl1.SelectedTab = TabPage29
         End Select
 
         TabControl1.SelectedTab = TabPage2
