@@ -144,7 +144,7 @@ Partial Class ModLand
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripComboBox2})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(241, 74)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(182, 41)
         '
         'ToolStripComboBox2
         '
@@ -210,7 +210,9 @@ Partial Class ModLand
         Me.PictureBox2.Size = New System.Drawing.Size(34, 34)
         Me.PictureBox2.TabIndex = 33
         Me.PictureBox2.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Download Latest ModLand DATs")
+        Me.ToolTip1.SetToolTip(Me.PictureBox2, "Left mouse click - Download Latest ModLand DATs" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Right mouse click - Open availab" &
+        "le server to retrieve chip music" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PS: Selecting ""Antarctica"" server you will not" &
+        " able to download _lib driver file" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         '
         'ModLand
         '
