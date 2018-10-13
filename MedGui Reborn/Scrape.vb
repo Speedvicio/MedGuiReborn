@@ -120,10 +120,21 @@ Module Scrape
 
             If File.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml") And ScrapeForce = 3 Then
                 Dim W As New Net.WebClient
-                'Dim site_scrape As String = "http://legacy.thegamesdb.net/api/GetGame.php?exactname=" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "&platform=" & ConsoleID
                 W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
 
-                Dim infoReader As System.IO.FileInfo
+                '<TheGamesDb newapi>
+                'MedGuiR.TGDBPlatform()
+                'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("WGjcjnPpu1N7Cj92IF4kIiHtXEd5iNXtaZWpDkM5FVIwZuE2Kpo8R5KzvfENFA8kWmEGOig1hY30hlgoajQ+JjL+Zyv5rmRS+FPemgiaKTTMsGDF4jNR0W1rCBblcD9p6CrUK9MH7YKlexs1HkfrqTlyGKzDLlla1vBfFiI1gmp9haPCMNH84Q==") _
+                '   & "&name=" & cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
+                'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
+
+                'Dim file As StreamWriter
+                'File = My.Computer.FileSystem.OpenTextFileWriter(Application.StartupPath & "\test.xml", False)
+                'File.WriteLine(str.OuterXml)
+                'File.Close()
+                'Exit Sub
+
+                Dim infoReader As FileInfo
                 Dim OldXML, NewXML As Integer
                 infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 OldXML = Val(infoReader.Length)
@@ -131,11 +142,11 @@ Module Scrape
                 NewXML = Val(infoReader.Length)
 
                 If OldXML < NewXML Then
-                    System.IO.File.Delete(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                    IO.File.Delete(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                     My.Computer.FileSystem.MoveFile(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml",
                          MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
-                    System.IO.File.Delete(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                    IO.File.Delete(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 End If
             ElseIf ScrapeForce = 0 Then
             ElseIf ScrapeForce = 1 Then
@@ -178,11 +189,11 @@ Module Scrape
                 Select Case contents
                     Case "baseImgUrl"
                         BaseUrl = reader.Value
-                    Case "GameTitle"
+                    Case "GameTitle", "game_title"
                         TheGamesDB.Label1.Text = "Game Title: " & Replace(reader.Value, "&", "&&")
-                    Case "Platform"
+                    Case "Platform", "platform"
                         TheGamesDB.Label2.Text = "Platform: " & (reader.Value)
-                    Case "ReleaseDate"
+                    Case "ReleaseDate", "release_date"
                         Dim fdate As String
                         If Len(reader.Value) = 10 Then fdate = reader.Value Else fdate = "0" & reader.Value
                         If Len(reader.Value) = 4 Then
@@ -191,21 +202,21 @@ Module Scrape
                             Dim expenddt As Date = Date.ParseExact(fdate, "MM/dd/yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo).ToString
                             TheGamesDB.Label3.Text = "Release Date: " & (expenddt)
                         End If
-                    Case "Overview"
+                    Case "Overview", "overview"
                         TheGamesDB.RichTextBox1.Text = (reader.Value)
-                    Case "genre"
+                    Case "genre", "genres"
                         If Len(TheGamesDB.Label4.Text) <= 7 Then
                             TheGamesDB.Label4.Text = "Genre: " & (reader.Value)
                         Else
                             TheGamesDB.Label4.Text = TheGamesDB.Label4.Text & " - " & (reader.Value)
                         End If
-                    Case "Players"
+                    Case "Players", "players"
                         TheGamesDB.Label11.Text = "Players: " & (reader.Value)
-                    Case "Publisher"
+                    Case "Publisher", "publishers"
                         TheGamesDB.Label5.Text = "Publisher: " & (reader.Value)
-                    Case "Developer"
+                    Case "Developer", "developers"
                         TheGamesDB.Label6.Text = "Developer: " & (reader.Value)
-                    Case "Co-op"
+                    Case "Co-op", "coop"
                         TheGamesDB.Label7.Text = "Co-op: " & (reader.Value)
                     Case "boxart"
 

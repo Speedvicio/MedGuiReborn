@@ -11,6 +11,8 @@ MedGui Reborn "Pre" v0.099
 - Now Modland Scraper should be download module driver also when there is incongruence from file recognized on Modland mirror and the file specified on main music module
 - Changed VuMeter colors on About Screen
 - Added missing SIPS psx regional code into psx cd detection
+- Added "Fix Video Pal" option, a internal way to fix PAL game reducing orizontal black border.
+It will create a specific "Per Game Config"
 
 MedGui Reborn Stable v0.098
 - Fixed bad detection of file extenction (not low case) on compressed file

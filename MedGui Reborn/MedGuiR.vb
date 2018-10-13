@@ -4,6 +4,7 @@ Public Class MedGuiR
 
     Public StartRom, romName, last_consoles, last_rom, LoadCD, tpce, multimedia, regioni, tempiso, Vjoypad, M3UDisk As String,
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart As Boolean
+    Public tgdbCID As String
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         gIcon = My.Resources.MedGuiR
@@ -41,6 +42,7 @@ Public Class MedGuiR
         FirstStart = False
 
         If TextBox26.Text = "Speedvicio.dtdns.net" Then TextBox26.Text = "speedvicio.ddns.net"
+
     End Sub
 
     Private Sub ParseCommandLineArgs()
@@ -1384,61 +1386,65 @@ Public Class MedGuiR
     Private Sub Button8_Click_1(sender As Object, e As EventArgs) Handles Button8.Click
         Try
             '_link = "http://thegamesdb.net/search/?string=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & " function=Search"
-            Dim webSystem As String
-            Select Case DataGridView1.CurrentRow.Cells(5).Value()
-                Case "Atari - Lynx"
-                    webSystem = "4924"
-                Case "Bandai - WonderSwan"
-                    webSystem = "4925"
-                Case "Bandai - WonderSwan Color"
-                    webSystem = "4926"
-                Case "Nintendo - Famicom Disk System"
-                    webSystem = "4936"
-                Case "SNK - Neo Geo Pocket"
-                    webSystem = "4922"
-                Case "SNK - Neo Geo Pocket Color"
-                    webSystem = "4923"
-                Case "Nintendo - Game Boy Advance"
-                    webSystem = "5"
-                Case "Nintendo Entertainment System"
-                    webSystem = "7"
-                Case "Nintendo - Game Boy"
-                    webSystem = "4"
-                Case "Nintendo - Game Boy Color"
-                    webSystem = "41"
-                Case "Virtual Boy"
-                    webSystem = "4918"
-                Case "Sega - Game Gear"
-                    webSystem = "20"
-                Case "Sega - Mega Drive - Genesis"
-                    If LCase(DataGridView1.CurrentRow.Cells(2).Value().ToString).Contains("us") Then
-                        webSystem = "18"
-                    Else
-                        webSystem = "36"
-                    End If
-                Case "Sega - Master System - Mark III"
-                    webSystem = "35"
-                Case "Super Nintendo Entertainment System"
-                    webSystem = "6"
-                Case "Sony PlayStation"
-                    webSystem = "10"
-                Case "Sega Saturn"
-                    webSystem = "17"
-                Case "PC Engine - TurboGrafx 16"
-                    webSystem = "34"
-                Case "Virtual Boy"
-                    webSystem = "4918"
-            End Select
 
-            '<option value="33">Sega 32X</option>
-            '<option value="21">Sega CD</option>
-            '<option value="18">Sega Genesis</option>
-            '<option value="36">Sega Mega Drive</option>
-
-            _link = "https://thegamesdb.net/search.php?name=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") & "&platformID%5B%5D=" & webSystem
+            TGDBPlatform()
+            _link = "https://thegamesdb.net/search.php?name=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") & "&platformID%5B%5D=" & tgdbCID
             open_link()
         Catch
         End Try
+    End Sub
+
+    Public Sub TGDBPlatform()
+        tgdbCID = ""
+        Select Case DataGridView1.CurrentRow.Cells(5).Value()
+            Case "Atari - Lynx"
+                tgdbCID = "4924"
+            Case "Bandai - WonderSwan"
+                tgdbCID = "4925"
+            Case "Bandai - WonderSwan Color"
+                tgdbCID = "4926"
+            Case "Nintendo - Famicom Disk System"
+                tgdbCID = "4936"
+            Case "SNK - Neo Geo Pocket"
+                tgdbCID = "4922"
+            Case "SNK - Neo Geo Pocket Color"
+                tgdbCID = "4923"
+            Case "Nintendo - Game Boy Advance"
+                tgdbCID = "5"
+            Case "Nintendo Entertainment System"
+                tgdbCID = "7"
+            Case "Nintendo - Game Boy"
+                tgdbCID = "4"
+            Case "Nintendo - Game Boy Color"
+                tgdbCID = "41"
+            Case "Virtual Boy"
+                tgdbCID = "4918"
+            Case "Sega - Game Gear"
+                tgdbCID = "20"
+            Case "Sega - Mega Drive - Genesis"
+                If LCase(DataGridView1.CurrentRow.Cells(2).Value().ToString).Contains("us") Then
+                    tgdbCID = "18"
+                Else
+                    tgdbCID = "36"
+                End If
+            Case "Sega - Master System - Mark III"
+                tgdbCID = "35"
+            Case "Super Nintendo Entertainment System"
+                tgdbCID = "6"
+            Case "Sony PlayStation"
+                tgdbCID = "10"
+            Case "Sega Saturn"
+                tgdbCID = "17"
+            Case "PC Engine - TurboGrafx 16"
+                tgdbCID = "34"
+            Case "Virtual Boy"
+                tgdbCID = "4918"
+        End Select
+
+        '<option value="33">Sega 32X</option>
+        '<option value="21">Sega CD</option>
+        '<option value="18">Sega Genesis</option>
+        '<option value="36">Sega Mega Drive</option>
     End Sub
 
     Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
