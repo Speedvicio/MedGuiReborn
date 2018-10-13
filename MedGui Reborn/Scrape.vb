@@ -151,8 +151,19 @@ Module Scrape
             ElseIf ScrapeForce = 0 Then
             ElseIf ScrapeForce = 1 Then
                 Dim W As New Net.WebClient
-                'Dim site_scrape As String = "http://legacy.thegamesdb.net/api/GetGame.php?exactname=" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "&platform=" & ConsoleID
                 W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+
+                '<TheGamesDb newapi>
+                'MedGuiR.TGDBPlatform()
+                'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("WGjcjnPpu1N7Cj92IF4kIiHtXEd5iNXtaZWpDkM5FVIwZuE2Kpo8R5KzvfENFA8kWmEGOig1hY30hlgoajQ+JjL+Zyv5rmRS+FPemgiaKTTMsGDF4jNR0W1rCBblcD9p6CrUK9MH7YKlexs1HkfrqTlyGKzDLlla1vBfFiI1gmp9haPCMNH84Q==") _
+                '   & "&name=" & cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
+                'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
+
+                'Dim file As StreamWriter
+                'File = My.Computer.FileSystem.OpenTextFileWriter(Application.StartupPath & "\test.xml", False)
+                'File.WriteLine(str.OuterXml)
+                'File.Close()
+                'Exit Sub
             End If
 
             ReadXml()
