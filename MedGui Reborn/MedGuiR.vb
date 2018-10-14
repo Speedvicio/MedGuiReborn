@@ -4,6 +4,7 @@ Public Class MedGuiR
 
     Public StartRom, romName, last_consoles, last_rom, LoadCD, tpce, multimedia, regioni, tempiso, Vjoypad, M3UDisk As String,
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart As Boolean
+
     Public tgdbCID As String
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -1388,7 +1389,7 @@ Public Class MedGuiR
             '_link = "http://thegamesdb.net/search/?string=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & " function=Search"
 
             TGDBPlatform()
-            _link = "https://thegamesdb.net/search.php?name=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") & "&platformID%5B%5D=" & tgdbCID
+            _link = "https://thegamesdb.net/search.php?name=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") & "&platform_id%5B%5D=" & tgdbCID
             open_link()
         Catch
         End Try
