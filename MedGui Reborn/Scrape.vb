@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Xml
 
 Module Scrape
     Public SBoxF, SboxR As String, ScrapeForce As Integer
@@ -128,11 +129,11 @@ Module Scrape
                 '   & "&name=" & cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
                 'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
-                'Dim file As StreamWriter
+                'Dim File As StreamWriter
                 'File = My.Computer.FileSystem.OpenTextFileWriter(Application.StartupPath & "\test.xml", False)
-                'File.WriteLine(str.OuterXml)
+                'Dim splitXml As String() = Split(str.OuterXml, "<pages>")
+                'File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
                 'File.Close()
-                'Exit Sub
 
                 Dim infoReader As FileInfo
                 Dim OldXML, NewXML As Integer
@@ -159,11 +160,11 @@ Module Scrape
                 '   & "&name=" & cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
                 'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
-                'Dim file As StreamWriter
+                'Dim File As StreamWriter
                 'File = My.Computer.FileSystem.OpenTextFileWriter(Application.StartupPath & "\test.xml", False)
-                'File.WriteLine(str.OuterXml)
+                'Dim splitXml As String() = Split(str.OuterXml, "<pages>")
+                'File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
                 'File.Close()
-                'Exit Sub
             End If
 
             ReadXml()
@@ -215,7 +216,7 @@ Module Scrape
                         End If
                     Case "Overview", "overview"
                         TheGamesDB.RichTextBox1.Text = (reader.Value)
-                    Case "genre", "genres"
+                    Case "genre"
                         If Len(TheGamesDB.Label4.Text) <= 7 Then
                             TheGamesDB.Label4.Text = "Genre: " & (reader.Value)
                         Else
