@@ -1,8 +1,18 @@
 ﻿Public Class About
     Private AudioAbout As New Audio
+    Private oldSOUNDIR As String
 
     Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
+
+        Try
+            Dim privateFonts As New System.Drawing.Text.PrivateFontCollection()
+            privateFonts.AddFontFile(MedExtra & "Resource\Gui\metallord.ttf")
+            Dim font As New System.Drawing.Font(privateFonts.Families(0), 20)
+            Label1.Font = font
+        Catch
+        End Try
+
         PictureBox1.Load(MedExtra & "Resource\Gui\MedGuiR.png")
         Label2.Text = "Version: " & Replace(MedGuiR.Label6.Text, "MedGuiR v.", "")
 
@@ -16,8 +26,14 @@
         CenterForm()
 
         If IO.File.Exists(Application.StartupPath & "\fmod.dll") Then
+RETRYMOD:
             AudioAbout.SOUNDDIR = GetRandomFilePath(MedExtra & "Resource\Music\module")
-            AudioAbout.PlaySound()
+            If oldSOUNDIR <> AudioAbout.SOUNDDIR And AudioAbout.SOUNDDIR <> "" Then
+                AudioAbout.PlaySound()
+                oldSOUNDIR = AudioAbout.SOUNDDIR
+            Else
+                GoTo RETRYMOD
+            End If
 
             If Environment.OSVersion.Version.Major >= 6 And IO.File.Exists(Application.StartupPath & "\CoreAudioApi.dll") And IO.File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") Then
                 StartPeak()
