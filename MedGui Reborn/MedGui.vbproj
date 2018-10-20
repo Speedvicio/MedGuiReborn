@@ -209,6 +209,12 @@
     <Compile Include="SoundList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TGBSettings.Designer.vb">
+      <DependentUpon>TGBSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TGBSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TheGamesDB.Designer.vb">
       <DependentUpon>TheGamesDB.vb</DependentUpon>
     </Compile>
@@ -360,6 +366,9 @@
     <EmbeddedResource Include="SoundList.resx">
       <DependentUpon>SoundList.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TGBSettings.resx">
+      <DependentUpon>TGBSettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TheGamesDB.resx">
       <DependentUpon>TheGamesDB.vb</DependentUpon>
