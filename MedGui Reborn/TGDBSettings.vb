@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 Imports Newtonsoft.Json
 
-Public Class TGBSettings
+Public Class TGDBSettings
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
         If CheckBox1.Checked = True Then
@@ -21,7 +21,7 @@ Public Class TGBSettings
 
     Public Function MakeTGDBList(ByVal APIvalue As String)
         Dim SplittedScrapedValue() As String
-        Dim ResultScaped As String
+        Dim ResultScraped As String
         Dim JsonT As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/" & APIvalue & "?apikey=" & VSTripleDES.DecryptData("WGjcjnPpu1N7Cj92IF4kIiHtXEd5iNXtaZWpDkM5FVIwZuE2Kpo8R5KzvfENFA8kWmEGOig1hY30hlgoajQ+JjL+Zyv5rmRS+FPemgiaKTTMsGDF4jNR0W1rCBblcD9p6CrUK9MH7YKlexs1HkfrqTlyGKzDLlla1vBfFiI1gmp9haPCMNH84Q=="))
 
         If File.Exists(MedExtra & "\Plugins\db\TGDB") = False Then
@@ -41,19 +41,19 @@ Public Class TGBSettings
 
                 Select Case SplittedScrapedValue(0).Trim
                     Case """id"""
-                        ResultScaped += Replace(SplittedScrapedValue(1).Trim, ",", " | ")
+                        ResultScraped += Replace(SplittedScrapedValue(1).Trim, ",", " | ")
                     Case """name"""
-                        ResultScaped += SplittedScrapedValue(1).Trim
-                        If ResultScaped.Substring(ResultScaped.Length - 1, 1) = "," Then
-                            ResultScaped = ResultScaped.Substring(0, ResultScaped.Length - 1)
+                        ResultScraped += SplittedScrapedValue(1).Trim
+                        If ResultScraped.Substring(ResultScraped.Length - 1, 1) = "," Then
+                            ResultScraped = ResultScraped.Substring(0, ResultScraped.Length - 1)
                         End If
-                        ResultScaped += vbCrLf
+                        ResultScraped += vbCrLf
                 End Select
 
-                ResultScaped = Replace(ResultScaped, """", "")
+                ResultScraped = Replace(ResultScraped, """", "")
             End While
 
-            File.WriteAllText(MedExtra & "\Plugins\db\TGDB\" & APIvalue & ".txt", ResultScaped)
+            File.WriteAllText(MedExtra & "\Plugins\db\TGDB\" & APIvalue & ".txt", ResultScraped)
         Catch ex As Exception
         Finally
             oRead.Close()

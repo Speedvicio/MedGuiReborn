@@ -2437,7 +2437,7 @@ inputagain:
     End Sub
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-        TGBSettings.Show()
+        TGDBSettings.Show()
     End Sub
 
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
