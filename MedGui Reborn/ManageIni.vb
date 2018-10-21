@@ -1,5 +1,6 @@
 ﻿Module ManageIni
     Dim RIni As New Ini
+    Dim WIni As New Ini
 
     Public Sub GeneralRMIni()
 
@@ -20,11 +21,14 @@
             MedGuiR.CheckBox20.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoUpdate")
             MedGuiR.CheckBox21.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoScanCD")
             MedGuiR.NetToolStripButton.BackColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoConn"))
+            GlobalVar.NewAPI = RIni.IniRead(MedExtra & "\Mini.ini", "TGDB API", "NEW_API").Trim
             UpdateServer = RIni.IniRead(MedExtra & "\Mini.ini", "General", "UpdateServer").Trim
 
             If UpdateServer = "" Then
                 Test_Server()
             End If
+
+            If GlobalVar.NewAPI = "" Then GlobalVar.NewAPI = False
 
             'Dim SizeGui() As String
             'SizeGui = Split(RIni.IniRead(MedExtra & "\Mini.ini", "General", "Gui_Size"), "x")
@@ -41,7 +45,6 @@
 
     Public Sub UCIRMini()
         Try
-            Dim RIni As New Ini
 
             UCInick = RIni.IniRead(MedExtra & "\Mini.ini", "UCI", "UCI_Nick")
             UCIserver = RIni.IniRead(MedExtra & "\Mini.ini", "UCI", "UCI_Server")
@@ -55,7 +58,6 @@
 
     Public Sub NetPlayMini()
         Try
-            Dim RIni As New Ini
 
             MedGuiR.TextBox26.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "FTP_Adress"))
             MedGuiR.TextBox25.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Username"))
@@ -71,7 +73,6 @@
 
     Public Sub RJoypadMini()
         Try
-            Dim RIni As New Ini
 
             JUP = RIni.IniRead(MedExtra & "\Mini.ini", "Joypad Configuration", "UP")
             JDOWN = RIni.IniRead(MedExtra & "\Mini.ini", "Joypad Configuration", "DOWN")
@@ -107,7 +108,6 @@
     Public Sub GridRMIni()
 
         Try
-            Dim RIni As New Ini
 
             MedGuiR.CheckBox8.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Resize")
             MedGuiR.CheckBox7.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Console")
@@ -126,7 +126,6 @@
     Public Sub DirectoryRMIni()
 
         Try
-            Dim RIni As New Ini
 
             MedGuiR.TextBox9.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Default")
             MedGuiR.TextBox8.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Lynx")
@@ -153,86 +152,96 @@
 
     Public Sub RWIni()
 
-        Dim WIni As New Ini
+        Try
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Mednafen_path", MedGuiR.TextBox4.Text)
+            If type_csv = "fav" Then
+                WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Startup_Path", "fav")
+            Else
+                WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Startup_Path", MedGuiR.SY.SelectedItem)
+            End If
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Dat", MedGuiR.ComboBox1.Text)
+            'WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Mantain_RomTemp", MedGuiR.CheckBox3.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "PopUp", MedGuiR.CheckBox3.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "CustomParameter", MedGuiR.TextBox2.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Fast_PCE", MedGuiR.CheckBox1.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Recursive_Scan", MedGuiR.CheckBox14.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Menu_Joypad", MedGuiR.CheckBox16.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Joy_Port", MedGuiR.NumericUpDown2.Value)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "SNES_Faust", MedGuiR.CheckBox15.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "MedBrowser", MedGuiR.CheckBox17.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoUpdate", MedGuiR.CheckBox20.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoScanCD", MedGuiR.CheckBox21.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoConn", MedGuiR.NetToolStripButton.BackColor.Name)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "UpdateServer", UpdateServer)
+            'WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Gui_Size", MedGuiR.Size.Width & "x" & MedGuiR.Size.Height)
 
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Mednafen_path", MedGuiR.TextBox4.Text)
-        If type_csv = "fav" Then
-            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Startup_Path", "fav")
-        Else
-            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Startup_Path", MedGuiR.SY.SelectedItem)
-        End If
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Dat", MedGuiR.ComboBox1.Text)
-        'WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Mantain_RomTemp", MedGuiR.CheckBox3.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "PopUp", MedGuiR.CheckBox3.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "CustomParameter", MedGuiR.TextBox2.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Fast_PCE", MedGuiR.CheckBox1.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Recursive_Scan", MedGuiR.CheckBox14.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Menu_Joypad", MedGuiR.CheckBox16.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Joy_Port", MedGuiR.NumericUpDown2.Value)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "SNES_Faust", MedGuiR.CheckBox15.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "MedBrowser", MedGuiR.CheckBox17.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoUpdate", MedGuiR.CheckBox20.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoScanCD", MedGuiR.CheckBox21.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoConn", MedGuiR.NetToolStripButton.BackColor.Name)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "UpdateServer", UpdateServer)
-        'WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Gui_Size", MedGuiR.Size.Width & "x" & MedGuiR.Size.Height)
+            If MedGuiR.Width >= Screen.PrimaryScreen.Bounds.Width Then
+                forMax = True
+            Else
+                forMax = False
+            End If
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Form_State", forMax)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "MGRH", MGRH)
 
-        If MedGuiR.Width >= Screen.PrimaryScreen.Bounds.Width Then
-            forMax = True
-        Else
-            forMax = False
-        End If
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Form_State", forMax)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "General", "MGRH", MGRH)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "FTP_Adress", VSTripleDES.EncryptData(MedGuiR.TextBox26.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Username", VSTripleDES.EncryptData(MedGuiR.TextBox25.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Password", VSTripleDES.EncryptData(MedGuiR.TextBox24.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Start_Path", VSTripleDES.EncryptData(MedGuiR.TextBox23.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom", MedGuiR.TextBox21.Text)
+            'WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "NetClient", MedGuiR.CheckBox18.CheckState)
 
-        WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "FTP_Adress", VSTripleDES.EncryptData(MedGuiR.TextBox26.Text))
-        WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Username", VSTripleDES.EncryptData(MedGuiR.TextBox25.Text))
-        WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Password", VSTripleDES.EncryptData(MedGuiR.TextBox24.Text))
-        WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Start_Path", VSTripleDES.EncryptData(MedGuiR.TextBox23.Text))
-        WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom", MedGuiR.TextBox21.Text)
-        'WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "NetClient", MedGuiR.CheckBox18.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Nick", UCInick)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Server", UCIserver)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Port", UCIport)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Channel", UCIchannel)
 
-        WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Nick", UCInick)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Server", UCIserver)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Port", UCIport)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Channel", UCIchannel)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "UP", JUP)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "DOWN", JDOWN)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "LEFT", JLEFT)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "RIGHT", JRIGHT)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "SELECT", JSELECT)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "START", JSTART)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "A", JA)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "B", JB)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "Y", JY)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "X", JX)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "L", JL)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "R", JR)
 
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "UP", JUP)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "DOWN", JDOWN)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "LEFT", JLEFT)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "RIGHT", JRIGHT)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "SELECT", JSELECT)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "START", JSTART)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "A", JA)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "B", JB)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "Y", JY)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "X", JX)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "L", JL)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Joypad Configuration", "R", JR)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Resize", MedGuiR.CheckBox8.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Console", MedGuiR.CheckBox7.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Version", MedGuiR.CheckBox6.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Status", MedGuiR.CheckBox4.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "System", MedGuiR.CheckBox5.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Columns_Order", MedGuiR.ComboBox2.Text)
 
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Resize", MedGuiR.CheckBox8.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Console", MedGuiR.CheckBox7.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Version", MedGuiR.CheckBox6.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Status", MedGuiR.CheckBox4.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "System", MedGuiR.CheckBox5.CheckState)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Columns_Order", MedGuiR.ComboBox2.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Default", MedGuiR.TextBox9.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Lynx", MedGuiR.TextBox8.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoy", MedGuiR.TextBox7.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoyAdvance", MedGuiR.TextBox5.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "NeoGeoPocket", MedGuiR.TextBox6.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Famicom", MedGuiR.TextBox11.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "PCEngine", MedGuiR.TextBox10.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "PCFX", MedGuiR.TextBox15.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameGear", MedGuiR.TextBox14.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Megadrive", MedGuiR.TextBox13.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "MasterSystem", MedGuiR.TextBox19.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Playstation", MedGuiR.TextBox18.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "SNES", MedGuiR.TextBox17.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Saturn", MedGuiR.TextBox20.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "VirtualBoy", MedGuiR.TextBox12.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "WonderSwan", MedGuiR.TextBox16.Text)
+        Catch ex As Exception
+            MGRWriteLog("ManageIni - MedGuiR: " & ex.Message)
+        End Try
+    End Sub
 
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Default", MedGuiR.TextBox9.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Lynx", MedGuiR.TextBox8.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoy", MedGuiR.TextBox7.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoyAdvance", MedGuiR.TextBox5.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "NeoGeoPocket", MedGuiR.TextBox6.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Famicom", MedGuiR.TextBox11.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "PCEngine", MedGuiR.TextBox10.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "PCFX", MedGuiR.TextBox15.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameGear", MedGuiR.TextBox14.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Megadrive", MedGuiR.TextBox13.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "MasterSystem", MedGuiR.TextBox19.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Playstation", MedGuiR.TextBox18.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "SNES", MedGuiR.TextBox17.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Saturn", MedGuiR.TextBox20.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "VirtualBoy", MedGuiR.TextBox12.Text)
-        WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "WonderSwan", MedGuiR.TextBox16.Text)
+    Public Sub TGDBIni()
+        Try
+            WIni.IniWrite(MedExtra & "\Mini.ini", "TGDB API", "NEW_API", TGDBSettings.CheckBox1.CheckState)
+        Catch ex As Exception
+            MGRWriteLog("ManageIni - TGDB API: " & ex.Message)
+        End Try
     End Sub
 
 End Module

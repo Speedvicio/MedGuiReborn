@@ -17,6 +17,7 @@ Public Class TGDBSettings
         Me.Icon = gIcon
         F1 = Me
         CenterForm()
+        CheckBox1.Checked = GlobalVar.NewAPI
     End Sub
 
     Public Function MakeTGDBList(ByVal APIvalue As String)
@@ -76,6 +77,10 @@ Public Class TGDBSettings
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         MakeTGDBList("Publishers")
+    End Sub
+
+    Private Sub TGDBSettings_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        TGDBIni()
     End Sub
 
 End Class

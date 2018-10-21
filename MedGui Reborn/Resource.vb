@@ -50,6 +50,7 @@ Module Resource
             MedGuiR.Button55.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.Button56.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.Button57.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\help.png"))
+            MedGuiR.PictureBox7.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
 
             MgrSetting.Button2.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MgrSetting.Button1.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
@@ -174,6 +175,11 @@ Module Resource
             ModLand.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\target.png"))
             ModLand.PictureBox1.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\switch.png"))
             ModLand.PictureBox2.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
+
+            TGDBSettings.PictureBox1.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
+            TGDBSettings.PictureBox2.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
+            TGDBSettings.PictureBox3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
+            TGDBSettings.PictureBox4.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
 
             MedBrowser.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\net.png"))
         Catch ex As Exception

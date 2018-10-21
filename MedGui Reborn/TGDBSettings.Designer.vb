@@ -22,6 +22,7 @@ Partial Class TGDBSettings
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -32,6 +33,7 @@ Partial Class TGDBSettings
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,6 +56,7 @@ Partial Class TGDBSettings
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(212, 111)
         Me.Panel1.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.Panel1, "Update TGDB dats")
         '
         'Label4
         '
@@ -93,7 +96,7 @@ Partial Class TGDBSettings
         '
         'PictureBox4
         '
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox4.Location = New System.Drawing.Point(128, 84)
         Me.PictureBox4.Name = "PictureBox4"
@@ -103,7 +106,7 @@ Partial Class TGDBSettings
         '
         'PictureBox2
         '
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.Location = New System.Drawing.Point(128, 30)
         Me.PictureBox2.Name = "PictureBox2"
@@ -113,7 +116,7 @@ Partial Class TGDBSettings
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Location = New System.Drawing.Point(128, 3)
         Me.PictureBox1.Name = "PictureBox1"
@@ -123,7 +126,7 @@ Partial Class TGDBSettings
         '
         'PictureBox3
         '
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox3.Location = New System.Drawing.Point(128, 57)
         Me.PictureBox3.Name = "PictureBox3"
@@ -139,9 +142,10 @@ Partial Class TGDBSettings
         Me.CheckBox1.Size = New System.Drawing.Size(68, 17)
         Me.CheckBox1.TabIndex = 0
         Me.CheckBox1.Text = "&New API"
+        Me.ToolTip1.SetToolTip(Me.CheckBox1, "Enable The Games Database NEW API")
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'TGBSettings
+        'TGDBSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -150,7 +154,7 @@ Partial Class TGDBSettings
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
-        Me.Name = "TGBSettings"
+        Me.Name = "TGDBSettings"
         Me.Text = "TGDBS Settings"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -173,4 +177,5 @@ Partial Class TGDBSettings
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
