@@ -21,14 +21,14 @@
             MedGuiR.CheckBox20.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoUpdate")
             MedGuiR.CheckBox21.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoScanCD")
             MedGuiR.NetToolStripButton.BackColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoConn"))
-            GlobalVar.NewAPI = RIni.IniRead(MedExtra & "\Mini.ini", "TGDB API", "NEW_API").Trim
+            Dim GNA As String = RIni.IniRead(MedExtra & "\Mini.ini", "TGDB API", "NEW_API").Trim
             UpdateServer = RIni.IniRead(MedExtra & "\Mini.ini", "General", "UpdateServer").Trim
 
             If UpdateServer = "" Then
                 Test_Server()
             End If
 
-            If GlobalVar.NewAPI = "" Then GlobalVar.NewAPI = False
+            If GNA = "" Then GlobalVar.NewAPI = False
 
             'Dim SizeGui() As String
             'SizeGui = Split(RIni.IniRead(MedExtra & "\Mini.ini", "General", "Gui_Size"), "x")
