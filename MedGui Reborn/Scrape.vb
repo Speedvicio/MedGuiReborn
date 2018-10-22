@@ -125,7 +125,7 @@ Module Scrape
 
                 '<TheGamesDb newapi>
                 'MedGuiR.TGDBPlatform()
-                'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("WGjcjnPpu1N7Cj92IF4kIiHtXEd5iNXtaZWpDkM5FVIwZuE2Kpo8R5KzvfENFA8kWmEGOig1hY30hlgoajQ+JjL+Zyv5rmRS+FPemgiaKTTMsGDF4jNR0W1rCBblcD9p6CrUK9MH7YKlexs1HkfrqTlyGKzDLlla1vBfFiI1gmp9haPCMNH84Q==") _
+                'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
                 '   & "&name=" & cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
                 'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
@@ -156,7 +156,7 @@ Module Scrape
 
                 '<TheGamesDb newapi>
                 'MedGuiR.TGDBPlatform()
-                'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("WGjcjnPpu1N7Cj92IF4kIiHtXEd5iNXtaZWpDkM5FVIwZuE2Kpo8R5KzvfENFA8kWmEGOig1hY30hlgoajQ+JjL+Zyv5rmRS+FPemgiaKTTMsGDF4jNR0W1rCBblcD9p6CrUK9MH7YKlexs1HkfrqTlyGKzDLlla1vBfFiI1gmp9haPCMNH84Q==") _
+                'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
                 '   & "&name=" & cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
                 'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
