@@ -78,3 +78,4 @@ You can found the last stable release on:
 * [An FTP client library for .NET 2.0](https://www.codeproject.com/Articles/11991/An-FTP-client-library-for-NET) for perform all ftp job on MedClient session
 * [Mico and Sico](https://sourceforge.net/projects/micosico/?source=directory) to convert png to ico
 * A modified version of [GBS2GB](http://www.angelfire.com/nc/ugetab/) to convert gbs in gb format
+* Superb console icon set by [Yoshi-kun](http://yspixel.jpn.org/icon/index.html)
