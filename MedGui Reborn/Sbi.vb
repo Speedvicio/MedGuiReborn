@@ -24,14 +24,15 @@ Module Sbi
             While oRead.Peek <> -1
                 'If percorso.Contains(oRead.ReadLine()) Then
                 'Or percorso.Contains(oRead.ReadLine())
-                If Serial_PSX.Contains(oRead.ReadLine()) Then
-                    patchname = oRead.ReadLine
+                Dim ComparedSerial As String = oRead.ReadLine().Trim
+                If Serial_PSX.Contains(ComparedSerial) Then
+                    patchname = ComparedSerial
 
                     Dim mx As String = MsgBox("Your PSX game needs a LaserLock patch to work properly" & vbCrLf &
                                             "Do you want to download and/or apply it?", vbYesNo + vbInformation)
 
-                    If mx = vbYes Then get_SbiPatch() Else Exit Sub
-
+                    If mx = vbYes Then get_SbiPatch() 'Else Exit Sub
+                    Exit While
                 End If
 
             End While
