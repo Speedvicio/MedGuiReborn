@@ -128,6 +128,12 @@ Public Class MedGuiR
                         RIPSToolStripMenuItem.Enabled = False
                     End If
 
+                    If File.Exists(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi") Then
+                        RSBIToolStripMenuItem.Enabled = True
+                    Else
+                        RSBIToolStripMenuItem.Enabled = False
+                    End If
+
                     If File.Exists(MedExtra & "\Plugins\Controller\MedPad.exe") Then
                         MedPadToolStripMenuItem.Enabled = True
                     Else
@@ -2315,21 +2321,38 @@ inputagain:
         If File.Exists(percorso & ".ips") Then My.Computer.FileSystem.DeleteFile(percorso & ".ips", FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
     End Sub
 
+    Private Sub RSBIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RSBIToolStripMenuItem.Click
+        If File.Exists(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi") Then My.Computer.FileSystem.DeleteFile(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi", FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
+    End Sub
+
     Private Sub IPSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IPSToolStripMenuItem.Click
         Dim fdlg As OpenFileDialog = New OpenFileDialog()
-        fdlg.Title = "Select an ips patch"
-        fdlg.Filter = "All supported format (*.ips)|*.ips"
+        fdlg.Title = "Select an ips/sbi patch"
+        fdlg.Filter = "All supported format (*.ips,*.sbi)|*.ips;*sbi"
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
             Dim orisp As String
-            If File.Exists(percorso & ".ips") Then
-                orisp = MsgBox(Path.GetFileName(percorso) & ".ips exist" & vbCrLf & "Do you want to overwrite it?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "IPS exist...")
-            End If
-            If orisp <> vbNo Then
-                My.Computer.FileSystem.CopyFile(fdlg.FileName, percorso & ".ips", overwrite:=True)
-                MsgBox("IPS Patch moved in the same folder rom", MsgBoxStyle.Information + vbOKOnly, "Patch moved...")
-            End If
+
+            Select Case LCase(Path.GetExtension(fdlg.SafeFileName))
+                Case ".ips"
+                    If File.Exists(percorso & ".ips") Then
+                        orisp = MsgBox(Path.GetFileName(percorso) & ".ips exist" & vbCrLf & "Do you want to overwrite it?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "IPS exist...")
+                    End If
+                    If orisp <> vbNo Then
+                        My.Computer.FileSystem.CopyFile(fdlg.FileName, percorso & ".ips", overwrite:=True)
+                        MsgBox("IPS Patch moved in the same game folder", MsgBoxStyle.Information + vbOKOnly, "Patch moved...")
+                    End If
+                Case ".sbi"
+                    If File.Exists(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi") Then
+                        orisp = MsgBox(Path.GetFileNameWithoutExtension(percorso) & ".sbi exist" & vbCrLf & "Do you want to overwrite it?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "SBI exist...")
+                    End If
+                    If orisp <> vbNo Then
+                        My.Computer.FileSystem.CopyFile(fdlg.FileName, Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi", overwrite:=True)
+                        MsgBox("SBI Patch moved in the same game folder", MsgBoxStyle.Information + vbOKOnly, "Patch moved...")
+                    End If
+            End Select
+
         End If
     End Sub
 

@@ -328,6 +328,7 @@ Partial Class MedGuiR
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.IPSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RIPSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RSBIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
         Me.AddToFavoritesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemoveFromFavoritesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -3260,9 +3261,9 @@ Partial Class MedGuiR
         '
         'AdvancedMenu
         '
-        Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem1, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.ToolStripSeparator10, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.ResetToolStripMenuItem1, Me.ToolStripSeparator12, Me.mMetroMed})
+        Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem1, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.ResetToolStripMenuItem1, Me.ToolStripSeparator12, Me.mMetroMed})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(205, 310)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(205, 332)
         '
         'StartGameToolStripMenuItem
         '
@@ -3354,8 +3355,8 @@ Partial Class MedGuiR
         '
         Me.IPSToolStripMenuItem.Name = "IPSToolStripMenuItem"
         Me.IPSToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
-        Me.IPSToolStripMenuItem.Text = "&Import IPS &Patch"
-        Me.IPSToolStripMenuItem.ToolTipText = "Import a IPS patch for selected game"
+        Me.IPSToolStripMenuItem.Text = "&Import IPS/SBI &Patch"
+        Me.IPSToolStripMenuItem.ToolTipText = "Import a IPS/SBI patch for selected game"
         '
         'RIPSToolStripMenuItem
         '
@@ -3363,6 +3364,13 @@ Partial Class MedGuiR
         Me.RIPSToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.RIPSToolStripMenuItem.Text = "Remove IP&S Patch"
         Me.RIPSToolStripMenuItem.ToolTipText = "Remove existent IPS patch from selected game"
+        '
+        'RSBIToolStripMenuItem
+        '
+        Me.RSBIToolStripMenuItem.Name = "RSBIToolStripMenuItem"
+        Me.RSBIToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.RSBIToolStripMenuItem.Text = "Remove S&BI Patch"
+        Me.RSBIToolStripMenuItem.ToolTipText = "Remove existent SBI patch from selected PSX game"
         '
         'ToolStripSeparator10
         '
@@ -3834,4 +3842,5 @@ Partial Class MedGuiR
     Friend WithEvents MedPadToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LinkLabel9 As LinkLabel
     Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents RSBIToolStripMenuItem As ToolStripMenuItem
 End Class

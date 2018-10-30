@@ -139,6 +139,7 @@ Module Resource
             MedGuiR.OnlineToolStripMenuItem1.Image = (New Bitmap(MedExtra & "Resource\Gui\net.png"))
             MedGuiR.IPSToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\patch.png"))
             MedGuiR.RIPSToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
+            MedGuiR.RSBIToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.MedPadToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\medpad.ico"))
             MedGuiR.AddToFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\favourite.png"))
             MedGuiR.RemoveFromFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
