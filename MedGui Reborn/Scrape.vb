@@ -3,7 +3,7 @@ Imports System.Xml
 
 Module Scrape
     Public SBoxF, SboxR As String, ScrapeForce As Integer
-    Dim ConsoleID As String, ScrapeCount As Integer
+    Dim ConsoleID, TGDB_cleanstring As String, ScrapeCount As Integer
 
     Private Sub GetConsoleID()
         ConsoleID = ""
@@ -85,25 +85,25 @@ Module Scrape
                 Directory.CreateDirectory(MedExtra & "Scraped\Temp\")
             End If
 
-            Dim cleanstring As String = Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())
+            TGDB_cleanstring = Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())
 
             'If ConsoleID = "Sony Playstation" Then cleanstring = Trim(cleanpsx(cleanstring))
             Select Case ConsoleID
                 Case "Sega Saturn", "Sony Playstation"
-                    cleanstring = Trim(cleanpsx(cleanstring))
+                    TGDB_cleanstring = Trim(cleanpsx(TGDB_cleanstring))
             End Select
 
-            If cleanstring.Contains(", The") Then cleanstring = Replace(cleanstring, ", The", "") : cleanstring = "The " & cleanstring
-            If cleanstring.Contains("&") Then cleanstring = Replace(cleanstring, "&", "%26")
-            If cleanstring.Contains("+") Then cleanstring = Replace(cleanstring, "+", "%2B")
-            If cleanstring.Contains(" - ") Then cleanstring = Replace(cleanstring, " - ", ": ")
+            If TGDB_cleanstring.Contains(", The") Then TGDB_cleanstring = Replace(TGDB_cleanstring, ", The", "") : TGDB_cleanstring = "The " & TGDB_cleanstring
+            If TGDB_cleanstring.Contains("&") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "&", "%26")
+            If TGDB_cleanstring.Contains("+") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "+", "%2B")
+            If TGDB_cleanstring.Contains(" - ") Then TGDB_cleanstring = Replace(TGDB_cleanstring, " - ", ": ")
 
             If ScrapeCount = 6 Then
-                If cleanstring.Contains("'") Then cleanstring = Replace(cleanstring, "'", "")
-                If cleanstring.Contains(".") Then cleanstring = Replace(cleanstring, ".", "")
-                If cleanstring.Contains(": ") Then cleanstring = Replace(cleanstring, ": ", " ")
-                If cleanstring.Contains(" II ") Then cleanstring = Replace(cleanstring, "II", "2")
-                If cleanstring.Contains(" III") Then cleanstring = Replace(cleanstring, "III", "3")
+                If TGDB_cleanstring.Contains("'") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "'", "")
+                If TGDB_cleanstring.Contains(".") Then TGDB_cleanstring = Replace(TGDB_cleanstring, ".", "")
+                If TGDB_cleanstring.Contains(": ") Then TGDB_cleanstring = Replace(TGDB_cleanstring, ": ", " ")
+                If TGDB_cleanstring.Contains(" II ") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "II", "2")
+                If TGDB_cleanstring.Contains(" III") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "III", "3")
                 ScrapeCount = 1
             End If
 
@@ -120,9 +120,13 @@ Module Scrape
             End If
 
             If File.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml") And ScrapeForce = 3 Then
-                Dim W As New Net.WebClient
-                W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
 
+                If NewAPI = False Then
+                    Dim W As New Net.WebClient
+                    W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                Else
+                    TheGamesDb_newapi()
+                End If
                 '<TheGamesDb newapi>
                 'MedGuiR.TGDBPlatform()
                 'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
@@ -130,7 +134,7 @@ Module Scrape
                 'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
                 'Dim File As StreamWriter
-                'File = My.Computer.FileSystem.OpenTextFileWriter(Application.StartupPath & "\test.xml", False)
+                'File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
                 'Dim splitXml As String() = Split(str.OuterXml, "<pages>")
                 'File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
                 'File.Close()
@@ -151,9 +155,14 @@ Module Scrape
                 End If
             ElseIf ScrapeForce = 0 Then
             ElseIf ScrapeForce = 1 Then
-                Dim W As New Net.WebClient
-                W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
 
+
+                If NewAPI = False Then
+                    Dim W As New Net.WebClient
+                    W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                Else
+                    TheGamesDb_newapi()
+                End If
                 '<TheGamesDb newapi>
                 'MedGuiR.TGDBPlatform()
                 'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
@@ -161,7 +170,7 @@ Module Scrape
                 'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
                 'Dim File As StreamWriter
-                'File = My.Computer.FileSystem.OpenTextFileWriter(Application.StartupPath & "\test.xml", False)
+                'File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
                 'Dim splitXml As String() = Split(str.OuterXml, "<pages>")
                 'File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
                 'File.Close()
@@ -175,6 +184,22 @@ Module Scrape
             End If
             SoxStatus.Close()
         End Try
+    End Sub
+
+    Private Sub TheGamesDb_newapi()
+
+        '<TheGamesDb newapi>
+        MedGuiR.TGDBPlatform()
+        Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
+           & "&name=" & TGDB_cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
+        Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
+
+        Dim File As StreamWriter
+        File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
+        Dim splitXml As String() = Split(str.OuterXml, "<pages>")
+        File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
+        File.Close()
+
     End Sub
 
     Private Sub ReadXml()
