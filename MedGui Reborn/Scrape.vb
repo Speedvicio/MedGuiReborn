@@ -3,7 +3,7 @@ Imports System.Xml
 
 Module Scrape
     Public SBoxF, SboxR As String, ScrapeForce As Integer
-    Dim ConsoleID, TGDB_cleanstring As String, ScrapeCount As Integer
+    Dim ConsoleID, TGDB_cleanstring, path_temp As String, ScrapeCount As Integer
 
     Private Sub GetConsoleID()
         ConsoleID = ""
@@ -66,6 +66,7 @@ Module Scrape
     End Sub
 
     Public Sub GetParseXML()
+        path_temp = ""
         Try
             If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "" Then Exit Sub
         Catch
@@ -125,6 +126,7 @@ Module Scrape
                     Dim W As New Net.WebClient
                     W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
+                    path_temp = "Temp\"
                     TheGamesDb_newapi()
                 End If
                 '<TheGamesDb newapi>
@@ -161,6 +163,7 @@ Module Scrape
                     Dim W As New Net.WebClient
                     W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
+                    path_temp = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\"
                     TheGamesDb_newapi()
                 End If
                 '<TheGamesDb newapi>
@@ -195,7 +198,7 @@ Module Scrape
         Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
         Dim File As StreamWriter
-        File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
+        File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\" & path_temp & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
         Dim splitXml As String() = Split(str.OuterXml, "<pages>")
         File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
         File.Close()
@@ -232,12 +235,19 @@ Module Scrape
                         TheGamesDB.Label2.Text = "Platform: " & (reader.Value)
                     Case "ReleaseDate", "release_date"
                         Dim fdate As String
-                        If Len(reader.Value) = 10 Then fdate = reader.Value Else fdate = "0" & reader.Value
-                        If Len(reader.Value) = 4 Then
-                            TheGamesDB.Label3.Text = "Release Date: " & (reader.Value)
+                        fdate = Replace(reader.Value, "-", "/")
+                        If Len(fdate) = 10 Then fdate = fdate Else fdate = "0" & fdate
+                        If Len(fdate) = 4 Then
+                            TheGamesDB.Label3.Text = "Release Date: " & (fdate)
                         Else
-                            Dim expenddt As Date = Date.ParseExact(fdate, "MM/dd/yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo).ToString
-                            TheGamesDB.Label3.Text = "Release Date: " & (expenddt)
+                            Try
+                                Dim expenddt As Date
+                                expenddt = Date.ParseExact(fdate, "MM/dd/yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo).ToString
+                                fdate = expenddt
+                            Catch
+                            Finally
+                                TheGamesDB.Label3.Text = "Release Date: " & (fdate)
+                            End Try
                         End If
                     Case "Overview", "overview"
                         TheGamesDB.RichTextBox1.Text = (reader.Value)
