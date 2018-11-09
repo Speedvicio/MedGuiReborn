@@ -231,7 +231,7 @@ Module Scrape
                         BaseUrl = reader.Value
                     Case "GameTitle", "game_title"
                         TheGamesDB.Label1.Text = "Game Title: " & Replace(reader.Value, "&", "&&")
-                    Case "Platform", "platform"
+                    Case "Platform", "platform", "name"
                         TheGamesDB.Label2.Text = "Platform: " & (reader.Value)
                     Case "ReleaseDate", "release_date"
                         Dim fdate As String
@@ -241,9 +241,11 @@ Module Scrape
                             TheGamesDB.Label3.Text = "Release Date: " & (fdate)
                         Else
                             Try
+                                Dim formatDate() = {"dd/MM/yyyy", "MM/dd/yyyy", "yyyy/MM/dd"}
                                 Dim expenddt As Date
-                                expenddt = Date.ParseExact(fdate, "MM/dd/yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo).ToString
-                                fdate = expenddt
+                                expenddt = Date.ParseExact(fdate, formatDate, Globalization.DateTimeFormatInfo.InvariantInfo,
+    Globalization.DateTimeStyles.None)
+                                fdate = expenddt.ToString("dd/MM/yyyy", Globalization.CultureInfo.InvariantCulture)
                             Catch
                             Finally
                                 TheGamesDB.Label3.Text = "Release Date: " & (fdate)
@@ -251,7 +253,7 @@ Module Scrape
                         End If
                     Case "Overview", "overview"
                         TheGamesDB.RichTextBox1.Text = (reader.Value)
-                    Case "genre"
+                    Case "genre", "genres"
                         If Len(TheGamesDB.Label4.Text) <= 7 Then
                             TheGamesDB.Label4.Text = "Genre: " & (reader.Value)
                         Else
