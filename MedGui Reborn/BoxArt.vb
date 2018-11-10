@@ -180,7 +180,12 @@ Module BoxArt
     End Sub
 
     Private Sub SearchScrape()
-        MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png")
+        Try
+            MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png")
+        Catch
+            MedGuiR.PictureBox1.Image = Nothing
+        End Try
+
         For Each foundFile As String In My.Computer.FileSystem.GetFiles(
     MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()))
             If foundFile.Contains("tfront") Then MedGuiR.PictureBox1.Load(foundFile) : pathimage = foundFile
