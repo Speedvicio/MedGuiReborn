@@ -28,6 +28,8 @@
 
     Private Sub TheGamesDB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
+        F1 = Me
+        CenterForm()
         PictureBox3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
     End Sub
 

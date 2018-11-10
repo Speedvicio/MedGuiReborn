@@ -1609,7 +1609,6 @@ Partial Class MedGuiR
         Me.PictureBox7.TabIndex = 35
         Me.PictureBox7.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox7, "The Games Database NEW API Updater/Enabler" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
-        Me.PictureBox7.Visible = False
         '
         'Panel1
         '

@@ -158,7 +158,6 @@ Module Scrape
             ElseIf ScrapeForce = 0 Then
             ElseIf ScrapeForce = 1 Then
 
-
                 If NewAPI = False Then
                     Dim W As New Net.WebClient
                     W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
@@ -205,14 +204,16 @@ Module Scrape
 
     End Sub
 
-    Private Sub ReadXml()
-        Dim TGDBXml, BaseUrl, tBack, tFront, fBack, fFront As String
+    Public Sub ReadXml()
+        Dim TGDBXml, BaseUrl, tBack, tFront, fBack, fFront, GameID As String
+        Dim counTGDB As Integer
+        Dim GameName, ReleaseDate As String
         TGDBXml = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml"
 
         Dim reader As New System.Xml.XmlTextReader(TGDBXml)
         Dim W As New Net.WebClient
 
-        TheGamesDB.Show()
+        If NewAPI = False Then TheGamesDB.Show()
         TheGamesDB.Label4.Text = "Genre: "
         TheGamesDB.PictureBox1.Image = Nothing
         TheGamesDB.PictureBox2.Image = Nothing
@@ -227,10 +228,21 @@ Module Scrape
 
             If reader.NodeType = Xml.XmlNodeType.Text Then
                 Select Case contents
+                    Case "count"
+                        counTGDB = Val(reader.Value)
+                        If counTGDB = 1 Then
+                            TheGamesDB.Show()
+                        ElseIf counTGDB > 1 Then
+                            TGDBGameSelector.Show()
+                            TGDBGameSelector.DataGridView1.Rows.Clear()
+                        End If
+                    Case "id"
+                        GameID = reader.Value.ToString
                     Case "baseImgUrl"
                         BaseUrl = reader.Value
                     Case "GameTitle", "game_title"
-                        TheGamesDB.Label1.Text = "Game Title: " & Replace(reader.Value, "&", "&&")
+                        GameName = Replace(reader.Value, "&", "&&")
+                        TheGamesDB.Label1.Text = "Game Title: " & GameName
                     Case "Platform", "platform", "name"
                         TheGamesDB.Label2.Text = "Platform: " & (reader.Value)
                     Case "ReleaseDate", "release_date"
@@ -248,8 +260,14 @@ Module Scrape
                                 fdate = expenddt.ToString("dd/MM/yyyy", Globalization.CultureInfo.InvariantCulture)
                             Catch
                             Finally
+                                ReleaseDate = fdate
                                 TheGamesDB.Label3.Text = "Release Date: " & (fdate)
                             End Try
+
+                            'If counTGDB > 1 Then
+                            TGDBGameSelector.DataGridView1.Rows.Add(GameID, GameName, ReleaseDate)
+                            TGDBGameSelector.DataGridView1.Sort(TGDBGameSelector.DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+                            'End If
                         End If
                     Case "Overview", "overview"
                         TheGamesDB.RichTextBox1.Text = (reader.Value)
