@@ -213,7 +213,7 @@ Module Scrape
         Dim reader As New System.Xml.XmlTextReader(TGDBXml)
         Dim W As New Net.WebClient
 
-        If NewAPI = False Then TheGamesDB.Show()
+        TheGamesDB.Show()
         TheGamesDB.Label4.Text = "Genre: "
         TheGamesDB.PictureBox1.Image = Nothing
         TheGamesDB.PictureBox2.Image = Nothing
@@ -230,9 +230,8 @@ Module Scrape
                 Select Case contents
                     Case "count"
                         counTGDB = Val(reader.Value)
-                        If counTGDB = 1 Then
-                            TheGamesDB.Show()
-                        ElseIf counTGDB > 1 Then
+                        If counTGDB > 1 Then
+                            TheGamesDB.Close()
                             TGDBGameSelector.Show()
                             TGDBGameSelector.DataGridView1.Rows.Clear()
                         End If
@@ -240,6 +239,8 @@ Module Scrape
                         GameID = reader.Value.ToString
                     Case "baseImgUrl"
                         BaseUrl = reader.Value
+                    Case "original"
+                        If counTGDB = 1 Then BaseUrl = reader.Value
                     Case "GameTitle", "game_title"
                         GameName = Replace(reader.Value, "&", "&&")
                         TheGamesDB.Label1.Text = "Game Title: " & GameName
@@ -272,17 +273,36 @@ Module Scrape
                     Case "Overview", "overview"
                         TheGamesDB.RichTextBox1.Text = (reader.Value)
                     Case "genre", "genres"
-                        If Len(TheGamesDB.Label4.Text) <= 7 Then
-                            TheGamesDB.Label4.Text = "Genre: " & (reader.Value)
+                        Dim result As String = ""
+                        If NewAPI = True Then
+                            result = ReadTGDBList("Genres", reader.Value.Trim)
                         Else
-                            TheGamesDB.Label4.Text = TheGamesDB.Label4.Text & " - " & (reader.Value)
+                            result = reader.Value
+                        End If
+
+                        If Len(TheGamesDB.Label4.Text) <= 7 Then
+                            TheGamesDB.Label4.Text = "Genre: " & (result)
+                        Else
+                            TheGamesDB.Label4.Text = TheGamesDB.Label4.Text & " - " & (result)
                         End If
                     Case "Players", "players"
                         TheGamesDB.Label11.Text = "Players: " & (reader.Value)
                     Case "Publisher", "publishers"
-                        TheGamesDB.Label5.Text = "Publisher: " & (reader.Value)
+                        Dim result As String = ""
+                        If NewAPI = True Then
+                            result = ReadTGDBList("Publishers", reader.Value.Trim)
+                        Else
+                            result = reader.Value
+                        End If
+                        TheGamesDB.Label5.Text = "Publisher: " & (result)
                     Case "Developer", "developers"
-                        TheGamesDB.Label6.Text = "Developer: " & (reader.Value)
+                        Dim result As String = ""
+                        If NewAPI = True Then
+                            result = ReadTGDBList("Developers", reader.Value.Trim)
+                        Else
+                            result = reader.Value
+                        End If
+                        TheGamesDB.Label6.Text = "Developer: " & (result)
                     Case "Co-op", "coop"
                         TheGamesDB.Label7.Text = "Co-op: " & (reader.Value)
                     Case "boxart"
@@ -305,6 +325,62 @@ Module Scrape
                                 W.DownloadFile(BaseUrl & fFront, SIF)
                             End If
 
+                        End If
+                    Case "filename"
+                        Dim SIF As String
+                        If counTGDB = 1 Then
+                            If reader.Value.Contains("boxart/back/") Then
+                                fBack = reader.Value
+                                SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
+
+                                If File.Exists(SIF) Then
+                                ElseIf ScrapeForce > 0 Then
+                                    W.DownloadFile(BaseUrl & fBack, SIF)
+                                End If
+
+                                'thumb
+                                tBack = reader.Value
+                                SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
+
+                                If File.Exists(SIF) Then
+                                ElseIf ScrapeForce > 0 Then
+                                    W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tBack, SIF)
+                                End If
+
+                                SboxR = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
+
+                                Try
+                                    TheGamesDB.PictureBox2.Load(SboxR)
+                                Catch
+                                End Try
+
+                            ElseIf reader.Value.Contains("boxart/front/") Then
+                                fFront = reader.Value
+                                SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
+
+                                If File.Exists(SIF) Then
+                                ElseIf ScrapeForce > 0 Then
+                                    W.DownloadFile(BaseUrl & fFront, SIF)
+                                End If
+
+                                'thumb
+                                tFront = reader.Value
+                                SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
+
+                                If File.Exists(SIF) Then
+                                ElseIf ScrapeForce > 0 Then
+                                    W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tFront, SIF)
+                                End If
+
+                                SBoxF = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
+
+                                Try
+                                    TheGamesDB.PictureBox1.Load(SBoxF)
+                                Catch
+                                End Try
+
+                                If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then MedGuiR.PictureBox1.Load(SBoxF) : pathimage = SBoxF
+                            End If
                         End If
 
                 End Select
@@ -398,6 +474,28 @@ Module Scrape
 
     Public Function AddAmpersand(ByVal AddAmp As String) As String
         AddAmpersand = Replace(AddAmp, " & ", " %26 ")
+    End Function
+
+    Public Function ReadTGDBList(ByVal TypeList As String, id As String)
+        Dim oFile As System.IO.File
+        Dim oRead As System.IO.StreamReader
+
+        Try
+            oRead = oFile.OpenText(MedExtra & "\Plugins\db\TGDB\" & TypeList & ".txt")
+            Dim splitoread() As String
+            While oRead.Peek <> -1
+                splitoread = Split(oRead.ReadLine(), " | ")
+                Select Case splitoread(0)
+                    Case id
+                        Return (splitoread(1).Trim)
+                        Exit While
+                End Select
+            End While
+        Catch ex As Exception
+            Return ("")
+        Finally
+            oRead.Close()
+        End Try
     End Function
 
 End Module
