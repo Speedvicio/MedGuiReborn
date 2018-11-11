@@ -274,7 +274,7 @@ Module Scrape
                         TheGamesDB.RichTextBox1.Text = (reader.Value)
                     Case "genre", "genres"
                         Dim result As String = ""
-                        If NewAPI = True Then
+                        If counTGDB = 1 Then
                             result = ReadTGDBList("Genres", reader.Value.Trim)
                         Else
                             result = reader.Value
@@ -289,7 +289,7 @@ Module Scrape
                         TheGamesDB.Label11.Text = "Players: " & (reader.Value)
                     Case "Publisher", "publishers"
                         Dim result As String = ""
-                        If NewAPI = True Then
+                        If counTGDB = 1 Then
                             result = ReadTGDBList("Publishers", reader.Value.Trim)
                         Else
                             result = reader.Value
@@ -297,7 +297,7 @@ Module Scrape
                         TheGamesDB.Label5.Text = "Publisher: " & (result)
                     Case "Developer", "developers"
                         Dim result As String = ""
-                        If NewAPI = True Then
+                        If counTGDB = 1 Then
                             result = ReadTGDBList("Developers", reader.Value.Trim)
                         Else
                             result = reader.Value

@@ -54,14 +54,14 @@ Partial Class TGDBSettings
         Me.Panel1.Enabled = False
         Me.Panel1.Location = New System.Drawing.Point(12, 35)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(212, 111)
+        Me.Panel1.Size = New System.Drawing.Size(239, 111)
         Me.Panel1.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.Panel1, "Update TGDB dats")
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(67, 84)
+        Me.Label4.Location = New System.Drawing.Point(80, 84)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 40
@@ -70,7 +70,7 @@ Partial Class TGDBSettings
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(72, 57)
+        Me.Label3.Location = New System.Drawing.Point(85, 57)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 13)
         Me.Label3.TabIndex = 39
@@ -79,7 +79,7 @@ Partial Class TGDBSettings
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(81, 30)
+        Me.Label2.Location = New System.Drawing.Point(94, 30)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 13)
         Me.Label2.TabIndex = 38
@@ -88,7 +88,7 @@ Partial Class TGDBSettings
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(61, 3)
+        Me.Label1.Location = New System.Drawing.Point(74, 3)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(61, 13)
         Me.Label1.TabIndex = 37
@@ -98,7 +98,7 @@ Partial Class TGDBSettings
         '
         Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox4.Location = New System.Drawing.Point(128, 84)
+        Me.PictureBox4.Location = New System.Drawing.Point(141, 84)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(23, 21)
         Me.PictureBox4.TabIndex = 36
@@ -108,7 +108,7 @@ Partial Class TGDBSettings
         '
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox2.Location = New System.Drawing.Point(128, 30)
+        Me.PictureBox2.Location = New System.Drawing.Point(141, 30)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(23, 21)
         Me.PictureBox2.TabIndex = 35
@@ -118,7 +118,7 @@ Partial Class TGDBSettings
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Location = New System.Drawing.Point(128, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(141, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(23, 21)
         Me.PictureBox1.TabIndex = 34
@@ -128,7 +128,7 @@ Partial Class TGDBSettings
         '
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox3.Location = New System.Drawing.Point(128, 57)
+        Me.PictureBox3.Location = New System.Drawing.Point(141, 57)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(23, 21)
         Me.PictureBox3.TabIndex = 33
@@ -137,7 +137,7 @@ Partial Class TGDBSettings
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(84, 12)
+        Me.CheckBox1.Location = New System.Drawing.Point(97, 12)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(68, 17)
         Me.CheckBox1.TabIndex = 0
@@ -149,10 +149,10 @@ Partial Class TGDBSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(236, 153)
+        Me.ClientSize = New System.Drawing.Size(263, 153)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
         Me.Name = "TGDBSettings"
         Me.Text = "TGDBS Settings"
