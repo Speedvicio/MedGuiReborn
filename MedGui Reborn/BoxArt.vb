@@ -98,7 +98,11 @@ Module BoxArt
                 MedGuiR.PictureBox4.Load(MedExtra & "BoxArt\NoPr.png")
             End If
         Catch ex As Exception
-            MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png")
+            If IO.File.Exists(MedExtra & "BoxArt\NoPr.png") Then
+                MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png")
+            Else
+                MedGuiR.PictureBox1.Image = Nothing
+            End If
         End Try
     End Sub
 
