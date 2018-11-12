@@ -236,7 +236,7 @@ Module Scrape
                             TGDBGameSelector.DataGridView1.Rows.Clear()
                         End If
                     Case "id"
-                        GameID = reader.Value.ToString
+                        If counTGDB > 1 Then GameID = reader.Value.ToString
                     Case "baseImgUrl"
                         BaseUrl = reader.Value
                     Case "original"
@@ -491,10 +491,9 @@ Module Scrape
                         Exit While
                 End Select
             End While
+            oRead.Close()
         Catch ex As Exception
             Return ("")
-        Finally
-            oRead.Close()
         End Try
     End Function
 
