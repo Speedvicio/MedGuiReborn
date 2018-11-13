@@ -4,6 +4,8 @@
         Me.Icon = gIcon
         F1 = Me
         CenterForm()
+        Label1.Refresh()
+        Me.Refresh()
     End Sub
 
 End Class
