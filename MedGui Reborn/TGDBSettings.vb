@@ -21,6 +21,10 @@ Public Class TGDBSettings
     End Sub
 
     Public Function MakeTGDBList(ByVal APIvalue As String)
+        SoxStatus.Text = "Waiting for download " & APIvalue & "..."
+        SoxStatus.Label1.Text = "Wait..."
+        SoxStatus.Show()
+
         Dim SplittedScrapedValue() As String
         Dim ResultScraped As String
         Dim JsonT As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/" & APIvalue & "?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA=="))
@@ -55,10 +59,13 @@ Public Class TGDBSettings
             End While
 
             File.WriteAllText(MedExtra & "\Plugins\db\TGDB\" & APIvalue & ".txt", ResultScraped)
+            oRead.Close()
         Catch ex As Exception
         Finally
-            oRead.Close()
-            File.Delete(MedExtra & "\Plugins\db\TGDB\" & APIvalue)
+            If File.Exists(MedExtra & "\Plugins\db\TGDB\" & APIvalue) Then
+                File.Delete(MedExtra & "\Plugins\db\TGDB\" & APIvalue)
+            End If
+            SoxStatus.Close()
             MsgBox(APIvalue & " Updated!", MsgBoxStyle.Information + vbOKOnly, "Update Done...")
         End Try
     End Function
