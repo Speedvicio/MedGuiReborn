@@ -261,10 +261,12 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         F1 = Me
         CenterForm()
 
-        Select Case True
-            Case UCase(rn.Contains("SCES")), UCase(rn.Contains("SLES"))
-                CheckBox104.Enabled = True
-        End Select
+        If rn IsNot Nothing Then
+            Select Case True
+                Case UCase(rn.Contains("SCES")), UCase(rn.Contains("SLES"))
+                    CheckBox104.Enabled = True
+            End Select
+        End If
 
         ostr = ComboBox5.Text
         ofsr = ComboBox6.Text
