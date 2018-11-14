@@ -2,7 +2,7 @@
 Imports System.Xml
 
 Module Scrape
-    Public SBoxF, SboxR As String, ScrapeForce As Integer
+    Public SBoxF, SboxR As String, ScrapeForce, xmlAttemp As Integer
     Dim ConsoleID, TGDB_cleanstring, path_temp As String, ScrapeCount As Integer
 
     Private Sub GetConsoleID()
@@ -66,6 +66,13 @@ Module Scrape
     End Sub
 
     Public Sub GetParseXML()
+
+        If NewAPI = True Then
+            xmlAttemp = 8
+        Else
+            xmlAttemp = 0
+        End If
+
         path_temp = ""
         Try
             If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "" Then Exit Sub
@@ -98,8 +105,9 @@ Module Scrape
             If TGDB_cleanstring.Contains("&") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "&", "%26")
             If TGDB_cleanstring.Contains("+") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "+", "%2B")
             If TGDB_cleanstring.Contains(" - ") Then TGDB_cleanstring = Replace(TGDB_cleanstring, " - ", ": ")
+            If TGDB_cleanstring.Contains(" ~ ") Then TGDB_cleanstring = Replace(TGDB_cleanstring, " ~ ", "")
 
-            If ScrapeCount = 6 Then
+            If ScrapeCount = 6 + xmlAttemp Then
                 If TGDB_cleanstring.Contains("'") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "'", "")
                 If TGDB_cleanstring.Contains(".") Then TGDB_cleanstring = Replace(TGDB_cleanstring, ".", "")
                 If TGDB_cleanstring.Contains(": ") Then TGDB_cleanstring = Replace(TGDB_cleanstring, ": ", " ")
@@ -180,7 +188,10 @@ Module Scrape
 
             ReadXml()
         Catch ex As System.Net.WebException
-            MessageBox.Show(ex.Message)
+            If ex.Message.ToString.Contains("403") Then
+                MsgBox("You have exceded per month, per ip limit of 1000 request" & vbCrLf &
+                                "Try the next month or swap to old TGDB API.", vbInformation + vbOKOnly, "TGDB request limit exceded...")
+            End If
             If (ex.Response IsNot Nothing) Then
                 Dim hr As System.Net.HttpWebResponse = DirectCast(ex.Response, System.Net.HttpWebResponse)
             End If
@@ -439,9 +450,9 @@ Module Scrape
 
         TheGamesDB.Focus()
 
-        If ScrapeCount = 6 Then
+        If ScrapeCount = 6 + xmlAttemp Then
             GetParseXML()
-        ElseIf ScrapeCount = 7 Then
+        ElseIf ScrapeCount = 7 + xmlAttemp Then
             TheGamesDB.Visible = False
             MsgBox("No TheGamesDB compatible rom name or info not Available", vbOKOnly + vbInformation)
             TheGamesDB.Close()
