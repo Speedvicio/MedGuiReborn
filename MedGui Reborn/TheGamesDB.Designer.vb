@@ -258,7 +258,6 @@ Partial Class TheGamesDB
         Me.Name = "TheGamesDB"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "TheGamesDB Scraper"
-        Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
