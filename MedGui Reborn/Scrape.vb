@@ -476,6 +476,13 @@ Module Scrape
             i1 = cleanstring.IndexOf("[")
             i2 = cleanstring.IndexOf("]")
         End While
+
+        For i = 0 To 10
+            If cleanstring.Contains(" CD" & i) Then
+                cleanstring = Replace(cleanstring, " CD" & i, "")
+                Exit For
+            End If
+        Next
         cleanpsx = cleanstring
     End Function
 
