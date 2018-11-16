@@ -363,6 +363,7 @@ Module Scrape
                                 Try
                                     TheGamesDB.PictureBox2.Load(SboxR)
                                 Catch
+                                    SoxStatus.Close()
                                 End Try
 
                             ElseIf reader.Value.Contains("boxart/front/") Then
@@ -388,6 +389,7 @@ Module Scrape
                                 Try
                                     TheGamesDB.PictureBox1.Load(SBoxF)
                                 Catch
+                                    SoxStatus.Close()
                                 End Try
 
                                 If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then MedGuiR.PictureBox1.Load(SBoxF) : pathimage = SBoxF
@@ -419,6 +421,7 @@ Module Scrape
                                 Try
                                     TheGamesDB.PictureBox2.Load(SboxR)
                                 Catch
+                                    SoxStatus.Close()
                                 End Try
 
                             Case reader.Value.Contains("boxart/thumb/original/front/")
@@ -435,6 +438,7 @@ Module Scrape
                                 Try
                                     TheGamesDB.PictureBox1.Load(SBoxF)
                                 Catch
+                                    SoxStatus.Close()
                                 End Try
 
                                 If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then MedGuiR.PictureBox1.Load(SBoxF) : pathimage = SBoxF
@@ -483,6 +487,9 @@ Module Scrape
                 Exit For
             End If
         Next
+
+        If cleanstring.Contains(", The") Then cleanstring = Replace(cleanstring, ", The", "") : cleanstring = "The " & cleanstring
+
         cleanpsx = cleanstring
     End Function
 
