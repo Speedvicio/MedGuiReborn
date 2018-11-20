@@ -118,8 +118,6 @@ Partial Class MgrSetting
         Me.TrackBar6 = New System.Windows.Forms.TrackBar()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.CheckBox11 = New System.Windows.Forms.CheckBox()
         Me.CheckBox10 = New System.Windows.Forms.CheckBox()
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
@@ -468,6 +466,10 @@ Partial Class MgrSetting
         Me.ComboBox46 = New System.Windows.Forms.ComboBox()
         Me.Label109 = New System.Windows.Forms.Label()
         Me.ComboBox47 = New System.Windows.Forms.ComboBox()
+        Me.TabPage29 = New System.Windows.Forms.TabPage()
+        Me.GroupBox25 = New System.Windows.Forms.GroupBox()
+        Me.Label144 = New System.Windows.Forms.Label()
+        Me.ComboBox58 = New System.Windows.Forms.ComboBox()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
@@ -475,10 +477,8 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.TabPage29 = New System.Windows.Forms.TabPage()
-        Me.GroupBox25 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox58 = New System.Windows.Forms.ComboBox()
-        Me.Label144 = New System.Windows.Forms.Label()
+        Me.CheckBox105 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox106 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -616,21 +616,19 @@ Partial Class MgrSetting
         Me.TabControl1.Controls.Add(Me.TabPage27)
         Me.TabControl1.Controls.Add(Me.TabPage26)
         Me.TabControl1.Controls.Add(Me.TabPage29)
-        Me.TabControl1.Location = New System.Drawing.Point(18, 18)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(477, 477)
+        Me.TabControl1.Size = New System.Drawing.Size(318, 310)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabPage1.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Size = New System.Drawing.Size(310, 284)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Sound"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -649,21 +647,18 @@ Partial Class MgrSetting
         Me.GroupBox1.Controls.Add(Me.TrackBar1)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.CheckBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox1.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox1.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
         'CheckBox13
         '
         Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.Location = New System.Drawing.Point(248, 65)
-        Me.CheckBox13.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox13.Location = New System.Drawing.Point(165, 42)
         Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(120, 24)
+        Me.CheckBox13.Size = New System.Drawing.Size(83, 17)
         Me.CheckBox13.TabIndex = 11
         Me.CheckBox13.Text = "Force &Mono"
         Me.ToolTip1.SetToolTip(Me.CheckBox13, "Force monophonic sound output.")
@@ -671,21 +666,19 @@ Partial Class MgrSetting
         '
         'TrackBar3
         '
-        Me.TrackBar3.Location = New System.Drawing.Point(248, 178)
-        Me.TrackBar3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar3.Location = New System.Drawing.Point(165, 116)
         Me.TrackBar3.Maximum = 100000
         Me.TrackBar3.Name = "TrackBar3"
-        Me.TrackBar3.Size = New System.Drawing.Size(190, 69)
+        Me.TrackBar3.Size = New System.Drawing.Size(127, 45)
         Me.TrackBar3.TabIndex = 10
         Me.ToolTip1.SetToolTip(Me.TrackBar3, resources.GetString("TrackBar3.ToolTip"))
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 178)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(6, 116)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(147, 20)
+        Me.Label5.Size = New System.Drawing.Size(100, 13)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Sound Period Time:"
         '
@@ -693,10 +686,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"default", "dsound", "wasapish", "wasapi", "sdl"})
-        Me.ComboBox2.Location = New System.Drawing.Point(248, 335)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox2.Location = New System.Drawing.Point(165, 218)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(188, 28)
+        Me.ComboBox2.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox2.TabIndex = 8
         Me.ComboBox2.Text = "default"
         Me.ToolTip1.SetToolTip(Me.ComboBox2, resources.GetString("ComboBox2.ToolTip"))
@@ -704,30 +696,27 @@ Partial Class MgrSetting
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(9, 340)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(6, 221)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 20)
+        Me.Label4.Size = New System.Drawing.Size(69, 13)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Sound Driver"
         '
         'TrackBar2
         '
-        Me.TrackBar2.Location = New System.Drawing.Point(248, 257)
-        Me.TrackBar2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar2.Location = New System.Drawing.Point(165, 167)
         Me.TrackBar2.Maximum = 150
         Me.TrackBar2.Name = "TrackBar2"
-        Me.TrackBar2.Size = New System.Drawing.Size(190, 69)
+        Me.TrackBar2.Size = New System.Drawing.Size(127, 45)
         Me.TrackBar2.TabIndex = 6
         Me.ToolTip1.SetToolTip(Me.TrackBar2, "Sound volume level, in percent")
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 257)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(6, 167)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(118, 20)
+        Me.Label3.Size = New System.Drawing.Size(79, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Sound Volume:"
         '
@@ -735,10 +724,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"22050", "32000", "44100", "48000", "96000", "192000"})
-        Me.ComboBox1.Location = New System.Drawing.Point(248, 377)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox1.Location = New System.Drawing.Point(165, 245)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(188, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox1.TabIndex = 4
         Me.ComboBox1.Text = "44100"
         Me.ToolTip1.SetToolTip(Me.ComboBox1, "Specifies the sound playback rate, in sound frames per second(""Hz"")")
@@ -746,40 +734,36 @@ Partial Class MgrSetting
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(9, 382)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(6, 248)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 20)
+        Me.Label2.Size = New System.Drawing.Size(64, 13)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Sound Rate"
         '
         'TrackBar1
         '
-        Me.TrackBar1.Location = New System.Drawing.Point(248, 100)
-        Me.TrackBar1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar1.Location = New System.Drawing.Point(165, 65)
         Me.TrackBar1.Maximum = 1000
         Me.TrackBar1.Name = "TrackBar1"
-        Me.TrackBar1.Size = New System.Drawing.Size(190, 69)
+        Me.TrackBar1.Size = New System.Drawing.Size(127, 45)
         Me.TrackBar1.TabIndex = 2
         Me.ToolTip1.SetToolTip(Me.TrackBar1, "Desired total buffer size in milliseconds")
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 100)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(6, 65)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(108, 20)
+        Me.Label1.Size = New System.Drawing.Size(72, 13)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Sound Buffer:"
         '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(248, 29)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox1.Location = New System.Drawing.Point(165, 19)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(136, 24)
+        Me.CheckBox1.Size = New System.Drawing.Size(93, 17)
         Me.CheckBox1.TabIndex = 0
         Me.CheckBox1.Text = "Enable &Sound"
         Me.ToolTip1.SetToolTip(Me.CheckBox1, "Enable sound output")
@@ -788,11 +772,10 @@ Partial Class MgrSetting
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabPage2.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Size = New System.Drawing.Size(310, 284)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Video"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -834,11 +817,9 @@ Partial Class MgrSetting
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.ComboBox3)
         Me.GroupBox2.Controls.Add(Me.CheckBox2)
-        Me.GroupBox2.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox2.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox2.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         '
@@ -846,10 +827,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox56.FormattingEnabled = True
         Me.ComboBox56.Items.AddRange(New Object() {"upper_left", "upper_right"})
-        Me.ComboBox56.Location = New System.Drawing.Point(201, 346)
-        Me.ComboBox56.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox56.Location = New System.Drawing.Point(134, 225)
         Me.ComboBox56.Name = "ComboBox56"
-        Me.ComboBox56.Size = New System.Drawing.Size(109, 28)
+        Me.ComboBox56.Size = New System.Drawing.Size(74, 21)
         Me.ComboBox56.TabIndex = 107
         Me.ComboBox56.Text = "upper_left"
         Me.ToolTip1.SetToolTip(Me.ComboBox56, "FPS display position.")
@@ -857,10 +837,9 @@ Partial Class MgrSetting
         'Label141
         '
         Me.Label141.AutoSize = True
-        Me.Label141.Location = New System.Drawing.Point(132, 349)
-        Me.Label141.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label141.Location = New System.Drawing.Point(88, 227)
         Me.Label141.Name = "Label141"
-        Me.Label141.Size = New System.Drawing.Size(65, 20)
+        Me.Label141.Size = New System.Drawing.Size(44, 13)
         Me.Label141.TabIndex = 106
         Me.Label141.Text = "Position"
         '
@@ -868,10 +847,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox55.FormattingEnabled = True
         Me.ComboBox55.Items.AddRange(New Object() {"5x7", "6x9", "6x12", "6x13", "9x18"})
-        Me.ComboBox55.Location = New System.Drawing.Point(360, 346)
-        Me.ComboBox55.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox55.Location = New System.Drawing.Point(240, 225)
         Me.ComboBox55.Name = "ComboBox55"
-        Me.ComboBox55.Size = New System.Drawing.Size(76, 28)
+        Me.ComboBox55.Size = New System.Drawing.Size(52, 21)
         Me.ComboBox55.TabIndex = 105
         Me.ComboBox55.Text = "5x7"
         Me.ToolTip1.SetToolTip(Me.ComboBox55, "FPS display font." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "5x7 - 5x7" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x9 - 6x9" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x12 - 6x12" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x13 - 6x13. CJK supp" &
@@ -880,20 +858,18 @@ Partial Class MgrSetting
         'Label140
         '
         Me.Label140.AutoSize = True
-        Me.Label140.Location = New System.Drawing.Point(315, 351)
-        Me.Label140.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label140.Location = New System.Drawing.Point(210, 228)
         Me.Label140.Name = "Label140"
-        Me.Label140.Size = New System.Drawing.Size(42, 20)
+        Me.Label140.Size = New System.Drawing.Size(28, 13)
         Me.Label140.TabIndex = 104
         Me.Label140.Text = "Font"
         '
         'NumericUpDown28
         '
-        Me.NumericUpDown28.Location = New System.Drawing.Point(108, 385)
-        Me.NumericUpDown28.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown28.Location = New System.Drawing.Point(72, 250)
         Me.NumericUpDown28.Maximum = New Decimal(New Integer() {32, 0, 0, 0})
         Me.NumericUpDown28.Name = "NumericUpDown28"
-        Me.NumericUpDown28.Size = New System.Drawing.Size(64, 26)
+        Me.NumericUpDown28.Size = New System.Drawing.Size(43, 20)
         Me.NumericUpDown28.TabIndex = 103
         Me.ToolTip1.SetToolTip(Me.NumericUpDown28, "FPS display scale factor." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A value of 0 enables auto-scaling.")
         Me.NumericUpDown28.Value = New Decimal(New Integer() {1, 0, 0, 0})
@@ -901,30 +877,27 @@ Partial Class MgrSetting
         'Label139
         '
         Me.Label139.AutoSize = True
-        Me.Label139.Location = New System.Drawing.Point(10, 388)
-        Me.Label139.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label139.Location = New System.Drawing.Point(7, 252)
         Me.Label139.Name = "Label139"
-        Me.Label139.Size = New System.Drawing.Size(84, 20)
+        Me.Label139.Size = New System.Drawing.Size(57, 13)
         Me.Label139.TabIndex = 102
         Me.Label139.Text = "FPS Scale"
         '
         'Label138
         '
         Me.Label138.AutoSize = True
-        Me.Label138.Location = New System.Drawing.Point(315, 388)
-        Me.Label138.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label138.Location = New System.Drawing.Point(210, 252)
         Me.Label138.Name = "Label138"
-        Me.Label138.Size = New System.Drawing.Size(61, 20)
+        Me.Label138.Size = New System.Drawing.Size(41, 13)
         Me.Label138.TabIndex = 101
         Me.Label138.Text = "B Color"
         '
         'Label137
         '
         Me.Label137.AutoSize = True
-        Me.Label137.Location = New System.Drawing.Point(184, 388)
-        Me.Label137.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label137.Location = New System.Drawing.Point(123, 252)
         Me.Label137.Name = "Label137"
-        Me.Label137.Size = New System.Drawing.Size(59, 20)
+        Me.Label137.Size = New System.Drawing.Size(41, 13)
         Me.Label137.TabIndex = 100
         Me.Label137.Text = "T Color"
         '
@@ -933,10 +906,9 @@ Partial Class MgrSetting
         Me.Label136.BackColor = System.Drawing.SystemColors.Control
         Me.Label136.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label136.ForeColor = System.Drawing.Color.Transparent
-        Me.Label136.Location = New System.Drawing.Point(388, 388)
-        Me.Label136.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label136.Location = New System.Drawing.Point(259, 252)
         Me.Label136.Name = "Label136"
-        Me.Label136.Size = New System.Drawing.Size(45, 23)
+        Me.Label136.Size = New System.Drawing.Size(30, 15)
         Me.Label136.TabIndex = 99
         Me.Label136.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label136, "FPS display background color.")
@@ -946,10 +918,9 @@ Partial Class MgrSetting
         Me.Label135.BackColor = System.Drawing.SystemColors.Control
         Me.Label135.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label135.ForeColor = System.Drawing.Color.Transparent
-        Me.Label135.Location = New System.Drawing.Point(258, 388)
-        Me.Label135.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label135.Location = New System.Drawing.Point(172, 252)
         Me.Label135.Name = "Label135"
-        Me.Label135.Size = New System.Drawing.Size(45, 23)
+        Me.Label135.Size = New System.Drawing.Size(30, 15)
         Me.Label135.TabIndex = 98
         Me.Label135.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label135, "FPS display text color.")
@@ -957,10 +928,9 @@ Partial Class MgrSetting
         'CheckBox103
         '
         Me.CheckBox103.AutoSize = True
-        Me.CheckBox103.Location = New System.Drawing.Point(15, 348)
-        Me.CheckBox103.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox103.Location = New System.Drawing.Point(10, 226)
         Me.CheckBox103.Name = "CheckBox103"
-        Me.CheckBox103.Size = New System.Drawing.Size(110, 24)
+        Me.CheckBox103.Size = New System.Drawing.Size(76, 17)
         Me.CheckBox103.TabIndex = 97
         Me.CheckBox103.Text = "Show F&PS"
         Me.ToolTip1.SetToolTip(Me.CheckBox103, "Automatically enable FPS display on startup.")
@@ -968,12 +938,11 @@ Partial Class MgrSetting
         '
         'NumericUpDown27
         '
-        Me.NumericUpDown27.Location = New System.Drawing.Point(138, 29)
-        Me.NumericUpDown27.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown27.Location = New System.Drawing.Point(92, 19)
         Me.NumericUpDown27.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
         Me.NumericUpDown27.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumericUpDown27.Name = "NumericUpDown27"
-        Me.NumericUpDown27.Size = New System.Drawing.Size(78, 26)
+        Me.NumericUpDown27.Size = New System.Drawing.Size(52, 20)
         Me.NumericUpDown27.TabIndex = 33
         Me.ToolTip1.SetToolTip(Me.NumericUpDown27, "Display to use with fullscreen mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Specify -1 to use the display on which the " &
         "center of the window lies in windowed mode.")
@@ -982,10 +951,9 @@ Partial Class MgrSetting
         'Label134
         '
         Me.Label134.AutoSize = True
-        Me.Label134.Location = New System.Drawing.Point(9, 34)
-        Me.Label134.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label134.Location = New System.Drawing.Point(6, 22)
         Me.Label134.Name = "Label134"
-        Me.Label134.Size = New System.Drawing.Size(115, 20)
+        Me.Label134.Size = New System.Drawing.Size(79, 13)
         Me.Label134.TabIndex = 32
         Me.Label134.Text = "Display To Use"
         '
@@ -993,10 +961,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox41.FormattingEnabled = True
         Me.ComboBox41.Items.AddRange(New Object() {"weave", "bob", "bob_offset"})
-        Me.ComboBox41.Location = New System.Drawing.Point(230, 225)
-        Me.ComboBox41.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox41.Location = New System.Drawing.Point(153, 146)
         Me.ComboBox41.Name = "ComboBox41"
-        Me.ComboBox41.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox41.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox41.TabIndex = 31
         Me.ComboBox41.Text = "weave"
         Me.ToolTip1.SetToolTip(Me.ComboBox41, resources.GetString("ComboBox41.ToolTip"))
@@ -1004,30 +971,27 @@ Partial Class MgrSetting
         'Label100
         '
         Me.Label100.AutoSize = True
-        Me.Label100.Location = New System.Drawing.Point(9, 229)
-        Me.Label100.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label100.Location = New System.Drawing.Point(6, 149)
         Me.Label100.Name = "Label100"
-        Me.Label100.Size = New System.Drawing.Size(95, 20)
+        Me.Label100.Size = New System.Drawing.Size(64, 13)
         Me.Label100.TabIndex = 30
         Me.Label100.Text = "Deinterlacer"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(326, 311)
-        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label20.Location = New System.Drawing.Point(217, 202)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(16, 20)
+        Me.Label20.Size = New System.Drawing.Size(12, 13)
         Me.Label20.TabIndex = 28
         Me.Label20.Text = "y"
         '
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(200, 311)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label21.Location = New System.Drawing.Point(133, 202)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(16, 20)
+        Me.Label21.Size = New System.Drawing.Size(12, 13)
         Me.Label21.TabIndex = 27
         Me.Label21.Text = "x"
         '
@@ -1035,12 +999,11 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown5.DecimalPlaces = 2
         Me.NumericUpDown5.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown5.Location = New System.Drawing.Point(357, 306)
-        Me.NumericUpDown5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown5.Location = New System.Drawing.Point(238, 199)
         Me.NumericUpDown5.Maximum = New Decimal(New Integer() {256, 0, 0, 0})
         Me.NumericUpDown5.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown5.Name = "NumericUpDown5"
-        Me.NumericUpDown5.Size = New System.Drawing.Size(81, 26)
+        Me.NumericUpDown5.Size = New System.Drawing.Size(54, 20)
         Me.NumericUpDown5.TabIndex = 26
         Me.NumericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ToolTip1.SetToolTip(Me.NumericUpDown5, "Scaling factor for the Y axis in fullscreen mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "For this settings to have an" &
@@ -1051,12 +1014,11 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown6.DecimalPlaces = 2
         Me.NumericUpDown6.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown6.Location = New System.Drawing.Point(231, 306)
-        Me.NumericUpDown6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown6.Location = New System.Drawing.Point(154, 199)
         Me.NumericUpDown6.Maximum = New Decimal(New Integer() {256, 0, 0, 0})
         Me.NumericUpDown6.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown6.Name = "NumericUpDown6"
-        Me.NumericUpDown6.Size = New System.Drawing.Size(81, 26)
+        Me.NumericUpDown6.Size = New System.Drawing.Size(54, 20)
         Me.NumericUpDown6.TabIndex = 25
         Me.NumericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ToolTip1.SetToolTip(Me.NumericUpDown6, "Scaling factor for the X axis in fullscreen mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "For this settings to have an" &
@@ -1066,20 +1028,18 @@ Partial Class MgrSetting
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(326, 271)
-        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label19.Location = New System.Drawing.Point(217, 176)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(16, 20)
+        Me.Label19.Size = New System.Drawing.Size(12, 13)
         Me.Label19.TabIndex = 24
         Me.Label19.Text = "y"
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(200, 269)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label18.Location = New System.Drawing.Point(133, 175)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(16, 20)
+        Me.Label18.Size = New System.Drawing.Size(12, 13)
         Me.Label18.TabIndex = 23
         Me.Label18.Text = "x"
         '
@@ -1087,12 +1047,11 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown4.DecimalPlaces = 2
         Me.NumericUpDown4.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown4.Location = New System.Drawing.Point(357, 266)
-        Me.NumericUpDown4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown4.Location = New System.Drawing.Point(238, 173)
         Me.NumericUpDown4.Maximum = New Decimal(New Integer() {256, 0, 0, 0})
         Me.NumericUpDown4.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.Size = New System.Drawing.Size(81, 26)
+        Me.NumericUpDown4.Size = New System.Drawing.Size(54, 20)
         Me.NumericUpDown4.TabIndex = 22
         Me.NumericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ToolTip1.SetToolTip(Me.NumericUpDown4, "Scaling factor for the Y axis in windowed mode")
@@ -1102,12 +1061,11 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown3.DecimalPlaces = 2
         Me.NumericUpDown3.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown3.Location = New System.Drawing.Point(231, 266)
-        Me.NumericUpDown3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown3.Location = New System.Drawing.Point(154, 173)
         Me.NumericUpDown3.Maximum = New Decimal(New Integer() {256, 0, 0, 0})
         Me.NumericUpDown3.Minimum = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(81, 26)
+        Me.NumericUpDown3.Size = New System.Drawing.Size(54, 20)
         Me.NumericUpDown3.TabIndex = 21
         Me.NumericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ToolTip1.SetToolTip(Me.NumericUpDown3, "Scaling factor for the X axis in windowed mode")
@@ -1116,30 +1074,27 @@ Partial Class MgrSetting
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(9, 312)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label17.Location = New System.Drawing.Point(6, 203)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(145, 20)
+        Me.Label17.Size = New System.Drawing.Size(98, 13)
         Me.Label17.TabIndex = 20
         Me.Label17.Text = "Full Screen Scaling"
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(9, 271)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Location = New System.Drawing.Point(6, 176)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(121, 20)
+        Me.Label16.Size = New System.Drawing.Size(84, 13)
         Me.Label16.TabIndex = 18
         Me.Label16.Text = "Window Scaling"
         '
         'ComboBox6
         '
         Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(230, 183)
-        Me.ComboBox6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox6.Location = New System.Drawing.Point(153, 119)
         Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox6.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox6.TabIndex = 17
         Me.ComboBox6.Text = "0x0"
         Me.ToolTip1.SetToolTip(Me.ComboBox6, "Full-screen Resolution")
@@ -1147,10 +1102,9 @@ Partial Class MgrSetting
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(9, 188)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Location = New System.Drawing.Point(6, 122)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(177, 20)
+        Me.Label15.Size = New System.Drawing.Size(118, 13)
         Me.Label15.TabIndex = 16
         Me.Label15.Text = "Full Screen Resolutions"
         '
@@ -1158,10 +1112,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"0", "full", "aspect", "aspect_int", "aspect_mult2"})
-        Me.ComboBox5.Location = New System.Drawing.Point(230, 142)
-        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox5.Location = New System.Drawing.Point(153, 92)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox5.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox5.TabIndex = 15
         Me.ComboBox5.Text = "aspect_mult2"
         Me.ToolTip1.SetToolTip(Me.ComboBox5, resources.GetString("ComboBox5.ToolTip"))
@@ -1169,20 +1122,18 @@ Partial Class MgrSetting
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(9, 146)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Location = New System.Drawing.Point(6, 95)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(61, 20)
+        Me.Label14.Size = New System.Drawing.Size(41, 13)
         Me.Label14.TabIndex = 14
         Me.Label14.Text = "Stretch"
         '
         'CheckBox5
         '
         Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(14, 106)
-        Me.CheckBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox5.Location = New System.Drawing.Point(9, 69)
         Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(198, 24)
+        Me.CheckBox5.Size = New System.Drawing.Size(134, 17)
         Me.CheckBox5.TabIndex = 13
         Me.CheckBox5.Text = "&OpenGl Syncronization"
         Me.ToolTip1.SetToolTip(Me.CheckBox5, resources.GetString("CheckBox5.ToolTip"))
@@ -1191,10 +1142,9 @@ Partial Class MgrSetting
         'CheckBox4
         '
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(322, 106)
-        Me.CheckBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox4.Location = New System.Drawing.Point(215, 69)
         Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(115, 24)
+        Me.CheckBox4.Size = New System.Drawing.Size(79, 17)
         Me.CheckBox4.TabIndex = 12
         Me.CheckBox4.Text = "Full &Screen"
         Me.ToolTip1.SetToolTip(Me.CheckBox4, "Enable fullscreen mode.")
@@ -1203,10 +1153,9 @@ Partial Class MgrSetting
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(322, 71)
-        Me.CheckBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox3.Location = New System.Drawing.Point(215, 46)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(113, 24)
+        Me.CheckBox3.Size = New System.Drawing.Size(77, 17)
         Me.CheckBox3.TabIndex = 11
         Me.CheckBox3.Text = "&Frameskyp"
         Me.ToolTip1.SetToolTip(Me.CheckBox3, "Enable frameskip during emulation rendering.")
@@ -1215,10 +1164,9 @@ Partial Class MgrSetting
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(226, 34)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(151, 22)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(95, 20)
+        Me.Label6.Size = New System.Drawing.Size(65, 13)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Video Driver"
         '
@@ -1226,10 +1174,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Items.AddRange(New Object() {"default", "opengl", "overlay", "sdl", "softfb"})
-        Me.ComboBox3.Location = New System.Drawing.Point(334, 29)
-        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox3.Location = New System.Drawing.Point(223, 19)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(98, 28)
+        Me.ComboBox3.Size = New System.Drawing.Size(67, 21)
         Me.ComboBox3.Sorted = True
         Me.ComboBox3.TabIndex = 9
         Me.ComboBox3.Text = "opengl"
@@ -1238,10 +1185,9 @@ Partial Class MgrSetting
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(14, 71)
-        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox2.Location = New System.Drawing.Point(9, 46)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(203, 24)
+        Me.CheckBox2.Size = New System.Drawing.Size(138, 17)
         Me.CheckBox2.TabIndex = 1
         Me.CheckBox2.Text = "&Blit Time Syncronization"
         Me.ToolTip1.SetToolTip(Me.CheckBox2, resources.GetString("CheckBox2.ToolTip"))
@@ -1250,10 +1196,9 @@ Partial Class MgrSetting
         'TabPage3
         '
         Me.TabPage3.Controls.Add(Me.GroupBox5)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage3.Size = New System.Drawing.Size(310, 284)
         Me.TabPage3.TabIndex = 4
         Me.TabPage3.Text = "Filters"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1274,21 +1219,18 @@ Partial Class MgrSetting
         Me.GroupBox5.Controls.Add(Me.ComboBox8)
         Me.GroupBox5.Controls.Add(Me.Label22)
         Me.GroupBox5.Controls.Add(Me.ComboBox7)
-        Me.GroupBox5.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox5.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox5.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox5.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox5.TabIndex = 1
         Me.GroupBox5.TabStop = False
         '
         'Label142
         '
         Me.Label142.AutoSize = True
-        Me.Label142.Location = New System.Drawing.Point(18, 386)
-        Me.Label142.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label142.Location = New System.Drawing.Point(12, 251)
         Me.Label142.Name = "Label142"
-        Me.Label142.Size = New System.Drawing.Size(171, 20)
+        Me.Label142.Size = New System.Drawing.Size(115, 13)
         Me.Label142.TabIndex = 24
         Me.Label142.Text = "Video resolution switch"
         Me.Label142.Visible = False
@@ -1297,10 +1239,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox57.FormattingEnabled = True
         Me.ComboBox57.Items.AddRange(New Object() {"0", "native", "super"})
-        Me.ComboBox57.Location = New System.Drawing.Point(256, 382)
-        Me.ComboBox57.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox57.Location = New System.Drawing.Point(171, 248)
         Me.ComboBox57.Name = "ComboBox57"
-        Me.ComboBox57.Size = New System.Drawing.Size(188, 28)
+        Me.ComboBox57.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox57.TabIndex = 23
         Me.ComboBox57.Text = "0"
         Me.ToolTip1.SetToolTip(Me.ComboBox57, "Video resolution switch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Standard Mednafen resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Native Resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
@@ -1311,10 +1252,9 @@ Partial Class MgrSetting
         'CheckBox15
         '
         Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.Location = New System.Drawing.Point(22, 268)
-        Me.CheckBox15.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox15.Location = New System.Drawing.Point(15, 174)
         Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(233, 24)
+        Me.CheckBox15.Size = New System.Drawing.Size(158, 17)
         Me.CheckBox15.TabIndex = 22
         Me.CheckBox15.Text = "Temporal Blur &Accumulation"
         Me.ToolTip1.SetToolTip(Me.CheckBox15, "Accumulate color data rather than discarding it.")
@@ -1323,10 +1263,9 @@ Partial Class MgrSetting
         'CheckBox14
         '
         Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Location = New System.Drawing.Point(22, 232)
-        Me.CheckBox14.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox14.Location = New System.Drawing.Point(15, 151)
         Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(133, 24)
+        Me.CheckBox14.Size = New System.Drawing.Size(91, 17)
         Me.CheckBox14.TabIndex = 21
         Me.CheckBox14.Text = "Temporal &Blur"
         Me.ToolTip1.SetToolTip(Me.CheckBox14, "Enable video temporal blur(50/50 previous/current frame by default)")
@@ -1334,11 +1273,10 @@ Partial Class MgrSetting
         '
         'TrackBar9
         '
-        Me.TrackBar9.Location = New System.Drawing.Point(256, 303)
-        Me.TrackBar9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar9.Location = New System.Drawing.Point(171, 197)
         Me.TrackBar9.Maximum = 100
         Me.TrackBar9.Name = "TrackBar9"
-        Me.TrackBar9.Size = New System.Drawing.Size(190, 69)
+        Me.TrackBar9.Size = New System.Drawing.Size(127, 45)
         Me.TrackBar9.TabIndex = 20
         Me.ToolTip1.SetToolTip(Me.TrackBar9, "Blur amount in accumulation mode, specified in percentage of accumulation buffer " &
         "to mix with the current frame.")
@@ -1346,20 +1284,18 @@ Partial Class MgrSetting
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(18, 323)
-        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label26.Location = New System.Drawing.Point(12, 210)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(141, 20)
+        Me.Label26.Size = New System.Drawing.Size(95, 13)
         Me.Label26.TabIndex = 19
         Me.Label26.Text = "Blur Accumulation:"
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(18, 117)
-        Me.Label25.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label25.Location = New System.Drawing.Point(12, 76)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(154, 20)
+        Me.Label25.Size = New System.Drawing.Size(102, 13)
         Me.Label25.TabIndex = 18
         Me.Label25.Text = "Bilinear Interpolation"
         '
@@ -1367,10 +1303,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox9.FormattingEnabled = True
         Me.ComboBox9.Items.AddRange(New Object() {"0", "1", "x", "y"})
-        Me.ComboBox9.Location = New System.Drawing.Point(256, 112)
-        Me.ComboBox9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox9.Location = New System.Drawing.Point(171, 73)
         Me.ComboBox9.Name = "ComboBox9"
-        Me.ComboBox9.Size = New System.Drawing.Size(188, 28)
+        Me.ComboBox9.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox9.TabIndex = 17
         Me.ComboBox9.Text = "0"
         Me.ToolTip1.SetToolTip(Me.ComboBox9, "Enable (bi)linear interpolation." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0 - Disabled" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "1 - Bilinear" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "x - Linear (X" &
@@ -1379,32 +1314,29 @@ Partial Class MgrSetting
         '
         'TrackBar8
         '
-        Me.TrackBar8.Location = New System.Drawing.Point(256, 154)
-        Me.TrackBar8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar8.Location = New System.Drawing.Point(171, 100)
         Me.TrackBar8.Maximum = 100
         Me.TrackBar8.Minimum = -100
         Me.TrackBar8.Name = "TrackBar8"
-        Me.TrackBar8.Size = New System.Drawing.Size(190, 69)
+        Me.TrackBar8.Size = New System.Drawing.Size(127, 45)
         Me.TrackBar8.TabIndex = 16
         Me.ToolTip1.SetToolTip(Me.TrackBar8, resources.GetString("TrackBar8.ToolTip"))
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(18, 168)
-        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label24.Location = New System.Drawing.Point(12, 109)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(82, 20)
+        Me.Label24.Size = New System.Drawing.Size(56, 13)
         Me.Label24.TabIndex = 15
         Me.Label24.Text = "Scanlines:"
         '
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(18, 75)
-        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label23.Location = New System.Drawing.Point(12, 49)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(155, 20)
+        Me.Label23.Size = New System.Drawing.Size(105, 13)
         Me.Label23.TabIndex = 14
         Me.Label23.Text = "Special Video Scaler"
         '
@@ -1412,10 +1344,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox8.FormattingEnabled = True
         Me.ComboBox8.Items.AddRange(New Object() {"none", "hq2x", "hq3x", "hq4x", "scale2x", "scale3x", "scale4x", "2xsai", "super2xsai", "supereagle", "nn2x", "nn3x", "nn4x", "nny2x", "nny3x", "nny4x"})
-        Me.ComboBox8.Location = New System.Drawing.Point(256, 71)
-        Me.ComboBox8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox8.Location = New System.Drawing.Point(171, 46)
         Me.ComboBox8.Name = "ComboBox8"
-        Me.ComboBox8.Size = New System.Drawing.Size(188, 28)
+        Me.ComboBox8.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox8.TabIndex = 13
         Me.ComboBox8.Text = "none"
         Me.ToolTip1.SetToolTip(Me.ComboBox8, resources.GetString("ComboBox8.ToolTip"))
@@ -1423,10 +1354,9 @@ Partial Class MgrSetting
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(18, 34)
-        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label22.Location = New System.Drawing.Point(12, 22)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(114, 20)
+        Me.Label22.Size = New System.Drawing.Size(78, 13)
         Me.Label22.TabIndex = 12
         Me.Label22.Text = "Pixel Pixshader"
         '
@@ -1434,10 +1364,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox7.FormattingEnabled = True
         Me.ComboBox7.Items.AddRange(New Object() {"none", "autoip", "autoipsharper", "scale2x", "sabr", "ipsharper", "ipxnoty", "ipynotx", "ipxnotysharper", "ipynotxsharper", "goat"})
-        Me.ComboBox7.Location = New System.Drawing.Point(256, 29)
-        Me.ComboBox7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox7.Location = New System.Drawing.Point(171, 19)
         Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(188, 28)
+        Me.ComboBox7.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox7.TabIndex = 11
         Me.ComboBox7.Text = "none"
         Me.ToolTip1.SetToolTip(Me.ComboBox7, resources.GetString("ComboBox7.ToolTip"))
@@ -1445,11 +1374,10 @@ Partial Class MgrSetting
         'TabPage28
         '
         Me.TabPage28.Controls.Add(Me.GroupBox21)
-        Me.TabPage28.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage28.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage28.Location = New System.Drawing.Point(4, 22)
         Me.TabPage28.Name = "TabPage28"
-        Me.TabPage28.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabPage28.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage28.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage28.Size = New System.Drawing.Size(310, 284)
         Me.TabPage28.TabIndex = 27
         Me.TabPage28.Text = "Goat Filter"
         Me.TabPage28.UseVisualStyleBackColor = True
@@ -1466,11 +1394,9 @@ Partial Class MgrSetting
         Me.GroupBox21.Controls.Add(Me.Label126)
         Me.GroupBox21.Controls.Add(Me.Label128)
         Me.GroupBox21.Controls.Add(Me.ComboBox53)
-        Me.GroupBox21.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox21.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox21.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox21.Name = "GroupBox21"
-        Me.GroupBox21.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox21.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox21.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox21.TabIndex = 2
         Me.GroupBox21.TabStop = False
         '
@@ -1478,22 +1404,20 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown24.DecimalPlaces = 2
         Me.NumericUpDown24.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown24.Location = New System.Drawing.Point(366, 71)
-        Me.NumericUpDown24.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown24.Location = New System.Drawing.Point(244, 46)
         Me.NumericUpDown24.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.NumericUpDown24.Minimum = New Decimal(New Integer() {2, 0, 0, -2147483648})
         Me.NumericUpDown24.Name = "NumericUpDown24"
-        Me.NumericUpDown24.Size = New System.Drawing.Size(81, 26)
+        Me.NumericUpDown24.Size = New System.Drawing.Size(54, 20)
         Me.NumericUpDown24.TabIndex = 25
         Me.NumericUpDown24.Value = New Decimal(New Integer() {5, 0, 0, 65536})
         '
         'Label129
         '
         Me.Label129.AutoSize = True
-        Me.Label129.Location = New System.Drawing.Point(18, 74)
-        Me.Label129.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label129.Location = New System.Drawing.Point(12, 48)
         Me.Label129.Name = "Label129"
-        Me.Label129.Size = New System.Drawing.Size(248, 20)
+        Me.Label129.Size = New System.Drawing.Size(168, 13)
         Me.Label129.TabIndex = 26
         Me.Label129.Text = "" & Global.Microsoft.VisualBasic.ChrW(9) & "Constant RGB vertical divergence"
         '
@@ -1501,21 +1425,19 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown23.DecimalPlaces = 2
         Me.NumericUpDown23.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown23.Location = New System.Drawing.Point(366, 151)
-        Me.NumericUpDown23.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown23.Location = New System.Drawing.Point(244, 98)
         Me.NumericUpDown23.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown23.Name = "NumericUpDown23"
-        Me.NumericUpDown23.Size = New System.Drawing.Size(81, 26)
+        Me.NumericUpDown23.Size = New System.Drawing.Size(54, 20)
         Me.NumericUpDown23.TabIndex = 23
         Me.NumericUpDown23.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label124
         '
         Me.Label124.AutoSize = True
-        Me.Label124.Location = New System.Drawing.Point(18, 154)
-        Me.Label124.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label124.Location = New System.Drawing.Point(12, 100)
         Me.Label124.Name = "Label124"
-        Me.Label124.Size = New System.Drawing.Size(340, 20)
+        Me.Label124.Size = New System.Drawing.Size(228, 13)
         Me.Label124.TabIndex = 24
         Me.Label124.Text = "" & Global.Microsoft.VisualBasic.ChrW(9) & "Transparency of otherwise-opaque mask areas"
         '
@@ -1523,22 +1445,20 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown22.DecimalPlaces = 2
         Me.NumericUpDown22.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown22.Location = New System.Drawing.Point(366, 111)
-        Me.NumericUpDown22.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown22.Location = New System.Drawing.Point(244, 72)
         Me.NumericUpDown22.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.NumericUpDown22.Minimum = New Decimal(New Integer() {2, 0, 0, -2147483648})
         Me.NumericUpDown22.Name = "NumericUpDown22"
-        Me.NumericUpDown22.Size = New System.Drawing.Size(81, 26)
+        Me.NumericUpDown22.Size = New System.Drawing.Size(54, 20)
         Me.NumericUpDown22.TabIndex = 3
         Me.NumericUpDown22.Value = New Decimal(New Integer() {5, 0, 0, 65536})
         '
         'CheckBox94
         '
         Me.CheckBox94.AutoSize = True
-        Me.CheckBox94.Location = New System.Drawing.Point(26, 226)
-        Me.CheckBox94.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox94.Location = New System.Drawing.Point(17, 147)
         Me.CheckBox94.Name = "CheckBox94"
-        Me.CheckBox94.Size = New System.Drawing.Size(236, 24)
+        Me.CheckBox94.Size = New System.Drawing.Size(160, 17)
         Me.CheckBox94.TabIndex = 22
         Me.CheckBox94.Text = "Enable goat scanlines effect"
         Me.CheckBox94.UseVisualStyleBackColor = True
@@ -1546,10 +1466,9 @@ Partial Class MgrSetting
         'CheckBox95
         '
         Me.CheckBox95.AutoSize = True
-        Me.CheckBox95.Location = New System.Drawing.Point(26, 191)
-        Me.CheckBox95.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox95.Location = New System.Drawing.Point(17, 124)
         Me.CheckBox95.Name = "CheckBox95"
-        Me.CheckBox95.Size = New System.Drawing.Size(391, 24)
+        Me.CheckBox95.Size = New System.Drawing.Size(265, 17)
         Me.CheckBox95.TabIndex = 21
         Me.CheckBox95.Text = "" & Global.Microsoft.VisualBasic.ChrW(9) & "Force interlaced video to be treated as progressive"
         Me.CheckBox95.UseVisualStyleBackColor = True
@@ -1557,20 +1476,18 @@ Partial Class MgrSetting
         'Label126
         '
         Me.Label126.AutoSize = True
-        Me.Label126.Location = New System.Drawing.Point(18, 114)
-        Me.Label126.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label126.Location = New System.Drawing.Point(12, 74)
         Me.Label126.Name = "Label126"
-        Me.Label126.Size = New System.Drawing.Size(272, 20)
+        Me.Label126.Size = New System.Drawing.Size(182, 13)
         Me.Label126.TabIndex = 15
         Me.Label126.Text = "Constant RGB horizontal divergence:"
         '
         'Label128
         '
         Me.Label128.AutoSize = True
-        Me.Label128.Location = New System.Drawing.Point(18, 34)
-        Me.Label128.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label128.Location = New System.Drawing.Point(12, 22)
         Me.Label128.Name = "Label128"
-        Me.Label128.Size = New System.Drawing.Size(142, 20)
+        Me.Label128.Size = New System.Drawing.Size(95, 13)
         Me.Label128.TabIndex = 12
         Me.Label128.Text = "Goat Mask pattern"
         '
@@ -1578,10 +1495,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox53.FormattingEnabled = True
         Me.ComboBox53.Items.AddRange(New Object() {"goatron", "borg", "slenderman"})
-        Me.ComboBox53.Location = New System.Drawing.Point(256, 29)
-        Me.ComboBox53.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox53.Location = New System.Drawing.Point(171, 19)
         Me.ComboBox53.Name = "ComboBox53"
-        Me.ComboBox53.Size = New System.Drawing.Size(188, 28)
+        Me.ComboBox53.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox53.TabIndex = 11
         Me.ComboBox53.Text = "goatron"
         Me.ToolTip1.SetToolTip(Me.ComboBox53, resources.GetString("ComboBox53.ToolTip"))
@@ -1589,16 +1505,17 @@ Partial Class MgrSetting
         'TabPage4
         '
         Me.TabPage4.Controls.Add(Me.GroupBox4)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage4.Size = New System.Drawing.Size(310, 284)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Various"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.CheckBox106)
+        Me.GroupBox4.Controls.Add(Me.CheckBox105)
         Me.GroupBox4.Controls.Add(Me.Label143)
         Me.GroupBox4.Controls.Add(Me.CheckBox72)
         Me.GroupBox4.Controls.Add(Me.Button19)
@@ -1611,36 +1528,30 @@ Partial Class MgrSetting
         Me.GroupBox4.Controls.Add(Me.TrackBar6)
         Me.GroupBox4.Controls.Add(Me.Label12)
         Me.GroupBox4.Controls.Add(Me.CheckBox12)
-        Me.GroupBox4.Controls.Add(Me.Label11)
-        Me.GroupBox4.Controls.Add(Me.Label10)
         Me.GroupBox4.Controls.Add(Me.CheckBox11)
         Me.GroupBox4.Controls.Add(Me.CheckBox10)
         Me.GroupBox4.Controls.Add(Me.CheckBox9)
-        Me.GroupBox4.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox4.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox4.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
         '
         'Label143
         '
         Me.Label143.AutoSize = True
-        Me.Label143.Location = New System.Drawing.Point(4, 391)
-        Me.Label143.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label143.Location = New System.Drawing.Point(3, 254)
         Me.Label143.Name = "Label143"
-        Me.Label143.Size = New System.Drawing.Size(207, 20)
+        Me.Label143.Size = New System.Drawing.Size(138, 13)
         Me.Label143.TabIndex = 18
         Me.Label143.Text = "Mednafen Key Assignments"
         '
         'CheckBox72
         '
         Me.CheckBox72.AutoSize = True
-        Me.CheckBox72.Location = New System.Drawing.Point(9, 135)
-        Me.CheckBox72.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox72.Location = New System.Drawing.Point(6, 88)
         Me.CheckBox72.Name = "CheckBox72"
-        Me.CheckBox72.Size = New System.Drawing.Size(387, 24)
+        Me.CheckBox72.Size = New System.Drawing.Size(262, 17)
         Me.CheckBox72.TabIndex = 17
         Me.CheckBox72.Text = "Enable &untrusted file-inclusion path security check"
         Me.ToolTip1.SetToolTip(Me.CheckBox72, resources.GetString("CheckBox72.ToolTip"))
@@ -1649,10 +1560,9 @@ Partial Class MgrSetting
         'Button19
         '
         Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button19.Location = New System.Drawing.Point(220, 383)
-        Me.Button19.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button19.Location = New System.Drawing.Point(147, 249)
         Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(34, 35)
+        Me.Button19.Size = New System.Drawing.Size(23, 23)
         Me.Button19.TabIndex = 16
         Me.ToolTip1.SetToolTip(Me.Button19, "Mednafen Key Assignments")
         Me.Button19.UseVisualStyleBackColor = True
@@ -1660,10 +1570,9 @@ Partial Class MgrSetting
         'CheckBox60
         '
         Me.CheckBox60.AutoSize = True
-        Me.CheckBox60.Location = New System.Drawing.Point(260, 65)
-        Me.CheckBox60.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox60.Location = New System.Drawing.Point(173, 42)
         Me.CheckBox60.Name = "CheckBox60"
-        Me.CheckBox60.Size = New System.Drawing.Size(151, 24)
+        Me.CheckBox60.Size = New System.Drawing.Size(104, 17)
         Me.CheckBox60.TabIndex = 15
         Me.CheckBox60.Text = "&Rewind Enabled"
         Me.ToolTip1.SetToolTip(Me.CheckBox60, "Automatic Rewind Enabled On Startup")
@@ -1672,10 +1581,9 @@ Partial Class MgrSetting
         'CheckBox7
         '
         Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(9, 100)
-        Me.CheckBox7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox7.Location = New System.Drawing.Point(6, 65)
         Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(238, 24)
+        Me.CheckBox7.Size = New System.Drawing.Size(161, 17)
         Me.CheckBox7.TabIndex = 14
         Me.CheckBox7.Text = "&Disable desktop composition"
         Me.ToolTip1.SetToolTip(Me.CheckBox7, "Attempt to disable desktop composition.")
@@ -1683,11 +1591,10 @@ Partial Class MgrSetting
         '
         'TrackBar7
         '
-        Me.TrackBar7.Location = New System.Drawing.Point(274, 329)
-        Me.TrackBar7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar7.Location = New System.Drawing.Point(183, 214)
         Me.TrackBar7.Maximum = 100
         Me.TrackBar7.Name = "TrackBar7"
-        Me.TrackBar7.Size = New System.Drawing.Size(172, 69)
+        Me.TrackBar7.Size = New System.Drawing.Size(115, 45)
         Me.TrackBar7.TabIndex = 13
         Me.ToolTip1.SetToolTip(Me.TrackBar7, "Analog axis binary press detection threshold." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Threshold for detecting a digita" &
         "l-like ""button"" press on analog axis, in percent.")
@@ -1696,10 +1603,9 @@ Partial Class MgrSetting
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(4, 343)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Location = New System.Drawing.Point(3, 223)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(176, 20)
+        Me.Label13.Size = New System.Drawing.Size(120, 13)
         Me.Label13.TabIndex = 12
         Me.Label13.Text = "Joystick Axis Threshold:"
         '
@@ -1707,33 +1613,30 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown2.DecimalPlaces = 2
         Me.NumericUpDown2.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
-        Me.NumericUpDown2.Location = New System.Drawing.Point(274, 211)
-        Me.NumericUpDown2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown2.Location = New System.Drawing.Point(219, 137)
         Me.NumericUpDown2.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(172, 26)
+        Me.NumericUpDown2.Size = New System.Drawing.Size(79, 20)
         Me.NumericUpDown2.TabIndex = 11
         Me.ToolTip1.SetToolTip(Me.NumericUpDown2, "SLOW-forwarding speed multiplier")
         Me.NumericUpDown2.Value = New Decimal(New Integer() {25, 0, 0, 131072})
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(274, 171)
-        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(219, 111)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(172, 26)
+        Me.NumericUpDown1.Size = New System.Drawing.Size(79, 20)
         Me.NumericUpDown1.TabIndex = 10
         Me.ToolTip1.SetToolTip(Me.NumericUpDown1, "Fast-forwarding speed multiplier")
         Me.NumericUpDown1.Value = New Decimal(New Integer() {4, 0, 0, 0})
         '
         'TrackBar6
         '
-        Me.TrackBar6.Location = New System.Drawing.Point(274, 251)
-        Me.TrackBar6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar6.Location = New System.Drawing.Point(183, 163)
         Me.TrackBar6.Maximum = 1000
         Me.TrackBar6.Name = "TrackBar6"
-        Me.TrackBar6.Size = New System.Drawing.Size(172, 69)
+        Me.TrackBar6.Size = New System.Drawing.Size(115, 45)
         Me.TrackBar6.TabIndex = 9
         Me.ToolTip1.SetToolTip(Me.TrackBar6, "Auto-fire frequency." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Auto-fire frequency = GameSystemFrameRateHz / (value + 1)" &
         "")
@@ -1742,10 +1645,9 @@ Partial Class MgrSetting
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(4, 265)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Location = New System.Drawing.Point(3, 172)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(148, 20)
+        Me.Label12.Size = New System.Drawing.Size(99, 13)
         Me.Label12.TabIndex = 8
         Me.Label12.Text = "Auto-fire frequency:"
         '
@@ -1753,43 +1655,21 @@ Partial Class MgrSetting
         '
         Me.CheckBox12.AutoSize = True
         Me.CheckBox12.Enabled = False
-        Me.CheckBox12.Location = New System.Drawing.Point(9, 29)
-        Me.CheckBox12.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox12.Location = New System.Drawing.Point(6, 19)
         Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(215, 24)
+        Me.CheckBox12.Size = New System.Drawing.Size(145, 17)
         Me.CheckBox12.TabIndex = 7
         Me.CheckBox12.Text = "Disable &gzip compression"
         Me.ToolTip1.SetToolTip(Me.CheckBox12, "Disable gzip compression when saving save states and backup memory.")
         Me.CheckBox12.UseVisualStyleBackColor = True
         Me.CheckBox12.Visible = False
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(4, 214)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(174, 20)
-        Me.Label11.TabIndex = 5
-        Me.Label11.Text = "Slow-forwarding speed:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(4, 174)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(172, 20)
-        Me.Label10.TabIndex = 3
-        Me.Label10.Text = "Fast-forwarding speed:"
-        '
         'CheckBox11
         '
         Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(260, 100)
-        Me.CheckBox11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox11.Location = New System.Drawing.Point(173, 65)
         Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(86, 24)
+        Me.CheckBox11.Size = New System.Drawing.Size(59, 17)
         Me.CheckBox11.TabIndex = 2
         Me.CheckBox11.Text = "&Cheats"
         Me.ToolTip1.SetToolTip(Me.CheckBox11, "Enable cheats.")
@@ -1798,10 +1678,9 @@ Partial Class MgrSetting
         'CheckBox10
         '
         Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(9, 65)
-        Me.CheckBox10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox10.Location = New System.Drawing.Point(6, 42)
         Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(168, 24)
+        Me.CheckBox10.Size = New System.Drawing.Size(115, 17)
         Me.CheckBox10.TabIndex = 1
         Me.CheckBox10.Text = "CD &Memory Cache"
         Me.ToolTip1.SetToolTip(Me.CheckBox10, resources.GetString("CheckBox10.ToolTip"))
@@ -1810,10 +1689,9 @@ Partial Class MgrSetting
         'CheckBox9
         '
         Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(260, 29)
-        Me.CheckBox9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox9.Location = New System.Drawing.Point(173, 19)
         Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(102, 24)
+        Me.CheckBox9.Size = New System.Drawing.Size(71, 17)
         Me.CheckBox9.TabIndex = 0
         Me.CheckBox9.Text = "&Autosave"
         Me.ToolTip1.SetToolTip(Me.CheckBox9, "Automatic load/save state on game load/save." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Automatically save and load save " &
@@ -1823,10 +1701,9 @@ Partial Class MgrSetting
         'TabPage5
         '
         Me.TabPage5.Controls.Add(Me.GroupBox19)
-        Me.TabPage5.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage5.Size = New System.Drawing.Size(310, 284)
         Me.TabPage5.TabIndex = 18
         Me.TabPage5.Text = "Bios"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -1860,11 +1737,9 @@ Partial Class MgrSetting
         Me.GroupBox19.Controls.Add(Me.Button6)
         Me.GroupBox19.Controls.Add(Me.TextBox10)
         Me.GroupBox19.Controls.Add(Me.Label68)
-        Me.GroupBox19.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox19.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox19.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox19.Name = "GroupBox19"
-        Me.GroupBox19.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox19.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox19.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox19.TabIndex = 3
         Me.GroupBox19.TabStop = False
         Me.ToolTip1.SetToolTip(Me.GroupBox19, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
@@ -1872,268 +1747,240 @@ Partial Class MgrSetting
         'Button4
         '
         Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button4.Location = New System.Drawing.Point(412, 349)
-        Me.Button4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button4.Location = New System.Drawing.Point(275, 227)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(34, 35)
+        Me.Button4.Size = New System.Drawing.Size(23, 23)
         Me.Button4.TabIndex = 29
         Me.Button4.UseVisualStyleBackColor = True
         '
         'TextBox18
         '
-        Me.TextBox18.Location = New System.Drawing.Point(168, 352)
-        Me.TextBox18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox18.Location = New System.Drawing.Point(112, 229)
         Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox18.Size = New System.Drawing.Size(157, 20)
         Me.TextBox18.TabIndex = 28
         '
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(9, 357)
-        Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label32.Location = New System.Drawing.Point(6, 232)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(103, 20)
+        Me.Label32.Size = New System.Drawing.Size(68, 13)
         Me.Label32.TabIndex = 27
         Me.Label32.Text = "GE CD BIOS"
         '
         'Button13
         '
         Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button13.Location = New System.Drawing.Point(412, 309)
-        Me.Button13.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button13.Location = New System.Drawing.Point(275, 201)
         Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(34, 35)
+        Me.Button13.Size = New System.Drawing.Size(23, 23)
         Me.Button13.TabIndex = 26
         Me.Button13.UseVisualStyleBackColor = True
         '
         'TextBox17
         '
-        Me.TextBox17.Location = New System.Drawing.Point(168, 312)
-        Me.TextBox17.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox17.Location = New System.Drawing.Point(112, 203)
         Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox17.Size = New System.Drawing.Size(157, 20)
         Me.TextBox17.TabIndex = 25
         '
         'Label75
         '
         Me.Label75.AutoSize = True
         Me.Label75.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label75.Location = New System.Drawing.Point(9, 317)
-        Me.Label75.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label75.Location = New System.Drawing.Point(6, 206)
         Me.Label75.Name = "Label75"
-        Me.Label75.Size = New System.Drawing.Size(127, 20)
+        Me.Label75.Size = New System.Drawing.Size(84, 13)
         Me.Label75.TabIndex = 24
         Me.Label75.Text = "PSX-USA  BIOS"
         '
         'Button12
         '
         Me.Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button12.Location = New System.Drawing.Point(412, 269)
-        Me.Button12.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button12.Location = New System.Drawing.Point(275, 175)
         Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(34, 35)
+        Me.Button12.Size = New System.Drawing.Size(23, 23)
         Me.Button12.TabIndex = 23
         Me.Button12.UseVisualStyleBackColor = True
         '
         'TextBox16
         '
-        Me.TextBox16.Location = New System.Drawing.Point(168, 272)
-        Me.TextBox16.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox16.Location = New System.Drawing.Point(112, 177)
         Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox16.Size = New System.Drawing.Size(157, 20)
         Me.TextBox16.TabIndex = 22
         '
         'Label74
         '
         Me.Label74.AutoSize = True
         Me.Label74.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label74.Location = New System.Drawing.Point(9, 277)
-        Me.Label74.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label74.Location = New System.Drawing.Point(6, 180)
         Me.Label74.Name = "Label74"
-        Me.Label74.Size = New System.Drawing.Size(118, 20)
+        Me.Label74.Size = New System.Drawing.Size(78, 13)
         Me.Label74.TabIndex = 21
         Me.Label74.Text = "PSX-JAP BIOS"
         '
         'Button11
         '
         Me.Button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button11.Location = New System.Drawing.Point(412, 229)
-        Me.Button11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button11.Location = New System.Drawing.Point(275, 149)
         Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(34, 35)
+        Me.Button11.Size = New System.Drawing.Size(23, 23)
         Me.Button11.TabIndex = 20
         Me.Button11.UseVisualStyleBackColor = True
         '
         'TextBox15
         '
-        Me.TextBox15.Location = New System.Drawing.Point(168, 232)
-        Me.TextBox15.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox15.Location = New System.Drawing.Point(112, 151)
         Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox15.Size = New System.Drawing.Size(157, 20)
         Me.TextBox15.TabIndex = 19
         '
         'Label73
         '
         Me.Label73.AutoSize = True
         Me.Label73.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label73.Location = New System.Drawing.Point(9, 237)
-        Me.Label73.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label73.Location = New System.Drawing.Point(6, 154)
         Me.Label73.Name = "Label73"
-        Me.Label73.Size = New System.Drawing.Size(124, 20)
+        Me.Label73.Size = New System.Drawing.Size(82, 13)
         Me.Label73.TabIndex = 18
         Me.Label73.Text = "PSX-EUR BIOS"
         '
         'Button10
         '
         Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button10.Location = New System.Drawing.Point(412, 189)
-        Me.Button10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button10.Location = New System.Drawing.Point(275, 123)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(34, 35)
+        Me.Button10.Size = New System.Drawing.Size(23, 23)
         Me.Button10.TabIndex = 17
         Me.Button10.UseVisualStyleBackColor = True
         '
         'TextBox14
         '
-        Me.TextBox14.Location = New System.Drawing.Point(168, 192)
-        Me.TextBox14.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox14.Location = New System.Drawing.Point(112, 125)
         Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox14.Size = New System.Drawing.Size(157, 20)
         Me.TextBox14.TabIndex = 16
         '
         'Label72
         '
         Me.Label72.AutoSize = True
-        Me.Label72.Location = New System.Drawing.Point(9, 197)
-        Me.Label72.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label72.Location = New System.Drawing.Point(6, 128)
         Me.Label72.Name = "Label72"
-        Me.Label72.Size = New System.Drawing.Size(126, 20)
+        Me.Label72.Size = New System.Drawing.Size(82, 13)
         Me.Label72.TabIndex = 15
         Me.Label72.Text = "SEGA-CD BIOS"
         '
         'Button9
         '
         Me.Button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button9.Location = New System.Drawing.Point(412, 149)
-        Me.Button9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button9.Location = New System.Drawing.Point(275, 97)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(34, 35)
+        Me.Button9.Size = New System.Drawing.Size(23, 23)
         Me.Button9.TabIndex = 14
         Me.Button9.UseVisualStyleBackColor = True
         '
         'TextBox13
         '
-        Me.TextBox13.Location = New System.Drawing.Point(168, 152)
-        Me.TextBox13.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox13.Location = New System.Drawing.Point(112, 99)
         Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox13.Size = New System.Drawing.Size(157, 20)
         Me.TextBox13.TabIndex = 13
         '
         'Label71
         '
         Me.Label71.AutoSize = True
         Me.Label71.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label71.Location = New System.Drawing.Point(9, 157)
-        Me.Label71.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label71.Location = New System.Drawing.Point(6, 102)
         Me.Label71.Name = "Label71"
-        Me.Label71.Size = New System.Drawing.Size(135, 20)
+        Me.Label71.Size = New System.Drawing.Size(90, 13)
         Me.Label71.TabIndex = 12
         Me.Label71.Text = "PCFX ROM BIOS"
         '
         'Button8
         '
         Me.Button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button8.Location = New System.Drawing.Point(412, 109)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button8.Location = New System.Drawing.Point(275, 71)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(34, 35)
+        Me.Button8.Size = New System.Drawing.Size(23, 23)
         Me.Button8.TabIndex = 11
         Me.Button8.UseVisualStyleBackColor = True
         '
         'TextBox12
         '
-        Me.TextBox12.Location = New System.Drawing.Point(168, 112)
-        Me.TextBox12.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox12.Location = New System.Drawing.Point(112, 73)
         Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox12.Size = New System.Drawing.Size(157, 20)
         Me.TextBox12.TabIndex = 10
         '
         'Label70
         '
         Me.Label70.AutoSize = True
         Me.Label70.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label70.Location = New System.Drawing.Point(9, 117)
-        Me.Label70.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label70.Location = New System.Drawing.Point(6, 76)
         Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(112, 20)
+        Me.Label70.Size = New System.Drawing.Size(74, 13)
         Me.Label70.TabIndex = 9
         Me.Label70.Text = "PCE-CD BIOS"
         '
         'Button7
         '
         Me.Button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button7.Location = New System.Drawing.Point(412, 69)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button7.Location = New System.Drawing.Point(275, 45)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(34, 35)
+        Me.Button7.Size = New System.Drawing.Size(23, 23)
         Me.Button7.TabIndex = 8
         Me.Button7.UseVisualStyleBackColor = True
         '
         'TextBox11
         '
-        Me.TextBox11.Location = New System.Drawing.Point(168, 72)
-        Me.TextBox11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox11.Location = New System.Drawing.Point(112, 47)
         Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox11.Size = New System.Drawing.Size(157, 20)
         Me.TextBox11.TabIndex = 7
         '
         'Label69
         '
         Me.Label69.AutoSize = True
-        Me.Label69.Location = New System.Drawing.Point(9, 77)
-        Me.Label69.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label69.Location = New System.Drawing.Point(6, 50)
         Me.Label69.Name = "Label69"
-        Me.Label69.Size = New System.Drawing.Size(141, 20)
+        Me.Label69.Size = New System.Drawing.Size(94, 13)
         Me.Label69.TabIndex = 6
         Me.Label69.Text = "Game Genie ROM"
         '
         'Button6
         '
         Me.Button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button6.Location = New System.Drawing.Point(412, 29)
-        Me.Button6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button6.Location = New System.Drawing.Point(275, 19)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(34, 35)
+        Me.Button6.Size = New System.Drawing.Size(23, 23)
         Me.Button6.TabIndex = 5
         Me.Button6.UseVisualStyleBackColor = True
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(168, 32)
-        Me.TextBox10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox10.Location = New System.Drawing.Point(112, 21)
         Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox10.Size = New System.Drawing.Size(157, 20)
         Me.TextBox10.TabIndex = 4
         '
         'Label68
         '
         Me.Label68.AutoSize = True
-        Me.Label68.Location = New System.Drawing.Point(9, 37)
-        Me.Label68.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label68.Location = New System.Drawing.Point(6, 24)
         Me.Label68.Name = "Label68"
-        Me.Label68.Size = New System.Drawing.Size(128, 20)
+        Me.Label68.Size = New System.Drawing.Size(85, 13)
         Me.Label68.TabIndex = 3
         Me.Label68.Text = "GBA BIOS ROM"
         '
         'TabPage24
         '
         Me.TabPage24.Controls.Add(Me.GroupBox22)
-        Me.TabPage24.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage24.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage24.Location = New System.Drawing.Point(4, 22)
         Me.TabPage24.Name = "TabPage24"
-        Me.TabPage24.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabPage24.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage24.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage24.Size = New System.Drawing.Size(310, 284)
         Me.TabPage24.TabIndex = 23
         Me.TabPage24.Text = "Bios"
         Me.TabPage24.UseVisualStyleBackColor = True
@@ -2146,11 +1993,9 @@ Partial Class MgrSetting
         Me.GroupBox22.Controls.Add(Me.Button29)
         Me.GroupBox22.Controls.Add(Me.TextBox23)
         Me.GroupBox22.Controls.Add(Me.Label115)
-        Me.GroupBox22.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox22.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox22.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox22.Name = "GroupBox22"
-        Me.GroupBox22.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox22.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox22.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox22.TabIndex = 4
         Me.GroupBox22.TabStop = False
         Me.ToolTip1.SetToolTip(Me.GroupBox22, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
@@ -2158,68 +2003,61 @@ Partial Class MgrSetting
         'Button28
         '
         Me.Button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button28.Location = New System.Drawing.Point(412, 69)
-        Me.Button28.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button28.Location = New System.Drawing.Point(275, 45)
         Me.Button28.Name = "Button28"
-        Me.Button28.Size = New System.Drawing.Size(34, 35)
+        Me.Button28.Size = New System.Drawing.Size(23, 23)
         Me.Button28.TabIndex = 8
         Me.Button28.UseVisualStyleBackColor = True
         '
         'TextBox22
         '
-        Me.TextBox22.Location = New System.Drawing.Point(168, 72)
-        Me.TextBox22.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox22.Location = New System.Drawing.Point(112, 47)
         Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox22.Size = New System.Drawing.Size(157, 20)
         Me.TextBox22.TabIndex = 7
         '
         'Label114
         '
         Me.Label114.AutoSize = True
         Me.Label114.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label114.Location = New System.Drawing.Point(9, 77)
-        Me.Label114.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label114.Location = New System.Drawing.Point(6, 50)
         Me.Label114.Name = "Label114"
-        Me.Label114.Size = New System.Drawing.Size(109, 20)
+        Me.Label114.Size = New System.Drawing.Size(74, 13)
         Me.Label114.TabIndex = 6
         Me.Label114.Text = "SATURN-JAP"
         '
         'Button29
         '
         Me.Button29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button29.Location = New System.Drawing.Point(412, 29)
-        Me.Button29.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button29.Location = New System.Drawing.Point(275, 19)
         Me.Button29.Name = "Button29"
-        Me.Button29.Size = New System.Drawing.Size(34, 35)
+        Me.Button29.Size = New System.Drawing.Size(23, 23)
         Me.Button29.TabIndex = 5
         Me.Button29.UseVisualStyleBackColor = True
         '
         'TextBox23
         '
-        Me.TextBox23.Location = New System.Drawing.Point(168, 32)
-        Me.TextBox23.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox23.Location = New System.Drawing.Point(112, 21)
         Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Size = New System.Drawing.Size(234, 26)
+        Me.TextBox23.Size = New System.Drawing.Size(157, 20)
         Me.TextBox23.TabIndex = 4
         '
         'Label115
         '
         Me.Label115.AutoSize = True
         Me.Label115.ForeColor = System.Drawing.Color.DarkRed
-        Me.Label115.Location = New System.Drawing.Point(9, 37)
-        Me.Label115.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label115.Location = New System.Drawing.Point(6, 24)
         Me.Label115.Name = "Label115"
-        Me.Label115.Size = New System.Drawing.Size(153, 20)
+        Me.Label115.Size = New System.Drawing.Size(105, 13)
         Me.Label115.TabIndex = 3
         Me.Label115.Text = "SATURN-USA/EUR"
         '
         'TabPage6
         '
         Me.TabPage6.Controls.Add(Me.GroupBox6)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage6.Size = New System.Drawing.Size(310, 284)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Net-Play"
         Me.TabPage6.UseVisualStyleBackColor = True
@@ -2252,31 +2090,27 @@ Partial Class MgrSetting
         Me.GroupBox6.Controls.Add(Me.NumericUpDown7)
         Me.GroupBox6.Controls.Add(Me.Label28)
         Me.GroupBox6.Controls.Add(Me.Label27)
-        Me.GroupBox6.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox6.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox6.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox6.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox6.TabIndex = 1
         Me.GroupBox6.TabStop = False
         '
         'ComboBox54
         '
         Me.ComboBox54.FormattingEnabled = True
-        Me.ComboBox54.Location = New System.Drawing.Point(62, 345)
-        Me.ComboBox54.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox54.Location = New System.Drawing.Point(41, 224)
         Me.ComboBox54.Name = "ComboBox54"
-        Me.ComboBox54.Size = New System.Drawing.Size(145, 28)
+        Me.ComboBox54.Size = New System.Drawing.Size(98, 21)
         Me.ComboBox54.TabIndex = 54
         Me.ToolTip1.SetToolTip(Me.ComboBox54, "Alias for NetPlay server")
         '
         'Label133
         '
         Me.Label133.AutoSize = True
-        Me.Label133.Location = New System.Drawing.Point(9, 349)
-        Me.Label133.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label133.Location = New System.Drawing.Point(6, 227)
         Me.Label133.Name = "Label133"
-        Me.Label133.Size = New System.Drawing.Size(47, 20)
+        Me.Label133.Size = New System.Drawing.Size(32, 13)
         Me.Label133.TabIndex = 53
         Me.Label133.Text = "Alias:"
         Me.ToolTip1.SetToolTip(Me.Label133, "Wait for host and port check!!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Green Text = Server Open" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Red Text = Server Clo" &
@@ -2285,30 +2119,27 @@ Partial Class MgrSetting
         'Label125
         '
         Me.Label125.AutoSize = True
-        Me.Label125.Location = New System.Drawing.Point(9, 186)
-        Me.Label125.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label125.Location = New System.Drawing.Point(6, 121)
         Me.Label125.Name = "Label125"
-        Me.Label125.Size = New System.Drawing.Size(144, 20)
+        Me.Label125.Size = New System.Drawing.Size(98, 13)
         Me.Label125.TabIndex = 52
         Me.Label125.Text = "Net-Play Gamekey "
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(218, 182)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox3.Location = New System.Drawing.Point(145, 118)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(228, 26)
+        Me.TextBox3.Size = New System.Drawing.Size(153, 20)
         Me.TextBox3.TabIndex = 51
         Me.TextBox3.Text = " "
         Me.ToolTip1.SetToolTip(Me.TextBox3, "Key to hash with the MD5 hash of the game.")
         '
         'NumericUpDown21
         '
-        Me.NumericUpDown21.Location = New System.Drawing.Point(381, 303)
-        Me.NumericUpDown21.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown21.Location = New System.Drawing.Point(254, 197)
         Me.NumericUpDown21.Maximum = New Decimal(New Integer() {16, 0, 0, 0})
         Me.NumericUpDown21.Name = "NumericUpDown21"
-        Me.NumericUpDown21.Size = New System.Drawing.Size(66, 26)
+        Me.NumericUpDown21.Size = New System.Drawing.Size(44, 20)
         Me.NumericUpDown21.TabIndex = 50
         Me.ToolTip1.SetToolTip(Me.NumericUpDown21, "Netplay chat console text scale factor." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A value of 0 enables auto-scaling.")
         Me.NumericUpDown21.Value = New Decimal(New Integer() {1, 0, 0, 0})
@@ -2316,21 +2147,19 @@ Partial Class MgrSetting
         'Label119
         '
         Me.Label119.AutoSize = True
-        Me.Label119.Location = New System.Drawing.Point(321, 306)
-        Me.Label119.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label119.Location = New System.Drawing.Point(214, 199)
         Me.Label119.Name = "Label119"
-        Me.Label119.Size = New System.Drawing.Size(49, 20)
+        Me.Label119.Size = New System.Drawing.Size(34, 13)
         Me.Label119.TabIndex = 49
         Me.Label119.Text = "Scale"
         '
         'NumericUpDown20
         '
-        Me.NumericUpDown20.Location = New System.Drawing.Point(218, 303)
-        Me.NumericUpDown20.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown20.Location = New System.Drawing.Point(145, 197)
         Me.NumericUpDown20.Maximum = New Decimal(New Integer() {64, 0, 0, 0})
         Me.NumericUpDown20.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.NumericUpDown20.Name = "NumericUpDown20"
-        Me.NumericUpDown20.Size = New System.Drawing.Size(66, 26)
+        Me.NumericUpDown20.Size = New System.Drawing.Size(44, 20)
         Me.NumericUpDown20.TabIndex = 48
         Me.ToolTip1.SetToolTip(Me.NumericUpDown20, "Height of chat console, in lines.")
         Me.NumericUpDown20.Value = New Decimal(New Integer() {5, 0, 0, 0})
@@ -2338,10 +2167,9 @@ Partial Class MgrSetting
         'Label118
         '
         Me.Label118.AutoSize = True
-        Me.Label118.Location = New System.Drawing.Point(9, 306)
-        Me.Label118.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label118.Location = New System.Drawing.Point(6, 199)
         Me.Label118.Name = "Label118"
-        Me.Label118.Size = New System.Drawing.Size(172, 20)
+        Me.Label118.Size = New System.Drawing.Size(116, 13)
         Me.Label118.TabIndex = 47
         Me.Label118.Text = "Net-Play Console Lines"
         '
@@ -2349,10 +2177,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox50.FormattingEnabled = True
         Me.ComboBox50.Items.AddRange(New Object() {"5x7", "6x9", "6x12", "6x13", "9x18"})
-        Me.ComboBox50.Location = New System.Drawing.Point(218, 262)
-        Me.ComboBox50.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox50.Location = New System.Drawing.Point(145, 170)
         Me.ComboBox50.Name = "ComboBox50"
-        Me.ComboBox50.Size = New System.Drawing.Size(228, 28)
+        Me.ComboBox50.Size = New System.Drawing.Size(153, 21)
         Me.ComboBox50.TabIndex = 46
         Me.ComboBox50.Text = "9x18"
         Me.ToolTip1.SetToolTip(Me.ComboBox50, "Font for netplay chat console." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "5x7 - 5x7" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x9 - 6x9" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x12 - 6x12" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x13 - 6" &
@@ -2361,10 +2188,9 @@ Partial Class MgrSetting
         'Label117
         '
         Me.Label117.AutoSize = True
-        Me.Label117.Location = New System.Drawing.Point(9, 266)
-        Me.Label117.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label117.Location = New System.Drawing.Point(6, 173)
         Me.Label117.Name = "Label117"
-        Me.Label117.Size = New System.Drawing.Size(167, 20)
+        Me.Label117.Size = New System.Drawing.Size(112, 13)
         Me.Label117.TabIndex = 45
         Me.Label117.Text = "Net-Play Console Font"
         Me.ToolTip1.SetToolTip(Me.Label117, "Font for netplay chat console." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "5x7 - 5x7" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x9 - 6x9" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x12 - 6x12" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "6x13 - 6" &
@@ -2373,10 +2199,9 @@ Partial Class MgrSetting
         'Button20
         '
         Me.Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button20.Location = New System.Drawing.Point(412, 20)
-        Me.Button20.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button20.Location = New System.Drawing.Point(275, 13)
         Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(34, 35)
+        Me.Button20.Size = New System.Drawing.Size(23, 23)
         Me.Button20.TabIndex = 44
         Me.Button20.Text = "+"
         Me.ToolTip1.SetToolTip(Me.Button20, "Left click mouse = Add a server hostname to internal list" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Right click mouse = De" &
@@ -2386,10 +2211,9 @@ Partial Class MgrSetting
         'cmbServer
         '
         Me.cmbServer.FormattingEnabled = True
-        Me.cmbServer.Location = New System.Drawing.Point(218, 22)
-        Me.cmbServer.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.cmbServer.Location = New System.Drawing.Point(145, 14)
         Me.cmbServer.Name = "cmbServer"
-        Me.cmbServer.Size = New System.Drawing.Size(184, 28)
+        Me.cmbServer.Size = New System.Drawing.Size(124, 21)
         Me.cmbServer.Sorted = True
         Me.cmbServer.TabIndex = 43
         Me.ToolTip1.SetToolTip(Me.cmbServer, "Server hostname.")
@@ -2397,10 +2221,9 @@ Partial Class MgrSetting
         'Button15
         '
         Me.Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button15.Location = New System.Drawing.Point(412, 343)
-        Me.Button15.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button15.Location = New System.Drawing.Point(275, 223)
         Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(34, 35)
+        Me.Button15.Size = New System.Drawing.Size(23, 23)
         Me.Button15.TabIndex = 41
         Me.ToolTip1.SetToolTip(Me.Button15, "Open Mednafen NetPlay Help")
         Me.Button15.UseVisualStyleBackColor = True
@@ -2408,10 +2231,9 @@ Partial Class MgrSetting
         'Button3
         '
         Me.Button3.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button3.Location = New System.Drawing.Point(14, 385)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button3.Location = New System.Drawing.Point(9, 250)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(195, 35)
+        Me.Button3.Size = New System.Drawing.Size(130, 23)
         Me.Button3.TabIndex = 40
         Me.Button3.Text = "&Net-Play My IP:"
         Me.ToolTip1.SetToolTip(Me.Button3, "Get Current Network IP")
@@ -2420,10 +2242,9 @@ Partial Class MgrSetting
         'Button41
         '
         Me.Button41.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Button41.Location = New System.Drawing.Point(218, 343)
-        Me.Button41.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button41.Location = New System.Drawing.Point(145, 223)
         Me.Button41.Name = "Button41"
-        Me.Button41.Size = New System.Drawing.Size(186, 35)
+        Me.Button41.Size = New System.Drawing.Size(124, 23)
         Me.Button41.TabIndex = 39
         Me.Button41.Text = "Standard.&Conf"
         Me.ToolTip1.SetToolTip(Me.Button41, "Open Standard Conf Maker")
@@ -2431,20 +2252,18 @@ Partial Class MgrSetting
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(218, 388)
-        Me.TextBox8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox8.Location = New System.Drawing.Point(145, 252)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(228, 26)
+        Me.TextBox8.Size = New System.Drawing.Size(153, 20)
         Me.TextBox8.TabIndex = 23
         '
         'CheckBox16
         '
         Me.CheckBox16.AutoSize = True
-        Me.CheckBox16.Location = New System.Drawing.Point(334, 63)
-        Me.CheckBox16.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox16.Location = New System.Drawing.Point(223, 41)
         Me.CheckBox16.Name = "CheckBox16"
-        Me.CheckBox16.Size = New System.Drawing.Size(111, 24)
+        Me.CheckBox16.Size = New System.Drawing.Size(75, 17)
         Me.CheckBox16.TabIndex = 22
         Me.CheckBox16.Text = "Small &Font"
         Me.ToolTip1.SetToolTip(Me.CheckBox16, "Use small(tiny!) font for netplay chat console.")
@@ -2453,38 +2272,34 @@ Partial Class MgrSetting
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(9, 226)
-        Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label31.Location = New System.Drawing.Point(6, 147)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(151, 20)
+        Me.Label31.Size = New System.Drawing.Size(103, 13)
         Me.Label31.TabIndex = 18
         Me.Label31.Text = "Net-Play Server Port"
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(218, 222)
-        Me.TextBox7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox7.Location = New System.Drawing.Point(145, 144)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(228, 26)
+        Me.TextBox7.Size = New System.Drawing.Size(153, 20)
         Me.TextBox7.TabIndex = 17
         Me.ToolTip1.SetToolTip(Me.TextBox7, "Server port")
         '
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(9, 146)
-        Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label30.Location = New System.Drawing.Point(6, 95)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(141, 20)
+        Me.Label30.Size = New System.Drawing.Size(96, 13)
         Me.Label30.TabIndex = 16
         Me.Label30.Text = "Net-Play Password"
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(218, 142)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox6.Location = New System.Drawing.Point(145, 92)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(228, 26)
+        Me.TextBox6.Size = New System.Drawing.Size(153, 20)
         Me.TextBox6.TabIndex = 15
         Me.TextBox6.Text = " "
         Me.ToolTip1.SetToolTip(Me.TextBox6, "Server password." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Password to connect to the netplay server.")
@@ -2492,30 +2307,27 @@ Partial Class MgrSetting
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(9, 106)
-        Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label29.Location = New System.Drawing.Point(6, 69)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(142, 20)
+        Me.Label29.Size = New System.Drawing.Size(98, 13)
         Me.Label29.TabIndex = 14
         Me.Label29.Text = "Net-Play Nickname"
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(218, 102)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox5.Location = New System.Drawing.Point(145, 66)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(228, 26)
+        Me.TextBox5.Size = New System.Drawing.Size(153, 20)
         Me.TextBox5.TabIndex = 13
         Me.TextBox5.Text = "Speedvicio"
         Me.ToolTip1.SetToolTip(Me.TextBox5, "Nickname." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Nickname to use for network play chat.")
         '
         'NumericUpDown7
         '
-        Me.NumericUpDown7.Location = New System.Drawing.Point(218, 62)
-        Me.NumericUpDown7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown7.Location = New System.Drawing.Point(145, 40)
         Me.NumericUpDown7.Maximum = New Decimal(New Integer() {16, 0, 0, 0})
         Me.NumericUpDown7.Name = "NumericUpDown7"
-        Me.NumericUpDown7.Size = New System.Drawing.Size(66, 26)
+        Me.NumericUpDown7.Size = New System.Drawing.Size(44, 20)
         Me.NumericUpDown7.TabIndex = 12
         Me.ToolTip1.SetToolTip(Me.NumericUpDown7, resources.GetString("NumericUpDown7.ToolTip"))
         Me.NumericUpDown7.Value = New Decimal(New Integer() {1, 0, 0, 0})
@@ -2523,20 +2335,18 @@ Partial Class MgrSetting
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(9, 65)
-        Me.Label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label28.Location = New System.Drawing.Point(6, 42)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(161, 20)
+        Me.Label28.Size = New System.Drawing.Size(111, 13)
         Me.Label28.TabIndex = 11
         Me.Label28.Text = "Net-Play Local Palyer:"
         '
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(9, 26)
-        Me.Label27.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label27.Location = New System.Drawing.Point(6, 17)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(106, 20)
+        Me.Label27.Size = New System.Drawing.Size(72, 13)
         Me.Label27.TabIndex = 1
         Me.Label27.Text = "Net-Play Host"
         Me.ToolTip1.SetToolTip(Me.Label27, "Wait for host and port check!!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Green Text = Server Open" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Red Text = Server Clo" &
@@ -2545,10 +2355,9 @@ Partial Class MgrSetting
         'TabPage7
         '
         Me.TabPage7.Controls.Add(Me.GroupBox3)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage7.Size = New System.Drawing.Size(310, 284)
         Me.TabPage7.TabIndex = 2
         Me.TabPage7.Text = "Record"
         Me.TabPage7.UseVisualStyleBackColor = True
@@ -2565,41 +2374,36 @@ Partial Class MgrSetting
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.ComboBox4)
-        Me.GroupBox3.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox3.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox3.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox3.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         '
         'Label96
         '
         Me.Label96.AutoSize = True
-        Me.Label96.Location = New System.Drawing.Point(238, 280)
-        Me.Label96.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label96.Location = New System.Drawing.Point(159, 182)
         Me.Label96.Name = "Label96"
-        Me.Label96.Size = New System.Drawing.Size(160, 20)
+        Me.Label96.Size = New System.Drawing.Size(108, 13)
         Me.Label96.TabIndex = 29
         Me.Label96.Text = "Open Audio Directory"
         '
         'Label95
         '
         Me.Label95.AutoSize = True
-        Me.Label95.Location = New System.Drawing.Point(238, 235)
-        Me.Label95.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label95.Location = New System.Drawing.Point(159, 153)
         Me.Label95.Name = "Label95"
-        Me.Label95.Size = New System.Drawing.Size(160, 20)
+        Me.Label95.Size = New System.Drawing.Size(110, 13)
         Me.Label95.TabIndex = 28
         Me.Label95.Text = "Open Movie Directory"
         '
         'Button1
         '
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Location = New System.Drawing.Point(412, 272)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button1.Location = New System.Drawing.Point(275, 177)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(34, 35)
+        Me.Button1.Size = New System.Drawing.Size(23, 23)
         Me.Button1.TabIndex = 27
         Me.ToolTip1.SetToolTip(Me.Button1, "Open Destination Sound Folder")
         Me.Button1.UseVisualStyleBackColor = True
@@ -2607,21 +2411,19 @@ Partial Class MgrSetting
         'Button2
         '
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button2.Location = New System.Drawing.Point(412, 228)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button2.Location = New System.Drawing.Point(275, 148)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(34, 35)
+        Me.Button2.Size = New System.Drawing.Size(23, 23)
         Me.Button2.TabIndex = 26
         Me.ToolTip1.SetToolTip(Me.Button2, "Open Destination Movie Folder")
         Me.Button2.UseVisualStyleBackColor = True
         '
         'TrackBar4
         '
-        Me.TrackBar4.Location = New System.Drawing.Point(292, 149)
-        Me.TrackBar4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar4.Location = New System.Drawing.Point(195, 97)
         Me.TrackBar4.Maximum = 1073741824
         Me.TrackBar4.Name = "TrackBar4"
-        Me.TrackBar4.Size = New System.Drawing.Size(154, 69)
+        Me.TrackBar4.Size = New System.Drawing.Size(103, 45)
         Me.TrackBar4.TabIndex = 16
         Me.ToolTip1.SetToolTip(Me.TrackBar4, "Double the raw image's width if it's below this threshold.")
         Me.TrackBar4.Value = 384
@@ -2629,20 +2431,18 @@ Partial Class MgrSetting
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(18, 149)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(12, 97)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(183, 20)
+        Me.Label8.Size = New System.Drawing.Size(125, 13)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Width Double Threshold:"
         '
         'TrackBar5
         '
-        Me.TrackBar5.Location = New System.Drawing.Point(292, 71)
-        Me.TrackBar5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar5.Location = New System.Drawing.Point(195, 46)
         Me.TrackBar5.Maximum = 1073741824
         Me.TrackBar5.Name = "TrackBar5"
-        Me.TrackBar5.Size = New System.Drawing.Size(154, 69)
+        Me.TrackBar5.Size = New System.Drawing.Size(103, 45)
         Me.TrackBar5.TabIndex = 14
         Me.ToolTip1.SetToolTip(Me.TrackBar5, "Double the raw image's height if it's below this threshold.")
         Me.TrackBar5.Value = 256
@@ -2650,20 +2450,18 @@ Partial Class MgrSetting
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(18, 71)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(12, 46)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(189, 20)
+        Me.Label9.Size = New System.Drawing.Size(128, 13)
         Me.Label9.TabIndex = 13
         Me.Label9.Text = "Heigth Double Threshold:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(18, 34)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(12, 22)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 20)
+        Me.Label7.Size = New System.Drawing.Size(68, 13)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Video Codec"
         '
@@ -2671,10 +2469,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Items.AddRange(New Object() {"raw", "cscd", "png"})
-        Me.ComboBox4.Location = New System.Drawing.Point(292, 29)
-        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox4.Location = New System.Drawing.Point(195, 19)
         Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(152, 28)
+        Me.ComboBox4.Size = New System.Drawing.Size(103, 21)
         Me.ComboBox4.TabIndex = 11
         Me.ComboBox4.Text = "cscd"
         Me.ToolTip1.SetToolTip(Me.ComboBox4, resources.GetString("ComboBox4.ToolTip"))
@@ -2682,10 +2479,9 @@ Partial Class MgrSetting
         'TabPage19
         '
         Me.TabPage19.Controls.Add(Me.GroupBox7)
-        Me.TabPage19.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage19.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage19.Location = New System.Drawing.Point(4, 22)
         Me.TabPage19.Name = "TabPage19"
-        Me.TabPage19.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage19.Size = New System.Drawing.Size(310, 284)
         Me.TabPage19.TabIndex = 6
         Me.TabPage19.Text = "Lynx"
         Me.TabPage19.UseVisualStyleBackColor = True
@@ -2694,21 +2490,18 @@ Partial Class MgrSetting
         '
         Me.GroupBox7.Controls.Add(Me.CheckBox17)
         Me.GroupBox7.Controls.Add(Me.CheckBox18)
-        Me.GroupBox7.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox7.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox7.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox7.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox7.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox7.TabIndex = 2
         Me.GroupBox7.TabStop = False
         '
         'CheckBox17
         '
         Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.Location = New System.Drawing.Point(9, 65)
-        Me.CheckBox17.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox17.Location = New System.Drawing.Point(6, 42)
         Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(191, 24)
+        Me.CheckBox17.Size = New System.Drawing.Size(129, 17)
         Me.CheckBox17.TabIndex = 3
         Me.CheckBox17.Text = "Virtually &Rotate D-pad"
         Me.ToolTip1.SetToolTip(Me.CheckBox17, "Virtually rotate D-pad along with screen.")
@@ -2717,10 +2510,9 @@ Partial Class MgrSetting
         'CheckBox18
         '
         Me.CheckBox18.AutoSize = True
-        Me.CheckBox18.Location = New System.Drawing.Point(9, 29)
-        Me.CheckBox18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox18.Location = New System.Drawing.Point(6, 19)
         Me.CheckBox18.Name = "CheckBox18"
-        Me.CheckBox18.Size = New System.Drawing.Size(241, 24)
+        Me.CheckBox18.Size = New System.Drawing.Size(162, 17)
         Me.CheckBox18.TabIndex = 2
         Me.CheckBox18.Text = "Sound Output &Lowpass Filter"
         Me.ToolTip1.SetToolTip(Me.CheckBox18, "Enable sound output lowpass filter.")
@@ -2729,10 +2521,9 @@ Partial Class MgrSetting
         'TabPage8
         '
         Me.TabPage8.Controls.Add(Me.GroupBox8)
-        Me.TabPage8.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
         Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage8.Size = New System.Drawing.Size(310, 284)
         Me.TabPage8.TabIndex = 7
         Me.TabPage8.Text = "Game Boy"
         Me.TabPage8.UseVisualStyleBackColor = True
@@ -2741,21 +2532,18 @@ Partial Class MgrSetting
         '
         Me.GroupBox8.Controls.Add(Me.Label33)
         Me.GroupBox8.Controls.Add(Me.ComboBox10)
-        Me.GroupBox8.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox8.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox8.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox8.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox8.TabIndex = 3
         Me.GroupBox8.TabStop = False
         '
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(18, 34)
-        Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label33.Location = New System.Drawing.Point(12, 22)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(143, 20)
+        Me.Label33.Size = New System.Drawing.Size(96, 13)
         Me.Label33.TabIndex = 14
         Me.Label33.Text = "Emulated GB Type"
         '
@@ -2763,10 +2551,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox10.FormattingEnabled = True
         Me.ComboBox10.Items.AddRange(New Object() {"auto", "dmg", "cgb", "agb"})
-        Me.ComboBox10.Location = New System.Drawing.Point(213, 29)
-        Me.ComboBox10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox10.Location = New System.Drawing.Point(142, 19)
         Me.ComboBox10.Name = "ComboBox10"
-        Me.ComboBox10.Size = New System.Drawing.Size(232, 28)
+        Me.ComboBox10.Size = New System.Drawing.Size(156, 21)
         Me.ComboBox10.TabIndex = 13
         Me.ComboBox10.Text = "auto"
         Me.ToolTip1.SetToolTip(Me.ComboBox10, resources.GetString("ComboBox10.ToolTip"))
@@ -2774,10 +2561,9 @@ Partial Class MgrSetting
         'TabPage9
         '
         Me.TabPage9.Controls.Add(Me.GroupBox9)
-        Me.TabPage9.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage9.Location = New System.Drawing.Point(4, 22)
         Me.TabPage9.Name = "TabPage9"
-        Me.TabPage9.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage9.Size = New System.Drawing.Size(310, 284)
         Me.TabPage9.TabIndex = 8
         Me.TabPage9.Text = "Neo Geo Pocket"
         Me.TabPage9.UseVisualStyleBackColor = True
@@ -2786,21 +2572,18 @@ Partial Class MgrSetting
         '
         Me.GroupBox9.Controls.Add(Me.Label34)
         Me.GroupBox9.Controls.Add(Me.ComboBox11)
-        Me.GroupBox9.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox9.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox9.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox9.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox9.TabIndex = 3
         Me.GroupBox9.TabStop = False
         '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(18, 34)
-        Me.Label34.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label34.Location = New System.Drawing.Point(12, 22)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(137, 20)
+        Me.Label34.Size = New System.Drawing.Size(91, 13)
         Me.Label34.TabIndex = 16
         Me.Label34.Text = "Language Games"
         '
@@ -2808,10 +2591,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox11.FormattingEnabled = True
         Me.ComboBox11.Items.AddRange(New Object() {"japanese", "english"})
-        Me.ComboBox11.Location = New System.Drawing.Point(213, 29)
-        Me.ComboBox11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox11.Location = New System.Drawing.Point(142, 19)
         Me.ComboBox11.Name = "ComboBox11"
-        Me.ComboBox11.Size = New System.Drawing.Size(232, 28)
+        Me.ComboBox11.Size = New System.Drawing.Size(156, 21)
         Me.ComboBox11.TabIndex = 15
         Me.ComboBox11.Text = "english"
         Me.ToolTip1.SetToolTip(Me.ComboBox11, "Language games should display text in." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "japanese - Japanese" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "english - Englis" &
@@ -2820,10 +2602,9 @@ Partial Class MgrSetting
         'TabPage10
         '
         Me.TabPage10.Controls.Add(Me.GroupBox10)
-        Me.TabPage10.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage10.Location = New System.Drawing.Point(4, 22)
         Me.TabPage10.Name = "TabPage10"
-        Me.TabPage10.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage10.Size = New System.Drawing.Size(310, 284)
         Me.TabPage10.TabIndex = 9
         Me.TabPage10.Text = "NES"
         Me.TabPage10.UseVisualStyleBackColor = True
@@ -2847,21 +2628,18 @@ Partial Class MgrSetting
         Me.GroupBox10.Controls.Add(Me.CheckBox21)
         Me.GroupBox10.Controls.Add(Me.CheckBox20)
         Me.GroupBox10.Controls.Add(Me.CheckBox19)
-        Me.GroupBox10.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox10.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox10.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox10.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox10.TabIndex = 3
         Me.GroupBox10.TabStop = False
         '
         'CheckBox27
         '
         Me.CheckBox27.AutoSize = True
-        Me.CheckBox27.Location = New System.Drawing.Point(318, 254)
-        Me.CheckBox27.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox27.Location = New System.Drawing.Point(212, 165)
         Me.CheckBox27.Name = "CheckBox27"
-        Me.CheckBox27.Size = New System.Drawing.Size(126, 24)
+        Me.CheckBox27.Size = New System.Drawing.Size(86, 17)
         Me.CheckBox27.TabIndex = 30
         Me.CheckBox27.Text = "&Merge Fields"
         Me.ToolTip1.SetToolTip(Me.CheckBox27, "Merge fields to partially work around !=60.1Hz refresh rates.")
@@ -2869,32 +2647,29 @@ Partial Class MgrSetting
         '
         'NumericUpDown8
         '
-        Me.NumericUpDown8.Location = New System.Drawing.Point(381, 388)
-        Me.NumericUpDown8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown8.Location = New System.Drawing.Point(254, 252)
         Me.NumericUpDown8.Maximum = New Decimal(New Integer() {3, 0, 0, 0})
         Me.NumericUpDown8.Minimum = New Decimal(New Integer() {2, 0, 0, -2147483648})
         Me.NumericUpDown8.Name = "NumericUpDown8"
-        Me.NumericUpDown8.Size = New System.Drawing.Size(66, 26)
+        Me.NumericUpDown8.Size = New System.Drawing.Size(44, 20)
         Me.NumericUpDown8.TabIndex = 29
         Me.ToolTip1.SetToolTip(Me.NumericUpDown8, resources.GetString("NumericUpDown8.ToolTip"))
         '
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(208, 391)
-        Me.Label38.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label38.Location = New System.Drawing.Point(139, 254)
         Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(108, 20)
+        Me.Label38.Size = New System.Drawing.Size(73, 13)
         Me.Label38.TabIndex = 28
         Me.Label38.Text = "Sound Quality"
         '
         'CheckBox26
         '
         Me.CheckBox26.AutoSize = True
-        Me.CheckBox26.Location = New System.Drawing.Point(14, 366)
-        Me.CheckBox26.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox26.Location = New System.Drawing.Point(9, 238)
         Me.CheckBox26.Name = "CheckBox26"
-        Me.CheckBox26.Size = New System.Drawing.Size(194, 24)
+        Me.CheckBox26.Size = New System.Drawing.Size(131, 17)
         Me.CheckBox26.TabIndex = 27
         Me.CheckBox26.Text = "Enable &PAL Emulation"
         Me.ToolTip1.SetToolTip(Me.CheckBox26, "Enable PAL(50Hz) NES emulation.")
@@ -2903,10 +2678,9 @@ Partial Class MgrSetting
         'CheckBox25
         '
         Me.CheckBox25.AutoSize = True
-        Me.CheckBox25.Location = New System.Drawing.Point(14, 331)
-        Me.CheckBox25.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox25.Location = New System.Drawing.Point(9, 215)
         Me.CheckBox25.Name = "CheckBox25"
-        Me.CheckBox25.Size = New System.Drawing.Size(332, 24)
+        Me.CheckBox25.Size = New System.Drawing.Size(223, 17)
         Me.CheckBox25.TabIndex = 26
         Me.CheckBox25.Text = "Enable NTSC Color Generation and &Blitter"
         Me.ToolTip1.SetToolTip(Me.CheckBox25, "Enable NTSC color generation and blitter." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "NOTE: If your refresh rate isn't ver" &
@@ -2917,10 +2691,9 @@ Partial Class MgrSetting
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(9, 294)
-        Me.Label37.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label37.Location = New System.Drawing.Point(6, 191)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(91, 20)
+        Me.Label37.Size = New System.Drawing.Size(62, 13)
         Me.Label37.TabIndex = 25
         Me.Label37.Text = "Ntsc Preset"
         '
@@ -2928,10 +2701,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox14.FormattingEnabled = True
         Me.ComboBox14.Items.AddRange(New Object() {"disabled", "composite", "svideo", "rgb", "monochrome"})
-        Me.ComboBox14.Location = New System.Drawing.Point(213, 289)
-        Me.ComboBox14.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox14.Location = New System.Drawing.Point(142, 188)
         Me.ComboBox14.Name = "ComboBox14"
-        Me.ComboBox14.Size = New System.Drawing.Size(232, 28)
+        Me.ComboBox14.Size = New System.Drawing.Size(156, 21)
         Me.ComboBox14.TabIndex = 24
         Me.ComboBox14.Text = "none"
         Me.ToolTip1.SetToolTip(Me.ComboBox14, "Video quality/type preset." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "disabled - Disabled" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "composite - Composite Video" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "svideo - S-Video" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rgb - RGB" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "monochrome - Monochrome")
@@ -2939,10 +2711,9 @@ Partial Class MgrSetting
         'CheckBox24
         '
         Me.CheckBox24.AutoSize = True
-        Me.CheckBox24.Location = New System.Drawing.Point(14, 254)
-        Me.CheckBox24.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox24.Location = New System.Drawing.Point(9, 165)
         Me.CheckBox24.Name = "CheckBox24"
-        Me.CheckBox24.Size = New System.Drawing.Size(246, 24)
+        Me.CheckBox24.Size = New System.Drawing.Size(164, 17)
         Me.CheckBox24.TabIndex = 23
         Me.CheckBox24.Text = "Disable &Four-Fcore Emulation"
         Me.ToolTip1.SetToolTip(Me.CheckBox24, "Disable four-score emulation.")
@@ -2951,10 +2722,9 @@ Partial Class MgrSetting
         'CheckBox23
         '
         Me.CheckBox23.AutoSize = True
-        Me.CheckBox23.Location = New System.Drawing.Point(14, 218)
-        Me.CheckBox23.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox23.Location = New System.Drawing.Point(9, 142)
         Me.CheckBox23.Name = "CheckBox23"
-        Me.CheckBox23.Size = New System.Drawing.Size(269, 24)
+        Me.CheckBox23.Size = New System.Drawing.Size(183, 17)
         Me.CheckBox23.TabIndex = 22
         Me.CheckBox23.Text = "Remove &Scanline Hardware Limit"
         Me.ToolTip1.SetToolTip(Me.CheckBox23, "Remove 8-sprites-per-scanline hardware limit." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WARNING: Enabling this option wi" &
@@ -2964,10 +2734,9 @@ Partial Class MgrSetting
         'CheckBox22
         '
         Me.CheckBox22.AutoSize = True
-        Me.CheckBox22.Location = New System.Drawing.Point(14, 183)
-        Me.CheckBox22.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox22.Location = New System.Drawing.Point(9, 119)
         Me.CheckBox22.Name = "CheckBox22"
-        Me.CheckBox22.Size = New System.Drawing.Size(296, 24)
+        Me.CheckBox22.Size = New System.Drawing.Size(200, 17)
         Me.CheckBox22.TabIndex = 21
         Me.CheckBox22.Text = "Enable &Namco 106 Sound Emulation"
         Me.ToolTip1.SetToolTip(Me.CheckBox22, "Enable less-accurate, but better sounding, Namco 106(mapper 19) sound emulation.")
@@ -2976,10 +2745,9 @@ Partial Class MgrSetting
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(9, 146)
-        Me.Label36.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label36.Location = New System.Drawing.Point(6, 95)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(180, 20)
+        Me.Label36.Size = New System.Drawing.Size(125, 13)
         Me.Label36.TabIndex = 20
         Me.Label36.Text = "Input Device for Port 1/2"
         '
@@ -2987,10 +2755,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox13.FormattingEnabled = True
         Me.ComboBox13.Items.AddRange(New Object() {"none", "gamepad", "zapper", "powerpada", "powerpadb", "arkanoid"})
-        Me.ComboBox13.Location = New System.Drawing.Point(213, 142)
-        Me.ComboBox13.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox13.Location = New System.Drawing.Point(142, 92)
         Me.ComboBox13.Name = "ComboBox13"
-        Me.ComboBox13.Size = New System.Drawing.Size(232, 28)
+        Me.ComboBox13.Size = New System.Drawing.Size(156, 21)
         Me.ComboBox13.TabIndex = 19
         Me.ComboBox13.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox13, "Input device for Port 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "zapper - Zapper" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "powerpada - Power Pad Side A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "powerpadb - Power Pad Side B" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "arkanoid - Arka" &
@@ -2999,10 +2766,9 @@ Partial Class MgrSetting
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(9, 105)
-        Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label35.Location = New System.Drawing.Point(6, 68)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(185, 20)
+        Me.Label35.Size = New System.Drawing.Size(123, 13)
         Me.Label35.TabIndex = 18
         Me.Label35.Text = "Famicom Expansion Port"
         '
@@ -3010,10 +2776,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox12.FormattingEnabled = True
         Me.ComboBox12.Items.AddRange(New Object() {"none", "arkanoid", "shadow", "4player", "fkb", "hypershot", "mahjong", "partytap", "ftrainera", "ftrainerb", "oekakids", "bworld"})
-        Me.ComboBox12.Location = New System.Drawing.Point(213, 100)
-        Me.ComboBox12.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox12.Location = New System.Drawing.Point(142, 65)
         Me.ComboBox12.Name = "ComboBox12"
-        Me.ComboBox12.Size = New System.Drawing.Size(232, 28)
+        Me.ComboBox12.Size = New System.Drawing.Size(156, 21)
         Me.ComboBox12.TabIndex = 17
         Me.ComboBox12.Text = "none"
         Me.ToolTip1.SetToolTip(Me.ComboBox12, resources.GetString("ComboBox12.ToolTip"))
@@ -3021,10 +2786,9 @@ Partial Class MgrSetting
         'CheckBox21
         '
         Me.CheckBox21.AutoSize = True
-        Me.CheckBox21.Location = New System.Drawing.Point(14, 65)
-        Me.CheckBox21.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox21.Location = New System.Drawing.Point(9, 42)
         Me.CheckBox21.Name = "CheckBox21"
-        Me.CheckBox21.Size = New System.Drawing.Size(255, 24)
+        Me.CheckBox21.Size = New System.Drawing.Size(170, 17)
         Me.CheckBox21.TabIndex = 5
         Me.CheckBox21.Text = "Enable &Game Genie Emulation"
         Me.ToolTip1.SetToolTip(Me.CheckBox21, "Enable Game Genie emulation.")
@@ -3033,10 +2797,9 @@ Partial Class MgrSetting
         'CheckBox20
         '
         Me.CheckBox20.AutoSize = True
-        Me.CheckBox20.Location = New System.Drawing.Point(213, 29)
-        Me.CheckBox20.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox20.Location = New System.Drawing.Point(142, 19)
         Me.CheckBox20.Name = "CheckBox20"
-        Me.CheckBox20.Size = New System.Drawing.Size(183, 24)
+        Me.CheckBox20.Size = New System.Drawing.Size(124, 17)
         Me.CheckBox20.TabIndex = 4
         Me.CheckBox20.Text = "Correct &Aspect Ratio"
         Me.ToolTip1.SetToolTip(Me.CheckBox20, "Correct the aspect ratio.")
@@ -3045,10 +2808,9 @@ Partial Class MgrSetting
         'CheckBox19
         '
         Me.CheckBox19.AutoSize = True
-        Me.CheckBox19.Location = New System.Drawing.Point(14, 29)
-        Me.CheckBox19.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox19.Location = New System.Drawing.Point(9, 19)
         Me.CheckBox19.Name = "CheckBox19"
-        Me.CheckBox19.Size = New System.Drawing.Size(131, 24)
+        Me.CheckBox19.Size = New System.Drawing.Size(89, 17)
         Me.CheckBox19.TabIndex = 3
         Me.CheckBox19.Text = "&Clip left+right "
         Me.ToolTip1.SetToolTip(Me.CheckBox19, "Clip left+right 8 pixel columns.")
@@ -3057,10 +2819,9 @@ Partial Class MgrSetting
         'TabPage11
         '
         Me.TabPage11.Controls.Add(Me.GroupBox11)
-        Me.TabPage11.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage11.Location = New System.Drawing.Point(4, 22)
         Me.TabPage11.Name = "TabPage11"
-        Me.TabPage11.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage11.Size = New System.Drawing.Size(310, 284)
         Me.TabPage11.TabIndex = 10
         Me.TabPage11.Text = "PC Engine/TurboGrafx 16/SuperGrafx"
         Me.TabPage11.UseVisualStyleBackColor = True
@@ -3079,22 +2840,19 @@ Partial Class MgrSetting
         Me.GroupBox11.Controls.Add(Me.TrackBar10)
         Me.GroupBox11.Controls.Add(Me.Label39)
         Me.GroupBox11.Controls.Add(Me.CheckBox28)
-        Me.GroupBox11.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox11.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox11.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox11.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox11.TabIndex = 4
         Me.GroupBox11.TabStop = False
         '
         'NumericUpDown25
         '
         Me.NumericUpDown25.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown25.Location = New System.Drawing.Point(372, 375)
-        Me.NumericUpDown25.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown25.Location = New System.Drawing.Point(248, 244)
         Me.NumericUpDown25.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown25.Name = "NumericUpDown25"
-        Me.NumericUpDown25.Size = New System.Drawing.Size(66, 26)
+        Me.NumericUpDown25.Size = New System.Drawing.Size(44, 20)
         Me.NumericUpDown25.TabIndex = 34
         Me.ToolTip1.SetToolTip(Me.NumericUpDown25, "CPU overclock multiplier")
         Me.NumericUpDown25.Value = New Decimal(New Integer() {1, 0, 0, 0})
@@ -3102,10 +2860,9 @@ Partial Class MgrSetting
         'Label127
         '
         Me.Label127.AutoSize = True
-        Me.Label127.Location = New System.Drawing.Point(244, 378)
-        Me.Label127.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label127.Location = New System.Drawing.Point(163, 246)
         Me.Label127.Name = "Label127"
-        Me.Label127.Size = New System.Drawing.Size(112, 20)
+        Me.Label127.Size = New System.Drawing.Size(79, 13)
         Me.Label127.TabIndex = 33
         Me.Label127.Text = "CPU overclock"
         Me.ToolTip1.SetToolTip(Me.Label127, resources.GetString("Label127.ToolTip"))
@@ -3113,10 +2870,9 @@ Partial Class MgrSetting
         'CheckBox70
         '
         Me.CheckBox70.AutoSize = True
-        Me.CheckBox70.Location = New System.Drawing.Point(204, 65)
-        Me.CheckBox70.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox70.Location = New System.Drawing.Point(136, 42)
         Me.CheckBox70.Name = "CheckBox70"
-        Me.CheckBox70.Size = New System.Drawing.Size(187, 24)
+        Me.CheckBox70.Size = New System.Drawing.Size(127, 17)
         Me.CheckBox70.TabIndex = 32
         Me.CheckBox70.Text = "ADPCM &lowpass filter"
         Me.ToolTip1.SetToolTip(Me.CheckBox70, "Enable dynamic ADPCM lowpass filter")
@@ -3124,11 +2880,10 @@ Partial Class MgrSetting
         '
         'NumericUpDown14
         '
-        Me.NumericUpDown14.Location = New System.Drawing.Point(372, 335)
-        Me.NumericUpDown14.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown14.Location = New System.Drawing.Point(248, 218)
         Me.NumericUpDown14.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.NumericUpDown14.Name = "NumericUpDown14"
-        Me.NumericUpDown14.Size = New System.Drawing.Size(66, 26)
+        Me.NumericUpDown14.Size = New System.Drawing.Size(44, 20)
         Me.NumericUpDown14.TabIndex = 31
         Me.ToolTip1.SetToolTip(Me.NumericUpDown14, resources.GetString("NumericUpDown14.ToolTip"))
         Me.NumericUpDown14.Value = New Decimal(New Integer() {3, 0, 0, 0})
@@ -3136,81 +2891,73 @@ Partial Class MgrSetting
         'Label98
         '
         Me.Label98.AutoSize = True
-        Me.Label98.Location = New System.Drawing.Point(254, 338)
-        Me.Label98.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label98.Location = New System.Drawing.Point(169, 220)
         Me.Label98.Name = "Label98"
-        Me.Label98.Size = New System.Drawing.Size(108, 20)
+        Me.Label98.Size = New System.Drawing.Size(73, 13)
         Me.Label98.TabIndex = 30
         Me.Label98.Text = "Sound Quality"
         Me.ToolTip1.SetToolTip(Me.Label98, resources.GetString("Label98.ToolTip"))
         '
         'TrackBar12
         '
-        Me.TrackBar12.Location = New System.Drawing.Point(204, 257)
-        Me.TrackBar12.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar12.Location = New System.Drawing.Point(136, 167)
         Me.TrackBar12.Maximum = 200
         Me.TrackBar12.Name = "TrackBar12"
-        Me.TrackBar12.Size = New System.Drawing.Size(234, 69)
+        Me.TrackBar12.Size = New System.Drawing.Size(156, 45)
         Me.TrackBar12.TabIndex = 22
         Me.TrackBar12.Value = 100
         '
         'Label41
         '
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(9, 257)
-        Me.Label41.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label41.Location = New System.Drawing.Point(6, 167)
         Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(105, 20)
+        Me.Label41.Size = New System.Drawing.Size(70, 13)
         Me.Label41.TabIndex = 21
         Me.Label41.Text = "PSG Volume:"
         '
         'TrackBar11
         '
-        Me.TrackBar11.Location = New System.Drawing.Point(204, 178)
-        Me.TrackBar11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar11.Location = New System.Drawing.Point(136, 116)
         Me.TrackBar11.Maximum = 200
         Me.TrackBar11.Name = "TrackBar11"
-        Me.TrackBar11.Size = New System.Drawing.Size(234, 69)
+        Me.TrackBar11.Size = New System.Drawing.Size(156, 45)
         Me.TrackBar11.TabIndex = 20
         Me.TrackBar11.Value = 100
         '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(9, 178)
-        Me.Label40.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label40.Location = New System.Drawing.Point(6, 116)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(122, 20)
+        Me.Label40.Size = New System.Drawing.Size(81, 13)
         Me.Label40.TabIndex = 19
         Me.Label40.Text = "CD-DA Volume:"
         '
         'TrackBar10
         '
-        Me.TrackBar10.Location = New System.Drawing.Point(204, 100)
-        Me.TrackBar10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar10.Location = New System.Drawing.Point(136, 65)
         Me.TrackBar10.Maximum = 200
         Me.TrackBar10.Name = "TrackBar10"
-        Me.TrackBar10.Size = New System.Drawing.Size(234, 69)
+        Me.TrackBar10.Size = New System.Drawing.Size(156, 45)
         Me.TrackBar10.TabIndex = 18
         Me.TrackBar10.Value = 100
         '
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(9, 100)
-        Me.Label39.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label39.Location = New System.Drawing.Point(6, 65)
         Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(128, 20)
+        Me.Label39.Size = New System.Drawing.Size(86, 13)
         Me.Label39.TabIndex = 17
         Me.Label39.Text = "ADPCM Volume:"
         '
         'CheckBox28
         '
         Me.CheckBox28.AutoSize = True
-        Me.CheckBox28.Location = New System.Drawing.Point(204, 29)
-        Me.CheckBox28.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox28.Location = New System.Drawing.Point(136, 19)
         Me.CheckBox28.Name = "CheckBox28"
-        Me.CheckBox28.Size = New System.Drawing.Size(202, 24)
+        Me.CheckBox28.Size = New System.Drawing.Size(137, 17)
         Me.CheckBox28.TabIndex = 5
         Me.CheckBox28.Text = "12-bit &ADPCM predictor"
         Me.ToolTip1.SetToolTip(Me.CheckBox28, resources.GetString("CheckBox28.ToolTip"))
@@ -3219,10 +2966,9 @@ Partial Class MgrSetting
         'TabPage12
         '
         Me.TabPage12.Controls.Add(Me.GroupBox12)
-        Me.TabPage12.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage12.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage12.Location = New System.Drawing.Point(4, 22)
         Me.TabPage12.Name = "TabPage12"
-        Me.TabPage12.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage12.Size = New System.Drawing.Size(310, 284)
         Me.TabPage12.TabIndex = 11
         Me.TabPage12.Text = "PC Engine/TurboGrafx 16/SuperGrafx"
         Me.TabPage12.UseVisualStyleBackColor = True
@@ -3244,11 +2990,9 @@ Partial Class MgrSetting
         Me.GroupBox12.Controls.Add(Me.CheckBox31)
         Me.GroupBox12.Controls.Add(Me.CheckBox30)
         Me.GroupBox12.Controls.Add(Me.CheckBox29)
-        Me.GroupBox12.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox12.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox12.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox12.Name = "GroupBox12"
-        Me.GroupBox12.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox12.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox12.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox12.TabIndex = 4
         Me.GroupBox12.TabStop = False
         '
@@ -3257,10 +3001,9 @@ Partial Class MgrSetting
         Me.CheckBox74.AutoSize = True
         Me.CheckBox74.Checked = True
         Me.CheckBox74.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox74.Location = New System.Drawing.Point(286, 248)
-        Me.CheckBox74.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox74.Location = New System.Drawing.Point(191, 161)
         Me.CheckBox74.Name = "CheckBox74"
-        Me.CheckBox74.Size = New System.Drawing.Size(158, 24)
+        Me.CheckBox74.Size = New System.Drawing.Size(107, 17)
         Me.CheckBox74.TabIndex = 92
         Me.CheckBox74.Text = "&Ignore Other Port"
         Me.ToolTip1.SetToolTip(Me.CheckBox74, "Disable automatic setting of 5 controller to same device on port 1")
@@ -3269,10 +3012,9 @@ Partial Class MgrSetting
         'CheckBox71
         '
         Me.CheckBox71.AutoSize = True
-        Me.CheckBox71.Location = New System.Drawing.Point(9, 171)
-        Me.CheckBox71.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox71.Location = New System.Drawing.Point(6, 111)
         Me.CheckBox71.Name = "CheckBox71"
-        Me.CheckBox71.Size = New System.Drawing.Size(174, 24)
+        Me.CheckBox71.Size = New System.Drawing.Size(118, 17)
         Me.CheckBox71.TabIndex = 34
         Me.CheckBox71.Text = "&Correct aspect ratio"
         Me.ToolTip1.SetToolTip(Me.CheckBox71, "Correct the aspect ratio")
@@ -3281,10 +3023,9 @@ Partial Class MgrSetting
         'Label94
         '
         Me.Label94.AutoSize = True
-        Me.Label94.Location = New System.Drawing.Point(9, 329)
-        Me.Label94.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label94.Location = New System.Drawing.Point(6, 214)
         Me.Label94.Name = "Label94"
-        Me.Label94.Size = New System.Drawing.Size(167, 20)
+        Me.Label94.Size = New System.Drawing.Size(114, 13)
         Me.Label94.TabIndex = 33
         Me.Label94.Text = "Input Device for Port 2"
         '
@@ -3292,10 +3033,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox40.FormattingEnabled = True
         Me.ComboBox40.Items.AddRange(New Object() {"none", "gamepad", "mouse"})
-        Me.ComboBox40.Location = New System.Drawing.Point(213, 325)
-        Me.ComboBox40.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox40.Location = New System.Drawing.Point(142, 211)
         Me.ComboBox40.Name = "ComboBox40"
-        Me.ComboBox40.Size = New System.Drawing.Size(232, 28)
+        Me.ComboBox40.Size = New System.Drawing.Size(156, 21)
         Me.ComboBox40.TabIndex = 32
         Me.ComboBox40.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox40, "Input device for Port 2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mouse - Mouse")
@@ -3304,11 +3044,10 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown9.DecimalPlaces = 2
         Me.NumericUpDown9.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown9.Location = New System.Drawing.Point(213, 366)
-        Me.NumericUpDown9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown9.Location = New System.Drawing.Point(142, 238)
         Me.NumericUpDown9.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown9.Name = "NumericUpDown9"
-        Me.NumericUpDown9.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown9.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown9.TabIndex = 31
         Me.ToolTip1.SetToolTip(Me.NumericUpDown9, "Emulated mouse sensitivity.")
         Me.NumericUpDown9.Value = New Decimal(New Integer() {50, 0, 0, 131072})
@@ -3316,20 +3055,18 @@ Partial Class MgrSetting
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(9, 369)
-        Me.Label44.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label44.Location = New System.Drawing.Point(6, 240)
         Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(131, 20)
+        Me.Label44.Size = New System.Drawing.Size(89, 13)
         Me.Label44.TabIndex = 30
         Me.Label44.Text = "Mouse Sensitivity"
         '
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(9, 288)
-        Me.Label43.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label43.Location = New System.Drawing.Point(6, 187)
         Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(167, 20)
+        Me.Label43.Size = New System.Drawing.Size(114, 13)
         Me.Label43.TabIndex = 23
         Me.Label43.Text = "Input Device for Port 1"
         '
@@ -3337,10 +3074,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox16.FormattingEnabled = True
         Me.ComboBox16.Items.AddRange(New Object() {"none", "gamepad", "mouse", "tsushinkb"})
-        Me.ComboBox16.Location = New System.Drawing.Point(213, 283)
-        Me.ComboBox16.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox16.Location = New System.Drawing.Point(142, 184)
         Me.ComboBox16.Name = "ComboBox16"
-        Me.ComboBox16.Size = New System.Drawing.Size(232, 28)
+        Me.ComboBox16.Size = New System.Drawing.Size(156, 21)
         Me.ComboBox16.TabIndex = 22
         Me.ComboBox16.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox16, "Input device for Port 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mouse - Mouse" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "t" &
@@ -3349,10 +3085,9 @@ Partial Class MgrSetting
         'CheckBox33
         '
         Me.CheckBox33.AutoSize = True
-        Me.CheckBox33.Location = New System.Drawing.Point(9, 248)
-        Me.CheckBox33.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox33.Location = New System.Drawing.Point(6, 161)
         Me.CheckBox33.Name = "CheckBox33"
-        Me.CheckBox33.Size = New System.Drawing.Size(223, 24)
+        Me.CheckBox33.Size = New System.Drawing.Size(152, 17)
         Me.CheckBox33.TabIndex = 21
         Me.CheckBox33.Text = "Enable &Multitap(TurboTap)"
         Me.ToolTip1.SetToolTip(Me.CheckBox33, "Enable multitap(TurboTap) emulation.")
@@ -3361,10 +3096,9 @@ Partial Class MgrSetting
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(9, 211)
-        Me.Label42.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label42.Location = New System.Drawing.Point(6, 137)
         Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(107, 20)
+        Me.Label42.Size = New System.Drawing.Size(73, 13)
         Me.Label42.TabIndex = 20
         Me.Label42.Text = "PSG Revision"
         '
@@ -3372,10 +3106,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox15.FormattingEnabled = True
         Me.ComboBox15.Items.AddRange(New Object() {"huc6280", "huc6280a", "match"})
-        Me.ComboBox15.Location = New System.Drawing.Point(213, 206)
-        Me.ComboBox15.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox15.Location = New System.Drawing.Point(142, 134)
         Me.ComboBox15.Name = "ComboBox15"
-        Me.ComboBox15.Size = New System.Drawing.Size(232, 28)
+        Me.ComboBox15.Size = New System.Drawing.Size(156, 21)
         Me.ComboBox15.TabIndex = 19
         Me.ComboBox15.Text = "match"
         Me.ToolTip1.SetToolTip(Me.ComboBox15, resources.GetString("ComboBox15.ToolTip"))
@@ -3383,10 +3116,9 @@ Partial Class MgrSetting
         'CheckBox32
         '
         Me.CheckBox32.AutoSize = True
-        Me.CheckBox32.Location = New System.Drawing.Point(9, 135)
-        Me.CheckBox32.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox32.Location = New System.Drawing.Point(6, 88)
         Me.CheckBox32.Name = "CheckBox32"
-        Me.CheckBox32.Size = New System.Drawing.Size(258, 24)
+        Me.CheckBox32.Size = New System.Drawing.Size(174, 17)
         Me.CheckBox32.TabIndex = 9
         Me.CheckBox32.Text = "&Remove Sprites Hardware Limit"
         Me.ToolTip1.SetToolTip(Me.CheckBox32, "Remove 16-sprites-per-scanline hardware limit." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WARNING: Enabling this option m" &
@@ -3396,10 +3128,9 @@ Partial Class MgrSetting
         'CheckBox31
         '
         Me.CheckBox31.AutoSize = True
-        Me.CheckBox31.Location = New System.Drawing.Point(9, 100)
-        Me.CheckBox31.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox31.Location = New System.Drawing.Point(6, 65)
         Me.CheckBox31.Name = "CheckBox31"
-        Me.CheckBox31.Size = New System.Drawing.Size(260, 24)
+        Me.CheckBox31.Size = New System.Drawing.Size(177, 17)
         Me.CheckBox31.TabIndex = 8
         Me.CheckBox31.Text = "Show &Horizontal Overscan Area"
         Me.ToolTip1.SetToolTip(Me.CheckBox31, "Show horizontal overscan area.")
@@ -3408,10 +3139,9 @@ Partial Class MgrSetting
         'CheckBox30
         '
         Me.CheckBox30.AutoSize = True
-        Me.CheckBox30.Location = New System.Drawing.Point(9, 65)
-        Me.CheckBox30.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox30.Location = New System.Drawing.Point(6, 42)
         Me.CheckBox30.Name = "CheckBox30"
-        Me.CheckBox30.Size = New System.Drawing.Size(237, 24)
+        Me.CheckBox30.Size = New System.Drawing.Size(158, 17)
         Me.CheckBox30.TabIndex = 7
         Me.CheckBox30.Text = "Force &SuperGrafx Emulation"
         Me.ToolTip1.SetToolTip(Me.CheckBox30, resources.GetString("CheckBox30.ToolTip"))
@@ -3420,10 +3150,9 @@ Partial Class MgrSetting
         'CheckBox29
         '
         Me.CheckBox29.AutoSize = True
-        Me.CheckBox29.Location = New System.Drawing.Point(9, 29)
-        Me.CheckBox29.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox29.Location = New System.Drawing.Point(6, 19)
         Me.CheckBox29.Name = "CheckBox29"
-        Me.CheckBox29.Size = New System.Drawing.Size(253, 24)
+        Me.CheckBox29.Size = New System.Drawing.Size(170, 17)
         Me.CheckBox29.TabIndex = 6
         Me.CheckBox29.Text = "Enable &Arcade Card Emulation"
         Me.ToolTip1.SetToolTip(Me.CheckBox29, resources.GetString("CheckBox29.ToolTip"))
@@ -3432,10 +3161,9 @@ Partial Class MgrSetting
         'TabPage13
         '
         Me.TabPage13.Controls.Add(Me.GroupBox13)
-        Me.TabPage13.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage13.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage13.Location = New System.Drawing.Point(4, 22)
         Me.TabPage13.Name = "TabPage13"
-        Me.TabPage13.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage13.Size = New System.Drawing.Size(310, 284)
         Me.TabPage13.TabIndex = 12
         Me.TabPage13.Text = "Genesis/MegaDrive"
         Me.TabPage13.UseVisualStyleBackColor = True
@@ -3457,11 +3185,9 @@ Partial Class MgrSetting
         Me.GroupBox13.Controls.Add(Me.Label45)
         Me.GroupBox13.Controls.Add(Me.ComboBox17)
         Me.GroupBox13.Controls.Add(Me.CheckBox34)
-        Me.GroupBox13.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox13.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox13.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox13.Name = "GroupBox13"
-        Me.GroupBox13.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox13.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox13.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox13.TabIndex = 3
         Me.GroupBox13.TabStop = False
         '
@@ -3470,10 +3196,9 @@ Partial Class MgrSetting
         Me.CheckBox73.AutoSize = True
         Me.CheckBox73.Checked = True
         Me.CheckBox73.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox73.Location = New System.Drawing.Point(286, 189)
-        Me.CheckBox73.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox73.Location = New System.Drawing.Point(191, 123)
         Me.CheckBox73.Name = "CheckBox73"
-        Me.CheckBox73.Size = New System.Drawing.Size(158, 24)
+        Me.CheckBox73.Size = New System.Drawing.Size(107, 17)
         Me.CheckBox73.TabIndex = 91
         Me.CheckBox73.Text = "Ignore Other Port"
         Me.ToolTip1.SetToolTip(Me.CheckBox73, "Disable automatic setting of 8 controller to same device on port 1")
@@ -3483,11 +3208,10 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown16.DecimalPlaces = 2
         Me.NumericUpDown16.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown16.Location = New System.Drawing.Point(238, 308)
-        Me.NumericUpDown16.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown16.Location = New System.Drawing.Point(159, 200)
         Me.NumericUpDown16.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown16.Name = "NumericUpDown16"
-        Me.NumericUpDown16.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown16.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown16.TabIndex = 71
         Me.ToolTip1.SetToolTip(Me.NumericUpDown16, "Mouse sensitivity.")
         Me.NumericUpDown16.Value = New Decimal(New Integer() {100, 0, 0, 131072})
@@ -3495,20 +3219,18 @@ Partial Class MgrSetting
         'Label101
         '
         Me.Label101.AutoSize = True
-        Me.Label101.Location = New System.Drawing.Point(9, 311)
-        Me.Label101.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label101.Location = New System.Drawing.Point(6, 202)
         Me.Label101.Name = "Label101"
-        Me.Label101.Size = New System.Drawing.Size(131, 20)
+        Me.Label101.Size = New System.Drawing.Size(89, 13)
         Me.Label101.TabIndex = 70
         Me.Label101.Text = "Mouse Sensitivity"
         '
         'Label97
         '
         Me.Label97.AutoSize = True
-        Me.Label97.Location = New System.Drawing.Point(9, 152)
-        Me.Label97.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label97.Location = New System.Drawing.Point(6, 99)
         Me.Label97.Name = "Label97"
-        Me.Label97.Size = New System.Drawing.Size(119, 20)
+        Me.Label97.Size = New System.Drawing.Size(79, 13)
         Me.Label97.TabIndex = 30
         Me.Label97.Text = "Enable multitap"
         '
@@ -3516,10 +3238,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox42.FormattingEnabled = True
         Me.ComboBox42.Items.AddRange(New Object() {"none", "tp1", "tp2", "tpd", "4way"})
-        Me.ComboBox42.Location = New System.Drawing.Point(238, 148)
-        Me.ComboBox42.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox42.Location = New System.Drawing.Point(159, 96)
         Me.ComboBox42.Name = "ComboBox42"
-        Me.ComboBox42.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox42.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox42.TabIndex = 29
         Me.ComboBox42.Text = "none"
         Me.ToolTip1.SetToolTip(Me.ComboBox42, resources.GetString("ComboBox42.ToolTip"))
@@ -3527,10 +3248,9 @@ Partial Class MgrSetting
         'CheckBox8
         '
         Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(14, 29)
-        Me.CheckBox8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox8.Location = New System.Drawing.Point(9, 19)
         Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(148, 24)
+        Me.CheckBox8.Size = New System.Drawing.Size(100, 17)
         Me.CheckBox8.TabIndex = 4
         Me.CheckBox8.Text = "Automatic &Input"
         Me.ToolTip1.SetToolTip(Me.CheckBox8, "Automatically select appropriate input devices, based on an internal database. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
@@ -3540,10 +3260,9 @@ Partial Class MgrSetting
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(9, 271)
-        Me.Label48.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label48.Location = New System.Drawing.Point(6, 176)
         Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(167, 20)
+        Me.Label48.Size = New System.Drawing.Size(114, 13)
         Me.Label48.TabIndex = 28
         Me.Label48.Text = "Input Device for Port 2"
         '
@@ -3551,10 +3270,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox20.FormattingEnabled = True
         Me.ComboBox20.Items.AddRange(New Object() {"none", "gamepad2", "gamepad", "gamepad6", "megamouse"})
-        Me.ComboBox20.Location = New System.Drawing.Point(238, 266)
-        Me.ComboBox20.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox20.Location = New System.Drawing.Point(159, 173)
         Me.ComboBox20.Name = "ComboBox20"
-        Me.ComboBox20.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox20.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox20.TabIndex = 27
         Me.ComboBox20.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox20, "Input device for Port 2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad2 - 2-Button Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad " &
@@ -3564,10 +3282,9 @@ Partial Class MgrSetting
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(9, 229)
-        Me.Label47.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label47.Location = New System.Drawing.Point(6, 149)
         Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(167, 20)
+        Me.Label47.Size = New System.Drawing.Size(114, 13)
         Me.Label47.TabIndex = 26
         Me.Label47.Text = "Input Device for Port 1"
         '
@@ -3575,10 +3292,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox19.FormattingEnabled = True
         Me.ComboBox19.Items.AddRange(New Object() {"none", "gamepad2", "gamepad", "gamepad6", "megamouse"})
-        Me.ComboBox19.Location = New System.Drawing.Point(238, 225)
-        Me.ComboBox19.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox19.Location = New System.Drawing.Point(159, 146)
         Me.ComboBox19.Name = "ComboBox19"
-        Me.ComboBox19.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox19.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox19.TabIndex = 25
         Me.ComboBox19.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox19, "Input device for Port 1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad2 - 2-Button Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad " &
@@ -3588,10 +3304,9 @@ Partial Class MgrSetting
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(9, 111)
-        Me.Label46.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label46.Location = New System.Drawing.Point(6, 72)
         Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(213, 20)
+        Me.Label46.Size = New System.Drawing.Size(142, 13)
         Me.Label46.TabIndex = 24
         Me.Label46.Text = "Region reported to the game"
         '
@@ -3599,10 +3314,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox18.FormattingEnabled = True
         Me.ComboBox18.Items.AddRange(New Object() {"same", "game", "overseas_ntsc", "overseas_pal", "domestic_ntsc", "domestic_pal"})
-        Me.ComboBox18.Location = New System.Drawing.Point(238, 106)
-        Me.ComboBox18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox18.Location = New System.Drawing.Point(159, 69)
         Me.ComboBox18.Name = "ComboBox18"
-        Me.ComboBox18.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox18.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox18.TabIndex = 23
         Me.ComboBox18.Text = "same"
         Me.ToolTip1.SetToolTip(Me.ComboBox18, resources.GetString("ComboBox18.ToolTip"))
@@ -3610,10 +3324,9 @@ Partial Class MgrSetting
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(9, 69)
-        Me.Label45.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label45.Location = New System.Drawing.Point(6, 45)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(221, 20)
+        Me.Label45.Size = New System.Drawing.Size(147, 13)
         Me.Label45.TabIndex = 22
         Me.Label45.Text = "Emulate the specified region's"
         '
@@ -3621,10 +3334,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox17.FormattingEnabled = True
         Me.ComboBox17.Items.AddRange(New Object() {"game", "overseas_ntsc", "overseas_pal", "domestic_ntsc", "domestic_pal"})
-        Me.ComboBox17.Location = New System.Drawing.Point(238, 65)
-        Me.ComboBox17.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox17.Location = New System.Drawing.Point(159, 42)
         Me.ComboBox17.Name = "ComboBox17"
-        Me.ComboBox17.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox17.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox17.TabIndex = 21
         Me.ComboBox17.Text = "game"
         Me.ToolTip1.SetToolTip(Me.ComboBox17, resources.GetString("ComboBox17.ToolTip"))
@@ -3632,10 +3344,9 @@ Partial Class MgrSetting
         'CheckBox34
         '
         Me.CheckBox34.AutoSize = True
-        Me.CheckBox34.Location = New System.Drawing.Point(238, 29)
-        Me.CheckBox34.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox34.Location = New System.Drawing.Point(159, 19)
         Me.CheckBox34.Name = "CheckBox34"
-        Me.CheckBox34.Size = New System.Drawing.Size(183, 24)
+        Me.CheckBox34.Size = New System.Drawing.Size(124, 17)
         Me.CheckBox34.TabIndex = 7
         Me.CheckBox34.Text = "Correct &Aspect Ratio"
         Me.ToolTip1.SetToolTip(Me.CheckBox34, "Correct the aspect ratio.")
@@ -3644,10 +3355,9 @@ Partial Class MgrSetting
         'TabPage14
         '
         Me.TabPage14.Controls.Add(Me.GroupBox14)
-        Me.TabPage14.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage14.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage14.Location = New System.Drawing.Point(4, 22)
         Me.TabPage14.Name = "TabPage14"
-        Me.TabPage14.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage14.Size = New System.Drawing.Size(310, 284)
         Me.TabPage14.TabIndex = 13
         Me.TabPage14.Text = "Master System"
         Me.TabPage14.UseVisualStyleBackColor = True
@@ -3665,21 +3375,18 @@ Partial Class MgrSetting
         Me.GroupBox14.Controls.Add(Me.Label49)
         Me.GroupBox14.Controls.Add(Me.ComboBox21)
         Me.GroupBox14.Controls.Add(Me.CheckBox35)
-        Me.GroupBox14.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox14.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox14.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox14.Name = "GroupBox14"
-        Me.GroupBox14.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox14.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox14.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox14.TabIndex = 3
         Me.GroupBox14.TabStop = False
         '
         'TrackBar20
         '
-        Me.TrackBar20.Location = New System.Drawing.Point(292, 354)
-        Me.TrackBar20.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar20.Location = New System.Drawing.Point(195, 230)
         Me.TrackBar20.Maximum = 239
         Me.TrackBar20.Name = "TrackBar20"
-        Me.TrackBar20.Size = New System.Drawing.Size(154, 69)
+        Me.TrackBar20.Size = New System.Drawing.Size(103, 45)
         Me.TrackBar20.TabIndex = 38
         Me.ToolTip1.SetToolTip(Me.TrackBar20, "Double the raw image's height if it's below this threshold.")
         Me.TrackBar20.Value = 239
@@ -3688,21 +3395,19 @@ Partial Class MgrSetting
         'Label123
         '
         Me.Label123.AutoSize = True
-        Me.Label123.Location = New System.Drawing.Point(18, 354)
-        Me.Label123.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label123.Location = New System.Drawing.Point(12, 230)
         Me.Label123.Name = "Label123"
-        Me.Label123.Size = New System.Drawing.Size(200, 20)
+        Me.Label123.Size = New System.Drawing.Size(134, 13)
         Me.Label123.TabIndex = 37
         Me.Label123.Text = "First scanline in PAL mode."
         Me.Label123.Visible = False
         '
         'TrackBar19
         '
-        Me.TrackBar19.Location = New System.Drawing.Point(292, 275)
-        Me.TrackBar19.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar19.Location = New System.Drawing.Point(195, 179)
         Me.TrackBar19.Maximum = 239
         Me.TrackBar19.Name = "TrackBar19"
-        Me.TrackBar19.Size = New System.Drawing.Size(154, 69)
+        Me.TrackBar19.Size = New System.Drawing.Size(103, 45)
         Me.TrackBar19.TabIndex = 36
         Me.ToolTip1.SetToolTip(Me.TrackBar19, "Double the raw image's height if it's below this threshold.")
         Me.TrackBar19.Value = 239
@@ -3711,21 +3416,19 @@ Partial Class MgrSetting
         'Label122
         '
         Me.Label122.AutoSize = True
-        Me.Label122.Location = New System.Drawing.Point(18, 275)
-        Me.Label122.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label122.Location = New System.Drawing.Point(12, 179)
         Me.Label122.Name = "Label122"
-        Me.Label122.Size = New System.Drawing.Size(212, 20)
+        Me.Label122.Size = New System.Drawing.Size(143, 13)
         Me.Label122.TabIndex = 35
         Me.Label122.Text = "First scanline in NTSC mode."
         Me.Label122.Visible = False
         '
         'TrackBar18
         '
-        Me.TrackBar18.Location = New System.Drawing.Point(292, 197)
-        Me.TrackBar18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar18.Location = New System.Drawing.Point(195, 128)
         Me.TrackBar18.Maximum = 239
         Me.TrackBar18.Name = "TrackBar18"
-        Me.TrackBar18.Size = New System.Drawing.Size(154, 69)
+        Me.TrackBar18.Size = New System.Drawing.Size(103, 45)
         Me.TrackBar18.TabIndex = 34
         Me.ToolTip1.SetToolTip(Me.TrackBar18, "Double the raw image's height if it's below this threshold.")
         Me.TrackBar18.Value = 239
@@ -3734,21 +3437,19 @@ Partial Class MgrSetting
         'Label121
         '
         Me.Label121.AutoSize = True
-        Me.Label121.Location = New System.Drawing.Point(18, 197)
-        Me.Label121.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label121.Location = New System.Drawing.Point(12, 128)
         Me.Label121.Name = "Label121"
-        Me.Label121.Size = New System.Drawing.Size(196, 20)
+        Me.Label121.Size = New System.Drawing.Size(132, 13)
         Me.Label121.TabIndex = 33
         Me.Label121.Text = "Last scanline in PAL mode"
         Me.Label121.Visible = False
         '
         'TrackBar17
         '
-        Me.TrackBar17.Location = New System.Drawing.Point(292, 118)
-        Me.TrackBar17.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar17.Location = New System.Drawing.Point(195, 77)
         Me.TrackBar17.Maximum = 239
         Me.TrackBar17.Name = "TrackBar17"
-        Me.TrackBar17.Size = New System.Drawing.Size(154, 69)
+        Me.TrackBar17.Size = New System.Drawing.Size(103, 45)
         Me.TrackBar17.TabIndex = 32
         Me.ToolTip1.SetToolTip(Me.TrackBar17, "Double the raw image's height if it's below this threshold.")
         Me.TrackBar17.Value = 239
@@ -3757,10 +3458,9 @@ Partial Class MgrSetting
         'Label120
         '
         Me.Label120.AutoSize = True
-        Me.Label120.Location = New System.Drawing.Point(18, 118)
-        Me.Label120.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label120.Location = New System.Drawing.Point(12, 77)
         Me.Label120.Name = "Label120"
-        Me.Label120.Size = New System.Drawing.Size(208, 20)
+        Me.Label120.Size = New System.Drawing.Size(141, 13)
         Me.Label120.TabIndex = 31
         Me.Label120.Text = "Last scanline in NTSC mode"
         Me.Label120.Visible = False
@@ -3768,10 +3468,9 @@ Partial Class MgrSetting
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(4, 69)
-        Me.Label49.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label49.Location = New System.Drawing.Point(3, 45)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(178, 20)
+        Me.Label49.Size = New System.Drawing.Size(121, 13)
         Me.Label49.TabIndex = 30
         Me.Label49.Text = "System Territory/Region"
         '
@@ -3779,10 +3478,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox21.FormattingEnabled = True
         Me.ComboBox21.Items.AddRange(New Object() {"domestic", "export"})
-        Me.ComboBox21.Location = New System.Drawing.Point(238, 65)
-        Me.ComboBox21.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox21.Location = New System.Drawing.Point(159, 42)
         Me.ComboBox21.Name = "ComboBox21"
-        Me.ComboBox21.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox21.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox21.TabIndex = 29
         Me.ComboBox21.Text = "export"
         Me.ToolTip1.SetToolTip(Me.ComboBox21, "System territory/region." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "domestic - Domestic(Japanese)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "export - Export(Worl" &
@@ -3791,10 +3489,9 @@ Partial Class MgrSetting
         'CheckBox35
         '
         Me.CheckBox35.AutoSize = True
-        Me.CheckBox35.Location = New System.Drawing.Point(9, 29)
-        Me.CheckBox35.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox35.Location = New System.Drawing.Point(6, 19)
         Me.CheckBox35.Name = "CheckBox35"
-        Me.CheckBox35.Size = New System.Drawing.Size(233, 24)
+        Me.CheckBox35.Size = New System.Drawing.Size(157, 17)
         Me.CheckBox35.TabIndex = 8
         Me.CheckBox35.Text = "Enable &FM sound emulation"
         Me.ToolTip1.SetToolTip(Me.CheckBox35, "Enable FM sound emulation when playing domestic/Japan-region games.")
@@ -3803,10 +3500,9 @@ Partial Class MgrSetting
         'TabPage15
         '
         Me.TabPage15.Controls.Add(Me.GroupBox15)
-        Me.TabPage15.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage15.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage15.Location = New System.Drawing.Point(4, 22)
         Me.TabPage15.Name = "TabPage15"
-        Me.TabPage15.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage15.Size = New System.Drawing.Size(310, 284)
         Me.TabPage15.TabIndex = 14
         Me.TabPage15.Text = "Super Nintendo"
         Me.TabPage15.UseVisualStyleBackColor = True
@@ -3825,21 +3521,18 @@ Partial Class MgrSetting
         Me.GroupBox15.Controls.Add(Me.NumericUpDown10)
         Me.GroupBox15.Controls.Add(Me.Label50)
         Me.GroupBox15.Controls.Add(Me.CheckBox36)
-        Me.GroupBox15.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox15.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox15.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox15.Name = "GroupBox15"
-        Me.GroupBox15.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox15.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox15.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox15.TabIndex = 3
         Me.GroupBox15.TabStop = False
         '
         'CheckBox96
         '
         Me.CheckBox96.AutoSize = True
-        Me.CheckBox96.Location = New System.Drawing.Point(14, 65)
-        Me.CheckBox96.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox96.Location = New System.Drawing.Point(9, 42)
         Me.CheckBox96.Name = "CheckBox96"
-        Me.CheckBox96.Size = New System.Drawing.Size(271, 24)
+        Me.CheckBox96.Size = New System.Drawing.Size(181, 17)
         Me.CheckBox96.TabIndex = 117
         Me.CheckBox96.Text = "Enable horizontal &blend(blur) filter"
         Me.ToolTip1.SetToolTip(Me.CheckBox96, "Enable horizontal blend(blur) filter." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Has a more noticeable effect with the Satu" &
@@ -3849,11 +3542,10 @@ Partial Class MgrSetting
         '
         'NumericUpDown17
         '
-        Me.NumericUpDown17.Location = New System.Drawing.Point(238, 298)
-        Me.NumericUpDown17.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown17.Location = New System.Drawing.Point(159, 194)
         Me.NumericUpDown17.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown17.Name = "NumericUpDown17"
-        Me.NumericUpDown17.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown17.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown17.TabIndex = 50
         Me.ToolTip1.SetToolTip(Me.NumericUpDown17, resources.GetString("NumericUpDown17.ToolTip"))
         Me.NumericUpDown17.Value = New Decimal(New Integer() {5, 0, 0, 0})
@@ -3861,20 +3553,18 @@ Partial Class MgrSetting
         'Label102
         '
         Me.Label102.AutoSize = True
-        Me.Label102.Location = New System.Drawing.Point(9, 302)
-        Me.Label102.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label102.Location = New System.Drawing.Point(6, 196)
         Me.Label102.Name = "Label102"
-        Me.Label102.Size = New System.Drawing.Size(215, 20)
+        Me.Label102.Size = New System.Drawing.Size(143, 13)
         Me.Label102.TabIndex = 49
         Me.Label102.Text = "APU output resampler quality"
         '
         'CheckBox38
         '
         Me.CheckBox38.AutoSize = True
-        Me.CheckBox38.Location = New System.Drawing.Point(14, 135)
-        Me.CheckBox38.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox38.Location = New System.Drawing.Point(9, 88)
         Me.CheckBox38.Name = "CheckBox38"
-        Me.CheckBox38.Size = New System.Drawing.Size(260, 24)
+        Me.CheckBox38.Size = New System.Drawing.Size(176, 17)
         Me.CheckBox38.TabIndex = 39
         Me.CheckBox38.Text = "Enable Multitap on SNES port 2"
         Me.ToolTip1.SetToolTip(Me.CheckBox38, "Enable multitap on SNES port 12")
@@ -3883,10 +3573,9 @@ Partial Class MgrSetting
         'CheckBox37
         '
         Me.CheckBox37.AutoSize = True
-        Me.CheckBox37.Location = New System.Drawing.Point(14, 100)
-        Me.CheckBox37.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox37.Location = New System.Drawing.Point(9, 65)
         Me.CheckBox37.Name = "CheckBox37"
-        Me.CheckBox37.Size = New System.Drawing.Size(260, 24)
+        Me.CheckBox37.Size = New System.Drawing.Size(176, 17)
         Me.CheckBox37.TabIndex = 38
         Me.CheckBox37.Text = "Enable Multitap on SNES port 1"
         Me.ToolTip1.SetToolTip(Me.CheckBox37, "Enable multitap on SNES port 1.")
@@ -3895,10 +3584,9 @@ Partial Class MgrSetting
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(9, 257)
-        Me.Label51.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label51.Location = New System.Drawing.Point(6, 167)
         Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(167, 20)
+        Me.Label51.Size = New System.Drawing.Size(114, 13)
         Me.Label51.TabIndex = 37
         Me.Label51.Text = "Input Device for Port 2"
         '
@@ -3906,10 +3594,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox22.FormattingEnabled = True
         Me.ComboBox22.Items.AddRange(New Object() {"none", "gamepad", "mouse"})
-        Me.ComboBox22.Location = New System.Drawing.Point(238, 211)
-        Me.ComboBox22.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox22.Location = New System.Drawing.Point(159, 137)
         Me.ComboBox22.Name = "ComboBox22"
-        Me.ComboBox22.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox22.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox22.TabIndex = 36
         Me.ComboBox22.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox22, "Input device for Port 1/1A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mouse - Mouse")
@@ -3917,10 +3604,9 @@ Partial Class MgrSetting
         'Label52
         '
         Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(9, 215)
-        Me.Label52.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label52.Location = New System.Drawing.Point(6, 140)
         Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(167, 20)
+        Me.Label52.Size = New System.Drawing.Size(114, 13)
         Me.Label52.TabIndex = 35
         Me.Label52.Text = "Input Device for Port 1"
         '
@@ -3928,10 +3614,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox23.FormattingEnabled = True
         Me.ComboBox23.Items.AddRange(New Object() {"none", "gamepad", "mouse", "superscope"})
-        Me.ComboBox23.Location = New System.Drawing.Point(238, 257)
-        Me.ComboBox23.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox23.Location = New System.Drawing.Point(159, 167)
         Me.ComboBox23.Name = "ComboBox23"
-        Me.ComboBox23.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox23.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox23.TabIndex = 34
         Me.ComboBox23.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox23, "Input device for Port 2/2A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mouse - Mouse" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
@@ -3941,11 +3626,10 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown10.DecimalPlaces = 2
         Me.NumericUpDown10.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown10.Location = New System.Drawing.Point(238, 171)
-        Me.NumericUpDown10.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown10.Location = New System.Drawing.Point(159, 111)
         Me.NumericUpDown10.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown10.Name = "NumericUpDown10"
-        Me.NumericUpDown10.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown10.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown10.TabIndex = 33
         Me.ToolTip1.SetToolTip(Me.NumericUpDown10, "Emulated mouse sensitivity.")
         Me.NumericUpDown10.Value = New Decimal(New Integer() {50, 0, 0, 131072})
@@ -3953,20 +3637,18 @@ Partial Class MgrSetting
         'Label50
         '
         Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(9, 174)
-        Me.Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label50.Location = New System.Drawing.Point(6, 113)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(131, 20)
+        Me.Label50.Size = New System.Drawing.Size(89, 13)
         Me.Label50.TabIndex = 32
         Me.Label50.Text = "Mouse Sensitivity"
         '
         'CheckBox36
         '
         Me.CheckBox36.AutoSize = True
-        Me.CheckBox36.Location = New System.Drawing.Point(14, 29)
-        Me.CheckBox36.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox36.Location = New System.Drawing.Point(9, 19)
         Me.CheckBox36.Name = "CheckBox36"
-        Me.CheckBox36.Size = New System.Drawing.Size(183, 24)
+        Me.CheckBox36.Size = New System.Drawing.Size(124, 17)
         Me.CheckBox36.TabIndex = 9
         Me.CheckBox36.Text = "Correct &Aspect Ratio"
         Me.ToolTip1.SetToolTip(Me.CheckBox36, "Correct the aspect ratio." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note that regardless of this setting's value, ""512"" " &
@@ -3976,10 +3658,9 @@ Partial Class MgrSetting
         'TabPage16
         '
         Me.TabPage16.Controls.Add(Me.GroupBox16)
-        Me.TabPage16.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage16.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage16.Location = New System.Drawing.Point(4, 22)
         Me.TabPage16.Name = "TabPage16"
-        Me.TabPage16.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage16.Size = New System.Drawing.Size(310, 284)
         Me.TabPage16.TabIndex = 15
         Me.TabPage16.Text = "Virtual Boy"
         Me.TabPage16.UseVisualStyleBackColor = True
@@ -4003,21 +3684,18 @@ Partial Class MgrSetting
         Me.GroupBox16.Controls.Add(Me.ComboBox24)
         Me.GroupBox16.Controls.Add(Me.Label53)
         Me.GroupBox16.Controls.Add(Me.CheckBox39)
-        Me.GroupBox16.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox16.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox16.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox16.Name = "GroupBox16"
-        Me.GroupBox16.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox16.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox16.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox16.TabIndex = 3
         Me.GroupBox16.TabStop = False
         '
         'Label93
         '
         Me.Label93.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label93.Location = New System.Drawing.Point(402, 386)
-        Me.Label93.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label93.Location = New System.Drawing.Point(268, 251)
         Me.Label93.Name = "Label93"
-        Me.Label93.Size = New System.Drawing.Size(45, 23)
+        Me.Label93.Size = New System.Drawing.Size(30, 15)
         Me.Label93.TabIndex = 90
         Me.Label93.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label93, "Anaglyph maximum-brightness color for right view.")
@@ -4025,10 +3703,9 @@ Partial Class MgrSetting
         'Label91
         '
         Me.Label91.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label91.Location = New System.Drawing.Point(303, 342)
-        Me.Label91.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label91.Location = New System.Drawing.Point(202, 222)
         Me.Label91.Name = "Label91"
-        Me.Label91.Size = New System.Drawing.Size(45, 23)
+        Me.Label91.Size = New System.Drawing.Size(30, 15)
         Me.Label91.TabIndex = 89
         Me.Label91.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label91, "Default maximum-brightness color to use in non-anaglyph 3D modes.")
@@ -4036,10 +3713,9 @@ Partial Class MgrSetting
         'Label92
         '
         Me.Label92.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label92.Location = New System.Drawing.Point(170, 386)
-        Me.Label92.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label92.Location = New System.Drawing.Point(113, 251)
         Me.Label92.Name = "Label92"
-        Me.Label92.Size = New System.Drawing.Size(45, 23)
+        Me.Label92.Size = New System.Drawing.Size(30, 15)
         Me.Label92.TabIndex = 88
         Me.Label92.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label92, "Anaglyph maximum-brightness color for left view.")
@@ -4047,61 +3723,55 @@ Partial Class MgrSetting
         'Label60
         '
         Me.Label60.AutoSize = True
-        Me.Label60.Location = New System.Drawing.Point(226, 386)
-        Me.Label60.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label60.Location = New System.Drawing.Point(151, 251)
         Me.Label60.Name = "Label60"
-        Me.Label60.Size = New System.Drawing.Size(162, 20)
+        Me.Label60.Size = New System.Drawing.Size(109, 13)
         Me.Label60.TabIndex = 55
         Me.Label60.Text = "Anaglyph Right Color "
         '
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(4, 386)
-        Me.Label59.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label59.Location = New System.Drawing.Point(3, 251)
         Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(152, 20)
+        Me.Label59.Size = New System.Drawing.Size(102, 13)
         Me.Label59.TabIndex = 53
         Me.Label59.Text = "Anaglyph Left Color "
         '
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(4, 342)
-        Me.Label58.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label58.Location = New System.Drawing.Point(3, 222)
         Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(291, 20)
+        Me.Label58.Size = New System.Drawing.Size(193, 13)
         Me.Label58.TabIndex = 51
         Me.Label58.Text = "Maximum-Brightness Color in 3D Modes"
         '
         'TrackBar13
         '
-        Me.TrackBar13.Location = New System.Drawing.Point(284, 258)
-        Me.TrackBar13.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar13.Location = New System.Drawing.Point(189, 168)
         Me.TrackBar13.Maximum = 1024
         Me.TrackBar13.Name = "TrackBar13"
-        Me.TrackBar13.Size = New System.Drawing.Size(164, 69)
+        Me.TrackBar13.Size = New System.Drawing.Size(109, 45)
         Me.TrackBar13.TabIndex = 50
         Me.ToolTip1.SetToolTip(Me.TrackBar13, resources.GetString("TrackBar13.ToolTip"))
         '
         'Label57
         '
         Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(4, 258)
-        Me.Label57.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label57.Location = New System.Drawing.Point(3, 168)
         Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(202, 20)
+        Me.Label57.Size = New System.Drawing.Size(139, 13)
         Me.Label57.TabIndex = 49
         Me.Label57.Text = "Number Pixels L/R to Views"
         '
         'NumericUpDown11
         '
-        Me.NumericUpDown11.Location = New System.Drawing.Point(284, 218)
-        Me.NumericUpDown11.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown11.Location = New System.Drawing.Point(189, 142)
         Me.NumericUpDown11.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown11.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown11.Name = "NumericUpDown11"
-        Me.NumericUpDown11.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown11.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown11.TabIndex = 48
         Me.ToolTip1.SetToolTip(Me.NumericUpDown11, "Line Interlaced prescale.")
         Me.NumericUpDown11.Value = New Decimal(New Integer() {2, 0, 0, 0})
@@ -4109,20 +3779,18 @@ Partial Class MgrSetting
         'Label56
         '
         Me.Label56.AutoSize = True
-        Me.Label56.Location = New System.Drawing.Point(4, 222)
-        Me.Label56.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label56.Location = New System.Drawing.Point(3, 144)
         Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(179, 20)
+        Me.Label56.Size = New System.Drawing.Size(121, 13)
         Me.Label56.TabIndex = 47
         Me.Label56.Text = "Line Interlaced Prescale"
         '
         'CheckBox41
         '
         Me.CheckBox41.AutoSize = True
-        Me.CheckBox41.Location = New System.Drawing.Point(284, 183)
-        Me.CheckBox41.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox41.Location = New System.Drawing.Point(189, 119)
         Me.CheckBox41.Name = "CheckBox41"
-        Me.CheckBox41.Size = New System.Drawing.Size(147, 24)
+        Me.CheckBox41.Size = New System.Drawing.Size(101, 17)
         Me.CheckBox41.TabIndex = 44
         Me.CheckBox41.Text = "Disable &Parallax"
         Me.ToolTip1.SetToolTip(Me.CheckBox41, "Disable parallax for BG and OBJ rendering.")
@@ -4132,10 +3800,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox25.FormattingEnabled = True
         Me.ComboBox25.Items.AddRange(New Object() {"disabled", "red_blue", "red_cyan", "red_electriccyan", "red_green", "green_magenta", "yellow_blue"})
-        Me.ComboBox25.Location = New System.Drawing.Point(284, 142)
-        Me.ComboBox25.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox25.Location = New System.Drawing.Point(189, 92)
         Me.ComboBox25.Name = "ComboBox25"
-        Me.ComboBox25.Size = New System.Drawing.Size(162, 28)
+        Me.ComboBox25.Size = New System.Drawing.Size(109, 21)
         Me.ComboBox25.TabIndex = 41
         Me.ComboBox25.Text = "red_blue"
         Me.ToolTip1.SetToolTip(Me.ComboBox25, resources.GetString("ComboBox25.ToolTip"))
@@ -4143,20 +3810,18 @@ Partial Class MgrSetting
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(9, 146)
-        Me.Label54.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label54.Location = New System.Drawing.Point(6, 95)
         Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(174, 20)
+        Me.Label54.Size = New System.Drawing.Size(116, 13)
         Me.Label54.TabIndex = 40
         Me.Label54.Text = "Anaglyph Preset Colors"
         '
         'CheckBox40
         '
         Me.CheckBox40.AutoSize = True
-        Me.CheckBox40.Location = New System.Drawing.Point(9, 29)
-        Me.CheckBox40.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox40.Location = New System.Drawing.Point(6, 19)
         Me.CheckBox40.Name = "CheckBox40"
-        Me.CheckBox40.Size = New System.Drawing.Size(178, 24)
+        Me.CheckBox40.Size = New System.Drawing.Size(123, 17)
         Me.CheckBox40.TabIndex = 39
         Me.CheckBox40.Text = "Allow &Draw Skipping"
         Me.ToolTip1.SetToolTip(Me.CheckBox40, resources.GetString("CheckBox40.ToolTip"))
@@ -4166,10 +3831,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox24.FormattingEnabled = True
         Me.ComboBox24.Items.AddRange(New Object() {"anaglyph", "cscope", "sidebyside", "vli", "hli"})
-        Me.ComboBox24.Location = New System.Drawing.Point(284, 100)
-        Me.ComboBox24.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox24.Location = New System.Drawing.Point(189, 65)
         Me.ComboBox24.Name = "ComboBox24"
-        Me.ComboBox24.Size = New System.Drawing.Size(162, 28)
+        Me.ComboBox24.Size = New System.Drawing.Size(109, 21)
         Me.ComboBox24.TabIndex = 38
         Me.ComboBox24.Text = "anaglyph"
         Me.ToolTip1.SetToolTip(Me.ComboBox24, resources.GetString("ComboBox24.ToolTip"))
@@ -4177,20 +3841,18 @@ Partial Class MgrSetting
         'Label53
         '
         Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(9, 105)
-        Me.Label53.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label53.Location = New System.Drawing.Point(6, 68)
         Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(74, 20)
+        Me.Label53.Size = New System.Drawing.Size(50, 13)
         Me.Label53.TabIndex = 37
         Me.Label53.Text = "3D mode"
         '
         'CheckBox39
         '
         Me.CheckBox39.AutoSize = True
-        Me.CheckBox39.Location = New System.Drawing.Point(9, 65)
-        Me.CheckBox39.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox39.Location = New System.Drawing.Point(6, 42)
         Me.CheckBox39.Name = "CheckBox39"
-        Me.CheckBox39.Size = New System.Drawing.Size(239, 24)
+        Me.CheckBox39.Size = New System.Drawing.Size(165, 17)
         Me.CheckBox39.TabIndex = 10
         Me.CheckBox39.Text = "&Reverse Left/Right 3D Views"
         Me.ToolTip1.SetToolTip(Me.CheckBox39, "Reverse left/right 3D views.")
@@ -4199,10 +3861,9 @@ Partial Class MgrSetting
         'TabPage17
         '
         Me.TabPage17.Controls.Add(Me.GroupBox17)
-        Me.TabPage17.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage17.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage17.Location = New System.Drawing.Point(4, 22)
         Me.TabPage17.Name = "TabPage17"
-        Me.TabPage17.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage17.Size = New System.Drawing.Size(310, 284)
         Me.TabPage17.TabIndex = 16
         Me.TabPage17.Text = "Virtual Boy"
         Me.TabPage17.UseVisualStyleBackColor = True
@@ -4215,11 +3876,9 @@ Partial Class MgrSetting
         Me.GroupBox17.Controls.Add(Me.CheckBox42)
         Me.GroupBox17.Controls.Add(Me.ComboBox26)
         Me.GroupBox17.Controls.Add(Me.Label55)
-        Me.GroupBox17.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox17.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox17.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox17.Name = "GroupBox17"
-        Me.GroupBox17.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox17.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox17.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox17.TabIndex = 3
         Me.GroupBox17.TabStop = False
         '
@@ -4228,12 +3887,11 @@ Partial Class MgrSetting
         Me.NumericUpDown26.DecimalPlaces = 2
         Me.NumericUpDown26.Enabled = False
         Me.NumericUpDown26.Increment = New Decimal(New Integer() {5, 0, 0, 131072})
-        Me.NumericUpDown26.Location = New System.Drawing.Point(126, 132)
-        Me.NumericUpDown26.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown26.Location = New System.Drawing.Point(84, 86)
         Me.NumericUpDown26.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.NumericUpDown26.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown26.Name = "NumericUpDown26"
-        Me.NumericUpDown26.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown26.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown26.TabIndex = 69
         Me.ToolTip1.SetToolTip(Me.NumericUpDown26, resources.GetString("NumericUpDown26.ToolTip"))
         Me.NumericUpDown26.Value = New Decimal(New Integer() {175, 0, 0, 131072})
@@ -4241,20 +3899,18 @@ Partial Class MgrSetting
         'Label131
         '
         Me.Label131.AutoSize = True
-        Me.Label131.Location = New System.Drawing.Point(9, 135)
-        Me.Label131.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label131.Location = New System.Drawing.Point(6, 88)
         Me.Label131.Name = "Label131"
-        Me.Label131.Size = New System.Drawing.Size(105, 20)
+        Me.Label131.Size = New System.Drawing.Size(72, 13)
         Me.Label131.TabIndex = 68
         Me.Label131.Text = "Led On Scale"
         '
         'CheckBox43
         '
         Me.CheckBox43.AutoSize = True
-        Me.CheckBox43.Location = New System.Drawing.Point(14, 97)
-        Me.CheckBox43.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox43.Location = New System.Drawing.Point(9, 63)
         Me.CheckBox43.Name = "CheckBox43"
-        Me.CheckBox43.Size = New System.Drawing.Size(264, 24)
+        Me.CheckBox43.Size = New System.Drawing.Size(182, 17)
         Me.CheckBox43.TabIndex = 50
         Me.CheckBox43.Text = "Display &Latency Reduction Hack"
         Me.ToolTip1.SetToolTip(Me.CheckBox43, "Display latency reduction hack." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces latency in games by displaying the fra" &
@@ -4265,10 +3921,9 @@ Partial Class MgrSetting
         'CheckBox42
         '
         Me.CheckBox42.AutoSize = True
-        Me.CheckBox42.Location = New System.Drawing.Point(14, 62)
-        Me.CheckBox42.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox42.Location = New System.Drawing.Point(9, 40)
         Me.CheckBox42.Name = "CheckBox42"
-        Me.CheckBox42.Size = New System.Drawing.Size(250, 24)
+        Me.CheckBox42.Size = New System.Drawing.Size(172, 17)
         Me.CheckBox42.TabIndex = 49
         Me.CheckBox42.Text = "&Input Latency Reduction Hack"
         Me.ToolTip1.SetToolTip(Me.CheckBox42, resources.GetString("CheckBox42.ToolTip"))
@@ -4278,10 +3933,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox26.FormattingEnabled = True
         Me.ComboBox26.Items.AddRange(New Object() {"fast", "accurate"})
-        Me.ComboBox26.Location = New System.Drawing.Point(238, 20)
-        Me.ComboBox26.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox26.Location = New System.Drawing.Point(159, 13)
         Me.ComboBox26.Name = "ComboBox26"
-        Me.ComboBox26.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox26.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox26.TabIndex = 48
         Me.ComboBox26.Text = "fast"
         Me.ToolTip1.SetToolTip(Me.ComboBox26, resources.GetString("ComboBox26.ToolTip"))
@@ -4289,20 +3943,18 @@ Partial Class MgrSetting
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(9, 25)
-        Me.Label55.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label55.Location = New System.Drawing.Point(6, 16)
         Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(161, 20)
+        Me.Label55.Size = New System.Drawing.Size(108, 13)
         Me.Label55.TabIndex = 47
         Me.Label55.Text = "CPU Emulation Mode"
         '
         'TabPage18
         '
         Me.TabPage18.Controls.Add(Me.GroupBox18)
-        Me.TabPage18.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage18.Location = New System.Drawing.Point(4, 22)
         Me.TabPage18.Name = "TabPage18"
-        Me.TabPage18.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage18.Size = New System.Drawing.Size(310, 284)
         Me.TabPage18.TabIndex = 17
         Me.TabPage18.Text = "WonderSwan"
         Me.TabPage18.UseVisualStyleBackColor = True
@@ -4326,11 +3978,9 @@ Partial Class MgrSetting
         Me.GroupBox18.Controls.Add(Me.Label62)
         Me.GroupBox18.Controls.Add(Me.ComboBox27)
         Me.GroupBox18.Controls.Add(Me.Label61)
-        Me.GroupBox18.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox18.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox18.Name = "GroupBox18"
-        Me.GroupBox18.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox18.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox18.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox18.TabIndex = 3
         Me.GroupBox18.TabStop = False
         '
@@ -4339,10 +3989,9 @@ Partial Class MgrSetting
         Me.ComboBox51.Enabled = False
         Me.ComboBox51.FormattingEnabled = True
         Me.ComboBox51.Items.AddRange(New Object() {"gamepad", "gamepadraa"})
-        Me.ComboBox51.Location = New System.Drawing.Point(238, 318)
-        Me.ComboBox51.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox51.Location = New System.Drawing.Point(159, 207)
         Me.ComboBox51.Name = "ComboBox51"
-        Me.ComboBox51.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox51.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox51.TabIndex = 65
         Me.ComboBox51.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox51, "Input device for Built-In" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepadraa - Gamepad(Rotation A" &
@@ -4351,20 +4000,18 @@ Partial Class MgrSetting
         'Label130
         '
         Me.Label130.AutoSize = True
-        Me.Label130.Location = New System.Drawing.Point(9, 323)
-        Me.Label130.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label130.Location = New System.Drawing.Point(6, 210)
         Me.Label130.Name = "Label130"
-        Me.Label130.Size = New System.Drawing.Size(152, 20)
+        Me.Label130.Size = New System.Drawing.Size(103, 13)
         Me.Label130.TabIndex = 64
         Me.Label130.Text = "Input Device Built-In"
         '
         'CheckBox44
         '
         Me.CheckBox44.AutoSize = True
-        Me.CheckBox44.Location = New System.Drawing.Point(238, 392)
-        Me.CheckBox44.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox44.Location = New System.Drawing.Point(159, 255)
         Me.CheckBox44.Name = "CheckBox44"
-        Me.CheckBox44.Size = New System.Drawing.Size(200, 24)
+        Me.CheckBox44.Size = New System.Drawing.Size(135, 17)
         Me.CheckBox44.TabIndex = 63
         Me.CheckBox44.Text = "&Virtually Rotate D-Pads"
         Me.ToolTip1.SetToolTip(Me.CheckBox44, "Virtually rotate D-pads along with screen.")
@@ -4374,20 +4021,18 @@ Partial Class MgrSetting
         '
         Me.ComboBox32.FormattingEnabled = True
         Me.ComboBox32.Items.AddRange(New Object() {"male", "female"})
-        Me.ComboBox32.Location = New System.Drawing.Point(238, 235)
-        Me.ComboBox32.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox32.Location = New System.Drawing.Point(159, 153)
         Me.ComboBox32.Name = "ComboBox32"
-        Me.ComboBox32.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox32.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox32.TabIndex = 62
         Me.ComboBox32.Text = "female"
         '
         'Label67
         '
         Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(9, 240)
-        Me.Label67.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label67.Location = New System.Drawing.Point(6, 156)
         Me.Label67.Name = "Label67"
-        Me.Label67.Size = New System.Drawing.Size(36, 20)
+        Me.Label67.Size = New System.Drawing.Size(25, 13)
         Me.Label67.TabIndex = 61
         Me.Label67.Text = "Sex"
         '
@@ -4395,10 +4040,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox31.FormattingEnabled = True
         Me.ComboBox31.Items.AddRange(New Object() {"japanese", "english"})
-        Me.ComboBox31.Location = New System.Drawing.Point(238, 277)
-        Me.ComboBox31.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox31.Location = New System.Drawing.Point(159, 180)
         Me.ComboBox31.Name = "ComboBox31"
-        Me.ComboBox31.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox31.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox31.TabIndex = 60
         Me.ComboBox31.Text = "english"
         Me.ToolTip1.SetToolTip(Me.ComboBox31, "Language games should display text in." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "The only game this setting is known to " &
@@ -4408,29 +4052,26 @@ Partial Class MgrSetting
         'Label66
         '
         Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(9, 282)
-        Me.Label66.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label66.Location = New System.Drawing.Point(6, 183)
         Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(133, 20)
+        Me.Label66.Size = New System.Drawing.Size(89, 13)
         Me.Label66.TabIndex = 59
         Me.Label66.Text = "Language games"
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(238, 195)
-        Me.TextBox9.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox9.Location = New System.Drawing.Point(159, 127)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(206, 26)
+        Me.TextBox9.Size = New System.Drawing.Size(139, 20)
         Me.TextBox9.TabIndex = 58
         Me.TextBox9.Text = "Mednafen"
         '
         'Label65
         '
         Me.Label65.AutoSize = True
-        Me.Label65.Location = New System.Drawing.Point(9, 200)
-        Me.Label65.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label65.Location = New System.Drawing.Point(6, 130)
         Me.Label65.Name = "Label65"
-        Me.Label65.Size = New System.Drawing.Size(51, 20)
+        Me.Label65.Size = New System.Drawing.Size(35, 13)
         Me.Label65.TabIndex = 57
         Me.Label65.Text = "Name"
         '
@@ -4438,90 +4079,81 @@ Partial Class MgrSetting
         '
         Me.ComboBox30.FormattingEnabled = True
         Me.ComboBox30.Items.AddRange(New Object() {"a", "b", "o", "ab"})
-        Me.ComboBox30.Location = New System.Drawing.Point(238, 154)
-        Me.ComboBox30.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox30.Location = New System.Drawing.Point(159, 100)
         Me.ComboBox30.Name = "ComboBox30"
-        Me.ComboBox30.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox30.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox30.TabIndex = 56
         Me.ComboBox30.Text = "o"
         '
         'Label64
         '
         Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(9, 158)
-        Me.Label64.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label64.Location = New System.Drawing.Point(6, 103)
         Me.Label64.Name = "Label64"
-        Me.Label64.Size = New System.Drawing.Size(88, 20)
+        Me.Label64.Size = New System.Drawing.Size(61, 13)
         Me.Label64.TabIndex = 55
         Me.Label64.Text = "Blood Type"
         '
         'ComboBox29
         '
         Me.ComboBox29.FormattingEnabled = True
-        Me.ComboBox29.Location = New System.Drawing.Point(238, 112)
-        Me.ComboBox29.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox29.Location = New System.Drawing.Point(159, 73)
         Me.ComboBox29.Name = "ComboBox29"
-        Me.ComboBox29.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox29.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox29.TabIndex = 54
         Me.ComboBox29.Text = "1989"
         '
         'Label63
         '
         Me.Label63.AutoSize = True
-        Me.Label63.Location = New System.Drawing.Point(9, 117)
-        Me.Label63.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label63.Location = New System.Drawing.Point(6, 76)
         Me.Label63.Name = "Label63"
-        Me.Label63.Size = New System.Drawing.Size(80, 20)
+        Me.Label63.Size = New System.Drawing.Size(53, 13)
         Me.Label63.TabIndex = 53
         Me.Label63.Text = "Birth Year"
         '
         'ComboBox28
         '
         Me.ComboBox28.FormattingEnabled = True
-        Me.ComboBox28.Location = New System.Drawing.Point(238, 71)
-        Me.ComboBox28.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox28.Location = New System.Drawing.Point(159, 46)
         Me.ComboBox28.Name = "ComboBox28"
-        Me.ComboBox28.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox28.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox28.TabIndex = 52
         Me.ComboBox28.Text = "6"
         '
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(9, 75)
-        Me.Label62.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label62.Location = New System.Drawing.Point(6, 49)
         Me.Label62.Name = "Label62"
-        Me.Label62.Size = New System.Drawing.Size(91, 20)
+        Me.Label62.Size = New System.Drawing.Size(61, 13)
         Me.Label62.TabIndex = 51
         Me.Label62.Text = "Birth Month"
         '
         'ComboBox27
         '
         Me.ComboBox27.FormattingEnabled = True
-        Me.ComboBox27.Location = New System.Drawing.Point(238, 29)
-        Me.ComboBox27.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox27.Location = New System.Drawing.Point(159, 19)
         Me.ComboBox27.Name = "ComboBox27"
-        Me.ComboBox27.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox27.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox27.TabIndex = 50
         Me.ComboBox27.Text = "23"
         '
         'Label61
         '
         Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(9, 34)
-        Me.Label61.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label61.Location = New System.Drawing.Point(6, 22)
         Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(74, 20)
+        Me.Label61.Size = New System.Drawing.Size(50, 13)
         Me.Label61.TabIndex = 49
         Me.Label61.Text = "Birth Day"
         '
         'TabPage20
         '
         Me.TabPage20.Controls.Add(Me.GroupBox20)
-        Me.TabPage20.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage20.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage20.Location = New System.Drawing.Point(4, 22)
         Me.TabPage20.Name = "TabPage20"
-        Me.TabPage20.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage20.Size = New System.Drawing.Size(310, 284)
         Me.TabPage20.TabIndex = 19
         Me.TabPage20.Text = "PC-FX"
         Me.TabPage20.UseVisualStyleBackColor = True
@@ -4542,21 +4174,18 @@ Partial Class MgrSetting
         Me.GroupBox20.Controls.Add(Me.Label76)
         Me.GroupBox20.Controls.Add(Me.CheckBox46)
         Me.GroupBox20.Controls.Add(Me.CheckBox45)
-        Me.GroupBox20.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox20.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox20.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox20.Name = "GroupBox20"
-        Me.GroupBox20.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox20.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox20.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox20.TabIndex = 3
         Me.GroupBox20.TabStop = False
         '
         'NumericUpDown15
         '
-        Me.NumericUpDown15.Location = New System.Drawing.Point(128, 138)
-        Me.NumericUpDown15.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown15.Location = New System.Drawing.Point(85, 90)
         Me.NumericUpDown15.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.NumericUpDown15.Name = "NumericUpDown15"
-        Me.NumericUpDown15.Size = New System.Drawing.Size(66, 26)
+        Me.NumericUpDown15.Size = New System.Drawing.Size(44, 20)
         Me.NumericUpDown15.TabIndex = 77
         Me.ToolTip1.SetToolTip(Me.NumericUpDown15, resources.GetString("NumericUpDown15.ToolTip"))
         Me.NumericUpDown15.Value = New Decimal(New Integer() {3, 0, 0, 0})
@@ -4564,10 +4193,9 @@ Partial Class MgrSetting
         'Label99
         '
         Me.Label99.AutoSize = True
-        Me.Label99.Location = New System.Drawing.Point(9, 142)
-        Me.Label99.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label99.Location = New System.Drawing.Point(6, 92)
         Me.Label99.Name = "Label99"
-        Me.Label99.Size = New System.Drawing.Size(108, 20)
+        Me.Label99.Size = New System.Drawing.Size(73, 13)
         Me.Label99.TabIndex = 76
         Me.Label99.Text = "Sound Quality"
         Me.ToolTip1.SetToolTip(Me.Label99, resources.GetString("Label99.ToolTip"))
@@ -4575,10 +4203,9 @@ Partial Class MgrSetting
         'CheckBox48
         '
         Me.CheckBox48.AutoSize = True
-        Me.CheckBox48.Location = New System.Drawing.Point(14, 337)
-        Me.CheckBox48.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox48.Location = New System.Drawing.Point(9, 219)
         Me.CheckBox48.Name = "CheckBox48"
-        Me.CheckBox48.Size = New System.Drawing.Size(382, 24)
+        Me.CheckBox48.Size = New System.Drawing.Size(255, 17)
         Me.CheckBox48.TabIndex = 75
         Me.CheckBox48.Text = "Enable Bilinear &Interpolation On Chroma Channel"
         Me.ToolTip1.SetToolTip(Me.CheckBox48, "Enable bilinear interpolation on the chroma channel of RAINBOW YUV output.")
@@ -4587,10 +4214,9 @@ Partial Class MgrSetting
         'CheckBox47
         '
         Me.CheckBox47.AutoSize = True
-        Me.CheckBox47.Location = New System.Drawing.Point(14, 302)
-        Me.CheckBox47.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox47.Location = New System.Drawing.Point(9, 196)
         Me.CheckBox47.Name = "CheckBox47"
-        Me.CheckBox47.Size = New System.Drawing.Size(258, 24)
+        Me.CheckBox47.Size = New System.Drawing.Size(174, 17)
         Me.CheckBox47.TabIndex = 74
         Me.CheckBox47.Text = "&Remove Sprites Hardware Limit"
         Me.ToolTip1.SetToolTip(Me.CheckBox47, "Remove 16-sprites-per-scanline hardware limit.")
@@ -4600,10 +4226,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox34.FormattingEnabled = True
         Me.ComboBox34.Items.AddRange(New Object() {"256", "341", "1024"})
-        Me.ComboBox34.Location = New System.Drawing.Point(278, 260)
-        Me.ComboBox34.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox34.Location = New System.Drawing.Point(185, 169)
         Me.ComboBox34.Name = "ComboBox34"
-        Me.ComboBox34.Size = New System.Drawing.Size(100, 28)
+        Me.ComboBox34.Size = New System.Drawing.Size(68, 21)
         Me.ComboBox34.TabIndex = 73
         Me.ComboBox34.Text = "1024"
         Me.ToolTip1.SetToolTip(Me.ComboBox34, resources.GetString("ComboBox34.ToolTip"))
@@ -4611,10 +4236,9 @@ Partial Class MgrSetting
         'Label79
         '
         Me.Label79.AutoSize = True
-        Me.Label79.Location = New System.Drawing.Point(9, 265)
-        Me.Label79.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label79.Location = New System.Drawing.Point(6, 172)
         Me.Label79.Name = "Label79"
-        Me.Label79.Size = New System.Drawing.Size(191, 20)
+        Me.Label79.Size = New System.Drawing.Size(130, 13)
         Me.Label79.TabIndex = 72
         Me.Label79.Text = "Width for Dot-Clock Mode"
         '
@@ -4622,10 +4246,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox33.FormattingEnabled = True
         Me.ComboBox33.Items.AddRange(New Object() {"fast", "accurate", "auto"})
-        Me.ComboBox33.Location = New System.Drawing.Point(278, 218)
-        Me.ComboBox33.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox33.Location = New System.Drawing.Point(185, 142)
         Me.ComboBox33.Name = "ComboBox33"
-        Me.ComboBox33.Size = New System.Drawing.Size(100, 28)
+        Me.ComboBox33.Size = New System.Drawing.Size(68, 21)
         Me.ComboBox33.TabIndex = 71
         Me.ComboBox33.Text = "auto"
         Me.ToolTip1.SetToolTip(Me.ComboBox33, resources.GetString("ComboBox33.ToolTip"))
@@ -4633,10 +4256,9 @@ Partial Class MgrSetting
         'Label78
         '
         Me.Label78.AutoSize = True
-        Me.Label78.Location = New System.Drawing.Point(9, 223)
-        Me.Label78.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label78.Location = New System.Drawing.Point(6, 145)
         Me.Label78.Name = "Label78"
-        Me.Label78.Size = New System.Drawing.Size(161, 20)
+        Me.Label78.Size = New System.Drawing.Size(108, 13)
         Me.Label78.TabIndex = 70
         Me.Label78.Text = "CPU Emulation Mode"
         '
@@ -4644,11 +4266,10 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown12.DecimalPlaces = 2
         Me.NumericUpDown12.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown12.Location = New System.Drawing.Point(278, 178)
-        Me.NumericUpDown12.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown12.Location = New System.Drawing.Point(185, 116)
         Me.NumericUpDown12.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown12.Name = "NumericUpDown12"
-        Me.NumericUpDown12.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown12.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown12.TabIndex = 69
         Me.ToolTip1.SetToolTip(Me.NumericUpDown12, "Mouse sensitivity.")
         Me.NumericUpDown12.Value = New Decimal(New Integer() {125, 0, 0, 131072})
@@ -4656,20 +4277,18 @@ Partial Class MgrSetting
         'Label77
         '
         Me.Label77.AutoSize = True
-        Me.Label77.Location = New System.Drawing.Point(9, 182)
-        Me.Label77.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label77.Location = New System.Drawing.Point(6, 118)
         Me.Label77.Name = "Label77"
-        Me.Label77.Size = New System.Drawing.Size(131, 20)
+        Me.Label77.Size = New System.Drawing.Size(89, 13)
         Me.Label77.TabIndex = 68
         Me.Label77.Text = "Mouse Sensitivity"
         '
         'TrackBar14
         '
-        Me.TrackBar14.Location = New System.Drawing.Point(278, 100)
-        Me.TrackBar14.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar14.Location = New System.Drawing.Point(185, 65)
         Me.TrackBar14.Minimum = 2
         Me.TrackBar14.Name = "TrackBar14"
-        Me.TrackBar14.Size = New System.Drawing.Size(170, 69)
+        Me.TrackBar14.Size = New System.Drawing.Size(113, 45)
         Me.TrackBar14.TabIndex = 67
         Me.ToolTip1.SetToolTip(Me.TrackBar14, "Emulated CD-ROM speed." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Setting the value higher than 2, the default, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "will de" &
         "crease loading times in most games by some degree.")
@@ -4678,20 +4297,18 @@ Partial Class MgrSetting
         'Label76
         '
         Me.Label76.AutoSize = True
-        Me.Label76.Location = New System.Drawing.Point(9, 100)
-        Me.Label76.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label76.Location = New System.Drawing.Point(6, 65)
         Me.Label76.Name = "Label76"
-        Me.Label76.Size = New System.Drawing.Size(194, 20)
+        Me.Label76.Size = New System.Drawing.Size(129, 13)
         Me.Label76.TabIndex = 66
         Me.Label76.Text = "Emulated CD-ROM speed"
         '
         'CheckBox46
         '
         Me.CheckBox46.AutoSize = True
-        Me.CheckBox46.Location = New System.Drawing.Point(14, 65)
-        Me.CheckBox46.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox46.Location = New System.Drawing.Point(9, 42)
         Me.CheckBox46.Name = "CheckBox46"
-        Me.CheckBox46.Size = New System.Drawing.Size(207, 24)
+        Me.CheckBox46.Size = New System.Drawing.Size(142, 17)
         Me.CheckBox46.TabIndex = 65
         Me.CheckBox46.Text = "&Hack to Suppress Clicks"
         Me.ToolTip1.SetToolTip(Me.CheckBox46, "Hack to suppress clicks caused by forced channel resets.")
@@ -4700,10 +4317,9 @@ Partial Class MgrSetting
         'CheckBox45
         '
         Me.CheckBox45.AutoSize = True
-        Me.CheckBox45.Location = New System.Drawing.Point(14, 29)
-        Me.CheckBox45.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox45.Location = New System.Drawing.Point(9, 19)
         Me.CheckBox45.Name = "CheckBox45"
-        Me.CheckBox45.Size = New System.Drawing.Size(205, 24)
+        Me.CheckBox45.Size = New System.Drawing.Size(140, 17)
         Me.CheckBox45.TabIndex = 64
         Me.CheckBox45.Text = "&Buggy ADPCM Encoder"
         Me.ToolTip1.SetToolTip(Me.CheckBox45, "Hack that emulates the codec a buggy ADPCM encoder used for some games' ADPCM.")
@@ -4717,10 +4333,9 @@ Partial Class MgrSetting
         Me.TabPage21.Controls.Add(Me.ComboBox35)
         Me.TabPage21.Controls.Add(Me.Label81)
         Me.TabPage21.Controls.Add(Me.ComboBox36)
-        Me.TabPage21.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage21.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage21.Location = New System.Drawing.Point(4, 22)
         Me.TabPage21.Name = "TabPage21"
-        Me.TabPage21.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage21.Size = New System.Drawing.Size(310, 284)
         Me.TabPage21.TabIndex = 20
         Me.TabPage21.Text = "PC-FX"
         Me.TabPage21.UseVisualStyleBackColor = True
@@ -4728,10 +4343,9 @@ Partial Class MgrSetting
         'CheckBox49
         '
         Me.CheckBox49.AutoSize = True
-        Me.CheckBox49.Location = New System.Drawing.Point(9, 57)
-        Me.CheckBox49.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox49.Location = New System.Drawing.Point(6, 37)
         Me.CheckBox49.Name = "CheckBox49"
-        Me.CheckBox49.Size = New System.Drawing.Size(263, 24)
+        Me.CheckBox49.Size = New System.Drawing.Size(176, 17)
         Me.CheckBox49.TabIndex = 45
         Me.CheckBox49.Text = "Enable multitap on PC-FX port 2"
         Me.ToolTip1.SetToolTip(Me.CheckBox49, "Enable multitap on PC-FX port 2." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EXPERIMENTAL emulation of the unreleased mult" &
@@ -4741,10 +4355,9 @@ Partial Class MgrSetting
         'CheckBox50
         '
         Me.CheckBox50.AutoSize = True
-        Me.CheckBox50.Location = New System.Drawing.Point(9, 22)
-        Me.CheckBox50.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox50.Location = New System.Drawing.Point(6, 14)
         Me.CheckBox50.Name = "CheckBox50"
-        Me.CheckBox50.Size = New System.Drawing.Size(263, 24)
+        Me.CheckBox50.Size = New System.Drawing.Size(176, 17)
         Me.CheckBox50.TabIndex = 44
         Me.CheckBox50.Text = "Enable multitap on PC-FX port 1"
         Me.ToolTip1.SetToolTip(Me.CheckBox50, "Enable multitap on PC-FX port 1." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "EXPERIMENTAL emulation of the unreleased mult" &
@@ -4754,10 +4367,9 @@ Partial Class MgrSetting
         'Label80
         '
         Me.Label80.AutoSize = True
-        Me.Label80.Location = New System.Drawing.Point(4, 138)
-        Me.Label80.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label80.Location = New System.Drawing.Point(3, 90)
         Me.Label80.Name = "Label80"
-        Me.Label80.Size = New System.Drawing.Size(167, 20)
+        Me.Label80.Size = New System.Drawing.Size(114, 13)
         Me.Label80.TabIndex = 43
         Me.Label80.Text = "Input Device for Port 2"
         '
@@ -4765,20 +4377,18 @@ Partial Class MgrSetting
         '
         Me.ComboBox35.FormattingEnabled = True
         Me.ComboBox35.Items.AddRange(New Object() {"none", "gamepad", "mouse"})
-        Me.ComboBox35.Location = New System.Drawing.Point(234, 92)
-        Me.ComboBox35.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox35.Location = New System.Drawing.Point(156, 60)
         Me.ComboBox35.Name = "ComboBox35"
-        Me.ComboBox35.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox35.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox35.TabIndex = 42
         Me.ComboBox35.Text = "gamepad"
         '
         'Label81
         '
         Me.Label81.AutoSize = True
-        Me.Label81.Location = New System.Drawing.Point(4, 97)
-        Me.Label81.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label81.Location = New System.Drawing.Point(3, 63)
         Me.Label81.Name = "Label81"
-        Me.Label81.Size = New System.Drawing.Size(167, 20)
+        Me.Label81.Size = New System.Drawing.Size(114, 13)
         Me.Label81.TabIndex = 41
         Me.Label81.Text = "Input Device for Port 1"
         '
@@ -4786,10 +4396,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox36.FormattingEnabled = True
         Me.ComboBox36.Items.AddRange(New Object() {"none", "gamepad", "mouse"})
-        Me.ComboBox36.Location = New System.Drawing.Point(234, 138)
-        Me.ComboBox36.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox36.Location = New System.Drawing.Point(156, 90)
         Me.ComboBox36.Name = "ComboBox36"
-        Me.ComboBox36.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox36.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox36.TabIndex = 40
         Me.ComboBox36.Text = "gamepad"
         '
@@ -4807,10 +4416,9 @@ Partial Class MgrSetting
         Me.TabPage22.Controls.Add(Me.CheckBox53)
         Me.TabPage22.Controls.Add(Me.CheckBox52)
         Me.TabPage22.Controls.Add(Me.CheckBox51)
-        Me.TabPage22.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage22.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage22.Location = New System.Drawing.Point(4, 22)
         Me.TabPage22.Name = "TabPage22"
-        Me.TabPage22.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage22.Size = New System.Drawing.Size(310, 284)
         Me.TabPage22.TabIndex = 21
         Me.TabPage22.Text = "PlayStation"
         Me.TabPage22.UseVisualStyleBackColor = True
@@ -4819,10 +4427,9 @@ Partial Class MgrSetting
         '
         Me.CheckBox104.AutoSize = True
         Me.CheckBox104.Enabled = False
-        Me.CheckBox104.Location = New System.Drawing.Point(278, 118)
-        Me.CheckBox104.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox104.Location = New System.Drawing.Point(185, 77)
         Me.CheckBox104.Name = "CheckBox104"
-        Me.CheckBox104.Size = New System.Drawing.Size(134, 24)
+        Me.CheckBox104.Size = New System.Drawing.Size(92, 17)
         Me.CheckBox104.TabIndex = 92
         Me.CheckBox104.Text = "&Fix Video PAL"
         Me.CheckBox104.UseVisualStyleBackColor = True
@@ -4845,10 +4452,9 @@ Partial Class MgrSetting
         Me.Panel1.Controls.Add(Me.CheckBox80)
         Me.Panel1.Controls.Add(Me.CheckBox79)
         Me.Panel1.Controls.Add(Me.CheckBox78)
-        Me.Panel1.Location = New System.Drawing.Point(16, 318)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Panel1.Location = New System.Drawing.Point(11, 207)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(434, 106)
+        Me.Panel1.Size = New System.Drawing.Size(289, 69)
         Me.Panel1.TabIndex = 91
         Me.ToolTip1.SetToolTip(Me.Panel1, "Select the combo buttons assgn to enable analog mode")
         Me.Panel1.Visible = False
@@ -4856,10 +4462,9 @@ Partial Class MgrSetting
         'CheckBox93
         '
         Me.CheckBox93.AutoSize = True
-        Me.CheckBox93.Location = New System.Drawing.Point(316, 75)
-        Me.CheckBox93.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox93.Location = New System.Drawing.Point(211, 49)
         Me.CheckBox93.Name = "CheckBox93"
-        Me.CheckBox93.Size = New System.Drawing.Size(103, 24)
+        Me.CheckBox93.Size = New System.Drawing.Size(71, 17)
         Me.CheckBox93.TabIndex = 15
         Me.CheckBox93.Text = "D-RIGHT"
         Me.CheckBox93.UseVisualStyleBackColor = True
@@ -4867,10 +4472,9 @@ Partial Class MgrSetting
         'CheckBox92
         '
         Me.CheckBox92.AutoSize = True
-        Me.CheckBox92.Location = New System.Drawing.Point(93, 75)
-        Me.CheckBox92.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox92.Location = New System.Drawing.Point(62, 49)
         Me.CheckBox92.Name = "CheckBox92"
-        Me.CheckBox92.Size = New System.Drawing.Size(91, 24)
+        Me.CheckBox92.Size = New System.Drawing.Size(63, 17)
         Me.CheckBox92.TabIndex = 14
         Me.CheckBox92.Text = "D-LEFT"
         Me.CheckBox92.UseVisualStyleBackColor = True
@@ -4878,10 +4482,9 @@ Partial Class MgrSetting
         'CheckBox91
         '
         Me.CheckBox91.AutoSize = True
-        Me.CheckBox91.Location = New System.Drawing.Point(198, 75)
-        Me.CheckBox91.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox91.Location = New System.Drawing.Point(132, 49)
         Me.CheckBox91.Name = "CheckBox91"
-        Me.CheckBox91.Size = New System.Drawing.Size(102, 24)
+        Me.CheckBox91.Size = New System.Drawing.Size(72, 17)
         Me.CheckBox91.TabIndex = 13
         Me.CheckBox91.Text = "D-DOWN"
         Me.CheckBox91.UseVisualStyleBackColor = True
@@ -4889,10 +4492,9 @@ Partial Class MgrSetting
         'CheckBox90
         '
         Me.CheckBox90.AutoSize = True
-        Me.CheckBox90.Location = New System.Drawing.Point(4, 75)
-        Me.CheckBox90.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox90.Location = New System.Drawing.Point(3, 49)
         Me.CheckBox90.Name = "CheckBox90"
-        Me.CheckBox90.Size = New System.Drawing.Size(74, 24)
+        Me.CheckBox90.Size = New System.Drawing.Size(52, 17)
         Me.CheckBox90.TabIndex = 12
         Me.CheckBox90.Text = "D-UP"
         Me.CheckBox90.UseVisualStyleBackColor = True
@@ -4900,10 +4502,9 @@ Partial Class MgrSetting
         'CheckBox89
         '
         Me.CheckBox89.AutoSize = True
-        Me.CheckBox89.Location = New System.Drawing.Point(375, 40)
-        Me.CheckBox89.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox89.Location = New System.Drawing.Point(250, 26)
         Me.CheckBox89.Name = "CheckBox89"
-        Me.CheckBox89.Size = New System.Drawing.Size(47, 24)
+        Me.CheckBox89.Size = New System.Drawing.Size(34, 17)
         Me.CheckBox89.TabIndex = 11
         Me.CheckBox89.Text = "O"
         Me.CheckBox89.UseVisualStyleBackColor = True
@@ -4911,10 +4512,9 @@ Partial Class MgrSetting
         'CheckBox88
         '
         Me.CheckBox88.AutoSize = True
-        Me.CheckBox88.Location = New System.Drawing.Point(312, 40)
-        Me.CheckBox88.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox88.Location = New System.Drawing.Point(208, 26)
         Me.CheckBox88.Name = "CheckBox88"
-        Me.CheckBox88.Size = New System.Drawing.Size(46, 24)
+        Me.CheckBox88.Size = New System.Drawing.Size(33, 17)
         Me.CheckBox88.TabIndex = 10
         Me.CheckBox88.Text = "X"
         Me.CheckBox88.UseVisualStyleBackColor = True
@@ -4922,10 +4522,9 @@ Partial Class MgrSetting
         'CheckBox87
         '
         Me.CheckBox87.AutoSize = True
-        Me.CheckBox87.Location = New System.Drawing.Point(375, 5)
-        Me.CheckBox87.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox87.Location = New System.Drawing.Point(250, 3)
         Me.CheckBox87.Name = "CheckBox87"
-        Me.CheckBox87.Size = New System.Drawing.Size(45, 24)
+        Me.CheckBox87.Size = New System.Drawing.Size(33, 17)
         Me.CheckBox87.TabIndex = 9
         Me.CheckBox87.Text = "□"
         Me.CheckBox87.UseVisualStyleBackColor = True
@@ -4933,10 +4532,9 @@ Partial Class MgrSetting
         'CheckBox86
         '
         Me.CheckBox86.AutoSize = True
-        Me.CheckBox86.Location = New System.Drawing.Point(312, 5)
-        Me.CheckBox86.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox86.Location = New System.Drawing.Point(208, 3)
         Me.CheckBox86.Name = "CheckBox86"
-        Me.CheckBox86.Size = New System.Drawing.Size(45, 24)
+        Me.CheckBox86.Size = New System.Drawing.Size(35, 17)
         Me.CheckBox86.TabIndex = 8
         Me.CheckBox86.Text = "△"
         Me.CheckBox86.UseVisualStyleBackColor = True
@@ -4944,10 +4542,9 @@ Partial Class MgrSetting
         'CheckBox84
         '
         Me.CheckBox84.AutoSize = True
-        Me.CheckBox84.Location = New System.Drawing.Point(106, 40)
-        Me.CheckBox84.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox84.Location = New System.Drawing.Point(71, 26)
         Me.CheckBox84.Name = "CheckBox84"
-        Me.CheckBox84.Size = New System.Drawing.Size(56, 24)
+        Me.CheckBox84.Size = New System.Drawing.Size(40, 17)
         Me.CheckBox84.TabIndex = 7
         Me.CheckBox84.Text = "R1"
         Me.CheckBox84.UseVisualStyleBackColor = True
@@ -4955,10 +4552,9 @@ Partial Class MgrSetting
         'CheckBox85
         '
         Me.CheckBox85.AutoSize = True
-        Me.CheckBox85.Location = New System.Drawing.Point(106, 5)
-        Me.CheckBox85.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox85.Location = New System.Drawing.Point(71, 3)
         Me.CheckBox85.Name = "CheckBox85"
-        Me.CheckBox85.Size = New System.Drawing.Size(53, 24)
+        Me.CheckBox85.Size = New System.Drawing.Size(38, 17)
         Me.CheckBox85.TabIndex = 6
         Me.CheckBox85.Text = "L1"
         Me.CheckBox85.UseVisualStyleBackColor = True
@@ -4966,10 +4562,9 @@ Partial Class MgrSetting
         'CheckBox83
         '
         Me.CheckBox83.AutoSize = True
-        Me.CheckBox83.Location = New System.Drawing.Point(180, 40)
-        Me.CheckBox83.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox83.Location = New System.Drawing.Point(120, 26)
         Me.CheckBox83.Name = "CheckBox83"
-        Me.CheckBox83.Size = New System.Drawing.Size(56, 24)
+        Me.CheckBox83.Size = New System.Drawing.Size(40, 17)
         Me.CheckBox83.TabIndex = 5
         Me.CheckBox83.Text = "R2"
         Me.CheckBox83.UseVisualStyleBackColor = True
@@ -4977,10 +4572,9 @@ Partial Class MgrSetting
         'CheckBox82
         '
         Me.CheckBox82.AutoSize = True
-        Me.CheckBox82.Location = New System.Drawing.Point(180, 5)
-        Me.CheckBox82.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox82.Location = New System.Drawing.Point(120, 3)
         Me.CheckBox82.Name = "CheckBox82"
-        Me.CheckBox82.Size = New System.Drawing.Size(53, 24)
+        Me.CheckBox82.Size = New System.Drawing.Size(38, 17)
         Me.CheckBox82.TabIndex = 4
         Me.CheckBox82.Text = "L2"
         Me.CheckBox82.UseVisualStyleBackColor = True
@@ -4988,10 +4582,9 @@ Partial Class MgrSetting
         'CheckBox81
         '
         Me.CheckBox81.AutoSize = True
-        Me.CheckBox81.Location = New System.Drawing.Point(246, 40)
-        Me.CheckBox81.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox81.Location = New System.Drawing.Point(164, 26)
         Me.CheckBox81.Name = "CheckBox81"
-        Me.CheckBox81.Size = New System.Drawing.Size(56, 24)
+        Me.CheckBox81.Size = New System.Drawing.Size(40, 17)
         Me.CheckBox81.TabIndex = 3
         Me.CheckBox81.Text = "R3"
         Me.CheckBox81.UseVisualStyleBackColor = True
@@ -4999,10 +4592,9 @@ Partial Class MgrSetting
         'CheckBox80
         '
         Me.CheckBox80.AutoSize = True
-        Me.CheckBox80.Location = New System.Drawing.Point(246, 5)
-        Me.CheckBox80.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox80.Location = New System.Drawing.Point(164, 3)
         Me.CheckBox80.Name = "CheckBox80"
-        Me.CheckBox80.Size = New System.Drawing.Size(53, 24)
+        Me.CheckBox80.Size = New System.Drawing.Size(38, 17)
         Me.CheckBox80.TabIndex = 2
         Me.CheckBox80.Text = "L3"
         Me.CheckBox80.UseVisualStyleBackColor = True
@@ -5010,10 +4602,9 @@ Partial Class MgrSetting
         'CheckBox79
         '
         Me.CheckBox79.AutoSize = True
-        Me.CheckBox79.Location = New System.Drawing.Point(4, 40)
-        Me.CheckBox79.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox79.Location = New System.Drawing.Point(3, 26)
         Me.CheckBox79.Name = "CheckBox79"
-        Me.CheckBox79.Size = New System.Drawing.Size(87, 24)
+        Me.CheckBox79.Size = New System.Drawing.Size(62, 17)
         Me.CheckBox79.TabIndex = 1
         Me.CheckBox79.Text = "START"
         Me.CheckBox79.UseVisualStyleBackColor = True
@@ -5021,10 +4612,9 @@ Partial Class MgrSetting
         'CheckBox78
         '
         Me.CheckBox78.AutoSize = True
-        Me.CheckBox78.Location = New System.Drawing.Point(4, 5)
-        Me.CheckBox78.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox78.Location = New System.Drawing.Point(3, 3)
         Me.CheckBox78.Name = "CheckBox78"
-        Me.CheckBox78.Size = New System.Drawing.Size(97, 24)
+        Me.CheckBox78.Size = New System.Drawing.Size(67, 17)
         Me.CheckBox78.TabIndex = 0
         Me.CheckBox78.Text = "SELECT"
         Me.CheckBox78.UseVisualStyleBackColor = True
@@ -5032,10 +4622,9 @@ Partial Class MgrSetting
         'CheckBox58
         '
         Me.CheckBox58.AutoSize = True
-        Me.CheckBox58.Location = New System.Drawing.Point(10, 154)
-        Me.CheckBox58.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox58.Location = New System.Drawing.Point(7, 100)
         Me.CheckBox58.Name = "CheckBox58"
-        Me.CheckBox58.Size = New System.Drawing.Size(315, 24)
+        Me.CheckBox58.Size = New System.Drawing.Size(214, 17)
         Me.CheckBox58.TabIndex = 90
         Me.CheckBox58.Text = "&Enable BIOS ROM image sanity checks"
         Me.CheckBox58.UseVisualStyleBackColor = True
@@ -5043,10 +4632,9 @@ Partial Class MgrSetting
         'CheckBox57
         '
         Me.CheckBox57.AutoSize = True
-        Me.CheckBox57.Location = New System.Drawing.Point(10, 118)
-        Me.CheckBox57.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox57.Location = New System.Drawing.Point(7, 77)
         Me.CheckBox57.Name = "CheckBox57"
-        Me.CheckBox57.Size = New System.Drawing.Size(252, 24)
+        Me.CheckBox57.Size = New System.Drawing.Size(172, 17)
         Me.CheckBox57.TabIndex = 89
         Me.CheckBox57.Text = "&Show horizontal overscan area"
         Me.CheckBox57.UseVisualStyleBackColor = True
@@ -5054,10 +4642,9 @@ Partial Class MgrSetting
         'CheckBox55
         '
         Me.CheckBox55.AutoSize = True
-        Me.CheckBox55.Location = New System.Drawing.Point(10, 83)
-        Me.CheckBox55.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox55.Location = New System.Drawing.Point(7, 54)
         Me.CheckBox55.Name = "CheckBox55"
-        Me.CheckBox55.Size = New System.Drawing.Size(325, 24)
+        Me.CheckBox55.Size = New System.Drawing.Size(216, 17)
         Me.CheckBox55.TabIndex = 88
         Me.CheckBox55.Text = "Attempt to Auto-Detect &Region Of Game"
         Me.ToolTip1.SetToolTip(Me.CheckBox55, "Attempt to auto-detect region of game.")
@@ -5065,10 +4652,9 @@ Partial Class MgrSetting
         '
         'TrackBar15
         '
-        Me.TrackBar15.Location = New System.Drawing.Point(310, 232)
-        Me.TrackBar15.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar15.Location = New System.Drawing.Point(207, 151)
         Me.TrackBar15.Name = "TrackBar15"
-        Me.TrackBar15.Size = New System.Drawing.Size(134, 69)
+        Me.TrackBar15.Size = New System.Drawing.Size(89, 45)
         Me.TrackBar15.TabIndex = 87
         Me.ToolTip1.SetToolTip(Me.TrackBar15, resources.GetString("TrackBar15.ToolTip"))
         Me.TrackBar15.Value = 5
@@ -5076,10 +4662,9 @@ Partial Class MgrSetting
         'Label90
         '
         Me.Label90.AutoSize = True
-        Me.Label90.Location = New System.Drawing.Point(6, 232)
-        Me.Label90.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label90.Location = New System.Drawing.Point(4, 151)
         Me.Label90.Name = "Label90"
-        Me.Label90.Size = New System.Drawing.Size(228, 20)
+        Me.Label90.Size = New System.Drawing.Size(152, 13)
         Me.Label90.TabIndex = 86
         Me.Label90.Text = "SPU Output Resampler Quality"
         '
@@ -5087,10 +4672,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox39.FormattingEnabled = True
         Me.ComboBox39.Items.AddRange(New Object() {"jp", "na", "eu"})
-        Me.ComboBox39.Location = New System.Drawing.Point(310, 191)
-        Me.ComboBox39.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox39.Location = New System.Drawing.Point(207, 124)
         Me.ComboBox39.Name = "ComboBox39"
-        Me.ComboBox39.Size = New System.Drawing.Size(132, 28)
+        Me.ComboBox39.Size = New System.Drawing.Size(89, 21)
         Me.ComboBox39.TabIndex = 85
         Me.ComboBox39.Text = "jp"
         Me.ToolTip1.SetToolTip(Me.ComboBox39, "Default region to use." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Used if region autodetection fails or is disabled." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "jp " &
@@ -5099,20 +4683,18 @@ Partial Class MgrSetting
         'Label89
         '
         Me.Label89.AutoSize = True
-        Me.Label89.Location = New System.Drawing.Point(6, 195)
-        Me.Label89.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label89.Location = New System.Drawing.Point(4, 127)
         Me.Label89.Name = "Label89"
-        Me.Label89.Size = New System.Drawing.Size(157, 20)
+        Me.Label89.Size = New System.Drawing.Size(105, 13)
         Me.Label89.TabIndex = 84
         Me.Label89.Text = "Default region to use"
         '
         'CheckBox53
         '
         Me.CheckBox53.AutoSize = True
-        Me.CheckBox53.Location = New System.Drawing.Point(10, 48)
-        Me.CheckBox53.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox53.Location = New System.Drawing.Point(7, 31)
         Me.CheckBox53.Name = "CheckBox53"
-        Me.CheckBox53.Size = New System.Drawing.Size(259, 24)
+        Me.CheckBox53.Size = New System.Drawing.Size(177, 17)
         Me.CheckBox53.TabIndex = 77
         Me.CheckBox53.Text = "Emulate &Memcard On Port 2/2A"
         Me.ToolTip1.SetToolTip(Me.CheckBox53, "Emulate memcard on port 2/2A.")
@@ -5121,10 +4703,9 @@ Partial Class MgrSetting
         'CheckBox52
         '
         Me.CheckBox52.AutoSize = True
-        Me.CheckBox52.Location = New System.Drawing.Point(10, 12)
-        Me.CheckBox52.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox52.Location = New System.Drawing.Point(7, 8)
         Me.CheckBox52.Name = "CheckBox52"
-        Me.CheckBox52.Size = New System.Drawing.Size(259, 24)
+        Me.CheckBox52.Size = New System.Drawing.Size(177, 17)
         Me.CheckBox52.TabIndex = 76
         Me.CheckBox52.Text = "Emulate &Memcard On Port 1/1A"
         Me.ToolTip1.SetToolTip(Me.CheckBox52, "Emulate memcard on port 1/1A.")
@@ -5133,10 +4714,9 @@ Partial Class MgrSetting
         'CheckBox51
         '
         Me.CheckBox51.AutoSize = True
-        Me.CheckBox51.Location = New System.Drawing.Point(9, 275)
-        Me.CheckBox51.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox51.Location = New System.Drawing.Point(6, 179)
         Me.CheckBox51.Name = "CheckBox51"
-        Me.CheckBox51.Size = New System.Drawing.Size(291, 24)
+        Me.CheckBox51.Size = New System.Drawing.Size(195, 17)
         Me.CheckBox51.TabIndex = 45
         Me.CheckBox51.Text = "Enable &Analog Mode Combo-Button"
         Me.ToolTip1.SetToolTip(Me.CheckBox51, resources.GetString("CheckBox51.ToolTip"))
@@ -5157,11 +4737,10 @@ Partial Class MgrSetting
         Me.TabPage23.Controls.Add(Me.Label83)
         Me.TabPage23.Controls.Add(Me.NumericUpDown13)
         Me.TabPage23.Controls.Add(Me.Label82)
-        Me.TabPage23.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage23.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage23.Location = New System.Drawing.Point(4, 22)
         Me.TabPage23.Name = "TabPage23"
-        Me.TabPage23.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabPage23.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage23.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage23.Size = New System.Drawing.Size(310, 284)
         Me.TabPage23.TabIndex = 22
         Me.TabPage23.Text = "PlayStation"
         Me.TabPage23.UseVisualStyleBackColor = True
@@ -5171,10 +4750,9 @@ Partial Class MgrSetting
         Me.CheckBox61.AutoSize = True
         Me.CheckBox61.Checked = True
         Me.CheckBox61.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox61.Location = New System.Drawing.Point(276, 149)
-        Me.CheckBox61.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox61.Location = New System.Drawing.Point(184, 97)
         Me.CheckBox61.Name = "CheckBox61"
-        Me.CheckBox61.Size = New System.Drawing.Size(158, 24)
+        Me.CheckBox61.Size = New System.Drawing.Size(107, 17)
         Me.CheckBox61.TabIndex = 89
         Me.CheckBox61.Text = "Ignore Other Port"
         Me.ToolTip1.SetToolTip(Me.CheckBox61, "Disable automatic setting of 8 controller to same device on port 1")
@@ -5183,10 +4761,9 @@ Partial Class MgrSetting
         'CheckBox56
         '
         Me.CheckBox56.AutoSize = True
-        Me.CheckBox56.Location = New System.Drawing.Point(10, 168)
-        Me.CheckBox56.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox56.Location = New System.Drawing.Point(7, 109)
         Me.CheckBox56.Name = "CheckBox56"
-        Me.CheckBox56.Size = New System.Drawing.Size(252, 24)
+        Me.CheckBox56.Size = New System.Drawing.Size(171, 17)
         Me.CheckBox56.TabIndex = 88
         Me.CheckBox56.Text = "Enable Multi&tap On PSX Port 2"
         Me.CheckBox56.UseVisualStyleBackColor = True
@@ -5194,10 +4771,9 @@ Partial Class MgrSetting
         'Label87
         '
         Me.Label87.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label87.Location = New System.Drawing.Point(399, 237)
-        Me.Label87.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label87.Location = New System.Drawing.Point(266, 154)
         Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(45, 23)
+        Me.Label87.Size = New System.Drawing.Size(30, 15)
         Me.Label87.TabIndex = 87
         Me.Label87.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label87, "Crosshairs color for lightgun on port 2/2A." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A value of 0x1000000 disables cros" &
@@ -5206,20 +4782,18 @@ Partial Class MgrSetting
         'Label88
         '
         Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(6, 237)
-        Me.Label88.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label88.Location = New System.Drawing.Point(4, 154)
         Me.Label88.Name = "Label88"
-        Me.Label88.Size = New System.Drawing.Size(261, 20)
+        Me.Label88.Size = New System.Drawing.Size(175, 13)
         Me.Label88.TabIndex = 86
         Me.Label88.Text = "Crosshairs Color Lightgun Port 2/2A"
         '
         'Label86
         '
         Me.Label86.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label86.Location = New System.Drawing.Point(399, 203)
-        Me.Label86.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label86.Location = New System.Drawing.Point(266, 132)
         Me.Label86.Name = "Label86"
-        Me.Label86.Size = New System.Drawing.Size(45, 23)
+        Me.Label86.Size = New System.Drawing.Size(30, 15)
         Me.Label86.TabIndex = 85
         Me.Label86.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label86, "Crosshairs color for lightgun on port 1/1A." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A value of 0x1000000 disables cros" &
@@ -5228,20 +4802,18 @@ Partial Class MgrSetting
         'Label85
         '
         Me.Label85.AutoSize = True
-        Me.Label85.Location = New System.Drawing.Point(6, 203)
-        Me.Label85.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label85.Location = New System.Drawing.Point(4, 132)
         Me.Label85.Name = "Label85"
-        Me.Label85.Size = New System.Drawing.Size(261, 20)
+        Me.Label85.Size = New System.Drawing.Size(175, 13)
         Me.Label85.TabIndex = 84
         Me.Label85.Text = "Crosshairs Color Lightgun Port 1/1A"
         '
         'CheckBox54
         '
         Me.CheckBox54.AutoSize = True
-        Me.CheckBox54.Location = New System.Drawing.Point(10, 132)
-        Me.CheckBox54.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox54.Location = New System.Drawing.Point(7, 86)
         Me.CheckBox54.Name = "CheckBox54"
-        Me.CheckBox54.Size = New System.Drawing.Size(252, 24)
+        Me.CheckBox54.Size = New System.Drawing.Size(171, 17)
         Me.CheckBox54.TabIndex = 83
         Me.CheckBox54.Text = "Enable Multi&tap On PSX Port 1"
         Me.CheckBox54.UseVisualStyleBackColor = True
@@ -5250,10 +4822,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox38.FormattingEnabled = True
         Me.ComboBox38.Items.AddRange(New Object() {"none", "gamepad", "dualshock", "dualanalog", "analogjoy", "mouse", "negcon", "guncon", "justifier", "dancepad"})
-        Me.ComboBox38.Location = New System.Drawing.Point(236, 91)
-        Me.ComboBox38.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox38.Location = New System.Drawing.Point(157, 59)
         Me.ComboBox38.Name = "ComboBox38"
-        Me.ComboBox38.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox38.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox38.TabIndex = 81
         Me.ComboBox38.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox38, resources.GetString("ComboBox38.ToolTip"))
@@ -5261,10 +4832,9 @@ Partial Class MgrSetting
         'Label84
         '
         Me.Label84.AutoSize = True
-        Me.Label84.Location = New System.Drawing.Point(9, 95)
-        Me.Label84.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label84.Location = New System.Drawing.Point(6, 62)
         Me.Label84.Name = "Label84"
-        Me.Label84.Size = New System.Drawing.Size(167, 20)
+        Me.Label84.Size = New System.Drawing.Size(114, 13)
         Me.Label84.TabIndex = 80
         Me.Label84.Text = "Input Device for Port 2"
         '
@@ -5272,10 +4842,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox37.FormattingEnabled = True
         Me.ComboBox37.Items.AddRange(New Object() {"none", "gamepad", "dualshock", "dualanalog", "analogjoy", "mouse", "negcon", "guncon", "justifier", "dancepad"})
-        Me.ComboBox37.Location = New System.Drawing.Point(236, 49)
-        Me.ComboBox37.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox37.Location = New System.Drawing.Point(157, 32)
         Me.ComboBox37.Name = "ComboBox37"
-        Me.ComboBox37.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox37.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox37.TabIndex = 79
         Me.ComboBox37.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox37, resources.GetString("ComboBox37.ToolTip"))
@@ -5283,10 +4852,9 @@ Partial Class MgrSetting
         'Label83
         '
         Me.Label83.AutoSize = True
-        Me.Label83.Location = New System.Drawing.Point(9, 54)
-        Me.Label83.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label83.Location = New System.Drawing.Point(6, 35)
         Me.Label83.Name = "Label83"
-        Me.Label83.Size = New System.Drawing.Size(167, 20)
+        Me.Label83.Size = New System.Drawing.Size(114, 13)
         Me.Label83.TabIndex = 78
         Me.Label83.Text = "Input Device for Port 1"
         '
@@ -5294,11 +4862,10 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown13.DecimalPlaces = 2
         Me.NumericUpDown13.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown13.Location = New System.Drawing.Point(236, 9)
-        Me.NumericUpDown13.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown13.Location = New System.Drawing.Point(157, 6)
         Me.NumericUpDown13.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown13.Name = "NumericUpDown13"
-        Me.NumericUpDown13.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown13.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown13.TabIndex = 77
         Me.ToolTip1.SetToolTip(Me.NumericUpDown13, "Emulated mouse sensitivity.")
         Me.NumericUpDown13.Value = New Decimal(New Integer() {125, 0, 0, 131072})
@@ -5306,21 +4873,19 @@ Partial Class MgrSetting
         'Label82
         '
         Me.Label82.AutoSize = True
-        Me.Label82.Location = New System.Drawing.Point(6, 12)
-        Me.Label82.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label82.Location = New System.Drawing.Point(4, 8)
         Me.Label82.Name = "Label82"
-        Me.Label82.Size = New System.Drawing.Size(131, 20)
+        Me.Label82.Size = New System.Drawing.Size(89, 13)
         Me.Label82.TabIndex = 76
         Me.Label82.Text = "Mouse Sensitivity"
         '
         'TabPage25
         '
         Me.TabPage25.Controls.Add(Me.GroupBox24)
-        Me.TabPage25.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage25.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage25.Location = New System.Drawing.Point(4, 22)
         Me.TabPage25.Name = "TabPage25"
-        Me.TabPage25.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabPage25.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage25.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage25.Size = New System.Drawing.Size(310, 284)
         Me.TabPage25.TabIndex = 24
         Me.TabPage25.Text = "Saturn"
         Me.TabPage25.UseVisualStyleBackColor = True
@@ -5343,77 +4908,68 @@ Partial Class MgrSetting
         Me.GroupBox24.Controls.Add(Me.ComboBox43)
         Me.GroupBox24.Controls.Add(Me.Label103)
         Me.GroupBox24.Controls.Add(Me.CheckBox62)
-        Me.GroupBox24.Location = New System.Drawing.Point(9, 9)
-        Me.GroupBox24.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox24.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox24.Name = "GroupBox24"
-        Me.GroupBox24.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox24.Size = New System.Drawing.Size(447, 418)
+        Me.GroupBox24.Size = New System.Drawing.Size(298, 272)
         Me.GroupBox24.TabIndex = 0
         Me.GroupBox24.TabStop = False
         '
         'Button21
         '
         Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button21.Location = New System.Drawing.Point(404, 338)
-        Me.Button21.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button21.Location = New System.Drawing.Point(269, 220)
         Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(34, 35)
+        Me.Button21.Size = New System.Drawing.Size(23, 23)
         Me.Button21.TabIndex = 119
         Me.Button21.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(172, 342)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox1.Location = New System.Drawing.Point(115, 222)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(220, 26)
+        Me.TextBox1.Size = New System.Drawing.Size(148, 20)
         Me.TextBox1.TabIndex = 118
         '
         'Label112
         '
         Me.Label112.AutoSize = True
-        Me.Label112.Location = New System.Drawing.Point(9, 346)
-        Me.Label112.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label112.Location = New System.Drawing.Point(6, 225)
         Me.Label112.Name = "Label112"
-        Me.Label112.Size = New System.Drawing.Size(115, 20)
+        Me.Label112.Size = New System.Drawing.Size(77, 13)
         Me.Label112.TabIndex = 117
         Me.Label112.Text = "Ultraman ROM"
         '
         'Button22
         '
         Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button22.Location = New System.Drawing.Point(404, 298)
-        Me.Button22.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button22.Location = New System.Drawing.Point(269, 194)
         Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(34, 35)
+        Me.Button22.Size = New System.Drawing.Size(23, 23)
         Me.Button22.TabIndex = 116
         Me.Button22.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(172, 302)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox2.Location = New System.Drawing.Point(115, 196)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(220, 26)
+        Me.TextBox2.Size = New System.Drawing.Size(148, 20)
         Me.TextBox2.TabIndex = 115
         '
         'Label113
         '
         Me.Label113.AutoSize = True
-        Me.Label113.Location = New System.Drawing.Point(9, 306)
-        Me.Label113.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label113.Location = New System.Drawing.Point(6, 199)
         Me.Label113.Name = "Label113"
-        Me.Label113.Size = New System.Drawing.Size(101, 20)
+        Me.Label113.Size = New System.Drawing.Size(69, 13)
         Me.Label113.TabIndex = 114
         Me.Label113.Text = "KoF 95 ROM"
         '
         'CheckBox68
         '
         Me.CheckBox68.AutoSize = True
-        Me.CheckBox68.Location = New System.Drawing.Point(9, 135)
-        Me.CheckBox68.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox68.Location = New System.Drawing.Point(6, 88)
         Me.CheckBox68.Name = "CheckBox68"
-        Me.CheckBox68.Size = New System.Drawing.Size(268, 24)
+        Me.CheckBox68.Size = New System.Drawing.Size(182, 17)
         Me.CheckBox68.TabIndex = 113
         Me.CheckBox68.Text = "&Enable CD (image) sanity checks"
         Me.CheckBox68.UseVisualStyleBackColor = True
@@ -5421,10 +4977,9 @@ Partial Class MgrSetting
         'CheckBox67
         '
         Me.CheckBox67.AutoSize = True
-        Me.CheckBox67.Location = New System.Drawing.Point(9, 100)
-        Me.CheckBox67.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox67.Location = New System.Drawing.Point(6, 65)
         Me.CheckBox67.Name = "CheckBox67"
-        Me.CheckBox67.Size = New System.Drawing.Size(315, 24)
+        Me.CheckBox67.Size = New System.Drawing.Size(214, 17)
         Me.CheckBox67.TabIndex = 112
         Me.CheckBox67.Text = "&Enable BIOS ROM image sanity checks"
         Me.CheckBox67.UseVisualStyleBackColor = True
@@ -5432,10 +4987,9 @@ Partial Class MgrSetting
         'CheckBox66
         '
         Me.CheckBox66.AutoSize = True
-        Me.CheckBox66.Location = New System.Drawing.Point(9, 65)
-        Me.CheckBox66.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox66.Location = New System.Drawing.Point(6, 42)
         Me.CheckBox66.Name = "CheckBox66"
-        Me.CheckBox66.Size = New System.Drawing.Size(291, 24)
+        Me.CheckBox66.Size = New System.Drawing.Size(197, 17)
         Me.CheckBox66.TabIndex = 111
         Me.CheckBox66.Text = "Automatically set RTC on game load"
         Me.ToolTip1.SetToolTip(Me.CheckBox66, "Automatically set RTC on game load." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Automatically set the SMPC's emulated Real-T" &
@@ -5445,10 +4999,9 @@ Partial Class MgrSetting
         'Label111
         '
         Me.Label111.AutoSize = True
-        Me.Label111.Location = New System.Drawing.Point(9, 262)
-        Me.Label111.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label111.Location = New System.Drawing.Point(6, 170)
         Me.Label111.Name = "Label111"
-        Me.Label111.Size = New System.Drawing.Size(114, 20)
+        Me.Label111.Size = New System.Drawing.Size(77, 13)
         Me.Label111.TabIndex = 110
         Me.Label111.Text = "Expansion cart"
         '
@@ -5456,10 +5009,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox49.FormattingEnabled = True
         Me.ComboBox49.Items.AddRange(New Object() {"auto", "none", "backup", "extram1", "extram4", "cs1ram16"})
-        Me.ComboBox49.Location = New System.Drawing.Point(172, 257)
-        Me.ComboBox49.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox49.Location = New System.Drawing.Point(115, 167)
         Me.ComboBox49.Name = "ComboBox49"
-        Me.ComboBox49.Size = New System.Drawing.Size(220, 28)
+        Me.ComboBox49.Size = New System.Drawing.Size(148, 21)
         Me.ComboBox49.TabIndex = 109
         Me.ComboBox49.Text = "auto"
         Me.ToolTip1.SetToolTip(Me.ComboBox49, "Expansion cart." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "auto - Automatic" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - None" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "backup - Backup Memory(512KiB" &
@@ -5468,10 +5020,9 @@ Partial Class MgrSetting
         'Label110
         '
         Me.Label110.AutoSize = True
-        Me.Label110.Location = New System.Drawing.Point(9, 220)
-        Me.Label110.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label110.Location = New System.Drawing.Point(6, 143)
         Me.Label110.Name = "Label110"
-        Me.Label110.Size = New System.Drawing.Size(118, 20)
+        Me.Label110.Size = New System.Drawing.Size(79, 13)
         Me.Label110.TabIndex = 108
         Me.Label110.Text = "BIOS language"
         '
@@ -5479,10 +5030,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox48.FormattingEnabled = True
         Me.ComboBox48.Items.AddRange(New Object() {"english", "german", "french", "spanish", "italian", "japanese"})
-        Me.ComboBox48.Location = New System.Drawing.Point(172, 215)
-        Me.ComboBox48.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox48.Location = New System.Drawing.Point(115, 140)
         Me.ComboBox48.Name = "ComboBox48"
-        Me.ComboBox48.Size = New System.Drawing.Size(220, 28)
+        Me.ComboBox48.Size = New System.Drawing.Size(148, 21)
         Me.ComboBox48.TabIndex = 107
         Me.ComboBox48.Text = "english"
         Me.ToolTip1.SetToolTip(Me.ComboBox48, "BIOS language." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "english - English" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "german - Deutsch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "french - Français" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "spa" &
@@ -5492,10 +5042,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox43.FormattingEnabled = True
         Me.ComboBox43.Items.AddRange(New Object() {"jp", "na", "eu", "kr", "tw", "as", "br", "la"})
-        Me.ComboBox43.Location = New System.Drawing.Point(171, 171)
-        Me.ComboBox43.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox43.Location = New System.Drawing.Point(114, 111)
         Me.ComboBox43.Name = "ComboBox43"
-        Me.ComboBox43.Size = New System.Drawing.Size(132, 28)
+        Me.ComboBox43.Size = New System.Drawing.Size(89, 21)
         Me.ComboBox43.TabIndex = 104
         Me.ComboBox43.Text = "jp"
         Me.ToolTip1.SetToolTip(Me.ComboBox43, "Default region to use." & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "Used if region autodetection fails or is disabled." & Global.Microsoft.VisualBasic.ChrW(10) & "jp - J" &
@@ -5505,20 +5054,18 @@ Partial Class MgrSetting
         'Label103
         '
         Me.Label103.AutoSize = True
-        Me.Label103.Location = New System.Drawing.Point(9, 175)
-        Me.Label103.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label103.Location = New System.Drawing.Point(6, 114)
         Me.Label103.Name = "Label103"
-        Me.Label103.Size = New System.Drawing.Size(157, 20)
+        Me.Label103.Size = New System.Drawing.Size(105, 13)
         Me.Label103.TabIndex = 103
         Me.Label103.Text = "Default region to use"
         '
         'CheckBox62
         '
         Me.CheckBox62.AutoSize = True
-        Me.CheckBox62.Location = New System.Drawing.Point(9, 29)
-        Me.CheckBox62.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox62.Location = New System.Drawing.Point(6, 19)
         Me.CheckBox62.Name = "CheckBox62"
-        Me.CheckBox62.Size = New System.Drawing.Size(325, 24)
+        Me.CheckBox62.Size = New System.Drawing.Size(216, 17)
         Me.CheckBox62.TabIndex = 102
         Me.CheckBox62.Text = "Attempt to Auto-Detect &Region Of Game"
         Me.ToolTip1.SetToolTip(Me.CheckBox62, "Attempt to auto-detect region of game.")
@@ -5527,11 +5074,10 @@ Partial Class MgrSetting
         'TabPage27
         '
         Me.TabPage27.Controls.Add(Me.GroupBox23)
-        Me.TabPage27.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage27.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage27.Location = New System.Drawing.Point(4, 22)
         Me.TabPage27.Name = "TabPage27"
-        Me.TabPage27.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabPage27.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage27.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage27.Size = New System.Drawing.Size(310, 284)
         Me.TabPage27.TabIndex = 26
         Me.TabPage27.Text = "Saturn"
         Me.TabPage27.UseVisualStyleBackColor = True
@@ -5555,11 +5101,9 @@ Partial Class MgrSetting
         Me.GroupBox23.Controls.Add(Me.Label105)
         Me.GroupBox23.Controls.Add(Me.ComboBox45)
         Me.GroupBox23.Controls.Add(Me.Label106)
-        Me.GroupBox23.Location = New System.Drawing.Point(4, 5)
-        Me.GroupBox23.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox23.Location = New System.Drawing.Point(3, 3)
         Me.GroupBox23.Name = "GroupBox23"
-        Me.GroupBox23.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox23.Size = New System.Drawing.Size(456, 428)
+        Me.GroupBox23.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox23.TabIndex = 5
         Me.GroupBox23.TabStop = False
         Me.ToolTip1.SetToolTip(Me.GroupBox23, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
@@ -5567,10 +5111,9 @@ Partial Class MgrSetting
         'Label132
         '
         Me.Label132.AutoSize = True
-        Me.Label132.Location = New System.Drawing.Point(236, 98)
-        Me.Label132.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label132.Location = New System.Drawing.Point(157, 64)
         Me.Label132.Name = "Label132"
-        Me.Label132.Size = New System.Drawing.Size(101, 20)
+        Me.Label132.Size = New System.Drawing.Size(68, 13)
         Me.Label132.TabIndex = 121
         Me.Label132.Text = "3Dpad mode"
         Me.Label132.Visible = False
@@ -5579,10 +5122,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox52.FormattingEnabled = True
         Me.ComboBox52.Items.AddRange(New Object() {"digital", "analog"})
-        Me.ComboBox52.Location = New System.Drawing.Point(346, 94)
-        Me.ComboBox52.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox52.Location = New System.Drawing.Point(231, 61)
         Me.ComboBox52.Name = "ComboBox52"
-        Me.ComboBox52.Size = New System.Drawing.Size(94, 28)
+        Me.ComboBox52.Size = New System.Drawing.Size(64, 21)
         Me.ComboBox52.TabIndex = 120
         Me.ComboBox52.Text = "digital"
         Me.ToolTip1.SetToolTip(Me.ComboBox52, resources.GetString("ComboBox52.ToolTip"))
@@ -5591,10 +5133,9 @@ Partial Class MgrSetting
         'CheckBox100
         '
         Me.CheckBox100.AutoSize = True
-        Me.CheckBox100.Location = New System.Drawing.Point(4, 65)
-        Me.CheckBox100.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox100.Location = New System.Drawing.Point(3, 42)
         Me.CheckBox100.Name = "CheckBox100"
-        Me.CheckBox100.Size = New System.Drawing.Size(216, 24)
+        Me.CheckBox100.Size = New System.Drawing.Size(147, 17)
         Me.CheckBox100.TabIndex = 119
         Me.CheckBox100.Text = "Enable Multi&tap On Port 2"
         Me.CheckBox100.UseVisualStyleBackColor = True
@@ -5603,10 +5144,9 @@ Partial Class MgrSetting
         'CheckBox101
         '
         Me.CheckBox101.AutoSize = True
-        Me.CheckBox101.Location = New System.Drawing.Point(4, 29)
-        Me.CheckBox101.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox101.Location = New System.Drawing.Point(3, 19)
         Me.CheckBox101.Name = "CheckBox101"
-        Me.CheckBox101.Size = New System.Drawing.Size(216, 24)
+        Me.CheckBox101.Size = New System.Drawing.Size(147, 17)
         Me.CheckBox101.TabIndex = 118
         Me.CheckBox101.Text = "Enable Multi&tap On Port 1"
         Me.CheckBox101.UseVisualStyleBackColor = True
@@ -5615,10 +5155,9 @@ Partial Class MgrSetting
         'CheckBox77
         '
         Me.CheckBox77.AutoSize = True
-        Me.CheckBox77.Location = New System.Drawing.Point(4, 372)
-        Me.CheckBox77.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox77.Location = New System.Drawing.Point(3, 242)
         Me.CheckBox77.Name = "CheckBox77"
-        Me.CheckBox77.Size = New System.Drawing.Size(252, 24)
+        Me.CheckBox77.Size = New System.Drawing.Size(172, 17)
         Me.CheckBox77.TabIndex = 117
         Me.CheckBox77.Text = "&Show horizontal overscan area"
         Me.ToolTip1.SetToolTip(Me.CheckBox77, "Show horizontal overscan area")
@@ -5628,10 +5167,9 @@ Partial Class MgrSetting
         'CheckBox76
         '
         Me.CheckBox76.AutoSize = True
-        Me.CheckBox76.Location = New System.Drawing.Point(4, 337)
-        Me.CheckBox76.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox76.Location = New System.Drawing.Point(3, 219)
         Me.CheckBox76.Name = "CheckBox76"
-        Me.CheckBox76.Size = New System.Drawing.Size(271, 24)
+        Me.CheckBox76.Size = New System.Drawing.Size(181, 17)
         Me.CheckBox76.TabIndex = 116
         Me.CheckBox76.Text = "Enable horizontal &blend(blur) filter"
         Me.ToolTip1.SetToolTip(Me.CheckBox76, "Enable horizontal blend(blur) filter." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Has a more noticeable effect with the Satu" &
@@ -5642,10 +5180,9 @@ Partial Class MgrSetting
         'CheckBox75
         '
         Me.CheckBox75.AutoSize = True
-        Me.CheckBox75.Location = New System.Drawing.Point(4, 302)
-        Me.CheckBox75.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox75.Location = New System.Drawing.Point(3, 196)
         Me.CheckBox75.Name = "CheckBox75"
-        Me.CheckBox75.Size = New System.Drawing.Size(174, 24)
+        Me.CheckBox75.Size = New System.Drawing.Size(118, 17)
         Me.CheckBox75.TabIndex = 115
         Me.CheckBox75.Text = "&Correct aspect ratio"
         Me.ToolTip1.SetToolTip(Me.CheckBox75, "Correct aspect ratio")
@@ -5656,11 +5193,10 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown19.DecimalPlaces = 2
         Me.NumericUpDown19.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown19.Location = New System.Drawing.Point(282, 218)
-        Me.NumericUpDown19.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown19.Location = New System.Drawing.Point(188, 142)
         Me.NumericUpDown19.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown19.Name = "NumericUpDown19"
-        Me.NumericUpDown19.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown19.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown19.TabIndex = 111
         Me.ToolTip1.SetToolTip(Me.NumericUpDown19, "Emulated mouse sensitivity.")
         Me.NumericUpDown19.Value = New Decimal(New Integer() {125, 0, 0, 131072})
@@ -5668,10 +5204,9 @@ Partial Class MgrSetting
         'Label116
         '
         Me.Label116.AutoSize = True
-        Me.Label116.Location = New System.Drawing.Point(4, 222)
-        Me.Label116.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label116.Location = New System.Drawing.Point(3, 144)
         Me.Label116.Name = "Label116"
-        Me.Label116.Size = New System.Drawing.Size(131, 20)
+        Me.Label116.Size = New System.Drawing.Size(89, 13)
         Me.Label116.TabIndex = 110
         Me.Label116.Text = "Mouse Sensitivity"
         '
@@ -5680,10 +5215,9 @@ Partial Class MgrSetting
         Me.CheckBox69.AutoSize = True
         Me.CheckBox69.Checked = True
         Me.CheckBox69.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox69.Location = New System.Drawing.Point(282, 46)
-        Me.CheckBox69.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox69.Location = New System.Drawing.Point(188, 30)
         Me.CheckBox69.Name = "CheckBox69"
-        Me.CheckBox69.Size = New System.Drawing.Size(158, 24)
+        Me.CheckBox69.Size = New System.Drawing.Size(107, 17)
         Me.CheckBox69.TabIndex = 109
         Me.CheckBox69.Text = "&Ignore Other Port"
         Me.ToolTip1.SetToolTip(Me.CheckBox69, "Disable automatic setting of 12 controller to same device on port 1")
@@ -5691,10 +5225,9 @@ Partial Class MgrSetting
         '
         'TrackBar16
         '
-        Me.TrackBar16.Location = New System.Drawing.Point(282, 258)
-        Me.TrackBar16.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TrackBar16.Location = New System.Drawing.Point(188, 168)
         Me.TrackBar16.Name = "TrackBar16"
-        Me.TrackBar16.Size = New System.Drawing.Size(160, 69)
+        Me.TrackBar16.Size = New System.Drawing.Size(107, 45)
         Me.TrackBar16.TabIndex = 108
         Me.ToolTip1.SetToolTip(Me.TrackBar16, resources.GetString("TrackBar16.ToolTip"))
         Me.TrackBar16.Value = 5
@@ -5702,20 +5235,18 @@ Partial Class MgrSetting
         'Label104
         '
         Me.Label104.AutoSize = True
-        Me.Label104.Location = New System.Drawing.Point(4, 258)
-        Me.Label104.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label104.Location = New System.Drawing.Point(3, 168)
         Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(238, 20)
+        Me.Label104.Size = New System.Drawing.Size(158, 13)
         Me.Label104.TabIndex = 107
         Me.Label104.Text = "SCSP Output Resampler Quality"
         '
         'CheckBox65
         '
         Me.CheckBox65.AutoSize = True
-        Me.CheckBox65.Location = New System.Drawing.Point(4, 100)
-        Me.CheckBox65.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox65.Location = New System.Drawing.Point(3, 65)
         Me.CheckBox65.Name = "CheckBox65"
-        Me.CheckBox65.Size = New System.Drawing.Size(205, 24)
+        Me.CheckBox65.Size = New System.Drawing.Size(138, 17)
         Me.CheckBox65.TabIndex = 6
         Me.CheckBox65.Text = "Enable &mid-frame synch"
         Me.ToolTip1.SetToolTip(Me.CheckBox65, "Enable mid-frame synchronization." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mid-frame synchronization can reduce input lat" &
@@ -5726,10 +5257,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox44.FormattingEnabled = True
         Me.ComboBox44.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
-        Me.ComboBox44.Location = New System.Drawing.Point(282, 177)
-        Me.ComboBox44.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox44.Location = New System.Drawing.Point(188, 115)
         Me.ComboBox44.Name = "ComboBox44"
-        Me.ComboBox44.Size = New System.Drawing.Size(158, 28)
+        Me.ComboBox44.Size = New System.Drawing.Size(107, 21)
         Me.ComboBox44.TabIndex = 101
         Me.ComboBox44.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox44, resources.GetString("ComboBox44.ToolTip"))
@@ -5737,10 +5267,9 @@ Partial Class MgrSetting
         'Label105
         '
         Me.Label105.AutoSize = True
-        Me.Label105.Location = New System.Drawing.Point(4, 182)
-        Me.Label105.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label105.Location = New System.Drawing.Point(3, 118)
         Me.Label105.Name = "Label105"
-        Me.Label105.Size = New System.Drawing.Size(167, 20)
+        Me.Label105.Size = New System.Drawing.Size(114, 13)
         Me.Label105.TabIndex = 100
         Me.Label105.Text = "Input Device for Port 2"
         '
@@ -5748,10 +5277,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox45.FormattingEnabled = True
         Me.ComboBox45.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
-        Me.ComboBox45.Location = New System.Drawing.Point(282, 135)
-        Me.ComboBox45.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox45.Location = New System.Drawing.Point(188, 88)
         Me.ComboBox45.Name = "ComboBox45"
-        Me.ComboBox45.Size = New System.Drawing.Size(158, 28)
+        Me.ComboBox45.Size = New System.Drawing.Size(107, 21)
         Me.ComboBox45.TabIndex = 99
         Me.ComboBox45.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox45, resources.GetString("ComboBox45.ToolTip"))
@@ -5759,10 +5287,9 @@ Partial Class MgrSetting
         'Label106
         '
         Me.Label106.AutoSize = True
-        Me.Label106.Location = New System.Drawing.Point(4, 140)
-        Me.Label106.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label106.Location = New System.Drawing.Point(3, 91)
         Me.Label106.Name = "Label106"
-        Me.Label106.Size = New System.Drawing.Size(167, 20)
+        Me.Label106.Size = New System.Drawing.Size(114, 13)
         Me.Label106.TabIndex = 98
         Me.Label106.Text = "Input Device for Port 1"
         '
@@ -5780,11 +5307,10 @@ Partial Class MgrSetting
         Me.TabPage26.Controls.Add(Me.ComboBox46)
         Me.TabPage26.Controls.Add(Me.Label109)
         Me.TabPage26.Controls.Add(Me.ComboBox47)
-        Me.TabPage26.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage26.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TabPage26.Location = New System.Drawing.Point(4, 22)
         Me.TabPage26.Name = "TabPage26"
-        Me.TabPage26.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TabPage26.Size = New System.Drawing.Size(469, 444)
+        Me.TabPage26.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage26.Size = New System.Drawing.Size(310, 284)
         Me.TabPage26.TabIndex = 25
         Me.TabPage26.Text = "Super Nintendo Faust"
         Me.TabPage26.UseVisualStyleBackColor = True
@@ -5793,10 +5319,9 @@ Partial Class MgrSetting
         '
         Me.CheckBox102.AutoSize = True
         Me.CheckBox102.Enabled = False
-        Me.CheckBox102.Location = New System.Drawing.Point(14, 100)
-        Me.CheckBox102.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox102.Location = New System.Drawing.Point(9, 65)
         Me.CheckBox102.Name = "CheckBox102"
-        Me.CheckBox102.Size = New System.Drawing.Size(183, 24)
+        Me.CheckBox102.Size = New System.Drawing.Size(124, 17)
         Me.CheckBox102.TabIndex = 93
         Me.CheckBox102.Text = "Correct &Aspect Ratio"
         Me.ToolTip1.SetToolTip(Me.CheckBox102, "Correct the aspect ratio." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note that regardless of this setting's value, ""512"" " &
@@ -5808,10 +5333,9 @@ Partial Class MgrSetting
         Me.CheckBox97.AutoSize = True
         Me.CheckBox97.Checked = True
         Me.CheckBox97.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox97.Location = New System.Drawing.Point(279, 152)
-        Me.CheckBox97.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox97.Location = New System.Drawing.Point(186, 99)
         Me.CheckBox97.Name = "CheckBox97"
-        Me.CheckBox97.Size = New System.Drawing.Size(158, 24)
+        Me.CheckBox97.Size = New System.Drawing.Size(107, 17)
         Me.CheckBox97.TabIndex = 92
         Me.CheckBox97.Text = "Ignore Other Port"
         Me.ToolTip1.SetToolTip(Me.CheckBox97, "Disable automatic setting of 8 controller to same device on port 1")
@@ -5821,10 +5345,9 @@ Partial Class MgrSetting
         'CheckBox98
         '
         Me.CheckBox98.AutoSize = True
-        Me.CheckBox98.Location = New System.Drawing.Point(14, 171)
-        Me.CheckBox98.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox98.Location = New System.Drawing.Point(9, 111)
         Me.CheckBox98.Name = "CheckBox98"
-        Me.CheckBox98.Size = New System.Drawing.Size(216, 24)
+        Me.CheckBox98.Size = New System.Drawing.Size(147, 17)
         Me.CheckBox98.TabIndex = 91
         Me.CheckBox98.Text = "Enable Multi&tap On Port 2"
         Me.ToolTip1.SetToolTip(Me.CheckBox98, "Emulate memcard on port 2/2A.")
@@ -5834,10 +5357,9 @@ Partial Class MgrSetting
         'CheckBox99
         '
         Me.CheckBox99.AutoSize = True
-        Me.CheckBox99.Location = New System.Drawing.Point(14, 135)
-        Me.CheckBox99.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox99.Location = New System.Drawing.Point(9, 88)
         Me.CheckBox99.Name = "CheckBox99"
-        Me.CheckBox99.Size = New System.Drawing.Size(216, 24)
+        Me.CheckBox99.Size = New System.Drawing.Size(147, 17)
         Me.CheckBox99.TabIndex = 90
         Me.CheckBox99.Text = "Enable Multi&tap On Port 1"
         Me.ToolTip1.SetToolTip(Me.CheckBox99, "Emulate memcard on port 1/1A.")
@@ -5847,10 +5369,9 @@ Partial Class MgrSetting
         'CheckBox64
         '
         Me.CheckBox64.AutoSize = True
-        Me.CheckBox64.Location = New System.Drawing.Point(14, 65)
-        Me.CheckBox64.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox64.Location = New System.Drawing.Point(9, 42)
         Me.CheckBox64.Name = "CheckBox64"
-        Me.CheckBox64.Size = New System.Drawing.Size(388, 24)
+        Me.CheckBox64.Size = New System.Drawing.Size(263, 17)
         Me.CheckBox64.TabIndex = 58
         Me.CheckBox64.Text = "Enable speculative execution for &sound output too"
         Me.ToolTip1.SetToolTip(Me.CheckBox64, "Only has an effect when speculative-execution for video output is enabled.  " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Wil" &
@@ -5860,10 +5381,9 @@ Partial Class MgrSetting
         'CheckBox63
         '
         Me.CheckBox63.AutoSize = True
-        Me.CheckBox63.Location = New System.Drawing.Point(14, 29)
-        Me.CheckBox63.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox63.Location = New System.Drawing.Point(9, 19)
         Me.CheckBox63.Name = "CheckBox63"
-        Me.CheckBox63.Size = New System.Drawing.Size(413, 24)
+        Me.CheckBox63.Size = New System.Drawing.Size(280, 17)
         Me.CheckBox63.TabIndex = 57
         Me.CheckBox63.Text = "Enable 1-frame speculative execution for &video output"
         Me.ToolTip1.SetToolTip(Me.CheckBox63, resources.GetString("CheckBox63.ToolTip"))
@@ -5871,11 +5391,10 @@ Partial Class MgrSetting
         '
         'NumericUpDown18
         '
-        Me.NumericUpDown18.Location = New System.Drawing.Point(238, 298)
-        Me.NumericUpDown18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.NumericUpDown18.Location = New System.Drawing.Point(159, 194)
         Me.NumericUpDown18.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.NumericUpDown18.Name = "NumericUpDown18"
-        Me.NumericUpDown18.Size = New System.Drawing.Size(102, 26)
+        Me.NumericUpDown18.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown18.TabIndex = 56
         Me.ToolTip1.SetToolTip(Me.NumericUpDown18, resources.GetString("NumericUpDown18.ToolTip"))
         Me.NumericUpDown18.Value = New Decimal(New Integer() {5, 0, 0, 0})
@@ -5883,20 +5402,18 @@ Partial Class MgrSetting
         'Label107
         '
         Me.Label107.AutoSize = True
-        Me.Label107.Location = New System.Drawing.Point(9, 302)
-        Me.Label107.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label107.Location = New System.Drawing.Point(6, 196)
         Me.Label107.Name = "Label107"
-        Me.Label107.Size = New System.Drawing.Size(105, 20)
+        Me.Label107.Size = New System.Drawing.Size(71, 13)
         Me.Label107.TabIndex = 55
         Me.Label107.Text = "Sound quality"
         '
         'Label108
         '
         Me.Label108.AutoSize = True
-        Me.Label108.Location = New System.Drawing.Point(9, 257)
-        Me.Label108.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label108.Location = New System.Drawing.Point(6, 167)
         Me.Label108.Name = "Label108"
-        Me.Label108.Size = New System.Drawing.Size(167, 20)
+        Me.Label108.Size = New System.Drawing.Size(114, 13)
         Me.Label108.TabIndex = 54
         Me.Label108.Text = "Input Device for Port 2"
         '
@@ -5904,10 +5421,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox46.FormattingEnabled = True
         Me.ComboBox46.Items.AddRange(New Object() {"none", "gamepad"})
-        Me.ComboBox46.Location = New System.Drawing.Point(238, 211)
-        Me.ComboBox46.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox46.Location = New System.Drawing.Point(159, 137)
         Me.ComboBox46.Name = "ComboBox46"
-        Me.ComboBox46.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox46.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox46.TabIndex = 53
         Me.ComboBox46.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox46, "Input device for Port 1/1A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad")
@@ -5915,10 +5431,9 @@ Partial Class MgrSetting
         'Label109
         '
         Me.Label109.AutoSize = True
-        Me.Label109.Location = New System.Drawing.Point(9, 215)
-        Me.Label109.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label109.Location = New System.Drawing.Point(6, 140)
         Me.Label109.Name = "Label109"
-        Me.Label109.Size = New System.Drawing.Size(167, 20)
+        Me.Label109.Size = New System.Drawing.Size(114, 13)
         Me.Label109.TabIndex = 52
         Me.Label109.Text = "Input Device for Port 1"
         '
@@ -5926,21 +5441,60 @@ Partial Class MgrSetting
         '
         Me.ComboBox47.FormattingEnabled = True
         Me.ComboBox47.Items.AddRange(New Object() {"none", "gamepad"})
-        Me.ComboBox47.Location = New System.Drawing.Point(238, 257)
-        Me.ComboBox47.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox47.Location = New System.Drawing.Point(159, 167)
         Me.ComboBox47.Name = "ComboBox47"
-        Me.ComboBox47.Size = New System.Drawing.Size(206, 28)
+        Me.ComboBox47.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox47.TabIndex = 51
         Me.ComboBox47.Text = "gamepad"
         Me.ToolTip1.SetToolTip(Me.ComboBox47, "Input device for Port 2/2A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad")
         '
+        'TabPage29
+        '
+        Me.TabPage29.Controls.Add(Me.GroupBox25)
+        Me.TabPage29.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage29.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage29.Name = "TabPage29"
+        Me.TabPage29.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage29.TabIndex = 28
+        Me.TabPage29.Text = "Apple II/II+"
+        Me.TabPage29.UseVisualStyleBackColor = True
+        '
+        'GroupBox25
+        '
+        Me.GroupBox25.Controls.Add(Me.Label144)
+        Me.GroupBox25.Controls.Add(Me.ComboBox58)
+        Me.GroupBox25.Location = New System.Drawing.Point(4, 5)
+        Me.GroupBox25.Name = "GroupBox25"
+        Me.GroupBox25.Size = New System.Drawing.Size(304, 278)
+        Me.GroupBox25.TabIndex = 4
+        Me.GroupBox25.TabStop = False
+        '
+        'Label144
+        '
+        Me.Label144.AutoSize = True
+        Me.Label144.Location = New System.Drawing.Point(12, 22)
+        Me.Label144.Name = "Label144"
+        Me.Label144.Size = New System.Drawing.Size(96, 13)
+        Me.Label144.TabIndex = 14
+        Me.Label144.Text = "Emulated GB Type"
+        '
+        'ComboBox58
+        '
+        Me.ComboBox58.FormattingEnabled = True
+        Me.ComboBox58.Items.AddRange(New Object() {"auto", "dmg", "cgb", "agb"})
+        Me.ComboBox58.Location = New System.Drawing.Point(142, 19)
+        Me.ComboBox58.Name = "ComboBox58"
+        Me.ComboBox58.Size = New System.Drawing.Size(156, 21)
+        Me.ComboBox58.TabIndex = 13
+        Me.ComboBox58.Text = "auto"
+        Me.ToolTip1.SetToolTip(Me.ComboBox58, resources.GetString("ComboBox58.ToolTip"))
+        '
         'Button5
         '
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button5.Location = New System.Drawing.Point(460, 498)
-        Me.Button5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button5.Location = New System.Drawing.Point(307, 324)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(34, 35)
+        Me.Button5.Size = New System.Drawing.Size(23, 23)
         Me.Button5.TabIndex = 3
         Me.ToolTip1.SetToolTip(Me.Button5, "Save per Console Setting")
         Me.Button5.UseVisualStyleBackColor = True
@@ -5948,10 +5502,9 @@ Partial Class MgrSetting
         'Button14
         '
         Me.Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button14.Location = New System.Drawing.Point(18, 498)
-        Me.Button14.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button14.Location = New System.Drawing.Point(12, 324)
         Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(34, 35)
+        Me.Button14.Size = New System.Drawing.Size(23, 23)
         Me.Button14.TabIndex = 4
         Me.ToolTip1.SetToolTip(Me.Button14, "Open Mednafen Help")
         Me.Button14.UseVisualStyleBackColor = True
@@ -5970,10 +5523,9 @@ Partial Class MgrSetting
         'Button18
         '
         Me.Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button18.Location = New System.Drawing.Point(417, 498)
-        Me.Button18.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button18.Location = New System.Drawing.Point(278, 324)
         Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(34, 35)
+        Me.Button18.Size = New System.Drawing.Size(23, 23)
         Me.Button18.TabIndex = 7
         Me.ToolTip1.SetToolTip(Me.Button18, "Manage Per-Configuration")
         Me.Button18.UseVisualStyleBackColor = True
@@ -5981,11 +5533,10 @@ Partial Class MgrSetting
         'CheckBox6
         '
         Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(240, 505)
-        Me.CheckBox6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox6.Location = New System.Drawing.Point(160, 328)
         Me.CheckBox6.Name = "CheckBox6"
         Me.CheckBox6.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.CheckBox6.Size = New System.Drawing.Size(166, 24)
+        Me.CheckBox6.Size = New System.Drawing.Size(112, 17)
         Me.CheckBox6.TabIndex = 5
         Me.CheckBox6.Text = "Per &System Config"
         Me.CheckBox6.UseVisualStyleBackColor = True
@@ -5993,64 +5544,41 @@ Partial Class MgrSetting
         'CheckBox59
         '
         Me.CheckBox59.AutoSize = True
-        Me.CheckBox59.Location = New System.Drawing.Point(62, 505)
-        Me.CheckBox59.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CheckBox59.Location = New System.Drawing.Point(41, 328)
         Me.CheckBox59.Name = "CheckBox59"
         Me.CheckBox59.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.CheckBox59.Size = New System.Drawing.Size(157, 24)
+        Me.CheckBox59.Size = New System.Drawing.Size(106, 17)
         Me.CheckBox59.TabIndex = 6
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'TabPage29
+        'CheckBox105
         '
-        Me.TabPage29.Controls.Add(Me.GroupBox25)
-        Me.TabPage29.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage29.Name = "TabPage29"
-        Me.TabPage29.Size = New System.Drawing.Size(469, 444)
-        Me.TabPage29.TabIndex = 28
-        Me.TabPage29.Text = "Apple II/II+"
-        Me.TabPage29.UseVisualStyleBackColor = True
+        Me.CheckBox105.AutoSize = True
+        Me.CheckBox105.Location = New System.Drawing.Point(6, 112)
+        Me.CheckBox105.Name = "CheckBox105"
+        Me.CheckBox105.Size = New System.Drawing.Size(206, 17)
+        Me.CheckBox105.TabIndex = 19
+        Me.CheckBox105.Text = "Fast-forwarding As Toggle  |     Speed:"
+        Me.ToolTip1.SetToolTip(Me.CheckBox105, "Treat the fast-forward button as a toggle.")
+        Me.CheckBox105.UseVisualStyleBackColor = True
         '
-        'GroupBox25
+        'CheckBox106
         '
-        Me.GroupBox25.Controls.Add(Me.Label144)
-        Me.GroupBox25.Controls.Add(Me.ComboBox58)
-        Me.GroupBox25.Location = New System.Drawing.Point(6, 8)
-        Me.GroupBox25.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox25.Name = "GroupBox25"
-        Me.GroupBox25.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox25.Size = New System.Drawing.Size(456, 428)
-        Me.GroupBox25.TabIndex = 4
-        Me.GroupBox25.TabStop = False
-        '
-        'ComboBox58
-        '
-        Me.ComboBox58.FormattingEnabled = True
-        Me.ComboBox58.Items.AddRange(New Object() {"auto", "dmg", "cgb", "agb"})
-        Me.ComboBox58.Location = New System.Drawing.Point(213, 29)
-        Me.ComboBox58.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.ComboBox58.Name = "ComboBox58"
-        Me.ComboBox58.Size = New System.Drawing.Size(232, 28)
-        Me.ComboBox58.TabIndex = 13
-        Me.ComboBox58.Text = "auto"
-        Me.ToolTip1.SetToolTip(Me.ComboBox58, resources.GetString("ComboBox58.ToolTip"))
-        '
-        'Label144
-        '
-        Me.Label144.AutoSize = True
-        Me.Label144.Location = New System.Drawing.Point(18, 34)
-        Me.Label144.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label144.Name = "Label144"
-        Me.Label144.Size = New System.Drawing.Size(143, 20)
-        Me.Label144.TabIndex = 14
-        Me.Label144.Text = "Emulated GB Type"
+        Me.CheckBox106.AutoSize = True
+        Me.CheckBox106.Location = New System.Drawing.Point(6, 138)
+        Me.CheckBox106.Name = "CheckBox106"
+        Me.CheckBox106.Size = New System.Drawing.Size(206, 17)
+        Me.CheckBox106.TabIndex = 20
+        Me.CheckBox106.Text = "Slow-forwarding As Toggle |     Speed:"
+        Me.ToolTip1.SetToolTip(Me.CheckBox106, "Treat the SLOW-forward button as a toggle.")
+        Me.CheckBox106.UseVisualStyleBackColor = True
         '
         'MgrSetting
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(513, 542)
+        Me.ClientSize = New System.Drawing.Size(342, 352)
         Me.Controls.Add(Me.Button18)
         Me.Controls.Add(Me.CheckBox59)
         Me.Controls.Add(Me.CheckBox6)
@@ -6058,7 +5586,6 @@ Partial Class MgrSetting
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "MgrSetting"
@@ -6235,10 +5762,8 @@ Partial Class MgrSetting
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents CheckBox11 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox10 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents CheckBox12 As System.Windows.Forms.CheckBox
     Friend WithEvents TrackBar6 As System.Windows.Forms.TrackBar
     Friend WithEvents Label12 As System.Windows.Forms.Label
@@ -6657,4 +6182,6 @@ Partial Class MgrSetting
     Friend WithEvents GroupBox25 As GroupBox
     Friend WithEvents Label144 As Label
     Friend WithEvents ComboBox58 As ComboBox
+    Friend WithEvents CheckBox106 As CheckBox
+    Friend WithEvents CheckBox105 As CheckBox
 End Class

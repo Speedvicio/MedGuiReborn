@@ -122,15 +122,20 @@ Public Class MedGuiR
                         RemoveFromFavoritesToolStripMenuItem.Enabled = False
                     End If
 
-                    If File.Exists(percorso & ".ips") Then
-                        RIPSToolStripMenuItem.Enabled = True
+                    If percorso.Trim <> "" Then
+                        If File.Exists(percorso & ".ips") Then
+                            RIPSToolStripMenuItem.Enabled = True
+                        Else
+                            RIPSToolStripMenuItem.Enabled = False
+                        End If
+
+                        If File.Exists(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi") Then
+                            RSBIToolStripMenuItem.Enabled = True
+                        Else
+                            RSBIToolStripMenuItem.Enabled = False
+                        End If
                     Else
                         RIPSToolStripMenuItem.Enabled = False
-                    End If
-
-                    If File.Exists(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi") Then
-                        RSBIToolStripMenuItem.Enabled = True
-                    Else
                         RSBIToolStripMenuItem.Enabled = False
                     End If
 
@@ -145,7 +150,7 @@ Public Class MedGuiR
             End If
         Catch
             MsgBox("A strange error occurred!" &
-                       vbCrLf & "Please select a game to open specific setting", MsgBoxStyle.Exclamation)
+        vbCrLf & "Please select a game to open specific setting", MsgBoxStyle.Exclamation)
         End Try
 
     End Sub

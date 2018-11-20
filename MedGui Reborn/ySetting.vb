@@ -45,8 +45,8 @@
         'Variuos
         various = " -autosave " & MgrSetting.CheckBox9.CheckState & " -cd.image_memcache " & MgrSetting.CheckBox10.CheckState & " -cheats " & MgrSetting.CheckBox11.CheckState & " -srwautoenable " & MgrSetting.CheckBox60.CheckState &
         " -ffspeed " & Replace(MgrSetting.NumericUpDown1.Value, ",", ".") & " -sfspeed " & Replace(MgrSetting.NumericUpDown2.Value, ",", ".") &
-        " -input.autofirefreq " & MgrSetting.TrackBar6.Value & " -input.joystick.axis_threshold " & MgrSetting.TrackBar7.Value & " -filesys.untrusted_fip_check " & MgrSetting.CheckBox72.CheckState
-        '& " -filesys.disablesavegz " & Setting.CheckBox12.CheckState
+        " -input.autofirefreq " & MgrSetting.TrackBar6.Value & " -input.joystick.axis_threshold " & MgrSetting.TrackBar7.Value & " -filesys.untrusted_fip_check " & MgrSetting.CheckBox72.CheckState &
+        " -fftoggle " & MgrSetting.CheckBox105.CheckState & " -sftoggle " & MgrSetting.CheckBox106.CheckState '& " -filesys.disablesavegz " & Setting.CheckBox12.CheckState
 
         'Bios
         Dim biospce As String

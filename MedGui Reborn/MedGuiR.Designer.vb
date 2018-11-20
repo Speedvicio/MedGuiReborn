@@ -3262,7 +3262,7 @@ Partial Class MedGuiR
         '
         Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem1, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.ResetToolStripMenuItem1, Me.ToolStripSeparator12, Me.mMetroMed})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(205, 332)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(205, 354)
         '
         'StartGameToolStripMenuItem
         '
@@ -3359,6 +3359,7 @@ Partial Class MedGuiR
         '
         'RIPSToolStripMenuItem
         '
+        Me.RIPSToolStripMenuItem.Enabled = False
         Me.RIPSToolStripMenuItem.Name = "RIPSToolStripMenuItem"
         Me.RIPSToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.RIPSToolStripMenuItem.Text = "Remove IP&S Patch"
@@ -3366,6 +3367,7 @@ Partial Class MedGuiR
         '
         'RSBIToolStripMenuItem
         '
+        Me.RSBIToolStripMenuItem.Enabled = False
         Me.RSBIToolStripMenuItem.Name = "RSBIToolStripMenuItem"
         Me.RSBIToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
         Me.RSBIToolStripMenuItem.Text = "Remove S&BI Patch"
