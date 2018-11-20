@@ -2,16 +2,17 @@ This is a quick command "How-To" for MedGui Reborn
 
 <Main command>:
 - Select the Mednafen "folder" at startup (not the exe).
+	*If the user press "Cancel", MedGuiR will propose to download the latest available version of Mednafen and for the right architecture.
 - You can choose a single file ("ROM" icon) in compressed .zip, .rar, .7z, format or uncompressed format. 
 	By clicking on the "folder" icon you can choose an entire folder with ROMs inside it, in .zip format or uncompressed format.
 	If you click with the right mouse button on "folder" icon you can scan and save selected folder on a custom path visible on <Rom Path 2> tab.
 	*MedGuiR will always recognize the selected file type by itself.
 - You can choose an image CD file in .bin/cue, .toc/.bin, .ccd/.img/.sub and .iso or.ecm file format, or a multiple image file (multi CD) in .m3u format.
-	*In this case you must select the console type from PSX, PCE-CD, PC-FX and Saturn. 
+	*If the image CD file will be not recognized or you have unselected "CD Auto" option into "General" tab,  you must select the console type from PSX, PCE-CD, PC-FX, Saturn and CD Audio. 
 	** For .iso and .ecm file MedGui Reborn will convert and create a generic .cue file to try to load this format not supported by Mednafen.
 - After selecting a single file or an entire folder, the respective ROM will appear into the main grid with detailed informations. 
 	To run a game without setting the advanced options, just double left-click (or press the enter key) on a ROM reported on the list.
-- To open per console advanced options, right-click (or press the shift key) on a ROM reported on the grid (remember to click on the "save button" icon to save your settings).
+- To open per console advanced options, double mouse right-click (or press the shift key) on a ROM reported on the grid (remember to click on the "save button" icon to save your settings).
 - "Two Arrows" icon will download and update Roms DATs.
 - "Clock" icon will load recent rom played by user (right mouse button on icon to clear all entries).
 - The "F" key on the keyboard will add the selected ROM from the main grid to your favourite ROM section (star button - right mouse button on icon to clear all entries).
@@ -19,6 +20,20 @@ This is a quick command "How-To" for MedGui Reborn
 - You can auto-connect ("World" icon) at emulation start to a server previously specified in Advanced> Net-Play> Net-Play Host.
 - You can start a Net-Play server by clicking the button with two monitors and a LAN icon (for more infos, please read the Mednafen FAQ).
 - "Baloon" icon will open a small IRC client called "Ultra Crappy IRC", you can add your favourite channel and chat with your nerd friends (UCI not allow query message)
+- "Note" icon will open "ModLand Scraper", you can download a lot of music module console file and play it by Mednafen itself.
+	Gameboy file (.gbs) and Megadrive/Genesis file (.vgz/.vgm) will be converted on the file into .bin format to permit Mednafen to play it.
+
+<Advanced Menu>
+By performing double right mouse click into a rom name on the grid, you will open the Advanced MedGuiR Menu.
+By this menu you can perform all the most common operations, such as 
+- Starting an offline game 
+- Starting an online session,
+- Adding/Removing patches to game
+- Opening MedPad to configure a joypad/keyboard/mouse
+- Resetting all settings of mednafen and medguir, 
+- Creating a shortcut on desktop of the most used games 
+- Add/Remove a game from the favorites list
+- Start the MetroMed simplified interface
 
 <Tabs>
 <General Info>:
@@ -28,6 +43,7 @@ This is a quick command "How-To" for MedGui Reborn
 - By clicking on the various vertical buttons, you will be redirected to some site that contains more informations about the game, or that opens a link of a video posted on YouTube.
 - The viewfinder icon will show the selected file in Windows Explorer.
 - The "S" icon wll open a new windows with many informations getted from "TheGamesDatabase" server, front and rear boxart will be downloaded and used in boxart section.
+- Refresh icon open TGDB setting to swap from old and new API, you can also update any DB info from TGDB.
 
 <General>
 - In this section you can see the current MedGui Reborn and Mednafen versions installed on your system.
@@ -37,16 +53,18 @@ This is a quick command "How-To" for MedGui Reborn
 - "Custom Dat Maker (icon)": is a small utility that will create a custom database of your ROM set. To use it you will need to extrat your ROM set (if compressed) in a folder, and point to this 
 	(the combo box automatically filters games and creates the appropriate files depending on the chosen system).
 - "Backup/Restore Config": will perform a backup or restore of the Mednafen configuration file within an internal MedGuiR folder. 
-- "Recursive Scan": Checking this option MedGui Reborn will scan folder in recursive mode, anyway the scan will not consider .cue/.toc/.ccd and .m3u file.
-* "Remember that the recursive scanning is sperimental and can report errors. 
 - "Force" - "Update Arrow (icon): by clicking on this icon MedGuiR will look for any available frontend updates on the server. 
-	They will be offered to the user to be downloaded and set up, when 	availables. The "Force" option ignores version control and performs the update anyway; it can be useful when you want to test intermediate versions of MedGuiR that I upload on the server.
+They will be offered to the user to be downloaded and set up, when availables. The "Force" option ignores version 		control and performs the update anyway; it can be useful when you want to test intermediate versions of MedGuiR that I 		upload on the server.
+- Bottom "Update Arrow (icon): Preform a check to new Mednafen official release.
+- "Internal": Will force MedGuiR to use internal browser (based on old IE version) to perform rom search and to visualize stdout message.
 - "Grid Columns": this section offers to the user the possibility to apply various filters to the grid containing the list of games.
-	As well as hiding some items and resizing the grid, you can also sort games by various criteria.
+As well as hiding some items and resizing the grid, you can also sort games by various criteria.
 
 <Rom Path 1/2>
 - In this section you can set the folder paths containing your games, sorted by console. 
 	This option is useful to quickly open the folder path when you select a single game and to perform a pre-scan of games contained within a folder.
+- "Recursive Scan": Checking this option MedGui Reborn will scan folder in recursive mode, anyway the scan will not consider .cue/.toc/.ccd and .m3u file.
+* "Remember that the recursive scanning is sperimental and can report errors. 
 
 <Audio Utility>
 - This is a small utility to manage audio files of PC-Engine CD games (cue-sheet version).
@@ -68,15 +86,17 @@ This is a quick command "How-To" for MedGui Reborn
 - GB/GBA Utility: some Game Boy Advance games require the correct save type to be specified in a plain text file, without it these games will not work. 
 	Such examples are "Super Mario Advance 4" and "Super Mario Bros. 3", which use a 128 flash file type. This utility will create these files according to user requests.
 
+<NetPlay>
+- Refer to the HTML document for further details ("life buoy icon")
+
 <Snaps Manager>
 - In this section you can manage the snpas made by Mednafen. 
 	T = Titled Snaps (Main screen of the game)
 	S = Snap (In game Snap)
 	You can load Snaps from "Mednafen Snaps folder" or by your custom folder, and rename the image in the same NoIntro standard Rom name from "Grid Rom List" or with respective Rom CRC (MedGuiR support this format).
-	All renamed CRC snaps will be placed correctly in the MedGuiR Snaps folder, if you select NoIntro name, snaps will be placed on the same folder of original not renamed snap.
+	All renamed CRC snaps will be placed correctly in the MedGuiR Snaps folder, if you select NoIntro name, snaps will be placed on the same folder of original not renamed snap.	
 
-MedGui Reborn does not have a section given to gamepad settings. 
-If you want to assign your controller buttons, just use the keyboard setup inside the emulator: ALT + SHIFT + (n).
+If you want to assign your controller buttons by Mednafen itself, just use the keyboard setup inside the emulator: ALT + SHIFT + (n).
 For a quick overview of the options that can be set by Mednafen, press the F1 key at emulation start..
 	
 Please report any bugs at:
