@@ -1,4 +1,5 @@
 MedGui Reborn Stable v0.100
+- Changed again main MedGuiR updater server and code to manage it
 - Fixed wrong "offline" session on MedClient
 - Fixed a generic untraceable exception on UCI client
 - Fixed exception on sbi/ips Advanced patch menu

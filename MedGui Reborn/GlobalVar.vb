@@ -49,15 +49,31 @@ Module GlobalVar
     Public Sub Test_Server()
         Try
             If My.Computer.Network.IsAvailable = True Then
-                If My.Computer.Network.Ping("speedvicio.esy.es") = True Then
-                    UpdateServer = "http://speedvicio.esy.es"
+
+                Dim webexist As Boolean = False
+
+                Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("https://medguireborn.000webhostapp.com"), Net.HttpWebRequest)
+                request.Method = "HEAD"
+                Using response As Net.HttpWebResponse = DirectCast(request.GetResponse(), Net.HttpWebResponse)
+                    webexist = Not (response Is Nothing OrElse response.StatusCode <> Net.HttpStatusCode.OK)
+                End Using
+
+                If webexist = True Then
+                    UpdateServer = "https://medguireborn.000webhostapp.com"
                 Else
                     UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
                 End If
+
+                'If My.Computer.Network.Ping("medguireborn.000webhostapp.com") = True Then
+                'UpdateServer = "https://medguireborn.000webhostapp.com"
+                'Else
+                'UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
+                'End If
             End If
         Catch ex As Exception
             MsgBox(ex)
         End Try
+
     End Sub
 
     Public Sub set_special_module()
