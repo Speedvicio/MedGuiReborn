@@ -1,18 +1,45 @@
-MedGui Reborn "Pre" v0.099
+MedGui Reborn Stable v0.100
+- Fixed wrong "offline" session on MedClient
+- Fixed a generic untraceable exception on UCI client
+- Fixed exception on sbi/ips Advanced patch menu
+- Added missing toggle option on fast/slow forward (Advanced Mednafen Setting)
+- Update HOW-TO r1.txt file
+- Improved TGDB Scrape function
+- Improved recognition of covers on multivolume CDs images
+- Added a "Waiting" popup during TGDB download
+- Prevent a possibile exception if a file will be not downloaded on TGDB section
+- Fixed wrong (serial) sbi patch download for PSX game
+- Added import/remove SBI patch option on Advanced menu
+- Added the support for the new TGDB API (select it by the small refresh icon, near
+Scraper button and update all reported categories, this task must be only one time)
+- Added TGDB Game Selector for multiple scrape occurrence
+- Fixed missing NoPr.png exception
+- Fixed a exception on MedGuiR Advanced menu
+- Fixed exception Date time format with TGDB API
+- Added refresh of text onto infobox message
+
+Metromed Beta v09
+- Added support for prescanned Saturn and PSX games
+- Added support for TGDB new API
+
+MedGui Reborn Stable v0.099
 - Fixed inverted xscalefs, yscalefs values on reading mednafen config file.
 - Added autodownload for any missing dll
 - First attemp for m3u autodetection
 - Fixed Main form layout
 - Fixed wrong icon assignment on Super Nintendo - Music Module file (.rsn) on prescan
 - Fixed wrong cd detection in any Saturn games
-- Changed main MedGuiR logo
+- Changed main MedGuiR logo (thx to beatkitchen for joystick logo)
 - Significantly reduced the size of the executable
 - Added new Antarctica mirror on Modland Scraper
 - Now Modland Scraper should be download module driver also when there is incongruence from file recognized on Modland mirror and the file specified on main music module
 - Changed VuMeter colors on About Screen
 - Added missing SIPS psx regional code into psx cd detection
-- Added "Fix Video Pal" option, a internal way to fix PAL game reducing orizontal black border.
-It will create a specific "Per Game Config"
+- Added "Fix Video Pal" option, a internal way to fix PAL game reducing orizontal black border.(It will create a specific "Per Game Config")
+- Added tooltip on ModLand Scraper refresh button
+- Changed TGDB platrform_field string
+- Added custom font on About screen
+- Prevent same module song random play from about screen
 
 MedGui Reborn Stable v0.098
 - Fixed bad detection of file extenction (not low case) on compressed file
