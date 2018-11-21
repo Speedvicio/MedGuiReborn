@@ -9,61 +9,68 @@ Public Class UCI
     End Sub
 
     Public Sub btnIRCConnect()
-        If (String.IsNullOrEmpty(cmbServer.Text.Trim())) Then MessageBox.Show("Please specify a server") : Return
-        If (String.IsNullOrEmpty(cmbChannel.Text.Trim())) Then MessageBox.Show("Please specify a channel") : Return
-        If (String.IsNullOrEmpty(txtNick.Text.Trim())) Then MessageBox.Show("Please specify a nick") : Return
+        Try
+            If (String.IsNullOrEmpty(cmbServer.Text.Trim())) Then MessageBox.Show("Please specify a server") : Return
+            If (String.IsNullOrEmpty(cmbChannel.Text.Trim())) Then MessageBox.Show("Please specify a channel") : Return
+            If (String.IsNullOrEmpty(txtNick.Text.Trim())) Then MessageBox.Show("Please specify a nick") : Return
 
-        If cmbChannel.Text.Contains("#") = False Then cmbChannel.Text = "#" & cmbChannel.Text
+            If cmbChannel.Text.Contains("#") = False Then cmbChannel.Text = "#" & cmbChannel.Text
 
-        If btnConnect.Text = "&Connect" Then
-            irc = New IrcClient(cmbServer.Text, CInt(txtPort.Text))
-            irc.Nick = txtNick.Text
-            'btnConnect.Enabled = False
-            'cmbChannel.Enabled = False
-            txtPort.Enabled = False
-            cmbServer.Enabled = False
-            txtNick.Enabled = False
-            rtbOutput.Clear()
-            irc.Connect()
+            If btnConnect.Text = "&Connect" Then
+                irc = New IrcClient(cmbServer.Text, CInt(txtPort.Text))
+                irc.Nick = txtNick.Text
+                'btnConnect.Enabled = False
+                'cmbChannel.Enabled = False
+                txtPort.Enabled = False
+                cmbServer.Enabled = False
+                txtNick.Enabled = False
+                rtbOutput.Clear()
+                irc.Connect()
 
-        ElseIf btnConnect.Text = "&Disconnect" Then
-            'btnConnect.Enabled = True
-            'cmbChannel.Enabled = True
-            txtPort.Enabled = True
-            cmbServer.Enabled = True
-            txtNick.Enabled = True
-            lstUsers.Items.Clear()
-            'txtSend.Enabled = False
-            'btnSend.Enabled = False
-            irc.Disconnect()
-            btnConnect.Text = "&Connect"
-        End If
+            ElseIf btnConnect.Text = "&Disconnect" Then
+                'btnConnect.Enabled = True
+                'cmbChannel.Enabled = True
+                txtPort.Enabled = True
+                cmbServer.Enabled = True
+                txtNick.Enabled = True
+                lstUsers.Items.Clear()
+                'txtSend.Enabled = False
+                'btnSend.Enabled = False
+                irc.Disconnect()
+                btnConnect.Text = "&Connect"
+            End If
+        Catch
+        End Try
     End Sub
 
     Private Sub btnSend_Click(sender As System.Object, e As System.EventArgs) Handles btnSend.Click
         If txtSend.Text.Trim = "" Then Exit Sub
         RawCommand = ""
 
-        If (txtSend.Text.StartsWith("/")) Then
-            cmdCRI()
-            irc.SendRAW(Replace(Trim(RawCommand), "/", ""))
-            If RawCommand.Contains("PRIVMSG ") Then
-                rtbOutput.SelectionColor = Color.Chocolate
-                rtbOutput.AppendText("TO " & Replace(RawCommand, "PRIVMSG ", "") &
+        Try
+            If (txtSend.Text.StartsWith("/")) Then
+                cmdCRI()
+                irc.SendRAW(Replace(Trim(RawCommand), "/", ""))
+                If RawCommand.Contains("PRIVMSG ") Then
+                    rtbOutput.SelectionColor = Color.Chocolate
+                    rtbOutput.AppendText("TO " & Replace(RawCommand, "PRIVMSG ", "") &
                                      vbTab & txtSend.Text & vbCrLf)
-            ElseIf RawCommand.Contains("NOTICE ") Then
-                rtbOutput.SelectionColor = Color.Goldenrod
-                rtbOutput.AppendText(Replace(RawCommand, "NOTICE ", "") &
+                ElseIf RawCommand.Contains("NOTICE ") Then
+                    rtbOutput.SelectionColor = Color.Goldenrod
+                    rtbOutput.AppendText(Replace(RawCommand, "NOTICE ", "") &
                                      vbTab & txtSend.Text & vbCrLf)
+                End If
+                rtbOutput.ScrollToCaret()
+            Else
+                irc.SendMessage(cmbChannel.Text, Trim(txtSend.Text))
+                rtbOutput.AppendText("<" & txtNick.Text & "> " & vbTab & txtSend.Text & vbCrLf)
+                rtbOutput.ScrollToCaret()
+                txtSend.Clear()
             End If
-            rtbOutput.ScrollToCaret()
-        Else
-            irc.SendMessage(cmbChannel.Text, Trim(txtSend.Text))
-            rtbOutput.AppendText("<" & txtNick.Text & "> " & vbTab & txtSend.Text & vbCrLf)
-            rtbOutput.ScrollToCaret()
-            txtSend.Clear()
-        End If
-        txtSend.Focus()
+            txtSend.Focus()
+
+        Catch
+        End Try
 
     End Sub
 
@@ -74,16 +81,22 @@ Public Class UCI
     End Sub
 
     Private Sub irc_PvtMessage(User As String, Message As String) Handles irc.PrivateMessage
-        My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
-        rtbOutput.SelectionColor = Color.Fuchsia
-        rtbOutput.AppendText(User & vbTab + Message & vbNewLine)
-        rtbOutput.ScrollToCaret()
+        Try
+            My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+            rtbOutput.SelectionColor = Color.Fuchsia
+            rtbOutput.AppendText(User & vbTab + Message & vbNewLine)
+            rtbOutput.ScrollToCaret()
+        Catch
+        End Try
     End Sub
 
     Private Sub irc_OvtMessage(Channel As String, User As String, Message As String) Handles irc.ChannelMessage
-        If Message.Contains(txtNick.Text) Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
-        rtbOutput.AppendText(User & vbTab + Message & vbNewLine)
-        rtbOutput.ScrollToCaret()
+        Try
+            If Message.Contains(txtNick.Text) Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+            rtbOutput.AppendText(User & vbTab + Message & vbNewLine)
+            rtbOutput.ScrollToCaret()
+        Catch
+        End Try
     End Sub
 
     Private Sub irc_ExceptionThrown(ex As System.Exception) Handles irc.ExceptionThrown
@@ -95,42 +108,54 @@ Public Class UCI
     End Sub
 
     Private Sub irc_OnConnect() Handles irc.OnConnect
-        rtbOutput.AppendText("Connected!" & vbNewLine)
-        irc.JoinChannel(cmbChannel.Text.Trim())
-        oldch = cmbChannel.Text.Trim()
-        btnSend.Enabled = True
-        btnConnect.Text = "&Disconnect"
+        Try
+            rtbOutput.AppendText("Connected!" & vbNewLine)
+            irc.JoinChannel(cmbChannel.Text.Trim())
+            oldch = cmbChannel.Text.Trim()
+            btnSend.Enabled = True
+            btnConnect.Text = "&Disconnect"
 
-        GlobalVar.UCInick = txtNick.Text
-        GlobalVar.UCIserver = cmbServer.Text
-        GlobalVar.UCIport = txtPort.Text
-        GlobalVar.UCIchannel = cmbChannel.Text
+            GlobalVar.UCInick = txtNick.Text
+            GlobalVar.UCIserver = cmbServer.Text
+            GlobalVar.UCIport = txtPort.Text
+            GlobalVar.UCIchannel = cmbChannel.Text
+        Catch
+        End Try
     End Sub
 
     Private Sub irc_userleft(channel As String, User As String) Handles irc.UserLeft
-        rtbOutput.SelectionColor = Color.Red
-        rtbOutput.AppendText("*** " & User & " has left the chat-room" & vbNewLine)
-        lstUsers.Items.Remove(User)
-        lstUsers.Update()
-        If channel = cmbChannel.Text Then lstUsers.Items.Clear()
-        rtbOutput.ScrollToCaret()
+        Try
+            rtbOutput.SelectionColor = Color.Red
+            rtbOutput.AppendText("*** " & User & " has left the chat-room" & vbNewLine)
+            lstUsers.Items.Remove(User)
+            lstUsers.Update()
+            If channel = cmbChannel.Text Then lstUsers.Items.Clear()
+            rtbOutput.ScrollToCaret()
+        Catch
+        End Try
     End Sub
 
     Private Sub UserNickChangeEventDelegate(oldUser As String, newUser As String) Handles irc.UserNickChange
-        rtbOutput.SelectionColor = Color.Blue
-        'newUser = nuser
-        rtbOutput.AppendText("*** " & oldUser & " is now knows as " & newUser & vbNewLine)
-        lstUsers.Items.Remove(oldUser)
-        If newUser <> "" Then lstUsers.Items.Add(newUser)
-        rtbOutput.ScrollToCaret()
+        Try
+            rtbOutput.SelectionColor = Color.Blue
+            'newUser = nuser
+            rtbOutput.AppendText("*** " & oldUser & " is now knows as " & newUser & vbNewLine)
+            lstUsers.Items.Remove(oldUser)
+            If newUser <> "" Then lstUsers.Items.Add(newUser)
+            rtbOutput.ScrollToCaret()
+        Catch
+        End Try
     End Sub
 
     Private Sub irc_userjoin(channel As String, User As String) Handles irc.UserJoined
-        rtbOutput.SelectionColor = Color.Green
-        rtbOutput.AppendText("*** " & User & " has joined the chat-room" & vbNewLine)
-        lstUsers.Items.Add(User)
-        lstUsers.Update()
-        rtbOutput.ScrollToCaret()
+        Try
+            rtbOutput.SelectionColor = Color.Green
+            rtbOutput.AppendText("*** " & User & " has joined the chat-room" & vbNewLine)
+            lstUsers.Items.Add(User)
+            lstUsers.Update()
+            rtbOutput.ScrollToCaret()
+        Catch
+        End Try
     End Sub
 
     Private Sub irc_sendnotice(Channel As String, Message As String) Handles irc.NoticeMessage
@@ -138,33 +163,42 @@ Public Class UCI
             My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
         End If
 
-        rtbOutput.SelectionColor = Color.Goldenrod
-        rtbOutput.AppendText(Message & vbNewLine)
-        rtbOutput.ScrollToCaret()
+        Try
+            rtbOutput.SelectionColor = Color.Goldenrod
+            rtbOutput.AppendText(Message & vbNewLine)
+            rtbOutput.ScrollToCaret()
+        Catch
+        End Try
     End Sub
 
     Private Sub irc_ServerMessage(message As String) Handles irc.ServerMessage
-        rtbOutput.AppendText(message & vbNewLine)
-        rtbOutput.ScrollToCaret()
+        Try
+            rtbOutput.AppendText(message & vbNewLine)
+            rtbOutput.ScrollToCaret()
+        Catch
+        End Try
     End Sub
 
     Public Sub nickttaken(Nick As String) Handles irc.NickTaken
-        rtbOutput.SelectionColor = Color.Purple
-        rtbOutput.AppendText("*** " & Nick & " already used" & vbNewLine)
-        Dim ChangeNick As String
-        ChangeNick = InputBox(Nick & " already used" & vbCrLf & "Select a new Nick",
+        Try
+            rtbOutput.SelectionColor = Color.Purple
+            rtbOutput.AppendText("*** " & Nick & " already used" & vbNewLine)
+            Dim ChangeNick As String
+            ChangeNick = InputBox(Nick & " already used" & vbCrLf & "Select a new Nick",
                               "Select a new Nick", Nick & "_")
-        txtNick.Text = ChangeNick
+            txtNick.Text = ChangeNick
 
-        If btnConnect.Text = "&Connect" Then
-            txtPort.Enabled = True
-            cmbServer.Enabled = True
-            txtNick.Enabled = True
-            btnConnect.PerformClick()
-        ElseIf btnConnect.Text = "&Disconnect" Then
-            txtSend.Text = "/nick " & ChangeNick
-            btnSend.PerformClick()
-        End If
+            If btnConnect.Text = "&Connect" Then
+                txtPort.Enabled = True
+                cmbServer.Enabled = True
+                txtNick.Enabled = True
+                btnConnect.PerformClick()
+            ElseIf btnConnect.Text = "&Disconnect" Then
+                txtSend.Text = "/nick " & ChangeNick
+                btnSend.PerformClick()
+            End If
+        Catch
+        End Try
     End Sub
 
     Private Sub irc_UpdateUsers(Channel As String, userlist() As String) Handles irc.UpdateUsers
@@ -183,7 +217,11 @@ Public Class UCI
     Private Sub SIrClient_FormClosed(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
         If btnConnect.Text = "&Disconnect" Then irc.Disconnect()
         Dim risp = MsgBox("Do you want to Close UCI?", MsgBoxStyle.Information + MsgBoxStyle.YesNo)
-        If risp = vbNo Then e.Cancel = True
+        If risp = vbNo Then
+            e.Cancel = True
+        Else
+            irc.Disconnect()
+        End If
     End Sub
 
     Private Sub SIrClient_Resize(sender As Object, e As EventArgs) Handles Me.Resize

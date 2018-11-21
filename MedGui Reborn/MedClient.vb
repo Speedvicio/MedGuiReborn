@@ -15,6 +15,7 @@ Public Class MedClient
         Label4.Text = MedGuiR.Label8.Text & " " & MedGuiR.Label57.Text
         NMedVersion = MedGuiR.Label8.Text.Split("v.")
         NMedVersion(1) = NMedVersion(1).Substring(1, NMedVersion(1).Length - 1).Trim
+        CleanLocalParsed()
         SetFTPData()
         FtpDownloadOnConnect()
         NetIn = True
