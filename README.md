@@ -79,3 +79,4 @@ You can found the last stable release on:
 * [Mico and Sico](https://sourceforge.net/projects/micosico/?source=directory) to convert png to ico
 * A modified version of [GBS2GB](http://www.angelfire.com/nc/ugetab/) to convert gbs in gb format
 * Superb console icon set by [Yoshi-kun](http://yspixel.jpn.org/icon/index.html)
+* [Json.NET](https://www.newtonsoft.com/json) to manage and convert json into xml
