@@ -18,7 +18,9 @@ Module Updater
                 Med_new = upd.ReadLine
                 Med_old = Replace(MedGuiR.Label6.Text, "MedGuiR v.", "")
 
-                If Med_new Is Nothing Then
+                If Med_new Is Nothing Or Len(Med_new) > 5 Then
+                    MsgBox("Unable to detect/retrieve updated version." & vbCrLf &
+                           "Please try again later", vbOKOnly + MsgBoxStyle.Critical, "Unable to update...")
                     upd.Close()
                     If File.Exists(MedExtra & "Update\update.txt") Then File.Delete(MedExtra & "Update\update.txt")
                     Exit Do
