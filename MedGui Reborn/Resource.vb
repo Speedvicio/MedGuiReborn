@@ -137,6 +137,7 @@ Module Resource
             MedGuiR.NickToolStripTextBox1.Image = (New Bitmap(MedExtra & "Resource\Gui\info.png"))
             MedGuiR.ServerToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\netplay.png"))
             MedGuiR.OnlineToolStripMenuItem1.Image = (New Bitmap(MedExtra & "Resource\Gui\net.png"))
+            MedGuiR.BCKPToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\save.png"))
             MedGuiR.IPSToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\patch.png"))
             MedGuiR.RIPSToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.RSBIToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))

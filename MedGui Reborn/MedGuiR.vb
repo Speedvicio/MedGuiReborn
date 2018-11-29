@@ -2468,6 +2468,33 @@ inputagain:
         TGDBSettings.ShowDialog()
     End Sub
 
+    Private Sub BCKPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BCKPToolStripMenuItem.Click
+        Dim fdlg As OpenFileDialog = New OpenFileDialog()
+        fdlg.Title = "Select a Save/Backup to import"
+        fdlg.Filter = "All supported format (*.srm,*.smpc,*.sav,*.rtc,*.mcr,*.flash,*.eep,*.bkr,*.bcr)|*.srm;*.smpc;*.sav;*.rtc;*.mcr;*.flash;*.eep;*.bkr;*.bcr"
+        fdlg.FilterIndex = 1
+        fdlg.RestoreDirectory = True
+        If fdlg.ShowDialog() = DialogResult.OK Then
+
+            Select Case LCase(Path.GetExtension(percorso))
+                Case ".zip", ".rar", ".7z"
+                    simple_extract()
+            End Select
+            filepath = percorso
+            MD5CalcFile()
+
+            Dim BackupHash As String = ""
+
+            SetSpecialModule()
+            If LCase(DataGridView1.CurrentRow.Cells(6).Value) = "snes" And tpce = "_faust" Then
+                BackupHash = r_sha.Substring(0, 32)
+            Else
+                BackupHash = r_md5
+            End If
+        End If
+
+    End Sub
+
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
         If Me.Width < 794 Then Me.Width = 794
         If Me.Height < 415 Then Me.Height = 415
@@ -2490,7 +2517,7 @@ inputagain:
         If File.Exists(MedExtra & "Plugins\db\SpecialChip.txt") = False And My.Computer.Network.IsAvailable = True Then
             My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/SpecialChip.txt", MedExtra & "Plugins\db\SpecialChip.txt", "anonymous", "anonymous", True, 500, True)
         ElseIf File.Exists(MedExtra & "Plugins\db\SpecialChip.txt") = False And My.Computer.Network.IsAvailable = False Then
-            MsgBox("Connections is not Available", vbOKOnly + vbExclamation)
+            MsgBox("Connections Is Not Available", vbOKOnly + vbExclamation)
             Exit Sub
         End If
 
@@ -2500,7 +2527,7 @@ inputagain:
             oRead = File.OpenText(MedExtra & "Plugins\db\SpecialChip.txt")
             While oRead.Peek <> -1
                 If rn.Trim = (oRead.ReadLine().Trim) Then
-                    MsgBox("Snes Faust Module at the moment not support Super NES enhancement chips" & vbCrLf &
+                    MsgBox("Snes Faust Module at the moment Not support Super NES enhancement chips" & vbCrLf &
                                             "I'm switching  to BSnes Module", vbOKOnly + vbInformation)
                     tpce = Nothing
                 End If
