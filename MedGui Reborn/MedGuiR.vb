@@ -1788,7 +1788,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles TimerControlMednafen.Tick
-
+        Threading.Thread.Sleep(1500)
         Dim process_med() As Process
         process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
         If process_med.Length > 0 Then
@@ -1844,7 +1844,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                 Select Case True
                     Case Eriga.Contains("File format is unknown")
                         ErLog.RichTextBox1.SelectionColor = Color.Fuchsia
-                    Case Eriga.Contains("Error")
+                    Case Eriga.Contains("Error") Or Eriga.Contains("is an incorrect size")
                         Select Case True
                             Case LCase(Eriga.Contains(".sbi")), LCase(Eriga.Contains(".cfg")), LCase(Eriga.Contains(".cht")), LCase(Eriga.Contains(".ips"))
                                 ErLog.RichTextBox1.SelectionColor = Color.DarkGreen
@@ -2469,30 +2469,70 @@ inputagain:
     End Sub
 
     Private Sub BCKPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BCKPToolStripMenuItem.Click
+        Dim BackupHash As String = ""
+        Dim BackupExt As String = ""
+        Dim BackupPath As String = ""
+        Dim BCKRisp As String = ""
+
         Dim fdlg As OpenFileDialog = New OpenFileDialog()
         fdlg.Title = "Select a Save/Backup to import"
         fdlg.Filter = "All supported format (*.srm,*.smpc,*.sav,*.rtc,*.mcr,*.flash,*.eep,*.bkr,*.bcr)|*.srm;*.smpc;*.sav;*.rtc;*.mcr;*.flash;*.eep;*.bkr;*.bcr"
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
+            BackupExt = LCase(Path.GetExtension(fdlg.FileName))
+            BackupPath = fdlg.FileName
 
             Select Case LCase(Path.GetExtension(percorso))
                 Case ".zip", ".rar", ".7z"
                     simple_extract()
+                Case ".cue", ".toc", ".ccd", ".m3u"
+                    MsgBox("Save/Backup for cd image file will be imported without hash", vbOKOnly + MsgBoxStyle.Information, "Import without hash..")
+                    BackupHash = ""
+                    GoTo SKIPHASH
             End Select
-            filepath = percorso
-            MD5CalcFile()
 
-            Dim BackupHash As String = ""
+            BCKRisp = MsgBox("Do you want to add the file hash?" & vbCrLf &
+                             "Yes = File name + hash" & vbCrLf &
+                             "No = File name", vbYesNo + MsgBoxStyle.Information, "Import with hash...")
+            If BCKRisp = "Yes" Then
+                filepath = percorso
+                MD5CalcFile()
 
-            SetSpecialModule()
-            If LCase(DataGridView1.CurrentRow.Cells(6).Value) = "snes" And tpce = "_faust" Then
-                BackupHash = r_sha.Substring(0, 32)
+                SetSpecialModule()
+                If LCase(DataGridView1.CurrentRow.Cells(6).Value) = "snes" And tpce = "_faust" Then
+                    BackupHash = "." & r_sha.Substring(0, 32)
+                Else
+                    BackupHash = "." & r_md5
+                End If
             Else
-                BackupHash = r_md5
+                BackupHash = ""
             End If
         End If
 
+SKIPHASH:
+        Dim MCSlot As String = ""
+        If LCase(DataGridView1.CurrentRow.Cells(6).Value) = "psx" Then
+            MCSlot = ".0"
+        Else
+            MCSlot = ""
+        End If
+
+        If Directory.Exists(TextBox4.Text & "\sav") Then
+            If File.Exists(TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt) Then
+                BCKRisp = MsgBox("Save already exist, do you want to overwrite it?", vbYesNo + MsgBoxStyle.Exclamation, "Save file exist...")
+                If BCKRisp = vbYes Then
+                    File.Copy(BackupPath, TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt, True)
+                Else
+                    Exit Sub
+                End If
+            Else
+                File.Copy(BackupPath, TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt, True)
+            End If
+            MsgBox("Backup/Save Imported!", vbOKOnly + MsgBoxStyle.Information, "Backup/Save Imported...")
+        Else
+            MsgBox("Unable to find sav directory!", vbOKOnly + vbCritical, "Missing folder...")
+        End if
     End Sub
 
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
@@ -2529,7 +2569,7 @@ inputagain:
                 If rn.Trim = (oRead.ReadLine().Trim) Then
                     MsgBox("Snes Faust Module at the moment Not support Super NES enhancement chips" & vbCrLf &
                                             "I'm switching  to BSnes Module", vbOKOnly + vbInformation)
-                    tpce = Nothing
+            tpce = Nothing
                 End If
             End While
 
