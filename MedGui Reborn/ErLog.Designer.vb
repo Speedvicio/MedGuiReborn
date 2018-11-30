@@ -58,7 +58,7 @@ Partial Class ErLog
         Me.MinimizeBox = False
         Me.Name = "ErLog"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Mednafen - stdout.log"
+        Me.Text = "Mednafen - stdout.log (Pay attention to the red errors)"
         Me.ResumeLayout(False)
 
     End Sub
