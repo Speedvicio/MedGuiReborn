@@ -326,6 +326,8 @@ Partial Class MedGuiR
         Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
         Me.MedPadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BCKPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator()
         Me.IPSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RIPSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RSBIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -341,8 +343,6 @@ Partial Class MedGuiR
         Me.mMetroMed = New System.Windows.Forms.ToolStripMenuItem()
         Me.TimerPerConfig = New System.Windows.Forms.Timer(Me.components)
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BCKPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3264,7 +3264,7 @@ Partial Class MedGuiR
         '
         Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem1, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.ResetToolStripMenuItem1, Me.ToolStripSeparator12, Me.mMetroMed})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(205, 382)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(205, 360)
         '
         'StartGameToolStripMenuItem
         '
@@ -3351,6 +3351,18 @@ Partial Class MedGuiR
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
         Me.ToolStripSeparator6.Size = New System.Drawing.Size(201, 6)
+        '
+        'BCKPToolStripMenuItem
+        '
+        Me.BCKPToolStripMenuItem.Name = "BCKPToolStripMenuItem"
+        Me.BCKPToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.BCKPToolStripMenuItem.Text = "Import Save/Bac&kup"
+        Me.BCKPToolStripMenuItem.ToolTipText = "Import a Save from another emu for selected game"
+        '
+        'ToolStripSeparator13
+        '
+        Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
+        Me.ToolStripSeparator13.Size = New System.Drawing.Size(201, 6)
         '
         'IPSToolStripMenuItem
         '
@@ -3450,18 +3462,6 @@ Partial Class MedGuiR
         Me.ProgressBar1.Step = 1
         Me.ProgressBar1.TabIndex = 38
         Me.ProgressBar1.Visible = False
-        '
-        'ToolStripSeparator13
-        '
-        Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
-        Me.ToolStripSeparator13.Size = New System.Drawing.Size(201, 6)
-        '
-        'BCKPToolStripMenuItem
-        '
-        Me.BCKPToolStripMenuItem.Name = "BCKPToolStripMenuItem"
-        Me.BCKPToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
-        Me.BCKPToolStripMenuItem.Text = "Import Save/Bac&kup"
-        Me.BCKPToolStripMenuItem.ToolTipText = "Import a Save from another emu for selected game"
         '
         'MedGuiR
         '
