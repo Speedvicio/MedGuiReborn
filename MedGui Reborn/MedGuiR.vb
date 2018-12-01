@@ -2521,6 +2521,8 @@ SKIPHASH:
         Select Case LCase(DataGridView1.CurrentRow.Cells(6).Value)
             Case "md"
                 BackupExt = ".sav"
+            Case "gba"
+                AppendAllBytes(BackupPath, 65536)
         End Select
 
         If Directory.Exists(TextBox4.Text & "\sav") Then
@@ -2540,6 +2542,26 @@ SKIPHASH:
         End If
     End Sub
 
+    Public Shared Sub AppendAllBytes(path As String, dimension As Integer)
+        'argument-checking here.
+
+        Dim size As Long = 0
+        If String.IsNullOrEmpty(path) = False AndAlso IO.File.Exists(path) Then
+            size = New IO.FileInfo(path).Length
+        Else
+            Exit Sub
+        End If
+
+        If size < dimension Then
+            MsgBox("File size mismatch, I try to resize it." & vbCrLf &
+                   "I will create a backup of original file", vbOKOnly + MsgBoxStyle.Exclamation, "Resize & Backup...")
+            File.Copy(path, path & ".backup", True)
+            Dim bytes As Byte() = New Byte(dimension - size) {}
+            Using stream = New FileStream(path, FileMode.Append)
+                stream.Write(bytes, 0, bytes.Length - 1)
+            End Using
+        End If
+    End Sub
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
         If Me.Width < 794 Then Me.Width = 794
         If Me.Height < 415 Then Me.Height = 415
