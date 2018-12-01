@@ -2472,11 +2472,11 @@ inputagain:
         Dim BackupHash As String = ""
         Dim BackupExt As String = ""
         Dim BackupPath As String = ""
-        Dim BCKRisp As String = ""
+        Dim BCKRisp As MsgBoxResult
 
         Dim fdlg As OpenFileDialog = New OpenFileDialog()
         fdlg.Title = "Select a Save/Backup to import"
-        fdlg.Filter = "All supported format (*.srm,*.smpc,*.sav,*.rtc,*.mcr,*.flash,*.eep,*.bkr,*.bcr)|*.srm;*.smpc;*.sav;*.rtc;*.mcr;*.flash;*.eep;*.bkr;*.bcr"
+        fdlg.Filter = "All supported format (*.srm,*.sav,*.rtc,*.mcr,*.flash,*.eep,*.bkr,*.bcr)|*.srm;*.sav;*.rtc;*.mcr;*.flash;*.eep;*.bkr;*.bcr"
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
@@ -2495,7 +2495,7 @@ inputagain:
             BCKRisp = MsgBox("Do you want to add the file hash?" & vbCrLf &
                              "Yes = File name + hash" & vbCrLf &
                              "No = File name", vbYesNo + MsgBoxStyle.Information, "Import with hash...")
-            If BCKRisp = "Yes" Then
+            If BCKRisp = vbYes Then
                 filepath = percorso
                 MD5CalcFile()
 
@@ -2518,6 +2518,11 @@ SKIPHASH:
             MCSlot = ""
         End If
 
+        Select Case LCase(DataGridView1.CurrentRow.Cells(6).Value)
+            Case "md"
+                BackupExt = ".sav"
+        End Select
+
         If Directory.Exists(TextBox4.Text & "\sav") Then
             If File.Exists(TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt) Then
                 BCKRisp = MsgBox("Save already exist, do you want to overwrite it?", vbYesNo + MsgBoxStyle.Exclamation, "Save file exist...")
@@ -2532,7 +2537,7 @@ SKIPHASH:
             MsgBox("Backup/Save Imported!", vbOKOnly + MsgBoxStyle.Information, "Backup/Save Imported...")
         Else
             MsgBox("Unable to find sav directory!", vbOKOnly + vbCritical, "Missing folder...")
-        End if
+        End If
     End Sub
 
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
@@ -2569,7 +2574,7 @@ SKIPHASH:
                 If rn.Trim = (oRead.ReadLine().Trim) Then
                     MsgBox("Snes Faust Module at the moment Not support Super NES enhancement chips" & vbCrLf &
                                             "I'm switching  to BSnes Module", vbOKOnly + vbInformation)
-            tpce = Nothing
+                    tpce = Nothing
                 End If
             End While
 
