@@ -2473,6 +2473,7 @@ inputagain:
         Dim BackupExt As String = ""
         Dim BackupPath As String = ""
         Dim BCKRisp As MsgBoxResult
+        Dim mmodule As String = LCase(DataGridView1.CurrentRow.Cells(6).Value)
 
         Dim fdlg As OpenFileDialog = New OpenFileDialog()
         fdlg.Title = "Select a Save/Backup to import"
@@ -2500,7 +2501,7 @@ inputagain:
                 MD5CalcFile()
 
                 SetSpecialModule()
-                If LCase(DataGridView1.CurrentRow.Cells(6).Value) = "snes" And tpce = "_faust" Then
+                If mmodule = "snes" And tpce = "_faust" Then
                     BackupHash = "." & r_sha.Substring(0, 32)
                 Else
                     BackupHash = "." & r_md5
@@ -2512,13 +2513,13 @@ inputagain:
 
 SKIPHASH:
         Dim MCSlot As String = ""
-        If LCase(DataGridView1.CurrentRow.Cells(6).Value) = "psx" Then
+        If mmodule = "psx" Then
             MCSlot = ".0"
         Else
             MCSlot = ""
         End If
 
-        Select Case LCase(DataGridView1.CurrentRow.Cells(6).Value)
+        Select Case mmodule
             Case "md"
                 BackupExt = ".sav"
             Case "gba"
@@ -2530,6 +2531,11 @@ SKIPHASH:
                 BCKRisp = MsgBox("Save already exist, do you want to overwrite it?", vbYesNo + MsgBoxStyle.Exclamation, "Save file exist...")
                 If BCKRisp = vbYes Then
                     File.Copy(BackupPath, TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt, True)
+                    Select Case mmodule
+                        Case "gba"
+                            File.Delete(BackupPath)
+                            FileSystem.Rename(BackupPath & ".backup", BackupPath)
+                    End Select
                 Else
                     Exit Sub
                 End If
@@ -2551,11 +2557,10 @@ SKIPHASH:
         Else
             Exit Sub
         End If
-
+        '& vbCrLf & "I will create a backup of original file"
         If size < dimension Then
-            MsgBox("File size mismatch, I try to resize it." & vbCrLf &
-                   "I will create a backup of original file", vbOKOnly + MsgBoxStyle.Exclamation, "Resize & Backup...")
             File.Copy(path, path & ".backup", True)
+            MsgBox("File size mismatch, I try to resize it.", vbOKOnly + MsgBoxStyle.Exclamation, "Resize Sav/Backup...")
             Dim bytes As Byte() = New Byte(dimension - size) {}
             Using stream = New FileStream(path, FileMode.Append)
                 stream.Write(bytes, 0, bytes.Length - 1)
