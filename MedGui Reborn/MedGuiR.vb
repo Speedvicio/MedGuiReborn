@@ -2484,18 +2484,18 @@ inputagain:
             BackupExt = LCase(Path.GetExtension(fdlg.FileName))
             BackupPath = fdlg.FileName
 
+            BCKRisp = MsgBox("Do you want to add the file hash?" & vbCrLf &
+                             "Yes = File name + hash" & vbCrLf &
+                             "No = File name", vbYesNo + MsgBoxStyle.Information, "Import with hash...")
+
             Select Case LCase(Path.GetExtension(percorso))
                 Case ".zip", ".rar", ".7z"
                     simple_extract()
                 Case ".cue", ".toc", ".ccd", ".m3u"
-                    MsgBox("Save/Backup for cd image file will be imported without hash", vbOKOnly + MsgBoxStyle.Information, "Import without hash..")
                     BackupHash = ""
                     GoTo SKIPHASH
             End Select
 
-            BCKRisp = MsgBox("Do you want to add the file hash?" & vbCrLf &
-                             "Yes = File name + hash" & vbCrLf &
-                             "No = File name", vbYesNo + MsgBoxStyle.Information, "Import with hash...")
             If BCKRisp = vbYes Then
                 filepath = percorso
                 MD5CalcFile()
@@ -2513,17 +2513,27 @@ inputagain:
 
 SKIPHASH:
         Dim MCSlot As String = ""
-        If mmodule = "psx" Then
-            MCSlot = ".0"
-        Else
-            MCSlot = ""
-        End If
+        Dim matchs = {Path.GetFileNameWithoutExtension(percorso),
+         MCSlot, BackupExt}
 
         Select Case mmodule
             Case "md"
                 BackupExt = ".sav"
             Case "gba"
                 AppendAllBytes(BackupPath, 65536)
+            Case "psx", "ss", "pcfx"
+                If mmodule = "psx" Then MCSlot = ".0"
+                If BCKRisp = vbYes Then
+                    For Each foundFile As String In My.Computer.FileSystem.GetFiles(TextBox4.Text & "\sav\")
+                        Dim splitmatch() As String = foundFile.Split(".")
+                        If foundFile.Contains(matchs(0)) And foundFile.Contains(matchs(1)) And foundFile.Contains(matchs(2)) Then
+                            BackupHash = "." & (splitmatch(1))
+                            Exit For
+                        End If
+                    Next
+                Else
+                    BackupHash = ""
+                End If
         End Select
 
         If Directory.Exists(TextBox4.Text & "\sav") Then
