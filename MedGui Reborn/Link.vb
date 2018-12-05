@@ -16,10 +16,14 @@
 
     Public Sub select_link()
         Select Case MedGuiR.WS.Text
+            Case "Cdromance"
+                _link = "https://cdromance.com/?s=" & MedGuiR.TextBox35.Text
             Case "CoolROM"
                 _link = "http://coolrom.com/search?q=" & MedGuiR.TextBox35.Text & "&submit"
             Case "DOPEROMS"
                 _link = "http://www.doperoms.com/search.php?s=" & MedGuiR.TextBox35.Text & "&method=ROM"
+            Case "EagleForce"
+                _link = "http://eagleforces.tistory.com/search/" & MedGuiR.TextBox35.Text
             Case "EMUPARADISE"
                 _link = "http://www.emuparadise.org/roms/search.php?query=" & MedGuiR.TextBox35.Text
             Case "Free-ISO"
@@ -38,6 +42,8 @@
                 _link = "https://www.romulation.net/roms/search?query=" & MedGuiR.TextBox35.Text
             Case "Roms Universe"
                 _link = "http://www.romsuniverse.com/search.php?q=" & MedGuiR.TextBox35.Text
+            Case "RomsMode"
+                _link = "http://romsmode.com/search?name=" & MedGuiR.TextBox35.Text
             Case "SnesOrama"
                 _link = "http://snesorama.us/ROMS/?s=%2A&q=" & MedGuiR.TextBox35.Text
             Case "Viim's Lair"
