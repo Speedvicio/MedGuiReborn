@@ -20,6 +20,7 @@
             File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
             File.Close()
 
+            DataGridView1.Rows.Clear()
             Scrape.ReadXml()
         Catch ex As System.Net.WebException
             MessageBox.Show(ex.Message)
