@@ -106,6 +106,8 @@ Partial Class MgrSetting
         Me.ComboBox53 = New System.Windows.Forms.ComboBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox106 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox105 = New System.Windows.Forms.CheckBox()
         Me.Label143 = New System.Windows.Forms.Label()
         Me.CheckBox72 = New System.Windows.Forms.CheckBox()
         Me.Button19 = New System.Windows.Forms.Button()
@@ -477,8 +479,6 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox105 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox106 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -627,7 +627,7 @@ Partial Class MgrSetting
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(310, 284)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Sound"
@@ -774,7 +774,7 @@ Partial Class MgrSetting
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(310, 284)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Video"
@@ -1376,7 +1376,7 @@ Partial Class MgrSetting
         Me.TabPage28.Controls.Add(Me.GroupBox21)
         Me.TabPage28.Location = New System.Drawing.Point(4, 22)
         Me.TabPage28.Name = "TabPage28"
-        Me.TabPage28.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage28.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage28.Size = New System.Drawing.Size(310, 284)
         Me.TabPage28.TabIndex = 27
         Me.TabPage28.Text = "Goat Filter"
@@ -1536,6 +1536,28 @@ Partial Class MgrSetting
         Me.GroupBox4.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
+        '
+        'CheckBox106
+        '
+        Me.CheckBox106.AutoSize = True
+        Me.CheckBox106.Location = New System.Drawing.Point(6, 138)
+        Me.CheckBox106.Name = "CheckBox106"
+        Me.CheckBox106.Size = New System.Drawing.Size(206, 17)
+        Me.CheckBox106.TabIndex = 20
+        Me.CheckBox106.Text = "Slow-forwarding As Toggle |     Speed:"
+        Me.ToolTip1.SetToolTip(Me.CheckBox106, "Treat the SLOW-forward button as a toggle.")
+        Me.CheckBox106.UseVisualStyleBackColor = True
+        '
+        'CheckBox105
+        '
+        Me.CheckBox105.AutoSize = True
+        Me.CheckBox105.Location = New System.Drawing.Point(6, 112)
+        Me.CheckBox105.Name = "CheckBox105"
+        Me.CheckBox105.Size = New System.Drawing.Size(206, 17)
+        Me.CheckBox105.TabIndex = 19
+        Me.CheckBox105.Text = "Fast-forwarding As Toggle  |     Speed:"
+        Me.ToolTip1.SetToolTip(Me.CheckBox105, "Treat the fast-forward button as a toggle.")
+        Me.CheckBox105.UseVisualStyleBackColor = True
         '
         'Label143
         '
@@ -1979,7 +2001,7 @@ Partial Class MgrSetting
         Me.TabPage24.Controls.Add(Me.GroupBox22)
         Me.TabPage24.Location = New System.Drawing.Point(4, 22)
         Me.TabPage24.Name = "TabPage24"
-        Me.TabPage24.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage24.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage24.Size = New System.Drawing.Size(310, 284)
         Me.TabPage24.TabIndex = 23
         Me.TabPage24.Text = "Bios"
@@ -4739,7 +4761,7 @@ Partial Class MgrSetting
         Me.TabPage23.Controls.Add(Me.Label82)
         Me.TabPage23.Location = New System.Drawing.Point(4, 22)
         Me.TabPage23.Name = "TabPage23"
-        Me.TabPage23.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage23.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage23.Size = New System.Drawing.Size(310, 284)
         Me.TabPage23.TabIndex = 22
         Me.TabPage23.Text = "PlayStation"
@@ -4884,7 +4906,7 @@ Partial Class MgrSetting
         Me.TabPage25.Controls.Add(Me.GroupBox24)
         Me.TabPage25.Location = New System.Drawing.Point(4, 22)
         Me.TabPage25.Name = "TabPage25"
-        Me.TabPage25.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage25.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage25.Size = New System.Drawing.Size(310, 284)
         Me.TabPage25.TabIndex = 24
         Me.TabPage25.Text = "Saturn"
@@ -5011,7 +5033,7 @@ Partial Class MgrSetting
         Me.ComboBox49.Items.AddRange(New Object() {"auto", "none", "backup", "extram1", "extram4", "cs1ram16"})
         Me.ComboBox49.Location = New System.Drawing.Point(115, 167)
         Me.ComboBox49.Name = "ComboBox49"
-        Me.ComboBox49.Size = New System.Drawing.Size(148, 21)
+        Me.ComboBox49.Size = New System.Drawing.Size(73, 21)
         Me.ComboBox49.TabIndex = 109
         Me.ComboBox49.Text = "auto"
         Me.ToolTip1.SetToolTip(Me.ComboBox49, "Expansion cart." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "auto - Automatic" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - None" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "backup - Backup Memory(512KiB" &
@@ -5032,7 +5054,7 @@ Partial Class MgrSetting
         Me.ComboBox48.Items.AddRange(New Object() {"english", "german", "french", "spanish", "italian", "japanese"})
         Me.ComboBox48.Location = New System.Drawing.Point(115, 140)
         Me.ComboBox48.Name = "ComboBox48"
-        Me.ComboBox48.Size = New System.Drawing.Size(148, 21)
+        Me.ComboBox48.Size = New System.Drawing.Size(73, 21)
         Me.ComboBox48.TabIndex = 107
         Me.ComboBox48.Text = "english"
         Me.ToolTip1.SetToolTip(Me.ComboBox48, "BIOS language." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "english - English" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "german - Deutsch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "french - Français" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "spa" &
@@ -5044,7 +5066,7 @@ Partial Class MgrSetting
         Me.ComboBox43.Items.AddRange(New Object() {"jp", "na", "eu", "kr", "tw", "as", "br", "la"})
         Me.ComboBox43.Location = New System.Drawing.Point(114, 111)
         Me.ComboBox43.Name = "ComboBox43"
-        Me.ComboBox43.Size = New System.Drawing.Size(89, 21)
+        Me.ComboBox43.Size = New System.Drawing.Size(74, 21)
         Me.ComboBox43.TabIndex = 104
         Me.ComboBox43.Text = "jp"
         Me.ToolTip1.SetToolTip(Me.ComboBox43, "Default region to use." & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "Used if region autodetection fails or is disabled." & Global.Microsoft.VisualBasic.ChrW(10) & "jp - J" &
@@ -5076,7 +5098,7 @@ Partial Class MgrSetting
         Me.TabPage27.Controls.Add(Me.GroupBox23)
         Me.TabPage27.Location = New System.Drawing.Point(4, 22)
         Me.TabPage27.Name = "TabPage27"
-        Me.TabPage27.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage27.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage27.Size = New System.Drawing.Size(310, 284)
         Me.TabPage27.TabIndex = 26
         Me.TabPage27.Text = "Saturn"
@@ -5309,7 +5331,7 @@ Partial Class MgrSetting
         Me.TabPage26.Controls.Add(Me.ComboBox47)
         Me.TabPage26.Location = New System.Drawing.Point(4, 22)
         Me.TabPage26.Name = "TabPage26"
-        Me.TabPage26.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage26.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage26.Size = New System.Drawing.Size(310, 284)
         Me.TabPage26.TabIndex = 25
         Me.TabPage26.Text = "Super Nintendo Faust"
@@ -5452,7 +5474,7 @@ Partial Class MgrSetting
         '
         Me.TabPage29.Controls.Add(Me.GroupBox25)
         Me.TabPage29.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage29.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage29.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage29.Name = "TabPage29"
         Me.TabPage29.Size = New System.Drawing.Size(310, 284)
         Me.TabPage29.TabIndex = 28
@@ -5551,28 +5573,6 @@ Partial Class MgrSetting
         Me.CheckBox59.TabIndex = 6
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
-        '
-        'CheckBox105
-        '
-        Me.CheckBox105.AutoSize = True
-        Me.CheckBox105.Location = New System.Drawing.Point(6, 112)
-        Me.CheckBox105.Name = "CheckBox105"
-        Me.CheckBox105.Size = New System.Drawing.Size(206, 17)
-        Me.CheckBox105.TabIndex = 19
-        Me.CheckBox105.Text = "Fast-forwarding As Toggle  |     Speed:"
-        Me.ToolTip1.SetToolTip(Me.CheckBox105, "Treat the fast-forward button as a toggle.")
-        Me.CheckBox105.UseVisualStyleBackColor = True
-        '
-        'CheckBox106
-        '
-        Me.CheckBox106.AutoSize = True
-        Me.CheckBox106.Location = New System.Drawing.Point(6, 138)
-        Me.CheckBox106.Name = "CheckBox106"
-        Me.CheckBox106.Size = New System.Drawing.Size(206, 17)
-        Me.CheckBox106.TabIndex = 20
-        Me.CheckBox106.Text = "Slow-forwarding As Toggle |     Speed:"
-        Me.ToolTip1.SetToolTip(Me.CheckBox106, "Treat the SLOW-forward button as a toggle.")
-        Me.CheckBox106.UseVisualStyleBackColor = True
         '
         'MgrSetting
         '
