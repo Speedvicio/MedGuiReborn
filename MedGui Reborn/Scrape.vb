@@ -49,8 +49,6 @@ Module Scrape
                     ConsoleID = "Neo Geo Pocket Color"
                 Case "SNK - Neo Geo Pocket"
                     ConsoleID = "Neo Geo Pocket"
-                Case "TurboGrafx 16 (CD)"
-                    ConsoleID = "TurboGrafx 16"
                 Case "PC-FX"
                     ConsoleID = ""
                 Case "SegaCD/MegaCD"
@@ -205,6 +203,7 @@ Module Scrape
         MedGuiR.TGDBPlatform()
         Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
            & "&name=" & TGDB_cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
+        Threading.Thread.Sleep(1000)
         Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
         Dim File As StreamWriter
@@ -218,7 +217,7 @@ Module Scrape
     Public Sub ReadXml()
         Dim TGDBXml, BaseUrl, tBack, tFront, fBack, fFront, GameID As String
         Dim counTGDB As Integer
-        Dim GameName, ReleaseDate As String
+        Dim GameName, ReleaseDate, SystemConsole As String
         TGDBXml = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml"
 
         Dim reader As New System.Xml.XmlTextReader(TGDBXml)
@@ -256,6 +255,15 @@ Module Scrape
                         GameName = Replace(reader.Value, "&", "&&")
                         TheGamesDB.Label1.Text = "Game Title: " & GameName
                     Case "Platform", "platform", "name"
+                        SystemConsole = ""
+                        If counTGDB > 1 And contents = "platform" Then
+                            SystemConsole = ReadTGDBList("Platforms", reader.Value.Trim)
+
+                            'If counTGDB > 1 Then
+                            TGDBGameSelector.DataGridView1.Rows.Add(GameID, GameName, SystemConsole, ReleaseDate)
+                            TGDBGameSelector.DataGridView1.Sort(TGDBGameSelector.DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+                            'End If
+                        End If
                         TheGamesDB.Label2.Text = "Platform: " & (reader.Value)
                     Case "ReleaseDate", "release_date"
                         Dim fdate As String
@@ -275,11 +283,6 @@ Module Scrape
                                 ReleaseDate = fdate
                                 TheGamesDB.Label3.Text = "Release Date: " & (fdate)
                             End Try
-
-                            'If counTGDB > 1 Then
-                            TGDBGameSelector.DataGridView1.Rows.Add(GameID, GameName, ReleaseDate)
-                            TGDBGameSelector.DataGridView1.Sort(TGDBGameSelector.DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
-                            'End If
                         End If
                     Case "Overview", "overview"
                         TheGamesDB.RichTextBox1.Text = (reader.Value)

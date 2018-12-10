@@ -24,10 +24,11 @@ Partial Class TGDBGameSelector
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GameName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Console = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReleaseDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,13 +39,13 @@ Partial Class TGDBGameSelector
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.GameName, Me.ReleaseDate})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.GameName, Me.Console, Me.ReleaseDate})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(386, 215)
+        Me.DataGridView1.Size = New System.Drawing.Size(484, 215)
         Me.DataGridView1.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.DataGridView1, "Double left mouse click - Select a match from the list below")
         '
@@ -64,6 +65,14 @@ Partial Class TGDBGameSelector
         Me.GameName.ReadOnly = True
         Me.GameName.Width = 91
         '
+        'Console
+        '
+        Me.Console.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.Console.HeaderText = "Console"
+        Me.Console.Name = "Console"
+        Me.Console.ReadOnly = True
+        Me.Console.Width = 70
+        '
         'ReleaseDate
         '
         Me.ReleaseDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -77,11 +86,12 @@ Partial Class TGDBGameSelector
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(386, 215)
+        Me.ClientSize = New System.Drawing.Size(484, 215)
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "TGDBGameSelector"
         Me.Text = "TGDB Game Selector"
+        Me.ToolTip1.SetToolTip(Me, "Select a game from the list")
         Me.TopMost = True
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -89,8 +99,9 @@ Partial Class TGDBGameSelector
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents GameName As DataGridViewTextBoxColumn
+    Friend WithEvents Console As DataGridViewTextBoxColumn
     Friend WithEvents ReleaseDate As DataGridViewTextBoxColumn
-    Friend WithEvents ToolTip1 As ToolTip
 End Class
