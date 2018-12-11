@@ -8,6 +8,16 @@
 
     Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
         Try
+            Dim di As IO.DirectoryInfo = New IO.DirectoryInfo(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()))
+            For Each File As IO.FileInfo In di.GetFiles()
+                If File.Extension = ".jpg" Then
+                    File.Delete()
+                End If
+            Next
+        Catch
+        End Try
+
+        Try
             '<TheGamesDb newapi>
             Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameID?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
          & "&id=" & DataGridView1.CurrentRow.Cells(0).Value() & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter&include=boxart%2Cplatform")

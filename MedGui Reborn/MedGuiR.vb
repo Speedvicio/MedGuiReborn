@@ -1449,6 +1449,8 @@ Public Class MedGuiR
                 tgdbCID = "17"
             Case "PC Engine - TurboGrafx 16"
                 tgdbCID = "34"
+            Case "TurboGrafx 16 (CD)"
+                tgdbCID = "4955"
             Case "Virtual Boy"
                 tgdbCID = "4918"
         End Select

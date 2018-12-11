@@ -325,8 +325,7 @@ Module Scrape
                             fBack = reader.Value
                             Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
 
-                            If File.Exists(SIF) Then
-                            ElseIf ScrapeForce > 0 Then
+                            If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                 W.DownloadFile(BaseUrl & fBack, SIF)
                             End If
 
@@ -334,8 +333,7 @@ Module Scrape
                             fFront = reader.Value
                             Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
 
-                            If File.Exists(SIF) Then
-                            ElseIf ScrapeForce > 0 Then
+                            If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                 W.DownloadFile(BaseUrl & fFront, SIF)
                             End If
 
@@ -347,8 +345,7 @@ Module Scrape
                                 fBack = reader.Value
                                 SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
 
-                                If File.Exists(SIF) Then
-                                ElseIf ScrapeForce > 0 Then
+                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(BaseUrl & fBack, SIF)
                                 End If
 
@@ -356,8 +353,7 @@ Module Scrape
                                 tBack = reader.Value
                                 SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
 
-                                If File.Exists(SIF) Then
-                                ElseIf ScrapeForce > 0 Then
+                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tBack, SIF)
                                 End If
 
@@ -373,8 +369,7 @@ Module Scrape
                                 fFront = reader.Value
                                 SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
 
-                                If File.Exists(SIF) Then
-                                ElseIf ScrapeForce > 0 Then
+                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(BaseUrl & fFront, SIF)
                                 End If
 
@@ -382,8 +377,7 @@ Module Scrape
                                 tFront = reader.Value
                                 SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
 
-                                If File.Exists(SIF) Then
-                                ElseIf ScrapeForce > 0 Then
+                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tFront, SIF)
                                 End If
 
@@ -395,8 +389,13 @@ Module Scrape
                                     SoxStatus.Close()
                                 End Try
 
-                                If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then MedGuiR.PictureBox1.Load(SBoxF) : pathimage = SBoxF
-                            End If
+                                If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
+                                    If File.Exists(SBoxF) Then
+                                        MedGuiR.PictureBox1.Load(SBoxF)
+                                        pathimage = SBoxF
+                                    End If
+                                End If
+                                End If
                         End If
 
                 End Select
@@ -414,8 +413,7 @@ Module Scrape
                                 tBack = reader.Value
                                 Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
 
-                                If File.Exists(SIF) Then
-                                ElseIf ScrapeForce > 0 Then
+                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(BaseUrl & tBack, SIF)
                                 End If
 
@@ -431,8 +429,7 @@ Module Scrape
                                 tFront = reader.Value
                                 Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
 
-                                If File.Exists(SIF) Then
-                                ElseIf ScrapeForce > 0 Then
+                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(BaseUrl & tFront, SIF)
                                 End If
 
@@ -444,7 +441,12 @@ Module Scrape
                                     SoxStatus.Close()
                                 End Try
 
-                                If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then MedGuiR.PictureBox1.Load(SBoxF) : pathimage = SBoxF
+                                If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
+                                    If File.Exists(SBoxF) Then
+                                        MedGuiR.PictureBox1.Load(SBoxF)
+                                        pathimage = SBoxF
+                                    End If
+                                End If
 
                         End Select
                     End If
