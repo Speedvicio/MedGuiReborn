@@ -1982,7 +1982,11 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
             type_csv = SY.Text
 
             If Dir(MedExtra & "Scanned\" & SY.Text & ".csv") = "" Then
-                ScanFolder()
+                If CheckBox14.Checked = True Then
+                    RecuScan()
+                Else
+                    ScanFolder()
+                End If
                 SaveGridDataInFile()
             Else
 
