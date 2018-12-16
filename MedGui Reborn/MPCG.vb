@@ -63,6 +63,9 @@ Public Class MPCG
         Dim TRACK As String
         ListBox1.SelectedIndex = 0
 
+        Dim Cfullpath = MsgBox("Do you want to include full path into TRACK?", MsgBoxStyle.Information + vbYesNo, "Include path...")
+        Dim otherscue As String = ""
+
         Dim saveFileDialog1 As New SaveFileDialog()
         saveFileDialog1.Filter = "Cue Audio Playlist|*.cue"
         saveFileDialog1.Title = "Save an Cue Audio Playlist File"
@@ -81,7 +84,13 @@ Public Class MPCG
                     End Select
 
                     objStreamWriter = File.AppendText(saveFileDialog1.FileName)
-                    objStreamWriter.Write("FILE " & Chr(34) & ListBox1.Text & Chr(34) & TRACK)
+                    If Cfullpath = vbYes Then
+                        objStreamWriter.Write("FILE " & Chr(34) & ListBox1.Text & Chr(34) & TRACK)
+                        otherscue = vbCrLf & "Disable filesys.untrusted_fip_check to load it on Mednafen"
+                    Else
+                        objStreamWriter.Write("FILE " & Chr(34) & Path.GetFileName(ListBox1.Text) & Chr(34) & TRACK)
+                        otherscue = ""
+                    End If
                     objStreamWriter.Close()
 
                     If ListBox1.SelectedIndex < ListBox1.Items.Count - 1 Then
@@ -89,8 +98,7 @@ Public Class MPCG
                     End If
                 Next
                 objStreamWriter.Dispose()
-                MsgBox("Cue Playlist Generated!" & vbCrLf &
-                       "Disable filesys.untrusted_fip_check to load it on Mednafen", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Playlist Cue Generated")
+                MsgBox("Cue Playlist Generated!" & otherscue, MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "Playlist Cue Generated")
             End If
         End If
     End Sub
