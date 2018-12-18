@@ -1,6 +1,6 @@
 ﻿Module ySetting
 
-    Public pArg, sound, video, filters, various, bios, netplay_, record, custom, lynx, gameboy, neogeop, famicom, pcengine, pcfx,
+    Public pArg, sound, video, filters, various, bios, netplay_, record, custom, apple2, lynx, gameboy, neogeop, famicom, pcengine, pcfx,
     genesis, mastersystem, snes, vboy, wswan, psx, minput, tminput, ss As String
 
     Public Sub parMednafen()
@@ -224,7 +224,8 @@
         SpecificXversion()
 
         Select Case consoles
-
+            Case "apple2"
+                pArg = sound & video & filters & various & netplay_ & apple2
             Case "lynx"
                 pArg = sound & video & filters & various & netplay_ & lynx
             Case "gb", "gbc"

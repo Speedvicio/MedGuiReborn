@@ -82,7 +82,9 @@ Public Class MgrSetting
                 TabControl1.SelectedTab = TabPage26
             Case 21
                 TabControl1.TabPages.Insert(9, TabPage29)
+                TabControl1.TabPages.Insert(10, TabPage30)
                 TabControl1.SelectedTab = TabPage29
+                TabControl1.SelectedTab = TabPage30
         End Select
 
         TabControl1.SelectedTab = TabPage2
@@ -453,6 +455,48 @@ ErrorHandler:
         fPath = "Select Ultraman ROM image (*.ic1)|*.ic1"
         xPath()
         If pPath <> "" Then TextBox1.Text = pPath
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        tPath = "Select Apple ][ Concatenated Bios"
+        fPath = "Select Apple ][ Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
+        xPath()
+        If pPath <> "" Then TextBox4.Text = pPath : controlbios()
+    End Sub
+
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        tPath = "Select Apple ][ + Concatenated Bios"
+        fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
+        xPath()
+        If pPath <> "" Then TextBox19.Text = pPath : controlbios()
+    End Sub
+
+    Private Sub Button23_Click_1(sender As Object, e As EventArgs) Handles Button23.Click
+        tPath = "Disk II Interface 13-Sector P5 Boot ROM, 341-0009"
+        fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
+        xPath()
+        If pPath <> "" Then TextBox20.Text = pPath : controlbios()
+    End Sub
+
+    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+        tPath = "Disk II Interface 13-Sector P6 Sequencer ROM, 341-0010"
+        fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
+        xPath()
+        If pPath <> "" Then TextBox21.Text = pPath : controlbios()
+    End Sub
+
+    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+        tPath = "Disk II Interface 16-Sector P5 Boot ROM, 341-0027"
+        fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
+        xPath()
+        If pPath <> "" Then TextBox24.Text = pPath : controlbios()
+    End Sub
+
+    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+        tPath = "Disk II Interface 16-Sector P6 Sequencer ROM, 341-0028"
+        fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
+        xPath()
+        If pPath <> "" Then TextBox25.Text = pPath : controlbios()
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
@@ -948,6 +992,18 @@ ErrorHandler:
                     If r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3" Then Exit Sub
                 Case "Select Saturn Jap Bios"
                     If r_sha = "df94c5b4d47eb3cc404d88b33a8fda237eaf4720" Then Exit Sub
+                Case "Select Apple ][ Concatenated Bios"
+                    If r_sha = "2dfaf376fc6a0b106320911c1ebfc1512601dc6c" Then Exit Sub
+                Case "Select Apple ][ + Concatenated Bios"
+                    If r_sha = "33a24f5489ba9195b44be77d9afb2252594cb5c7" Then Exit Sub
+                Case "Disk II Interface 13-Sector P5 Boot ROM, 341-0009"
+                    If r_sha = "afd060e6f35faf3bb0146fa889fc787adf56330a" Then Exit Sub
+                Case "Disk II Interface 13-Sector P6 Sequencer ROM, 341-0010"
+                    If r_sha = "e3d6d1c30653572b49ecc2dc54ce073978411a04" Then Exit Sub
+                Case "Disk II Interface 16-Sector P5 Boot ROM, 341-0027"
+                    If r_sha = "d4181c9f046aafc3fb326b381baac809d9e38d16" Then Exit Sub
+                Case "Disk II Interface 16-Sector P6 Sequencer ROM, 341-0028"
+                    If r_sha = "bc39fbd5b9a8d2287ac5d0a42e639fc4d3c2f9d4" Then Exit Sub
                 Case Else
                     Exit Sub
             End Select
@@ -996,6 +1052,24 @@ ErrorHandler:
                     'TextBox18.Text = foundbios
                     'Case "f4f315adcef9b8feb0364c21ab7f0eaf5457f3ed" 'megacd bios
                     'TextBox14.Text = foundbios
+                Case "2dfaf376fc6a0b106320911c1ebfc1512601dc6c"
+                    Label11.ForeColor = Color.ForestGreen
+                    TextBox4.Text = foundbios
+                Case "33a24f5489ba9195b44be77d9afb2252594cb5c7"
+                    Label45.ForeColor = Color.ForestGreen
+                    TextBox19.Text = foundbios
+                Case "afd060e6f35faf3bb0146fa889fc787adf56330a"
+                    Label46.ForeColor = Color.ForestGreen
+                    TextBox20.Text = foundbios
+                Case "e3d6d1c30653572b49ecc2dc54ce073978411a04"
+                    Label47.ForeColor = Color.ForestGreen
+                    TextBox21.Text = foundbios
+                Case "d4181c9f046aafc3fb326b381baac809d9e38d16"
+                    Label48.ForeColor = Color.ForestGreen
+                    TextBox24.Text = foundbios
+                Case "bc39fbd5b9a8d2287ac5d0a42e639fc4d3c2f9d4"
+                    Label49.ForeColor = Color.ForestGreen
+                    TextBox25.Text = foundbios
             End Select
         Next
     End Sub

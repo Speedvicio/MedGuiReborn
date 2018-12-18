@@ -115,7 +115,7 @@ Module scan
                 consoles = "apple2"
                 gif = "apple2"
                 real_name = "Apple ]["
-                fileTXT = ""'MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\Nintendo - Game Boy.dat"
+                fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
             Case ".gb"
                 consoles = "gb"
                 gif = "gb"
