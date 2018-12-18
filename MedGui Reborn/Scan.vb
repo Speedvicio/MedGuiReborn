@@ -111,9 +111,9 @@ Module scan
 
     Public Sub estensione()
         Select Case ext
-            Case ".po", ".nib", ".dsk", ".do", ".2mg"
-                consoles = "apple"
-                gif = "apple"
+            Case ".po", ".dsk", ".do", ".woz", ".d13"
+                consoles = "apple2"
+                gif = "apple2"
                 real_name = "Apple ]["
                 fileTXT = ""'MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\Nintendo - Game Boy.dat"
             Case ".gb"
