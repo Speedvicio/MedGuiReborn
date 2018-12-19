@@ -59,7 +59,7 @@ Module xSetting
         set_special_module()
 
         Select Case ext
-            Case ".po", ".nib", ".dsk", ".do", ".2mg"
+            Case ".po", ".dsk", ".do", ".woz", ".d13"
                 MgrSetting.tab_index = 21
             Case ".lnx"
                 If row.Contains(consoles & ".lowpass ") Then xValue = Trim(Replace(row, consoles & ".lowpass", "")) : MgrSetting.CheckBox18.Checked = CBool(xValue)

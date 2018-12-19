@@ -114,7 +114,7 @@ Module scan
             Case ".po", ".dsk", ".do", ".woz", ".d13"
                 consoles = "apple2"
                 gif = "apple2"
-                real_name = "Apple ]["
+                real_name = "Apple II"
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
             Case ".gb"
                 consoles = "gb"

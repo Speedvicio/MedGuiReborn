@@ -215,6 +215,9 @@ Partial Class MedGuiR
         Me.TextBox26 = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button58 = New System.Windows.Forms.Button()
+        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -1339,7 +1342,7 @@ Partial Class MedGuiR
         '
         Me.Button47.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button47.Location = New System.Drawing.Point(221, 234)
+        Me.Button47.Location = New System.Drawing.Point(221, 221)
         Me.Button47.Name = "Button47"
         Me.Button47.Size = New System.Drawing.Size(23, 23)
         Me.Button47.TabIndex = 83
@@ -1349,9 +1352,9 @@ Partial Class MedGuiR
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(6, 205)
+        Me.ListBox2.Location = New System.Drawing.Point(6, 192)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(209, 95)
+        Me.ListBox2.Size = New System.Drawing.Size(209, 108)
         Me.ListBox2.TabIndex = 81
         Me.ToolTip1.SetToolTip(Me.ListBox2, "List of Custom Path" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Double Click to Load")
         '
@@ -1431,7 +1434,7 @@ Partial Class MedGuiR
         'CheckBox14
         '
         Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Location = New System.Drawing.Point(6, 182)
+        Me.CheckBox14.Location = New System.Drawing.Point(6, 169)
         Me.CheckBox14.Name = "CheckBox14"
         Me.CheckBox14.Size = New System.Drawing.Size(102, 17)
         Me.CheckBox14.TabIndex = 88
@@ -1559,7 +1562,7 @@ Partial Class MedGuiR
         '
         Me.Button55.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button55.Enabled = False
-        Me.Button55.Location = New System.Drawing.Point(221, 205)
+        Me.Button55.Location = New System.Drawing.Point(221, 192)
         Me.Button55.Name = "Button55"
         Me.Button55.Size = New System.Drawing.Size(23, 23)
         Me.Button55.TabIndex = 90
@@ -1810,14 +1813,14 @@ Partial Class MedGuiR
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SY, Me.RebuildToolStripButton, Me.toolStripSeparator, Me.RecentToolStripButton1, Me.LoadCDToolStripButton, Me.FavouritesToolStripButton, Me.FoldeRomToolStripButton, Me.LoadRomToolStripButton, Me.TextBox1, Me.toolStripSeparator1, Me.NetToolStripButton, Me.ServerToolStripButton, Me.IRCToolStripButton, Me.ModLandToolStripButton, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.TextBox3, Me.FlagToolStripSplitButton, Me.FindToolStripButton})
         Me.ToolStrip1.Location = New System.Drawing.Point(12, 6)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(755, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(701, 25)
         Me.ToolStrip1.TabIndex = 34
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'SY
         '
         Me.SY.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SY.Items.AddRange(New Object() {"", "def", "gb", "gba", "gg", "lynx", "md", "nes", "ngp", "pce", "pcfx", "psx", "sms", "snes", "ss", "vb", "wswan"})
+        Me.SY.Items.AddRange(New Object() {"", "def", "apple2", "gb", "gba", "gg", "lynx", "md", "nes", "ngp", "pce", "pcfx", "psx", "sms", "snes", "ss", "vb", "wswan"})
         Me.SY.Name = "SY"
         Me.SY.Size = New System.Drawing.Size(75, 25)
         Me.SY.ToolTipText = resources.GetString("SY.ToolTipText")
@@ -2289,6 +2292,9 @@ Partial Class MedGuiR
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Button58)
+        Me.Panel2.Controls.Add(Me.TextBox22)
+        Me.Panel2.Controls.Add(Me.Label29)
         Me.Panel2.Controls.Add(Me.Button16)
         Me.Panel2.Controls.Add(Me.TextBox10)
         Me.Panel2.Controls.Add(Me.Label15)
@@ -2324,10 +2330,35 @@ Partial Class MedGuiR
         Me.Panel2.Size = New System.Drawing.Size(247, 313)
         Me.Panel2.TabIndex = 0
         '
+        'Button58
+        '
+        Me.Button58.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button58.Location = New System.Drawing.Point(221, 263)
+        Me.Button58.Name = "Button58"
+        Me.Button58.Size = New System.Drawing.Size(23, 23)
+        Me.Button58.TabIndex = 77
+        Me.Button58.UseVisualStyleBackColor = True
+        '
+        'TextBox22
+        '
+        Me.TextBox22.Location = New System.Drawing.Point(108, 265)
+        Me.TextBox22.Name = "TextBox22"
+        Me.TextBox22.Size = New System.Drawing.Size(107, 20)
+        Me.TextBox22.TabIndex = 76
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(3, 268)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(60, 13)
+        Me.Label29.TabIndex = 75
+        Me.Label29.Text = "Apple ][ / +"
+        '
         'Button16
         '
         Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button16.Location = New System.Drawing.Point(221, 177)
+        Me.Button16.Location = New System.Drawing.Point(221, 159)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(23, 23)
         Me.Button16.TabIndex = 74
@@ -2335,7 +2366,7 @@ Partial Class MedGuiR
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(108, 179)
+        Me.TextBox10.Location = New System.Drawing.Point(108, 161)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(107, 20)
         Me.TextBox10.TabIndex = 73
@@ -2343,7 +2374,7 @@ Partial Class MedGuiR
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(3, 182)
+        Me.Label15.Location = New System.Drawing.Point(3, 164)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(57, 13)
         Me.Label15.TabIndex = 72
@@ -2352,7 +2383,7 @@ Partial Class MedGuiR
         'Button17
         '
         Me.Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button17.Location = New System.Drawing.Point(221, 148)
+        Me.Button17.Location = New System.Drawing.Point(221, 133)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(23, 23)
         Me.Button17.TabIndex = 71
@@ -2360,7 +2391,7 @@ Partial Class MedGuiR
         '
         'TextBox11
         '
-        Me.TextBox11.Location = New System.Drawing.Point(108, 150)
+        Me.TextBox11.Location = New System.Drawing.Point(108, 135)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(107, 20)
         Me.TextBox11.TabIndex = 70
@@ -2368,7 +2399,7 @@ Partial Class MedGuiR
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(3, 153)
+        Me.Label16.Location = New System.Drawing.Point(3, 141)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(29, 13)
         Me.Label16.TabIndex = 69
@@ -2377,7 +2408,7 @@ Partial Class MedGuiR
         'Button18
         '
         Me.Button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button18.Location = New System.Drawing.Point(221, 264)
+        Me.Button18.Location = New System.Drawing.Point(221, 237)
         Me.Button18.Name = "Button18"
         Me.Button18.Size = New System.Drawing.Size(23, 23)
         Me.Button18.TabIndex = 68
@@ -2385,7 +2416,7 @@ Partial Class MedGuiR
         '
         'TextBox13
         '
-        Me.TextBox13.Location = New System.Drawing.Point(108, 266)
+        Me.TextBox13.Location = New System.Drawing.Point(108, 239)
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.Size = New System.Drawing.Size(107, 20)
         Me.TextBox13.TabIndex = 67
@@ -2393,7 +2424,7 @@ Partial Class MedGuiR
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(3, 269)
+        Me.Label17.Location = New System.Drawing.Point(3, 242)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(59, 13)
         Me.Label17.TabIndex = 66
@@ -2402,7 +2433,7 @@ Partial Class MedGuiR
         'Button19
         '
         Me.Button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button19.Location = New System.Drawing.Point(221, 235)
+        Me.Button19.Location = New System.Drawing.Point(221, 211)
         Me.Button19.Name = "Button19"
         Me.Button19.Size = New System.Drawing.Size(23, 23)
         Me.Button19.TabIndex = 65
@@ -2410,7 +2441,7 @@ Partial Class MedGuiR
         '
         'TextBox14
         '
-        Me.TextBox14.Location = New System.Drawing.Point(108, 237)
+        Me.TextBox14.Location = New System.Drawing.Point(108, 213)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.Size = New System.Drawing.Size(107, 20)
         Me.TextBox14.TabIndex = 64
@@ -2418,7 +2449,7 @@ Partial Class MedGuiR
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(3, 240)
+        Me.Label18.Location = New System.Drawing.Point(3, 216)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(61, 13)
         Me.Label18.TabIndex = 63
@@ -2427,7 +2458,7 @@ Partial Class MedGuiR
         'Button23
         '
         Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button23.Location = New System.Drawing.Point(221, 206)
+        Me.Button23.Location = New System.Drawing.Point(221, 185)
         Me.Button23.Name = "Button23"
         Me.Button23.Size = New System.Drawing.Size(23, 23)
         Me.Button23.TabIndex = 62
@@ -2435,7 +2466,7 @@ Partial Class MedGuiR
         '
         'TextBox15
         '
-        Me.TextBox15.Location = New System.Drawing.Point(108, 208)
+        Me.TextBox15.Location = New System.Drawing.Point(108, 187)
         Me.TextBox15.Name = "TextBox15"
         Me.TextBox15.Size = New System.Drawing.Size(107, 20)
         Me.TextBox15.TabIndex = 61
@@ -2443,7 +2474,7 @@ Partial Class MedGuiR
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(3, 211)
+        Me.Label19.Location = New System.Drawing.Point(3, 190)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(37, 13)
         Me.Label19.TabIndex = 60
@@ -2452,7 +2483,7 @@ Partial Class MedGuiR
         'Button5
         '
         Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button5.Location = New System.Drawing.Point(221, 119)
+        Me.Button5.Location = New System.Drawing.Point(221, 107)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(23, 23)
         Me.Button5.TabIndex = 38
@@ -2460,7 +2491,7 @@ Partial Class MedGuiR
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(108, 121)
+        Me.TextBox6.Location = New System.Drawing.Point(108, 109)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(107, 20)
         Me.TextBox6.TabIndex = 37
@@ -2468,7 +2499,7 @@ Partial Class MedGuiR
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(3, 124)
+        Me.Label10.Location = New System.Drawing.Point(3, 112)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(87, 13)
         Me.Label10.TabIndex = 36
@@ -2477,7 +2508,7 @@ Partial Class MedGuiR
         'Button10
         '
         Me.Button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button10.Location = New System.Drawing.Point(221, 90)
+        Me.Button10.Location = New System.Drawing.Point(221, 81)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(23, 23)
         Me.Button10.TabIndex = 35
@@ -2485,7 +2516,7 @@ Partial Class MedGuiR
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(108, 92)
+        Me.TextBox5.Location = New System.Drawing.Point(108, 83)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(107, 20)
         Me.TextBox5.TabIndex = 34
@@ -2493,7 +2524,7 @@ Partial Class MedGuiR
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(3, 95)
+        Me.Label11.Location = New System.Drawing.Point(3, 86)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(99, 13)
         Me.Label11.TabIndex = 33
@@ -2502,7 +2533,7 @@ Partial Class MedGuiR
         'Button13
         '
         Me.Button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button13.Location = New System.Drawing.Point(221, 61)
+        Me.Button13.Location = New System.Drawing.Point(221, 55)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(23, 23)
         Me.Button13.TabIndex = 32
@@ -2510,7 +2541,7 @@ Partial Class MedGuiR
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(108, 63)
+        Me.TextBox7.Location = New System.Drawing.Point(108, 57)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(107, 20)
         Me.TextBox7.TabIndex = 31
@@ -2518,7 +2549,7 @@ Partial Class MedGuiR
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(3, 66)
+        Me.Label12.Location = New System.Drawing.Point(3, 60)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(53, 13)
         Me.Label12.TabIndex = 30
@@ -2527,7 +2558,7 @@ Partial Class MedGuiR
         'Button14
         '
         Me.Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button14.Location = New System.Drawing.Point(221, 32)
+        Me.Button14.Location = New System.Drawing.Point(221, 29)
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(23, 23)
         Me.Button14.TabIndex = 29
@@ -2535,7 +2566,7 @@ Partial Class MedGuiR
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(108, 34)
+        Me.TextBox8.Location = New System.Drawing.Point(108, 31)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(107, 20)
         Me.TextBox8.TabIndex = 28
@@ -2543,7 +2574,7 @@ Partial Class MedGuiR
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(3, 37)
+        Me.Label13.Location = New System.Drawing.Point(3, 34)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(29, 13)
         Me.Label13.TabIndex = 27
@@ -2617,7 +2648,7 @@ Partial Class MedGuiR
         'Button49
         '
         Me.Button49.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button49.Location = New System.Drawing.Point(221, 90)
+        Me.Button49.Location = New System.Drawing.Point(221, 81)
         Me.Button49.Name = "Button49"
         Me.Button49.Size = New System.Drawing.Size(23, 23)
         Me.Button49.TabIndex = 87
@@ -2625,7 +2656,7 @@ Partial Class MedGuiR
         '
         'TextBox20
         '
-        Me.TextBox20.Location = New System.Drawing.Point(108, 92)
+        Me.TextBox20.Location = New System.Drawing.Point(108, 83)
         Me.TextBox20.Name = "TextBox20"
         Me.TextBox20.Size = New System.Drawing.Size(107, 20)
         Me.TextBox20.TabIndex = 86
@@ -2633,7 +2664,7 @@ Partial Class MedGuiR
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(3, 95)
+        Me.Label46.Location = New System.Drawing.Point(3, 86)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(38, 13)
         Me.Label46.TabIndex = 85
@@ -2642,7 +2673,7 @@ Partial Class MedGuiR
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(148, 189)
+        Me.Label45.Location = New System.Drawing.Point(148, 176)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(67, 13)
         Me.Label45.TabIndex = 84
@@ -2651,7 +2682,7 @@ Partial Class MedGuiR
         'Button24
         '
         Me.Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button24.Location = New System.Drawing.Point(221, 148)
+        Me.Button24.Location = New System.Drawing.Point(221, 133)
         Me.Button24.Name = "Button24"
         Me.Button24.Size = New System.Drawing.Size(23, 23)
         Me.Button24.TabIndex = 80
@@ -2659,7 +2690,7 @@ Partial Class MedGuiR
         '
         'TextBox16
         '
-        Me.TextBox16.Location = New System.Drawing.Point(108, 150)
+        Me.TextBox16.Location = New System.Drawing.Point(108, 135)
         Me.TextBox16.Name = "TextBox16"
         Me.TextBox16.Size = New System.Drawing.Size(107, 20)
         Me.TextBox16.TabIndex = 79
@@ -2667,7 +2698,7 @@ Partial Class MedGuiR
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(3, 153)
+        Me.Label20.Location = New System.Drawing.Point(3, 138)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(72, 13)
         Me.Label20.TabIndex = 78
@@ -2676,7 +2707,7 @@ Partial Class MedGuiR
         'Button25
         '
         Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button25.Location = New System.Drawing.Point(221, 119)
+        Me.Button25.Location = New System.Drawing.Point(221, 107)
         Me.Button25.Name = "Button25"
         Me.Button25.Size = New System.Drawing.Size(23, 23)
         Me.Button25.TabIndex = 77
@@ -2684,21 +2715,21 @@ Partial Class MedGuiR
         '
         'TextBox12
         '
-        Me.TextBox12.Location = New System.Drawing.Point(108, 121)
+        Me.TextBox12.Location = New System.Drawing.Point(108, 109)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(107, 20)
         Me.TextBox12.TabIndex = 76
         '
         'TextBox17
         '
-        Me.TextBox17.Location = New System.Drawing.Point(108, 63)
+        Me.TextBox17.Location = New System.Drawing.Point(108, 57)
         Me.TextBox17.Name = "TextBox17"
         Me.TextBox17.Size = New System.Drawing.Size(107, 20)
         Me.TextBox17.TabIndex = 73
         '
         'TextBox18
         '
-        Me.TextBox18.Location = New System.Drawing.Point(108, 34)
+        Me.TextBox18.Location = New System.Drawing.Point(108, 31)
         Me.TextBox18.Name = "TextBox18"
         Me.TextBox18.Size = New System.Drawing.Size(107, 20)
         Me.TextBox18.TabIndex = 70
@@ -2713,7 +2744,7 @@ Partial Class MedGuiR
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(3, 124)
+        Me.Label21.Location = New System.Drawing.Point(3, 112)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(57, 13)
         Me.Label21.TabIndex = 75
@@ -2722,7 +2753,7 @@ Partial Class MedGuiR
         'Button26
         '
         Me.Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button26.Location = New System.Drawing.Point(221, 61)
+        Me.Button26.Location = New System.Drawing.Point(221, 55)
         Me.Button26.Name = "Button26"
         Me.Button26.Size = New System.Drawing.Size(23, 23)
         Me.Button26.TabIndex = 74
@@ -2731,7 +2762,7 @@ Partial Class MedGuiR
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(3, 66)
+        Me.Label22.Location = New System.Drawing.Point(3, 60)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(36, 13)
         Me.Label22.TabIndex = 72
@@ -2740,7 +2771,7 @@ Partial Class MedGuiR
         'Button27
         '
         Me.Button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button27.Location = New System.Drawing.Point(221, 32)
+        Me.Button27.Location = New System.Drawing.Point(221, 29)
         Me.Button27.Name = "Button27"
         Me.Button27.Size = New System.Drawing.Size(23, 23)
         Me.Button27.TabIndex = 71
@@ -2749,7 +2780,7 @@ Partial Class MedGuiR
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(3, 37)
+        Me.Label23.Location = New System.Drawing.Point(3, 34)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(60, 13)
         Me.Label23.TabIndex = 69
@@ -3860,4 +3891,7 @@ Partial Class MedGuiR
     Friend WithEvents RSBIToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BCKPToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator13 As ToolStripSeparator
+    Friend WithEvents Button58 As Button
+    Friend WithEvents TextBox22 As TextBox
+    Friend WithEvents Label29 As Label
 End Class

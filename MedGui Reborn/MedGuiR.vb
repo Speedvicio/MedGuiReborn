@@ -1145,6 +1145,12 @@ Public Class MedGuiR
         If rPath <> "" Then TextBox13.Text = rPath : RWIni()
     End Sub
 
+    Private Sub Button58_Click(sender As Object, e As EventArgs) Handles Button58.Click
+        rDes = "Select Default Apple ][ / + Rom Path"
+        yPath()
+        If rPath <> "" Then TextBox22.Text = rPath : RWIni()
+    End Sub
+
     Private Sub Button28_Click(sender As Object, e As EventArgs) Handles Button28.Click
         rDes = "Select Default Master System Rom Path"
         yPath()
@@ -2583,6 +2589,7 @@ SKIPHASH:
             End Using
         End If
     End Sub
+
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
         If Me.Width < 794 Then Me.Width = 794
         If Me.Height < 415 Then Me.Height = 415

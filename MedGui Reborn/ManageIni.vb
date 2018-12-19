@@ -132,6 +132,7 @@
         Try
 
             MedGuiR.TextBox9.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Default")
+            MedGuiR.TextBox22.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Apple2")
             MedGuiR.TextBox8.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Lynx")
             MedGuiR.TextBox7.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameBoy")
             MedGuiR.TextBox5.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameBoyAdvance")
@@ -220,6 +221,7 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Columns_Order", MedGuiR.ComboBox2.Text)
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Default", MedGuiR.TextBox9.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Apple2", MedGuiR.TextBox22.Text)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Lynx", MedGuiR.TextBox8.Text)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoy", MedGuiR.TextBox7.Text)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoyAdvance", MedGuiR.TextBox5.Text)
