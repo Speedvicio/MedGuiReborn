@@ -1030,7 +1030,7 @@ Partial Class MgrSetting
         'ComboBox41
         '
         Me.ComboBox41.FormattingEnabled = True
-        Me.ComboBox41.Items.AddRange(New Object() {"weave", "bob", "bob_offset"})
+        Me.ComboBox41.Items.AddRange(New Object() {"weave", "bob", "bob_offset", "blend", "blend_rg"})
         Me.ComboBox41.Location = New System.Drawing.Point(153, 146)
         Me.ComboBox41.Name = "ComboBox41"
         Me.ComboBox41.Size = New System.Drawing.Size(139, 21)
@@ -6003,7 +6003,6 @@ Partial Class MgrSetting
         "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
         "le in graphics mode.")
         Me.CheckBox108.UseVisualStyleBackColor = True
-        Me.CheckBox108.Visible = False
         '
         'CheckBox107
         '
@@ -6019,7 +6018,6 @@ Partial Class MgrSetting
         "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
         "le in graphics mode.")
         Me.CheckBox107.UseVisualStyleBackColor = True
-        Me.CheckBox107.Visible = False
         '
         'Label163
         '
@@ -6030,7 +6028,7 @@ Partial Class MgrSetting
         Me.Label163.TabIndex = 87
         Me.Label163.Text = "0x000000"
         Me.ToolTip1.SetToolTip(Me.Label163, "Force monochrome graphics color." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Force monochrome graphics if non-zero, with t" &
-        "he specified color.")
+        "he specified color." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SET BLACK TO DISABLE MONOCROME")
         '
         'Label164
         '
@@ -6044,7 +6042,7 @@ Partial Class MgrSetting
         'NumericUpDown40
         '
         Me.NumericUpDown40.DecimalPlaces = 2
-        Me.NumericUpDown40.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown40.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown40.Location = New System.Drawing.Point(230, 195)
         Me.NumericUpDown40.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.NumericUpDown40.Minimum = New Decimal(New Integer() {4, 0, 0, -2147483648})
@@ -6067,7 +6065,7 @@ Partial Class MgrSetting
         'NumericUpDown39
         '
         Me.NumericUpDown39.DecimalPlaces = 2
-        Me.NumericUpDown39.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown39.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown39.Location = New System.Drawing.Point(230, 169)
         Me.NumericUpDown39.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.NumericUpDown39.Minimum = New Decimal(New Integer() {4, 0, 0, -2147483648})
@@ -6090,7 +6088,7 @@ Partial Class MgrSetting
         'NumericUpDown38
         '
         Me.NumericUpDown38.DecimalPlaces = 2
-        Me.NumericUpDown38.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown38.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown38.Location = New System.Drawing.Point(230, 143)
         Me.NumericUpDown38.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.NumericUpDown38.Minimum = New Decimal(New Integer() {4, 0, 0, -2147483648})
@@ -6113,7 +6111,7 @@ Partial Class MgrSetting
         'NumericUpDown37
         '
         Me.NumericUpDown37.DecimalPlaces = 2
-        Me.NumericUpDown37.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown37.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown37.Location = New System.Drawing.Point(230, 117)
         Me.NumericUpDown37.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.NumericUpDown37.Minimum = New Decimal(New Integer() {4, 0, 0, -2147483648})
@@ -6136,7 +6134,7 @@ Partial Class MgrSetting
         'NumericUpDown36
         '
         Me.NumericUpDown36.DecimalPlaces = 2
-        Me.NumericUpDown36.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown36.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown36.Location = New System.Drawing.Point(230, 91)
         Me.NumericUpDown36.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.NumericUpDown36.Minimum = New Decimal(New Integer() {4, 0, 0, -2147483648})
@@ -6159,7 +6157,7 @@ Partial Class MgrSetting
         'NumericUpDown35
         '
         Me.NumericUpDown35.DecimalPlaces = 2
-        Me.NumericUpDown35.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown35.Increment = New Decimal(New Integer() {1, 0, 0, 131072})
         Me.NumericUpDown35.Location = New System.Drawing.Point(230, 65)
         Me.NumericUpDown35.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.NumericUpDown35.Minimum = New Decimal(New Integer() {4, 0, 0, -2147483648})

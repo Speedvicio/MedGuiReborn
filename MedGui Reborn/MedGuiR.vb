@@ -184,6 +184,8 @@ Public Class MedGuiR
         Select Case SY.Text
             Case "def"
                 StartRom = TextBox9.Text
+            Case "apple2"
+                StartRom = TextBox22.Text
             Case "gb"
                 StartRom = TextBox7.Text
             Case "gba"
@@ -700,7 +702,7 @@ Public Class MedGuiR
         If StartRom.Trim = "" Or Directory.Exists(StartRom.Trim) = False Then
             MsgBox("You have set a empty or wrong path on " & UCase(SY.Text) & " MedGuiR Rom Path section", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Path error...")
             Select Case SY.Text
-                Case "def", "lynx", "gb", "gba", "ngp", "nes", "pce", "gg", "md"
+                Case "def", "apple2", "lynx", "gb", "gba", "ngp", "nes", "pce", "gg", "md"
                     TabControl1.SelectedTab = TabPage3
                 Case "sms", "snes", "vb", "wswan", "ss", "psx"
                     TabControl1.SelectedTab = TabPage4

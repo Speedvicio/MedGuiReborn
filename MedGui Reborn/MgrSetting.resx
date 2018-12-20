@@ -120,48 +120,19 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
-  <data name="TrackBar3.ToolTip" xml:space="preserve">
-    <value>Desired period size in microseconds.
-
-Currently only affects OSS, ALSA, and SDL output. 
-A value of 0 defers to the default in the driver code in SexyAL.
-
- Note: This is not the "sound buffer size" setting, that would be "sound.buffer_time".</value>
-  </data>
-  <data name="ComboBox2.ToolTip" xml:space="preserve">
-    <value>Select sound driver.
-
-The following choices are possible, sorted by preference, high to low, when "default" driver is used, 
-but dependent on being compiled in.
-
-default - Default
-Default sound driver.
-
-dsound - DirectSound
-A recommended driver, and the default for Microsoft Windows.
-
-sdl - Simple Directmedia Layer
-This driver is not recommended, but it serves as a backup driver if the others aren't available.
- Its performance is generally sub-par, requiring higher latency or faster CPUs/SMP for glitch-free playback, 
-except where the OS provides a sound callback API itself, such as with Mac OS X and BeOS.
-
-wasapish - WASAPI(Shared Mode)
-Shared-mode WASAPI driver, usable on Windows Vista and newer.
-
-wasapi - WASAPI(Exclusive Mode)
-Experimental exclusive-mode WASAPI driver, usable on Windows Vista and newer.
- Use it for lower-latency sound. May not work properly on all sound cards.</value>
-  </data>
   <data name="ComboBox41.ToolTip" xml:space="preserve">
     <value>Deinterlacer to use for interlaced video.
-weave - Good for low-motion video; can be used in conjunction with negative .scanlines setting values.
 
-bob - Good for causing a headache. All glory to Bob.
+    weave - Good for low-motion video; can be used in conjunction with negative .scanlines setting values.
 
-bob_offset - Good for high-motion video, but is a bit flickery; reduces the subjective vertical resolution.</value>
+    bob - Good for causing a headache. All glory to Bob.
+
+    bob_offset - Good for high-motion video, but is a bit flickery; reduces the subjective vertical resolution.
+
+    blend - Blend fields together; reduces vertical and temporal resolution.
+
+    blend_rg - Like the "blend" deinterlacer, but the blending is done in a manner that respects gamma, reducing unwanted brightness changes,
+    at the cost of increased CPU usage.</value>
   </data>
   <data name="ComboBox5.ToolTip" xml:space="preserve">
     <value>Stretch to fill screen.
@@ -209,6 +180,41 @@ Disable to reduce latency, at the cost of potentially increased video "juddering
 with the maximum reduction in latency being about 1 video frame's time.
  Will work best with emulated systems that are not very computationally expensive to emulate, 
 combined with running on a relatively fast CPU</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
+  <data name="TrackBar3.ToolTip" xml:space="preserve">
+    <value>Desired period size in microseconds.
+
+Currently only affects OSS, ALSA, and SDL output. 
+A value of 0 defers to the default in the driver code in SexyAL.
+
+ Note: This is not the "sound buffer size" setting, that would be "sound.buffer_time".</value>
+  </data>
+  <data name="ComboBox2.ToolTip" xml:space="preserve">
+    <value>Select sound driver.
+
+The following choices are possible, sorted by preference, high to low, when "default" driver is used, 
+but dependent on being compiled in.
+
+default - Default
+Default sound driver.
+
+dsound - DirectSound
+A recommended driver, and the default for Microsoft Windows.
+
+sdl - Simple Directmedia Layer
+This driver is not recommended, but it serves as a backup driver if the others aren't available.
+ Its performance is generally sub-par, requiring higher latency or faster CPUs/SMP for glitch-free playback, 
+except where the OS provides a sound callback API itself, such as with Mac OS X and BeOS.
+
+wasapish - WASAPI(Shared Mode)
+Shared-mode WASAPI driver, usable on Windows Vista and newer.
+
+wasapi - WASAPI(Exclusive Mode)
+Experimental exclusive-mode WASAPI driver, usable on Windows Vista and newer.
+ Use it for lower-latency sound. May not work properly on all sound cards.</value>
   </data>
   <data name="TrackBar8.ToolTip" xml:space="preserve">
     <value>Enable scanlines with specified opacity.

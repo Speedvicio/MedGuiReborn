@@ -344,7 +344,7 @@ CheckMednafen:
             End Select
         Next i
 
-        If Val(vmedClear) < 12300 Then
+        If Val(vmedClear) < 12200 Then
             MedGuiR.SY.Items.Remove("apple2")
             MedGuiR.TextBox22.Visible = False
             MedGuiR.Button58.Visible = False

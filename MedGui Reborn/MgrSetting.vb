@@ -236,8 +236,11 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
 
         End If
 
-        If Val(vmedClear) > 12200 Then
-            ComboBox49.Items.Remove("Auto")
+        If Val(vmedClear) > 12130 Then
+            ComboBox49.Items.Remove("auto")
+        Else
+            ComboBox41.Items.Remove("blend")
+            ComboBox41.Items.Remove("blend_rg")
         End If
     End Sub
 

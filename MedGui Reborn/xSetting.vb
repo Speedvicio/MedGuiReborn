@@ -64,20 +64,21 @@ Module xSetting
                 If row.Contains(consoles & ".video.color_smooth ") Then xValue = Trim(Replace(row, consoles & ".video.color_smooth", "")) : MgrSetting.CheckBox107.Checked = CBool(xValue)
                 If row.Contains(consoles & ".input.port1.joystick.axis_scale ") Then xValue = Trim(Replace(row, consoles & ".input.port1.joystick.axis_scale", "")) : MgrSetting.NumericUpDown41.Value = Val(xValue)
                 If row.Contains(consoles & ".video.brightness ") Then xValue = Trim(Replace(row, consoles & ".video.brightness", "")) : MgrSetting.NumericUpDown29.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
-                'If row.Contains(consoles & ".input.port1 ") Then xValue = Trim(Replace(row, consoles & ".input.port1", "")) : MgrSetting.ComboBox58.Text = xValue
-                'If row.Contains(consoles & ".input.port2 ") Then xValue = Trim(Replace(row, consoles & ".input.port2", "")) : MgrSetting.ComboBox60.Text = xValue
-                'If row.Contains(consoles & ".video.matrix ") Then xValue = Trim(Replace(row, consoles & ".video.matrix", "")) : MgrSetting.ComboBox61.Text = xValue
+                If row.Contains(consoles & ".video.contrast ") Then xValue = Trim(Replace(row, consoles & ".video.contrast", "")) : MgrSetting.NumericUpDown31.Value = Val(xValue)
+                If row.Contains(consoles & ".video.hue ") Then xValue = Trim(Replace(row, consoles & ".video.hue", "")) : MgrSetting.NumericUpDown32.Value = Val(xValue)
+                If row.Contains(consoles & ".video.saturation ") Then xValue = Trim(Replace(row, consoles & ".video.saturation", "")) : MgrSetting.NumericUpDown33.Value = Val(xValue)
+                If row.Contains(consoles & ".video.color_lumafilter ") Then xValue = Trim(Replace(row, consoles & ".video.color_lumafilter", "")) : MgrSetting.NumericUpDown30.Value = Val(xValue)
+                If row.Contains(consoles & ".video.mono_lumafilter ") Then xValue = Trim(Replace(row, consoles & ".video.mono_lumafilter", "")) : MgrSetting.NumericUpDown34.Value = Val(xValue)
+                If row.Contains(consoles & ".video.matrix.blue.i ") Then xValue = Trim(Replace(row, consoles & ".video.matrix.blue.i", "")) : MgrSetting.NumericUpDown35.Value = Val(xValue)
+                If row.Contains(consoles & ".video.matrix.blue.q ") Then xValue = Trim(Replace(row, consoles & ".video.matrix.blue.q", "")) : MgrSetting.NumericUpDown36.Value = Val(xValue)
+                If row.Contains(consoles & ".video.matrix.green.i ") Then xValue = Trim(Replace(row, consoles & ".video.matrix.green.i", "")) : MgrSetting.NumericUpDown37.Value = Val(xValue)
+                If row.Contains(consoles & ".video.matrix.green.q ") Then xValue = Trim(Replace(row, consoles & ".video.matrix.green.q", "")) : MgrSetting.NumericUpDown38.Value = Val(xValue)
+                If row.Contains(consoles & ".video.matrix.red.i ") Then xValue = Trim(Replace(row, consoles & ".video.matrix.red.i", "")) : MgrSetting.NumericUpDown39.Value = Val(xValue)
+                If row.Contains(consoles & ".video.matrix.red.q ") Then xValue = Trim(Replace(row, consoles & ".video.matrix.red.q", "")) : MgrSetting.NumericUpDown40.Value = Val(xValue)
+                If row.Contains(consoles & ".input.port1 ") Then xValue = Trim(Replace(row, consoles & ".input.port1", "")) : MgrSetting.ComboBox58.Text = xValue
+                If row.Contains(consoles & ".input.port2 ") Then xValue = Trim(Replace(row, consoles & ".input.port2", "")) : MgrSetting.ComboBox60.Text = xValue
+                If row.Contains(consoles & ".video.matrix ") Then xValue = Trim(Replace(row, consoles & ".video.matrix", "")) : MgrSetting.ComboBox61.Text = xValue
+                If row.Contains(consoles & ".video.force_mono ") Then xValue = Trim(Replace(row, consoles & ".video.force_mono", "")) : MgrSetting.Label163.Text = (xValue) : MgrSetting.Label163.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label163.ForeColor = ColorTranslator.FromHtml(xValue)
                 MgrSetting.tab_index = 21
             Case ".lnx"
                 If row.Contains(consoles & ".lowpass ") Then xValue = Trim(Replace(row, consoles & ".lowpass", "")) : MgrSetting.CheckBox18.Checked = CBool(xValue)
