@@ -3,7 +3,7 @@
 Module GlobalVar
 
     Public Startup_Path, UCInick, UCIserver, UCIport, UCIchannel, vmedClear, MedShader, UpdateServer, MGRH,
-    JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf As String, forMax, stopiso, noftp As Boolean
+    JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf, SScart As String, forMax, stopiso, noftp As Boolean
 
     Public NewAPI As Boolean
     Public gIcon As Icon
@@ -344,11 +344,14 @@ CheckMednafen:
             End Select
         Next i
 
-        If Val(vmedClear) < 12200 Then
+        If Val(vmedClear) < 12300 Then
             MedGuiR.SY.Items.Remove("apple2")
             MedGuiR.TextBox22.Visible = False
             MedGuiR.Button58.Visible = False
             MedGuiR.Label29.Visible = False
+            SScart = Nothing
+        Else
+            SScart = ".auto_default"
         End If
 
     End Sub

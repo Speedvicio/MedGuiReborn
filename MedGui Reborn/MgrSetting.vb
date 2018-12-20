@@ -102,6 +102,13 @@ Public Class MgrSetting
     End Sub
 
     Public Sub EnableSetOptions()
+
+        If consoles = "nes" Or consoles = "apple2" Then
+            CheckBox13.Enabled = False
+        Else
+            CheckBox13.Enabled = True
+        End If
+
         Dim OnOff As Boolean
         For i = 9380 To Val(vmedClear)
             Select Case i
@@ -227,6 +234,10 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
                 ComboBox57.Visible = False
             End If
 
+        End If
+
+        If Val(vmedClear) > 12200 Then
+            ComboBox49.Items.Remove("Auto")
         End If
     End Sub
 
@@ -754,6 +765,15 @@ ErrorHandler:
     Private Sub ComboBox54_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox54.SelectedIndexChanged
         SpecificServer = "=" & ComboBox54.Text
         PopulateNetplay()
+    End Sub
+
+    Private Sub Label163_Click(sender As Object, e As EventArgs) Handles Label163.Click
+        isARGB = False
+        conv_col()
+        If colour = Nothing Then Exit Sub
+        Label163.BackColor = ColorDialog1.Color
+        Label163.ForeColor = Label163.BackColor
+        Label163.Text = colour
     End Sub
 
     Private Sub Label135_Click(sender As Object, e As EventArgs) Handles Label135.Click

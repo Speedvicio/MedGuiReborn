@@ -60,6 +60,24 @@ Module xSetting
 
         Select Case ext
             Case ".po", ".dsk", ".do", ".woz", ".d13"
+                If row.Contains(consoles & ".video.mixed_text_mono ") Then xValue = Trim(Replace(row, consoles & ".video.mixed_text_mono", "")) : MgrSetting.CheckBox108.Checked = CBool(xValue)
+                If row.Contains(consoles & ".video.color_smooth ") Then xValue = Trim(Replace(row, consoles & ".video.color_smooth", "")) : MgrSetting.CheckBox107.Checked = CBool(xValue)
+                If row.Contains(consoles & ".input.port1.joystick.axis_scale ") Then xValue = Trim(Replace(row, consoles & ".input.port1.joystick.axis_scale", "")) : MgrSetting.NumericUpDown41.Value = Val(xValue)
+                If row.Contains(consoles & ".video.brightness ") Then xValue = Trim(Replace(row, consoles & ".video.brightness", "")) : MgrSetting.NumericUpDown29.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".soundq ") Then xValue = Trim(Replace(row, consoles & ".soundq", "")) : MgrSetting.NumericUpDown8.Value = Val(xValue)
+                'If row.Contains(consoles & ".input.port1 ") Then xValue = Trim(Replace(row, consoles & ".input.port1", "")) : MgrSetting.ComboBox58.Text = xValue
+                'If row.Contains(consoles & ".input.port2 ") Then xValue = Trim(Replace(row, consoles & ".input.port2", "")) : MgrSetting.ComboBox60.Text = xValue
+                'If row.Contains(consoles & ".video.matrix ") Then xValue = Trim(Replace(row, consoles & ".video.matrix", "")) : MgrSetting.ComboBox61.Text = xValue
                 MgrSetting.tab_index = 21
             Case ".lnx"
                 If row.Contains(consoles & ".lowpass ") Then xValue = Trim(Replace(row, consoles & ".lowpass", "")) : MgrSetting.CheckBox18.Checked = CBool(xValue)
@@ -460,7 +478,7 @@ Module xSetting
                 If row.Contains(consoles & ".region_default ") Then xValue = Trim(Replace(row, consoles & ".region_default", "")) : MgrSetting.ComboBox43.Text = xValue
                 If row.Contains(consoles & ".scsp.resamp_quality ") Then xValue = Trim(Replace(row, consoles & ".scsp.resamp_quality", "")) : MgrSetting.TrackBar16.Value = Val(xValue)
                 If row.Contains(consoles & ".smpc.autortc.lang ") Then xValue = Trim(Replace(row, consoles & ".smpc.autortc.lang", "")) : MgrSetting.ComboBox48.Text = xValue
-                If row.Contains(consoles & ".cart ") Then xValue = Trim(Replace(row, consoles & ".cart", "")) : MgrSetting.ComboBox49.Text = xValue
+                If row.Contains(consoles & ".cart" & GlobalVar.SScart & " ") Then xValue = Trim(Replace(row, consoles & ".cart" & GlobalVar.SScart, "")) : MgrSetting.ComboBox49.Text = xValue
                 If row.Contains(consoles & ".bios_sanity ") Then xValue = Trim(Replace(row, consoles & ".bios_sanity", "")) : MgrSetting.CheckBox67.Checked = CBool(xValue)
                 If row.Contains(consoles & ".cd_sanity ") Then xValue = Trim(Replace(row, consoles & ".cd_sanity", "")) : MgrSetting.CheckBox68.Checked = CBool(xValue)
                 If row.Contains(consoles & ".smpc.autortc ") Then xValue = Trim(Replace(row, consoles & ".smpc.autortc", "")) : MgrSetting.CheckBox66.Checked = CBool(xValue)

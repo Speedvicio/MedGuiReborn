@@ -114,7 +114,7 @@ Module scan
             Case ".po", ".dsk", ".do", ".woz", ".d13"
                 consoles = "apple2"
                 gif = "apple2"
-                real_name = "Apple II"
+                real_name = "Apple II/II+"
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
             Case ".gb"
                 consoles = "gb"
@@ -503,6 +503,8 @@ Module scan
 
     Public Sub detect_icon()
         Select Case real_name
+            Case "Apple II/II+"
+                gif = "apple2"
             Case "Nintendo - Game Boy", "Nintendo - Game Boy - Music Module"
                 gif = "gb"
             Case "Nintendo - Game Boy Color"

@@ -15,7 +15,7 @@
         Else : MedGuiR.tpce = Nothing
         End If
 
-        If consoles = "nes" Then lfm = "" Else lfm = " -" & consoles & MedGuiR.tpce & ".forcemono " & MgrSetting.CheckBox13.CheckState
+        If consoles = "nes" Or consoles = "apple2" Then lfm = "" Else lfm = " -" & consoles & MedGuiR.tpce & ".forcemono " & MgrSetting.CheckBox13.CheckState
         'Sound
         sound = " -sound " & MgrSetting.CheckBox1.CheckState & lfm &
         " -sound.buffer_time " & MgrSetting.TrackBar1.Value & " -sound.period_time " & MgrSetting.TrackBar3.Value & " -sound.volume " & MgrSetting.TrackBar2.Value &
@@ -78,6 +78,17 @@
 
         'record = " -qtrecord.vcodec " & Setting.ComboBox4.Text & " -qtrecord.h_double_threshold " & Setting.TrackBar5.Value & " -qtrecord.w_double_threshold " & Setting.TrackBar4.Value & _
         'mrec & srec
+
+        'Apple II/+
+        apple2 = " -apple2.input.port1 " & MgrSetting.ComboBox58.Text & " -apple2.input.port1.joystick.axis_scale " & Replace(MgrSetting.NumericUpDown41.Value, ",", ".") &
+            " -apple2.input.port2 " & MgrSetting.ComboBox60.Text & " -apple2.video.matrix " & MgrSetting.ComboBox61.Text & " -apple2.video.brightness " & Replace(MgrSetting.NumericUpDown29.Value, ",", ".") &
+            " -apple2.video.contrast " & Replace(MgrSetting.NumericUpDown31.Value, ",", ".") & " -apple2.video.hue " & Replace(MgrSetting.NumericUpDown32.Value, ",", ".") &
+            " -apple2.video.saturation " & Replace(MgrSetting.NumericUpDown33.Value, ",", ".") & " -apple2.video.color_lumafilter " & Replace(MgrSetting.NumericUpDown30.Value, ",", ".") &
+            " -apple2.video.force_mono " & MgrSetting.Label163.Text & " -apple2.video.mono_lumafilter " & Replace(MgrSetting.NumericUpDown34.Value, ",", ".") &
+            " -apple2.video.matrix.blue.i " & Replace(MgrSetting.NumericUpDown35.Value, ",", ".") & " -apple2.video.matrix.blue.q " & Replace(MgrSetting.NumericUpDown36.Value, ",", ".") &
+            " -apple2.video.matrix.green.i " & Replace(MgrSetting.NumericUpDown37.Value, ",", ".") & " -apple2.video.matrix.green.q " & Replace(MgrSetting.NumericUpDown38.Value, ",", ".") &
+            " -apple2.video.matrix.red.i " & Replace(MgrSetting.NumericUpDown39.Value, ",", ".") & " -apple2.video.matrix.red.q " & Replace(MgrSetting.NumericUpDown40.Value, ",", ".") &
+            " -apple2.video.mixed_text_mono " & MgrSetting.CheckBox108.CheckState & " -apple2.video.color_smooth " & MgrSetting.CheckBox107.CheckState
 
         'Lynx
         lynx = " -lynx.lowpass " & MgrSetting.CheckBox18.CheckState & " -lynx.rotateinput " & MgrSetting.CheckBox17.CheckState
@@ -216,7 +227,7 @@
             Next
         End If
 
-        ss = " -ss.region_autodetect " & MgrSetting.CheckBox62.CheckState & " -ss.region_default " & MgrSetting.ComboBox43.Text & " -ss.smpc.autortc.lang " & MgrSetting.ComboBox48.Text & " -ss.cart " & MgrSetting.ComboBox49.Text &
+        ss = " -ss.region_autodetect " & MgrSetting.CheckBox62.CheckState & " -ss.region_default " & MgrSetting.ComboBox43.Text & " -ss.smpc.autortc.lang " & MgrSetting.ComboBox48.Text & " -ss.cart" & GlobalVar.SScart & " " & MgrSetting.ComboBox49.Text &
         " -ss.scsp.resamp_quality " & MgrSetting.TrackBar16.Value & " -ssfplay.resamp_quality " & MgrSetting.TrackBar16.Value & minput & " -ss.input.mouse_sensitivity " & Replace(MgrSetting.NumericUpDown19.Value, ",", ".") &
         " -ss.bios_sanity " & MgrSetting.CheckBox67.CheckState & " -ss.cd_sanity " & MgrSetting.CheckBox68.CheckState & " -ss.smpc.autortc " & MgrSetting.CheckBox66.CheckState & " -ss.midsync " & MgrSetting.CheckBox65.CheckState &
         " -ss.cart.kof95_path " & MgrSetting.TextBox2.Text & " -ss.cart.ultraman_path " & MgrSetting.TextBox1.Text '" -ss.input.port1 " & Setting.ComboBox45.Text & " -ss.input.port2 " & Setting.ComboBox44.Text
