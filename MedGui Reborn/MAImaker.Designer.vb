@@ -25,6 +25,18 @@ Partial Class MAImaker
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -47,20 +59,10 @@ Partial Class MAImaker
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -91,6 +93,7 @@ Partial Class MAImaker
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button10)
         Me.GroupBox2.Controls.Add(Me.Button8)
         Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Controls.Add(Me.Button6)
@@ -116,6 +119,112 @@ Partial Class MAImaker
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Define available floppy disks"
         '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(407, 98)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(20, 20)
+        Me.Button8.TabIndex = 24
+        Me.Button8.Text = "Button8"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(407, 124)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(20, 20)
+        Me.Button7.TabIndex = 23
+        Me.Button7.Text = "-"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(407, 10)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(20, 20)
+        Me.Button6.TabIndex = 22
+        Me.Button6.Text = "Button6"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(407, 36)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(20, 20)
+        Me.Button5.TabIndex = 21
+        Me.Button5.Text = "-"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(209, 160)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(20, 20)
+        Me.Button4.TabIndex = 20
+        Me.Button4.Text = "2"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(209, 134)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(20, 20)
+        Me.Button3.TabIndex = 19
+        Me.Button3.Text = "1"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'ListBox3
+        '
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.HorizontalScrollbar = True
+        Me.ListBox3.Location = New System.Drawing.Point(265, 98)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(136, 82)
+        Me.ListBox3.TabIndex = 18
+        '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.HorizontalScrollbar = True
+        Me.ListBox2.Location = New System.Drawing.Point(265, 10)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(136, 82)
+        Me.ListBox2.TabIndex = 17
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.HorizontalScrollbar = True
+        Me.ListBox1.Location = New System.Drawing.Point(32, 98)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(171, 82)
+        Me.ListBox1.TabIndex = 16
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 49)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(29, 13)
+        Me.Label9.TabIndex = 15
+        Me.Label9.Text = "Path"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(54, 72)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox2.TabIndex = 14
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 75)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(35, 13)
+        Me.Label8.TabIndex = 13
+        Me.Label8.Text = "Name"
+        '
         'Button2
         '
         Me.Button2.Location = New System.Drawing.Point(209, 98)
@@ -130,7 +239,7 @@ Partial Class MAImaker
         Me.CheckBox4.AutoSize = True
         Me.CheckBox4.Checked = True
         Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox4.Location = New System.Drawing.Point(209, 74)
+        Me.CheckBox4.Location = New System.Drawing.Point(209, 75)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(49, 17)
         Me.CheckBox4.TabIndex = 10
@@ -205,6 +314,8 @@ Partial Class MAImaker
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Checked = True
+        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox3.Enabled = False
         Me.CheckBox3.Location = New System.Drawing.Point(225, 19)
         Me.CheckBox3.Name = "CheckBox3"
@@ -216,6 +327,8 @@ Partial Class MAImaker
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Checked = True
+        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox2.Enabled = False
         Me.CheckBox2.Location = New System.Drawing.Point(115, 19)
         Me.CheckBox2.Name = "CheckBox2"
@@ -227,6 +340,8 @@ Partial Class MAImaker
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox1.Location = New System.Drawing.Point(6, 19)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(59, 17)
@@ -252,7 +367,7 @@ Partial Class MAImaker
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(35, 20)
         Me.NumericUpDown2.TabIndex = 10
-        Me.NumericUpDown2.Value = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.NumericUpDown2.Value = New Decimal(New Integer() {2, 0, 0, 0})
         '
         'ComboBox4
         '
@@ -262,7 +377,7 @@ Partial Class MAImaker
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(79, 21)
         Me.ComboBox4.TabIndex = 9
-        Me.ComboBox4.Text = "integer"
+        Me.ComboBox4.Text = "joystick"
         '
         'Label5
         '
@@ -329,113 +444,7 @@ Partial Class MAImaker
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(57, 20)
         Me.NumericUpDown1.TabIndex = 0
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {4, 0, 0, 0})
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 75)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(35, 13)
-        Me.Label8.TabIndex = 13
-        Me.Label8.Text = "Name"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(54, 72)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox2.TabIndex = 14
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 49)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(29, 13)
-        Me.Label9.TabIndex = 15
-        Me.Label9.Text = "Path"
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.HorizontalScrollbar = True
-        Me.ListBox1.Location = New System.Drawing.Point(9, 98)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(194, 82)
-        Me.ListBox1.TabIndex = 16
-        '
-        'ListBox2
-        '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.HorizontalScrollbar = True
-        Me.ListBox2.Location = New System.Drawing.Point(265, 10)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(136, 82)
-        Me.ListBox2.TabIndex = 17
-        '
-        'ListBox3
-        '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.HorizontalScrollbar = True
-        Me.ListBox3.Location = New System.Drawing.Point(265, 98)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(136, 82)
-        Me.ListBox3.TabIndex = 18
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(209, 134)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(20, 20)
-        Me.Button3.TabIndex = 19
-        Me.Button3.Text = "1"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(209, 160)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(20, 20)
-        Me.Button4.TabIndex = 20
-        Me.Button4.Text = "2"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(407, 36)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(20, 20)
-        Me.Button5.TabIndex = 21
-        Me.Button5.Text = "-"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(407, 10)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(20, 20)
-        Me.Button6.TabIndex = 22
-        Me.Button6.Text = "Button6"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(407, 124)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(20, 20)
-        Me.Button7.TabIndex = 23
-        Me.Button7.Text = "-"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(407, 98)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(20, 20)
-        Me.Button8.TabIndex = 24
-        Me.Button8.Text = "Button8"
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {64, 0, 0, 0})
         '
         'Button9
         '
@@ -445,6 +454,21 @@ Partial Class MAImaker
         Me.Button9.TabIndex = 1
         Me.Button9.Text = "&Create MAI"
         Me.Button9.UseVisualStyleBackColor = True
+        '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.DefaultExt = "mai"
+        Me.SaveFileDialog1.Filter = "File MAI|*.mai"
+        Me.SaveFileDialog1.RestoreDirectory = True
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(6, 98)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(20, 20)
+        Me.Button10.TabIndex = 25
+        Me.Button10.Text = "-"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'MAImaker
         '
@@ -507,4 +531,6 @@ Partial Class MAImaker
     Friend WithEvents Button5 As Button
     Friend WithEvents Button9 As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents Button10 As Button
 End Class

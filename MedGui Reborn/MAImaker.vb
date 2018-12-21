@@ -31,7 +31,7 @@ Public Class MAImaker
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim fdlg As OpenFileDialog = New OpenFileDialog()
         fdlg.Title = "Select Apple ][ file"
-        fdlg.Filter = "All supported format (*.zip,*.po,*.dsk,*.do,*.woz,*.d13)|*.zip;*.po;*.dsk;*.do;*.woz;*.d13"
+        fdlg.Filter = "All supported format (*.po,*.dsk,*.do,*.woz,*.d13)|*.po;*.dsk;*.do;*.woz;*.d13"
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
             TextBox6.Text = Path.GetFileName(fdlg.FileName)
@@ -132,4 +132,52 @@ Public Class MAImaker
         End Try
     End Sub
 
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Dim concatenate, resistance As String
+
+        If ComboBox4.Text = "joystick" Or ComboBox4.Text = "gamepad" Then
+            resistance = " " & NumericUpDown2.Value
+        Else
+            resistance = Nothing
+        End If
+
+        Dim a(ListBox1.Items.Count - 1) As String
+        ListBox1.Items.CopyTo(a, 0)
+        Dim text As String = String.Join(vbCrLf & "disk2.disks.", a)
+
+        Dim b(ListBox2.Items.Count - 1) As String
+        ListBox2.Items.CopyTo(b, 0)
+        Dim text2 As String = "disk2.drive1.disks " & String.Join(" ", b)
+
+        Dim c(ListBox3.Items.Count - 1) As String
+        ListBox3.Items.CopyTo(c, 0)
+        Dim text3 As String = "disk2.drive2.disks " & String.Join(" ", c)
+
+        concatenate = "MEDNAFEN_SYSTEM_APPLE2" & vbCrLf & vbCrLf & "ram " & NumericUpDown1.Value & vbCrLf &
+            "firmware " & ComboBox1.Text & vbCrLf & "romcard " & ComboBox2.Text & vbCrLf &
+            "gameio " & ComboBox4.Text & resistance & vbCrLf & "gameio.resistance 93551 125615 149425 164980" & vbCrLf &
+            "disk2.enable " & Convert.ToInt32(CheckBox1.Checked) & vbCrLf & "disk2.drive1.enable " & Convert.ToInt32(CheckBox2.Checked) & vbCrLf &
+            "disk2.drive2.enable " & Convert.ToInt32(CheckBox3.Checked) & vbCrLf & "disk2.firmware " & ComboBox3.Text & vbCrLf & "disk2.disks." &
+            text & vbCrLf & text2 & vbCrLf & text3
+
+        If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            SaveFileDialog1.Title = "Save MAI file in the same folder of reference files"
+            My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, concatenate, False)
+        End If
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Try
+            ListBox1.Items.RemoveAt(ListBox1.SelectedIndex)
+        Catch
+        End Try
+    End Sub
+
+    Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
+        If ComboBox4.Text = "joystick" Or ComboBox4.Text = "gamepad" Then
+            NumericUpDown2.Enabled = True
+        Else
+            NumericUpDown2.Enabled = False
+        End If
+    End Sub
 End Class

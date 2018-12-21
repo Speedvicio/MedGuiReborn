@@ -111,7 +111,7 @@ Module scan
 
     Public Sub estensione()
         Select Case ext
-            Case ".po", ".dsk", ".do", ".woz", ".d13"
+            Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai"
                 consoles = "apple2"
                 gif = "apple2"
                 real_name = "Apple II/II+"
