@@ -39,6 +39,9 @@ Module BoxArt
             If dimension >= 1024 Then dimension = (dimension / 1024).ToString : size = " Megabit"
 
             Select Case LCase(System.IO.Path.GetExtension(percorso))
+                Case ".mai"
+                    MedGuiR.PictureBox2.Load(MedExtra & "\Resource\Gui\mai.png")
+                    MedGuiR.ToolTip1.SetToolTip(MedGuiR.PictureBox2, "Apple II+ MAI File")
                 Case ".rar"
                     MedGuiR.PictureBox2.Load(MedExtra & "\Resource\Gui\rar.png")
                     MedGuiR.ToolTip1.SetToolTip(MedGuiR.PictureBox2, "Rar Compressed Rom")

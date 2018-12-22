@@ -1,6 +1,10 @@
 ﻿Imports System.IO
+Imports SevenZip
 
 Public Class MAImaker
+    Dim WhatMAI As Boolean
+    Dim TempApple As String
+    Dim ListApple As List(Of String) = New List(Of String)
 
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
         Dim KeyAscii As Short = Asc(e.KeyChar)
@@ -34,8 +38,9 @@ Public Class MAImaker
         fdlg.Filter = "All supported format (*.po,*.dsk,*.do,*.woz,*.d13)|*.po;*.dsk;*.do;*.woz;*.d13"
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
-            TextBox6.Text = Path.GetFileName(fdlg.FileName)
-            TextBox2.Text = Path.GetFileNameWithoutExtension(TextBox6.Text)
+            TextBox3.Text = Path.GetFileName(fdlg.FileName)
+            TextBox2.Text = Path.GetFileNameWithoutExtension(TextBox3.Text)
+            TempApple = fdlg.FileName
         End If
     End Sub
 
@@ -52,9 +57,10 @@ Public Class MAImaker
             Next
         End If
 
-        Dim AdDisk As String = TextBox1.Text.Trim & " """ & TextBox2.Text.Trim & """ " & """" & TextBox6.Text.Trim & """ " & Convert.ToInt32(CheckBox4.Checked)
-        If TextBox1.Text.Trim <> "" And TextBox6.Text.Trim <> "" And TextBox2.Text.Trim <> "" Then
+        Dim AdDisk As String = TextBox1.Text.Trim & " """ & TextBox2.Text.Trim & """ " & """" & TextBox3.Text.Trim & """ " & Convert.ToInt32(CheckBox4.Checked)
+        If TextBox1.Text.Trim <> "" And TextBox3.Text.Trim <> "" And TextBox2.Text.Trim <> "" Then
             ListBox1.Items.Add(AdDisk)
+            If TempApple <> "" Then ListApple.Add(TempApple)
         End If
     End Sub
 
@@ -101,7 +107,7 @@ Public Class MAImaker
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Try
-            ListBox3.Items.RemoveAt(ListBox2.SelectedIndex)
+            ListBox3.Items.RemoveAt(ListBox3.SelectedIndex)
         Catch
         End Try
     End Sub
@@ -133,6 +139,31 @@ Public Class MAImaker
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        WhatMAI = False
+        MaiTask()
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        ResetApple()
+    End Sub
+
+    Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
+        If ComboBox4.Text = "joystick" Or ComboBox4.Text = "gamepad" Then
+            NumericUpDown2.Enabled = True
+        Else
+            NumericUpDown2.Enabled = False
+        End If
+    End Sub
+
+    Private Sub MAImaker_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
+        F1 = Me
+        CenterForm()
+    End Sub
+
+    Private Sub MaiTask()
+        If ListBox1.Items.Count < 1 Then Exit Sub
+        'Try
         Dim concatenate, resistance As String
 
         If ComboBox4.Text = "joystick" Or ComboBox4.Text = "gamepad" Then
@@ -160,24 +191,63 @@ Public Class MAImaker
             "disk2.drive2.enable " & Convert.ToInt32(CheckBox3.Checked) & vbCrLf & "disk2.firmware " & ComboBox3.Text & vbCrLf & "disk2.disks." &
             text & vbCrLf & text2 & vbCrLf & text3
 
-        If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If WhatMAI = False Then
+            SaveFileDialog1.Filter = "File MAI|*.mai"
+            SaveFileDialog1.DefaultExt = "mai"
             SaveFileDialog1.Title = "Save MAI file in the same folder of reference files"
-            My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, concatenate, False)
-        End If
-    End Sub
-
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        Try
-            ListBox1.Items.RemoveAt(ListBox1.SelectedIndex)
-        Catch
-        End Try
-    End Sub
-
-    Private Sub ComboBox4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox4.SelectedIndexChanged
-        If ComboBox4.Text = "joystick" Or ComboBox4.Text = "gamepad" Then
-            NumericUpDown2.Enabled = True
+            SaveFileDialog1.FileName = ""
+            If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+                My.Computer.FileSystem.WriteAllText(SaveFileDialog1.FileName, concatenate, False)
+                MsgBox("Created MAI file!", vbOKOnly + MsgBoxStyle.Information, "MAI File maked...")
+            End If
         Else
-            NumericUpDown2.Enabled = False
+            SaveFileDialog1.Filter = "MAI package|*.zip"
+            SaveFileDialog1.DefaultExt = "zip"
+            SaveFileDialog1.Title = "Select the output Path and Name for MAI package"
+            SaveFileDialog1.FileName = Path.GetFileNameWithoutExtension(ListApple(0)) & "_MAIP"
+            If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+                ClearFile()
+                If ListApple.Count > 1 And ListBox1.Items.Count = ListApple.Count Then
+                    For Each s As String In ListApple
+                        File.Copy(s, MedExtra & "RomTemp\" & Path.GetFileName(s), True)
+                    Next
+                Else
+                    ListApple.Clear()
+                    Exit Sub
+                End If
+                My.Computer.FileSystem.WriteAllText(MedExtra & "RomTemp\" & Path.GetFileNameWithoutExtension(ListApple(0)) & ".mai", concatenate, False)
+
+                contr_os()
+                SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
+                Dim MaiZip As SevenZipCompressor = New SevenZipCompressor()
+                MaiZip.ArchiveFormat = OutArchiveFormat.Zip
+                MaiZip.CompressionMode = CompressionMode.Create
+                MaiZip.TempFolderPath = Path.GetTempPath()
+                MaiZip.CompressDirectory(MedExtra & "RomTemp\", SaveFileDialog1.FileName)
+                MsgBox("Created MAI package!", vbOKOnly + MsgBoxStyle.Information, "MAI package maked...")
+                ClearFile()
+            End If
+            ResetApple()
         End If
+        'Catch ex As Exception
+
+        'End Try
     End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        WhatMAI = True
+        MaiTask()
+    End Sub
+
+    Private Sub ResetApple()
+        TempApple = ""
+        ListApple.Clear()
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        ListBox1.Items.Clear()
+        ListBox2.Items.Clear()
+        ListBox3.Items.Clear()
+    End Sub
+
 End Class

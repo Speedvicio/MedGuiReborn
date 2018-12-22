@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -147,6 +147,8 @@ Partial Class MedGuiR
         Me.Button57 = New System.Windows.Forms.Button()
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.Button60 = New System.Windows.Forms.Button()
+        Me.Button59 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -274,6 +276,7 @@ Partial Class MedGuiR
         Me.Label25 = New System.Windows.Forms.Label()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label166 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
@@ -346,7 +349,6 @@ Partial Class MedGuiR
         Me.mMetroMed = New System.Windows.Forms.ToolStripMenuItem()
         Me.TimerPerConfig = New System.Windows.Forms.Timer(Me.components)
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.Button59 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -401,23 +403,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -425,9 +427,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -1616,6 +1618,26 @@ Partial Class MedGuiR
         Me.PictureBox7.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox7, "The Games Database NEW API Updater/Enabler" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
         '
+        'Button60
+        '
+        Me.Button60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button60.Location = New System.Drawing.Point(215, 287)
+        Me.Button60.Name = "Button60"
+        Me.Button60.Size = New System.Drawing.Size(23, 23)
+        Me.Button60.TabIndex = 105
+        Me.ToolTip1.SetToolTip(Me.Button60, "Multi disk MAI Creator")
+        Me.Button60.UseVisualStyleBackColor = True
+        '
+        'Button59
+        '
+        Me.Button59.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button59.Location = New System.Drawing.Point(218, 283)
+        Me.Button59.Name = "Button59"
+        Me.Button59.Size = New System.Drawing.Size(23, 23)
+        Me.Button59.TabIndex = 36
+        Me.Button59.UseVisualStyleBackColor = True
+        Me.Button59.Visible = False
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label57)
@@ -1770,7 +1792,7 @@ Partial Class MedGuiR
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 13)
         Me.Label6.TabIndex = 30
-        Me.Label6.Text = "MedGuiR v.0.100"
+        Me.Label6.Text = "MedGuiR v.0.101"
         '
         'Label7
         '
@@ -2851,6 +2873,8 @@ Partial Class MedGuiR
         '
         'Panel5
         '
+        Me.Panel5.Controls.Add(Me.Label166)
+        Me.Panel5.Controls.Add(Me.Button60)
         Me.Panel5.Controls.Add(Me.GroupBox5)
         Me.Panel5.Controls.Add(Me.GroupBox4)
         Me.Panel5.Controls.Add(Me.GroupBox3)
@@ -2858,6 +2882,15 @@ Partial Class MedGuiR
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(247, 313)
         Me.Panel5.TabIndex = 1
+        '
+        'Label166
+        '
+        Me.Label166.AutoSize = True
+        Me.Label166.Location = New System.Drawing.Point(105, 292)
+        Me.Label166.Name = "Label166"
+        Me.Label166.Size = New System.Drawing.Size(104, 13)
+        Me.Label166.TabIndex = 106
+        Me.Label166.Text = "Apple II+ MAI Maker"
         '
         'GroupBox5
         '
@@ -2871,7 +2904,7 @@ Partial Class MedGuiR
         Me.GroupBox5.Controls.Add(Me.Button33)
         Me.GroupBox5.Location = New System.Drawing.Point(5, 177)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(239, 133)
+        Me.GroupBox5.Size = New System.Drawing.Size(239, 104)
         Me.GroupBox5.TabIndex = 61
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "GB/GBA Utility"
@@ -3496,16 +3529,6 @@ Partial Class MedGuiR
         Me.ProgressBar1.TabIndex = 38
         Me.ProgressBar1.Visible = False
         '
-        'Button59
-        '
-        Me.Button59.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button59.Location = New System.Drawing.Point(209, 278)
-        Me.Button59.Name = "Button59"
-        Me.Button59.Size = New System.Drawing.Size(23, 23)
-        Me.Button59.TabIndex = 36
-        Me.ToolTip1.SetToolTip(Me.Button59, "TheGamesDB Scrapers")
-        Me.Button59.UseVisualStyleBackColor = True
-        '
         'MedGuiR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3561,6 +3584,7 @@ Partial Class MedGuiR
         Me.Panel4.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -3907,4 +3931,6 @@ Partial Class MedGuiR
     Friend WithEvents TextBox22 As TextBox
     Friend WithEvents Label29 As Label
     Friend WithEvents Button59 As Button
+    Friend WithEvents Label166 As Label
+    Friend WithEvents Button60 As Button
 End Class

@@ -25,6 +25,9 @@ Partial Class MAImaker
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -40,7 +43,7 @@ Partial Class MAImaker
         Me.Button2 = New System.Windows.Forms.Button()
         Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
@@ -62,7 +65,8 @@ Partial Class MAImaker
         Me.Button9 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -93,6 +97,8 @@ Partial Class MAImaker
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.Button10)
         Me.GroupBox2.Controls.Add(Me.Button8)
         Me.GroupBox2.Controls.Add(Me.Button7)
@@ -109,7 +115,7 @@ Partial Class MAImaker
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.CheckBox4)
         Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.TextBox6)
+        Me.GroupBox2.Controls.Add(Me.TextBox3)
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Location = New System.Drawing.Point(315, 10)
@@ -119,40 +125,72 @@ Partial Class MAImaker
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Define available floppy disks"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(407, 102)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(21, 13)
+        Me.Label11.TabIndex = 27
+        Me.Label11.Text = "D2"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(407, 14)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(21, 13)
+        Me.Label10.TabIndex = 26
+        Me.Label10.Text = "D1"
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(6, 98)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(20, 20)
+        Me.Button10.TabIndex = 25
+        Me.Button10.Text = "&R"
+        Me.ToolTip1.SetToolTip(Me.Button10, "Reset All")
+        Me.Button10.UseVisualStyleBackColor = True
+        '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(407, 98)
+        Me.Button8.Location = New System.Drawing.Point(407, 134)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(20, 20)
         Me.Button8.TabIndex = 24
         Me.Button8.Text = "Button8"
+        Me.ToolTip1.SetToolTip(Me.Button8, "Set Boot Disk")
         Me.Button8.UseVisualStyleBackColor = True
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(407, 124)
+        Me.Button7.Location = New System.Drawing.Point(407, 160)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(20, 20)
         Me.Button7.TabIndex = 23
         Me.Button7.Text = "-"
+        Me.ToolTip1.SetToolTip(Me.Button7, "Remove from Disk 2 List")
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(407, 10)
+        Me.Button6.Location = New System.Drawing.Point(407, 46)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(20, 20)
         Me.Button6.TabIndex = 22
         Me.Button6.Text = "Button6"
+        Me.ToolTip1.SetToolTip(Me.Button6, "Set Boot Disk")
         Me.Button6.UseVisualStyleBackColor = True
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(407, 36)
+        Me.Button5.Location = New System.Drawing.Point(407, 72)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(20, 20)
         Me.Button5.TabIndex = 21
         Me.Button5.Text = "-"
+        Me.ToolTip1.SetToolTip(Me.Button5, "Remove from Disk 1 List")
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
@@ -162,6 +200,7 @@ Partial Class MAImaker
         Me.Button4.Size = New System.Drawing.Size(20, 20)
         Me.Button4.TabIndex = 20
         Me.Button4.Text = "2"
+        Me.ToolTip1.SetToolTip(Me.Button4, "Mount Selected File to Disk 2 List")
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
@@ -171,6 +210,7 @@ Partial Class MAImaker
         Me.Button3.Size = New System.Drawing.Size(20, 20)
         Me.Button3.TabIndex = 19
         Me.Button3.Text = "1"
+        Me.ToolTip1.SetToolTip(Me.Button3, "Mount Selected File to Disk 1 List")
         Me.Button3.UseVisualStyleBackColor = True
         '
         'ListBox3
@@ -232,6 +272,7 @@ Partial Class MAImaker
         Me.Button2.Size = New System.Drawing.Size(20, 20)
         Me.Button2.TabIndex = 11
         Me.Button2.Text = "+"
+        Me.ToolTip1.SetToolTip(Me.Button2, "Add Selected Disk to List")
         Me.Button2.UseVisualStyleBackColor = True
         '
         'CheckBox4
@@ -239,11 +280,12 @@ Partial Class MAImaker
         Me.CheckBox4.AutoSize = True
         Me.CheckBox4.Checked = True
         Me.CheckBox4.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox4.Location = New System.Drawing.Point(209, 75)
+        Me.CheckBox4.Location = New System.Drawing.Point(210, 21)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(49, 17)
         Me.CheckBox4.TabIndex = 10
         Me.CheckBox4.Text = "&W/P"
+        Me.ToolTip1.SetToolTip(Me.CheckBox4, "Enable/Disable Write Protected Disk")
         Me.CheckBox4.UseVisualStyleBackColor = True
         '
         'Button1
@@ -253,14 +295,15 @@ Partial Class MAImaker
         Me.Button1.Size = New System.Drawing.Size(20, 20)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = ".."
+        Me.ToolTip1.SetToolTip(Me.Button1, "Select Desired Disk to Add")
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox6
+        'TextBox3
         '
-        Me.TextBox6.Location = New System.Drawing.Point(54, 46)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(149, 20)
-        Me.TextBox6.TabIndex = 6
+        Me.TextBox3.Location = New System.Drawing.Point(54, 46)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(149, 20)
+        Me.TextBox3.TabIndex = 6
         '
         'TextBox1
         '
@@ -450,31 +493,40 @@ Partial Class MAImaker
         '
         Me.Button9.Location = New System.Drawing.Point(13, 228)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(750, 23)
+        Me.Button9.Size = New System.Drawing.Size(349, 23)
         Me.Button9.TabIndex = 1
-        Me.Button9.Text = "&Create MAI"
+        Me.Button9.Text = "&Create MAI file"
         Me.Button9.UseVisualStyleBackColor = True
         '
         'SaveFileDialog1
         '
-        Me.SaveFileDialog1.DefaultExt = "mai"
-        Me.SaveFileDialog1.Filter = "File MAI|*.mai"
         Me.SaveFileDialog1.RestoreDirectory = True
         '
-        'Button10
+        'Button11
         '
-        Me.Button10.Location = New System.Drawing.Point(6, 98)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(20, 20)
-        Me.Button10.TabIndex = 25
-        Me.Button10.Text = "-"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.Button11.Location = New System.Drawing.Point(414, 228)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(349, 23)
+        Me.Button11.TabIndex = 2
+        Me.Button11.Text = "&Bulid MAI package"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(376, 233)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(23, 13)
+        Me.Label12.TabIndex = 3
+        Me.Label12.Text = "OR"
         '
         'MAImaker
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(775, 255)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -490,6 +542,7 @@ Partial Class MAImaker
         CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -515,7 +568,7 @@ Partial Class MAImaker
     Friend WithEvents Button2 As Button
     Friend WithEvents CheckBox4 As CheckBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button4 As Button
     Friend WithEvents Button3 As Button
@@ -533,4 +586,8 @@ Partial Class MAImaker
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
     Friend WithEvents Button10 As Button
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Button11 As Button
+    Friend WithEvents Label12 As Label
 End Class

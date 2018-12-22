@@ -50,6 +50,7 @@ Module Resource
             MedGuiR.Button55.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.Button56.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.Button57.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\help.png"))
+            MedGuiR.Button60.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\mia.ico"))
             MedGuiR.PictureBox7.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
 
             MgrSetting.Button2.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
@@ -115,6 +116,7 @@ Module Resource
             MedGuiR.Button27.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MedGuiR.Button28.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MedGuiR.Button49.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
+            MedGuiR.Button58.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MedGuiR.Button42.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\find.png"))
             MedGuiR.Button47.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\download.png"))

@@ -269,8 +269,18 @@ Public Class MedGuiR
 
         Select Case LCase(Path.GetExtension(percorso))
             Case ".zip"
+                Dim existMAI As Boolean = False
                 Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(percorso)
-                If szip.ArchiveFileData.Count > 1 Then simple_extract()
+                If szip.ArchiveFileData.Count > 1 Then
+                    For Each ArchiveFileInfo In szip.ArchiveFileData
+                        Select Case LCase(Path.GetExtension(ArchiveFileInfo.FileName))
+                            Case ".mai"
+                                existMAI = True
+                                Exit For
+                        End Select
+                    Next
+                    If existMAI = False Then simple_extract()
+                End If
             Case ".rar", ".7z"
                 simple_extract()
             Case ".rsn"
@@ -782,7 +792,7 @@ Public Class MedGuiR
         If StartRom = "" Then StartRom = Application.StartupPath
         fdlg.Title = "Select rom"
         fdlg.InitialDirectory = ssr
-        fdlg.Filter = "All supported format (*.zip,*.7z,*.rar,*.cue,*.toc,*.m3u,*.ccd,*iso,*.ecm)|*.zip;*.7z;*.rar;*.cue;*.toc;*.m3u;*.ccd;*.iso;*.ecm|File CUE (*.cue)|*.cue|File TOC (*.toc)|*.toc|File M3U (*.m3u)|*.m3u|File CCD (*.ccd)|*.ccd|File ZIP (*.zip)|*.zip|File 7z (*.7z)|*.7z|File rar (*.rar)|*.rar|All file (*.*)|*.*"
+        fdlg.Filter = "All supported format (*.zip,*.7z,*.rar,*.cue,*.toc,*.m3u,*.ccd,*iso,*.ecm)|*.zip;*.7z;*.rar;*.cue;*.toc;*.m3u;*.ccd;*.iso;*.ecm|File CUE (*.cue)|*.cue|File TOC (*.toc)|*.toc|File M3U (*.m3u)|*.m3u|File CCD (*.ccd)|*.ccd|File MAI (*.mai)|*.rar|File ZIP (*.zip)|*.zip|File 7z (*.7z)|*.7z|File rar (*.rar)|*.rar|All files (*.*)|*.*"
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
@@ -2592,7 +2602,7 @@ SKIPHASH:
         End If
     End Sub
 
-    Private Sub Button59_Click(sender As Object, e As EventArgs) Handles Button59.Click
+    Private Sub Button60_Click(sender As Object, e As EventArgs) Handles Button60.Click
         MAImaker.Show()
     End Sub
 
@@ -2602,7 +2612,6 @@ SKIPHASH:
         If CheckBox8.Checked = True Then ResizeGrid()
         ChaseR()
         ChaseL()
-
     End Sub
 
     Private Sub PictureBox2_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox2.DoubleClick
