@@ -201,7 +201,7 @@ Module Resource
                 Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\Resource.zip")
                 szip.ExtractArchive(Application.StartupPath)
 
-                Threading.Thread.Sleep(1000)
+                Threading.Thread.Sleep(5000)
 
                 IO.File.Delete(MedExtra & "Update\Resource.zip")
                 Read_Resource()
@@ -211,6 +211,9 @@ Module Resource
                 Message.ShowDialog()
             End If
         Catch
+            MsgBox("Missing resource extracted, please reboot MedGuiR", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation)
+            MedGuiR.Close()
+            Exit Sub
         End Try
     End Sub
 
