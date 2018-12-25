@@ -128,9 +128,13 @@ Module Extract
             For Each ArchiveFileInfo In szip.ArchiveFileData
                 ext = LCase(Path.GetExtension(ArchiveFileInfo.FileName))
                 Select Case LCase(ext)
-                    Case ".iso", ".ecm", ".zip", ".rar", ".7z", ".m3u", ".toc", ".cue", ".ccd", ".mai"
+                    Case ".iso", ".ecm", ".zip", ".rar", ".7z", ".m3u", ".toc", ".cue", ".ccd" ', ".mai"
                         consoles = ""
                         ext = ""
+                        Exit Sub
+                    Case ".mai"
+                        consoles = "apple2"
+                        LMain()
                         Exit Sub
                 End Select
                 'Dim o
