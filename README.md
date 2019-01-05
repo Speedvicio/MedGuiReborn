@@ -2,9 +2,9 @@
 
 **MedGui Reborn** ia a Windows Front-End/Gui for [Mednafen](http://mednafen.fobby.net/) multi-system emulator.
 
-<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/MedGui%20Reborn%20main.jpg/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/MedGui%20Reborn%20main.jpg/1" heigth="200" /></a><br>
-<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/2.png/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/2.png/1" heigth="200" /></a><br>
-<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/pic2.png/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/pic2.png/1" heigth="200" /></a><br>
+<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/MedGui%20Reborn%20main.jpg/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/MedGui%20Reborn%20main.jpg/1" heigth="200" /></a><br><br>
+<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/2.png/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/2.png/1" heigth="200" /></a><br><br>
+<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/pic2.png/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/pic2.png/1" heigth="200" /></a><br><br>
 
 ### Video Tuttorial
 
