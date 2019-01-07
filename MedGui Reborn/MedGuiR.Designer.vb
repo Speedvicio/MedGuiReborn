@@ -148,6 +148,7 @@ Partial Class MedGuiR
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Button60 = New System.Windows.Forms.Button()
+        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
         Me.Button59 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label57 = New System.Windows.Forms.Label()
@@ -1628,6 +1629,18 @@ Partial Class MedGuiR
         Me.ToolTip1.SetToolTip(Me.Button60, "Multi disk MAI Creator")
         Me.Button60.UseVisualStyleBackColor = True
         '
+        'CheckBox22
+        '
+        Me.CheckBox22.AutoSize = True
+        Me.CheckBox22.Location = New System.Drawing.Point(98, 65)
+        Me.CheckBox22.Name = "CheckBox22"
+        Me.CheckBox22.Size = New System.Drawing.Size(127, 17)
+        Me.CheckBox22.TabIndex = 46
+        Me.CheckBox22.Text = "&Truncate Long Name"
+        Me.ToolTip1.SetToolTip(Me.CheckBox22, "Truncate Long Rom name")
+        Me.CheckBox22.UseVisualStyleBackColor = False
+        Me.CheckBox22.Visible = False
+        '
         'Button59
         '
         Me.Button59.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -1679,6 +1692,7 @@ Partial Class MedGuiR
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.CheckBox22)
         Me.GroupBox2.Controls.Add(Me.Button51)
         Me.GroupBox2.Controls.Add(Me.NumericUpDown2)
         Me.GroupBox2.Controls.Add(Me.CheckBox16)
@@ -3933,4 +3947,5 @@ Partial Class MedGuiR
     Friend WithEvents Button59 As Button
     Friend WithEvents Label166 As Label
     Friend WithEvents Button60 As Button
+    Friend WithEvents CheckBox22 As CheckBox
 End Class

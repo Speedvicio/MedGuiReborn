@@ -43,6 +43,14 @@ Boing:
                     romname = Replace(romname, country, "")
                 End If
 
+                'If MedGuiR.CheckBox22.Checked = True Then
+                'If Len(romname) > 50 Then
+                'Dim splitromname() As String
+                'splitromname = romname.Split(" - ")
+                'romname = splitromname(0)
+                'End If
+                'End If
+
                 If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Then
                 Else
                     If ext <> "" Then
@@ -91,6 +99,14 @@ Boing:
                 status = "Ok"
                 'stopscan = True
                 rrom = Replace(rrom, country, "")
+
+                'If MedGuiR.CheckBox22.Checked = True Then
+                'If Len(rrom) > 50 Then
+                'Dim splitromname() As String
+                'splitromname = rrom.Split(" - ")
+                'rrom = splitromname(0)
+                'End If
+                'End If
 
                 If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Then
                 Else
