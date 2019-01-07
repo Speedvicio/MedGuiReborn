@@ -28,6 +28,7 @@
                 Test_Server()
             End If
 
+            '//Reference to old legacy TGDBAPI setting
             'If GNA = "" Then
             'GlobalVar.NewAPI = False
             'Else

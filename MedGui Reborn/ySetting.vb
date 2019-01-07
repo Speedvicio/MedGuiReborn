@@ -317,6 +317,8 @@
                     If IO.File.Exists(MedGuiR.TextBox4.Text & "\emu4crt_RESOLUTIONS_NATIVE.txt") Or IO.File.Exists(MedGuiR.TextBox4.Text & "\emu4crt_RESOLUTIONS_SUPER.txt") Then
                         video = video & " -video.resolution_switch " & MgrSetting.ComboBox57.Text
                     End If
+                Case Is = 12200
+                    ss = ss & " -ss.cart auto"
             End Select
         Next
     End Sub
