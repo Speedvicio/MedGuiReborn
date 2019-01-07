@@ -28,11 +28,11 @@
                 Test_Server()
             End If
 
-            If GNA = "" Then
-                GlobalVar.NewAPI = False
-            Else
-                GlobalVar.NewAPI = Val(GNA)
-            End If
+            'If GNA = "" Then
+            'GlobalVar.NewAPI = False
+            'Else
+            'GlobalVar.NewAPI = Val(GNA)
+            'End If
 
             'Dim SizeGui() As String
             'SizeGui = Split(RIni.IniRead(MedExtra & "\Mini.ini", "General", "Gui_Size"), "x")
