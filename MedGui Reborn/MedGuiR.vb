@@ -1427,6 +1427,8 @@ Public Class MedGuiR
     Public Sub TGDBPlatform()
         tgdbCID = ""
         Select Case DataGridView1.CurrentRow.Cells(5).Value()
+            Case "Apple II/II+"
+                tgdbCID = "4942"
             Case "Atari - Lynx"
                 tgdbCID = "4924"
             Case "Bandai - WonderSwan"
