@@ -113,6 +113,7 @@ Module Extract
     End Sub
 
     Public Sub scan_ext_compressed()
+        SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
         Try
             Dim szip As SevenZipExtractor = New SevenZipExtractor(percorso)
             'If szip.ArchiveFileData.Count > 1 And SevenZCounter = 0 And stopiso = False Then
@@ -127,6 +128,13 @@ Module Extract
             fileTXT = ""
             For Each ArchiveFileInfo In szip.ArchiveFileData
                 ext = LCase(Path.GetExtension(ArchiveFileInfo.FileName))
+                If ext = "" Or ext Is Nothing Then
+                    Continue For
+                Else
+                    If Path.GetDirectoryName(ArchiveFileInfo.FileName) <> "" Then
+                        Continue For
+                    End If
+                End If
                 Select Case LCase(ext)
                     Case ".iso", ".ecm", ".zip", ".rar", ".7z", ".m3u", ".toc", ".cue", ".ccd" ', ".mai"
                         consoles = ""
