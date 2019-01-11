@@ -40,10 +40,10 @@ Public Class MedGuiR
             AutoUp = False
         End If
         ParseCommandLineArgs()
-        FirstStart = False
 
         If TextBox26.Text = "Speedvicio.dtdns.net" Then TextBox26.Text = "speedvicio.ddns.net"
 
+        FirstStart = False
     End Sub
 
     Private Sub ParseCommandLineArgs()
