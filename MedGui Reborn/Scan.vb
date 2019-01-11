@@ -21,20 +21,20 @@ Module scan
         If IO.File.Exists(MedExtra & "RomExt.ini") = False Then DownloadRomext() : Threading.Thread.Sleep(500)
 
         For Each fileName As String In fileEntries
-
+            If Path.HasExtension(fileName) = False Then Continue For
             Dim oRead As StreamReader
             Try
                 oRead = File.OpenText(MedExtra & "RomExt.ini")
                 While oRead.Peek <> -1
 
-                    If LCase(fileName).EndsWith(oRead.ReadLine()) Then
+                    If Path.GetExtension(fileName) = (oRead.ReadLine()) Then
                         ext = ""
                         Counter = Counter + 1
                         percorso = fileName
                         get_ext()
 
                         If dettaglio.Length < 10485760 Then 'And LCase(dettaglio.Extension) <> ".bin"
-                            Select Case LCase(System.IO.Path.GetExtension(fileName))
+                            Select Case LCase(Path.GetExtension(fileName))
                                 Case ".zip", ".rar", ".7z"
                                 Case Else
                                     decript()
@@ -556,6 +556,10 @@ Module scan
 
     Public Sub RecuScan()
         Dim root = TempFolder
+        If Directory.Exists(root) = False Then
+            MsgBox("No directory founded in " & root, MsgBoxStyle.Exclamation + vbOKOnly, "Missing folder...")
+            Exit Sub
+        End If
         Dim ResRecu As MsgBoxResult
         Dim subdirectoryEntries As String() = Directory.GetDirectories(root)
         If subdirectoryEntries.Length > 0 Then
@@ -574,6 +578,8 @@ Module scan
                     Exit For
                 End If
             Next
+
+            If MedGuiR.FirstStart = True Then Exit Sub
 
             ResRecu = MsgBox("Do you want to make a recursive folder scan?" &
                           vbCrLf & "Recursive scan is inaccurate, can generate error and take many time!", vbYesNo + MsgBoxStyle.Exclamation)
