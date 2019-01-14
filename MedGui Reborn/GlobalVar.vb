@@ -219,15 +219,34 @@ Module GlobalVar
                         Files = Directory.GetFiles(d.FullName)
                         For Each sFile As String In Files
                             f = New FileInfo(sFile)
-                            If f.Name = "mednafen.exe" Then
+                            If LCase(f.Name) = "mednafen.exe" Then
                                 MedGuiR.TextBox4.Text = d.FullName
                                 MednafenDetected = True
                                 Exit For
+                            ElseIf lcase(f.Name) = "emu4crt.exe" Then
+                                Dim msg4crt = MsgBox("Seem that you are using emu4crt fork" & vbCrLf &
+                                          "Do you want to make a clone renamed mednafen?", vbInformation + vbYesNo, "emu4crt detected...")
+                                If msg4crt = MsgBoxResult.Yes Then
+                                    My.Computer.FileSystem.CopyFile(f.FullName, Path.Combine(d.FullName, "mednafen.exe"))
+                                    MedGuiR.TextBox4.Text = d.FullName
+                                    MednafenDetected = True
+                                    Exit For
+                                End If
                             End If
                             If MednafenDetected = True Then Exit For
                         Next
                     End If
                 Next
+
+                If File.Exists(MedGuiR.TextBox4.Text & "\emu4crt.exe") = True And MednafenDetected = False Then
+                    Dim msg4crt = MsgBox("Seem that you are using emu4crt fork" & vbCrLf &
+                                                              "Do you want to make a clone renamed mednafen?", vbInformation + vbYesNo, "emu4crt detected...")
+                    If msg4crt = MsgBoxResult.Yes Then
+                        My.Computer.FileSystem.CopyFile(MedGuiR.TextBox4.Text & "\emu4crt.exe", MedGuiR.TextBox4.Text & "\mednafen.exe")
+                        MedGuiR.TextBox4.Text = MedGuiR.TextBox4.Text
+                        MednafenDetected = True
+                    End If
+                End If
 
                 If MednafenDetected = False Then
                     Dim fdmdf As FolderBrowserDialog = New FolderBrowserDialog()
