@@ -68,7 +68,6 @@ Public Class UCI
                 txtSend.Clear()
             End If
             txtSend.Focus()
-
         Catch
         End Try
 
@@ -215,13 +214,16 @@ Public Class UCI
     End Sub
 
     Private Sub SIrClient_FormClosed(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
-        If btnConnect.Text = "&Disconnect" Then irc.Disconnect()
-        Dim risp = MsgBox("Do you want to Close UCI?", MsgBoxStyle.Information + MsgBoxStyle.YesNo)
-        If risp = vbNo Then
-            e.Cancel = True
-        Else
-            irc.Disconnect()
-        End If
+        Try
+            If btnConnect.Text = "&Disconnect" Then irc.Disconnect()
+            Dim risp = MsgBox("Do you want to Close UCI?", MsgBoxStyle.Information + MsgBoxStyle.YesNo)
+            If risp = vbNo Then
+                e.Cancel = True
+            Else
+                irc.Disconnect()
+            End If
+        Catch
+        End Try
     End Sub
 
     Private Sub SIrClient_Resize(sender As Object, e As EventArgs) Handles Me.Resize
