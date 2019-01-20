@@ -2,6 +2,7 @@
 
 Public Class Mcheat
     Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName As String
+    Dim TWriteRAM As Boolean = True
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
         TextBox3.MaxLength = (NumericUpDown1.Value * 2) + 1
@@ -16,18 +17,48 @@ Public Class Mcheat
         Process.Start("http://bsfree.shadowflareindustries.com/index.php")
     End Sub
 
-    Private Function AnalizeRAWCode(FirstSplit As String, SecondSplit As String)
-        If consoles Then
+    Private Function AnalizeRAWCode(AdressCode As String) As String
+        RadioButton1.Checked = True
+        Dim delimiterChars As Char() = {"?", ":", "-", " "}
+        Dim SplitAdress() As String = AdressCode.Trim.Split(delimiterChars)
 
-        End If
+        Select Case LCase(MedGuiR.DataGridView1.CurrentRow.Cells(6).Value)
+            Case "gg", "sms"
+                If SplitAdress(1).Length = 4 Then
+                    TextBox1.Text = SplitAdress(0).Substring(2, 2) & SplitAdress(1).Substring(0, 2)
+                    TextBox3.Text = SplitAdress(1).Substring(2, 2)
+                Else
+                    TextBox1.Text = SplitAdress(0)
+                    TextBox3.Text = SplitAdress(1)
+                End If
+
+            Case "nes"
+                If SplitAdress.Length > 2 Then
+                    RadioButton5.Checked = True
+                    TextBox1.Text = SplitAdress(0)
+                    TextBox3.Text = SplitAdress(2) & " " & SplitAdress(1)
+                Else
+                    TextBox1.Text = SplitAdress(0)
+                    TextBox3.Text = SplitAdress(1)
+                End If
+            Case Else
+                TextBox1.Text = SplitAdress(0)
+                TextBox3.Text = SplitAdress(1)
+        End Select
+        TextBox1.Text = TextBox1.Text.PadLeft(8, "0")
     End Function
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        TextBox1.Text = FormatText(TextBox1.Text, 8)
+        Dim Tlenght As Integer = 8
+        If TWriteRAM = False Then Tlenght = 13 : Exit Sub
+        TextBox1.Text = FormatText(TextBox1.Text, Tlenght)
         TextBox1.Select(TextBox1.Text.Length, 0)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        If TWriteRAM = False Then AnalizeRAWCode(TextBox1.Text)
+
         SetCodeMode()
         Label11.Text = TypeCheat & CheatActive & ByteLenght & LittleEndian & CodeAdress & ByteValue & CheatName
         Label11.Left = (Me.Width / 2) - (Label11.Width / 2)
@@ -39,13 +70,37 @@ Public Class Mcheat
         FormatText = TextValue
     End Function
 
+    Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
+        TypeWrite()
+    End Sub
+
+    Private Sub RadioButton7_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton7.CheckedChanged
+        TypeWrite()
+    End Sub
+
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+        If TWriteRAM = False Then TextBox3.MaxLength = 5 : Exit Sub
         UpdateValue()
     End Sub
 
     Private Sub UpdateValue()
         TextBox3.Text = FormatText(TextBox3.Text, TextBox3.MaxLength)
         TextBox3.Select(TextBox3.Text.Length, 0)
+    End Sub
+
+    Private Sub TypeWrite()
+        If RadioButton6.Checked = True Then
+            TWriteRAM = True
+            TextBox1.MaxLength = 9
+            TextBox3.Enabled = True
+            NumericUpDown1.Enabled = True
+        Else
+            TWriteRAM = False
+            TextBox1.MaxLength = 14
+            TextBox3.Enabled = False
+            NumericUpDown1.Enabled = False
+        End If
+
     End Sub
 
     Private Sub Mcheat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -61,9 +116,9 @@ Public Class Mcheat
 
         MedGuiR.SetSpecialModule()
         If mmodule = "snes" And MedGuiR.tpce = "_faust" Then
-            Label6.Text = "[" & r_sha.Substring(0, 32) & "]"
+            TextBox2.Text = "[" & r_sha.Substring(0, 32) & "]"
         Else
-            Label6.Text = "[" & r_md5 & "]"
+            TextBox2.Text = "[" & r_md5 & "]"
         End If
 
         Label7.Text = Path.GetFileNameWithoutExtension(filepath)
