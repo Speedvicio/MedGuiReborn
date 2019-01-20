@@ -2609,6 +2609,10 @@ SKIPHASH:
         MAImaker.Show()
     End Sub
 
+    Private Sub CheatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheatToolStripMenuItem.Click
+        Mcheat.ShowDialog()
+    End Sub
+
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
         If Me.Width < 794 Then Me.Width = 794
         If Me.Height < 415 Then Me.Height = 415
