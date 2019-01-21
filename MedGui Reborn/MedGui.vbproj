@@ -153,6 +153,12 @@
     <Compile Include="MAImaker.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mcheat.Designer.vb">
+      <DependentUpon>Mcheat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mcheat.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MedBrowser.Designer.vb">
       <DependentUpon>MedBrowser.vb</DependentUpon>
     </Compile>
@@ -348,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MAImaker.resx">
       <DependentUpon>MAImaker.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mcheat.resx">
+      <DependentUpon>Mcheat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedBrowser.resx">
       <DependentUpon>MedBrowser.vb</DependentUpon>
