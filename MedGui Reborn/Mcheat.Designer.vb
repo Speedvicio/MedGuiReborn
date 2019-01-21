@@ -350,7 +350,7 @@ Partial Class Mcheat
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(492, 319)
+        Me.LinkLabel2.Location = New System.Drawing.Point(492, 332)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(42, 13)
         Me.LinkLabel2.TabIndex = 9
@@ -376,7 +376,7 @@ Partial Class Mcheat
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(315, 284)
+        Me.Button3.Location = New System.Drawing.Point(445, 284)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(88, 23)
         Me.Button3.TabIndex = 17
@@ -385,11 +385,11 @@ Partial Class Mcheat
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(409, 284)
+        Me.Button4.Location = New System.Drawing.Point(333, 284)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(125, 23)
+        Me.Button4.Size = New System.Drawing.Size(88, 23)
         Me.Button4.TabIndex = 18
-        Me.Button4.Text = "&Enable/Disable Code"
+        Me.Button4.Text = "&Modify Code"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Mcheat
