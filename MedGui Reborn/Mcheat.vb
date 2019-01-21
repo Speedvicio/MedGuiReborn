@@ -104,6 +104,7 @@ Public Class Mcheat
     End Sub
 
     Private Sub Mcheat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ResetAll()
         CheatConsole = LCase(MedGuiR.DataGridView1.CurrentRow.Cells(6).Value)
         Select Case LCase(Path.GetExtension(percorso))
             Case ".zip", ".rar", ".7z"
@@ -123,7 +124,6 @@ Public Class Mcheat
 
         Label7.Text = Path.GetFileNameWithoutExtension(filepath)
 
-        ListBox1.Items.Clear()
         If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
             ParseCht()
         End If
@@ -171,9 +171,9 @@ Public Class Mcheat
 
         Dim SplitCheat() As String
         For i = 0 To DeatilCheat.Length - 1
-            If DeatilCheat(1).Contains(TextBox2.Text) Or
-                DeatilCheat(1).Contains(Label7.Text) Then
-                SplitCheat = DeatilCheat(1).Split(vbLf)
+            If DeatilCheat(i).Contains(TextBox2.Text) Or
+                DeatilCheat(i).Contains(Label7.Text) Then
+                SplitCheat = DeatilCheat(i).Split(vbLf)
                 Exit For
             End If
         Next
@@ -183,5 +183,70 @@ Public Class Mcheat
             ListBox1.Items.Add(SplitCheat(i).ToString)
         Next
 
+    End Sub
+
+    Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
+        If ListBox1.Items.Count < 1 Then Exit Sub
+
+        RadioButton6.Checked = True
+        Dim RetrieveCheatValue() As String = ListBox1.SelectedItem.ToString.Split(" ")
+
+        Select Case RetrieveCheatValue(0)
+            Case "R"
+                RadioButton1.Checked = True
+            Case "A"
+                RadioButton2.Checked = True
+            Case "T"
+                RadioButton3.Checked = True
+            Case "S"
+                RadioButton4.Checked = True
+            Case "C"
+                RadioButton5.Checked = True
+        End Select
+
+        Select Case RetrieveCheatValue(1)
+            Case "A"
+                CheckBox1.Checked = True
+            Case "I"
+                CheckBox1.Checked = False
+        End Select
+
+        NumericUpDown1.Value = Val(RetrieveCheatValue(2))
+
+        Select Case RetrieveCheatValue(3)
+            Case "B"
+                CheckBox2.Checked = False
+            Case "L"
+                CheckBox2.Checked = True
+        End Select
+
+        TextBox1.MaxLength = RetrieveCheatValue(5).Length + 1
+        TextBox1.Text = RetrieveCheatValue(5)
+
+        TextBox3.MaxLength = RetrieveCheatValue(6).Length + 1
+        TextBox3.Text = RetrieveCheatValue(6)
+
+        Dim cheatname As String
+        For i = 7 To RetrieveCheatValue.Length - 1
+            cheatname += RetrieveCheatValue(i) & " "
+        Next
+
+        TextBox4.Text = cheatname.Trim
+    End Sub
+
+    Private Sub ResetAll()
+        ListBox1.Items.Clear()
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        TextBox4.Text = ""
+        Label7.Text = ""
+        RadioButton6.Checked = True
+        RadioButton1.Checked = True
+        CheckBox1.Checked = True
+        CheckBox2.Checked = True
+        NumericUpDown1.Value = 1
+        Label11.Text = "Result Code"
+        Label11.Left = (Me.Width / 2) - (Label11.Width / 2)
     End Sub
 End Class
