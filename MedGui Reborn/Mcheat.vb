@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Public Class Mcheat
-    Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName As String
+    Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName, CheatConsole As String
     Dim TWriteRAM As Boolean = True
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
@@ -22,7 +22,7 @@ Public Class Mcheat
         Dim delimiterChars As Char() = {"?", ":", "-", " "}
         Dim SplitAdress() As String = AdressCode.Trim.Split(delimiterChars)
 
-        Select Case LCase(MedGuiR.DataGridView1.CurrentRow.Cells(6).Value)
+        Select Case CheatConsole
             Case "gg", "sms"
                 If SplitAdress(1).Length = 4 Then
                     TextBox1.Text = SplitAdress(0).Substring(2, 2) & SplitAdress(1).Substring(0, 2)
@@ -104,7 +104,7 @@ Public Class Mcheat
     End Sub
 
     Private Sub Mcheat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim mmodule As String = LCase(MedGuiR.DataGridView1.CurrentRow.Cells(6).Value)
+        CheatConsole = LCase(MedGuiR.DataGridView1.CurrentRow.Cells(6).Value)
         Select Case LCase(Path.GetExtension(percorso))
             Case ".zip", ".rar", ".7z"
                 simple_extract()
@@ -115,13 +115,18 @@ Public Class Mcheat
         MD5CalcFile()
 
         MedGuiR.SetSpecialModule()
-        If mmodule = "snes" And MedGuiR.tpce = "_faust" Then
-            TextBox2.Text = "[" & r_sha.Substring(0, 32) & "]"
+        If CheatConsole = "snes" And MedGuiR.tpce = "_faust" Then
+            TextBox2.Text = r_sha.Substring(0, 32)
         Else
-            TextBox2.Text = "[" & r_md5 & "]"
+            TextBox2.Text = r_md5
         End If
 
         Label7.Text = Path.GetFileNameWithoutExtension(filepath)
+
+        ListBox1.Items.Clear()
+        If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
+            ParseCht()
+        End If
     End Sub
 
     Private Sub SetCodeMode()
@@ -160,4 +165,23 @@ Public Class Mcheat
         If Label11.Text.Length > 0 And Label11.Text <> "Result Code" Then Clipboard.SetDataObject(Label11.Text)
     End Sub
 
+    Private Sub ParseCht()
+        Dim readText As String = File.ReadAllText(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht"))
+        Dim DeatilCheat() As String = readText.Split("[")
+
+        Dim SplitCheat() As String
+        For i = 0 To DeatilCheat.Length - 1
+            If DeatilCheat(1).Contains(TextBox2.Text) Or
+                DeatilCheat(1).Contains(Label7.Text) Then
+                SplitCheat = DeatilCheat(1).Split(vbLf)
+                Exit For
+            End If
+        Next
+
+        For i = 1 To SplitCheat.Length - 1
+            If SplitCheat(i).Trim = "" Then Continue For
+            ListBox1.Items.Add(SplitCheat(i).ToString)
+        Next
+
+    End Sub
 End Class

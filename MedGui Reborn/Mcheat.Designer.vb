@@ -25,6 +25,9 @@ Partial Class Mcheat
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
@@ -49,13 +52,12 @@ Partial Class Mcheat
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -99,6 +101,39 @@ Partial Class Mcheat
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(204, 245)
         Me.Panel1.TabIndex = 2
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RadioButton7)
+        Me.GroupBox1.Controls.Add(Me.RadioButton6)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 3)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(188, 44)
+        Me.GroupBox1.TabIndex = 18
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Input Method"
+        '
+        'RadioButton7
+        '
+        Me.RadioButton7.AutoSize = True
+        Me.RadioButton7.Location = New System.Drawing.Point(104, 17)
+        Me.RadioButton7.Name = "RadioButton7"
+        Me.RadioButton7.Size = New System.Drawing.Size(47, 17)
+        Me.RadioButton7.TabIndex = 1
+        Me.RadioButton7.Text = "&Auto"
+        Me.RadioButton7.UseVisualStyleBackColor = True
+        '
+        'RadioButton6
+        '
+        Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.Checked = True
+        Me.RadioButton6.Location = New System.Drawing.Point(38, 17)
+        Me.RadioButton6.Name = "RadioButton6"
+        Me.RadioButton6.Size = New System.Drawing.Size(60, 17)
+        Me.RadioButton6.TabIndex = 0
+        Me.RadioButton6.TabStop = True
+        Me.RadioButton6.Text = "&Manual"
+        Me.RadioButton6.UseVisualStyleBackColor = True
         '
         'CheckBox2
         '
@@ -262,7 +297,7 @@ Partial Class Mcheat
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(135, 377)
+        Me.Label11.Location = New System.Drawing.Point(219, 377)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(108, 20)
         Me.Label11.TabIndex = 15
@@ -272,7 +307,7 @@ Partial Class Mcheat
         '
         Me.Label7.Location = New System.Drawing.Point(85, 36)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(224, 23)
+        Me.Label7.Size = New System.Drawing.Size(380, 23)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "Label7"
         '
@@ -281,13 +316,13 @@ Partial Class Mcheat
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(222, 61)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(144, 212)
+        Me.ListBox1.Size = New System.Drawing.Size(312, 212)
         Me.ListBox1.TabIndex = 5
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(315, 45)
+        Me.Label8.Location = New System.Drawing.Point(483, 36)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 13)
         Me.Label8.TabIndex = 6
@@ -295,9 +330,9 @@ Partial Class Mcheat
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(221, 281)
+        Me.Button1.Location = New System.Drawing.Point(221, 284)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(145, 23)
+        Me.Button1.Size = New System.Drawing.Size(88, 23)
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "&Add Code"
         Me.Button1.UseVisualStyleBackColor = True
@@ -305,7 +340,7 @@ Partial Class Mcheat
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(274, 347)
+        Me.LinkLabel1.Location = New System.Drawing.Point(441, 348)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(93, 13)
         Me.LinkLabel1.TabIndex = 8
@@ -315,7 +350,7 @@ Partial Class Mcheat
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(324, 331)
+        Me.LinkLabel2.Location = New System.Drawing.Point(492, 319)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(42, 13)
         Me.LinkLabel2.TabIndex = 9
@@ -326,44 +361,11 @@ Partial Class Mcheat
         '
         Me.Label10.Location = New System.Drawing.Point(9, 310)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(255, 63)
+        Me.Label10.Size = New System.Drawing.Size(358, 63)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = "PS: Code must to be in RAW Decrypted mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If you want to input original code in" &
     " Action Replay Pro, GameSharck or Game Genie standard, use the console inside Me" &
     "dnafen (ALT + C)"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.RadioButton7)
-        Me.GroupBox1.Controls.Add(Me.RadioButton6)
-        Me.GroupBox1.Location = New System.Drawing.Point(9, 3)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(188, 44)
-        Me.GroupBox1.TabIndex = 18
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Input Method"
-        '
-        'RadioButton6
-        '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Checked = True
-        Me.RadioButton6.Location = New System.Drawing.Point(38, 17)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(60, 17)
-        Me.RadioButton6.TabIndex = 0
-        Me.RadioButton6.TabStop = True
-        Me.RadioButton6.Text = "&Manual"
-        Me.RadioButton6.UseVisualStyleBackColor = True
-        '
-        'RadioButton7
-        '
-        Me.RadioButton7.AutoSize = True
-        Me.RadioButton7.Location = New System.Drawing.Point(104, 17)
-        Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(47, 17)
-        Me.RadioButton7.TabIndex = 1
-        Me.RadioButton7.Text = "&Auto"
-        Me.RadioButton7.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
@@ -372,11 +374,31 @@ Partial Class Mcheat
         Me.TextBox2.Size = New System.Drawing.Size(279, 20)
         Me.TextBox2.TabIndex = 16
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(315, 284)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(88, 23)
+        Me.Button3.TabIndex = 17
+        Me.Button3.Text = "&Remove Code"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(409, 284)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(125, 23)
+        Me.Button4.TabIndex = 18
+        Me.Button4.Text = "&Enable/Disable Code"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Mcheat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(379, 414)
+        Me.ClientSize = New System.Drawing.Size(546, 414)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label11)
@@ -395,9 +417,9 @@ Partial Class Mcheat
         Me.Text = "Cheat Manager"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -434,4 +456,6 @@ Partial Class Mcheat
     Friend WithEvents RadioButton7 As RadioButton
     Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class
