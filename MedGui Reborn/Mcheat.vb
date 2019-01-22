@@ -28,7 +28,7 @@ Public Class Mcheat
 
         Select Case CheatConsole
             Case "gg", "sms"
-                RadioButton1.Checked = True
+                'RadioButton1.Checked = True
                 If SplitAdress(1).Length = 4 Then
                     TextBox1.Text = SplitAdress(0).Substring(2, 2) & SplitAdress(1).Substring(0, 2)
                     TextBox3.Text = SplitAdress(1).Substring(2, 2)
@@ -39,22 +39,33 @@ Public Class Mcheat
 
             Case "nes"
                 If SplitAdress.Length > 2 Then
-                    RadioButton5.Checked = True
+                    'RadioButton5.Checked = True
                     TextBox1.Text = SplitAdress(0)
                     TextBox3.Text = SplitAdress(2) & " " & SplitAdress(1)
                 Else
-                    RadioButton1.Checked = True
+                    'RadioButton1.Checked = True
+                    TextBox1.Text = SplitAdress(0)
+                    TextBox3.Text = SplitAdress(1)
+                End If
+
+            Case "lynx"
+                If SplitAdress.Length > 2 Then
+                    'RadioButton5.Checked = True
+                    TextBox1.Text = SplitAdress(0)
+                    TextBox3.Text = SplitAdress(1) & " " & SplitAdress(2)
+                Else
+                    'RadioButton1.Checked = True
                     TextBox1.Text = SplitAdress(0)
                     TextBox3.Text = SplitAdress(1)
                 End If
 
             Case "snes", "snes_faust"
-                RadioButton4.Checked = True
+                'RadioButton4.Checked = True
                 TextBox1.Text = SplitAdress(0)
                 TextBox3.Text = SplitAdress(1)
 
             Case Else
-                RadioButton1.Checked = True
+                'RadioButton1.Checked = True
                 TextBox1.Text = SplitAdress(0)
                 If SplitAdress.Length > 1 Then
                     NumericUpDown1.Value = SplitAdress(1).Length / 2
@@ -104,7 +115,7 @@ Public Class Mcheat
     End Sub
 
     Private Sub UpdateValue()
-        TextBox3.Text = FormatText(TextBox3.Text, TextBox3.MaxLength)
+        TextBox3.Text = FormatText(TextBox3.Text, TextBox3.MaxLength - 1)
         TextBox3.Select(TextBox3.Text.Length, 0)
     End Sub
 
@@ -138,6 +149,7 @@ Public Class Mcheat
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        TWriteRAM = True
         PrepareCodeforMednafen()
 
         Dim cheatpath As String = Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")
@@ -158,14 +170,14 @@ Public Class Mcheat
             If ListBox1.SelectedIndex < 0 Then DoesentPrepare = True
             ListBox1.SelectedIndex = ListBox1.Items.Count - 1
             If ListBox1.SelectedItem.ToString.Trim = Label11.Text.Trim Then Exit Sub
-            WorkingWithCheat(ListBox1.SelectedItem.ToString.Trim, ListBox1.SelectedItem.ToString.Trim & vbLf & Label11.Text.Trim, False)
+            WorkingWithCheat(ListBox1.SelectedItem.ToString.Trim, ListBox1.SelectedItem.ToString.Trim & vbLf & vbLf & Label11.Text.Trim, False)
         End If
     End Sub
 
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         If ListBox1.Items.Count < 1 Or ListBox1.SelectedIndex < 0 Then Exit Sub
 
-        RadioButton6.Checked = True
+        'RadioButton6.Checked = True
         Dim RetrieveCheatValue() As String = ListBox1.SelectedItem.ToString.Split(" ")
 
         Select Case RetrieveCheatValue(0)
@@ -214,6 +226,10 @@ Public Class Mcheat
     End Sub
 
     Private Sub Mcheat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Icon = gIcon
+        F1 = Me
+        CenterForm()
+
         ResetAll()
         CheatConsole = LCase(MedGuiR.DataGridView1.CurrentRow.Cells(6).Value)
         Select Case LCase(Path.GetExtension(percorso))
@@ -223,6 +239,14 @@ Public Class Mcheat
         End Select
 
         filepath = percorso
+
+        Select Case CheatConsole
+            Case "nes"
+                RemoveHeader(16)
+            Case "lynx"
+                RemoveHeader(64)
+        End Select
+
         MD5CalcFile()
 
         MedGuiR.SetSpecialModule()
@@ -239,6 +263,17 @@ Public Class Mcheat
             ParseCht()
         End If
     End Sub
+
+    Private Function RemoveHeader(rembyte As Integer)
+
+        Dim WithHeader() As Byte = My.Computer.FileSystem.ReadAllBytes(filepath)
+
+        Dim fs As FileStream
+        fs = New FileStream(filepath & "_back", FileMode.Create)
+        fs.Write(WithHeader, rembyte, WithHeader.Length - rembyte)
+        fs.Close()
+        filepath = filepath & "_back"
+    End Function
 
     Private Sub SetCodeMode()
         If RadioButton1.Checked = True Then

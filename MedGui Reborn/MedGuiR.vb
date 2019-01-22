@@ -2610,7 +2610,7 @@ SKIPHASH:
     End Sub
 
     Private Sub CheatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheatToolStripMenuItem.Click
-        Mcheat.ShowDialog()
+        Mcheat.Show()
     End Sub
 
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd

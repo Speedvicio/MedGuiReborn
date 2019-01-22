@@ -150,6 +150,7 @@ Module Resource
             MedGuiR.AddShortuctToDesktopToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\buggy.png"))
             MedGuiR.ImportFromFile.Image = (New Bitmap(MedExtra & "Resource\Gui\cover.png"))
             MedGuiR.ResetToolStripMenuItem1.Image = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
+            MedGuiR.CheatToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\cheat.png"))
             MedGuiR.mMetroMed.Image = (New Bitmap(MedExtra & "Resource\Gui\MetroMed.png"))
 
             Dim flip As Image
