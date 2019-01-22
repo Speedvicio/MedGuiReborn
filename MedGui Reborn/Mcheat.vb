@@ -20,12 +20,15 @@ Public Class Mcheat
     End Sub
 
     Private Function AnalizeRAWCode(AdressCode As String) As String
-        RadioButton1.Checked = True
+        'RadioButton1.Checked = True
         Dim delimiterChars As Char() = {"?", ":", "-", " "}
         Dim SplitAdress() As String = AdressCode.Trim.Split(delimiterChars)
 
+        If SplitAdress.Length < 2 Then Exit Function
+
         Select Case CheatConsole
             Case "gg", "sms"
+                RadioButton1.Checked = True
                 If SplitAdress(1).Length = 4 Then
                     TextBox1.Text = SplitAdress(0).Substring(2, 2) & SplitAdress(1).Substring(0, 2)
                     TextBox3.Text = SplitAdress(1).Substring(2, 2)
@@ -40,13 +43,23 @@ Public Class Mcheat
                     TextBox1.Text = SplitAdress(0)
                     TextBox3.Text = SplitAdress(2) & " " & SplitAdress(1)
                 Else
+                    RadioButton1.Checked = True
                     TextBox1.Text = SplitAdress(0)
                     TextBox3.Text = SplitAdress(1)
                 End If
-            Case Else
 
+            Case "snes", "snes_faust"
+                RadioButton4.Checked = True
                 TextBox1.Text = SplitAdress(0)
-                If SplitAdress.Length > 1 Then TextBox3.Text = SplitAdress(1)
+                TextBox3.Text = SplitAdress(1)
+
+            Case Else
+                RadioButton1.Checked = True
+                TextBox1.Text = SplitAdress(0)
+                If SplitAdress.Length > 1 Then
+                    NumericUpDown1.Value = SplitAdress(1).Length / 2
+                    TextBox3.Text = SplitAdress(1)
+                End If
 
         End Select
         TextBox1.Text = TextBox1.Text.PadLeft(8, "0")
@@ -67,7 +80,7 @@ Public Class Mcheat
         If TWriteRAM = False Then AnalizeRAWCode(TextBox1.Text)
 
         SetCodeMode()
-        Label11.Text = TypeCheat & CheatActive & ByteLenght & LittleEndian & CodeAdress & ByteValue & CheatName
+        Label11.Text = TypeCheat & CheatActive & ByteLenght & LittleEndian & LCase(CodeAdress) & LCase(ByteValue) & CheatName
         Label11.Left = (Me.Width / 2) - (Label11.Width / 2)
     End Sub
 
@@ -112,9 +125,9 @@ Public Class Mcheat
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         If ListBox1.SelectedIndex < 0 Then Exit Sub
-        WorkingWithCheat(ListBox1.SelectedItem.ToString & vbLf & vbLf, "", False)
+        WorkingWithCheat(ListBox1.SelectedItem.ToString, "", False)
         If ListBox1.Items.Count = 0 Then
-            WorkingWithCheat(vbLf & "[" & TextBox2.Text & "] " & Label7.Text.Trim & vbLf, "", False)
+            WorkingWithCheat("[" & TextBox2.Text & "] " & Label7.Text.Trim, "", False)
         End If
     End Sub
 
@@ -139,22 +152,13 @@ Public Class Mcheat
         If ControlCheatPresence = 1 Then Exit Sub
 
         If ListBox1.Items.Count < 1 Then
-            Dim ExNovo As String = vbLf & "[" & TextBox2.Text & "] " & Label7.Text.Trim & vbLf &
-                Label11.Text.Trim & vbLf & vbLf
-
-            'Dim myFile As New FileInfo(cheatpath)
-
-            'If myFile.Length < 40 Then
+            Dim ExNovo As String = "[" & TextBox2.Text & "] " & Label7.Text.Trim & vbLf & Label11.Text.Trim
             WorkingWithCheat("", ExNovo, True)
-            'Else
-            'WorkingWithCheat("", ExNovo, True)
-            'End If
-
         Else
             If ListBox1.SelectedIndex < 0 Then DoesentPrepare = True
             ListBox1.SelectedIndex = ListBox1.Items.Count - 1
             If ListBox1.SelectedItem.ToString.Trim = Label11.Text.Trim Then Exit Sub
-            WorkingWithCheat(ListBox1.SelectedItem.ToString.Trim, ListBox1.SelectedItem.ToString.Trim & vbLf & vbLf & Label11.Text.Trim & vbLf, False)
+            WorkingWithCheat(ListBox1.SelectedItem.ToString.Trim, ListBox1.SelectedItem.ToString.Trim & vbLf & Label11.Text.Trim, False)
         End If
     End Sub
 
@@ -313,7 +317,7 @@ Public Class Mcheat
     End Sub
 
     Private Function WorkingWithCheat(OriginalString As String, StringChange As String, AppendTxt As Boolean)
-        RadioButton1.Checked = True
+        'RadioButton1.Checked = True
 
         Dim txtcheat = My.Computer.FileSystem.ReadAllText(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht"))
 
@@ -323,10 +327,11 @@ Public Class Mcheat
             txtcheat = StringChange
         End If
         My.Computer.FileSystem.WriteAllText(Path.Combine(MedGuiR.TextBox4.Text,
-            "cheats\" & CheatConsole & ".cht"), txtcheat, AppendTxt)
+            "cheats\" & CheatConsole & ".cht"), vbLf & txtcheat.Trim & vbLf, AppendTxt)
 
         DoesentPrepare = False
         ListBox1.Items.Clear()
         ParseCht()
     End Function
+
 End Class
