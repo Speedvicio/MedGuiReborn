@@ -52,9 +52,9 @@ Partial Class Mcheat
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,22 +116,22 @@ Partial Class Mcheat
         'RadioButton7
         '
         Me.RadioButton7.AutoSize = True
+        Me.RadioButton7.Checked = True
         Me.RadioButton7.Location = New System.Drawing.Point(104, 17)
         Me.RadioButton7.Name = "RadioButton7"
         Me.RadioButton7.Size = New System.Drawing.Size(47, 17)
         Me.RadioButton7.TabIndex = 1
+        Me.RadioButton7.TabStop = True
         Me.RadioButton7.Text = "&Auto"
         Me.RadioButton7.UseVisualStyleBackColor = True
         '
         'RadioButton6
         '
         Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Checked = True
         Me.RadioButton6.Location = New System.Drawing.Point(38, 17)
         Me.RadioButton6.Name = "RadioButton6"
         Me.RadioButton6.Size = New System.Drawing.Size(60, 17)
         Me.RadioButton6.TabIndex = 0
-        Me.RadioButton6.TabStop = True
         Me.RadioButton6.Text = "&Manual"
         Me.RadioButton6.UseVisualStyleBackColor = True
         '
@@ -186,7 +186,7 @@ Partial Class Mcheat
         '
         Me.TextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBox3.Location = New System.Drawing.Point(79, 154)
-        Me.TextBox3.MaxLength = 3
+        Me.TextBox3.MaxLength = 8
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(118, 20)
         Me.TextBox3.TabIndex = 11
@@ -196,7 +196,7 @@ Partial Class Mcheat
         '
         Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBox1.Location = New System.Drawing.Point(79, 102)
-        Me.TextBox1.MaxLength = 9
+        Me.TextBox1.MaxLength = 18
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(118, 20)
         Me.TextBox1.TabIndex = 9
@@ -367,13 +367,6 @@ Partial Class Mcheat
     " Action Replay Pro, GameSharck or Game Genie standard, use the console inside Me" &
     "dnafen (ALT + C)"
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(88, 6)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(279, 20)
-        Me.TextBox2.TabIndex = 16
-        '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(445, 284)
@@ -392,14 +385,22 @@ Partial Class Mcheat
         Me.Button4.Text = "&Modify Code"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(88, 5)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(333, 21)
+        Me.ComboBox1.TabIndex = 19
+        '
         'Mcheat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(546, 414)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.LinkLabel2)
@@ -455,7 +456,7 @@ Partial Class Mcheat
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents RadioButton7 As RadioButton
     Friend WithEvents RadioButton6 As RadioButton
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

@@ -7,7 +7,7 @@ Public Class Mcheat
     Dim DoesentPrepare As Boolean = False
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
-        TextBox3.MaxLength = (NumericUpDown1.Value * 2) + 1
+        TextBox3.MaxLength = (NumericUpDown1.Value * 3) + 1
         UpdateValue()
     End Sub
 
@@ -68,8 +68,9 @@ Public Class Mcheat
                 'RadioButton1.Checked = True
                 TextBox1.Text = SplitAdress(0)
                 If SplitAdress.Length > 1 Then
-                    NumericUpDown1.Value = SplitAdress(1).Length / 2
+                    NumericUpDown1.Value = Math.Ceiling(SplitAdress(1).Length / 2)
                     TextBox3.Text = SplitAdress(1)
+                    UpdateValue()
                 End If
 
         End Select
@@ -122,12 +123,12 @@ Public Class Mcheat
     Private Sub TypeWrite()
         If RadioButton6.Checked = True Then
             TWriteRAM = True
-            TextBox1.MaxLength = 9
+            'TextBox1.MaxLength = 9
             TextBox3.Enabled = True
             NumericUpDown1.Enabled = True
         Else
             TWriteRAM = False
-            TextBox1.MaxLength = 14
+            'TextBox1.MaxLength = 14
             TextBox3.Enabled = False
             NumericUpDown1.Enabled = False
         End If
@@ -138,7 +139,7 @@ Public Class Mcheat
         If ListBox1.SelectedIndex < 0 Then Exit Sub
         WorkingWithCheat(ListBox1.SelectedItem.ToString, "", False)
         If ListBox1.Items.Count = 0 Then
-            WorkingWithCheat("[" & TextBox2.Text & "] " & Label7.Text.Trim, "", False)
+            WorkingWithCheat("[" & ComboBox1.Text & "] " & Label7.Text.Trim, "", False)
         End If
     End Sub
 
@@ -164,7 +165,7 @@ Public Class Mcheat
         If ControlCheatPresence = 1 Then Exit Sub
 
         If ListBox1.Items.Count < 1 Then
-            Dim ExNovo As String = "[" & TextBox2.Text & "] " & Label7.Text.Trim & vbLf & Label11.Text.Trim
+            Dim ExNovo As String = "[" & ComboBox1.Text & "] " & Label7.Text.Trim & vbLf & Label11.Text.Trim
             WorkingWithCheat("", ExNovo, True)
         Else
             If ListBox1.SelectedIndex < 0 Then DoesentPrepare = True
@@ -209,7 +210,7 @@ Public Class Mcheat
                 CheckBox2.Checked = True
         End Select
 
-        TextBox1.MaxLength = RetrieveCheatValue(5).Length + 1
+        'TextBox1.MaxLength = RetrieveCheatValue(5).Length + 1
         TextBox1.Text = RetrieveCheatValue(5)
 
         TextBox3.MaxLength = RetrieveCheatValue(6).Length + 1
@@ -225,6 +226,13 @@ Public Class Mcheat
         If DoesentPrepare = False Then PrepareCodeforMednafen()
     End Sub
 
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
+            ListBox1.Items.Clear()
+            ParseCht()
+        End If
+    End Sub
+
     Private Sub Mcheat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
         F1 = Me
@@ -236,6 +244,27 @@ Public Class Mcheat
             Case ".zip", ".rar", ".7z"
                 simple_extract()
             Case ".cue", ".toc", ".ccd", ".m3u"
+                Dim count As Integer = 0
+                For Each foundFile As String In My.Computer.FileSystem.GetFiles(
+  Path.Combine(MedGuiR.TextBox4.Text, "sav\"))
+                    If foundFile.Contains(Path.GetFileNameWithoutExtension(percorso)) Then
+                        Dim Splitmcr() As String
+                        Splitmcr = foundFile.Split(".")
+                        'TextBox2.Text = Splitmcr(1)
+                        Dim exist As Boolean = False
+                        If ComboBox1.Items.Count > 0 Then
+                            For i = 0 To ComboBox1.Items.Count - 1
+                                If ComboBox1.Items(i) = Splitmcr(1) Then
+                                    exist = True
+                                    Exit For
+                                End If
+                            Next
+                        End If
+                        If exist = False Then ComboBox1.Items.Add(Splitmcr(1))
+                    End If
+                Next
+                filepath = percorso
+                GoTo skiphash
         End Select
 
         filepath = percorso
@@ -252,15 +281,17 @@ Public Class Mcheat
         MedGuiR.SetSpecialModule()
         If CheatConsole = "snes" And MedGuiR.tpce = "_faust" Then
             CheatConsole = "snes_faust"
-            TextBox2.Text = r_sha.Substring(0, 32)
+            ComboBox1.Items.Add(r_sha.Substring(0, 32))
         Else
-            TextBox2.Text = r_md5
+            ComboBox1.Items.Add(r_md5)
         End If
+
+skiphash:
 
         Label7.Text = Path.GetFileNameWithoutExtension(filepath)
 
-        If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
-            ParseCht()
+        If ComboBox1.Items.Count > 0 Then
+            ComboBox1.SelectedIndex = 0
         End If
     End Sub
 
@@ -318,8 +349,8 @@ Public Class Mcheat
 
         Dim SplitCheat() As String
         For i = 0 To DeatilCheat.Length - 1
-            If DeatilCheat(i).Contains(TextBox2.Text) Or
-                DeatilCheat(i).Contains(Label7.Text) Then
+            If DeatilCheat(i).Contains(ComboBox1.Text) Then 'Or DeatilCheat(i).Contains(Label7.Text)
+                If DeatilCheat(i).Contains(vbLf) = False Then i += 1
                 SplitCheat = DeatilCheat(i).Split(vbLf)
                 Exit For
             End If
@@ -338,11 +369,12 @@ Public Class Mcheat
     Private Sub ResetAll()
         ListBox1.Items.Clear()
         TextBox1.Text = ""
-        TextBox2.Text = ""
+        'TextBox2.Text = ""
+        ComboBox1.Items.Clear()
         TextBox3.Text = ""
         TextBox4.Text = ""
         Label7.Text = ""
-        RadioButton6.Checked = True
+        RadioButton7.Checked = True
         RadioButton1.Checked = True
         CheckBox1.Checked = True
         CheckBox2.Checked = True
