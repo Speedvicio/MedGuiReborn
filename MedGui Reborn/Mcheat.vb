@@ -293,17 +293,23 @@ skiphash:
         If ComboBox1.Items.Count > 0 Then
             ComboBox1.SelectedIndex = 0
         End If
+
+        If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
+            ListBox1.Items.Clear()
+            ParseCht()
+        End If
     End Sub
 
-    Private Function RemoveHeader(rembyte As Integer)
+    Public Function RemoveHeader(rembyte As Integer)
 
+        Dim backPath As String = Path.Combine(MedExtra, "RomTemp\" & Path.GetFileName(filepath) & "_back")
         Dim WithHeader() As Byte = My.Computer.FileSystem.ReadAllBytes(filepath)
 
         Dim fs As FileStream
-        fs = New FileStream(filepath & "_back", FileMode.Create)
+        fs = New FileStream(backPath, FileMode.Create)
         fs.Write(WithHeader, rembyte, WithHeader.Length - rembyte)
         fs.Close()
-        filepath = filepath & "_back"
+        filepath = backPath
     End Function
 
     Private Sub SetCodeMode()
@@ -349,10 +355,14 @@ skiphash:
 
         Dim SplitCheat() As String
         For i = 0 To DeatilCheat.Length - 1
-            If DeatilCheat(i).Contains(ComboBox1.Text) Then 'Or DeatilCheat(i).Contains(Label7.Text)
+            If DeatilCheat(i).Contains(ComboBox1.Text) Or DeatilCheat(i).Contains(Label7.Text) Then
+                If ComboBox1.Items.Count = 0 And DeatilCheat(i).Contains(cleanpsx(Label7.Text).Trim) Then
+                    Dim SplitMd5() As String = DeatilCheat(i).Split("]")
+                    ComboBox1.Text = SplitMd5(0)
+                End If
                 If DeatilCheat(i).Contains(vbLf) = False Then i += 1
                 SplitCheat = DeatilCheat(i).Split(vbLf)
-                Exit For
+                'Exit For
             End If
         Next
 
