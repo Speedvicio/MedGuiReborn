@@ -1054,7 +1054,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -2525,6 +2525,14 @@ inputagain:
 
             If BCKRisp = vbYes Then
                 filepath = percorso
+
+                Select Case mmodule
+                    Case "nes"
+                        Mcheat.RemoveHeader(16)
+                    Case "lynx"
+                        Mcheat.RemoveHeader(64)
+                End Select
+
                 MD5CalcFile()
 
                 SetSpecialModule()
@@ -2536,6 +2544,8 @@ inputagain:
             Else
                 BackupHash = ""
             End If
+        Else
+            Exit Sub
         End If
 
 SKIPHASH:
