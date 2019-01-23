@@ -21,7 +21,7 @@ Public Class Mcheat
 
     Private Function AnalizeRAWCode(AdressCode As String) As String
         'RadioButton1.Checked = True
-        Dim delimiterChars As Char() = {"?", ":", "-", " "}
+        Dim delimiterChars As Char() = {"?", ":", "-", " ", "+"}
         Dim SplitAdress() As String = AdressCode.Trim.Split(delimiterChars)
 
         If SplitAdress.Length < 2 Then Exit Function
@@ -89,6 +89,7 @@ Public Class Mcheat
     End Sub
 
     Private Sub PrepareCodeforMednafen()
+        TypeWrite()
         If TWriteRAM = False Then AnalizeRAWCode(TextBox1.Text)
 
         SetCodeMode()
@@ -362,7 +363,7 @@ skiphash:
                 End If
                 If DeatilCheat(i).Contains(vbLf) = False Then i += 1
                 SplitCheat = DeatilCheat(i).Split(vbLf)
-                'Exit For
+                Exit For
             End If
         Next
 

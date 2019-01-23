@@ -296,10 +296,10 @@ Partial Class Mcheat
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(219, 377)
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(227, 382)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(108, 20)
+        Me.Label11.Size = New System.Drawing.Size(93, 16)
         Me.Label11.TabIndex = 15
         Me.Label11.Text = "Result Code"
         '
