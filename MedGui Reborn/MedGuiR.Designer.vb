@@ -966,10 +966,10 @@ Partial Class MedGuiR
         Me.LinkLabel2.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.LinkLabel2.Location = New System.Drawing.Point(3, 33)
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(43, 13)
+        Me.LinkLabel2.Size = New System.Drawing.Size(93, 13)
         Me.LinkLabel2.TabIndex = 62
         Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "XMPlay"
+        Me.LinkLabel2.Text = "GameHacking.org"
         Me.ToolTip1.SetToolTip(Me.LinkLabel2, "The best audio player Available on window")
         '
         'LinkLabel1

@@ -873,7 +873,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
-        _link = "http://www.un4seen.com/"
+        _link = "https://gamehacking.org/"
         open_link()
     End Sub
 
