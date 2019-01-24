@@ -805,6 +805,10 @@ MedExtra & "Backup\" & p_c & ".cfg", _KPar & "= " & tasti & vbCrLf, True)
                         TextBox17.Text = dopo
                     Case "command.exit"
                         TextBox18.Text = dopo
+                    Case "command.pause"
+                        TextBox20.Text = dopo
+                    Case "command.togglecheatactive"
+                        TextBox19.Text = dopo
                 End Select
             Next
         Else
@@ -987,6 +991,22 @@ MedExtra & "Backup\" & p_c & ".cfg", _KPar & "= " & tasti & vbCrLf, True)
         TransKeyToSdl()
         TextBox18.Text = tasti
         If tasti <> "" Then _KPar = "command.exit" : WriteKeyConf()
+    End Sub
+
+    Private Sub TextBox19_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles TextBox19.KeyUp
+        tasti = e.KeyData.ToString
+        vbtasti = e.KeyData
+        TransKeyToSdl()
+        TextBox19.Text = tasti
+        If tasti <> "" Then _KPar = "command.togglecheatactive" : WriteKeyConf()
+    End Sub
+
+    Private Sub TextBox20_KeyUp(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles TextBox20.KeyUp
+        tasti = e.KeyData.ToString
+        vbtasti = e.KeyData
+        TransKeyToSdl()
+        TextBox20.Text = tasti
+        If tasti <> "" Then _KPar = "command.pause" : WriteKeyConf()
     End Sub
 
     Private Sub KeyAssign_Load(sender As Object, e As EventArgs) Handles MyBase.Load

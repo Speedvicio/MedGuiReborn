@@ -63,6 +63,10 @@ Partial Class KeyAssign
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.TextBox20 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -284,7 +288,7 @@ Partial Class KeyAssign
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(238, 197)
+        Me.Label11.Location = New System.Drawing.Point(241, 197)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(91, 13)
         Me.Label11.TabIndex = 43
@@ -356,7 +360,7 @@ Partial Class KeyAssign
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(12, 252)
+        Me.Label19.Location = New System.Drawing.Point(12, 278)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(364, 52)
         Me.Label19.TabIndex = 55
@@ -365,7 +369,7 @@ Partial Class KeyAssign
         'Button1
         '
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Location = New System.Drawing.Point(368, 246)
+        Me.Button1.Location = New System.Drawing.Point(368, 272)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(23, 23)
         Me.Button1.TabIndex = 56
@@ -384,11 +388,47 @@ Partial Class KeyAssign
         Me.ToolTip1.ReshowDelay = 0
         Me.ToolTip1.ShowAlways = True
         '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(241, 249)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(115, 13)
+        Me.Label20.TabIndex = 60
+        Me.Label20.Text = "Enable/Disable cheats"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(12, 249)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(85, 13)
+        Me.Label21.TabIndex = 59
+        Me.Label21.Text = "Pause/Unpause"
+        '
+        'TextBox19
+        '
+        Me.TextBox19.Location = New System.Drawing.Point(368, 246)
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox19.TabIndex = 58
+        '
+        'TextBox20
+        '
+        Me.TextBox20.Location = New System.Drawing.Point(135, 246)
+        Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox20.TabIndex = 57
+        '
         'KeyAssign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(482, 313)
+        Me.ClientSize = New System.Drawing.Size(482, 347)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.TextBox19)
+        Me.Controls.Add(Me.TextBox20)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.Label12)
@@ -474,5 +514,8 @@ Partial Class KeyAssign
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
-
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents TextBox19 As TextBox
+    Friend WithEvents TextBox20 As TextBox
 End Class
