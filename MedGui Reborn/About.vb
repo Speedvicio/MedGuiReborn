@@ -96,4 +96,9 @@ RETRYMOD:
         End If
     End Sub
 
+    Private Sub LinkLabel5_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel5.LinkClicked
+        _link = "https://gamehacking.org/"
+        open_link()
+    End Sub
+
 End Class
