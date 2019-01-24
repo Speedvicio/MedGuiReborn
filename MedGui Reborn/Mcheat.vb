@@ -12,8 +12,30 @@ Public Class Mcheat
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Process.Start("https://gamehacking.org/")
+        Dim searchcheatcode As String = ""
+        Select Case CheatConsole
+            Case "psx", "ss"
+                searchcheatcode = "serial/" & GetSerial(rn)
+            Case "pcfx"
+                searchcheatcode = "search"
+            Case "pce"
+                If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "TurboGrafx 16 (CD)" Then
+                    searchcheatcode = "search"
+                Else
+                    searchcheatcode = "crc32/" & r_crc
+                End If
+            Case Else
+                searchcheatcode = "crc32/" & r_crc
+        End Select
+
+        Process.Start("https://gamehacking.org/" & searchcheatcode)
     End Sub
+
+    Private Function GetSerial(gamename As String) As String
+        Dim splitrname() As String
+        splitrname = gamename.Split("[")
+        Return (Replace(splitrname(1), "]", ""))
+    End Function
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Process.Start("http://bsfree.shadowflareindustries.com/index.php")
@@ -278,6 +300,7 @@ Public Class Mcheat
         End Select
 
         MD5CalcFile()
+        GetCRC32()
 
         MedGuiR.SetSpecialModule()
         If CheatConsole = "snes" And MedGuiR.tpce = "_faust" Then
