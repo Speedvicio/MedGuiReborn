@@ -53,21 +53,28 @@ Public Class Mcheat
         Select Case CheatConsole
             Case "gg", "sms"
                 'RadioButton1.Checked = True
-                If SplitAdress(1).Length = 4 Then
-                    TextBox1.Text = SplitAdress(0).Substring(2, 2) & SplitAdress(1).Substring(0, 2)
-                    TextBox3.Text = SplitAdress(1).Substring(2, 2)
-                Else
+                If SplitAdress.Length > 2 Then
+                    RadioButton5.Checked = True
                     TextBox1.Text = SplitAdress(0)
-                    TextBox3.Text = SplitAdress(1)
+                    TextBox3.Text = SplitAdress(2) & " " & SplitAdress(1)
+                Else
+                    RadioButton1.Checked = True
+                    If SplitAdress(1).Length = 4 Then
+                        TextBox1.Text = SplitAdress(0).Substring(2, 2) & SplitAdress(1).Substring(0, 2)
+                        TextBox3.Text = SplitAdress(1).Substring(2, 2)
+                    Else
+                        TextBox1.Text = SplitAdress(0)
+                        TextBox3.Text = SplitAdress(1)
+                    End If
                 End If
 
             Case "nes"
                 If SplitAdress.Length > 2 Then
-                    'RadioButton5.Checked = True
+                    RadioButton5.Checked = True
                     TextBox1.Text = SplitAdress(0)
                     TextBox3.Text = SplitAdress(2) & " " & SplitAdress(1)
                 Else
-                    'RadioButton1.Checked = True
+                    RadioButton1.Checked = True
                     TextBox1.Text = SplitAdress(0)
                     TextBox3.Text = SplitAdress(1)
                 End If
