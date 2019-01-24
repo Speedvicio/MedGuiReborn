@@ -22,6 +22,7 @@ Partial Class Mcheat
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -55,6 +56,7 @@ Partial Class Mcheat
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,6 +114,8 @@ Partial Class Mcheat
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Input Method"
+        Me.ToolTip1.SetToolTip(Me.GroupBox1, "Manual = input manually Adress and value" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Auto = Try to format a RAW code splitti" &
+        "ng adress and value")
         '
         'RadioButton7
         '
@@ -154,6 +158,7 @@ Partial Class Mcheat
         Me.Button2.Size = New System.Drawing.Size(110, 23)
         Me.Button2.TabIndex = 16
         Me.Button2.Text = "&Preview Code"
+        Me.ToolTip1.SetToolTip(Me.Button2, "Preview result Mednafen code onto ""Result Code""")
         Me.Button2.UseVisualStyleBackColor = True
         '
         'NumericUpDown1
@@ -212,6 +217,7 @@ Partial Class Mcheat
         Me.CheckBox1.Size = New System.Drawing.Size(56, 17)
         Me.CheckBox1.TabIndex = 8
         Me.CheckBox1.Text = "Acti&ve"
+        Me.ToolTip1.SetToolTip(Me.CheckBox1, "Enable/Disable cheat")
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Label5
@@ -249,6 +255,7 @@ Partial Class Mcheat
         Me.RadioButton5.Size = New System.Drawing.Size(32, 17)
         Me.RadioButton5.TabIndex = 4
         Me.RadioButton5.Text = "&C"
+        Me.ToolTip1.SetToolTip(Me.RadioButton5, "Subsitute on reads, with compare")
         Me.RadioButton5.UseVisualStyleBackColor = True
         '
         'RadioButton4
@@ -259,6 +266,7 @@ Partial Class Mcheat
         Me.RadioButton4.Size = New System.Drawing.Size(32, 17)
         Me.RadioButton4.TabIndex = 3
         Me.RadioButton4.Text = "&S"
+        Me.ToolTip1.SetToolTip(Me.RadioButton4, "Subsitute on reads")
         Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'RadioButton3
@@ -269,6 +277,7 @@ Partial Class Mcheat
         Me.RadioButton3.Size = New System.Drawing.Size(32, 17)
         Me.RadioButton3.TabIndex = 2
         Me.RadioButton3.Text = "&T"
+        Me.ToolTip1.SetToolTip(Me.RadioButton3, "Transfer/RAM copy (high-level)")
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'RadioButton2
@@ -279,6 +288,7 @@ Partial Class Mcheat
         Me.RadioButton2.Size = New System.Drawing.Size(32, 17)
         Me.RadioButton2.TabIndex = 1
         Me.RadioButton2.Text = "&A"
+        Me.ToolTip1.SetToolTip(Me.RadioButton2, "Addiction/RAM read > add > write (high-level)")
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'RadioButton1
@@ -291,6 +301,7 @@ Partial Class Mcheat
         Me.RadioButton1.TabIndex = 0
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "&R"
+        Me.ToolTip1.SetToolTip(Me.RadioButton1, "Replace /RAM Write (high-level)")
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'Label11
@@ -310,6 +321,7 @@ Partial Class Mcheat
         Me.Label7.Size = New System.Drawing.Size(380, 23)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "Label7"
+        Me.ToolTip1.SetToolTip(Me.Label7, "Game file name")
         '
         'ListBox1
         '
@@ -318,6 +330,7 @@ Partial Class Mcheat
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(312, 212)
         Me.ListBox1.TabIndex = 5
+        Me.ToolTip1.SetToolTip(Me.ListBox1, "List of already existant Mednafen code")
         '
         'Label8
         '
@@ -335,27 +348,32 @@ Partial Class Mcheat
         Me.Button1.Size = New System.Drawing.Size(88, 23)
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "&Add Code"
+        Me.ToolTip1.SetToolTip(Me.Button1, "Add code on Mednafen cheat/file folder")
         Me.Button1.UseVisualStyleBackColor = True
         '
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(441, 348)
+        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(415, 323)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(93, 13)
+        Me.LinkLabel1.Size = New System.Drawing.Size(118, 16)
         Me.LinkLabel1.TabIndex = 8
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "GameHacking.org"
+        Me.ToolTip1.SetToolTip(Me.LinkLabel1, "Open in default browser GameHacking refer game cheat code page")
         '
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(492, 332)
+        Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel2.Location = New System.Drawing.Point(479, 348)
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(42, 13)
+        Me.LinkLabel2.Size = New System.Drawing.Size(54, 16)
         Me.LinkLabel2.TabIndex = 9
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "BSFree"
+        Me.ToolTip1.SetToolTip(Me.LinkLabel2, "Open in default browser BSFree cheat code page")
         '
         'Label10
         '
@@ -374,6 +392,7 @@ Partial Class Mcheat
         Me.Button3.Size = New System.Drawing.Size(88, 23)
         Me.Button3.TabIndex = 17
         Me.Button3.Text = "&Remove Code"
+        Me.ToolTip1.SetToolTip(Me.Button3, "Remove code from Mednafen cheat/file folder")
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
@@ -383,6 +402,7 @@ Partial Class Mcheat
         Me.Button4.Size = New System.Drawing.Size(88, 23)
         Me.Button4.TabIndex = 18
         Me.Button4.Text = "&Modify Code"
+        Me.ToolTip1.SetToolTip(Me.Button4, "Modify existent code on Mednafen cheat/file folder")
         Me.Button4.UseVisualStyleBackColor = True
         '
         'ComboBox1
@@ -392,6 +412,8 @@ Partial Class Mcheat
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(333, 21)
         Me.ComboBox1.TabIndex = 19
+        Me.ToolTip1.SetToolTip(Me.ComboBox1, "Md5 game checksum" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(for cd based game the md5 will retrieve by Mednafen save back" &
+        "up, could be more than one result)")
         '
         'Mcheat
         '
@@ -459,4 +481,5 @@ Partial Class Mcheat
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ToolTip1 As ToolTip
 End Class
