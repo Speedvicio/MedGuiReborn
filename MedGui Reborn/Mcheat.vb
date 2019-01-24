@@ -28,7 +28,8 @@ Public Class Mcheat
                 searchcheatcode = "crc32/" & r_crc
         End Select
 
-        Process.Start("https://gamehacking.org/" & searchcheatcode)
+        _link = "https://gamehacking.org/" & searchcheatcode
+        open_link()
     End Sub
 
     Private Function GetSerial(gamename As String) As String
@@ -38,7 +39,8 @@ Public Class Mcheat
     End Function
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
-        Process.Start("http://bsfree.shadowflareindustries.com/index.php")
+        _link = "http://bsfree.shadowflareindustries.com/index.php"
+        open_link()
     End Sub
 
     Private Function AnalizeRAWCode(AdressCode As String) As String
@@ -115,7 +117,7 @@ Public Class Mcheat
         If TWriteRAM = False Then AnalizeRAWCode(TextBox1.Text)
 
         SetCodeMode()
-        Label11.Text = TypeCheat & CheatActive & ByteLenght & LittleEndian & LCase(CodeAdress) & LCase(ByteValue) & CheatName
+        Label11.Text = TypeCheat & CheatActive & ByteLenght & LittleEndian & FormatText(LCase(CodeAdress), 8) & FormatText(LCase(ByteValue), TextBox3.MaxLength) & CheatName
         Label11.Left = (Me.Width / 2) - (Label11.Width / 2)
     End Sub
 
