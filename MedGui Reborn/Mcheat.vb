@@ -276,10 +276,19 @@ Public Class Mcheat
             Case ".zip", ".rar", ".7z"
                 simple_extract()
             Case ".cue", ".toc", ".ccd", ".m3u"
-                Dim count As Integer = 0
+                Dim savetype As String
+                Select Case CheatConsole
+                    Case "psx"
+                        savetype = ".mcr"
+                    Case "ss"
+                        savetype = ".bkr"
+                    Case Else
+                        savetype = ".sav"
+                End Select
                 For Each foundFile As String In My.Computer.FileSystem.GetFiles(
   Path.Combine(MedGuiR.TextBox4.Text, "sav\"))
-                    If foundFile.Contains(Path.GetFileNameWithoutExtension(percorso)) Then
+                    If foundFile.Contains(Path.GetFileNameWithoutExtension(percorso)) And
+                        foundFile.Contains(savetype) Then
                         Dim Splitmcr() As String
                         Splitmcr = foundFile.Split(".")
                         'TextBox2.Text = Splitmcr(1)
