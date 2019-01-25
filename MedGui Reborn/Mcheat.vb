@@ -22,10 +22,10 @@ Public Class Mcheat
                 If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "TurboGrafx 16 (CD)" Then
                     searchcheatcode = "search"
                 Else
-                    searchcheatcode = "crc32/" & r_crc
+                    searchcheatcode = "crc32/" & base_file
                 End If
             Case Else
-                searchcheatcode = "crc32/" & r_crc
+                searchcheatcode = "crc32/" & base_file
         End Select
 
         _link = "https://gamehacking.org/" & searchcheatcode

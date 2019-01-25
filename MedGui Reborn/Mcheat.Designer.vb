@@ -23,6 +23,7 @@ Partial Class Mcheat
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mcheat))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -377,13 +378,11 @@ Partial Class Mcheat
         '
         'Label10
         '
-        Me.Label10.Location = New System.Drawing.Point(9, 310)
+        Me.Label10.Location = New System.Drawing.Point(9, 316)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(358, 63)
+        Me.Label10.Size = New System.Drawing.Size(375, 48)
         Me.Label10.TabIndex = 10
-        Me.Label10.Text = "PS: Code must to be in RAW Decrypted mode." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "If you want to input original code in" &
-    " Action Replay Pro, GameSharck or Game Genie standard, use the console inside Me" &
-    "dnafen (ALT + C)"
+        Me.Label10.Text = resources.GetString("Label10.Text")
         '
         'Button3
         '
