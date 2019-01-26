@@ -396,26 +396,26 @@ skiphash:
         Dim DeatilCheat() As String = readText.Split("[")
 
         Dim SplitCheat() As String
-        
+
         For i = 0 To DeatilCheat.Length - 1
             If DeatilCheat(i).Contains(ComboBox1.Text) Or DeatilCheat(i).Contains(Label7.Text) Then
                 If ComboBox1.Items.Count = 0 And DeatilCheat(i).Contains(cleanpsx(Label7.Text).Trim) Then
                     Dim SplitMd5() As String = DeatilCheat(i).Split("]")
                     ComboBox1.Text = SplitMd5(0)
                 End If
-                'If DeatilCheat(i).Contains(vbLf) = False Then i += 1
-                If Len(DeatilCheat(i).Trim) <= Len(ComboBox1.Text & "] " & Label7.Text) Then Continue For
+                If DeatilCheat(i).Contains(vbLf) = False Then i += 1
+                If DeatilCheat(i).Trim = ComboBox1.Text & "] " & Label7.Text Then Continue For
+                If i > DeatilCheat.Length - 1 Then Exit For
                 SplitCheat = DeatilCheat(i).Split(vbLf)
-                'Exit For
+
+                If SplitCheat Is Nothing Then Continue For
+
+                For z = 1 To SplitCheat.Length - 1
+                    If SplitCheat(z).Trim = "" Then Continue For
+                    ListBox1.Items.Add(SplitCheat(z).ToString)
+                    If SplitCheat(z).ToString.Trim = Label11.Text.Trim Then ControlCheatPresence = 1
+                Next
             End If
-        Next
-
-        If SplitCheat Is Nothing Then Exit Sub
-
-        For i = 1 To SplitCheat.Length - 1
-            If SplitCheat(i).Trim = "" Then Continue For
-            ListBox1.Items.Add(SplitCheat(i).ToString)
-            If SplitCheat(i).ToString.Trim = Label11.Text.Trim Then ControlCheatPresence = 1
         Next
 
     End Sub
