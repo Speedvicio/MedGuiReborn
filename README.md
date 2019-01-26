@@ -23,6 +23,7 @@ For Bugs/Suggestions/Feature Requests or simply to request help, you can refer t
 * Convert audio and cue file in a format compatible with Mednafen (through Sox converter)
 * Playback of cue sheet audio files supported by Mednafen (wav/ogg through Sox converter or by Mednafen itself)
 * Automatic/Manual download of available Game Box Art
+* Experimental cheat manager
 * Displaying detailed information of Roms in local and/or Internet mode
 * Support for Snaps and Title .png image
 * Scrape of boxart and info from TheGamesDB
