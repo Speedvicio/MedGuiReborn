@@ -396,15 +396,17 @@ skiphash:
         Dim DeatilCheat() As String = readText.Split("[")
 
         Dim SplitCheat() As String
+        
         For i = 0 To DeatilCheat.Length - 1
             If DeatilCheat(i).Contains(ComboBox1.Text) Or DeatilCheat(i).Contains(Label7.Text) Then
                 If ComboBox1.Items.Count = 0 And DeatilCheat(i).Contains(cleanpsx(Label7.Text).Trim) Then
                     Dim SplitMd5() As String = DeatilCheat(i).Split("]")
                     ComboBox1.Text = SplitMd5(0)
                 End If
-                If DeatilCheat(i).Contains(vbLf) = False Then i += 1
+                'If DeatilCheat(i).Contains(vbLf) = False Then i += 1
+                If Len(DeatilCheat(i).Trim) <= Len(ComboBox1.Text & "] " & Label7.Text) Then Continue For
                 SplitCheat = DeatilCheat(i).Split(vbLf)
-                Exit For
+                'Exit For
             End If
         Next
 
