@@ -58,7 +58,7 @@ Module xSetting
     Public Sub SetValue()
         set_special_module()
 
-        Select Case ext
+        Select Case LCase(ext)
             Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai"
                 If row.Contains(consoles & ".video.mixed_text_mono ") Then xValue = Trim(Replace(row, consoles & ".video.mixed_text_mono", "")) : MgrSetting.CheckBox108.Checked = CBool(xValue)
                 If row.Contains(consoles & ".video.color_smooth ") Then xValue = Trim(Replace(row, consoles & ".video.color_smooth", "")) : MgrSetting.CheckBox107.Checked = CBool(xValue)

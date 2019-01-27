@@ -54,7 +54,7 @@ Boing:
                 If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Then
                 Else
                     If ext <> "" Then
-                        Select Case ext
+                        Select Case LCase(ext)
                             Case ".cue", ".ccd"
                                 RealcdIsoName()
                             Case ".psf", ".psf1", ".minipsf", ".gsf", ".minigsf", ".nsf", ".spc", ".vgm", ".gbs", ".ssf", ".minissf"

@@ -27,7 +27,7 @@ Module scan
                 oRead = File.OpenText(MedExtra & "RomExt.ini")
                 While oRead.Peek <> -1
 
-                    If Path.GetExtension(fileName) = (oRead.ReadLine()) Then
+                    If LCase(Path.GetExtension(fileName)) = (oRead.ReadLine()) Then
                         ext = ""
                         Counter = Counter + 1
                         percorso = fileName
@@ -92,7 +92,7 @@ Module scan
             romname = Path.GetFileNameWithoutExtension(dettaglio.Name)
             full_path = dettaglio.FullName
 
-            Select Case ext
+            Select Case LCase(ext)
                 Case ".bin", ".iso"
                     dettaglio = My.Computer.FileSystem.GetFileInfo(percorso)
                     If dettaglio.Length > 10485760 And Dir(Replace(percorso, dettaglio.Extension, ".cue")) <> "" Then
@@ -110,7 +110,7 @@ Module scan
     End Sub
 
     Public Sub estensione()
-        Select Case ext
+        Select Case LCase(ext)
             Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai"
                 consoles = "apple2"
                 gif = "apple2"
@@ -433,7 +433,7 @@ Module scan
         wDir = (MedExtra & "Plugins")
         tProcess = "unecm"
         Dim PECM As String
-        If percorso.Contains(".bin.") Then
+        If LCase(percorso).Contains(".bin.") Then
             PECM = ""
         Else
             PECM = Chr(34) & Replace(percorso, dettaglio.Extension, ".bin") & Chr(34)
