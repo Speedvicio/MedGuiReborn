@@ -6181,7 +6181,7 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown34.Location = New System.Drawing.Point(230, 39)
         Me.NumericUpDown34.Maximum = New Decimal(New Integer() {7, 0, 0, 0})
-        Me.NumericUpDown34.Minimum = New Decimal(New Integer() {2, 0, 0, -2147483648})
+        Me.NumericUpDown34.Minimum = New Decimal(New Integer() {3, 0, 0, -2147483648})
         Me.NumericUpDown34.Name = "NumericUpDown34"
         Me.NumericUpDown34.Size = New System.Drawing.Size(68, 20)
         Me.NumericUpDown34.TabIndex = 62
