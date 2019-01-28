@@ -124,4 +124,7 @@
     <value>PS: Code must to be in RAW Decrypted format (use RAM Write code).
 If you want to input original Crypted code in Action Replay Pro, GameSharck or Game Genie standard, use the console inside Mednafen (ALT + C)</value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>44</value>
+  </metadata>
 </root>

@@ -1,8 +1,10 @@
 ﻿Imports System.IO
+Imports System.Net
 
 Public Class Mcheat
-    Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName, CheatConsole As String
+    Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName, CheatConsole, searchcheatcode As String
     Dim TWriteRAM As Boolean = True
+    Dim linkcheat As Boolean
     Dim ControlCheatPresence As Integer
     Dim DoesentPrepare As Boolean = False
 
@@ -12,26 +14,36 @@ Public Class Mcheat
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim searchcheatcode As String = ""
+        linkcheat = False
+        DetectGameHacking()
+        _link = "https://gamehacking.org/" & searchcheatcode
+        open_link()
+    End Sub
+    Private Sub DetectGameHacking()
+        searchcheatcode = ""
+
+        Dim charcheats As String
+        If linkcheat = False Then
+            charcheats = "/"
+        Else
+            charcheats = "="
+        End If
+
         Select Case CheatConsole
             Case "psx", "ss"
-                searchcheatcode = "serial/" & GetSerial(rn)
+                searchcheatcode = "serial" & charcheats & GetSerial(rn)
             Case "pcfx"
                 searchcheatcode = "search"
             Case "pce"
                 If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "TurboGrafx 16 (CD)" Then
                     searchcheatcode = "search"
                 Else
-                    searchcheatcode = "crc32/" & base_file
+                    searchcheatcode = "crc32" & charcheats & base_file
                 End If
             Case Else
-                searchcheatcode = "crc32/" & base_file
+                searchcheatcode = "crc32" & charcheats & base_file
         End Select
-
-        _link = "https://gamehacking.org/" & searchcheatcode
-        open_link()
     End Sub
-
     Private Function GetSerial(gamename As String) As String
         Dim splitrname() As String
         splitrname = gamename.Split("[")
@@ -342,6 +354,24 @@ skiphash:
         End If
     End Sub
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If Directory.Exists(MedExtra & "Cheats\" & CheatConsole) Then
+        Else
+            Directory.CreateDirectory(MedExtra & "Cheats\" & CheatConsole)
+        End If
+
+        linkcheat = True
+        DetectGameHacking()
+
+        Try
+            Dim W As New WebClient
+            W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen",
+            Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
     Public Function RemoveHeader(rembyte As Integer)
 
         Dim backPath As String = Path.Combine(MedExtra, "RomTemp\" & Path.GetFileName(filepath) & "_back")
@@ -455,4 +485,10 @@ skiphash:
         ParseCht()
     End Function
 
+    Private Sub TextBox4_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox4.KeyDown
+        If e.KeyCode = 219 Or e.KeyCode = 221 Then
+            MsgBox("Chars [ and ] are not allowed!", vbOKOnly + MsgBoxStyle.Information, "Uncorrect chars...")
+            e.SuppressKeyPress = True
+        End If
+    End Sub
 End Class
