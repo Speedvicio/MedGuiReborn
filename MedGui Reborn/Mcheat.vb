@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
+Imports RestSharp
 
 Public Class Mcheat
     Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName, CheatConsole, searchcheatcode As String
@@ -19,6 +20,7 @@ Public Class Mcheat
         _link = "https://gamehacking.org/" & searchcheatcode
         open_link()
     End Sub
+
     Private Sub DetectGameHacking()
         searchcheatcode = ""
 
@@ -44,6 +46,7 @@ Public Class Mcheat
                 searchcheatcode = "crc32" & charcheats & base_file
         End Select
     End Sub
+
     Private Function GetSerial(gamename As String) As String
         Dim splitrname() As String
         splitrname = gamename.Split("[")
@@ -364,13 +367,21 @@ skiphash:
         DetectGameHacking()
 
         Try
-            Dim W As New WebClient
-            W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen",
-            Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
+            'Dim W As New WebClient
+            'W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen",
+            'Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
+            get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
     End Sub
+
+    Private Function get_data(url As String, query As String) As String
+        Dim client = New RestClient(url)
+        Dim request = New RestRequest(query)
+        Dim response = client.Execute(request)
+        'MsgBox(response.Content)
+    End Function
 
     Public Function RemoveHeader(rembyte As Integer)
 
@@ -491,4 +502,5 @@ skiphash:
             e.SuppressKeyPress = True
         End If
     End Sub
+
 End Class

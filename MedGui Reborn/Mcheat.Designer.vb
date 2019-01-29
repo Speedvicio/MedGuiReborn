@@ -433,6 +433,7 @@ Partial Class Mcheat
         Me.Button6.TabIndex = 21
         Me.Button6.Text = "&Import"
         Me.Button6.UseVisualStyleBackColor = True
+        Me.Button6.Visible = False
         '
         'Mcheat
         '
