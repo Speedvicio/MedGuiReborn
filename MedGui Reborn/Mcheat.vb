@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Net
-Imports RestSharp
+
+'Imports RestSharp
 
 Public Class Mcheat
     Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName, CheatConsole, searchcheatcode As String
@@ -367,21 +368,23 @@ skiphash:
         DetectGameHacking()
 
         Try
-            'Dim W As New WebClient
-            'W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen",
-            'Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
-            get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
+            Dim W As New WebClient
+            W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen",
+            Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
+
+            '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
+            'get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
     End Sub
 
-    Private Function get_data(url As String, query As String) As String
-        Dim client = New RestClient(url)
-        Dim request = New RestRequest(query)
-        Dim response = client.Execute(request)
-        'MsgBox(response.Content)
-    End Function
+    '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
+    'Private Function get_data(url As String, query As String) As String
+    'Dim client = New RestClient(url)
+    'Dim request = New RestRequest(query)
+    'Dim response = client.Execute(request)
+    'End Function
 
     Public Function RemoveHeader(rembyte As Integer)
 
