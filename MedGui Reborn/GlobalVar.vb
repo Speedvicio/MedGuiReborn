@@ -223,7 +223,7 @@ Module GlobalVar
                                 MedGuiR.TextBox4.Text = d.FullName
                                 MednafenDetected = True
                                 Exit For
-                            ElseIf lcase(f.Name) = "emu4crt.exe" Then
+                            ElseIf LCase(f.Name) = "emu4crt.exe" Then
                                 Dim msg4crt = MsgBox("Seem that you are using emu4crt fork" & vbCrLf &
                                           "Do you want to make a clone renamed mednafen?", vbInformation + vbYesNo, "emu4crt detected...")
                                 If msg4crt = MsgBoxResult.Yes Then
@@ -501,10 +501,13 @@ CheckMednafen:
 
         PurgeConfigBackup()
 
-        If r_sha <> MGRH Then
-            My.Computer.FileSystem.CopyFile(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg", MedExtra & "Backup\" & Date.Today.ToString("ddMMyyyy") & "_ByUpdate.cfg", True)
-            MsgBox("New MedGui Reborn version detected, i have created a backup to prevent corruption of " & DMedConf & ".cfg", vbOKOnly + MsgBoxStyle.Information, "Backup " & DMedConf & ".cfg...")
-        End If
+        Try
+            If r_sha <> MGRH Then
+                My.Computer.FileSystem.CopyFile(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg", MedExtra & "Backup\" & Date.Today.ToString("ddMMyyyy") & "_ByUpdate.cfg", True)
+                MsgBox("New MedGui Reborn version detected, i have created a backup to prevent corruption of " & DMedConf & ".cfg", vbOKOnly + MsgBoxStyle.Information, "Backup " & DMedConf & ".cfg...")
+            End If
+        Catch
+        End Try
         MGRH = r_sha
     End Sub
 
