@@ -424,6 +424,7 @@ Partial Class Mcheat
         Me.Button5.TabIndex = 20
         Me.Button5.Text = "&Download"
         Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.Visible = False
         '
         'Button6
         '

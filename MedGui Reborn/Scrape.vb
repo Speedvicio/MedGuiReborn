@@ -155,12 +155,13 @@ Module Scrape
                 NewXML = Val(infoReader.Length)
 
                 If OldXML < NewXML Then
-                    IO.File.Delete(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                    File.Delete(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                     My.Computer.FileSystem.MoveFile(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml",
                          MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
-                    IO.File.Delete(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                    File.Delete(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 End If
+
             ElseIf ScrapeForce = 0 Then
             ElseIf ScrapeForce = 1 Then
 
@@ -395,7 +396,7 @@ Module Scrape
                                         pathimage = SBoxF
                                     End If
                                 End If
-                                End If
+                            End If
                         End If
 
                 End Select
@@ -473,6 +474,7 @@ Module Scrape
         End If
         SoxStatus.Close()
         ScrapeCount = 0
+
     End Sub
 
     Public Function cleanpsx(ByVal cleanstring As String) As String

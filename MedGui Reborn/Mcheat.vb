@@ -2,6 +2,7 @@
 Imports System.Net
 
 'Imports RestSharp
+'Imports RestSharp.Extensions
 
 Public Class Mcheat
     Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName, CheatConsole, searchcheatcode As String
@@ -367,8 +368,11 @@ skiphash:
         linkcheat = True
         DetectGameHacking()
 
+        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
         Try
             Dim W As New WebClient
+            W.UseDefaultCredentials = False
+            W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko")
             W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen",
             Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
 
@@ -381,8 +385,10 @@ skiphash:
 
     '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
     'Private Function get_data(url As String, query As String) As String
+    'ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
     'Dim client = New RestClient(url)
     'Dim request = New RestRequest(query)
+    'client.DownloadData(request).SaveAs(Path.Combine(Application.StartupPath, "test.txt"))
     'Dim response = client.Execute(request)
     'End Function
 
