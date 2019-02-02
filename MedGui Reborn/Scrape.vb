@@ -135,26 +135,17 @@ Module Scrape
                     path_temp = "Temp\"
                     TheGamesDb_newapi()
                 End If
-                '<TheGamesDb newapi>
-                'MedGuiR.TGDBPlatform()
-                'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
-                '   & "&name=" & cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
-                'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
-
-                'Dim File As StreamWriter
-                'File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
-                'Dim splitXml As String() = Split(str.OuterXml, "<pages>")
-                'File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
-                'File.Close()
 
                 Dim infoReader As FileInfo
                 Dim OldXML, NewXML As Integer
+                Dim DateXML As Date
                 infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 OldXML = Val(infoReader.Length)
+                DateXML = infoReader.CreationTime.ToShortDateString
                 infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 NewXML = Val(infoReader.Length)
 
-                If OldXML < NewXML Then
+                If OldXML < NewXML Or DateTime.Compare(DateXML, "01/01/2019") < 0 Then
                     File.Delete(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                     My.Computer.FileSystem.MoveFile(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml",
                          MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
@@ -172,17 +163,6 @@ Module Scrape
                     path_temp = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\"
                     TheGamesDb_newapi()
                 End If
-                '<TheGamesDb newapi>
-                'MedGuiR.TGDBPlatform()
-                'Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
-                '   & "&name=" & cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
-                'Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
-
-                'Dim File As StreamWriter
-                'File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
-                'Dim splitXml As String() = Split(str.OuterXml, "<pages>")
-                'File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
-                'File.Close()
             End If
 
             ReadXml()
@@ -221,242 +201,244 @@ Module Scrape
         Dim GameName, ReleaseDate, SystemConsole As String
         TGDBXml = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml"
 
-        Dim reader As New System.Xml.XmlTextReader(TGDBXml)
-        Dim W As New Net.WebClient
+        Using reader As New System.Xml.XmlTextReader(TGDBXml)
+            Dim W As New Net.WebClient
 
-        TheGamesDB.Show()
-        TheGamesDB.Label4.Text = "Genre: "
-        TheGamesDB.PictureBox1.Image = Nothing
-        TheGamesDB.PictureBox2.Image = Nothing
+            TheGamesDB.Show()
+            TheGamesDB.Label4.Text = "Genre: "
+            TheGamesDB.PictureBox1.Image = Nothing
+            TheGamesDB.PictureBox2.Image = Nothing
 
-        While reader.Read()
-            Dim contents As String
-            reader.MoveToContent()
+            While reader.Read()
+                Dim contents As String
+                reader.MoveToContent()
 
-            If reader.NodeType = Xml.XmlNodeType.Element Then
-                contents = reader.Name
-            End If
+                If reader.NodeType = Xml.XmlNodeType.Element Then
+                    contents = reader.Name
+                End If
 
-            If reader.NodeType = Xml.XmlNodeType.Text Then
-                Select Case contents
-                    Case "count"
-                        counTGDB = Val(reader.Value)
-                        If counTGDB > 1 Then
-                            TheGamesDB.Close()
-                            TGDBGameSelector.Show()
-                            TGDBGameSelector.DataGridView1.Rows.Clear()
-                        End If
-                    Case "id"
-                        If counTGDB > 1 Then GameID = reader.Value.ToString
-                    Case "baseImgUrl"
-                        BaseUrl = reader.Value
-                    Case "original"
-                        If counTGDB = 1 Then BaseUrl = reader.Value
-                    Case "GameTitle", "game_title"
-                        GameName = Replace(reader.Value, "&", "&&")
-                        TheGamesDB.Label1.Text = "Game Title: " & GameName
-                    Case "Platform", "platform", "name"
-                        SystemConsole = ""
-                        If counTGDB > 1 And contents = "platform" Then
-                            SystemConsole = ReadTGDBList("Platforms", reader.Value.Trim)
+                If reader.NodeType = Xml.XmlNodeType.Text Then
+                    Select Case contents
+                        Case "count"
+                            counTGDB = Val(reader.Value)
+                            If counTGDB > 1 Then
+                                TheGamesDB.Close()
+                                TGDBGameSelector.Show()
+                                TGDBGameSelector.DataGridView1.Rows.Clear()
+                            End If
+                        Case "id"
+                            If counTGDB > 1 Then GameID = reader.Value.ToString
+                        Case "baseImgUrl"
+                            BaseUrl = reader.Value
+                        Case "original"
+                            If counTGDB = 1 Then BaseUrl = reader.Value
+                        Case "GameTitle", "game_title"
+                            GameName = Replace(reader.Value, "&", "&&")
+                            TheGamesDB.Label1.Text = "Game Title: " & GameName
+                        Case "Platform", "platform", "name"
+                            SystemConsole = ""
+                            If counTGDB > 1 And contents = "platform" Then
+                                SystemConsole = ReadTGDBList("Platforms", reader.Value.Trim)
 
-                            'If counTGDB > 1 Then
-                            TGDBGameSelector.DataGridView1.Rows.Add(GameID, GameName, SystemConsole, ReleaseDate)
-                            TGDBGameSelector.DataGridView1.Sort(TGDBGameSelector.DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
-                            'End If
-                        End If
-                        TheGamesDB.Label2.Text = "Platform: " & (reader.Value)
-                    Case "ReleaseDate", "release_date"
-                        Dim fdate As String
-                        fdate = Replace(reader.Value, "-", "/")
-                        If Len(fdate) = 10 Then fdate = fdate Else fdate = "0" & fdate
-                        If Len(fdate) = 4 Then
-                            TheGamesDB.Label3.Text = "Release Date: " & (fdate)
-                        Else
-                            Try
-                                Dim formatDate() = {"dd/MM/yyyy", "MM/dd/yyyy", "yyyy/MM/dd"}
-                                Dim expenddt As Date
-                                expenddt = Date.ParseExact(fdate, formatDate, Globalization.DateTimeFormatInfo.InvariantInfo,
-    Globalization.DateTimeStyles.None)
-                                fdate = expenddt.ToString("dd/MM/yyyy", Globalization.CultureInfo.InvariantCulture)
-                            Catch
-                            Finally
-                                ReleaseDate = fdate
+                                'If counTGDB > 1 Then
+                                TGDBGameSelector.DataGridView1.Rows.Add(GameID, GameName, SystemConsole, ReleaseDate)
+                                TGDBGameSelector.DataGridView1.Sort(TGDBGameSelector.DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+                                'End If
+                            End If
+                            TheGamesDB.Label2.Text = "Platform: " & (reader.Value)
+                        Case "ReleaseDate", "release_date"
+                            Dim fdate As String
+                            fdate = Replace(reader.Value, "-", "/")
+                            If Len(fdate) = 10 Then fdate = fdate Else fdate = "0" & fdate
+                            If Len(fdate) = 4 Then
                                 TheGamesDB.Label3.Text = "Release Date: " & (fdate)
-                            End Try
-                        End If
-                    Case "Overview", "overview"
-                        TheGamesDB.RichTextBox1.Text = (reader.Value)
-                    Case "genre", "genres"
-                        Dim result As String = ""
-                        If counTGDB = 1 Then
-                            result = ReadTGDBList("Genres", reader.Value.Trim)
-                        Else
-                            result = reader.Value
-                        End If
-
-                        If Len(TheGamesDB.Label4.Text) <= 7 Then
-                            TheGamesDB.Label4.Text = "Genre: " & (result)
-                        Else
-                            TheGamesDB.Label4.Text = TheGamesDB.Label4.Text & " - " & (result)
-                        End If
-                    Case "Players", "players"
-                        TheGamesDB.Label11.Text = "Players: " & (reader.Value)
-                    Case "Publisher", "publishers"
-                        Dim result As String = ""
-                        If counTGDB = 1 Then
-                            result = ReadTGDBList("Publishers", reader.Value.Trim)
-                        Else
-                            result = reader.Value
-                        End If
-                        TheGamesDB.Label5.Text = "Publisher: " & (result)
-                    Case "Developer", "developers"
-                        Dim result As String = ""
-                        If counTGDB = 1 Then
-                            result = ReadTGDBList("Developers", reader.Value.Trim)
-                        Else
-                            result = reader.Value
-                        End If
-                        TheGamesDB.Label6.Text = "Developer: " & (result)
-                    Case "Co-op", "coop"
-                        TheGamesDB.Label7.Text = "Co-op: " & (reader.Value)
-                    Case "boxart"
-
-                        If reader.Value.Contains("boxart/original/back/") Then
-                            fBack = reader.Value
-                            Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
-
-                            If ScrapeForce > 0 Or File.Exists(SIF) = False Then
-                                W.DownloadFile(BaseUrl & fBack, SIF)
+                            Else
+                                Try
+                                    Dim formatDate() = {"dd/MM/yyyy", "MM/dd/yyyy", "yyyy/MM/dd"}
+                                    Dim expenddt As Date
+                                    expenddt = Date.ParseExact(fdate, formatDate, Globalization.DateTimeFormatInfo.InvariantInfo,
+        Globalization.DateTimeStyles.None)
+                                    fdate = expenddt.ToString("dd/MM/yyyy", Globalization.CultureInfo.InvariantCulture)
+                                Catch
+                                Finally
+                                    ReleaseDate = fdate
+                                    TheGamesDB.Label3.Text = "Release Date: " & (fdate)
+                                End Try
+                            End If
+                        Case "Overview", "overview"
+                            TheGamesDB.RichTextBox1.Text = (reader.Value)
+                        Case "genre", "genres"
+                            Dim result As String = ""
+                            If counTGDB = 1 Then
+                                result = ReadTGDBList("Genres", reader.Value.Trim)
+                            Else
+                                result = reader.Value
                             End If
 
-                        ElseIf reader.Value.Contains("boxart/original/front/") Then
-                            fFront = reader.Value
-                            Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
-
-                            If ScrapeForce > 0 Or File.Exists(SIF) = False Then
-                                W.DownloadFile(BaseUrl & fFront, SIF)
+                            If Len(TheGamesDB.Label4.Text) <= 7 Then
+                                TheGamesDB.Label4.Text = "Genre: " & (result)
+                            Else
+                                TheGamesDB.Label4.Text = TheGamesDB.Label4.Text & " - " & (result)
                             End If
+                        Case "Players", "players"
+                            TheGamesDB.Label11.Text = "Players: " & (reader.Value)
+                        Case "Publisher", "publishers"
+                            Dim result As String = ""
+                            If counTGDB = 1 Then
+                                result = ReadTGDBList("Publishers", reader.Value.Trim)
+                            Else
+                                result = reader.Value
+                            End If
+                            TheGamesDB.Label5.Text = "Publisher: " & (result)
+                        Case "Developer", "developers"
+                            Dim result As String = ""
+                            If counTGDB = 1 Then
+                                result = ReadTGDBList("Developers", reader.Value.Trim)
+                            Else
+                                result = reader.Value
+                            End If
+                            TheGamesDB.Label6.Text = "Developer: " & (result)
+                        Case "Co-op", "coop"
+                            TheGamesDB.Label7.Text = "Co-op: " & (reader.Value)
+                        Case "boxart"
 
-                        End If
-                    Case "filename"
-                        Dim SIF As String
-                        If counTGDB = 1 Then
-                            If reader.Value.Contains("boxart/back/") Then
+                            If reader.Value.Contains("boxart/original/back/") Then
                                 fBack = reader.Value
-                                SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
+                                Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
 
                                 If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(BaseUrl & fBack, SIF)
                                 End If
 
-                                'thumb
-                                tBack = reader.Value
-                                SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
-
-                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
-                                    W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tBack, SIF)
-                                End If
-
-                                SboxR = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
-
-                                Try
-                                    TheGamesDB.PictureBox2.Load(SboxR)
-                                Catch
-                                    SoxStatus.Close()
-                                End Try
-
-                            ElseIf reader.Value.Contains("boxart/front/") Then
+                            ElseIf reader.Value.Contains("boxart/original/front/") Then
                                 fFront = reader.Value
-                                SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
+                                Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
 
                                 If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(BaseUrl & fFront, SIF)
                                 End If
 
-                                'thumb
-                                tFront = reader.Value
-                                SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
+                            End If
+                        Case "filename"
+                            Dim SIF As String
+                            If counTGDB = 1 Then
+                                If reader.Value.Contains("boxart/back/") Then
+                                    fBack = reader.Value
+                                    SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
 
-                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
-                                    W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tFront, SIF)
-                                End If
+                                    If ScrapeForce > 0 Or File.Exists(SIF) = False Then
+                                        W.DownloadFile(BaseUrl & fBack, SIF)
+                                    End If
 
-                                SBoxF = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
+                                    'thumb
+                                    tBack = reader.Value
+                                    SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
 
-                                Try
-                                    TheGamesDB.PictureBox1.Load(SBoxF)
-                                Catch
-                                    SoxStatus.Close()
-                                End Try
+                                    If ScrapeForce > 0 Or File.Exists(SIF) = False Then
+                                        W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tBack, SIF)
+                                    End If
 
-                                If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
-                                    If File.Exists(SBoxF) Then
-                                        MedGuiR.PictureBox1.Load(SBoxF)
-                                        pathimage = SBoxF
+                                    SboxR = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
+
+                                    Try
+                                        TheGamesDB.PictureBox2.Load(SboxR)
+                                    Catch
+                                        SoxStatus.Close()
+                                    End Try
+
+                                ElseIf reader.Value.Contains("boxart/front/") Then
+                                    fFront = reader.Value
+                                    SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
+
+                                    If ScrapeForce > 0 Or File.Exists(SIF) = False Then
+                                        W.DownloadFile(BaseUrl & fFront, SIF)
+                                    End If
+
+                                    'thumb
+                                    tFront = reader.Value
+                                    SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
+
+                                    If ScrapeForce > 0 Or File.Exists(SIF) = False Then
+                                        W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tFront, SIF)
+                                    End If
+
+                                    SBoxF = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
+
+                                    Try
+                                        TheGamesDB.PictureBox1.Load(SBoxF)
+                                    Catch
+                                        SoxStatus.Close()
+                                    End Try
+
+                                    If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
+                                        If File.Exists(SBoxF) Then
+                                            MedGuiR.PictureBox1.Load(SBoxF)
+                                            pathimage = SBoxF
+                                        End If
                                     End If
                                 End If
                             End If
-                        End If
 
-                End Select
+                    End Select
 
-                contents = ""
-            End If
+                    contents = ""
+                End If
 
-            If reader.HasAttributes Then 'If attributes exist
-                While reader.MoveToNextAttribute()
-                    Dim AtName As String = reader.LocalName
-                    'Display attribute name and value.
-                    If AtName = "thumb" Then
-                        Select Case True
-                            Case reader.Value.Contains("boxart/thumb/original/back/")
-                                tBack = reader.Value
-                                Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
+                If reader.HasAttributes Then 'If attributes exist
+                    While reader.MoveToNextAttribute()
+                        Dim AtName As String = reader.LocalName
+                        'Display attribute name and value.
+                        If AtName = "thumb" Then
+                            Select Case True
+                                Case reader.Value.Contains("boxart/thumb/original/back/")
+                                    tBack = reader.Value
+                                    Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
 
-                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
-                                    W.DownloadFile(BaseUrl & tBack, SIF)
-                                End If
-
-                                SboxR = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
-
-                                Try
-                                    TheGamesDB.PictureBox2.Load(SboxR)
-                                Catch
-                                    SoxStatus.Close()
-                                End Try
-
-                            Case reader.Value.Contains("boxart/thumb/original/front/")
-                                tFront = reader.Value
-                                Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
-
-                                If ScrapeForce > 0 Or File.Exists(SIF) = False Then
-                                    W.DownloadFile(BaseUrl & tFront, SIF)
-                                End If
-
-                                SBoxF = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
-
-                                Try
-                                    TheGamesDB.PictureBox1.Load(SBoxF)
-                                Catch
-                                    SoxStatus.Close()
-                                End Try
-
-                                If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
-                                    If File.Exists(SBoxF) Then
-                                        MedGuiR.PictureBox1.Load(SBoxF)
-                                        pathimage = SBoxF
+                                    If ScrapeForce > 0 Or File.Exists(SIF) = False Then
+                                        W.DownloadFile(BaseUrl & tBack, SIF)
                                     End If
-                                End If
 
-                        End Select
-                    End If
-                    AtName = ""
-                End While
-            End If
-            ScrapeCount = ScrapeCount + 1
-        End While
-        reader.Close()
+                                    SboxR = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
+
+                                    Try
+                                        TheGamesDB.PictureBox2.Load(SboxR)
+                                    Catch
+                                        SoxStatus.Close()
+                                    End Try
+
+                                Case reader.Value.Contains("boxart/thumb/original/front/")
+                                    tFront = reader.Value
+                                    Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
+
+                                    If ScrapeForce > 0 Or File.Exists(SIF) = False Then
+                                        W.DownloadFile(BaseUrl & tFront, SIF)
+                                    End If
+
+                                    SBoxF = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
+
+                                    Try
+                                        TheGamesDB.PictureBox1.Load(SBoxF)
+                                    Catch
+                                        SoxStatus.Close()
+                                    End Try
+
+                                    If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
+                                        If File.Exists(SBoxF) Then
+                                            MedGuiR.PictureBox1.Load(SBoxF)
+                                            pathimage = SBoxF
+                                        End If
+                                    End If
+
+                            End Select
+                        End If
+                        AtName = ""
+                    End While
+                End If
+                ScrapeCount = ScrapeCount + 1
+            End While
+            reader.Close()
+
+        End Using
 
         TheGamesDB.Focus()
 

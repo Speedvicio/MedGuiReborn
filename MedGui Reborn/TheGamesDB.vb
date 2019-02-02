@@ -23,7 +23,24 @@
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         If My.Computer.Network.IsAvailable = False Then MsgBox("Connections is not Available", vbOKOnly + vbExclamation) : Exit Sub
         ScrapeForce = 3
+        Call ClearAllinForm(Panel1)
         Scrape.GetParseXML()
+    End Sub
+
+    Sub ClearAllinForm(frmTarget As Panel)
+        Dim i, ctrltarget
+
+        For i = 0 To (frmTarget.Controls.Count - 1)
+            ctrltarget = frmTarget.Controls(i)
+            If TypeOf ctrltarget Is Label Then
+                ctrltarget.Text = ""
+            End If
+        Next i
+
+        RichTextBox1.Clear()
+        PictureBox1.Image = Nothing
+        PictureBox2.Image = Nothing
+
     End Sub
 
     Private Sub TheGamesDB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
