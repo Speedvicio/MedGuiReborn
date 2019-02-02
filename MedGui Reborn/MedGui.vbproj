@@ -133,6 +133,9 @@
     <Compile Include="ChipTAG.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CookieAwareWebClient.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CPM.Designer.vb">
       <DependentUpon>CPM.vb</DependentUpon>
     </Compile>
