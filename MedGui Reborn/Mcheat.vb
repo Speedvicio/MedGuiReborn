@@ -199,6 +199,10 @@ Public Class Mcheat
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        AddCheat()
+    End Sub
+
+    Private Sub AddCheat()
         TWriteRAM = True
         PrepareCodeforMednafen()
 
@@ -357,6 +361,9 @@ skiphash:
             ListBox1.Items.Clear()
             ParseCht()
         End If
+
+        Dim cheatpath As String = Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
+        If File.Exists(cheatpath) Then ReadImported(cheatpath)
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -367,6 +374,7 @@ skiphash:
 
         linkcheat = True
         DetectGameHacking()
+        Dim cheatpath As String = Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
 
         ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
         Try
@@ -374,9 +382,9 @@ skiphash:
             ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
             Dim prova As New CookieAwareWebClient
             prova.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko")
-            prova.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen",
-            Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
+            prova.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen", cheatpath)
 
+            If File.Exists(cheatpath) Then ReadImported(cheatpath)
             'Dim W As New WebClient
             'W.UseDefaultCredentials = False
             'W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko")
@@ -387,6 +395,38 @@ skiphash:
             'get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
         Catch ex As Exception
             MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        If ListBox2.SelectedIndices.Count <= 0 Then Exit Sub
+
+        For Each cheats In ListBox2.SelectedItems
+            ListBox1.Items.Add(cheats)
+            ListBox1.SelectedItem = cheats
+            AddCheat()
+        Next
+    End Sub
+
+    Private Sub ReadImported(cheatpath As String)
+        ListBox2.Items.Clear()
+        Dim oFile As File
+        Dim oRead As StreamReader
+
+        Try
+            oRead = oFile.OpenText(cheatpath)
+
+            While oRead.Peek <> -1
+                Dim cheatcontainer As String = oRead.ReadLine().Trim
+                If cheatcontainer.Contains("[") Or cheatcontainer = Nothing Then
+                    Continue While
+                Else
+                    ListBox2.Items.Add(cheatcontainer)
+                End If
+            End While
+        Catch ex As Exception
+        Finally
+            oRead.Close()
         End Try
     End Sub
 
