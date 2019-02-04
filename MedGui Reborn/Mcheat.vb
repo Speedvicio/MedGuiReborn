@@ -414,11 +414,18 @@ skiphash:
         Dim oRead As StreamReader
 
         Try
+            Dim linecheat As Integer = File.ReadAllLines(cheatpath).Length
+
             oRead = oFile.OpenText(cheatpath)
 
             While oRead.Peek <> -1
                 Dim cheatcontainer As String = oRead.ReadLine().Trim
-                If cheatcontainer.Contains("[") Or cheatcontainer = Nothing Then
+                If cheatcontainer.Contains("Can't find a game with the CRC32") Or linecheat < 2 Then
+                    MsgBox(cheatcontainer, vbOKOnly + MsgBoxStyle.Information, "Cheat not available...")
+                    oRead.Close()
+                    File.Delete(cheatpath)
+                    Exit Sub
+                ElseIf cheatcontainer.Contains("[") Or cheatcontainer = Nothing Then
                     Continue While
                 Else
                     ListBox2.Items.Add(cheatcontainer)
