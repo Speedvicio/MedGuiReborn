@@ -60,7 +60,6 @@ Partial Class Mcheat
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
@@ -107,7 +106,7 @@ Partial Class Mcheat
         Me.Panel1.Controls.Add(Me.RadioButton1)
         Me.Panel1.Location = New System.Drawing.Point(12, 62)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(204, 245)
+        Me.Panel1.Size = New System.Drawing.Size(204, 214)
         Me.Panel1.TabIndex = 2
         '
         'GroupBox1
@@ -159,11 +158,11 @@ Partial Class Mcheat
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(47, 207)
+        Me.Button2.Location = New System.Drawing.Point(127, 180)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 23)
+        Me.Button2.Size = New System.Drawing.Size(70, 23)
         Me.Button2.TabIndex = 16
-        Me.Button2.Text = "&Preview Code"
+        Me.Button2.Text = "&Preview"
         Me.ToolTip1.SetToolTip(Me.Button2, "Preview result Mednafen code onto ""Result Code""")
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -199,7 +198,7 @@ Partial Class Mcheat
         Me.TextBox3.Location = New System.Drawing.Point(79, 154)
         Me.TextBox3.MaxLength = 8
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(118, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(58, 20)
         Me.TextBox3.TabIndex = 11
         Me.TextBox3.Text = "00"
         '
@@ -218,7 +217,7 @@ Partial Class Mcheat
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Checked = True
         Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(141, 184)
+        Me.CheckBox1.Location = New System.Drawing.Point(143, 156)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(56, 17)
         Me.CheckBox1.TabIndex = 8
@@ -314,7 +313,7 @@ Partial Class Mcheat
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(227, 382)
+        Me.Label11.Location = New System.Drawing.Point(267, 351)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(93, 16)
         Me.Label11.TabIndex = 15
@@ -324,7 +323,7 @@ Partial Class Mcheat
         '
         Me.Label7.Location = New System.Drawing.Point(85, 36)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(380, 23)
+        Me.Label7.Size = New System.Drawing.Size(274, 23)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "Label7"
         Me.ToolTip1.SetToolTip(Me.Label7, "Game file name")
@@ -332,16 +331,17 @@ Partial Class Mcheat
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.HorizontalScrollbar = True
         Me.ListBox1.Location = New System.Drawing.Point(222, 61)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(312, 212)
+        Me.ListBox1.Size = New System.Drawing.Size(194, 186)
         Me.ListBox1.TabIndex = 5
         Me.ToolTip1.SetToolTip(Me.ListBox1, "List of already existant Mednafen code")
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(483, 36)
+        Me.Label8.Location = New System.Drawing.Point(365, 36)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(51, 13)
         Me.Label8.TabIndex = 6
@@ -349,11 +349,11 @@ Partial Class Mcheat
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(221, 284)
+        Me.Button1.Location = New System.Drawing.Point(221, 253)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(88, 23)
+        Me.Button1.Size = New System.Drawing.Size(61, 23)
         Me.Button1.TabIndex = 7
-        Me.Button1.Text = "&Add Code"
+        Me.Button1.Text = "&Add"
         Me.ToolTip1.SetToolTip(Me.Button1, "Add code on Mednafen cheat/file folder")
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -361,7 +361,7 @@ Partial Class Mcheat
         '
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(415, 323)
+        Me.LinkLabel1.Location = New System.Drawing.Point(498, 281)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(118, 16)
         Me.LinkLabel1.TabIndex = 8
@@ -373,7 +373,7 @@ Partial Class Mcheat
         '
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.Location = New System.Drawing.Point(479, 348)
+        Me.LinkLabel2.Location = New System.Drawing.Point(562, 313)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(54, 16)
         Me.LinkLabel2.TabIndex = 9
@@ -383,29 +383,29 @@ Partial Class Mcheat
         '
         'Label10
         '
-        Me.Label10.Location = New System.Drawing.Point(9, 316)
+        Me.Label10.Location = New System.Drawing.Point(9, 281)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(375, 48)
+        Me.Label10.Size = New System.Drawing.Size(483, 48)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = resources.GetString("Label10.Text")
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(445, 284)
+        Me.Button3.Location = New System.Drawing.Point(355, 253)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(88, 23)
+        Me.Button3.Size = New System.Drawing.Size(61, 23)
         Me.Button3.TabIndex = 17
-        Me.Button3.Text = "&Remove Code"
+        Me.Button3.Text = "&Remove"
         Me.ToolTip1.SetToolTip(Me.Button3, "Remove code from Mednafen cheat/file folder")
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(333, 284)
+        Me.Button4.Location = New System.Drawing.Point(288, 253)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(88, 23)
+        Me.Button4.Size = New System.Drawing.Size(61, 23)
         Me.Button4.TabIndex = 18
-        Me.Button4.Text = "&Modify Code"
+        Me.Button4.Text = "&Modify"
         Me.ToolTip1.SetToolTip(Me.Button4, "Modify existent code on Mednafen cheat/file folder")
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -414,7 +414,7 @@ Partial Class Mcheat
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(88, 5)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(284, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(328, 21)
         Me.ComboBox1.TabIndex = 19
         Me.ToolTip1.SetToolTip(Me.ComboBox1, "Md5 game checksum" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(for cd based game the md5 will retrieve by Mednafen save back" &
         "up, could be more than one result)")
@@ -422,46 +422,37 @@ Partial Class Mcheat
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(540, 61)
+        Me.ListBox2.HorizontalScrollbar = True
+        Me.ListBox2.Location = New System.Drawing.Point(422, 61)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.ListBox2.Size = New System.Drawing.Size(312, 212)
+        Me.ListBox2.Size = New System.Drawing.Size(194, 186)
         Me.ListBox2.TabIndex = 22
         Me.ToolTip1.SetToolTip(Me.ListBox2, "List of downloaded/imported Mednafen cheats")
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(775, 284)
+        Me.Button5.Location = New System.Drawing.Point(541, 253)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 20
         Me.Button5.Text = "&Download"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(694, 284)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 21
-        Me.Button6.Text = "&Import"
-        Me.Button6.UseVisualStyleBackColor = True
-        Me.Button6.Visible = False
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(708, 36)
+        Me.Label6.Location = New System.Drawing.Point(521, 36)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(144, 13)
+        Me.Label6.Size = New System.Drawing.Size(95, 13)
         Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Downloaded /Imported Code" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label6.Text = "Downloaded Code" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(613, 284)
+        Me.Button7.Location = New System.Drawing.Point(499, 253)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.Size = New System.Drawing.Size(36, 23)
         Me.Button7.TabIndex = 24
         Me.Button7.Text = "&<<"
         Me.Button7.UseVisualStyleBackColor = True
@@ -470,11 +461,10 @@ Partial Class Mcheat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(862, 414)
+        Me.ClientSize = New System.Drawing.Size(627, 376)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ListBox2)
-        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Button4)
@@ -539,7 +529,6 @@ Partial Class Mcheat
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Button7 As Button
