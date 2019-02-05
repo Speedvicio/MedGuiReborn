@@ -232,51 +232,55 @@ Public Class Mcheat
         If ListBox1.Items.Count < 1 Or ListBox1.SelectedIndex < 0 Then Exit Sub
 
         'RadioButton6.Checked = True
-        Dim RetrieveCheatValue() As String = ListBox1.SelectedItem.ToString.Split(" ")
+        Try
+            Dim RetrieveCheatValue() As String = ListBox1.SelectedItem.ToString.Split(" ")
 
-        Select Case RetrieveCheatValue(0)
-            Case "R"
-                RadioButton1.Checked = True
-            Case "A"
-                RadioButton2.Checked = True
-            Case "T"
-                RadioButton3.Checked = True
-            Case "S"
-                RadioButton4.Checked = True
-            Case "C"
-                RadioButton5.Checked = True
-        End Select
+            Select Case RetrieveCheatValue(0)
+                Case "R"
+                    RadioButton1.Checked = True
+                Case "A"
+                    RadioButton2.Checked = True
+                Case "T"
+                    RadioButton3.Checked = True
+                Case "S"
+                    RadioButton4.Checked = True
+                Case "C"
+                    RadioButton5.Checked = True
+            End Select
 
-        Select Case RetrieveCheatValue(1)
-            Case "A"
-                CheckBox1.Checked = True
-            Case "I"
-                CheckBox1.Checked = False
-        End Select
+            Select Case RetrieveCheatValue(1)
+                Case "A"
+                    CheckBox1.Checked = True
+                Case "I"
+                    CheckBox1.Checked = False
+            End Select
 
-        NumericUpDown1.Value = Val(RetrieveCheatValue(2))
+            NumericUpDown1.Value = Val(RetrieveCheatValue(2))
 
-        Select Case RetrieveCheatValue(3)
-            Case "B"
-                CheckBox2.Checked = False
-            Case "L"
-                CheckBox2.Checked = True
-        End Select
+            Select Case RetrieveCheatValue(3)
+                Case "B"
+                    CheckBox2.Checked = False
+                Case "L"
+                    CheckBox2.Checked = True
+            End Select
 
-        'TextBox1.MaxLength = RetrieveCheatValue(5).Length + 1
-        TextBox1.Text = RetrieveCheatValue(5)
+            'TextBox1.MaxLength = RetrieveCheatValue(5).Length + 1
+            TextBox1.Text = RetrieveCheatValue(5)
 
-        TextBox3.MaxLength = RetrieveCheatValue(6).Length + 1
-        TextBox3.Text = RetrieveCheatValue(6)
+            TextBox3.MaxLength = RetrieveCheatValue(6).Length + 1
+            TextBox3.Text = RetrieveCheatValue(6)
 
-        Dim cheatname As String
-        For i = 7 To RetrieveCheatValue.Length - 1
-            cheatname += RetrieveCheatValue(i) & " "
-        Next
+            Dim cheatname As String
+            For i = 7 To RetrieveCheatValue.Length - 1
+                cheatname += RetrieveCheatValue(i) & " "
+            Next
 
-        If cheatname Is Nothing = False Then TextBox4.Text = cheatname.Trim
+            If cheatname Is Nothing = False Then TextBox4.Text = cheatname.Trim
 
-        If DoesentPrepare = False Then PrepareCodeforMednafen()
+            If DoesentPrepare = False Then PrepareCodeforMednafen()
+        Catch
+            MsgBox("There seems to be a formatting problem with selected code, try to remove it.")
+        End Try
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
