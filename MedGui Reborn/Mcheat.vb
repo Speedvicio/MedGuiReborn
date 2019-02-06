@@ -296,6 +296,13 @@ Public Class Mcheat
         CenterForm()
 
         ResetAll()
+
+        If Val(Environment.OSVersion.Version.ToString) >= 6 Then
+            Button5.Enabled = True
+        Else
+            Button5.Enabled = False
+        End If
+
         CheatConsole = LCase(MedGuiR.DataGridView1.CurrentRow.Cells(6).Value)
         Select Case LCase(Path.GetExtension(percorso))
             Case ".zip", ".rar", ".7z"
@@ -380,7 +387,7 @@ skiphash:
         DetectGameHacking()
         Dim cheatpath As String = Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
 
-        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+
         Try
 
             ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
@@ -406,10 +413,24 @@ skiphash:
         If ListBox2.SelectedIndices.Count <= 0 Then Exit Sub
 
         For Each cheats In ListBox2.SelectedItems
-            ListBox1.Items.Add(cheats)
-            ListBox1.SelectedItem = cheats
-            AddCheat()
+            If cheats.trim <> "" Then
+                ListBox1.Items.Add(cheats)
+                ListBox1.SelectedItem = cheats
+                AddCheat()
+            End If
         Next
+    End Sub
+
+    Private Sub PasteCheatsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteCheatsToolStripMenuItem.Click
+        ListBox2.Items.AddRange(Clipboard.GetText.Split(New String() {vbCrLf}, StringSplitOptions.RemoveEmptyEntries))
+    End Sub
+
+    Private Sub PasteContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles PasteContextMenuStrip1.Opening
+        If Clipboard.ContainsData(DataFormats.Text) = False Then
+            PasteCheatsToolStripMenuItem.Enabled = False
+        Else
+            PasteCheatsToolStripMenuItem.Enabled = True
+        End If
     End Sub
 
     Private Sub ReadImported(cheatpath As String)

@@ -62,9 +62,13 @@ Partial Class Mcheat
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.PasteContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PasteCheatsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PasteContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -373,7 +377,7 @@ Partial Class Mcheat
         '
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.Location = New System.Drawing.Point(562, 313)
+        Me.LinkLabel2.Location = New System.Drawing.Point(562, 304)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(54, 16)
         Me.LinkLabel2.TabIndex = 9
@@ -421,6 +425,7 @@ Partial Class Mcheat
         '
         'ListBox2
         '
+        Me.ListBox2.ContextMenuStrip = Me.PasteContextMenuStrip1
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.HorizontalScrollbar = True
         Me.ListBox2.Location = New System.Drawing.Point(422, 61)
@@ -450,18 +455,40 @@ Partial Class Mcheat
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(499, 253)
+        Me.Button7.Location = New System.Drawing.Point(422, 253)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(36, 23)
         Me.Button7.TabIndex = 24
         Me.Button7.Text = "&<<"
         Me.Button7.UseVisualStyleBackColor = True
         '
+        'PasteContextMenuStrip1
+        '
+        Me.PasteContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasteCheatsToolStripMenuItem})
+        Me.PasteContextMenuStrip1.Name = "PasteContextMenuStrip1"
+        Me.PasteContextMenuStrip1.Size = New System.Drawing.Size(142, 26)
+        '
+        'PasteCheatsToolStripMenuItem
+        '
+        Me.PasteCheatsToolStripMenuItem.Name = "PasteCheatsToolStripMenuItem"
+        Me.PasteCheatsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PasteCheatsToolStripMenuItem.Text = "&Paste Cheats"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(462, 253)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 26
+        Me.Button6.Text = "&Import"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Mcheat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(627, 376)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ListBox2)
@@ -489,6 +516,7 @@ Partial Class Mcheat
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PasteContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -532,4 +560,7 @@ Partial Class Mcheat
     Friend WithEvents ListBox2 As ListBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Button7 As Button
+    Friend WithEvents PasteContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents PasteCheatsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button6 As Button
 End Class
