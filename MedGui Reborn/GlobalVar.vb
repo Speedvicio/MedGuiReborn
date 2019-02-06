@@ -58,17 +58,16 @@ Module GlobalVar
                     webexist = Not (response Is Nothing OrElse response.StatusCode <> Net.HttpStatusCode.OK)
                 End Using
 
-                If webexist = True Then
-                    UpdateServer = "https://medguireborn.000webhostapp.com"
+                If Val(Environment.OSVersion.Version.ToString) >= 6 Then
+                    If webexist = True Then
+                        UpdateServer = "https://medguireborn.000webhostapp.com"
+                    Else
+                        UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
+                    End If
                 Else
                     UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
                 End If
 
-                'If My.Computer.Network.Ping("medguireborn.000webhostapp.com") = True Then
-                'UpdateServer = "https://medguireborn.000webhostapp.com"
-                'Else
-                'UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
-                'End If
             End If
         Catch ex As Exception
             MsgBox(ex)
