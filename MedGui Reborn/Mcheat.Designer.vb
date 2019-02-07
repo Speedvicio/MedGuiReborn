@@ -59,12 +59,13 @@ Partial Class Mcheat
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.PasteContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.PasteCheatsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.PasteContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.PasteCheatsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -435,6 +436,18 @@ Partial Class Mcheat
         Me.ListBox2.TabIndex = 22
         Me.ToolTip1.SetToolTip(Me.ListBox2, "List of downloaded/imported Mednafen cheats")
         '
+        'PasteContextMenuStrip1
+        '
+        Me.PasteContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasteCheatsToolStripMenuItem})
+        Me.PasteContextMenuStrip1.Name = "PasteContextMenuStrip1"
+        Me.PasteContextMenuStrip1.Size = New System.Drawing.Size(142, 26)
+        '
+        'PasteCheatsToolStripMenuItem
+        '
+        Me.PasteCheatsToolStripMenuItem.Name = "PasteCheatsToolStripMenuItem"
+        Me.PasteCheatsToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
+        Me.PasteCheatsToolStripMenuItem.Text = "&Paste Cheats"
+        '
         'Button5
         '
         Me.Button5.Location = New System.Drawing.Point(541, 253)
@@ -462,18 +475,6 @@ Partial Class Mcheat
         Me.Button7.Text = "&<<"
         Me.Button7.UseVisualStyleBackColor = True
         '
-        'PasteContextMenuStrip1
-        '
-        Me.PasteContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PasteCheatsToolStripMenuItem})
-        Me.PasteContextMenuStrip1.Name = "PasteContextMenuStrip1"
-        Me.PasteContextMenuStrip1.Size = New System.Drawing.Size(142, 26)
-        '
-        'PasteCheatsToolStripMenuItem
-        '
-        Me.PasteCheatsToolStripMenuItem.Name = "PasteCheatsToolStripMenuItem"
-        Me.PasteCheatsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PasteCheatsToolStripMenuItem.Text = "&Paste Cheats"
-        '
         'Button6
         '
         Me.Button6.Location = New System.Drawing.Point(462, 253)
@@ -482,6 +483,12 @@ Partial Class Mcheat
         Me.Button6.TabIndex = 26
         Me.Button6.Text = "&Import"
         Me.Button6.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.DefaultExt = "cht"
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.OpenFileDialog1.Filter = "Mednafen Cheat File|*.cht"
         '
         'Mcheat
         '
@@ -563,4 +570,5 @@ Partial Class Mcheat
     Friend WithEvents PasteContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents PasteCheatsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Button6 As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

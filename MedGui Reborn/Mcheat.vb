@@ -422,7 +422,12 @@ skiphash:
     End Sub
 
     Private Sub PasteCheatsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteCheatsToolStripMenuItem.Click
-        ListBox2.Items.AddRange(Clipboard.GetText.Split(New String() {vbCrLf}, StringSplitOptions.RemoveEmptyEntries))
+        Try
+            Dim cheatpath As String = Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
+            File.WriteAllLines(cheatpath, Clipboard.GetText.Split(New String() {vbCrLf}, StringSplitOptions.RemoveEmptyEntries))
+            ReadImported(cheatpath)
+        Catch
+        End Try
     End Sub
 
     Private Sub PasteContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles PasteContextMenuStrip1.Opening
@@ -431,6 +436,28 @@ skiphash:
         Else
             PasteCheatsToolStripMenuItem.Enabled = True
         End If
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim result As DialogResult = OpenFileDialog1.ShowDialog()
+        If result = Windows.Forms.DialogResult.OK Then
+
+            Dim path As String = OpenFileDialog1.FileName
+            Try
+                Dim text As String = File.ReadAllText(path)
+                Dim tsplit() As String = text.Split(vbCrLf)
+
+                For i = 0 To tsplit.Length - 1
+                    If tsplit(i).Contains(ComboBox1.Text) Then
+                        ReadImported(path)
+                        Exit For
+                    End If
+                Next
+
+            Catch ex As Exception
+            End Try
+        End If
+
     End Sub
 
     Private Sub ReadImported(cheatpath As String)
