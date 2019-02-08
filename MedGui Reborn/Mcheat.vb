@@ -387,7 +387,6 @@ skiphash:
         DetectGameHacking()
         Dim cheatpath As String = Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
 
-
         Try
 
             ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
@@ -427,6 +426,8 @@ skiphash:
             File.WriteAllLines(cheatpath, Clipboard.GetText.Split(New String() {vbCrLf}, StringSplitOptions.RemoveEmptyEntries))
             ReadImported(cheatpath)
         Catch
+        Finally
+            Clipboard.Clear()
         End Try
     End Sub
 
@@ -445,15 +446,14 @@ skiphash:
             Dim path As String = OpenFileDialog1.FileName
             Try
                 Dim text As String = File.ReadAllText(path)
-                Dim tsplit() As String = text.Split(vbCrLf)
+                Dim tsplit() As String = text.Split(vbLf)
 
                 For i = 0 To tsplit.Length - 1
-                    If tsplit(i).Contains(ComboBox1.Text) Then
+                    If tsplit(i).Contains("[") Then
                         ReadImported(path)
                         Exit For
                     End If
                 Next
-
             Catch ex As Exception
             End Try
         End If
