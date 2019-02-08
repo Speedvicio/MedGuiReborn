@@ -324,16 +324,23 @@ Public Class Mcheat
                         Dim Splitmcr() As String
                         Splitmcr = foundFile.Split(".")
                         'TextBox2.Text = Splitmcr(1)
+                        Dim correctmd5 As Integer
+                        For z = 0 To Splitmcr.Length - 1
+                            If Splitmcr(z).Length = 32 Then
+                                correctmd5 = z
+                                Exit For
+                            End If
+                        Next
                         Dim exist As Boolean = False
                         If ComboBox1.Items.Count > 0 Then
                             For i = 0 To ComboBox1.Items.Count - 1
-                                If ComboBox1.Items(i) = Splitmcr(1) Then
+                                If ComboBox1.Items(i) = Splitmcr(correctmd5) Then
                                     exist = True
                                     Exit For
                                 End If
                             Next
                         End If
-                        If exist = False Then ComboBox1.Items.Add(Splitmcr(1))
+                        If exist = False Then ComboBox1.Items.Add(Splitmcr(correctmd5))
                     End If
                 Next
                 filepath = percorso
