@@ -31,11 +31,13 @@ Partial Class Reset
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.CheckBox7)
         Me.Panel1.Controls.Add(Me.CheckBox6)
         Me.Panel1.Controls.Add(Me.CheckBox5)
         Me.Panel1.Controls.Add(Me.CheckBox3)
@@ -44,7 +46,7 @@ Partial Class Reset
         Me.Panel1.Controls.Add(Me.CheckBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(152, 156)
+        Me.Panel1.Size = New System.Drawing.Size(152, 182)
         Me.Panel1.TabIndex = 0
         '
         'CheckBox6
@@ -72,9 +74,9 @@ Partial Class Reset
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Location = New System.Drawing.Point(12, 83)
         Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(65, 17)
+        Me.CheckBox3.Size = New System.Drawing.Size(90, 17)
         Me.CheckBox3.TabIndex = 5
-        Me.CheckBox3.Text = "&Box-Arts"
+        Me.CheckBox3.Text = "&Box-Arts Path"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'CheckBox4
@@ -92,9 +94,9 @@ Partial Class Reset
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Location = New System.Drawing.Point(12, 37)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(74, 17)
+        Me.CheckBox2.Size = New System.Drawing.Size(126, 17)
         Me.CheckBox2.TabIndex = 1
-        Me.CheckBox2.Text = "&Mednafen"
+        Me.CheckBox2.Text = "&Mednafen Config File"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
         'CheckBox1
@@ -102,14 +104,14 @@ Partial Class Reset
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(12, 14)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(101, 17)
+        Me.CheckBox1.Size = New System.Drawing.Size(115, 17)
         Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "MedGui &Reborn"
+        Me.CheckBox1.Text = "MedGui &Reborn Ini"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 174)
+        Me.Button1.Location = New System.Drawing.Point(12, 200)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(73, 23)
         Me.Button1.TabIndex = 4
@@ -118,18 +120,28 @@ Partial Class Reset
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(91, 174)
+        Me.Button2.Location = New System.Drawing.Point(91, 200)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(73, 23)
         Me.Button2.TabIndex = 5
         Me.Button2.Text = "&Abort"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Location = New System.Drawing.Point(12, 152)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(88, 17)
+        Me.CheckBox7.TabIndex = 8
+        Me.CheckBox7.Text = "C&heat Cache"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
         'Reset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(174, 207)
+        Me.ClientSize = New System.Drawing.Size(174, 229)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
@@ -154,4 +166,5 @@ Partial Class Reset
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox4 As CheckBox
     Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
 End Class
