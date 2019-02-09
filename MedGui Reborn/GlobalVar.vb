@@ -70,8 +70,8 @@ Module GlobalVar
 
             End If
         Catch ex As Exception
-            UpdateServer = ""
-            MsgBox(ex.ToString)
+            'UpdateServer = ""
+            'MsgBox(ex.ToString)
         End Try
 
     End Sub
