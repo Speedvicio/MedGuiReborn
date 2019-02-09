@@ -9,6 +9,7 @@ Module UpdateMednafen
 
     Public Sub DetectLastMednafen()
         If Directory.Exists(MedExtra & "Update") = False Then Directory.CreateDirectory(MedExtra & "Update\")
+        If UpdateServer Is Nothing Or UpdateServer = "" Then Test_Server()
 
         If Val(Environment.OSVersion.Version.ToString) >= 6 Then
             'MakeRegKey()
@@ -33,8 +34,13 @@ Module UpdateMednafen
 
             'End If
         Else
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Mednafen/ChangeLog.txt", MedExtra & "Update\MednafenUpdate.txt", "anonymous", "anonymous", True, 500, True)
-            UpMedServ = UpdateServer & "/MedGuiR/Mednafen/mednafen-"
+            Try
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Mednafen/ChangeLog.txt", MedExtra & "Update\MednafenUpdate.txt", "anonymous", "anonymous", True, 500, True)
+                UpMedServ = UpdateServer & "/MedGuiR/Mednafen/mednafen-"
+            Catch
+                MsgBox("Unable to detect last Mednafen version", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation)
+                Exit Sub
+            End Try
         End If
 
         If File.Exists(MedExtra & "Update\MednafenUpdate.txt") = False Then

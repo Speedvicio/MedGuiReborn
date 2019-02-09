@@ -6,7 +6,7 @@ Module Updater
     Public Sub get_update()
 
         If Directory.Exists(MedExtra & "Update") = False Then Directory.CreateDirectory(MedExtra & "Update\")
-
+        If UpdateServer Is Nothing Or UpdateServer = "" Then Test_Server()
         If File.Exists(MedExtra & "Update\update.txt") Then File.Delete(MedExtra & "Update\update.txt")
         My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 500, False)
         Dim upd As New StreamReader(MedExtra & "Update\update.txt")
