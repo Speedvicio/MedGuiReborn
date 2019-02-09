@@ -428,6 +428,12 @@ skiphash:
     End Sub
 
     Private Sub PasteCheatsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PasteCheatsToolStripMenuItem.Click
+
+        If Directory.Exists(MedExtra & "Cheats\" & CheatConsole) Then
+        Else
+            Directory.CreateDirectory(MedExtra & "Cheats\" & CheatConsole)
+        End If
+
         Try
             Dim cheatpath As String = Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
             File.WriteAllLines(cheatpath, Clipboard.GetText.Split(New String() {vbCrLf}, StringSplitOptions.RemoveEmptyEntries))
