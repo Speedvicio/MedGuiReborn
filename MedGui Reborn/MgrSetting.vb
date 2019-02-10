@@ -266,6 +266,11 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
     End Sub
 
     Private Sub Setting_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
+        customCulture.NumberFormat.NumberDecimalSeparator = "."
+        Threading.Thread.CurrentThread.CurrentCulture = customCulture
+
         Me.Icon = gIcon
         ComboBox6.Items.Clear()
         ComboBox6.Items.Add("0x0")
@@ -288,6 +293,7 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         ofsr = ComboBox6.Text
         oxfsr = NumericUpDown6.Value
         oyfsr = NumericUpDown6.Value
+
     End Sub
 
     Private Sub Button41_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button41.Click
@@ -605,11 +611,6 @@ ErrorHandler:
         objStreamWriter.WriteLine(Replace(per_sett, " -", vbCrLf))
         objStreamWriter.Close()
         StudioRemoveLinesFromFile()
-        'Threading.Thread.Sleep(500)
-        'StudioRemoveLinesFromFile()
-        'IO.File.Move(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg", MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfg")
-        'Threading.Thread.Sleep(500)
-        'FileSystem.Rename(MedGuiR.TextBox4.Text & "\back_mednafen-09x.cfg", MedGuiR.TextBox4.Text & "\mednafen-09x.cfg")
 
         TPerC = False
     End Sub
@@ -786,6 +787,10 @@ ErrorHandler:
         Label135.BackColor = ColorDialog1.Color
         Label135.ForeColor = Label135.BackColor
         Label135.Text = colour
+    End Sub
+
+    Private Sub NumericUpDown3_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown3.ValueChanged
+
     End Sub
 
     Private Sub Label136_Click(sender As Object, e As EventArgs) Handles Label136.Click
@@ -1111,6 +1116,18 @@ ErrorHandler:
                 MsgBox("No Connection Available!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly)
                 Label27.ForeColor = Drawing.Color.Red
             End Try
+        End If
+    End Sub
+
+    Private Sub TabControl1_MouseWheel(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles TabControl1.MouseWheel
+        If e.Delta > 0 Then
+            If TabControl1.TabPages.IndexOf(TabControl1.SelectedTab) < 29 And TabControl1.SelectedTab IsNot Nothing Then
+                TabControl1.SelectedIndex = TabControl1.TabPages.IndexOf(TabControl1.SelectedTab) + 1
+            End If
+        Else
+            If TabControl1.TabPages.IndexOf(TabControl1.SelectedTab) > 0 And TabControl1.SelectedTab IsNot Nothing Then
+                TabControl1.SelectedIndex = TabControl1.TabPages.IndexOf(TabControl1.SelectedTab) - 1
+            End If
         End If
     End Sub
 
