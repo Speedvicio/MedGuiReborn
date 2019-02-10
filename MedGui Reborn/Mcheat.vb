@@ -1,9 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
 
-'Imports RestSharp
-'Imports RestSharp.Extensions
-
 Public Class Mcheat
     Dim TypeCheat, CheatActive, LittleEndian, ByteLenght, CodeAdress, ByteValue, CheatName, CheatConsole, searchcheatcode As String
     Dim TWriteRAM As Boolean = True
@@ -501,15 +498,6 @@ skiphash:
             oRead.Close()
         End Try
     End Sub
-
-    '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
-    'Private Function get_data(url As String, query As String) As String
-    'ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
-    'Dim client = New RestClient(url)
-    'Dim request = New RestRequest(query)
-    'client.DownloadData(request).SaveAs(Path.Combine(Application.StartupPath, "test.txt"))
-    'Dim response = client.Execute(request)
-    'End Function
 
     Public Function RemoveHeader(rembyte As Integer)
 
