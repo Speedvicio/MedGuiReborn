@@ -154,7 +154,7 @@ Module BoxArt
             Try
                 Dim cover As String
                 cover = "https://medguireborn.000webhostapp.com/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
-                My.Computer.Network.DownloadFile(cover, MedExtra & "BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png", "", "", True, 500, True)
+                My.Computer.Network.DownloadFile(cover, MedExtra & "BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png", "", "", True, 1000, True)
             Catch ex As Exception
                 If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
                     SearchScrape()

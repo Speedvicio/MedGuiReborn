@@ -133,7 +133,7 @@ Public Class ModLand
             End If
 
             If File.Exists(MedExtra & "/Media/Module" & download) = False Then
-                My.Computer.Network.DownloadFile(ModServer & "/pub/modules" & download, MedExtra & "/Media/Module" & download, "anonymous", "", True, 500, True)
+                My.Computer.Network.DownloadFile(ModServer & "/pub/modules" & download, MedExtra & "/Media/Module" & download, "anonymous", "", True, 1000, True)
                 DownloadDriver()
                 changechipstate()
                 MsgBox("File and Driver Downloaded", vbOKOnly + MsgBoxStyle.Information)

@@ -323,6 +323,7 @@ Partial Class Mcheat
         Me.Label11.Size = New System.Drawing.Size(93, 16)
         Me.Label11.TabIndex = 15
         Me.Label11.Text = "Result Code"
+        Me.ToolTip1.SetToolTip(Me.Label11, "Double left mouse click to copy code into clipboard")
         '
         'Label7
         '
@@ -455,6 +456,7 @@ Partial Class Mcheat
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 20
         Me.Button5.Text = "&Download"
+        Me.ToolTip1.SetToolTip(Me.Button5, "Auto Download cheat from GameHacking.org")
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Label6
@@ -473,6 +475,7 @@ Partial Class Mcheat
         Me.Button7.Size = New System.Drawing.Size(36, 23)
         Me.Button7.TabIndex = 24
         Me.Button7.Text = "&<<"
+        Me.ToolTip1.SetToolTip(Me.Button7, "Move selected cheats to main Mednafen cheat file")
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button6
@@ -482,6 +485,7 @@ Partial Class Mcheat
         Me.Button6.Size = New System.Drawing.Size(75, 23)
         Me.Button6.TabIndex = 26
         Me.Button6.Text = "&Import"
+        Me.ToolTip1.SetToolTip(Me.Button6, "Import cht file in Mednafen format")
         Me.Button6.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1

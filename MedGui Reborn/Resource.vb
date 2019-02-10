@@ -197,7 +197,7 @@ Module Resource
     Public Sub MissingResource()
         Try
             If My.Computer.Network.IsAvailable = True Then
-                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Resource.zip", MedExtra & "Update\Resource.zip", "anonymous", "anonymous", True, 500, True)
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Resource.zip", MedExtra & "Update\Resource.zip", "anonymous", "anonymous", True, 1000, True)
                 SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
                 Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\Resource.zip")
                 szip.ExtractArchive(Application.StartupPath)

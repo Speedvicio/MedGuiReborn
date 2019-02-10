@@ -10,7 +10,7 @@ Module Sbi
         If File.Exists(Replace(percorso, Path.GetExtension(percorso), "") & ".sbi") Then Exit Sub
 
         If File.Exists(MedExtra & "Plugins\db\Sbi_List.txt") = False And My.Computer.Network.IsAvailable = True Then
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Sbi_List.txt", MedExtra & "Plugins\db\Sbi_List.txt", "anonymous", "anonymous", True, 500, True)
+            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Sbi_List.txt", MedExtra & "Plugins\db\Sbi_List.txt", "anonymous", "anonymous", True, 1000, True)
         ElseIf File.Exists(MedExtra & "Plugins\db\Sbi_List.txt") = False And My.Computer.Network.IsAvailable = False Then
             Exit Sub
         End If
@@ -54,7 +54,7 @@ Module Sbi
 
             If File.Exists(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z") Then GoTo PatchSkip
 
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Patch/Psx/Sbi/" & "[" & patchname & "].7z", MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", "anonymous", "anonymous", True, 500, True)
+            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Patch/Psx/Sbi/" & "[" & patchname & "].7z", MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", "anonymous", "anonymous", True, 1000, True)
 
             Dim infoReader As FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z")
@@ -96,7 +96,7 @@ PatchSkip:
             If File.Exists(esav) Then Exit Sub
 
             If File.Exists(MedExtra & "Plugins\db\GBAmemtype.txt") = False And My.Computer.Network.IsAvailable = True Then
-                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/GBAmemtype.txt", MedExtra & "Plugins\db\GBAmemtype.txt", "anonymous", "anonymous", True, 500, True)
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/GBAmemtype.txt", MedExtra & "Plugins\db\GBAmemtype.txt", "anonymous", "anonymous", True, 1000, True)
             ElseIf File.Exists(MedExtra & "Plugins\db\GBAmemtype.txt") = False And My.Computer.Network.IsAvailable = False Then
                 Exit Sub
             End If

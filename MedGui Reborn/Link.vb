@@ -111,7 +111,7 @@
     Public Sub DownExtractBios()
         Try
             If UpdateServer = "" Then Test_Server()
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/firmware.zip", MedExtra & "Update\firmware.zip", "anonymous", "anonymous", True, 500, True)
+            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/firmware.zip", MedExtra & "Update\firmware.zip", "anonymous", "anonymous", True, 1000, True)
             SevenZip.SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
             Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(MedExtra & "Update\firmware.zip")
             szip.ExtractArchive(MedGuiR.TextBox4.Text)

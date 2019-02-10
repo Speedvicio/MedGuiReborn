@@ -8,7 +8,7 @@ Module Updater
         If Directory.Exists(MedExtra & "Update") = False Then Directory.CreateDirectory(MedExtra & "Update\")
         If UpdateServer Is Nothing Or UpdateServer = "" Then Test_Server()
         If File.Exists(MedExtra & "Update\update.txt") Then File.Delete(MedExtra & "Update\update.txt")
-        My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 500, False)
+        My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 1000, False)
         Dim upd As New StreamReader(MedExtra & "Update\update.txt")
 
         Try
@@ -39,7 +39,7 @@ Module Updater
                            "Do you want download it?", MsgBoxStyle.YesNo + MsgBoxStyle.Information)
 
                     If upd_mr = vbYes Then
-                        My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", MedExtra & "Update\MedGuiR.zip", "anonymous", "anonymous", True, 500, True)
+                        My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", MedExtra & "Update\MedGuiR.zip", "anonymous", "anonymous", True, 1000, True)
 
                         'Call contr_os()
                         SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
@@ -89,7 +89,7 @@ Module Updater
                 Directory.CreateDirectory(MedExtra & "Update\")
             End If
 
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/DATs.zip", MedExtra & "Update\DATs.zip", "anonymous", "anonymous", True, 500, True)
+            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/DATs.zip", MedExtra & "Update\DATs.zip", "anonymous", "anonymous", True, 1000, True)
 
             Dim infoReader As System.IO.FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Update\DATs.zip")
@@ -130,7 +130,7 @@ Module Updater
                 Directory.CreateDirectory(MedExtra & "Update\")
             End If
 
-            My.Computer.Network.DownloadFile(ModLand.ModServer & "/allmods.zip", MedExtra & "Update\allmods.zip", "", "", True, 500, True)
+            My.Computer.Network.DownloadFile(ModLand.ModServer & "/allmods.zip", MedExtra & "Update\allmods.zip", "", "", True, 1000, True)
 
             Dim infoReader As System.IO.FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Update\allmods.zip")
