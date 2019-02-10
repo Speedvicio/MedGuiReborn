@@ -136,10 +136,16 @@ Module Extract
                     End If
                 End If
                 Select Case LCase(ext)
-                    Case ".iso", ".ecm", ".zip", ".rar", ".7z", ".m3u", ".toc", ".cue", ".ccd" ', ".mai"
+                    Case ".iso", ".ecm", ".zip", ".rar", ".7z", ".m3u", ".toc", ".cue", ".ccd", ', ".mai"
                         consoles = ""
                         ext = ""
                         Exit Sub
+                    Case ".bin", ".img"
+                        If ArchiveFileInfo.Size > 10485760 Then
+                            consoles = ""
+                            ext = ""
+                            Exit Sub
+                        End If
                     Case ".mai"
                         consoles = "apple2"
                         LMain()
