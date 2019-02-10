@@ -10,6 +10,7 @@ Public Class MedGuiR
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         gIcon = My.Resources.MedGuiR
         Me.Icon = gIcon
+
         'Dim process_med() As Process
         'process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
         'If process_med.Length > 0 Then
@@ -2492,7 +2493,10 @@ inputagain:
     End Sub
 
     Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
-        TGDBSettings.ShowDialog()
+        If Val(Environment.OSVersion.Version.ToString) >= 6 Then
+            TGDBSettings.ShowDialog()
+        End If
+
     End Sub
 
     Private Sub BCKPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BCKPToolStripMenuItem.Click

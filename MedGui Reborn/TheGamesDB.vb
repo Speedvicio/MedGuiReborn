@@ -48,6 +48,12 @@
         F1 = Me
         CenterForm()
         PictureBox3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
+
+        If Val(Environment.OSVersion.Version.ToString) >= 6 Then
+            PictureBox3.Enabled = True
+        Else
+            PictureBox3.Enabled = False
+        End If
     End Sub
 
     Private Sub TheGamesDB_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
