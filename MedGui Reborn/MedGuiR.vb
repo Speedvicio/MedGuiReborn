@@ -2931,10 +2931,12 @@ MisScan:
         Select Case p_c
             Case "apple2", "md", "psx", "snes_faust", "ss"
                 portpad = "Virtual Port 1"
-            Case "nes", "pce", "pce_fast", "pcfx", "sms"
+            Case "nes", "pce", "pce_fast", "pcfx", "sms", "demo"
                 portpad = "Port 1"
             Case "snes"
                 portpad = "Port 1/1A"
+            Case Else
+                portpad = "Built-In"
         End Select
 
         Dim FileParameter As String = "-folder=" & Chr(34) & TextBox4.Text & Chr(34) & " -console=" & p_c & " -port=" & Chr(34) & portpad & Chr(34) & " -file=" & Chr(34) & Path.GetFileNameWithoutExtension(DataGridView1.CurrentRow.Cells(4).Value()) & Chr(34)
