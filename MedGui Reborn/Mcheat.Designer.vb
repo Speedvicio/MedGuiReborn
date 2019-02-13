@@ -62,10 +62,12 @@ Partial Class Mcheat
         Me.PasteContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.PasteCheatsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -459,15 +461,6 @@ Partial Class Mcheat
         Me.ToolTip1.SetToolTip(Me.Button5, "Auto Download cheat from GameHacking.org")
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(521, 36)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(95, 13)
-        Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Downloaded Code" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
         'Button7
         '
         Me.Button7.Location = New System.Drawing.Point(422, 253)
@@ -488,17 +481,47 @@ Partial Class Mcheat
         Me.ToolTip1.SetToolTip(Me.Button6, "Import cht file in Mednafen format")
         Me.Button6.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(521, 36)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(95, 13)
+        Me.Label6.TabIndex = 23
+        Me.Label6.Text = "Downloaded Code" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.DefaultExt = "cht"
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         Me.OpenFileDialog1.Filter = "Mednafen Cheat File|*.cht"
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"All", "Enabled", "Disabled"})
+        Me.ComboBox2.Location = New System.Drawing.Point(541, 6)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(75, 21)
+        Me.ComboBox2.TabIndex = 27
+        Me.ComboBox2.Text = "All"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(470, 9)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(65, 13)
+        Me.Label12.TabIndex = 28
+        Me.Label12.Text = "Filter Cheats"
+        '
         'Mcheat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(627, 376)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Label6)
@@ -575,4 +598,6 @@ Partial Class Mcheat
     Friend WithEvents PasteCheatsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Button6 As Button
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label12 As Label
 End Class
