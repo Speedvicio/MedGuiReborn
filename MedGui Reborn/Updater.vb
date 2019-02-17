@@ -8,7 +8,14 @@ Module Updater
         If Directory.Exists(MedExtra & "Update") = False Then Directory.CreateDirectory(MedExtra & "Update\")
         If UpdateServer Is Nothing Or UpdateServer = "" Then Test_Server()
         If File.Exists(MedExtra & "Update\update.txt") Then File.Delete(MedExtra & "Update\update.txt")
-        My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 1000, False)
+        Try
+            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 1000, True)
+        Catch
+            MsgBox("Unable to detect/retrieve updated version." & vbCrLf &
+       "Please try again later", vbOKOnly + MsgBoxStyle.Critical, "Unable to update...")
+            Exit Sub
+        End Try
+
         Dim upd As New StreamReader(MedExtra & "Update\update.txt")
 
         Try
