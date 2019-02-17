@@ -470,6 +470,36 @@ skiphash:
 
     End Sub
 
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+
+        If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
+            ListBox1.Items.Clear()
+            ParseCht()
+        End If
+
+        If ListBox1.Items.Count < 1 Then Exit Sub
+
+        Dim FilterCheat As String
+
+        If ComboBox2.Text = "Enabled" Then
+            FilterCheat = "A"
+        ElseIf ComboBox2.Text = "Disabled" Then
+            FilterCheat = "I"
+        Else
+            Exit Sub
+        End If
+
+        Dim splitindex() As String
+        For i = ListBox1.Items.Count To 0 Step -1
+            If i = 0 Then Exit For
+            splitindex = ListBox1.Items(i - 1).ToString.Split(" ")
+            If splitindex(1) <> FilterCheat Then
+                ListBox1.Items.RemoveAt(i - 1)
+            End If
+        Next
+
+    End Sub
+
     Private Sub ReadImported(cheatpath As String)
         ListBox2.Items.Clear()
         Dim oFile As File
