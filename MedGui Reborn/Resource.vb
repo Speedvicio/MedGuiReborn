@@ -208,7 +208,7 @@ Module Resource
                 Read_Resource()
             Else
                 Message.Label1.Text = "Resource file missing, download full MedGui Reborn package from here:" & vbCrLf
-                Message.LinkLabel1.Text = "https://img.shields.io/sourceforge/dt/medguireborn.svg" & vbCrLf
+                Message.LinkLabel1.Text = "https://github.com/Speedvicio/MedGuiReborn/releases" & vbCrLf
                 Message.ShowDialog()
             End If
         Catch

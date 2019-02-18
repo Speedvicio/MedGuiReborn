@@ -103,7 +103,7 @@
             End Select
 
             If MedGuiR.CheckBox10.Checked = False Then webSystem = ""
-            _link = "https://www.romhacking.net/?page=" & LCase(MedGuiR.WS.Text) & "&genre=&platform=" & webSystem & "&status=&languageid=12&perpage=20&title=" & MedGuiR.TextBox35.Text & "&author=&transsearch=Go"
+            _link = "http://www.romhacking.net/?page=" & LCase(MedGuiR.WS.Text) & "&genre=&platform=" & webSystem & "&status=&languageid=12&perpage=20&title=" & MedGuiR.TextBox35.Text & "&author=&transsearch=Go"
         Catch
         End Try
     End Sub

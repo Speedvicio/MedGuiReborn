@@ -52,7 +52,7 @@ Module GlobalVar
 
             Dim webexist As Boolean = False
             Try
-                Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("https://medguireborn.000webhostapp.com"), Net.HttpWebRequest)
+                Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("http://medguireborn.000webhostapp.com"), Net.HttpWebRequest)
                 request.Method = "HEAD"
                 Using response As Net.HttpWebResponse = DirectCast(request.GetResponse(), Net.HttpWebResponse)
                     webexist = Not (response Is Nothing OrElse response.StatusCode <> Net.HttpStatusCode.OK)
@@ -62,7 +62,7 @@ Module GlobalVar
             End Try
 
             If webexist = True Then
-                UpdateServer = "https://medguireborn.000webhostapp.com"
+                UpdateServer = "http://medguireborn.000webhostapp.com"
             Else
                 UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
             End If

@@ -155,7 +155,7 @@ Module Updater
             szip.Dispose()
 
             System.IO.File.Delete(MedExtra & "Update\allmods.zip")
-            MsgBox("ModLand DATs Upfated!")
+            MsgBox("ModLand DATs Updated!")
         Catch exio As IOException
             MGRWriteLog("Updater - get_Datupdate: " & exio.Message)
         Catch ex As Exception
