@@ -47,13 +47,15 @@ Module GlobalVar
     End Sub
 
     Public Sub Test_Server()
-
         If My.Computer.Network.IsAvailable = True Then
-
             Dim webexist As Boolean = False
+
             Try
                 Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("http://medguireborn.000webhostapp.com"), Net.HttpWebRequest)
-                request.Method = "HEAD"
+                request.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2.3) Gecko/20100401 Firefox/4.0 (.NET CLR 3.5.30729"
+                'request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0"
+                request.KeepAlive = True
+                request.Method = "GET"
                 Using response As Net.HttpWebResponse = DirectCast(request.GetResponse(), Net.HttpWebResponse)
                     webexist = Not (response Is Nothing OrElse response.StatusCode <> Net.HttpStatusCode.OK)
                 End Using
