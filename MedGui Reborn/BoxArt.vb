@@ -84,28 +84,24 @@ Module BoxArt
             ElseIf System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
                 SearchScrape()
             Else
-                MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png")
+                MedGuiR.PictureBox1.Image = My.Resources.NoPr
             End If
 
             If System.IO.File.Exists(snap) = True Then
                 MedGuiR.PictureBox1.Height = 97
                 MedGuiR.PictureBox5.Load(snap)
             Else
-                MedGuiR.PictureBox5.Load(MedExtra & "BoxArt\NoPr.png")
+                MedGuiR.PictureBox5.Image = My.Resources.NoPr
             End If
 
             If System.IO.File.Exists(title) = True Then
                 MedGuiR.PictureBox1.Height = 97
                 MedGuiR.PictureBox4.Load(title)
             Else
-                MedGuiR.PictureBox4.Load(MedExtra & "BoxArt\NoPr.png")
+                MedGuiR.PictureBox4.Image = My.Resources.NoPr
             End If
         Catch ex As Exception
-            If IO.File.Exists(MedExtra & "BoxArt\NoPr.png") Then
-                MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png")
-            Else
-                MedGuiR.PictureBox1.Image = Nothing
-            End If
+            MedGuiR.PictureBox1.Image = My.Resources.NoPr
         End Try
     End Sub
 
@@ -146,7 +142,7 @@ Module BoxArt
             If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
                 SearchScrape()
             Else
-                MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png") : MsgBox("No BoxArt Available!", vbOKOnly + vbInformation) : Exit Sub
+                MedGuiR.PictureBox1.Image = My.Resources.NoPr : MsgBox("No BoxArt Available!", vbOKOnly + vbInformation) : Exit Sub
             End If
         End If
 
@@ -159,7 +155,7 @@ Module BoxArt
                 If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
                     SearchScrape()
                 Else
-                    MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png")
+                    MedGuiR.PictureBox1.Image = My.Resources.NoPr
                 End If
             End Try
             Specific_Info()
@@ -188,7 +184,7 @@ Module BoxArt
 
     Private Sub SearchScrape()
         Try
-            MedGuiR.PictureBox1.Load(MedExtra & "BoxArt\NoPr.png")
+            MedGuiR.PictureBox1.Image = My.Resources.NoPr
         Catch
             MedGuiR.PictureBox1.Image = Nothing
         End Try

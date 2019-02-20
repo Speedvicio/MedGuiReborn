@@ -385,6 +385,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PerConf.resx">
       <DependentUpon>PerConf.vb</DependentUpon>
@@ -489,6 +490,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\NoPr.png" />
+    <None Include="NoPr.png" />
     <Content Include="MedGuiR.ico" />
     <None Include="Resources\MedGuiR.ico" />
   </ItemGroup>
