@@ -24,10 +24,14 @@
                 _link = "http://www.doperoms.com/search.php?s=" & MedGuiR.TextBox35.Text & "&method=ROM"
             Case "EagleForce"
                 _link = "http://eagleforces.tistory.com/search/" & MedGuiR.TextBox35.Text
+            Case "Edge Emulation"
+                _link = "http://edgeemu.net/results.php?q=" & MedGuiR.TextBox35.Text & "&system=all"
             Case "EMUPARADISE"
                 _link = "http://www.emuparadise.org/roms/search.php?query=" & MedGuiR.TextBox35.Text
             Case "Free-ISO"
                 _link = "http://free-iso.org/search/?q=" & MedGuiR.TextBox35.Text & "+&t=0#"
+            Case "Gametronik"
+                _link = "http://www.gametronik.com/site/search.php?q=" & MedGuiR.TextBox35.Text & "&submit"
             Case "NITROROMS"
                 _link = "http://nitroroms.com/search/All/" & MedGuiR.TextBox35.Text & "/page-1"
             Case "Planet Emu"
