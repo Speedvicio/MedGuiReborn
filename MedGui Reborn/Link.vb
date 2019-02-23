@@ -42,6 +42,8 @@
                 _link = "http://www.rom-world.com/search/?q=" & MedGuiR.TextBox35.Text & "&submit"
             Case "Rom Hustler"
                 _link = "http://romhustler.net/roms/search/?q=" & MedGuiR.TextBox35.Text
+            Case "ROMNation"
+                _link = "http://www.romnation.net/srv/roms/all/title-" & MedGuiR.TextBox35.Text & ".html"
             Case "ROMULATION"
                 _link = "https://www.romulation.net/roms/search?query=" & MedGuiR.TextBox35.Text
             Case "Roms Universe"
