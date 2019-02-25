@@ -22,7 +22,7 @@
                 _link = "http://coolrom.com/search?q=" & MedGuiR.TextBox35.Text & "&submit"
             Case "DOPEROMS"
                 _link = "http://www.doperoms.com/search.php?s=" & MedGuiR.TextBox35.Text & "&method=ROM"
-            Case "EagleForce"
+            Case "EagleForces"
                 _link = "http://eagleforces.tistory.com/search/" & MedGuiR.TextBox35.Text
             Case "Edge Emulation"
                 _link = "http://edgeemu.net/results.php?q=" & MedGuiR.TextBox35.Text & "&system=all"
