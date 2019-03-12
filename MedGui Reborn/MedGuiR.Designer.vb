@@ -1642,7 +1642,6 @@ Partial Class MedGuiR
         Me.Button59.Size = New System.Drawing.Size(23, 23)
         Me.Button59.TabIndex = 36
         Me.Button59.UseVisualStyleBackColor = True
-        Me.Button59.Visible = False
         '
         'Panel1
         '

@@ -10,7 +10,6 @@ Public Class MedGuiR
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         gIcon = My.Resources.MedGuiR
         Me.Icon = gIcon
-
         'Dim process_med() As Process
         'process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
         'If process_med.Length > 0 Then
@@ -2630,6 +2629,24 @@ SKIPHASH:
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         About.ShowDialog()
+    End Sub
+
+    Private Sub Button59_Click(sender As Object, e As EventArgs) Handles Button59.Click
+        Dim ctrlText As String
+        For Each ctr As Control In getControls(Me)
+            If TypeOf ctr IsNot TextBox And TypeOf ctr IsNot ComboBox _
+                And TypeOf ctr IsNot NumericUpDown And TypeOf ctr IsNot ToolStrip Then
+
+                If ctr.Text.Trim <> "" And Len(ctr.Text.Trim) > 1 Then
+                    ctrlText = String.Concat(ctrlText, ctr.Name & " : " & ctr.Text, vbCrLf)
+                End If
+            End If
+        Next
+
+        Dim file As System.IO.StreamWriter
+        file = My.Computer.FileSystem.OpenTextFileWriter(Path.Combine(Application.StartupPath, Me.Text & ".txt"), False)
+        file.WriteLine(ctrlText)
+        file.Close()
     End Sub
 
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
