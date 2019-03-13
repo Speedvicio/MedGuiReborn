@@ -5998,7 +5998,7 @@ Partial Class MgrSetting
         Me.CheckBox108.Name = "CheckBox108"
         Me.CheckBox108.Size = New System.Drawing.Size(279, 17)
         Me.CheckBox108.TabIndex = 102
-        Me.CheckBox108.Text = "Enable hack to treat mixed-mode text as monochrome" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.CheckBox108.Text = "Enable hack to treat mixed-mode text as monochrome"
         Me.ToolTip1.SetToolTip(Me.CheckBox108, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
         "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
         "le in graphics mode.")

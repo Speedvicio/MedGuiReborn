@@ -1945,6 +1945,10 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         If IO.Directory.Exists(MedExtra & "MedPlay") = False Then
             System.IO.Directory.CreateDirectory(MedExtra & "MedPlay")
         End If
+        If IO.Directory.Exists(MedExtra & "Language") = False Then
+            System.IO.Directory.CreateDirectory(MedExtra & "Language")
+            getallforms(Me)
+        End If
     End Sub
 
     Private Sub WS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles WS.SelectedIndexChanged
@@ -2632,21 +2636,7 @@ SKIPHASH:
     End Sub
 
     Private Sub Button59_Click(sender As Object, e As EventArgs) Handles Button59.Click
-        Dim ctrlText As String
-        For Each ctr As Control In getControls(Me)
-            If TypeOf ctr IsNot TextBox And TypeOf ctr IsNot ComboBox _
-                And TypeOf ctr IsNot NumericUpDown And TypeOf ctr IsNot ToolStrip Then
-
-                If ctr.Text.Trim <> "" And Len(ctr.Text.Trim) > 1 Then
-                    ctrlText = String.Concat(ctrlText, ctr.Name & " : " & ctr.Text, vbCrLf)
-                End If
-            End If
-        Next
-
-        Dim file As System.IO.StreamWriter
-        file = My.Computer.FileSystem.OpenTextFileWriter(Path.Combine(Application.StartupPath, Me.Text & ".txt"), False)
-        file.WriteLine(ctrlText)
-        file.Close()
+        getallforms(Me)
     End Sub
 
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd

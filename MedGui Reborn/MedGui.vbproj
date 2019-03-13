@@ -219,7 +219,7 @@
     <Compile Include="Reset.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RetrieveControl.vb" />
+    <Compile Include="CtrlLanguage.vb" />
     <Compile Include="SaturnName.vb" />
     <Compile Include="Sbi.vb" />
     <Compile Include="Scrape.vb" />

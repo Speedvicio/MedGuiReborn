@@ -488,7 +488,7 @@ Partial Class Mcheat
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(95, 13)
         Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Downloaded Code" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label6.Text = "Downloaded Code"
         '
         'OpenFileDialog1
         '
