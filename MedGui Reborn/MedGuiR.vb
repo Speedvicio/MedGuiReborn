@@ -10,11 +10,7 @@ Public Class MedGuiR
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         gIcon = My.Resources.MedGuiR
         Me.Icon = gIcon
-        'Dim process_med() As Process
-        'process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
-        'If process_med.Length > 0 Then
-        'MsgBox("Mednafen is open, plase close it to load Medgui Reborn", vbOKOnly + vbInformation)
-        'End If
+
         FirstStart = True
         InitJoy()
         MedExtra = Application.StartupPath & "\MedGuiR\"

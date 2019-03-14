@@ -62,4 +62,34 @@ Module CtrlLanguage
         file.WriteLine(ctrlText)
         file.Close()
     End Sub
+
+    Public Function TranslateAllCtrls(ByVal Language As String)
+        Dim LangTxt As String = Path.Combine(MedExtra & "Language", Language & ".txt")
+        If File.Exists(LangTxt) = False Then Exit Function
+
+        Using sr As New StreamReader(LangTxt)
+            Do Until sr.EndOfStream
+                Try
+                    Dim sBuf As String = sr.ReadLine
+                    Dim BufSplit As String()
+                    Dim FormControl As String()
+
+                    BufSplit = sBuf.Split("  :  ")
+                    FormControl = BufSplit(0).Split(".")
+                    Dim formName As String = FormControl(0)
+                    formName = [Assembly].GetEntryAssembly.GetName.Name & "." & formName
+
+                    Dim aForm = DirectCast([Assembly].GetEntryAssembly.CreateInstance(formName), Form)
+                    Dim aControl = aForm.Controls.Item(FormControl(1))
+
+                    If aControl IsNot Nothing And BufSplit(4) IsNot Nothing Then
+                        aControl.Text = BufSplit(4)
+                    End If
+
+                Catch ex As Exception
+
+                End Try
+            Loop
+        End Using
+    End Function
 End Module
