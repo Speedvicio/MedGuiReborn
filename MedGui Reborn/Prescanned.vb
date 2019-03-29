@@ -53,6 +53,7 @@ Module Prescanned
                             MedGuiR.ProgressBar1.PerformStep()
                             MedGuiR.Label95.Text = "Read " & MedGuiR.ProgressBar1.Value & "/" & Linecsv
                             MedGuiR.Label95.Refresh()
+                            Application.DoEvents()
                         End If
 
                     Loop

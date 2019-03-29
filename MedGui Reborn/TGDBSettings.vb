@@ -23,6 +23,7 @@ Public Class TGDBSettings
     Public Function MakeTGDBList(ByVal APIvalue As String)
         SoxStatus.Text = "Waiting for download " & APIvalue & "..."
         SoxStatus.Label1.Text = "Wait..."
+        Application.DoEvents()
         SoxStatus.Show()
 
         Dim SplittedScrapedValue() As String

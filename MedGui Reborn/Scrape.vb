@@ -116,6 +116,7 @@ Module Scrape
 
             SoxStatus.Text = "Waiting for Scraping..."
             SoxStatus.Label1.Text = "Downloading..."
+            Application.DoEvents()
             SoxStatus.Show()
             SoxStatus.TopMost = True
 

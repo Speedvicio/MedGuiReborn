@@ -13,6 +13,7 @@ Public Class ModLand
         DataGridView1.Rows.Clear()
         SoxStatus.Text = "Waiting For ModLand Scrape"
         SoxStatus.Label1.Text = "Waiting..."
+        Application.DoEvents()
         SoxStatus.Show()
 
         Try

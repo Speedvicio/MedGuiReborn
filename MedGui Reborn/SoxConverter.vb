@@ -34,6 +34,7 @@
             Arg = " " & Chr(34) & audioFile & Chr(34) & " " & Chr(34) & Replace(audioFile, LCase(MedGuiR.ToolStripComboBox1.Text), LCase(cfile)) & Chr(34) & pSox
             SoxStatus.Text = "Waiting for conversion..."
             SoxStatus.Label1.Text = "Convert " & MedGuiR.ListAddsFile.Items(i) & " in " & LCase(cfile) & " format..."
+            Application.DoEvents()
             SoxStatus.Show()
             StartProcess()
             execute.WaitForExit()

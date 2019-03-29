@@ -65,6 +65,7 @@ Module scan
             MedGuiR.ProgressBar1.PerformStep()
             MedGuiR.Label95.Text = "Scan " & MedGuiR.ProgressBar1.Value & "/" & fileEntries.GetLength(0)
             MedGuiR.Label95.Refresh()
+            Application.DoEvents()
 
             'SoxStatus.Text = "Waiting for Rom Scan..."
             'SoxStatus.Label1.Text = ""
@@ -442,6 +443,7 @@ Module scan
 
         SoxStatus.Text = "Waiting For UNECM Conversion..."
         SoxStatus.Label1.Text = "Decrunching..."
+        Application.DoEvents()
         SoxStatus.Show()
 
         StartProcess()
