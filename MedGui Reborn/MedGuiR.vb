@@ -1941,10 +1941,11 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         If IO.Directory.Exists(MedExtra & "MedPlay") = False Then
             System.IO.Directory.CreateDirectory(MedExtra & "MedPlay")
         End If
-        If IO.Directory.Exists(MedExtra & "Language") = False Then
-            System.IO.Directory.CreateDirectory(MedExtra & "Language")
-            getallforms(Me)
-        End If
+        'atm TRANSLATE doesnt work, need to investigate
+        'If IO.Directory.Exists(MedExtra & "Language") = False Then
+        'System.IO.Directory.CreateDirectory(MedExtra & "Language")
+        'getallforms(Me)
+        'End If
     End Sub
 
     Private Sub WS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles WS.SelectedIndexChanged
@@ -2632,7 +2633,7 @@ SKIPHASH:
     End Sub
 
     Private Sub Button59_Click(sender As Object, e As EventArgs) Handles Button59.Click
-        getallforms(Me)
+        'TranslateAllCtrls("English")
     End Sub
 
     Private Sub MedGuiR_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd

@@ -2,13 +2,14 @@
 Imports System.Reflection
 
 Module CtrlLanguage
+
     Friend Function getControls(ByRef myCont As Control, Optional ByVal IncludeSubContainer As Boolean = True, Optional ByRef ctr() As Control = Nothing) As Control()
         'Code from http://blogs.dotnethell.it/sandro/Ottenere-lelenco-dei-controlli-di-un-contenitore__13796.aspx
 
         '***********************************************************************************
         'Func.: getControl (Creazione SB 20080707; Mod.:             )
         'Desc.: Restituisce un array dei controlli contenuti in un determinato contenitore
-        '      
+        '
         'Par. : myCont          Control rappresentante il contenitore da cui partire a ricercare.
         '[IncludeSubContainer]  Opzionale. Boolean indicante se si vuole procedere in modo ricursivo all'interno
         '                       di tutti i controlli contenitore a partite da myCont.
@@ -84,12 +85,14 @@ Module CtrlLanguage
 
                     If aControl IsNot Nothing And BufSplit(4) IsNot Nothing Then
                         aControl.Text = BufSplit(4)
+                        aControl.Refresh()
+                        Application.DoEvents()
                     End If
-
                 Catch ex As Exception
 
                 End Try
             Loop
         End Using
     End Function
+
 End Module
