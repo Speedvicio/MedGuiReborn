@@ -20,6 +20,7 @@ Module scan
 
         If IO.File.Exists(MedExtra & "RomExt.ini") = False Then DownloadRomext() : Threading.Thread.Sleep(500)
 
+        Dim defreeze As Integer = 0
         For Each fileName As String In fileEntries
             If Path.HasExtension(fileName) = False Then Continue For
             Dim oRead As StreamReader
@@ -65,7 +66,8 @@ Module scan
             MedGuiR.ProgressBar1.PerformStep()
             MedGuiR.Label95.Text = "Scan " & MedGuiR.ProgressBar1.Value & "/" & fileEntries.GetLength(0)
             MedGuiR.Label95.Refresh()
-            Application.DoEvents()
+            defreeze += 1
+            If (defreeze Mod 50) = 0 Then Application.DoEvents()
 
             'SoxStatus.Text = "Waiting for Rom Scan..."
             'SoxStatus.Label1.Text = ""

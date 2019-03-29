@@ -14,6 +14,7 @@ Module Prescanned
 
             Dim SplitLine() As String
 
+            Dim defreeze As Integer = 0
             If System.IO.File.Exists(fName) = True Then
 
                 Using objReader As New System.IO.StreamReader(fName)
@@ -53,7 +54,8 @@ Module Prescanned
                             MedGuiR.ProgressBar1.PerformStep()
                             MedGuiR.Label95.Text = "Read " & MedGuiR.ProgressBar1.Value & "/" & Linecsv
                             MedGuiR.Label95.Refresh()
-                            Application.DoEvents()
+                            defreeze += 1
+                            If (defreeze Mod 50) = 0 Then Application.DoEvents()
                         End If
 
                     Loop
