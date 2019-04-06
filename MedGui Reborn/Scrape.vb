@@ -496,7 +496,9 @@ Module Scrape
         Dim oRead As System.IO.StreamReader
 
         Try
+#Disable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
             oRead = oFile.OpenText(MedExtra & "\Plugins\db\TGDB\" & TypeList & ".txt")
+#Enable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
             Dim splitoread() As String
             While oRead.Peek <> -1
                 splitoread = Split(oRead.ReadLine(), " | ")
@@ -510,6 +512,8 @@ Module Scrape
         Catch ex As Exception
             Return ("")
         End Try
+#Disable Warning BC42105 ' La funzione 'ReadTGDBList' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+#Enable Warning BC42105 ' La funzione 'ReadTGDBList' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
 End Module

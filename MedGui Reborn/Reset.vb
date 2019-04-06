@@ -53,7 +53,9 @@
         For Each foundFile As String In My.Computer.FileSystem.GetFiles(path, FileIO.SearchOption.SearchAllSubDirectories, extens)
             IO.File.Delete(foundFile)
         Next
+#Disable Warning BC42105 ' La funzione 'CleanSetting' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+#Enable Warning BC42105 ' La funzione 'CleanSetting' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         MedGuiR.ResetAll = False

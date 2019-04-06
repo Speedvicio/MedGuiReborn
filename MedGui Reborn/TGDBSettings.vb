@@ -40,7 +40,9 @@ Public Class TGDBSettings
         Dim oRead As System.IO.StreamReader
 
         Try
+#Disable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
             oRead = oFile.OpenText(MedExtra & "\Plugins\db\TGDB\" & APIvalue)
+#Enable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
 
             While oRead.Peek <> -1
                 SplittedScrapedValue = Split(oRead.ReadLine(), ":")
@@ -69,7 +71,9 @@ Public Class TGDBSettings
             SoxStatus.Close()
             MsgBox(APIvalue & " Updated!", MsgBoxStyle.Information + vbOKOnly, "Update Done...")
         End Try
+#Disable Warning BC42105 ' La funzione 'MakeTGDBList' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+#Enable Warning BC42105 ' La funzione 'MakeTGDBList' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         MakeTGDBList("Platforms")

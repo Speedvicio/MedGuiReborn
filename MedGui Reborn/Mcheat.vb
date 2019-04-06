@@ -120,7 +120,9 @@ Public Class Mcheat
 
         End Select
         TextBox1.Text = TextBox1.Text.PadLeft(8, "0")
+#Disable Warning BC42105 ' La funzione 'AnalizeRAWCode' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+#Enable Warning BC42105 ' La funzione 'AnalizeRAWCode' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         Dim Tlenght As Integer = 8
@@ -508,7 +510,9 @@ skiphash:
         Try
             Dim linecheat As Integer = File.ReadAllLines(cheatpath).Length
 
+#Disable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
             oRead = oFile.OpenText(cheatpath)
+#Enable Warning BC42025 ' L'accesso del membro condiviso, del membro costante, del membro di enumerazione o del tipo nidificato verrà effettuato tramite un'istanza. L'espressione di qualificazione non verrà valutata.
 
             While oRead.Peek <> -1
                 Dim cheatcontainer As String = oRead.ReadLine().Trim
@@ -539,7 +543,9 @@ skiphash:
         fs.Write(WithHeader, rembyte, WithHeader.Length - rembyte)
         fs.Close()
         filepath = backPath
+#Disable Warning BC42105 ' La funzione 'RemoveHeader' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+#Enable Warning BC42105 ' La funzione 'RemoveHeader' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub SetCodeMode()
         If RadioButton1.Checked = True Then
@@ -640,7 +646,9 @@ skiphash:
         DoesentPrepare = False
         ListBox1.Items.Clear()
         ParseCht()
+#Disable Warning BC42105 ' La funzione 'WorkingWithCheat' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+#Enable Warning BC42105 ' La funzione 'WorkingWithCheat' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub TextBox4_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox4.KeyDown
         If e.KeyCode = 219 Or e.KeyCode = 221 Then
