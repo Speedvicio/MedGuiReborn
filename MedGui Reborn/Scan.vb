@@ -252,6 +252,24 @@ Module scan
                 gif = "psx"
                 real_name = "PlayStation One - Music Module"
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+            Case ".exe"
+                decrunch_size = dettaglio.Length
+                If decrunch_size <= 10485760 Then
+                    Dim parsebin As String = ""
+                    Using fs As New FileStream(percorso, FileMode.Open, FileAccess.Read)
+                        For offset = 0 To 100
+                            parsebin = parsebin & Convert.ToChar(fs.ReadByte())
+                        Next offset
+                    End Using
+
+                    If parsebin.Contains("PS-X EXE") Then
+                        consoles = "psx"
+                        gif = "psx"
+                        real_name = "PSX-EXE executable file"
+                        fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+                    Else
+                    End If
+                End If
             Case ".ssf", ".minissf"
                 consoles = "ssfplay"
                 gif = "ss"

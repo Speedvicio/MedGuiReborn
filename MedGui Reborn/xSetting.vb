@@ -210,7 +210,7 @@ Module xSetting
                 If row.Contains(consoles & ".input.builtin ") Then xValue = Trim(Replace(row, consoles & ".input.builtin", "")) : MgrSetting.ComboBox51.Text = xValue
                 If row.Contains(consoles & ".sex ") Then xValue = Trim(Replace(row, consoles & ".sex", "")) : MgrSetting.ComboBox32.Text = xValue
                 MgrSetting.tab_index = 16
-            Case ".cue", ".m3u", ".toc", ".ccd"
+            Case ".cue", ".m3u", ".toc", ".ccd", ".exe" '".ssf", ".minissf", ".psf", ".psf1", ".minipsf",
                 SetIso()
                 'If row.Contains(consoles & ".correct_aspect ") Then xValue = Trim(Replace(row, consoles & ".correct_aspect", "")) : MsgBox(xValue)
         End Select
