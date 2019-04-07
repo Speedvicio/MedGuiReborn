@@ -254,7 +254,7 @@ Module scan
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
             Case ".exe"
                 decrunch_size = dettaglio.Length
-                If decrunch_size <= 10485760 Then
+                If decrunch_size <= 3145728 Then
                     Dim parsebin As String = ""
                     Using fs As New FileStream(percorso, FileMode.Open, FileAccess.Read)
                         For offset = 0 To 100
@@ -268,6 +268,10 @@ Module scan
                         real_name = "PSX-EXE executable file"
                         fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                     Else
+                        consoles = ""
+                        gif = ""
+                        real_name = ""
+                        fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                     End If
                 End If
             Case ".ssf", ".minissf"
