@@ -789,10 +789,6 @@ ErrorHandler:
         Label135.Text = colour
     End Sub
 
-    Private Sub NumericUpDown3_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown3.ValueChanged
-
-    End Sub
-
     Private Sub Label136_Click(sender As Object, e As EventArgs) Handles Label136.Click
         isARGB = True
         conv_col()
@@ -1011,11 +1007,11 @@ ErrorHandler:
                 Case "Select PCFX Bios"
                     If r_sha = "1a77fd83e337f906aecab27a1604db064cf10074" Then Exit Sub
                 Case "Select PSX Eur Bios"
-                    If r_md5 = "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0" Then Exit Sub
+                    If r_sha = "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Then Exit Sub
                 Case "Select PSX Usa Bios"
-                    If r_md5 = "0555c6fae8906f3f09baf5988f00e55f88e9f30b" Then Exit Sub
+                    If r_sha = "0555c6fae8906f3f09baf5988f00e55f88e9f30b" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Then Exit Sub
                 Case "Select PSX Jap Bios"
-                    If r_md5 = "b05def971d8ec59f346f2d9ac21fb742e3eb6917" Then Exit Sub
+                    If r_sha = "b05def971d8ec59f346f2d9ac21fb742e3eb6917" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Then Exit Sub
                 Case "Select Saturn Usa/Eur Bios"
                     If r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3" Then Exit Sub
                 Case "Select Saturn Jap Bios"
@@ -1044,32 +1040,34 @@ ErrorHandler:
 
     Public Sub StartControlBios()
         If firmwarepath = "firmware" Then firmwarepath = MedGuiR.TextBox4.Text & "\firmware"
+        Dim pops_bios As Boolean = False
 
         For Each foundbios As String In My.Computer.FileSystem.GetFiles(MedGuiR.TextBox4.Text & "\firmware")
             r_sha = ""
             filepath = foundbios
             MD5CalcFile()
 
-            Select Case r_sha
-                Case "1a77fd83e337f906aecab27a1604db064cf10074"
+            Select Case True
+                Case r_sha = "1a77fd83e337f906aecab27a1604db064cf10074"
                     Label71.ForeColor = Color.ForestGreen
                     TextBox13.Text = foundbios
-                Case "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+                Case r_sha = "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0" And pops_bios = False
                     Label73.ForeColor = Color.ForestGreen
                     TextBox15.Text = foundbios
-                Case "0555c6fae8906f3f09baf5988f00e55f88e9f30b"
+                Case r_sha = "0555c6fae8906f3f09baf5988f00e55f88e9f30b" And pops_bios = False
                     Label75.ForeColor = Color.ForestGreen
                     TextBox17.Text = foundbios
-                Case "b05def971d8ec59f346f2d9ac21fb742e3eb6917"
+                Case r_sha = "b05def971d8ec59f346f2d9ac21fb742e3eb6917" And pops_bios = False
                     Label74.ForeColor = Color.ForestGreen
                     TextBox16.Text = foundbios
-                Case "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3"
+                Case r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3"
                     Label115.ForeColor = Color.ForestGreen
                     TextBox23.Text = foundbios
-                Case "df94c5b4d47eb3cc404d88b33a8fda237eaf4720"
+                Case r_sha = "df94c5b4d47eb3cc404d88b33a8fda237eaf4720"
                     Label114.ForeColor = Color.ForestGreen
                     TextBox22.Text = foundbios
-                Case "1b4c260326d905bc718812dad0f68089977f427b", "bf2f90bdc3f82bc4bf28b4e9707530165dedcdd2", "79f5ff55dd10187c7fd7b8daab0b3ffbd1f56a2c"
+                Case r_sha = "1b4c260326d905bc718812dad0f68089977f427b" Or r_sha = "bf2f90bdc3f82bc4bf28b4e9707530165dedcdd2" _
+                    Or r_sha = "79f5ff55dd10187c7fd7b8daab0b3ffbd1f56a2c"
                     Label70.ForeColor = Color.ForestGreen
                     TextBox12.Text = foundbios
                     'Case "300c20df6731a33952ded8c436f7f186d25d3492" 'GBA BIOS
@@ -1080,24 +1078,32 @@ ErrorHandler:
                     'TextBox18.Text = foundbios
                     'Case "f4f315adcef9b8feb0364c21ab7f0eaf5457f3ed" 'megacd bios
                     'TextBox14.Text = foundbios
-                Case "2dfaf376fc6a0b106320911c1ebfc1512601dc6c"
+                Case r_sha = "2dfaf376fc6a0b106320911c1ebfc1512601dc6c"
                     Label11.ForeColor = Color.ForestGreen
                     TextBox4.Text = foundbios
-                Case "33a24f5489ba9195b44be77d9afb2252594cb5c7"
+                Case r_sha = "33a24f5489ba9195b44be77d9afb2252594cb5c7"
                     Label145.ForeColor = Color.ForestGreen
                     TextBox19.Text = foundbios
-                Case "afd060e6f35faf3bb0146fa889fc787adf56330a"
+                Case r_sha = "afd060e6f35faf3bb0146fa889fc787adf56330a"
                     Label146.ForeColor = Color.ForestGreen
                     TextBox20.Text = foundbios
-                Case "e3d6d1c30653572b49ecc2dc54ce073978411a04"
+                Case r_sha = "e3d6d1c30653572b49ecc2dc54ce073978411a04"
                     Label147.ForeColor = Color.ForestGreen
                     TextBox21.Text = foundbios
-                Case "d4181c9f046aafc3fb326b381baac809d9e38d16"
+                Case r_sha = "d4181c9f046aafc3fb326b381baac809d9e38d16"
                     Label148.ForeColor = Color.ForestGreen
                     TextBox24.Text = foundbios
-                Case "bc39fbd5b9a8d2287ac5d0a42e639fc4d3c2f9d4"
+                Case r_sha = "bc39fbd5b9a8d2287ac5d0a42e639fc4d3c2f9d4"
                     Label149.ForeColor = Color.ForestGreen
                     TextBox25.Text = foundbios
+                Case r_md5 = "c53ca5908936d412331790f4426c6c33"
+                    Label74.ForeColor = Color.ForestGreen
+                    TextBox16.Text = foundbios
+                    Label73.ForeColor = Color.ForestGreen
+                    TextBox15.Text = foundbios
+                    Label75.ForeColor = Color.ForestGreen
+                    TextBox17.Text = foundbios
+                    pops_bios = True
             End Select
         Next
     End Sub
