@@ -98,7 +98,8 @@ Public Class MgrSetting
         TabControl1.SelectedTab = TabPage1
         EnableSetOptions()
         'ReadXValue()
-        StartControlBios()
+
+        'StartControlBios()
     End Sub
 
     Public Sub EnableSetOptions()
@@ -391,7 +392,7 @@ ErrorHandler:
 
     Private Sub xPath()
         sPath.Title = tPath
-        sPath.InitialDirectory = Application.StartupPath
+        sPath.InitialDirectory = MedGuiR.TextBox4.Text & "\firmware"
         sPath.Filter = fPath
         If sPath.ShowDialog() = DialogResult.OK Then
             pPath = sPath.FileName
@@ -789,6 +790,10 @@ ErrorHandler:
         Label135.Text = colour
     End Sub
 
+    Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
+        StartControlBios()
+    End Sub
+
     Private Sub Label136_Click(sender As Object, e As EventArgs) Handles Label136.Click
         isARGB = True
         conv_col()
@@ -1097,11 +1102,11 @@ ErrorHandler:
                     Label149.ForeColor = Color.ForestGreen
                     TextBox25.Text = foundbios
                 Case r_md5 = "c53ca5908936d412331790f4426c6c33"
-                    Label74.ForeColor = Color.ForestGreen
+                    'Label74.ForeColor = Color.ForestGreen
                     TextBox16.Text = foundbios
-                    Label73.ForeColor = Color.ForestGreen
+                    'Label73.ForeColor = Color.ForestGreen
                     TextBox15.Text = foundbios
-                    Label75.ForeColor = Color.ForestGreen
+                    'Label75.ForeColor = Color.ForestGreen
                     TextBox17.Text = foundbios
                     pops_bios = True
             End Select

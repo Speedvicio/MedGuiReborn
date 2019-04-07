@@ -533,6 +533,7 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.Button27 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -1880,7 +1881,7 @@ Partial Class MgrSetting
         'Label75
         '
         Me.Label75.AutoSize = True
-        Me.Label75.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label75.ForeColor = System.Drawing.Color.Black
         Me.Label75.Location = New System.Drawing.Point(6, 206)
         Me.Label75.Name = "Label75"
         Me.Label75.Size = New System.Drawing.Size(84, 13)
@@ -1906,7 +1907,7 @@ Partial Class MgrSetting
         'Label74
         '
         Me.Label74.AutoSize = True
-        Me.Label74.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label74.ForeColor = System.Drawing.Color.Black
         Me.Label74.Location = New System.Drawing.Point(6, 180)
         Me.Label74.Name = "Label74"
         Me.Label74.Size = New System.Drawing.Size(78, 13)
@@ -1932,7 +1933,7 @@ Partial Class MgrSetting
         'Label73
         '
         Me.Label73.AutoSize = True
-        Me.Label73.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label73.ForeColor = System.Drawing.Color.Black
         Me.Label73.Location = New System.Drawing.Point(6, 154)
         Me.Label73.Name = "Label73"
         Me.Label73.Size = New System.Drawing.Size(82, 13)
@@ -1983,7 +1984,7 @@ Partial Class MgrSetting
         'Label71
         '
         Me.Label71.AutoSize = True
-        Me.Label71.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label71.ForeColor = System.Drawing.Color.Black
         Me.Label71.Location = New System.Drawing.Point(6, 102)
         Me.Label71.Name = "Label71"
         Me.Label71.Size = New System.Drawing.Size(90, 13)
@@ -2009,7 +2010,7 @@ Partial Class MgrSetting
         'Label70
         '
         Me.Label70.AutoSize = True
-        Me.Label70.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label70.ForeColor = System.Drawing.Color.Black
         Me.Label70.Location = New System.Drawing.Point(6, 76)
         Me.Label70.Name = "Label70"
         Me.Label70.Size = New System.Drawing.Size(74, 13)
@@ -2079,6 +2080,7 @@ Partial Class MgrSetting
         '
         'GroupBox22
         '
+        Me.GroupBox22.Controls.Add(Me.Button27)
         Me.GroupBox22.Controls.Add(Me.Button26)
         Me.GroupBox22.Controls.Add(Me.TextBox25)
         Me.GroupBox22.Controls.Add(Me.Label149)
@@ -2131,7 +2133,7 @@ Partial Class MgrSetting
         'Label149
         '
         Me.Label149.AutoSize = True
-        Me.Label149.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label149.ForeColor = System.Drawing.Color.Black
         Me.Label149.Location = New System.Drawing.Point(6, 206)
         Me.Label149.Name = "Label149"
         Me.Label149.Size = New System.Drawing.Size(82, 13)
@@ -2160,7 +2162,7 @@ Partial Class MgrSetting
         'Label148
         '
         Me.Label148.AutoSize = True
-        Me.Label148.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label148.ForeColor = System.Drawing.Color.Black
         Me.Label148.Location = New System.Drawing.Point(6, 180)
         Me.Label148.Name = "Label148"
         Me.Label148.Size = New System.Drawing.Size(82, 13)
@@ -2189,7 +2191,7 @@ Partial Class MgrSetting
         'Label147
         '
         Me.Label147.AutoSize = True
-        Me.Label147.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label147.ForeColor = System.Drawing.Color.Black
         Me.Label147.Location = New System.Drawing.Point(6, 154)
         Me.Label147.Name = "Label147"
         Me.Label147.Size = New System.Drawing.Size(82, 13)
@@ -2218,7 +2220,7 @@ Partial Class MgrSetting
         'Label146
         '
         Me.Label146.AutoSize = True
-        Me.Label146.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label146.ForeColor = System.Drawing.Color.Black
         Me.Label146.Location = New System.Drawing.Point(6, 128)
         Me.Label146.Name = "Label146"
         Me.Label146.Size = New System.Drawing.Size(82, 13)
@@ -2247,7 +2249,7 @@ Partial Class MgrSetting
         'Label145
         '
         Me.Label145.AutoSize = True
-        Me.Label145.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label145.ForeColor = System.Drawing.Color.Black
         Me.Label145.Location = New System.Drawing.Point(6, 102)
         Me.Label145.Name = "Label145"
         Me.Label145.Size = New System.Drawing.Size(59, 13)
@@ -2276,7 +2278,7 @@ Partial Class MgrSetting
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label11.ForeColor = System.Drawing.Color.Black
         Me.Label11.Location = New System.Drawing.Point(6, 76)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(50, 13)
@@ -2303,7 +2305,7 @@ Partial Class MgrSetting
         'Label114
         '
         Me.Label114.AutoSize = True
-        Me.Label114.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label114.ForeColor = System.Drawing.Color.Black
         Me.Label114.Location = New System.Drawing.Point(6, 50)
         Me.Label114.Name = "Label114"
         Me.Label114.Size = New System.Drawing.Size(74, 13)
@@ -2329,7 +2331,7 @@ Partial Class MgrSetting
         'Label115
         '
         Me.Label115.AutoSize = True
-        Me.Label115.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label115.ForeColor = System.Drawing.Color.Black
         Me.Label115.Location = New System.Drawing.Point(6, 24)
         Me.Label115.Name = "Label115"
         Me.Label115.Size = New System.Drawing.Size(105, 13)
@@ -6262,6 +6264,18 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'Button27
+        '
+        Me.Button27.Location = New System.Drawing.Point(93, 240)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(119, 23)
+        Me.Button27.TabIndex = 27
+        Me.Button27.Text = "Check All &Bioses"
+        Me.ToolTip1.SetToolTip(Me.Button27, "- Scan and compare all bioses in ""firmware folder"" by hash." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "if the hash of a b" &
+        "ios matches the one requested by the mednafen, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "it will be highlighted in green" &
+        " and autoselected by default.")
+        Me.Button27.UseVisualStyleBackColor = True
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -6942,4 +6956,5 @@ Partial Class MgrSetting
     Friend WithEvents Label165 As Label
     Friend WithEvents CheckBox108 As CheckBox
     Friend WithEvents CheckBox107 As CheckBox
+    Friend WithEvents Button27 As Button
 End Class
