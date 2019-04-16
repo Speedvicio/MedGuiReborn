@@ -10,20 +10,20 @@ Public Class MgrSetting
     Public Sub add_tabs()
         Select Case tab_index
             Case 7
-                TabControl1.TabPages.Insert(9, TabPage19)
+                TabControl1.TabPages.Insert(10, TabPage19)
                 TabControl1.SelectedTab = TabPage19
             Case 8
-                TabControl1.TabPages.Insert(9, TabPage8)
+                TabControl1.TabPages.Insert(10, TabPage8)
                 TabControl1.SelectedTab = TabPage8
             Case 9
-                TabControl1.TabPages.Insert(9, TabPage9)
+                TabControl1.TabPages.Insert(10, TabPage9)
                 TabControl1.SelectedTab = TabPage9
             Case 10
-                TabControl1.TabPages.Insert(9, TabPage10)
+                TabControl1.TabPages.Insert(10, TabPage10)
                 TabControl1.SelectedTab = TabPage10
             Case 11
-                TabControl1.TabPages.Insert(9, TabPage11)
-                TabControl1.TabPages.Insert(10, TabPage12)
+                TabControl1.TabPages.Insert(10, TabPage11)
+                TabControl1.TabPages.Insert(11, TabPage12)
                 TabControl1.SelectedTab = TabPage11
                 TabControl1.SelectedTab = TabPage12
 
@@ -45,44 +45,44 @@ Public Class MgrSetting
                     ComboBox15.Enabled = True
                 End If
             Case 12
-                TabControl1.TabPages.Insert(9, TabPage13)
+                TabControl1.TabPages.Insert(10, TabPage13)
                 TabControl1.SelectedTab = TabPage13
             Case 13
-                TabControl1.TabPages.Insert(9, TabPage14)
+                TabControl1.TabPages.Insert(10, TabPage14)
                 TabControl1.SelectedTab = TabPage14
             Case 14
-                TabControl1.TabPages.Insert(9, TabPage15)
+                TabControl1.TabPages.Insert(10, TabPage15)
                 TabControl1.SelectedTab = TabPage15
             Case 15
-                TabControl1.TabPages.Insert(9, TabPage16)
-                TabControl1.TabPages.Insert(10, TabPage17)
+                TabControl1.TabPages.Insert(10, TabPage16)
+                TabControl1.TabPages.Insert(11, TabPage17)
                 TabControl1.SelectedTab = TabPage16
                 TabControl1.SelectedTab = TabPage17
             Case 16
-                TabControl1.TabPages.Insert(9, TabPage18)
+                TabControl1.TabPages.Insert(10, TabPage18)
                 TabControl1.SelectedTab = TabPage18
                 wswan_set()
             Case 17
-                TabControl1.TabPages.Insert(9, TabPage20)
-                TabControl1.TabPages.Insert(10, TabPage21)
+                TabControl1.TabPages.Insert(10, TabPage20)
+                TabControl1.TabPages.Insert(11, TabPage21)
                 TabControl1.SelectedTab = TabPage20
                 TabControl1.SelectedTab = TabPage21
             Case 18
-                TabControl1.TabPages.Insert(9, TabPage22)
-                TabControl1.TabPages.Insert(10, TabPage23)
+                TabControl1.TabPages.Insert(10, TabPage22)
+                TabControl1.TabPages.Insert(11, TabPage23)
                 TabControl1.SelectedTab = TabPage22
                 TabControl1.SelectedTab = TabPage23
             Case 19
-                TabControl1.TabPages.Insert(9, TabPage25)
-                TabControl1.TabPages.Insert(10, TabPage27)
+                TabControl1.TabPages.Insert(10, TabPage25)
+                TabControl1.TabPages.Insert(11, TabPage27)
                 TabControl1.SelectedTab = TabPage25
                 TabControl1.SelectedTab = TabPage27
             Case 20
-                TabControl1.TabPages.Insert(9, TabPage26)
+                TabControl1.TabPages.Insert(10, TabPage26)
                 TabControl1.SelectedTab = TabPage26
             Case 21
-                TabControl1.TabPages.Insert(9, TabPage29)
-                TabControl1.TabPages.Insert(10, TabPage30)
+                TabControl1.TabPages.Insert(10, TabPage29)
+                TabControl1.TabPages.Insert(11, TabPage30)
                 TabControl1.SelectedTab = TabPage29
                 TabControl1.SelectedTab = TabPage30
         End Select
@@ -805,39 +805,39 @@ ErrorHandler:
     End Sub
 
     Private Sub Button38_Click(sender As Object, e As EventArgs) Handles Button38.Click
-        TextBox34.Text = SetPath("cheats", "-filesys.path_cheat ")
+        TextBox34.Text = SetPath("cheats", "-filesys.path_cheat ", TextBox34.Text)
     End Sub
 
     Private Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
-        TextBox33.Text = SetPath("firmware", "-filesys.path_firmware ")
+        TextBox33.Text = SetPath("firmware", "-filesys.path_firmware ", TextBox33.Text)
     End Sub
 
     Private Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
-        TextBox32.Text = SetPath("movies", "-filesys.path_movie ")
+        TextBox32.Text = SetPath("movies", "-filesys.path_movie ", TextBox32.Text)
     End Sub
 
     Private Sub Button35_Click(sender As Object, e As EventArgs) Handles Button35.Click
-        TextBox31.Text = SetPath("custom palettes", "-filesys.path_palette ")
+        TextBox31.Text = SetPath("custom palettes", "-filesys.path_palette ", TextBox31.Text)
     End Sub
 
     Private Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
-        TextBox30.Text = SetPath("per-game configuration override files", "-filesys.path_pgconfig ")
+        TextBox30.Text = SetPath("per-game configuration override files", "-filesys.path_pgconfig ", TextBox30.Text)
     End Sub
 
     Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
-        TextBox29.Text = SetPath("save games and nonvolatile memory", "-filesys.path_sav ")
+        TextBox29.Text = SetPath("save games and nonvolatile memory", "-filesys.path_sav ", TextBox29.Text)
     End Sub
 
     Private Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
-        TextBox28.Text = SetPath("backups of save games and nonvolatile memory", "-filesys.path_savbackup ")
+        TextBox28.Text = SetPath("backups of save games and nonvolatile memory", "-filesys.path_savbackup ", TextBox28.Text)
     End Sub
 
     Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
-        TextBox27.Text = SetPath("screen snapshots", "-filesys.path_snap ")
+        TextBox27.Text = SetPath("screen snapshots", "-filesys.path_snap ", TextBox27.Text)
     End Sub
 
     Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
-        TextBox26.Text = SetPath("save states", "-filesys.path_state ")
+        TextBox26.Text = SetPath("save states", "-filesys.path_state ", TextBox26.Text)
     End Sub
 
     Private Sub CheckBox104_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox104.CheckedChanged
@@ -1084,7 +1084,13 @@ ErrorHandler:
         If firmwarepath = "firmware" Then firmwarepath = MedGuiR.TextBox4.Text & "\firmware"
         Dim pops_bios As Boolean = False
 
-        For Each foundbios As String In My.Computer.FileSystem.GetFiles(MedGuiR.TextBox4.Text & "\firmware")
+        If TextBox33.Text.Contains("\") Then
+            firmwarepath = TextBox33.Text.Trim
+        Else
+            firmwarepath = MedGuiR.TextBox4.Text & "\firmware"
+        End If
+
+        For Each foundbios As String In My.Computer.FileSystem.GetFiles(firmwarepath)
             r_sha = ""
             filepath = foundbios
             MD5CalcFile()
@@ -1179,9 +1185,9 @@ ErrorHandler:
         End If
     End Sub
 
-    Private Function SetPath(description As String, ParPath As String)
+    Private Function SetPath(description As String, ParPath As String, TempPath As String) As String
         Dim folder As New FolderBrowserDialog
-        folder.Description = "Path to directory for  " & description
+        folder.Description = "Path to directory for " & description
         folder.SelectedPath = MedGuiR.TextBox4.Text
         If folder.ShowDialog = Windows.Forms.DialogResult.OK Then
             tProcess = "mednafen"
@@ -1189,6 +1195,8 @@ ErrorHandler:
             Arg = ParPath & Chr(34) & folder.SelectedPath & Chr(34)
             StartProcess()
             Return (folder.SelectedPath)
+        Else
+            Return (TempPath)
         End If
     End Function
 End Class
