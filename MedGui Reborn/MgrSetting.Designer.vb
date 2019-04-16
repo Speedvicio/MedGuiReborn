@@ -154,6 +154,7 @@ Partial Class MgrSetting
         Me.Label68 = New System.Windows.Forms.Label()
         Me.TabPage24 = New System.Windows.Forms.TabPage()
         Me.GroupBox22 = New System.Windows.Forms.GroupBox()
+        Me.Button27 = New System.Windows.Forms.Button()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.TextBox25 = New System.Windows.Forms.TextBox()
         Me.Label149 = New System.Windows.Forms.Label()
@@ -533,7 +534,35 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.Button27 = New System.Windows.Forms.Button()
+        Me.TabPage31 = New System.Windows.Forms.TabPage()
+        Me.GroupBox27 = New System.Windows.Forms.GroupBox()
+        Me.Button30 = New System.Windows.Forms.Button()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.Label166 = New System.Windows.Forms.Label()
+        Me.Button31 = New System.Windows.Forms.Button()
+        Me.TextBox27 = New System.Windows.Forms.TextBox()
+        Me.Label167 = New System.Windows.Forms.Label()
+        Me.Button32 = New System.Windows.Forms.Button()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.Label168 = New System.Windows.Forms.Label()
+        Me.Button33 = New System.Windows.Forms.Button()
+        Me.TextBox29 = New System.Windows.Forms.TextBox()
+        Me.Label169 = New System.Windows.Forms.Label()
+        Me.Button34 = New System.Windows.Forms.Button()
+        Me.TextBox30 = New System.Windows.Forms.TextBox()
+        Me.Label170 = New System.Windows.Forms.Label()
+        Me.Button35 = New System.Windows.Forms.Button()
+        Me.TextBox31 = New System.Windows.Forms.TextBox()
+        Me.Label171 = New System.Windows.Forms.Label()
+        Me.Button36 = New System.Windows.Forms.Button()
+        Me.TextBox32 = New System.Windows.Forms.TextBox()
+        Me.Label172 = New System.Windows.Forms.Label()
+        Me.Button37 = New System.Windows.Forms.Button()
+        Me.TextBox33 = New System.Windows.Forms.TextBox()
+        Me.Label173 = New System.Windows.Forms.Label()
+        Me.Button38 = New System.Windows.Forms.Button()
+        Me.TextBox34 = New System.Windows.Forms.TextBox()
+        Me.Label174 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -653,6 +682,8 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage31.SuspendLayout()
+        Me.GroupBox27.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -662,6 +693,7 @@ Partial Class MgrSetting
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage28)
         Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage31)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage24)
         Me.TabControl1.Controls.Add(Me.TabPage6)
@@ -2111,6 +2143,18 @@ Partial Class MgrSetting
         Me.GroupBox22.TabIndex = 4
         Me.GroupBox22.TabStop = False
         Me.ToolTip1.SetToolTip(Me.GroupBox22, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
+        '
+        'Button27
+        '
+        Me.Button27.Location = New System.Drawing.Point(93, 240)
+        Me.Button27.Name = "Button27"
+        Me.Button27.Size = New System.Drawing.Size(119, 23)
+        Me.Button27.TabIndex = 27
+        Me.Button27.Text = "Check All &Bioses"
+        Me.ToolTip1.SetToolTip(Me.Button27, "- Scan and compare all bioses in ""firmware folder"" by hash." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "if the hash of a b" &
+        "ios matches the one requested by the mednafen, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "it will be highlighted in green" &
+        " and autoselected by default.")
+        Me.Button27.UseVisualStyleBackColor = True
         '
         'Button26
         '
@@ -6264,17 +6308,281 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'Button27
+        'TabPage31
         '
-        Me.Button27.Location = New System.Drawing.Point(93, 240)
-        Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(119, 23)
-        Me.Button27.TabIndex = 27
-        Me.Button27.Text = "Check All &Bioses"
-        Me.ToolTip1.SetToolTip(Me.Button27, "- Scan and compare all bioses in ""firmware folder"" by hash." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "if the hash of a b" &
-        "ios matches the one requested by the mednafen, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "it will be highlighted in green" &
-        " and autoselected by default.")
-        Me.Button27.UseVisualStyleBackColor = True
+        Me.TabPage31.Controls.Add(Me.GroupBox27)
+        Me.TabPage31.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage31.Name = "TabPage31"
+        Me.TabPage31.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage31.TabIndex = 30
+        Me.TabPage31.Text = "Path"
+        Me.TabPage31.UseVisualStyleBackColor = True
+        '
+        'GroupBox27
+        '
+        Me.GroupBox27.Controls.Add(Me.Button30)
+        Me.GroupBox27.Controls.Add(Me.TextBox26)
+        Me.GroupBox27.Controls.Add(Me.Label166)
+        Me.GroupBox27.Controls.Add(Me.Button31)
+        Me.GroupBox27.Controls.Add(Me.TextBox27)
+        Me.GroupBox27.Controls.Add(Me.Label167)
+        Me.GroupBox27.Controls.Add(Me.Button32)
+        Me.GroupBox27.Controls.Add(Me.TextBox28)
+        Me.GroupBox27.Controls.Add(Me.Label168)
+        Me.GroupBox27.Controls.Add(Me.Button33)
+        Me.GroupBox27.Controls.Add(Me.TextBox29)
+        Me.GroupBox27.Controls.Add(Me.Label169)
+        Me.GroupBox27.Controls.Add(Me.Button34)
+        Me.GroupBox27.Controls.Add(Me.TextBox30)
+        Me.GroupBox27.Controls.Add(Me.Label170)
+        Me.GroupBox27.Controls.Add(Me.Button35)
+        Me.GroupBox27.Controls.Add(Me.TextBox31)
+        Me.GroupBox27.Controls.Add(Me.Label171)
+        Me.GroupBox27.Controls.Add(Me.Button36)
+        Me.GroupBox27.Controls.Add(Me.TextBox32)
+        Me.GroupBox27.Controls.Add(Me.Label172)
+        Me.GroupBox27.Controls.Add(Me.Button37)
+        Me.GroupBox27.Controls.Add(Me.TextBox33)
+        Me.GroupBox27.Controls.Add(Me.Label173)
+        Me.GroupBox27.Controls.Add(Me.Button38)
+        Me.GroupBox27.Controls.Add(Me.TextBox34)
+        Me.GroupBox27.Controls.Add(Me.Label174)
+        Me.GroupBox27.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox27.Name = "GroupBox27"
+        Me.GroupBox27.Size = New System.Drawing.Size(304, 278)
+        Me.GroupBox27.TabIndex = 4
+        Me.GroupBox27.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.GroupBox27, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
+        '
+        'Button30
+        '
+        Me.Button30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button30.Location = New System.Drawing.Point(275, 227)
+        Me.Button30.Name = "Button30"
+        Me.Button30.Size = New System.Drawing.Size(23, 23)
+        Me.Button30.TabIndex = 29
+        Me.Button30.UseVisualStyleBackColor = True
+        '
+        'TextBox26
+        '
+        Me.TextBox26.Location = New System.Drawing.Point(112, 229)
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox26.TabIndex = 28
+        '
+        'Label166
+        '
+        Me.Label166.AutoSize = True
+        Me.Label166.Location = New System.Drawing.Point(6, 232)
+        Me.Label166.Name = "Label166"
+        Me.Label166.Size = New System.Drawing.Size(65, 13)
+        Me.Label166.TabIndex = 27
+        Me.Label166.Text = "Save States"
+        '
+        'Button31
+        '
+        Me.Button31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button31.Location = New System.Drawing.Point(275, 201)
+        Me.Button31.Name = "Button31"
+        Me.Button31.Size = New System.Drawing.Size(23, 23)
+        Me.Button31.TabIndex = 26
+        Me.Button31.UseVisualStyleBackColor = True
+        '
+        'TextBox27
+        '
+        Me.TextBox27.Location = New System.Drawing.Point(112, 203)
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox27.TabIndex = 25
+        '
+        'Label167
+        '
+        Me.Label167.AutoSize = True
+        Me.Label167.ForeColor = System.Drawing.Color.Black
+        Me.Label167.Location = New System.Drawing.Point(6, 206)
+        Me.Label167.Name = "Label167"
+        Me.Label167.Size = New System.Drawing.Size(94, 13)
+        Me.Label167.TabIndex = 24
+        Me.Label167.Text = "Screen Snapshots"
+        '
+        'Button32
+        '
+        Me.Button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button32.Location = New System.Drawing.Point(275, 175)
+        Me.Button32.Name = "Button32"
+        Me.Button32.Size = New System.Drawing.Size(23, 23)
+        Me.Button32.TabIndex = 23
+        Me.Button32.UseVisualStyleBackColor = True
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Location = New System.Drawing.Point(112, 177)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox28.TabIndex = 22
+        '
+        'Label168
+        '
+        Me.Label168.AutoSize = True
+        Me.Label168.ForeColor = System.Drawing.Color.Black
+        Me.Label168.Location = New System.Drawing.Point(6, 180)
+        Me.Label168.Name = "Label168"
+        Me.Label168.Size = New System.Drawing.Size(80, 13)
+        Me.Label168.TabIndex = 21
+        Me.Label168.Text = "Save Backups "
+        '
+        'Button33
+        '
+        Me.Button33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button33.Location = New System.Drawing.Point(275, 149)
+        Me.Button33.Name = "Button33"
+        Me.Button33.Size = New System.Drawing.Size(23, 23)
+        Me.Button33.TabIndex = 20
+        Me.Button33.UseVisualStyleBackColor = True
+        '
+        'TextBox29
+        '
+        Me.TextBox29.Location = New System.Drawing.Point(112, 151)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox29.TabIndex = 19
+        '
+        'Label169
+        '
+        Me.Label169.AutoSize = True
+        Me.Label169.ForeColor = System.Drawing.Color.Black
+        Me.Label169.Location = New System.Drawing.Point(6, 154)
+        Me.Label169.Name = "Label169"
+        Me.Label169.Size = New System.Drawing.Size(68, 13)
+        Me.Label169.TabIndex = 18
+        Me.Label169.Text = "Save Games"
+        '
+        'Button34
+        '
+        Me.Button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button34.Location = New System.Drawing.Point(275, 123)
+        Me.Button34.Name = "Button34"
+        Me.Button34.Size = New System.Drawing.Size(23, 23)
+        Me.Button34.TabIndex = 17
+        Me.Button34.UseVisualStyleBackColor = True
+        '
+        'TextBox30
+        '
+        Me.TextBox30.Location = New System.Drawing.Point(112, 125)
+        Me.TextBox30.Name = "TextBox30"
+        Me.TextBox30.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox30.TabIndex = 16
+        '
+        'Label170
+        '
+        Me.Label170.AutoSize = True
+        Me.Label170.Location = New System.Drawing.Point(6, 128)
+        Me.Label170.Name = "Label170"
+        Me.Label170.Size = New System.Drawing.Size(82, 13)
+        Me.Label170.TabIndex = 15
+        Me.Label170.Text = "Per-Game Conf."
+        '
+        'Button35
+        '
+        Me.Button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button35.Location = New System.Drawing.Point(275, 97)
+        Me.Button35.Name = "Button35"
+        Me.Button35.Size = New System.Drawing.Size(23, 23)
+        Me.Button35.TabIndex = 14
+        Me.Button35.UseVisualStyleBackColor = True
+        '
+        'TextBox31
+        '
+        Me.TextBox31.Location = New System.Drawing.Point(112, 99)
+        Me.TextBox31.Name = "TextBox31"
+        Me.TextBox31.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox31.TabIndex = 13
+        '
+        'Label171
+        '
+        Me.Label171.AutoSize = True
+        Me.Label171.ForeColor = System.Drawing.Color.Black
+        Me.Label171.Location = New System.Drawing.Point(6, 102)
+        Me.Label171.Name = "Label171"
+        Me.Label171.Size = New System.Drawing.Size(83, 13)
+        Me.Label171.TabIndex = 12
+        Me.Label171.Text = "Custom Palettes"
+        '
+        'Button36
+        '
+        Me.Button36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button36.Location = New System.Drawing.Point(275, 71)
+        Me.Button36.Name = "Button36"
+        Me.Button36.Size = New System.Drawing.Size(23, 23)
+        Me.Button36.TabIndex = 11
+        Me.Button36.UseVisualStyleBackColor = True
+        '
+        'TextBox32
+        '
+        Me.TextBox32.Location = New System.Drawing.Point(112, 73)
+        Me.TextBox32.Name = "TextBox32"
+        Me.TextBox32.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox32.TabIndex = 10
+        '
+        'Label172
+        '
+        Me.Label172.AutoSize = True
+        Me.Label172.ForeColor = System.Drawing.Color.Black
+        Me.Label172.Location = New System.Drawing.Point(6, 76)
+        Me.Label172.Name = "Label172"
+        Me.Label172.Size = New System.Drawing.Size(41, 13)
+        Me.Label172.TabIndex = 9
+        Me.Label172.Text = "Movies"
+        '
+        'Button37
+        '
+        Me.Button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button37.Location = New System.Drawing.Point(275, 45)
+        Me.Button37.Name = "Button37"
+        Me.Button37.Size = New System.Drawing.Size(23, 23)
+        Me.Button37.TabIndex = 8
+        Me.Button37.UseVisualStyleBackColor = True
+        '
+        'TextBox33
+        '
+        Me.TextBox33.Location = New System.Drawing.Point(112, 47)
+        Me.TextBox33.Name = "TextBox33"
+        Me.TextBox33.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox33.TabIndex = 7
+        '
+        'Label173
+        '
+        Me.Label173.AutoSize = True
+        Me.Label173.Location = New System.Drawing.Point(6, 50)
+        Me.Label173.Name = "Label173"
+        Me.Label173.Size = New System.Drawing.Size(49, 13)
+        Me.Label173.TabIndex = 6
+        Me.Label173.Text = "Firmware"
+        '
+        'Button38
+        '
+        Me.Button38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button38.Location = New System.Drawing.Point(275, 19)
+        Me.Button38.Name = "Button38"
+        Me.Button38.Size = New System.Drawing.Size(23, 23)
+        Me.Button38.TabIndex = 5
+        Me.Button38.UseVisualStyleBackColor = True
+        '
+        'TextBox34
+        '
+        Me.TextBox34.Location = New System.Drawing.Point(112, 21)
+        Me.TextBox34.Name = "TextBox34"
+        Me.TextBox34.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox34.TabIndex = 4
+        '
+        'Label174
+        '
+        Me.Label174.AutoSize = True
+        Me.Label174.Location = New System.Drawing.Point(6, 24)
+        Me.Label174.Name = "Label174"
+        Me.Label174.Size = New System.Drawing.Size(35, 13)
+        Me.Label174.TabIndex = 3
+        Me.Label174.Text = "Cheat"
         '
         'MgrSetting
         '
@@ -6443,6 +6751,9 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage31.ResumeLayout(False)
+        Me.GroupBox27.ResumeLayout(False)
+        Me.GroupBox27.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -6957,4 +7268,33 @@ Partial Class MgrSetting
     Friend WithEvents CheckBox108 As CheckBox
     Friend WithEvents CheckBox107 As CheckBox
     Friend WithEvents Button27 As Button
+    Friend WithEvents TabPage31 As TabPage
+    Friend WithEvents GroupBox27 As GroupBox
+    Friend WithEvents Button30 As Button
+    Friend WithEvents TextBox26 As TextBox
+    Friend WithEvents Label166 As Label
+    Friend WithEvents Button31 As Button
+    Friend WithEvents TextBox27 As TextBox
+    Friend WithEvents Label167 As Label
+    Friend WithEvents Button32 As Button
+    Friend WithEvents TextBox28 As TextBox
+    Friend WithEvents Label168 As Label
+    Friend WithEvents Button33 As Button
+    Friend WithEvents TextBox29 As TextBox
+    Friend WithEvents Label169 As Label
+    Friend WithEvents Button34 As Button
+    Friend WithEvents TextBox30 As TextBox
+    Friend WithEvents Label170 As Label
+    Friend WithEvents Button35 As Button
+    Friend WithEvents TextBox31 As TextBox
+    Friend WithEvents Label171 As Label
+    Friend WithEvents Button36 As Button
+    Friend WithEvents TextBox32 As TextBox
+    Friend WithEvents Label172 As Label
+    Friend WithEvents Button37 As Button
+    Friend WithEvents TextBox33 As TextBox
+    Friend WithEvents Label173 As Label
+    Friend WithEvents Button38 As Button
+    Friend WithEvents TextBox34 As TextBox
+    Friend WithEvents Label174 As Label
 End Class

@@ -259,6 +259,18 @@ Module xSetting
         If row.Contains("psx.bios_na ") Then xValue = Trim(Replace(row, "psx.bios_na", "")) : MgrSetting.TextBox17.Text = xValue
         If row.Contains("ss.bios_jp ") Then xValue = Trim(Replace(row, "psx.bios_jp", "")) : MgrSetting.TextBox22.Text = xValue
         If row.Contains("ss.bios_na_eu ") Then xValue = Trim(Replace(row, "psx.bios_na", "")) : MgrSetting.TextBox23.Text = xValue
+
+        'MEDNAFEN PATH
+        If row.Contains("filesys.path_cheat ") Then xValue = Trim(Replace(row, "filesys.path_cheat", "")) : MgrSetting.TextBox34.Text = xValue
+        If row.Contains("filesys.path_firmware ") Then xValue = Trim(Replace(row, "filesys.path_firmware", "")) : MgrSetting.TextBox33.Text = xValue
+        If row.Contains("filesys.path_movie ") Then xValue = Trim(Replace(row, "filesys.path_movie", "")) : MgrSetting.TextBox32.Text = xValue
+        If row.Contains("filesys.path_palette ") Then xValue = Trim(Replace(row, "filesys.path_palette", "")) : MgrSetting.TextBox31.Text = xValue
+        If row.Contains("filesys.path_pgconfig ") Then xValue = Trim(Replace(row, "filesys.path_pgconfig", "")) : MgrSetting.TextBox30.Text = xValue
+        If row.Contains("filesys.path_sav ") Then xValue = Trim(Replace(row, "filesys.path_sav", "")) : MgrSetting.TextBox29.Text = xValue
+        If row.Contains("filesys.path_savbackup ") Then xValue = Trim(Replace(row, "filesys.path_savbackup", "")) : MgrSetting.TextBox28.Text = xValue
+        If row.Contains("filesys.path_snap ") Then xValue = Trim(Replace(row, "filesys.path_snap", "")) : MgrSetting.TextBox27.Text = xValue
+        If row.Contains("filesys.path_state ") Then xValue = Trim(Replace(row, "filesys.path_state", "")) : MgrSetting.TextBox26.Text = xValue
+
     End Sub
 
     Public Sub SetGeneral()

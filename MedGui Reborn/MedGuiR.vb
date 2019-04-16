@@ -167,7 +167,7 @@ Public Class MedGuiR
 
         For i = 8 To MgrSetting.TabControl1.TabPages.Count
             Select Case i
-                Case 24, 28
+                Case 24, 28, 31
                 Case Else
                     MgrSetting.TabControl1.TabPages.RemoveByKey("TabPage" & i)
             End Select

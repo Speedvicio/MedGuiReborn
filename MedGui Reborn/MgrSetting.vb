@@ -90,6 +90,7 @@ Public Class MgrSetting
         TabControl1.SelectedTab = TabPage2
         TabControl1.SelectedTab = TabPage3
         TabControl1.SelectedTab = TabPage4
+        TabControl1.SelectedTab = TabPage31
         TabControl1.SelectedTab = TabPage28
         TabControl1.SelectedTab = TabPage5
         TabControl1.SelectedTab = TabPage6
@@ -803,6 +804,42 @@ ErrorHandler:
         Label136.Text = colour
     End Sub
 
+    Private Sub Button38_Click(sender As Object, e As EventArgs) Handles Button38.Click
+        TextBox34.Text = SetPath("cheats", "-filesys.path_cheat ")
+    End Sub
+
+    Private Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
+        TextBox33.Text = SetPath("firmware", "-filesys.path_firmware ")
+    End Sub
+
+    Private Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
+        TextBox32.Text = SetPath("movies", "-filesys.path_movie ")
+    End Sub
+
+    Private Sub Button35_Click(sender As Object, e As EventArgs) Handles Button35.Click
+        TextBox31.Text = SetPath("custom palettes", "-filesys.path_palette ")
+    End Sub
+
+    Private Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
+        TextBox30.Text = SetPath("per-game configuration override files", "-filesys.path_pgconfig ")
+    End Sub
+
+    Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
+        TextBox29.Text = SetPath("save games and nonvolatile memory", "-filesys.path_sav ")
+    End Sub
+
+    Private Sub Button32_Click(sender As Object, e As EventArgs) Handles Button32.Click
+        TextBox28.Text = SetPath("backups of save games and nonvolatile memory", "-filesys.path_savbackup ")
+    End Sub
+
+    Private Sub Button31_Click(sender As Object, e As EventArgs) Handles Button31.Click
+        TextBox27.Text = SetPath("screen snapshots", "-filesys.path_snap ")
+    End Sub
+
+    Private Sub Button30_Click(sender As Object, e As EventArgs) Handles Button30.Click
+        TextBox26.Text = SetPath("save states", "-filesys.path_state ")
+    End Sub
+
     Private Sub CheckBox104_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox104.CheckedChanged
 
         If CheckBox104.Checked = True Then
@@ -1142,4 +1179,16 @@ ErrorHandler:
         End If
     End Sub
 
+    Private Function SetPath(description As String, ParPath As String)
+        Dim folder As New FolderBrowserDialog
+        folder.Description = "Path to directory for  " & description
+        folder.SelectedPath = MedGuiR.TextBox4.Text
+        If folder.ShowDialog = Windows.Forms.DialogResult.OK Then
+            tProcess = "mednafen"
+            wDir = MedGuiR.TextBox4.Text
+            Arg = ParPath & Chr(34) & folder.SelectedPath & Chr(34)
+            StartProcess()
+            Return (folder.SelectedPath)
+        End If
+    End Function
 End Class
