@@ -1050,7 +1050,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -2698,6 +2698,10 @@ SKIPHASH:
     End Sub
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles TimerControlJoy.Tick
+        Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
+        customCulture.NumberFormat.NumberDecimalSeparator = "."
+        Threading.Thread.CurrentThread.CurrentCulture = customCulture
+
         Try
             joyGetPosEx(NumericUpDown2.Value - 1, MYJOYEX)
 
