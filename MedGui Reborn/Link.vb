@@ -123,7 +123,7 @@
             szip.ExtractArchive(MedGuiR.TextBox4.Text)
             Threading.Thread.Sleep(1000)
             IO.File.Delete(MedExtra & "Update\firmware.zip")
-            MsgBox("Firmware extracted on Mednafen path!", vbOKOnly + MsgBoxStyle.Information)
+            MsgBox("Firmware extracted on Default Mednafen path!", vbOKOnly + MsgBoxStyle.Information)
         Catch
         End Try
     End Sub
