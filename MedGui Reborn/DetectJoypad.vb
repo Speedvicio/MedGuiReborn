@@ -90,6 +90,10 @@ Module DetectJoypad
     Public MYJOYEX As JOYINFOEX
 
     Public Sub InitJoy()
+        Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
+        customCulture.NumberFormat.NumberDecimalSeparator = "."
+        Threading.Thread.CurrentThread.CurrentCulture = customCulture
+
         'Get the joystick number in the system and about information
         Dim xJa, xRj As Long
         Dim xJn As Integer

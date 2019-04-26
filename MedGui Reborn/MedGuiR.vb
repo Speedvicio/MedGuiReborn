@@ -413,6 +413,7 @@ Public Class MedGuiR
     End Sub
 
     Public Sub SetSpecialModule()
+
         Select Case consoles
             Case "pce"
                 If CheckBox1.Checked = True Then tpce = "_fast" Else tpce = Nothing
@@ -421,6 +422,7 @@ Public Class MedGuiR
             Case Else
                 tpce = Nothing
         End Select
+
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs)
@@ -2698,9 +2700,7 @@ SKIPHASH:
     End Sub
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles TimerControlJoy.Tick
-        Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
-        customCulture.NumberFormat.NumberDecimalSeparator = "."
-        Threading.Thread.CurrentThread.CurrentCulture = customCulture
+
 
         Try
             joyGetPosEx(NumericUpDown2.Value - 1, MYJOYEX)
@@ -2957,6 +2957,21 @@ MisScan:
             MsgBox("MedPad Not detected!", vbAbort + vbExclamation, "MedPad Not detected...")
         End If
         FileParameter = ""
+    End Sub
+
+    Private Sub DetectCPU()
+        Dim MyOBJ As Object
+        Dim cpu As Object
+        Dim CPUspeed As Integer
+
+        MyOBJ = GetObject("WinMgmts:").instancesof("Win32_Processor")
+        For Each cpu In MyOBJ
+            CPUspeed = Val(cpu.CurrentClockSpeed.ToString)
+        Next
+
+        If CheckBox1.Checked = False And CPUspeed <= 1000 Then CheckBox1.Checked = True
+        If CheckBox15.Checked = False And CPUspeed <= 2000 Then CheckBox1.Checked = True
+
     End Sub
 
 End Class
