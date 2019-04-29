@@ -1052,7 +1052,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -2646,6 +2646,10 @@ SKIPHASH:
         ChaseL()
     End Sub
 
+    Private Sub TestPCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestPCToolStripMenuItem.Click
+        TestCPU.Show()
+    End Sub
+
     Private Sub PictureBox2_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox2.DoubleClick
         Try
             DetectChipmodule()
@@ -2700,7 +2704,6 @@ SKIPHASH:
     End Sub
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles TimerControlJoy.Tick
-
 
         Try
             joyGetPosEx(NumericUpDown2.Value - 1, MYJOYEX)
@@ -2957,21 +2960,6 @@ MisScan:
             MsgBox("MedPad Not detected!", vbAbort + vbExclamation, "MedPad Not detected...")
         End If
         FileParameter = ""
-    End Sub
-
-    Private Sub DetectCPU()
-        Dim MyOBJ As Object
-        Dim cpu As Object
-        Dim CPUspeed As Integer
-
-        MyOBJ = GetObject("WinMgmts:").instancesof("Win32_Processor")
-        For Each cpu In MyOBJ
-            CPUspeed = Val(cpu.CurrentClockSpeed.ToString)
-        Next
-
-        If CheckBox1.Checked = False And CPUspeed <= 1000 Then CheckBox1.Checked = True
-        If CheckBox15.Checked = False And CPUspeed <= 2000 Then CheckBox1.Checked = True
-
     End Sub
 
 End Class
