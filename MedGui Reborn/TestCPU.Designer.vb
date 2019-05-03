@@ -39,6 +39,9 @@ Partial Class TestCPU
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -145,6 +148,9 @@ Partial Class TestCPU
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label15)
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -159,11 +165,11 @@ Partial Class TestCPU
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(78, 50)
+        Me.Label4.Location = New System.Drawing.Point(45, 50)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.Size = New System.Drawing.Size(35, 13)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Label4"
+        Me.Label4.Text = "XXXX"
         '
         'Label3
         '
@@ -212,6 +218,33 @@ Partial Class TestCPU
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Label11"
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(364, 50)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(55, 13)
+        Me.Label12.TabIndex = 8
+        Me.Label12.Text = "Mednafen"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(90, 50)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(25, 13)
+        Me.Label14.TabIndex = 9
+        Me.Label14.Text = "OS:"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(275, 50)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(66, 13)
+        Me.Label15.TabIndex = 10
+        Me.Label15.Text = "Platform: xxx"
+        '
         'TestCPU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -250,4 +283,7 @@ Partial Class TestCPU
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
 End Class
