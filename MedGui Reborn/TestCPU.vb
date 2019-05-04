@@ -20,7 +20,7 @@
         Label4.Text = Mhz.ToString
         Label12.Text = "Mednafen " & x864
         Label14.Text = "OS: " & My.Computer.Info.OSFullName
-        Label15.Text = "Platform: x" & Replace(c_os.ToString, "32", "86")
+        Label15.Text = "Platform: " & c_os.ToString & " bit"
 
         If "x" & Replace(c_os.ToString, "32", "86") <> x864 Then Label12.ForeColor = Color.DarkRed
 
@@ -30,6 +30,10 @@
             Label10.Text = "Not Supported"
             Label10.ForeColor = Color.DarkRed
         End If
+
+        Dim test As String = GetInfo("Win32_Processor")
+        Threading.Thread.Sleep(1000)
+        MsgBox(test)
     End Sub
 
     Private Sub SetTheMessage()

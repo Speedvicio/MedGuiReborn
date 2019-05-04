@@ -97,6 +97,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
   </ItemGroup>
@@ -193,6 +194,7 @@
     <Compile Include="ModLand.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPUSpecific.vb" />
     <Compile Include="MPCG.designer.vb">
       <DependentUpon>MPCG.vb</DependentUpon>
     </Compile>
