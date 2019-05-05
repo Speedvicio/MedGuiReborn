@@ -35,8 +35,6 @@ Public Class TestCPU
         End If
 
         'Process.Start("dxdiag.exe", "/t " & Path.Combine(Application.StartupPath, "PcSpecs.txt"))
-        'Dim test As String = GetInfo("Win32_Processor")
-        'MsgBox(test)
     End Sub
 
     Private Sub SetTheMessage()
