@@ -174,7 +174,7 @@ Partial Class TestCPU
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(90, 50)
+        Me.Label14.Location = New System.Drawing.Point(119, 50)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(25, 13)
         Me.Label14.TabIndex = 9
@@ -194,9 +194,9 @@ Partial Class TestCPU
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(45, 50)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(35, 13)
+        Me.Label4.Size = New System.Drawing.Size(68, 13)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "XXXX"
+        Me.Label4.Text = "XXXX/ZZZZ"
         '
         'Label3
         '

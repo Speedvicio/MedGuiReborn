@@ -1,5 +1,7 @@
-﻿Public Class TestCPU
-    Dim Mhz As Integer
+﻿Imports System.IO
+
+Public Class TestCPU
+    Dim Mhz, Mhz1 As Integer
     Dim CPUname As String
     Private Sub TestCPU_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -12,12 +14,13 @@
 
         MyOBJ = GetObject("WinMgmts:").instancesof("Win32_Processor")
         For Each cpu In MyOBJ
-            Mhz = Val(cpu.CurrentClockSpeed.ToString)
-            CPUname = cpu.Name.ToString
+            Mhz1 = Val(cpu.CurrentClockSpeed.ToString)
+            Mhz = Val(cpu.MaxClockSpeed.ToString)
+            CPUname = cpu.Name.ToString & " (" & cpu.NumberOfLogicalProcessors.ToString & "CPUs)"
         Next
 
         Label2.Text = CPUname.Trim
-        Label4.Text = Mhz.ToString
+        Label4.Text = Mhz1.ToString & "/" & Mhz.ToString
         Label12.Text = "Mednafen " & x864
         Label14.Text = "OS: " & My.Computer.Info.OSFullName
         Label15.Text = "Platform: " & c_os.ToString & " bit"
@@ -31,9 +34,9 @@
             Label10.ForeColor = Color.DarkRed
         End If
 
-        Dim test As String = GetInfo("Win32_Processor")
-        Threading.Thread.Sleep(1000)
-        MsgBox(test)
+        'Process.Start("dxdiag.exe", "/t " & Path.Combine(Application.StartupPath, "PcSpecs.txt"))
+        'Dim test As String = GetInfo("Win32_Processor")
+        'MsgBox(test)
     End Sub
 
     Private Sub SetTheMessage()
