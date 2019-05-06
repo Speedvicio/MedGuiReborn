@@ -51,7 +51,7 @@ Public Class TestCPU
             If a.Contains("Processor: ") Then
                 SplitA = a.Split("~")
                 Dim Tmhz As Integer = Val(Replace(SplitA(1).Trim, "GHz", "")) * 1000
-                If Val(Mhz) = Tmhz Then
+                If Val(Mhz) < Tmhz Then
                     Mhz = Tmhz
                     Label3.Text = "Mhz: " & Mhz1.ToString & "/" & Mhz.ToString
                 End If
