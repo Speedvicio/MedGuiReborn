@@ -16,11 +16,11 @@ Public Class TestCPU
         For Each cpu In MyOBJ
             Mhz1 = Val(cpu.CurrentClockSpeed.ToString)
             Mhz = Val(cpu.MaxClockSpeed.ToString)
-            CPUname = cpu.Name.ToString & " (" & cpu.NumberOfLogicalProcessors.ToString & "CPUs)"
+            CPUname = cpu.Name.ToString & " (" & cpu.NumberOfLogicalProcessors.ToString & " CPUs)"
         Next
 
-        Label2.Text = CPUname.Trim
-        Label4.Text = Mhz1.ToString & "/" & Mhz.ToString
+        Label1.Text = "CPU Name: " & CPUname.Trim
+        Label3.Text = "Mhz: " & Mhz1.ToString & "/" & Mhz.ToString
         Label12.Text = "Mednafen " & x864
         Label14.Text = "OS: " & My.Computer.Info.OSFullName
         Label15.Text = "Platform: " & c_os.ToString & " bit"
@@ -34,15 +34,39 @@ Public Class TestCPU
             Label10.ForeColor = Color.DarkRed
         End If
 
-        'Process.Start("dxdiag.exe", "/t " & Path.Combine(Application.StartupPath, "PcSpecs.txt"))
+        Process.Start("dxdiag.exe", "/t " & Path.Combine(Application.StartupPath, "PcSpecs.txt"))
+        Threading.Thread.Sleep(1000)
+        If File.Exists(Path.Combine(Application.StartupPath, "PcSpecs.txt")) Then
+            ParsePcSpecs()
+        End If
+    End Sub
+
+    Private Sub ParsePcSpecs()
+        Dim reader As StreamReader = My.Computer.FileSystem.OpenTextFileReader(Path.Combine(Application.StartupPath, "PcSpecs.txt"))
+        Dim a As String
+        Dim SplitA() As String
+
+        Do
+            a = reader.ReadLine
+            If a.Contains("Processor: ") Then
+                SplitA = a.Split("~")
+                Dim Tmhz As Integer = Val(Replace(SplitA(1).Trim, "GHz", "")) * 1000
+                If Val(Mhz) = Tmhz Then
+                    Mhz = Tmhz
+                    Label3.Text = "Mhz: " & Mhz1.ToString & "/" & Mhz.ToString
+                End If
+                Exit Do
+            End If
+        Loop Until a Is Nothing
+        reader.Close()
     End Sub
 
     Private Sub SetTheMessage()
         If Mhz <= 1500 Then
             Label6.Text = "Faust"
-            Label6.ForeColor = Color.Orange
+            Label6.ForeColor = Color.DarkViolet
             Label7.Text = "Fast"
-            Label7.ForeColor = Color.Orange
+            Label7.ForeColor = Color.DarkViolet
             Label9.Text = "Your CPU is CRAP"
             Label9.ForeColor = Color.DarkRed
             Label10.Text = "Your CPU is CRAP"
@@ -54,7 +78,7 @@ Forget any additional graphic effect, at the limit, enables the scanlines and / 
             Button1.Enabled = True
         ElseIf Mhz > 1500 And Mhz <= 2500 Then
             Label6.Text = "Faust"
-            Label6.ForeColor = Color.Orange
+            Label6.ForeColor = Color.DarkViolet
             Label7.Text = "Standard"
             Label7.ForeColor = Color.DarkGreen
             Label9.Text = "Your CPU is CRAP"

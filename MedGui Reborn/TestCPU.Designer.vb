@@ -36,9 +36,7 @@ Partial Class TestCPU
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -151,9 +149,7 @@ Partial Class TestCPU
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox2.Name = "GroupBox2"
@@ -165,11 +161,11 @@ Partial Class TestCPU
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(319, 50)
+        Me.Label15.Location = New System.Drawing.Point(299, 50)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(66, 13)
+        Me.Label15.Size = New System.Drawing.Size(93, 13)
         Me.Label15.TabIndex = 10
-        Me.Label15.Text = "Platform: xxx"
+        Me.Label15.Text = "Platform: XXXXXX"
         '
         'Label14
         '
@@ -183,38 +179,20 @@ Partial Class TestCPU
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(404, 50)
+        Me.Label12.Location = New System.Drawing.Point(398, 50)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(73, 13)
+        Me.Label12.Size = New System.Drawing.Size(79, 13)
         Me.Label12.TabIndex = 8
-        Me.Label12.Text = "Mednafen xxx"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(45, 50)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "XXXX/ZZZZ"
+        Me.Label12.Text = "Mednafen XXX"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(9, 50)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(30, 13)
+        Me.Label3.Size = New System.Drawing.Size(94, 13)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Mhz:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(90, 26)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Label2"
+        Me.Label3.Text = "Mhz: XXXX/ZZZZ"
         '
         'Label1
         '
@@ -277,9 +255,7 @@ Partial Class TestCPU
     Friend WithEvents Label5 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label11 As Label
