@@ -1554,7 +1554,7 @@ Public Class MedGuiR
         End Try
     End Sub
 
-    Private Sub PictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox1.MouseEnter
+    Private Sub PictureBox1_MouseHover(sender As Object, e As EventArgs) Handles PictureBox1.MouseHover
         If CheckBox3.Checked = True And File.Exists(pathimage) = True Then PopUp.PopupPic = pathimage : PopUp.Show()
     End Sub
 

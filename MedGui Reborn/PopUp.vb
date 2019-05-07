@@ -9,7 +9,8 @@
         ' BackgroundImage = New Bitmap(PopupPic)
         Me.Icon = gIcon
         MedGuiR.TopMost = False
-        TopMost = True
+        Me.BringToFront()
+        'TopMost = True
 
         PictureBox1.Load(PopupPic)
 

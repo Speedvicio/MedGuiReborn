@@ -84,7 +84,7 @@
         Read_Resource()
         F1 = Me
         CenterForm()
-        Me.TopMost = True
+        'Me.TopMost = True
     End Sub
 
     Private Sub SoundList_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed

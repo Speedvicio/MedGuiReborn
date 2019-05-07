@@ -118,7 +118,7 @@ Module Scrape
             SoxStatus.Label1.Text = "Downloading..."
             Application.DoEvents()
             SoxStatus.Show()
-            SoxStatus.TopMost = True
+            'SoxStatus.TopMost = True
 
             Dim search As String
             search = "exactname="

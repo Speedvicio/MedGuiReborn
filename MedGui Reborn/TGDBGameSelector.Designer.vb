@@ -24,11 +24,11 @@ Partial Class TGDBGameSelector
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GameName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Console = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReleaseDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -92,7 +92,6 @@ Partial Class TGDBGameSelector
         Me.Name = "TGDBGameSelector"
         Me.Text = "TGDB Game Selector"
         Me.ToolTip1.SetToolTip(Me, "Select a game from the list")
-        Me.TopMost = True
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

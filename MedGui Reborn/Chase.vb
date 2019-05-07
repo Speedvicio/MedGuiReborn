@@ -35,6 +35,7 @@
         Dim fx = MedGuiR.Left + (MedGuiR.Width - F1.Width) \ 2
         Dim fy = MedGuiR.Top + (MedGuiR.Height - F1.Height) \ 2
         F1.Location = New Point(fx, fy)
+        F1.BringToFront()
     End Sub
 
 End Module
