@@ -9,6 +9,9 @@ Public Class TestCPU
         F1 = Me
         CenterForm()
 
+        Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
+        customCulture.NumberFormat.NumberDecimalSeparator = "."
+
         Dim MyOBJ As Object
         Dim cpu As Object
 
@@ -20,7 +23,7 @@ Public Class TestCPU
         Next
 
         Label1.Text = "CPU Name: " & CPUname.Trim
-        Label3.Text = "Mhz: " & Mhz1.ToString & "/" & Mhz.ToString
+        Label3.Text = "MHz: " & Mhz1.ToString & "/" & Mhz.ToString
         Label12.Text = "Mednafen " & x864
         Label14.Text = "OS: " & My.Computer.Info.OSFullName
         Label15.Text = "Platform: " & c_os.ToString & " bit"
@@ -45,15 +48,26 @@ Public Class TestCPU
         Dim reader As StreamReader = My.Computer.FileSystem.OpenTextFileReader(Path.Combine(Application.StartupPath, "PcSpecs.txt"))
         Dim a As String
         Dim SplitA() As String
+        Dim Tmhz As Double
 
         Do
             a = reader.ReadLine
             If a.Contains("Processor: ") Then
-                SplitA = a.Split("~")
-                Dim Tmhz As Integer = Val(Replace(SplitA(1).Trim, "GHz", "")) * 1000
+                Dim TSpeed As String
+                If a.Contains("GHz") Then
+                    SplitA = a.Split("~")
+                    TSpeed = Replace(SplitA(1).Trim, "GHz", "")
+                    Tmhz = Double.Parse(TSpeed, New Globalization.CultureInfo("en-US"))
+                ElseIf a.Contains("MHz") Then
+                    SplitA = a.Split("MHz")
+                    TSpeed = SplitA(0)(SplitA(0).Length - 4)
+                    Tmhz = Val(TSpeed.Trim)
+                End If
+
+                If Tmhz < 10 Then Tmhz = Tmhz * 1000
                 If Val(Mhz) < Tmhz Then
                     Mhz = Tmhz
-                    Label3.Text = "Mhz: " & Mhz1.ToString & "/" & Mhz.ToString
+                    Label3.Text = "MHz: " & Mhz1.ToString & "/" & Mhz.ToString
                 End If
                 Exit Do
             End If
