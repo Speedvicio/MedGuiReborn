@@ -2363,7 +2363,7 @@ inputagain:
     Private Sub IPSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IPSToolStripMenuItem.Click
         Dim fdlg As OpenFileDialog = New OpenFileDialog()
         fdlg.Title = "Select an ips/sbi patch"
-        fdlg.Filter = "All supported format (*.ips,*.sbi)|*.ips;*sbi"
+        fdlg.Filter = "All supported format (*.ips,*.sbi,*.bps)|*.ips;*.sbi;*.bps"
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
@@ -2386,6 +2386,27 @@ inputagain:
                         My.Computer.FileSystem.CopyFile(fdlg.FileName, Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi", overwrite:=True)
                         MsgBox("SBI Patch moved in the same game folder", MsgBoxStyle.Information + vbOKOnly, "Patch moved...")
                     End If
+                Case ".bps"
+                    If File.Exists(MedExtra & "\Plugins\beat.exe") Then
+                        Dim viewex = LCase(Path.GetExtension(percorso))
+                        Select Case viewex
+                            Case ".zip", ".rar", ".7z"
+                                simple_extract()
+                        End Select
+
+                        tProcess = "beat"
+                        wDir = (MedExtra & "Plugins")
+                        Arg = "-apply -p " & Chr(34) & fdlg.FileName & Chr(34) & " -o " & Chr(34) & Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) _
+                        & "_patched" & Path.GetExtension(percorso) & Chr(34) & " " & Chr(34) & percorso & Chr(34)
+                        StartProcess()
+                        execute.WaitForExit()
+                        File.Delete(percorso)
+                        percorso = Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) _
+                        & "_patched" & Path.GetExtension(percorso)
+                        MsgBox("File patched and putted into MedGuiR RomTemp folder", MsgBoxStyle.Information + vbOKOnly, "File patched...")
+                        SingleScan()
+                    End If
+
             End Select
 
         End If

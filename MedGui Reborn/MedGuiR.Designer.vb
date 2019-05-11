@@ -3338,12 +3338,12 @@ Partial Class MedGuiR
         '
         Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem1, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.ResetToolStripMenuItem1, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(205, 444)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 444)
         '
         'StartGameToolStripMenuItem
         '
         Me.StartGameToolStripMenuItem.Name = "StartGameToolStripMenuItem"
-        Me.StartGameToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.StartGameToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.StartGameToolStripMenuItem.Text = "Start &Game"
         Me.StartGameToolStripMenuItem.ToolTipText = "Start a normal session"
         '
@@ -3351,7 +3351,7 @@ Partial Class MedGuiR
         '
         Me.NetPlayToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NickToolStripTextBox1, Me.ServerToolStripComboBox2, Me.PortToolStripTextBox1, Me.GameKeyToolStripTextBox1, Me.PasswordToolStripTextBox1, Me.OnlineToolStripMenuItem1})
         Me.NetPlayToolStripMenuItem1.Name = "NetPlayToolStripMenuItem1"
-        Me.NetPlayToolStripMenuItem1.Size = New System.Drawing.Size(204, 22)
+        Me.NetPlayToolStripMenuItem1.Size = New System.Drawing.Size(208, 22)
         Me.NetPlayToolStripMenuItem1.Text = "&NetPlay"
         Me.NetPlayToolStripMenuItem1.ToolTipText = "Start a rapid netplay session"
         '
@@ -3400,56 +3400,56 @@ Partial Class MedGuiR
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(205, 6)
         '
         'AdvancedSettingToolStripMenuItem
         '
         Me.AdvancedSettingToolStripMenuItem.Name = "AdvancedSettingToolStripMenuItem"
-        Me.AdvancedSettingToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.AdvancedSettingToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.AdvancedSettingToolStripMenuItem.Text = "&Advanced Setting"
         Me.AdvancedSettingToolStripMenuItem.ToolTipText = "Open Mednafen Advanced Settings"
         '
         'ToolStripSeparator11
         '
         Me.ToolStripSeparator11.Name = "ToolStripSeparator11"
-        Me.ToolStripSeparator11.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator11.Size = New System.Drawing.Size(205, 6)
         '
         'MedPadToolStripMenuItem
         '
         Me.MedPadToolStripMenuItem.Name = "MedPadToolStripMenuItem"
-        Me.MedPadToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.MedPadToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.MedPadToolStripMenuItem.Text = "Configure &Joypad"
         Me.MedPadToolStripMenuItem.ToolTipText = "Open MedPad Input Configurator"
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(205, 6)
         '
         'BCKPToolStripMenuItem
         '
         Me.BCKPToolStripMenuItem.Name = "BCKPToolStripMenuItem"
-        Me.BCKPToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.BCKPToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.BCKPToolStripMenuItem.Text = "Import Save/Bac&kup"
         Me.BCKPToolStripMenuItem.ToolTipText = "Import a Save from another emu for selected game"
         '
         'ToolStripSeparator13
         '
         Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
-        Me.ToolStripSeparator13.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator13.Size = New System.Drawing.Size(205, 6)
         '
         'IPSToolStripMenuItem
         '
         Me.IPSToolStripMenuItem.Name = "IPSToolStripMenuItem"
-        Me.IPSToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
-        Me.IPSToolStripMenuItem.Text = "&Import IPS/SBI &Patch"
+        Me.IPSToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.IPSToolStripMenuItem.Text = "&Import IPS/SBI/BPS &Patch"
         Me.IPSToolStripMenuItem.ToolTipText = "Import a IPS/SBI patch for selected game"
         '
         'RIPSToolStripMenuItem
         '
         Me.RIPSToolStripMenuItem.Enabled = False
         Me.RIPSToolStripMenuItem.Name = "RIPSToolStripMenuItem"
-        Me.RIPSToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.RIPSToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.RIPSToolStripMenuItem.Text = "Remove IP&S Patch"
         Me.RIPSToolStripMenuItem.ToolTipText = "Remove existent IPS patch from selected game"
         '
@@ -3457,105 +3457,105 @@ Partial Class MedGuiR
         '
         Me.RSBIToolStripMenuItem.Enabled = False
         Me.RSBIToolStripMenuItem.Name = "RSBIToolStripMenuItem"
-        Me.RSBIToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.RSBIToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.RSBIToolStripMenuItem.Text = "Remove S&BI Patch"
         Me.RSBIToolStripMenuItem.ToolTipText = "Remove existent SBI patch from selected PSX game"
         '
         'ToolStripSeparator10
         '
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
-        Me.ToolStripSeparator10.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator10.Size = New System.Drawing.Size(205, 6)
         '
         'CheatToolStripMenuItem
         '
         Me.CheatToolStripMenuItem.Name = "CheatToolStripMenuItem"
-        Me.CheatToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.CheatToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.CheatToolStripMenuItem.Text = "C&heat Manager"
         Me.CheatToolStripMenuItem.ToolTipText = "Open Cheat Manager"
         '
         'ToolStripSeparator14
         '
         Me.ToolStripSeparator14.Name = "ToolStripSeparator14"
-        Me.ToolStripSeparator14.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator14.Size = New System.Drawing.Size(205, 6)
         '
         'AddToFavoritesToolStripMenuItem
         '
         Me.AddToFavoritesToolStripMenuItem.Name = "AddToFavoritesToolStripMenuItem"
-        Me.AddToFavoritesToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.AddToFavoritesToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.AddToFavoritesToolStripMenuItem.Text = "Add to &Favorites"
         Me.AddToFavoritesToolStripMenuItem.ToolTipText = "Add selected game to favourites"
         '
         'RemoveFromFavoritesToolStripMenuItem
         '
         Me.RemoveFromFavoritesToolStripMenuItem.Name = "RemoveFromFavoritesToolStripMenuItem"
-        Me.RemoveFromFavoritesToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.RemoveFromFavoritesToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.RemoveFromFavoritesToolStripMenuItem.Text = "&Remove from List"
         Me.RemoveFromFavoritesToolStripMenuItem.ToolTipText = "Remove selected game from favourites"
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(205, 6)
         '
         'ImportFromFile
         '
         Me.ImportFromFile.Name = "ImportFromFile"
-        Me.ImportFromFile.Size = New System.Drawing.Size(204, 22)
+        Me.ImportFromFile.Size = New System.Drawing.Size(208, 22)
         Me.ImportFromFile.Text = "&Import Cover from File"
         Me.ImportFromFile.ToolTipText = "Import a cover from a image"
         '
         'AddShortuctToDesktopToolStripMenuItem
         '
         Me.AddShortuctToDesktopToolStripMenuItem.Name = "AddShortuctToDesktopToolStripMenuItem"
-        Me.AddShortuctToDesktopToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.AddShortuctToDesktopToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.AddShortuctToDesktopToolStripMenuItem.Text = "Add Shortcut to &Desktop"
         Me.AddShortuctToDesktopToolStripMenuItem.ToolTipText = "Add a shortcut of selected game on desktop"
         '
         'ToolStripSeparator9
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
-        Me.ToolStripSeparator9.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(205, 6)
         '
         'ResetToolStripMenuItem1
         '
         Me.ResetToolStripMenuItem1.Name = "ResetToolStripMenuItem1"
-        Me.ResetToolStripMenuItem1.Size = New System.Drawing.Size(204, 22)
+        Me.ResetToolStripMenuItem1.Size = New System.Drawing.Size(208, 22)
         Me.ResetToolStripMenuItem1.Text = "Reset &Configurations"
         Me.ResetToolStripMenuItem1.ToolTipText = "Reset all Mednafen and MedGui Reborn configurations"
         '
         'ToolStripSeparator12
         '
         Me.ToolStripSeparator12.Name = "ToolStripSeparator12"
-        Me.ToolStripSeparator12.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator12.Size = New System.Drawing.Size(205, 6)
         '
         'mMetroMed
         '
         Me.mMetroMed.Name = "mMetroMed"
-        Me.mMetroMed.Size = New System.Drawing.Size(204, 22)
+        Me.mMetroMed.Size = New System.Drawing.Size(208, 22)
         Me.mMetroMed.Text = "&MetroMed"
         Me.mMetroMed.ToolTipText = "Launch MetroMed modern GUI"
         '
         'ToolStripSeparator15
         '
         Me.ToolStripSeparator15.Name = "ToolStripSeparator15"
-        Me.ToolStripSeparator15.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator15.Size = New System.Drawing.Size(205, 6)
         '
         'TestPCToolStripMenuItem
         '
         Me.TestPCToolStripMenuItem.Name = "TestPCToolStripMenuItem"
-        Me.TestPCToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.TestPCToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.TestPCToolStripMenuItem.Text = "&Test Your PC"
         Me.TestPCToolStripMenuItem.ToolTipText = "Test your CPU"
         '
         'ToolStripSeparator16
         '
         Me.ToolStripSeparator16.Name = "ToolStripSeparator16"
-        Me.ToolStripSeparator16.Size = New System.Drawing.Size(201, 6)
+        Me.ToolStripSeparator16.Size = New System.Drawing.Size(205, 6)
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(204, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.AboutToolStripMenuItem.Text = "Abo&ut MedGui Reborn"
         Me.AboutToolStripMenuItem.ToolTipText = "About MedGui Reborn"
         '
