@@ -1052,7 +1052,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -2394,16 +2394,23 @@ inputagain:
                                 simple_extract()
                         End Select
 
-                        tProcess = "beat"
+                        tProcess = "flips"
                         wDir = (MedExtra & "Plugins")
-                        Arg = "-apply -p " & Chr(34) & fdlg.FileName & Chr(34) & " -o " & Chr(34) & Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) _
-                        & "_patched" & Path.GetExtension(percorso) & Chr(34) & " " & Chr(34) & percorso & Chr(34)
+                        Arg = "-a " & Chr(34) & fdlg.FileName & Chr(34) & " " & Chr(34) & percorso & Chr(34) & " " & Chr(34) & Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) _
+                        & "_patched" & Path.GetExtension(percorso) & Chr(34)
                         StartProcess()
                         execute.WaitForExit()
-                        File.Delete(percorso)
+                        Dim respatch As String
+                        If percorso.Contains("\RomTemp\") Then
+                            File.Delete(percorso)
+                            respatch = "File patched and putted into MedGuiR RomTemp folder"
+                        Else
+                            respatch = "File patched and putted into the same rom folder"
+                        End If
                         percorso = Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) _
                         & "_patched" & Path.GetExtension(percorso)
-                        MsgBox("File patched and putted into MedGuiR RomTemp folder", MsgBoxStyle.Information + vbOKOnly, "File patched...")
+                        MsgBox(respatch, MsgBoxStyle.Information + vbOKOnly, "File patched...")
+                        Process.Start("explorer.exe", " /select ," & Chr(34) & percorso & Chr(34))
                         SingleScan()
                     End If
 
