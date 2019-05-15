@@ -6,7 +6,7 @@ Module xSetting
 
     Public Sub ReadXValue()
         Try
-            Using reader As New StreamReader(MedGuiR.TextBox4.Text & "\" & MedConfSpecific & ".cfg")
+            Using reader As New StreamReader(MedConfSpecific & ".cfg")
                 While Not reader.EndOfStream
                     row = reader.ReadLine
                     SetValue()
@@ -26,20 +26,20 @@ Module xSetting
     Public Sub ReadPSValue()
         set_special_module()
 
-        If IO.File.Exists(MedGuiR.TextBox4.Text & "\" & "pgconfig\" & System.IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c & ".cfg") = True Then
-            MedConfSpecific = DMedConf
+        If IO.File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c & ".cfg")) = True Then
+            MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
             ReadXValue()
-            MedConfSpecific = "pgconfig\" & System.IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c
+            MedConfSpecific = Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c)
             MgrSetting.CheckBox6.Checked = False
             MgrSetting.CheckBox59.Checked = True
             MsgBox("Detected a specific game config, global settings will be ignored", vbOKOnly + MsgBoxStyle.Information)
-        ElseIf IO.File.Exists(MedGuiR.TextBox4.Text & "\" & p_c & ".cfg") = True Then
+        ElseIf File.Exists(MedGuiR.TextBox4.Text & "\" & p_c & ".cfg") = True Then
             Read_Desync()
             If contdes = 1 Then
                 MedGuiR.RebuilDesync()
                 'File.Delete(MedGuiR.TextBox4.Text & "\" & consoles & ".cfg”)
             Else
-                MedConfSpecific = DMedConf
+                MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
                 ReadXValue()
                 MedConfSpecific = p_c
                 MgrSetting.CheckBox59.Checked = False
@@ -47,7 +47,7 @@ Module xSetting
                 MsgBox("Detected a specific console config, global settings will be ignored", vbOKOnly + MsgBoxStyle.Information)
             End If
         Else
-            MedConfSpecific = DMedConf
+            MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
             MgrSetting.CheckBox59.Checked = False
             MgrSetting.CheckBox6.Checked = False
         End If
@@ -534,5 +534,46 @@ Module xSetting
         MgrSetting.Label122.Text = "First scanline in NTSC mode: " & MgrSetting.TrackBar19.Value
         MgrSetting.Label123.Text = "First scanline in PAL mode: " & MgrSetting.TrackBar20.Value
     End Sub
+
+    Public Function ExtractPath(parameter As String)
+        Try
+            Dim reader As StreamReader = My.Computer.FileSystem.OpenTextFileReader(Path.Combine(MedGuiR.TextBox4.Text, DMedConf & ".cfg"))
+            Dim a As String
+            Dim SplitPath() As String
+            Dim ReturnedPath As String
+
+            Do
+                a = reader.ReadLine
+                If a.Contains("filesys." & parameter) Then
+                    SplitPath = Split(a, " ")
+
+                    If SplitPath(1).Contains(":\") Then
+                        If SplitPath.Length > 1 Then
+                            For i = 1 To SplitPath.Length - 1
+                                ReturnedPath += SplitPath(i).Trim & " "
+                            Next
+                        Else
+                            ReturnedPath = SplitPath(1).Trim
+                        End If
+                    Else
+                        If SplitPath(1).Trim = "" Then
+                            Select Case parameter
+                                Case "path_cheat"
+                                    SplitPath(1) = "cheats"
+                                Case "path_pgconfig"
+                                    SplitPath(1) = "pgconfig"
+                            End Select
+                        End If
+                        ReturnedPath = Path.Combine(MedGuiR.TextBox4.Text, SplitPath(1).Trim)
+                    End If
+
+                        Exit Do
+                    End If
+            Loop Until a Is Nothing
+            reader.Close()
+            Return (ReturnedPath.Trim & "\")
+        Catch
+        End Try
+    End Function
 
 End Module

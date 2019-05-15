@@ -37,7 +37,7 @@ ErrorHandler:
 
         saveFileDialog1.Filter = "palette files (*.pal)|*.pal|All files (*.*)|*.*"
         saveFileDialog1.FilterIndex = 1
-        saveFileDialog1.InitialDirectory = MedGuiR.TextBox4.Text & "\palettes\"
+        saveFileDialog1.InitialDirectory = ExtractPath("path_palette")
         saveFileDialog1.RestoreDirectory = True
 
         If RadioButton1.Checked = True Then
@@ -79,7 +79,7 @@ ErrorHandler:
     Private Sub Button6_Click(sender As Object, e As EventArgs)
         Dim CPPath As OpenFileDialog = New OpenFileDialog()
         CPPath.Title = "Select a Custom Palette File"
-        CPPath.InitialDirectory = MedGuiR.TextBox4.Text & "\palettes\"
+        CPPath.InitialDirectory = ExtractPath("path_palette")
         CPPath.Filter = "palette files (*.pal)|*.pal|All files (*.*)|*.*"
         If CPPath.ShowDialog() = Windows.Forms.DialogResult.OK Then
 
@@ -279,12 +279,12 @@ ErrorHandler:
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         Dim dipal As Integer
         Dim infoReader As System.IO.FileInfo
-        infoReader = My.Computer.FileSystem.GetFileInfo(MedGuiR.TextBox4.Text & "\palettes\" & ListBox1.SelectedItem)
+        infoReader = My.Computer.FileSystem.GetFileInfo(ExtractPath("path_palette") & ListBox1.SelectedItem)
         dipal = Val(infoReader.Length)
 
         If dipal < 12 Or dipal > 36 Then MsgBox("This is not a Game Boy compatible palette file!", vbCritical + MsgBoxStyle.OkOnly) : Exit Sub
 
-        Using file As New IO.FileStream(MedGuiR.TextBox4.Text & "\palettes\" & ListBox1.SelectedItem, IO.FileMode.Open)
+        Using file As New IO.FileStream(ExtractPath("path_palette") & ListBox1.SelectedItem, IO.FileMode.Open)
             Dim value As Integer = file.ReadByte()
 
             Do Until value = -1
@@ -314,14 +314,14 @@ ErrorHandler:
     Private Sub Refresh_listbox()
         ListBox1.Items.Clear()
 
-        For Each binFile As String In IO.Directory.GetFiles(MedGuiR.TextBox4.Text & "\palettes\", "*.pal")
-            ListBox1.Items.Add(IO.Path.GetFileName(binFile))
+        For Each binFile As String In Directory.GetFiles(ExtractPath("path_palette"), "*.pal")
+            ListBox1.Items.Add(Path.GetFileName(binFile))
         Next
 
         ListBox2.Items.Clear()
         If Directory.Exists(MedExtra & "\palettes\GB\") Then
-            For Each txtFile As String In IO.Directory.GetFiles(MedExtra & "\palettes\GB\", "*.txt")
-                ListBox2.Items.Add(IO.Path.GetFileName(txtFile))
+            For Each txtFile As String In Directory.GetFiles(MedExtra & "\palettes\GB\", "*.txt")
+                ListBox2.Items.Add(Path.GetFileName(txtFile))
             Next
         Else
             Directory.CreateDirectory(MedExtra & "\palettes\GB\")
@@ -334,7 +334,7 @@ ErrorHandler:
 
     Private Sub Button6_Click_1(sender As Object, e As EventArgs) Handles Button6.Click
         If ListBox1.SelectedItem = "" Then Exit Sub
-        System.IO.File.Delete(MedGuiR.TextBox4.Text & "\palettes\" & ListBox1.SelectedItem)
+        System.IO.File.Delete(ExtractPath("path_palette") & ListBox1.SelectedItem)
         Refresh_listbox()
     End Sub
 

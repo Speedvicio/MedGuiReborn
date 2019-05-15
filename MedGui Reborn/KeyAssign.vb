@@ -681,7 +681,7 @@ Public Class KeyAssign
 
         If File.Exists(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg") Then
 
-            Dim keylinee As String() = IO.File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
+            Dim keylinee As String() = File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
             'For i As Integer = 0 To keylinee.Length - 1
             'If keylinee(i) = kParameter Then
             'MsgBox(tasti & " already assigned to this Mednafen parameter") : Exit Sub

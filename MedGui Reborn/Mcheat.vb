@@ -205,7 +205,7 @@ Public Class Mcheat
         TWriteRAM = True
         PrepareCodeforMednafen()
 
-        Dim cheatpath As String = Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")
+        Dim cheatpath As String = Path.Combine(ExtractPath("path_cheat"), CheatConsole & ".cht")
 
         If File.Exists(cheatpath) = False Then
             File.Create(cheatpath).Dispose()
@@ -283,7 +283,7 @@ Public Class Mcheat
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
+        If File.Exists(Path.Combine(ExtractPath("path_cheat"), CheatConsole & ".cht")) Then
             ListBox1.Items.Clear()
             ParseCht()
         End If
@@ -316,8 +316,7 @@ Public Class Mcheat
                     Case Else
                         savetype = ".sav"
                 End Select
-                For Each foundFile As String In My.Computer.FileSystem.GetFiles(
-  Path.Combine(MedGuiR.TextBox4.Text, "sav\"))
+                For Each foundFile As String In My.Computer.FileSystem.GetFiles(ExtractPath("path_sav"))
                     If foundFile.Contains(Path.GetFileNameWithoutExtension(percorso)) And
                         foundFile.Contains(savetype) Then
                         Dim Splitmcr() As String
@@ -374,7 +373,7 @@ skiphash:
             ComboBox1.SelectedIndex = 0
         End If
 
-        If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
+        If File.Exists(Path.Combine(ExtractPath("path_cheat"), CheatConsole & ".cht")) Then
             ListBox1.Items.Clear()
             ParseCht()
         End If
@@ -474,7 +473,7 @@ skiphash:
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
 
-        If File.Exists(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht")) Then
+        If File.Exists(Path.Combine(ExtractPath("path_cheat"), CheatConsole & ".cht")) Then
             ListBox1.Items.Clear()
             ParseCht()
         End If
@@ -585,7 +584,7 @@ skiphash:
 
     Private Sub ParseCht()
         ControlCheatPresence = 0
-        Dim readText As String = File.ReadAllText(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht"))
+        Dim readText As String = File.ReadAllText(Path.Combine(ExtractPath("path_cheat"), CheatConsole & ".cht"))
         Dim DeatilCheat() As String = readText.Split("[")
 
         Dim SplitCheat() As String
@@ -633,15 +632,14 @@ skiphash:
     Private Function WorkingWithCheat(OriginalString As String, StringChange As String, AppendTxt As Boolean)
         'RadioButton1.Checked = True
 
-        Dim txtcheat = My.Computer.FileSystem.ReadAllText(Path.Combine(MedGuiR.TextBox4.Text, "cheats\" & CheatConsole & ".cht"))
+        Dim txtcheat = My.Computer.FileSystem.ReadAllText(Path.Combine(ExtractPath("path_cheat"), CheatConsole & ".cht"))
 
         If AppendTxt = False Then
             txtcheat = txtcheat.Replace(OriginalString, StringChange)
         Else
             txtcheat = StringChange
         End If
-        My.Computer.FileSystem.WriteAllText(Path.Combine(MedGuiR.TextBox4.Text,
-            "cheats\" & CheatConsole & ".cht"), vbLf & txtcheat.Trim & vbLf, AppendTxt)
+        My.Computer.FileSystem.WriteAllText(Path.Combine(ExtractPath("path_cheat"), CheatConsole & ".cht"), vbLf & txtcheat.Trim & vbLf, AppendTxt)
 
         DoesentPrepare = False
         ListBox1.Items.Clear()

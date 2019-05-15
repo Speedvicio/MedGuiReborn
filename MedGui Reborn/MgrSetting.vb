@@ -393,7 +393,7 @@ ErrorHandler:
 
     Private Sub xPath()
         sPath.Title = tPath
-        sPath.InitialDirectory = MedGuiR.TextBox4.Text & "\firmware"
+        sPath.InitialDirectory = System.IO.Path.Combine(ExtractPath("path_firmware"), "firmware")
         sPath.Filter = fPath
         If sPath.ShowDialog() = DialogResult.OK Then
             pPath = sPath.FileName
@@ -559,9 +559,9 @@ ErrorHandler:
         per_conf_path_name = ""
 
         If CheckBox59.Checked = True Then 'Or IO.File.Exists(MedGuiR.TextBox4.Text & "\pgconfig\" & System.IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c & ".cfg") = True Then
-            per_conf_path_name = "pgconfig\" & System.IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c
+            per_conf_path_name = IO.Path.Combine(ExtractPath("path_pgconfig"), IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c)
         ElseIf CheckBox6.Checked = True Then 'Or IO.File.Exists(MedGuiR.TextBox4.Text & "\" & p_c & ".cfg") = True Then
-            per_conf_path_name = p_c
+            per_conf_path_name = IO.Path.Combine(MedGuiR.TextBox4.Text, p_c)
         End If
 
         Dim sperset As String = ""
@@ -603,13 +603,13 @@ ErrorHandler:
                 sperset = ""
         End Select
 
-        Dim objStreamWriter As System.IO.StreamWriter
+        Dim objStreamWriter As IO.StreamWriter
         Dim per_sett As String = "; << Sound Config >>" & vbCrLf & sound & vbCrLf & vbCrLf & "; << Video Config >>" & vbCrLf & video &
            vbCrLf & vbCrLf & "; << Filters Config >>" & vbCrLf & filters & vbCrLf & vbCrLf & "; << Specific Console Config >>" & vbCrLf & sperset
 
-        If IO.File.Exists(MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfg") Then IO.File.Delete(MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfg")
+        If IO.File.Exists(per_conf_path_name & ".cfg") Then IO.File.Delete(per_conf_path_name & ".cfg")
 
-        objStreamWriter = New System.IO.StreamWriter(MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfg")
+        objStreamWriter = New IO.StreamWriter(per_conf_path_name & ".cfg")
         objStreamWriter.WriteLine(Replace(per_sett, " -", vbCrLf))
         objStreamWriter.Close()
         StudioRemoveLinesFromFile()
@@ -618,8 +618,8 @@ ErrorHandler:
     End Sub
 
     Private Sub StudioRemoveLinesFromFile()
-        Dim Sr As New IO.StreamReader(MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfg")
-        Dim Sw As New IO.StreamWriter(MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfgxxx")
+        Dim Sr As New IO.StreamReader(per_conf_path_name & ".cfg")
+        Dim Sw As New IO.StreamWriter(per_conf_path_name & ".cfgxxx")
 
         Dim Line As String = Sr.ReadLine
 
@@ -643,8 +643,8 @@ ErrorHandler:
 
         Sr.Close()
         Sw.Close()
-        IO.File.Delete(MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfg")
-        FileSystem.Rename(MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfgxxx", MedGuiR.TextBox4.Text & "\" & per_conf_path_name & ".cfg")
+        IO.File.Delete(per_conf_path_name & ".cfg")
+        FileSystem.Rename(per_conf_path_name & ".cfgxxx", per_conf_path_name & ".cfg")
     End Sub
 
     Public Sub Mednafen_Save_setting()
@@ -856,6 +856,13 @@ ErrorHandler:
             CheckBox59.Checked = False
         End If
 
+    End Sub
+
+    Private Sub Button39_Click(sender As Object, e As EventArgs) Handles Button39.Click
+        ResetMedPath()
+        MsgBox("Mednafen path resetted, please reopen advanced menu", MsgBoxStyle.Information + vbOKOnly, "Resetted path...")
+        versave = True
+        Me.Close()
     End Sub
 
     Private Sub Button23_Click(sender As Object, e As EventArgs)
@@ -1081,13 +1088,13 @@ ErrorHandler:
     End Sub
 
     Public Sub StartControlBios()
-        If firmwarepath = "firmware" Then firmwarepath = MedGuiR.TextBox4.Text & "\firmware"
+        If firmwarepath = "firmware" Then firmwarepath = IO.Path.Combine(ExtractPath("path_firmware"), "firmware")
         Dim pops_bios As Boolean = False
 
         If TextBox33.Text.Contains("\") Then
             firmwarepath = TextBox33.Text.Trim
         Else
-            firmwarepath = MedGuiR.TextBox4.Text & "\firmware"
+            firmwarepath = IO.Path.Combine(ExtractPath("path_firmware"), "firmware")
         End If
 
         For Each foundbios As String In My.Computer.FileSystem.GetFiles(firmwarepath)
@@ -1199,4 +1206,26 @@ ErrorHandler:
             Return (TempPath)
         End If
     End Function
+
+    Private Sub ResetMedPath()
+        tProcess = "mednafen"
+        wDir = MedGuiR.TextBox4.Text
+
+        Dim MPath(8) As String
+        MPath(0) = "path_cheat cheats"
+        MPath(1) = "path_firmware firmware"
+        MPath(2) = "path_movie mcm"
+        MPath(3) = "path_palette palettes"
+        MPath(4) = "path_pgconfig pgconfig"
+        MPath(5) = "path_sav sav"
+        MPath(6) = "path_savbackup b"
+        MPath(7) = "path_snap snaps"
+        MPath(8) = "path_state mcs"
+
+        For i = 0 To 8
+            Arg = "-filesys." & MPath(i)
+            StartProcess()
+            execute.WaitForExit()
+        Next
+    End Sub
 End Class

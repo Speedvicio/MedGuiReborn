@@ -313,7 +313,7 @@ CheckMednafen:
         DetectMedGuiR()
         Detectx86_4()
 
-        Dim readText() As String = IO.File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
+        Dim readText() As String = File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
         Dim vmedFull As String
         vmedFull = readText.GetValue(0)
         vmedFull = Replace(vmedFull, ";VERSION ", "")

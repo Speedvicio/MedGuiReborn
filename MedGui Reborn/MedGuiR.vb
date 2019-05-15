@@ -399,16 +399,16 @@ Public Class MedGuiR
 
     Private Sub VerifyPerSystem()
         Dim sucamilla As String = ""
-        If IO.File.Exists(TextBox4.Text & "\pgconfig\" & System.IO.Path.GetFileNameWithoutExtension(TextBox1.Text) & "." & p_c & ".cfg") = True Then
-            sucamilla = "pgconfig\" & System.IO.Path.GetFileNameWithoutExtension(TextBox1.Text) & "." & p_c
-        ElseIf IO.File.Exists(TextBox4.Text & "\" & p_c & ".cfg") = True Then
+        If File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(TextBox1.Text) & "." & p_c & ".cfg")) = True Then
+            sucamilla = Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(TextBox1.Text) & "." & p_c)
+        ElseIf File.Exists(TextBox4.Text & "\" & p_c & ".cfg") = True Then
             sucamilla = p_c
         End If
 
         If sucamilla <> "" Then
             MgrSetting.TPerC = True
-            System.IO.File.Copy(TextBox4.Text & "\" & DMedConf & ".cfg", TextBox4.Text & "\back_" & DMedConf & ".cfg", True)
-            System.IO.File.Copy(TextBox4.Text & "\" & sucamilla & ".cfg", TextBox4.Text & "\" & DMedConf & ".cfg", True)
+            File.Copy(TextBox4.Text & "\" & DMedConf & ".cfg", TextBox4.Text & "\back_" & DMedConf & ".cfg", True)
+            File.Copy(TextBox4.Text & "\" & sucamilla & ".cfg", TextBox4.Text & "\" & DMedConf & ".cfg", True)
         End If
     End Sub
 
@@ -1535,7 +1535,7 @@ Public Class MedGuiR
         If DataGridView1.CurrentRow.Cells(5).Value() = "Nintendo - Game Boy Advance" Then
 
             Dim SGBA As StreamWriter
-            SGBA = File.CreateText(TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(DataGridView1.CurrentRow.Cells(4).Value()) & ".type")
+            SGBA = File.CreateText(Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(DataGridView1.CurrentRow.Cells(4).Value()) & ".type"))
             SGBA.WriteLine(ComboBox3.Text & " " & ComboBox4.Text)
             If CheckBox12.Checked = True And ComboBox3.Text <> "rtc" Then SGBA.WriteLine("rtc")
             SGBA.Flush()
@@ -1787,7 +1787,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     Private Sub Button39_Click(sender As Object, e As EventArgs) Handles Button39.Click
         If ListBox1.SelectedItem = "" Then Exit Sub
         Dim dels As MsgBoxResult = MsgBox("Do you want to delete """ & ListBox1.Text & """ Snap?", vbOKCancel + vbExclamation)
-        If dels = vbOK Then System.IO.File.Delete(SnapsFolder & ListBox1.Text) : PopoulateSnaps()
+        If dels = vbOK Then File.Delete(SnapsFolder & ListBox1.Text) : PopoulateSnaps()
     End Sub
 
     Private Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
@@ -2036,7 +2036,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Private Sub Button36_Click(sender As System.Object, e As System.EventArgs) Handles Button36.Click
-        SnapsFolder = TextBox4.Text & "\Snaps\"
+        SnapsFolder = ExtractPath("path_snap")
         circa = "*"
         PopoulateSnaps()
     End Sub
@@ -2595,7 +2595,7 @@ SKIPHASH:
             Case "psx", "ss", "pcfx"
                 If mmodule = "psx" Then MCSlot = ".0"
                 If BCKRisp = vbYes Then
-                    For Each foundFile As String In My.Computer.FileSystem.GetFiles(TextBox4.Text & "\sav\")
+                    For Each foundFile As String In My.Computer.FileSystem.GetFiles(ExtractPath("path_sav"))
                         Dim splitmatch() As String = foundFile.Split(".")
                         If foundFile.Contains(matchs(0)) And foundFile.Contains(matchs(1)) And foundFile.Contains(matchs(2)) Then
                             BackupHash = "." & (splitmatch(1))
@@ -2607,11 +2607,11 @@ SKIPHASH:
                 End If
         End Select
 
-        If Directory.Exists(TextBox4.Text & "\sav") Then
-            If File.Exists(TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt) Then
+        If Directory.Exists(ExtractPath("path_sav")) Then
+            If File.Exists(Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt)) Then
                 BCKRisp = MsgBox("Save already exist, do you want to overwrite it?", vbYesNo + MsgBoxStyle.Exclamation, "Save file exist...")
                 If BCKRisp = vbYes Then
-                    File.Copy(BackupPath, TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt, True)
+                    File.Copy(BackupPath, Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt), True)
                     Select Case mmodule
                         Case "gba"
                             File.Delete(BackupPath)
@@ -2621,7 +2621,7 @@ SKIPHASH:
                     Exit Sub
                 End If
             Else
-                File.Copy(BackupPath, TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt, True)
+                File.Copy(BackupPath, Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt), True)
             End If
             MsgBox("Backup/Save Imported!", vbOKOnly + MsgBoxStyle.Information, "Backup/Save Imported...")
         Else

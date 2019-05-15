@@ -92,7 +92,7 @@ PatchSkip:
         Try
             Dim tmem, tsize, trtc, esav As String
             Dim fmem As Boolean = False
-            esav = MedGuiR.TextBox4.Text & "\sav\" & Path.GetFileNameWithoutExtension(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value()) & ".type"
+            esav = Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value()) & ".type")
             If File.Exists(esav) Then Exit Sub
 
             If File.Exists(MedExtra & "Plugins\db\GBAmemtype.txt") = False And My.Computer.Network.IsAvailable = True Then

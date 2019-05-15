@@ -81,7 +81,7 @@ Module NoDesync
     Public Sub BackupMCR()
         Dim cm As Integer = 0
         Try
-            Dim fileEntries As String() = Directory.GetFiles(MedGuiR.TextBox4.Text & "\sav\")
+            Dim fileEntries As String() = Directory.GetFiles(ExtractPath("path_sav"))
 
             For Each fileName As String In fileEntries
                 If fileName.Contains(Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text)) And Path.GetExtension(fileName) = ".mcr" And existMCR = False Then
@@ -109,7 +109,7 @@ Module NoDesync
                         rm = MsgBox(cm & ".mcr save state backup detected." & vbCrLf &
                                     "Do you want to restore it?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "MCR savestate detected!")
                         If rm = vbYes Then
-                            My.Computer.FileSystem.MoveFile(fileName, MedGuiR.TextBox4.Text & "\sav\" & Path.GetFileName(fileName), True)
+                            My.Computer.FileSystem.MoveFile(fileName, Path.Combine(ExtractPath("path_sav"), Path.GetFileName(fileName)), True)
                         Else
                             My.Computer.FileSystem.DeleteFile(fileName, FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin)
                         End If
