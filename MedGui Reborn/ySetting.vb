@@ -1,6 +1,6 @@
 ﻿Module ySetting
 
-    Public pArg, sound, video, filters, various, bios, netplay_, record, custom, apple2, lynx, gameboy, neogeop, famicom, pcengine, pcfx,
+    Public pArg, sound, video, filters, various, netplay_, record, custom, apple2, lynx, gameboy, neogeop, famicom, pcengine, pcfx,
     genesis, mastersystem, snes, vboy, wswan, psx, minput, tminput, ss As String
 
     Public Sub parMednafen()
@@ -47,13 +47,6 @@
         " -ffspeed " & Replace(MgrSetting.NumericUpDown1.Value, ",", ".") & " -sfspeed " & Replace(MgrSetting.NumericUpDown2.Value, ",", ".") &
         " -input.autofirefreq " & MgrSetting.TrackBar6.Value & " -input.joystick.axis_threshold " & MgrSetting.TrackBar7.Value & " -filesys.untrusted_fip_check " & MgrSetting.CheckBox72.CheckState &
         " -fftoggle " & MgrSetting.CheckBox105.CheckState & " -sftoggle " & MgrSetting.CheckBox106.CheckState '& " -filesys.disablesavegz " & Setting.CheckBox12.CheckState
-
-        'Bios
-        Dim biospce As String
-        If MedGuiR.CheckBox1.Checked = True Then biospce = "_fast" Else : biospce = ""
-        bios = " -gba.bios " & Chr(34) & MgrSetting.TextBox10.Text & Chr(34) & " -nes.ggrom " & Chr(34) & MgrSetting.TextBox11.Text & Chr(34) & " -pce" & biospce & ".cdbios " & Chr(34) & MgrSetting.TextBox12.Text & Chr(34) & " -pcfx.bios " & Chr(34) & MgrSetting.TextBox13.Text & Chr(34) &
-        " -md.cdbios " & Chr(34) & MgrSetting.TextBox14.Text & Chr(34) & " -psx.bios_eu " & Chr(34) & MgrSetting.TextBox15.Text & Chr(34) & " -psx.bios_jp " & Chr(34) & MgrSetting.TextBox16.Text & Chr(34) & " -psx.bios_na " & Chr(34) & MgrSetting.TextBox17.Text & Chr(34) &
-        " -pce.gecdbios " & Chr(34) & MgrSetting.TextBox18.Text & Chr(34)
 
         'Netplay
         Dim nnick, npass, nport, nkey As String
@@ -252,7 +245,8 @@
             Case "nes"
                 pArg = sound & video & filters & various & " -nes.ggrom " & Chr(34) & MgrSetting.TextBox11.Text & Chr(34) & netplay_ & famicom
             Case "pce", "pce_fast"
-                pArg = sound & video & filters & various & " -pce" & biospce & ".cdbios " & Chr(34) & MgrSetting.TextBox12.Text & Chr(34) & " -pce.gecdbios " & Chr(34) & MgrSetting.TextBox18.Text & Chr(34) & netplay_ & pcengine
+                Dim biospce As String
+                pArg = sound & video & filters & various & " -pce" & MedGuiR.tpce & ".cdbios " & Chr(34) & MgrSetting.TextBox12.Text & Chr(34) & " -pce.gecdbios " & Chr(34) & MgrSetting.TextBox18.Text & Chr(34) & netplay_ & pcengine
             Case "psx"
                 pArg = sound & video & filters & various & " -psx.bios_eu " & Chr(34) & MgrSetting.TextBox15.Text & Chr(34) & " -psx.bios_jp " & Chr(34) & MgrSetting.TextBox16.Text & Chr(34) & " -psx.bios_na " & Chr(34) & MgrSetting.TextBox17.Text & Chr(34) & netplay_ & psx
             Case "sms"

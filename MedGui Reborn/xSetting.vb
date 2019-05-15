@@ -2,7 +2,7 @@
 
 Module xSetting
     Dim row, MedConfSpecific As String
-    Public xValue, firmwarepath As String
+    Public xValue As String
 
     Public Sub ReadXValue()
         Try
@@ -286,7 +286,7 @@ Module xSetting
         If row.Contains("input.autofirefreq ") Then xValue = Trim(Replace(row, "input.autofirefreq", "")) : MgrSetting.TrackBar6.Value = Val(xValue)
         If row.Contains("input.joystick.axis_threshold ") Then xValue = Trim(Replace(row, "input.joystick.axis_threshold", "")) : MgrSetting.TrackBar7.Value = Val(xValue)
         If row.Contains("sfspeed ") Then xValue = Trim(Replace(row, "sfspeed", "")) : MgrSetting.NumericUpDown2.Value = Val(xValue)
-        If row.Contains("filesys.path_firmware ") Then xValue = Trim(Replace(row, "filesys.path_firmware", "")) : firmwarepath = xValue
+        If row.Contains("filesys.path_firmware ") Then xValue = Trim(Replace(row, "filesys.path_firmware", "")) ': firmwarepath = xValue
         If row.Contains("fftoggle ") Then xValue = Trim(Replace(row, "fftoggle", "")) : MgrSetting.CheckBox105.Checked = CBool(xValue)
         If row.Contains("sftoggle ") Then xValue = Trim(Replace(row, "sftoggle", "")) : MgrSetting.CheckBox106.Checked = CBool(xValue)
 

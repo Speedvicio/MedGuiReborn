@@ -538,7 +538,8 @@ ErrorHandler:
             psc_mex = IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text)
         Else
             Mednafen_Save_setting()
-            psc_mex = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
+            Dim splitP_C() As String = Split(p_c, "_")
+            psc_mex = UCase(splitP_C(1)) & " " & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
         End If
 
         If xcv = vbCancel Then Exit Sub
@@ -1088,16 +1089,9 @@ ErrorHandler:
     End Sub
 
     Public Sub StartControlBios()
-        If firmwarepath = "firmware" Then firmwarepath = IO.Path.Combine(ExtractPath("path_firmware"), "firmware")
         Dim pops_bios As Boolean = False
 
-        If TextBox33.Text.Contains("\") Then
-            firmwarepath = TextBox33.Text.Trim
-        Else
-            firmwarepath = IO.Path.Combine(ExtractPath("path_firmware"), "firmware")
-        End If
-
-        For Each foundbios As String In My.Computer.FileSystem.GetFiles(firmwarepath)
+        For Each foundbios As String In My.Computer.FileSystem.GetFiles(ExtractPath("path_firmware"))
             r_sha = ""
             filepath = foundbios
             MD5CalcFile()
