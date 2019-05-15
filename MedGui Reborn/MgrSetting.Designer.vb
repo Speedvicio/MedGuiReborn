@@ -125,6 +125,7 @@ Partial Class MgrSetting
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
         Me.TabPage31 = New System.Windows.Forms.TabPage()
         Me.GroupBox27 = New System.Windows.Forms.GroupBox()
+        Me.Button39 = New System.Windows.Forms.Button()
         Me.Label175 = New System.Windows.Forms.Label()
         Me.Button30 = New System.Windows.Forms.Button()
         Me.TextBox26 = New System.Windows.Forms.TextBox()
@@ -564,7 +565,7 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.Button39 = New System.Windows.Forms.Button()
+        Me.Button40 = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -1873,6 +1874,16 @@ Partial Class MgrSetting
         Me.GroupBox27.TabStop = False
         Me.ToolTip1.SetToolTip(Me.GroupBox27, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
         '
+        'Button39
+        '
+        Me.Button39.Location = New System.Drawing.Point(223, 252)
+        Me.Button39.Name = "Button39"
+        Me.Button39.Size = New System.Drawing.Size(75, 23)
+        Me.Button39.TabIndex = 31
+        Me.Button39.Text = "&Reset"
+        Me.ToolTip1.SetToolTip(Me.Button39, "Reset all Mednafen path to default")
+        Me.Button39.UseVisualStyleBackColor = True
+        '
         'Label175
         '
         Me.Label175.AutoSize = True
@@ -2401,6 +2412,7 @@ Partial Class MgrSetting
         '
         'GroupBox22
         '
+        Me.GroupBox22.Controls.Add(Me.Button40)
         Me.GroupBox22.Controls.Add(Me.Button27)
         Me.GroupBox22.Controls.Add(Me.Button26)
         Me.GroupBox22.Controls.Add(Me.TextBox25)
@@ -2435,7 +2447,7 @@ Partial Class MgrSetting
         '
         'Button27
         '
-        Me.Button27.Location = New System.Drawing.Point(93, 240)
+        Me.Button27.Location = New System.Drawing.Point(9, 240)
         Me.Button27.Name = "Button27"
         Me.Button27.Size = New System.Drawing.Size(119, 23)
         Me.Button27.TabIndex = 27
@@ -6597,15 +6609,15 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'Button39
+        'Button40
         '
-        Me.Button39.Location = New System.Drawing.Point(223, 252)
-        Me.Button39.Name = "Button39"
-        Me.Button39.Size = New System.Drawing.Size(75, 23)
-        Me.Button39.TabIndex = 31
-        Me.Button39.Text = "&Reset"
-        Me.ToolTip1.SetToolTip(Me.Button39, "Reset all Mednafen path to default")
-        Me.Button39.UseVisualStyleBackColor = True
+        Me.Button40.Location = New System.Drawing.Point(179, 240)
+        Me.Button40.Name = "Button40"
+        Me.Button40.Size = New System.Drawing.Size(119, 23)
+        Me.Button40.TabIndex = 28
+        Me.Button40.Text = "&Reset All Bioses"
+        Me.ToolTip1.SetToolTip(Me.Button40, "Reset All Bioses to Default Mednafen values")
+        Me.Button40.UseVisualStyleBackColor = True
         '
         'MgrSetting
         '
@@ -7322,4 +7334,5 @@ Partial Class MgrSetting
     Friend WithEvents Label174 As Label
     Friend WithEvents Label175 As Label
     Friend WithEvents Button39 As Button
+    Friend WithEvents Button40 As Button
 End Class

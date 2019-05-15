@@ -245,7 +245,6 @@
             Case "nes"
                 pArg = sound & video & filters & various & " -nes.ggrom " & Chr(34) & MgrSetting.TextBox11.Text & Chr(34) & netplay_ & famicom
             Case "pce", "pce_fast"
-                Dim biospce As String
                 pArg = sound & video & filters & various & " -pce" & MedGuiR.tpce & ".cdbios " & Chr(34) & MgrSetting.TextBox12.Text & Chr(34) & " -pce.gecdbios " & Chr(34) & MgrSetting.TextBox18.Text & Chr(34) & netplay_ & pcengine
             Case "psx"
                 pArg = sound & video & filters & various & " -psx.bios_eu " & Chr(34) & MgrSetting.TextBox15.Text & Chr(34) & " -psx.bios_jp " & Chr(34) & MgrSetting.TextBox16.Text & Chr(34) & " -psx.bios_na " & Chr(34) & MgrSetting.TextBox17.Text & Chr(34) & netplay_ & psx

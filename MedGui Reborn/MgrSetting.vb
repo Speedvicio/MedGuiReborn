@@ -537,13 +537,14 @@ ErrorHandler:
             save_per_config()
             psc_mex = IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text)
         Else
+            Dim splitP_C(1) As String
             Mednafen_Save_setting()
-            Dim splitP_C() As String = Split(p_c, "_")
+            If p_c.Contains("_") Then splitP_C = Split(p_c, "_")
             psc_mex = UCase(splitP_C(1)) & " " & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
         End If
 
         If xcv = vbCancel Then Exit Sub
-        If mxSet = 0 Then MsgBox(psc_mex & ", configuration saved!", vbOKOnly + vbInformation)
+        If mxSet = 0 Then MsgBox(psc_mex.Trim & ", configuration saved!", vbOKOnly + vbInformation)
         versave = True
     End Sub
 
@@ -868,6 +869,13 @@ ErrorHandler:
 
     Private Sub Button23_Click(sender As Object, e As EventArgs)
         SumPSXAnalog()
+    End Sub
+
+    Private Sub Button40_Click(sender As Object, e As EventArgs) Handles Button40.Click
+        ResetBioses()
+        MsgBox("Mednafen bioses path resetted, please reopen advanced menu", MsgBoxStyle.Information + vbOKOnly, "Resetted bioses path...")
+        versave = True
+        Me.Close()
     End Sub
 
     Private Sub CheckBox6_Click(sender As Object, e As System.EventArgs) Handles CheckBox6.Click
@@ -1222,4 +1230,31 @@ ErrorHandler:
             execute.WaitForExit()
         Next
     End Sub
+
+    Private Sub ResetBioses()
+        tProcess = "mednafen"
+        wDir = MedGuiR.TextBox4.Text
+
+        Dim MPath(12) As String
+        MPath(0) = "md.cdbios us_scd1_9210.bin"
+        MPath(1) = "pce.cdbios syscard3.pce"
+        MPath(2) = "pce.gecdbios gecard.pce"
+        MPath(3) = "pce_fast.cdbios syscard3.pce"
+        MPath(4) = "pcfx.bios pcfx.rom"
+        MPath(5) = "psx.bios_eu scph5502.bin"
+        MPath(6) = "psx.bios_jp scph5500.bin"
+        MPath(7) = "psx.bios_na scph5501.bin"
+        MPath(8) = "ss.bios_jp sega_101.bin"
+        MPath(9) = "ss.bios_na_eu mpr-17933.bin"
+        MPath(10) = "ss.cart.kof95_path mpr-18811-mx.ic1"
+        MPath(11) = "ss.cart.ultraman_path mpr-19367-mx.ic1"
+        MPath(12) = "gba.bios " & Chr(34) & Nothing & Chr(34)
+
+        For i = 0 To 12
+            Arg = "-" & MPath(i)
+            StartProcess()
+            execute.WaitForExit()
+        Next
+    End Sub
+
 End Class
