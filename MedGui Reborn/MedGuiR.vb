@@ -2387,7 +2387,7 @@ inputagain:
                         MsgBox("SBI Patch moved in the same game folder", MsgBoxStyle.Information + vbOKOnly, "Patch moved...")
                     End If
                 Case ".bps"
-                    If File.Exists(MedExtra & "\Plugins\beat.exe") Then
+                    If File.Exists(MedExtra & "\Plugins\flips.exe") Then
                         Dim viewex = LCase(Path.GetExtension(percorso))
                         Select Case viewex
                             Case ".zip", ".rar", ".7z"
