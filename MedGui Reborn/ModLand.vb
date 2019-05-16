@@ -66,6 +66,7 @@ Public Class ModLand
         Catch exception As System.Exception
             SoxStatus.Close()
         End Try
+        ReleaseMemory()
     End Sub
 
     Private Sub ChipConsole()

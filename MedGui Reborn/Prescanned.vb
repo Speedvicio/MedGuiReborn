@@ -2,6 +2,18 @@
 
 Module Prescanned
     Public type_csv As String
+    Private Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal hProcess As IntPtr, ByVal dwMinimumWorkingSetSize As Int32, ByVal dwMaximumWorkingSetSize As Int32) As Int32
+
+    Friend Sub ReleaseMemory()
+        Try
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+            If Environment.OSVersion.Platform = PlatformID.Win32NT Then
+                SetProcessWorkingSetSize(System.Diagnostics.Process.GetCurrentProcess().Handle, -1, -1)
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
 
     Public Sub LoadGridDataInFile()
         Try

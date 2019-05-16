@@ -701,7 +701,6 @@ Public Class MedGuiR
         Datagrid_filter()
         type_csv = SY.Text
         Purge_Grid()
-
     End Sub
 
     Private Sub RebuildToolStripButton_Click(sender As Object, e As EventArgs) Handles RebuildToolStripButton.Click
@@ -739,6 +738,7 @@ Public Class MedGuiR
 
         SaveGridDataInFile()
         Datagrid_filter()
+        ReleaseMemory()
         'End If
     End Sub
 
@@ -1723,7 +1723,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         Else
             Me.Text = Me.Text & " @ Files " & DataGridView1.RowCount
         End If
-
+        ReleaseMemory()
     End Sub
 
     Public Sub ResizeGrid()
@@ -2672,6 +2672,10 @@ SKIPHASH:
         If CheckBox8.Checked = True Then ResizeGrid()
         ChaseR()
         ChaseL()
+    End Sub
+
+    Private Sub SY_Click(sender As Object, e As EventArgs) Handles SY.Click
+
     End Sub
 
     Private Sub TestPCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestPCToolStripMenuItem.Click
