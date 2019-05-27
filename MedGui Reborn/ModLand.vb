@@ -206,9 +206,10 @@ Public Class ModLand
                 While objReader.Peek() <> -1
                     Dim LINE As String = objReader.ReadLine()
                     If LINE.Contains("_lib") Then
-                        Dim firstsplit As String() = Split(LINE, "=")
-                        cex = firstsplit(1)
+                        Dim firstsplit As String() = Split(LINE, "_lib=")
+                        cex = firstsplit(1).Trim
                         TryToDownloadDriver()
+                        Exit While
                     End If
                 End While
                 objReader.Dispose()
