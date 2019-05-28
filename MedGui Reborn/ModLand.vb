@@ -138,7 +138,30 @@ Public Class ModLand
                 My.Computer.Network.DownloadFile(ModServer & "/pub/modules" & download, MedExtra & "/Media/Module" & download, "anonymous", "", True, 1000, True)
                 DownloadDriver()
                 changechipstate()
-                MsgBox("File and Driver Downloaded", vbOKOnly + MsgBoxStyle.Information)
+
+                Dim ModMsg As String
+                If ToolStripComboBox2.Text = "Antarctica" And cex.Trim <> "" Then
+                    ModMsg = "File Downloaded" & vbCrLf &
+                    "Now Dowload manually by the list the " & cex & " driver (selected file)"
+                    For Each dgvRow In DataGridView1.Rows
+                        Dim Colcount As Integer
+                        For i = DataGridView1.Columns.Count - 1 To 0 Step -1
+                            If String.IsNullOrEmpty(dgvRow.cells(i).value) = False Then
+                                Colcount = i
+                                Exit For
+                            End If
+                        Next
+                        If dgvRow.cells(Colcount).value.Contains(cex) = True Then
+                            DataGridView1.CurrentCell = dgvRow.cells(Colcount)
+                            dgvRow.selected = True
+                        End If
+                    Next
+                        Else
+                    ModMsg = "File and Driver Downloaded"
+                End If
+
+                MsgBox(ModMsg, vbOKOnly + MsgBoxStyle.Information)
+                cex = ""
             Else
                 Select Case LCase(Path.GetExtension(MedExtra & "/Media/Module" & download))
                     Case ".wsr", ".psf", ".psf1", ".minipsf", ".gsf", ".minigsf", ".hes", ".nsf", ".spc", ".rsn", ".vgz", ".vgm", ".gbs", ".ssf", ".minissf"
@@ -163,7 +186,7 @@ Public Class ModLand
             End If
         Catch exio As IOException
         Catch ex As Exception
-
+            MsgBox(ex.ToString)
         End Try
 
     End Sub
@@ -246,13 +269,14 @@ Public Class ModLand
             'If LCase(str).Contains(LCase(fsc.Substring((fsc.Length - 2), 2) & Path.GetExtension(cex))) Then
             If LCase(str).Contains(LCase(cex)) Or LCase(Replace(str, " ", "_")).Contains(LCase(cex)) Then
                 client.DownloadFile(ModServer & "/pub/modules/" & Path.GetDirectoryName(download) & "/" & str, MedExtra & "/Media/Module" & Path.GetDirectoryName(download) & "/" & cex)
-                GoTo ENDSCRAPE
+                Exit While
+                'GoTo ENDSCRAPE
             End If
 
             str = sr.ReadLine()
         End While
 
-ENDSCRAPE:
+        'ENDSCRAPE:
         sr.Close()
         sr = Nothing
         req = Nothing
