@@ -381,7 +381,7 @@ Module scan
                         End If
                     End If
                 Else
-                    MsgBox("I can't extract .PBP, missing Copstation.exe into Plugin folder", MsgBoxStyle.Exclamation + vbOKOnly, "Missing copstation...")
+                    MsgBox("I can't extract .PBP, missing Copstation.exe into Plugins folder", MsgBoxStyle.Exclamation + vbOKOnly, "Missing copstation...")
                     consoles = ""
                     ext = ""
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
@@ -482,8 +482,8 @@ Module scan
 
         SoxStatus.Text = "Waiting For UNECM Conversion..."
         SoxStatus.Label1.Text = "Decrunching..."
-        Application.DoEvents()
         SoxStatus.Show()
+        Application.DoEvents()
 
         StartProcess()
 
@@ -512,10 +512,10 @@ Module scan
         tProcess = "popstation"
         Arg = "-iso " & Chr(34) & cleanPBP & ".iso" & Chr(34)
 
-        SoxStatus.Text = "Waiting For PBP to ISO Conversion..."
-        SoxStatus.Label1.Text = "Decrunching..."
-        Application.DoEvents()
+        SoxStatus.Text = "Waiting For Copstation Conversion..."
+        SoxStatus.Label1.Text = "Converting..."
         SoxStatus.Show()
+        Application.DoEvents()
 
         StartProcess()
         execute.WaitForExit()
