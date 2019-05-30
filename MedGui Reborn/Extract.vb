@@ -136,7 +136,7 @@ Module Extract
                     End If
                 End If
                 Select Case LCase(ext)
-                    Case ".iso", ".ecm", ".zip", ".rar", ".7z", ".m3u", ".toc", ".cue", ".ccd", ', ".mai"
+                    Case ".iso", ".ecm", ".pbp", ".zip", ".rar", ".7z", ".m3u", ".toc", ".cue", ".ccd", ', ".mai"
                         consoles = ""
                         ext = ""
                         Exit Sub

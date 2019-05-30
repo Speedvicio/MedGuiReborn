@@ -371,6 +371,21 @@ Module scan
                     End If
                 End If
                 'Make_Temp_CUE()
+            Case ".pbp"
+                If File.Exists(MedExtra & "Plugins\copstation\popstation.exe") Then
+
+                    If skipother = False Then
+                        If stopiso = False Then
+                            stopscan = True
+                            unPBP()
+                        End If
+                    End If
+                Else
+                    MsgBox("I can't extract .PBP, missing Copstation.exe into Plugin folder", MsgBoxStyle.Exclamation + vbOKOnly, "Missing copstation...")
+                    consoles = ""
+                    ext = ""
+                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+                End If
             Case Else
                 consoles = ""
                 ext = ""
@@ -477,6 +492,40 @@ Module scan
             percorso = Replace(percorso, ".bin.ecm", ".bin")
         Else
             percorso = Replace(percorso, dettaglio.Extension, ".bin")
+        End If
+
+        SoxStatus.Close()
+        get_ext()
+        stopscan = False
+    End Sub
+
+    Private Sub unPBP()
+        Dim cleanPBP As String = Path.GetFileNameWithoutExtension(percorso)
+        wDir = Path.GetDirectoryName(percorso)
+        File.Copy(MedExtra & "Plugins\copstation\popstation.exe", Path.Combine(wDir, "popstation.exe"), True)
+        File.Copy(MedExtra & "Plugins\copstation\cygwin1.dll", Path.Combine(wDir, "cygwin1.dll"), True)
+        File.Copy(MedExtra & "Plugins\copstation\cygz.dll", Path.Combine(wDir, "cygz.dll"), True)
+
+        'My.Computer.FileSystem.RenameFile(percorso, Path.Combine(wDir, "EBOOT.PBP"))
+        File.Copy(percorso, Path.Combine(wDir, "EBOOT.PBP"), True)
+
+        tProcess = "popstation"
+        Arg = "-iso " & Chr(34) & cleanPBP & ".iso" & Chr(34)
+
+        SoxStatus.Text = "Waiting For PBP to ISO Conversion..."
+        SoxStatus.Label1.Text = "Decrunching..."
+        Application.DoEvents()
+        SoxStatus.Show()
+
+        StartProcess()
+        execute.WaitForExit()
+
+        If File.Exists(Path.Combine(wDir, cleanPBP & ".iso")) Then
+            File.Delete(Path.Combine(wDir, "EBOOT.PBP"))
+            File.Delete(Path.Combine(wDir, "popstation.exe"))
+            File.Delete(Path.Combine(wDir, "cygwin1.dll"))
+            File.Delete(Path.Combine(wDir, "cygz.dll"))
+            percorso = Path.Combine(wDir, cleanPBP & ".iso")
         End If
 
         SoxStatus.Close()
