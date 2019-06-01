@@ -506,8 +506,8 @@ Module scan
         File.Copy(MedExtra & "Plugins\copstation\cygwin1.dll", Path.Combine(wDir, "cygwin1.dll"), True)
         File.Copy(MedExtra & "Plugins\copstation\cygz.dll", Path.Combine(wDir, "cygz.dll"), True)
 
-        'My.Computer.FileSystem.RenameFile(percorso, Path.Combine(wDir, "EBOOT.PBP"))
-        File.Copy(percorso, Path.Combine(wDir, "EBOOT.PBP"), True)
+        If cleanPBP <> "EBOOT" Then My.Computer.FileSystem.RenameFile(percorso, "EBOOT.PBP")
+        'File.Copy(percorso, Path.Combine(wDir, "EBOOT.PBP"), True)
 
         tProcess = "popstation"
         Arg = "-iso " & Chr(34) & cleanPBP & ".iso" & Chr(34)
@@ -521,7 +521,8 @@ Module scan
         execute.WaitForExit()
 
         If File.Exists(Path.Combine(wDir, cleanPBP & ".iso")) Then
-            File.Delete(Path.Combine(wDir, "EBOOT.PBP"))
+            If cleanPBP <> "EBOOT" Then My.Computer.FileSystem.RenameFile(Path.Combine(wDir, "EBOOT.PBP"), Path.GetFileName(percorso))
+            'File.Delete(Path.Combine(wDir, "EBOOT.PBP"))
             File.Delete(Path.Combine(wDir, "popstation.exe"))
             File.Delete(Path.Combine(wDir, "cygwin1.dll"))
             File.Delete(Path.Combine(wDir, "cygz.dll"))
