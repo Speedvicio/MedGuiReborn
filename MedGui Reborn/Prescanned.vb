@@ -50,12 +50,12 @@ Module Prescanned
                                 'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.DarkRed
                                 'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.White
                                 'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.Black
-                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Strikeout)
+                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.DefaultCellStyle.Font.Name, MedGuiR.DataGridView1.DefaultCellStyle.Font.Size, FontStyle.Strikeout)
                             Else
-                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.Black
-                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.Black
-                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
-                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor
+                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor
+                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor
+                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.DefaultCellStyle.Font.Name, MedGuiR.DataGridView1.DefaultCellStyle.Font.Size, MedGuiR.DataGridView1.DefaultCellStyle.Font.Style)
                             End If
                         End If
 

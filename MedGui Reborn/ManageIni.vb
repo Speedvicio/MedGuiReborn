@@ -121,6 +121,14 @@
             MedGuiR.CheckBox5.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "System")
             MedGuiR.ComboBox2.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Columns_Order")
 
+
+            MedGuiR.DataGridView1.DefaultCellStyle.Font = FontFromString(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Font"))
+            MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color"))
+            MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color"))
+            MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color"))
+            MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color"))
+            MedGuiR.DataGridView1.GridColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color"))
+
         Catch ex As Exception
             MGRWriteLog("ManageIni - GridRMini: " & ex.Message)
         Finally
@@ -128,6 +136,44 @@
         End Try
 
     End Sub
+
+    ''Function from https://social.msdn.microsoft.com/Forums/vstudio/en-US/cdc2b1e1-7db0-4f22-8c1c-a4183ea9d5f0/how-to-convert-string-to-font-in-vbnet-windows?forum=vbgeneral"
+    Public Function FontFromString(ByVal FontString As String) As Font
+
+        Dim MyFont As New Font("Arial", 8)
+
+        Dim Attributes() As String
+        Dim Tokens() As String
+        FontString = FontString.Trim("[Font: ", "]")
+        Attributes = FontString.Split(", ")
+        For Each Value As String In Attributes
+            Tokens = Value.Split("=")
+            'First get the property infomation
+            Dim Prop As System.Reflection.PropertyInfo = MyFont.GetType.GetProperty(Tokens(0),
+                        System.Reflection.BindingFlags.IgnoreCase Or
+                        System.Reflection.BindingFlags.Public Or
+                        System.Reflection.BindingFlags.Instance)
+            'Make sure we actually found the property
+            If Not Prop Is Nothing Then
+                'If the property is a Enum we have to use a diffent method to set it's Value
+                'this will work for either name or number.
+                Try
+                    If Prop.PropertyType.IsEnum Then
+                        Prop.SetValue(MyFont, System.Enum.Parse(Prop.PropertyType, Tokens(1), True), Nothing)
+                    ElseIf Prop.PropertyType.Name = "Boolean" Then
+                        Prop.SetValue(MyFont, Boolean.Parse(Tokens(1)), Nothing)
+                    Else
+                        'set the Value of the property
+                        Prop.SetValue(MyFont, Tokens(1), Nothing)
+                    End If
+                Catch ex As System.Exception
+                    'handle the errors
+                End Try
+            End If
+
+        Next
+
+    End Function
 
     Public Sub DirectoryRMIni()
 
@@ -223,11 +269,11 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Columns_Order", MedGuiR.ComboBox2.Text)
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Font", MedGuiR.DataGridView1.DefaultCellStyle.Font.ToString)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor.ToString)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor.ToString)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor.ToString)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor.ToString)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color", MedGuiR.DataGridView1.GridColor.ToString)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor.Name)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor.Name)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor.Name)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor.Name)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color", MedGuiR.DataGridView1.GridColor.Name)
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Default", MedGuiR.TextBox9.Text)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Apple2", MedGuiR.TextBox22.Text)
