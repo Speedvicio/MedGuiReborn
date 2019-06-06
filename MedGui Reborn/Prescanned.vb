@@ -40,6 +40,7 @@ Module Prescanned
                         If File.Exists(SplitLine(4)) = False And cr - 1 = 0 Then
                             cr = cr - 1
                         Else
+                            SplitLine(1) = Nothing
                             MedGuiR.DataGridView1.Rows.Add(SplitLine)
                             real_name = SplitLine(5)
                             detect_icon()
@@ -52,10 +53,10 @@ Module Prescanned
                                 'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.Black
                                 MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.DefaultCellStyle.Font.Name, MedGuiR.DataGridView1.DefaultCellStyle.Font.Size, FontStyle.Strikeout)
                             Else
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.DefaultCellStyle.Font.Name, MedGuiR.DataGridView1.DefaultCellStyle.Font.Size, MedGuiR.DataGridView1.DefaultCellStyle.Font.Style)
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor
+                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.DefaultCellStyle.Font.Name, MedGuiR.DataGridView1.DefaultCellStyle.Font.Size, FontStyle.Regular)
                             End If
                         End If
 

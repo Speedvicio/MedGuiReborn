@@ -2710,6 +2710,12 @@ SKIPHASH:
         End If
     End Sub
 
+    Private Sub BackgroudToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackgroudToolStripMenuItem.Click
+        If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
+            DataGridView1.BackgroundColor = ColorDialog1.Color
+        End If
+    End Sub
+
     Private Sub TestPCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestPCToolStripMenuItem.Click
         TestCPU.Show()
     End Sub

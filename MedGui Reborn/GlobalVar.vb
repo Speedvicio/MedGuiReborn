@@ -10,6 +10,7 @@ Module GlobalVar
 
     Public Sub Startup_setting()
         GeneralRMIni()
+        GridRStyle()
         DirectoryRMIni()
         UCIRMini()
         RJoypadMini()
