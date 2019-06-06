@@ -134,7 +134,7 @@ Module Resource
             MedGuiR.DeleteAfterConversionToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
 
             MedGuiR.StartGameToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\play.png"))
-            MedGuiR.NetPlayToolStripMenuItem1.Image = (New Bitmap(MedExtra & "Resource\Gui\netplay.png"))
+            MedGuiR.NetPlayToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\netplay.png"))
             MedGuiR.NickToolStripTextBox1.Image = (New Bitmap(MedExtra & "Resource\Gui\info.png"))
             MedGuiR.ServerToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\netplay.png"))
             MedGuiR.OnlineToolStripMenuItem1.Image = (New Bitmap(MedExtra & "Resource\Gui\net.png"))
@@ -149,7 +149,7 @@ Module Resource
             MedGuiR.AddShortuctToDesktopToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\buggy.png"))
             MedGuiR.AboutToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\info.png"))
             MedGuiR.ImportFromFile.Image = (New Bitmap(MedExtra & "Resource\Gui\cover.png"))
-            MedGuiR.ResetToolStripMenuItem1.Image = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
+            MedGuiR.ResetToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.CheatToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\cheat.png"))
             MedGuiR.TestPCToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
             MedGuiR.mMetroMed.Image = (New Bitmap(MedExtra & "Resource\Gui\MetroMed.png"))

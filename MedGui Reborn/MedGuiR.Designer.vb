@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -320,7 +320,7 @@ Partial Class MedGuiR
         Me.TimerLabelScroll = New System.Windows.Forms.Timer(Me.components)
         Me.AdvancedMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.StartGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NetPlayToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NetPlayToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NickToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.ServerToolStripComboBox2 = New System.Windows.Forms.ToolStripComboBox()
         Me.PortToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
@@ -346,7 +346,15 @@ Partial Class MedGuiR
         Me.ImportFromFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddShortuctToDesktopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ResetToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GridToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FontToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FontToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CellsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HighlightToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FontToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CellsToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BackgroudToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ResetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator()
         Me.mMetroMed = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator15 = New System.Windows.Forms.ToolStripSeparator()
@@ -355,6 +363,9 @@ Partial Class MedGuiR
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TimerPerConfig = New System.Windows.Forms.Timer(Me.components)
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+        Me.GridToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -409,23 +420,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle11
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle12
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -433,13 +444,13 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle10
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 99
+        Me.Column1.Width = 75
         '
         'Column2
         '
@@ -448,21 +459,21 @@ Partial Class MedGuiR
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
         Me.Column2.ToolTipText = "gb"
-        Me.Column2.Width = 99
+        Me.Column2.Width = 74
         '
         'Column3
         '
         Me.Column3.HeaderText = "Version"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 99
+        Me.Column3.Width = 75
         '
         'Column4
         '
         Me.Column4.HeaderText = "Status"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 99
+        Me.Column4.Width = 74
         '
         'Column5
         '
@@ -1844,7 +1855,7 @@ Partial Class MedGuiR
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SY, Me.RebuildToolStripButton, Me.toolStripSeparator, Me.RecentToolStripButton1, Me.LoadCDToolStripButton, Me.FavouritesToolStripButton, Me.FoldeRomToolStripButton, Me.LoadRomToolStripButton, Me.TextBox1, Me.toolStripSeparator1, Me.NetToolStripButton, Me.ServerToolStripButton, Me.IRCToolStripButton, Me.ModLandToolStripButton, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.TextBox3, Me.FlagToolStripSplitButton, Me.FindToolStripButton})
         Me.ToolStrip1.Location = New System.Drawing.Point(12, 6)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(755, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(701, 25)
         Me.ToolStrip1.TabIndex = 34
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -3336,9 +3347,9 @@ Partial Class MedGuiR
         '
         'AdvancedMenu
         '
-        Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem1, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.ResetToolStripMenuItem1, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
+        Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.GridToolStripMenuItem, Me.ResetToolStripMenuItem, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 444)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 466)
         '
         'StartGameToolStripMenuItem
         '
@@ -3347,13 +3358,13 @@ Partial Class MedGuiR
         Me.StartGameToolStripMenuItem.Text = "Start &Game"
         Me.StartGameToolStripMenuItem.ToolTipText = "Start a normal session"
         '
-        'NetPlayToolStripMenuItem1
+        'NetPlayToolStripMenuItem
         '
-        Me.NetPlayToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NickToolStripTextBox1, Me.ServerToolStripComboBox2, Me.PortToolStripTextBox1, Me.GameKeyToolStripTextBox1, Me.PasswordToolStripTextBox1, Me.OnlineToolStripMenuItem1})
-        Me.NetPlayToolStripMenuItem1.Name = "NetPlayToolStripMenuItem1"
-        Me.NetPlayToolStripMenuItem1.Size = New System.Drawing.Size(208, 22)
-        Me.NetPlayToolStripMenuItem1.Text = "&NetPlay"
-        Me.NetPlayToolStripMenuItem1.ToolTipText = "Start a rapid netplay session"
+        Me.NetPlayToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NickToolStripTextBox1, Me.ServerToolStripComboBox2, Me.PortToolStripTextBox1, Me.GameKeyToolStripTextBox1, Me.PasswordToolStripTextBox1, Me.OnlineToolStripMenuItem1})
+        Me.NetPlayToolStripMenuItem.Name = "NetPlayToolStripMenuItem"
+        Me.NetPlayToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.NetPlayToolStripMenuItem.Text = "&NetPlay"
+        Me.NetPlayToolStripMenuItem.ToolTipText = "Start a rapid netplay session"
         '
         'NickToolStripTextBox1
         '
@@ -3516,12 +3527,63 @@ Partial Class MedGuiR
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
         Me.ToolStripSeparator9.Size = New System.Drawing.Size(205, 6)
         '
-        'ResetToolStripMenuItem1
+        'GridToolStripMenuItem
         '
-        Me.ResetToolStripMenuItem1.Name = "ResetToolStripMenuItem1"
-        Me.ResetToolStripMenuItem1.Size = New System.Drawing.Size(208, 22)
-        Me.ResetToolStripMenuItem1.Text = "Reset &Configurations"
-        Me.ResetToolStripMenuItem1.ToolTipText = "Reset all Mednafen and MedGui Reborn configurations"
+        Me.GridToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem, Me.HighlightToolStripMenuItem, Me.BackgroudToolStripMenuItem, Me.GridToolStripMenuItem1})
+        Me.GridToolStripMenuItem.Name = "GridToolStripMenuItem"
+        Me.GridToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.GridToolStripMenuItem.Text = "&Grid Aspect"
+        '
+        'FontToolStripMenuItem
+        '
+        Me.FontToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem1, Me.CellsToolStripMenuItem})
+        Me.FontToolStripMenuItem.Name = "FontToolStripMenuItem"
+        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FontToolStripMenuItem.Text = "&Normal"
+        '
+        'FontToolStripMenuItem1
+        '
+        Me.FontToolStripMenuItem1.Name = "FontToolStripMenuItem1"
+        Me.FontToolStripMenuItem1.Size = New System.Drawing.Size(99, 22)
+        Me.FontToolStripMenuItem1.Text = "&Font"
+        '
+        'CellsToolStripMenuItem
+        '
+        Me.CellsToolStripMenuItem.Name = "CellsToolStripMenuItem"
+        Me.CellsToolStripMenuItem.Size = New System.Drawing.Size(99, 22)
+        Me.CellsToolStripMenuItem.Text = "&Cells"
+        '
+        'HighlightToolStripMenuItem
+        '
+        Me.HighlightToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem2, Me.CellsToolStripMenuItem1})
+        Me.HighlightToolStripMenuItem.Name = "HighlightToolStripMenuItem"
+        Me.HighlightToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.HighlightToolStripMenuItem.Text = "&Highlight"
+        '
+        'FontToolStripMenuItem2
+        '
+        Me.FontToolStripMenuItem2.Name = "FontToolStripMenuItem2"
+        Me.FontToolStripMenuItem2.Size = New System.Drawing.Size(180, 22)
+        Me.FontToolStripMenuItem2.Text = "&Font"
+        '
+        'CellsToolStripMenuItem1
+        '
+        Me.CellsToolStripMenuItem1.Name = "CellsToolStripMenuItem1"
+        Me.CellsToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.CellsToolStripMenuItem1.Text = "&Cells"
+        '
+        'BackgroudToolStripMenuItem
+        '
+        Me.BackgroudToolStripMenuItem.Name = "BackgroudToolStripMenuItem"
+        Me.BackgroudToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BackgroudToolStripMenuItem.Text = "&Backgroud"
+        '
+        'ResetToolStripMenuItem
+        '
+        Me.ResetToolStripMenuItem.Name = "ResetToolStripMenuItem"
+        Me.ResetToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.ResetToolStripMenuItem.Text = "Reset &Configurations"
+        Me.ResetToolStripMenuItem.ToolTipText = "Reset all Mednafen and MedGui Reborn configurations"
         '
         'ToolStripSeparator12
         '
@@ -3572,6 +3634,16 @@ Partial Class MedGuiR
         Me.ProgressBar1.Step = 1
         Me.ProgressBar1.TabIndex = 38
         Me.ProgressBar1.Visible = False
+        '
+        'FontDialog1
+        '
+        Me.FontDialog1.ShowColor = True
+        '
+        'GridToolStripMenuItem1
+        '
+        Me.GridToolStripMenuItem1.Name = "GridToolStripMenuItem1"
+        Me.GridToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.GridToolStripMenuItem1.Text = "&Grid"
         '
         'MedGuiR
         '
@@ -3948,7 +4020,7 @@ Partial Class MedGuiR
     Friend WithEvents RIPSToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator10 As ToolStripSeparator
     Friend WithEvents LinkLabel15 As LinkLabel
-    Friend WithEvents NetPlayToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents NetPlayToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NickToolStripTextBox1 As ToolStripTextBox
     Friend WithEvents ServerToolStripComboBox2 As ToolStripComboBox
     Friend WithEvents OnlineToolStripMenuItem1 As ToolStripMenuItem
@@ -3956,7 +4028,7 @@ Partial Class MedGuiR
     Friend WithEvents PasswordToolStripTextBox1 As ToolStripTextBox
     Friend WithEvents TimerPerConfig As Timer
     Friend WithEvents PortToolStripTextBox1 As ToolStripTextBox
-    Friend WithEvents ResetToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ResetToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator12 As ToolStripSeparator
     Friend WithEvents Label57 As Label
     Friend WithEvents ProgressBar1 As ProgressBar
@@ -3983,4 +4055,15 @@ Partial Class MedGuiR
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TestPCToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator16 As ToolStripSeparator
+    Friend WithEvents GridToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FontToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HighlightToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BackgroudToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FontDialog1 As FontDialog
+    Friend WithEvents FontToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CellsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FontToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents CellsToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ColorDialog1 As ColorDialog
+    Friend WithEvents GridToolStripMenuItem1 As ToolStripMenuItem
 End Class

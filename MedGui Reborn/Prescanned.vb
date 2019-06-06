@@ -47,15 +47,15 @@ Module Prescanned
                             MedGuiR.DataGridView1.Rows(cr - 1).Cells(9).Value() = cr - 1
 
                             If File.Exists(SplitLine(4)) = False Then
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.DarkRed
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.White
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.Black
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Strikeout)
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.DarkRed
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.White
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.Black
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Strikeout)
                             Else
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.Black
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.Black
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.Black
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.Black
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
+                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
                             End If
                         End If
 

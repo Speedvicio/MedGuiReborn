@@ -2465,7 +2465,7 @@ inputagain:
         SaveGridDataInRow()
     End Sub
 
-    Private Sub ResetToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ResetToolStripMenuItem1.Click
+    Private Sub ResetToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ResetToolStripMenuItem.Click
         Reset.ShowDialog()
         If ResetAll = True Then Me.Close()
     End Sub
@@ -2674,8 +2674,40 @@ SKIPHASH:
         ChaseL()
     End Sub
 
-    Private Sub SY_Click(sender As Object, e As EventArgs) Handles SY.Click
+    Private Sub FontToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FontToolStripMenuItem1.Click
+        If FontDialog1.ShowDialog <> DialogResult.Cancel Then
+            DataGridView1.DefaultCellStyle.Font = FontDialog1.Font
+            DataGridView1.RowsDefaultCellStyle.ForeColor = FontDialog1.Color
+            DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            If CheckBox8.Checked = True Then
+                DataGridView1.AutoResizeColumns()
+                ResizeGrid()
+            End If
+        End If
+    End Sub
 
+    Private Sub CellsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CellsToolStripMenuItem.Click
+        If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
+            DataGridView1.RowsDefaultCellStyle.BackColor = ColorDialog1.Color
+        End If
+    End Sub
+
+    Private Sub FontToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles FontToolStripMenuItem2.Click
+        If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
+            DataGridView1.RowsDefaultCellStyle.SelectionForeColor = ColorDialog1.Color
+        End If
+    End Sub
+
+    Private Sub CellsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CellsToolStripMenuItem1.Click
+        If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
+            DataGridView1.RowsDefaultCellStyle.SelectionBackColor = ColorDialog1.Color
+        End If
+    End Sub
+
+    Private Sub GridToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GridToolStripMenuItem1.Click
+        If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
+            DataGridView1.GridColor = ColorDialog1.Color
+        End If
     End Sub
 
     Private Sub TestPCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestPCToolStripMenuItem.Click

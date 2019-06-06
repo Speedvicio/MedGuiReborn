@@ -120,6 +120,7 @@
             MedGuiR.CheckBox4.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Status")
             MedGuiR.CheckBox5.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "System")
             MedGuiR.ComboBox2.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Columns_Order")
+
         Catch ex As Exception
             MGRWriteLog("ManageIni - GridRMini: " & ex.Message)
         Finally
@@ -220,6 +221,13 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Status", MedGuiR.CheckBox4.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "System", MedGuiR.CheckBox5.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Columns_Order", MedGuiR.ComboBox2.Text)
+
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Font", MedGuiR.DataGridView1.DefaultCellStyle.Font.ToString)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor.ToString)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor.ToString)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor.ToString)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor.ToString)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color", MedGuiR.DataGridView1.GridColor.ToString)
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Default", MedGuiR.TextBox9.Text)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Apple2", MedGuiR.TextBox22.Text)
