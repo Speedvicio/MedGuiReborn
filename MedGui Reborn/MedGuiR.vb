@@ -2678,7 +2678,7 @@ SKIPHASH:
         If FontDialog1.ShowDialog <> DialogResult.Cancel Then
             DataGridView1.RowsDefaultCellStyle.Font = FontDialog1.Font
             DataGridView1.RowsDefaultCellStyle.ForeColor = FontDialog1.Color
-            'DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
             If CheckBox8.Checked = True Then
                 DataGridView1.AutoResizeColumns()
                 ResizeGrid()
