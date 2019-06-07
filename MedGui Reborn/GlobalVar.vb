@@ -10,7 +10,7 @@ Module GlobalVar
 
     Public Sub Startup_setting()
         GeneralRMIni()
-        GridRStyle()
+        If MedGuiR.GridToolStripMenuItem.Checked = True Then GridRStyle()
         DirectoryRMIni()
         UCIRMini()
         RJoypadMini()

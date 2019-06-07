@@ -152,7 +152,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub AdvancedMenu_Click(sender As Object, e As EventArgs) Handles AdvancedMenu.Click
-        AdvancedMenu.Close()
+        'AdvancedMenu.Close()
     End Sub
 
     Private Sub AdvancedMenu_Closed(sender As Object, e As ToolStripDropDownClosedEventArgs) Handles AdvancedMenu.Closed
@@ -2676,9 +2676,9 @@ SKIPHASH:
 
     Private Sub FontToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FontToolStripMenuItem1.Click
         If FontDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.DefaultCellStyle.Font = FontDialog1.Font
+            DataGridView1.RowsDefaultCellStyle.Font = FontDialog1.Font
             DataGridView1.RowsDefaultCellStyle.ForeColor = FontDialog1.Color
-            DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            'DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
             If CheckBox8.Checked = True Then
                 DataGridView1.AutoResizeColumns()
                 ResizeGrid()
@@ -2704,7 +2704,7 @@ SKIPHASH:
         End If
     End Sub
 
-    Private Sub GridToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GridToolStripMenuItem1.Click
+    Private Sub GridToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GridColToolStripMenuItem.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
             DataGridView1.GridColor = ColorDialog1.Color
         End If
@@ -2718,6 +2718,10 @@ SKIPHASH:
 
     Private Sub TestPCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestPCToolStripMenuItem.Click
         TestCPU.Show()
+    End Sub
+
+    Private Sub GridToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GridToolStripMenuItem.Click
+        DataGridView1.RowsDefaultCellStyle.Font.Dispose()
     End Sub
 
     Private Sub PictureBox2_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox2.DoubleClick
@@ -3030,6 +3034,27 @@ MisScan:
             MsgBox("MedPad Not detected!", vbAbort + vbExclamation, "MedPad Not detected...")
         End If
         FileParameter = ""
+    End Sub
+
+    Private Sub GridToolStripMenuItem_CheckStateChanged(sender As Object, e As EventArgs) Handles GridToolStripMenuItem.CheckStateChanged
+        If GridToolStripMenuItem.Checked = True Then
+            FontToolStripMenuItem.Enabled = True
+            HighlightToolStripMenuItem.Enabled = True
+            BackgroudToolStripMenuItem.Enabled = True
+            GridColToolStripMenuItem.Enabled = True
+            GridRStyle()
+        Else
+            FontToolStripMenuItem.Enabled = False
+            HighlightToolStripMenuItem.Enabled = False
+            BackgroudToolStripMenuItem.Enabled = False
+            GridColToolStripMenuItem.Enabled = False
+
+            DataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black
+            DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
+            DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+            DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
+            DataGridView1.RowsDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+        End If
     End Sub
 
 End Class
