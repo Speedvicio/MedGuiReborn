@@ -144,6 +144,11 @@
             MedGuiR.DataGridView1.GridColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Background_Color"))
             MedGuiR.DataGridView1.GridColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color"))
             MedGuiR.DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            MedGuiR.DataGridView1.Refresh()
+
+            MedGuiR.FontDialog1.Font = font1
+            MedGuiR.FontDialog1.Color = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color"))
+
             If MedGuiR.CheckBox8.Checked = True Then
                 MedGuiR.DataGridView1.AutoResizeColumns()
                 MedGuiR.ResizeGrid()

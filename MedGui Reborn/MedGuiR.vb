@@ -2679,6 +2679,8 @@ SKIPHASH:
             DataGridView1.RowsDefaultCellStyle.Font = FontDialog1.Font
             DataGridView1.RowsDefaultCellStyle.ForeColor = FontDialog1.Color
             DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            DataGridView1.Refresh()
+
             If CheckBox8.Checked = True Then
                 DataGridView1.AutoResizeColumns()
                 ResizeGrid()
@@ -2718,6 +2720,27 @@ SKIPHASH:
 
     Private Sub TestPCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestPCToolStripMenuItem.Click
         TestCPU.Show()
+    End Sub
+
+    Private Sub ResetToDefaultToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetToDefaultToolStripMenuItem.Click
+        FontDialog1.Reset()
+        FontDialog1.FontMustExist = True
+        FontDialog1.ShowColor = True
+        FontDialog1.ShowEffects = True
+        FontDialog1.MaxSize = 18
+
+        DataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black
+        DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
+        DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+        DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
+        DataGridView1.RowsDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+        DataGridView1.Refresh()
+
+        If CheckBox8.Checked = True Then
+            DataGridView1.AutoResizeColumns()
+            ResizeGrid()
+        End If
+
     End Sub
 
     Private Sub PictureBox2_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox2.DoubleClick
@@ -3038,12 +3061,14 @@ MisScan:
             HighlightToolStripMenuItem.Enabled = True
             BackgroudToolStripMenuItem.Enabled = True
             GridColToolStripMenuItem.Enabled = True
+            ResetToDefaultToolStripMenuItem.Enabled = True
             GridRStyle()
         Else
             FontToolStripMenuItem.Enabled = False
             HighlightToolStripMenuItem.Enabled = False
             BackgroudToolStripMenuItem.Enabled = False
             GridColToolStripMenuItem.Enabled = False
+            ResetToDefaultToolStripMenuItem.Enabled = False
 
             DataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black
             DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
