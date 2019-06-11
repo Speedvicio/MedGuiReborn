@@ -140,7 +140,7 @@ Public Class ModLand
                 changechipstate()
 
                 Dim ModMsg As String
-                If ToolStripComboBox2.Text = "Antarctica" And cex.Trim <> "" Then
+                If ToolStripComboBox2.Text = "Antarctica" And cex IsNot Nothing Then
                     ModMsg = "File Downloaded" & vbCrLf &
                     "Now Dowload manually by the list the " & cex & " driver (selected file)"
                     For Each dgvRow In DataGridView1.Rows
@@ -156,7 +156,7 @@ Public Class ModLand
                             dgvRow.selected = True
                         End If
                     Next
-                        Else
+                Else
                     ModMsg = "File and Driver Downloaded"
                 End If
 
@@ -223,24 +223,24 @@ Public Class ModLand
     Private Sub DownloadDriver()
 
         Try
-            'Select Case Path.GetExtension(download)
-            'Case ".minigsf", ".minipsf", ".psf", ".ssf", ".minissf"
-            Using objReader As New StreamReader(MedExtra & "/Media/Module" & download)
-                While objReader.Peek() <> -1
-                    Dim LINE As String = objReader.ReadLine()
-                    If LINE.Contains("_lib") Then
-                        Dim firstsplit As String() = Split(LINE, "_lib=")
-                        cex = firstsplit(1).Trim
-                        TryToDownloadDriver()
-                        Exit While
-                    End If
-                End While
-                objReader.Dispose()
-                objReader.Close()
-            End Using
-            'Case Else
-            'Exit Sub
-            'End Select
+            Select Case Path.GetExtension(download)
+                Case ".minigsf", ".minipsf", ".psf", ".ssf", ".minissf"
+                    Using objReader As New StreamReader(MedExtra & "/Media/Module" & download)
+                        While objReader.Peek() <> -1
+                            Dim LINE As String = objReader.ReadLine()
+                            If LINE.Contains("_lib") Then
+                                Dim firstsplit As String() = Split(LINE, "_lib=")
+                                cex = firstsplit(1).Trim
+                                TryToDownloadDriver()
+                                Exit While
+                            End If
+                        End While
+                        objReader.Dispose()
+                        objReader.Close()
+                    End Using
+                Case Else
+                    Exit Sub
+            End Select
         Catch
         End Try
 
