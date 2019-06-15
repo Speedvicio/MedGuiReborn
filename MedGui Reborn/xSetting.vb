@@ -257,8 +257,8 @@ Module xSetting
         If row.Contains("psx.bios_eu ") Then xValue = Trim(Replace(row, "psx.bios_eu", "")) : MgrSetting.TextBox15.Text = xValue
         If row.Contains("psx.bios_jp ") Then xValue = Trim(Replace(row, "psx.bios_jp", "")) : MgrSetting.TextBox16.Text = xValue
         If row.Contains("psx.bios_na ") Then xValue = Trim(Replace(row, "psx.bios_na", "")) : MgrSetting.TextBox17.Text = xValue
-        If row.Contains("ss.bios_jp ") Then xValue = Trim(Replace(row, "psx.bios_jp", "")) : MgrSetting.TextBox22.Text = xValue
-        If row.Contains("ss.bios_na_eu ") Then xValue = Trim(Replace(row, "psx.bios_na", "")) : MgrSetting.TextBox23.Text = xValue
+        If row.Contains("ss.bios_jp ") Then xValue = Trim(Replace(row, "ss.bios_jp", "")) : MgrSetting.TextBox22.Text = xValue
+        If row.Contains("ss.bios_na_eu ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox23.Text = xValue
 
         'MEDNAFEN PATH
         If row.Contains("filesys.path_cheat ") Then xValue = Trim(Replace(row, "filesys.path_cheat", "")) : MgrSetting.TextBox34.Text = xValue
