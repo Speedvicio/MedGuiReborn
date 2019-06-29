@@ -122,6 +122,7 @@ Public Class Mcheat
         TextBox1.Text = TextBox1.Text.PadLeft(8, "0")
 #Disable Warning BC42105 ' La funzione 'AnalizeRAWCode' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+
 #Enable Warning BC42105 ' La funzione 'AnalizeRAWCode' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
@@ -371,6 +372,9 @@ skiphash:
 
         If ComboBox1.Items.Count > 0 Then
             ComboBox1.SelectedIndex = 0
+        Else
+            MsgBox("Unable to detect hash for this game, I can't search any cheats", vbOKOnly + MsgBoxStyle.Information, "Undetected hash...")
+            Me.Close()
         End If
 
         If File.Exists(Path.Combine(ExtractPath("path_cheat"), CheatConsole & ".cht")) Then
@@ -380,6 +384,7 @@ skiphash:
 
         Dim cheatpath As String = Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
         If File.Exists(cheatpath) Then ReadImported(cheatpath)
+
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -544,6 +549,7 @@ skiphash:
         filepath = backPath
 #Disable Warning BC42105 ' La funzione 'RemoveHeader' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+
 #Enable Warning BC42105 ' La funzione 'RemoveHeader' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub SetCodeMode()
@@ -646,6 +652,7 @@ skiphash:
         ParseCht()
 #Disable Warning BC42105 ' La funzione 'WorkingWithCheat' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+
 #Enable Warning BC42105 ' La funzione 'WorkingWithCheat' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub TextBox4_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox4.KeyDown
