@@ -2798,6 +2798,10 @@ SKIPHASH:
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles TimerControlJoy.Tick
 
+        Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
+        customCulture.NumberFormat.NumberDecimalSeparator = "."
+        Threading.Thread.CurrentThread.CurrentCulture = customCulture
+
         Try
             joyGetPosEx(NumericUpDown2.Value - 1, MYJOYEX)
 
