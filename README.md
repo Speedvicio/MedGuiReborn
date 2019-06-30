@@ -29,6 +29,7 @@ For Bugs/Suggestions/Feature Requests or simply to request help, you can refer t
 * Scrape of boxart and info from TheGamesDB
 * Support for IRC chat session (through IrcClient.dll by Kobe)
 * Auto-ips patch for PSX games
+* Auto-bps patch
 * Auto Cartige Backup type for GBA games
 * Automatic detecttion of real name for Saturn and PSX games
 * Palettes maker for gb/gbc roms
@@ -40,6 +41,8 @@ For Bugs/Suggestions/Feature Requests or simply to request help, you can refer t
 * Create Desktop Shortcut of Game with icons (if boxart available)
 * Convert on the fly vgm/vgz/gbs to make it playable by Mednafen
 * Any game utility
+* Customizable grid aspect
+* Convert ecm and pbp file into generic iso format
 
 ### Requirements
 * Microsoft .NET Framework 2.0 (all Microsoft OS are supported from XP version)
@@ -71,6 +74,8 @@ You can found the last stable release on:
 * [FMod.dll](https://www.fmod.com/) to play mod in About screen
 * [CoreAudioApi](https://msdn.microsoft.com/en-us/library/windows/desktop/dd370802(v=vs.85).aspx) to manage volume peak for left and right channel on About screen (only on Vista and upper OS)
 * [Multimedia PeakMeter Control](https://www.codeproject.com/Articles/26357/Multimedia-PeakMeter-Control) dll to visualize volume peak on About screen
+* [flips.exe](https://www.smwcentral.net/?p=section&a=details&id=11474) for support at .bps patch file
+* [copstation.exe](https://github.com/PSP-Tools/copstation) to unpack pbp file format
 * [unecm.exe](https://web.archive.org/web/20130504220128/http://www.neillcorlett.com/cmdpack) to unpack ecm file format
 * [DiscTools.dll](https://github.com/Asnivor/DiscTools) to detect PSX serial number and PC-FX cue/ccd file
 * ps1titles_us_eu_jp.txt from CaptainCPS-X for get real PSX Name
