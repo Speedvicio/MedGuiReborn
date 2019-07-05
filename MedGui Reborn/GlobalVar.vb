@@ -249,6 +249,9 @@ Module GlobalVar
                             Dim fRisp = MsgBox("I can also download Mednafen bios pack for you." & vbCrLf &
                                           "Do you want to download and extract it?", vbCritical + MsgBoxStyle.YesNo, "Mednafen Bios pack...")
                             If fRisp = vbYes Then DownExtractBios()
+                            MsgBox("You're almost there." & vbCrLf &
+"Now set up the folders containing your games in Rom Path 1/2 tabs on the right", vbOKOnly + MsgBoxStyle.Information, "Instructions")
+                            MedGuiR.TabControl1.SelectedTab = MedGuiR.TabPage3
                         Else
                             Message.Label1.Text = "There is no sense to open this GUI without Mednafen" & vbCrLf &
                 "Please download Last Mednafen version at:"

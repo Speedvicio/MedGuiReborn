@@ -658,7 +658,7 @@ Module scan
             If MedGuiR.FirstStart = True Then Exit Sub
 
             ResRecu = MsgBox("Do you want to make a recursive folder scan?" &
-                          vbCrLf & "Recursive scan is inaccurate, can generate error and take many time!", vbYesNo + MsgBoxStyle.Exclamation)
+                          vbCrLf & "Recursive scan could be inaccurate, could generate error and take many time!", vbYesNo + MsgBoxStyle.Exclamation)
             If ResRecu = vbYes Then
                 MedGuiR.DataGridView1.Rows.Clear()
                 stopiso = True

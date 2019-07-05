@@ -150,6 +150,9 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>223, 17</value>
   </metadata>
@@ -204,10 +207,22 @@ ss = Sega Saturn
 vb = Virtual Boy
 wswan = Wonderswan</value>
   </data>
+  <data name="Panel3.ToolTip" xml:space="preserve">
+    <value>Select a default rom path or specific path for every your rom collections.
+If you have not selected "Recursive Scan", MedGuiR will perform a simple scan folder.
+The first scan takes place only after selecting the system to be scanned in the drop down menu at the top left of the frontend. 
+If you add games or change the folder path, you will need to press the button with the refresh symbol next to the drop-down menu.</value>
+  </data>
   <data name="Label48.Text" xml:space="preserve">
     <value>MedClient will send crypted information of your current NetPlay session on a external server.
 No sensible data are stored, (Nick, Server, Port, Title Game, Mednafen Module and Rom CRC).
 This file will be deleted form external server when you close Netplay session or when you close MedClient window.</value>
+  </data>
+  <data name="Panel2.ToolTip" xml:space="preserve">
+    <value>Select a default rom path or specific path for every your rom collections.
+If you have not selected "Recursive Scan", MedGuiR will perform a simple scan folder.
+The first scan takes place only after selecting the system to be scanned in the drop down menu at the top left of the frontend. 
+If you add games or change the folder path, you will need to press the button with the refresh symbol next to the drop-down menu.</value>
   </data>
   <metadata name="TimerSoxConv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>380, 17</value>
