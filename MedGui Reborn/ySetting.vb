@@ -42,6 +42,18 @@
         " -" & consoles & MedGuiR.tpce & ".scanlines " & MgrSetting.TrackBar8.Value & " -" & consoles & MedGuiR.tpce & ".tblur " & MgrSetting.CheckBox14.CheckState & " -" & consoles & MedGuiR.tpce & ".tblur.accum " & MgrSetting.CheckBox15.CheckState &
         " -" & consoles & MedGuiR.tpce & ".tblur.accum.amount " & MgrSetting.TrackBar9.Value
 
+        'Specific video setting for music module
+        Select Case LCase(ext)
+            Case ".minigsf", ".gsflib", ".nsf", ".hes", ".psf", ".psf1", ".minipsf", ".ssf", ".minissf", ".rsn", ".spc", ".wsr"
+                video = " -player.stretch " & MgrSetting.ComboBox5.Text & " -player.xres " & xfs & " -player.yres " & yfs &
+                               " -player.xscale " & Replace(MgrSetting.NumericUpDown3.Value, ",", ".") & " -player.yscale " & Replace(MgrSetting.NumericUpDown4.Value, ",", ".") &
+                " -player.xscalefs " & Replace(MgrSetting.NumericUpDown6.Value, ",", ".") & " -player.yscalefs " & Replace(MgrSetting.NumericUpDown5.Value, ",", ".")
+
+                filters = " -player" & MedShader & " " & MgrSetting.ComboBox7.Text & " -player.special " & MgrSetting.ComboBox8.Text & " -player.videoip " & MgrSetting.ComboBox9.Text &
+                " -player.scanlines " & MgrSetting.TrackBar8.Value & " -player.tblur " & MgrSetting.CheckBox14.CheckState & " -player.tblur.accum " & MgrSetting.CheckBox15.CheckState &
+                " -player.tblur.accum.amount " & MgrSetting.TrackBar9.Value
+        End Select
+
         'Variuos
         various = " -autosave " & MgrSetting.CheckBox9.CheckState & " -cd.image_memcache " & MgrSetting.CheckBox10.CheckState & " -cheats " & MgrSetting.CheckBox11.CheckState & " -srwautoenable " & MgrSetting.CheckBox60.CheckState &
         " -ffspeed " & Replace(MgrSetting.NumericUpDown1.Value, ",", ".") & " -sfspeed " & Replace(MgrSetting.NumericUpDown2.Value, ",", ".") &

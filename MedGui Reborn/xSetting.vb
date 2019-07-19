@@ -271,6 +271,39 @@ Module xSetting
         If row.Contains("filesys.path_snap ") Then xValue = Trim(Replace(row, "filesys.path_snap", "")) : MgrSetting.TextBox27.Text = xValue
         If row.Contains("filesys.path_state ") Then xValue = Trim(Replace(row, "filesys.path_state", "")) : MgrSetting.TextBox26.Text = xValue
 
+        Select Case LCase(ext)
+            Case ".minigsf", ".gsflib", ".nsf", ".hes", ".psf", ".psf1", ".minipsf", ".ssf", ".minissf", ".rsn", ".spc", ".wsr"
+                If row.Contains("player" & MedShader & " ") Then xValue = Trim(Replace(row, "player" & MedShader, "")) : MgrSetting.ComboBox7.Text = xValue
+
+                If row.Contains("player.shader.goat.pat ") Then xValue = Trim(Replace(row, "player.shader.goat.pat", "")) : MgrSetting.ComboBox53.Text = xValue
+                If row.Contains("player.shader.goat.vdiv ") Then xValue = Trim(Replace(row, "player.shader.goat.vdiv", "")) : MgrSetting.NumericUpDown24.Value = Val(xValue)
+                If row.Contains("player.shader.goat.hdiv ") Then xValue = Trim(Replace(row, "player.shader.goat.hdiv", "")) : MgrSetting.NumericUpDown22.Value = Val(xValue)
+                If row.Contains("player.shader.goat.tp ") Then xValue = Trim(Replace(row, "player.shader.goat.tp", "")) : MgrSetting.NumericUpDown23.Value = Val(xValue)
+                If row.Contains("player.shader.goat.fprog ") Then xValue = Trim(Replace(row, "player.shader.goat.fprog", "")) : MgrSetting.CheckBox95.Checked = CBool(xValue)
+                If row.Contains("player.shader.goat.slen ") Then xValue = Trim(Replace(row, "player.shader.goat.slen", "")) : MgrSetting.CheckBox94.Checked = CBool(xValue)
+
+                If row.Contains("player.scanlines ") Then xValue = Trim(Replace(row, "player.scanlines", "")) : MgrSetting.TrackBar8.Value = Val(xValue)
+                If row.Contains("player.special ") Then xValue = Trim(Replace(row, "player.special", "")) : MgrSetting.ComboBox8.Text = xValue
+                If row.Contains("player.stretch ") Then xValue = Trim(Replace(row, "player.stretch", "")) : MgrSetting.ComboBox5.Text = xValue
+                If row.Contains("player.tblur ") Then xValue = Trim(Replace(row, "player.tblur", "")) : MgrSetting.CheckBox14.Checked = CBool(xValue)
+                If row.Contains("player.tblur.accum ") Then xValue = Trim(Replace(row, "player.tblur.accum", "")) : MgrSetting.CheckBox15.Checked = CBool(xValue)
+                If row.Contains("player.tblur.accum.amount ") Then xValue = Trim(Replace(row, "player.tblur.accum.amount", "")) : MgrSetting.TrackBar9.Value = Val(xValue)
+                If row.Contains("player.videoip ") Then xValue = Trim(Replace(row, "player.videoip", "")) : MgrSetting.ComboBox9.Text = xValue
+                If row.Contains("player.xres ") Then xValue = Trim(Replace(row, "player.xres", "")) : MgrSetting.ComboBox6.Text = xValue
+                If row.Contains("player.xscale ") Then xValue = Trim(Replace(row, "player.xscale", "")) : MgrSetting.NumericUpDown3.Value = Val(xValue)
+                If row.Contains("player.xscalefs ") Then xValue = Trim(Replace(row, "player.xscalefs", "")) : MgrSetting.NumericUpDown6.Value = Val(xValue)
+
+                If row.Contains("player.yres ") Then
+                    xValue = Trim(Replace(row, "player.yres", ""))
+                    If MgrSetting.ComboBox6.Items.Contains(MgrSetting.ComboBox6.Text & "x" & xValue) = False Then
+                        MgrSetting.ComboBox6.Items.Add(MgrSetting.ComboBox6.Text & "x" & xValue)
+                    End If
+                    MgrSetting.ComboBox6.Text = (MgrSetting.ComboBox6.Text & "x" & xValue)
+                End If
+
+                If row.Contains("player.yscale ") Then xValue = Trim(Replace(row, "player.yscale", "")) : MgrSetting.NumericUpDown4.Value = Val(xValue)
+                If row.Contains("player.yscalefs ") Then xValue = Trim(Replace(row, "player.yscalefs", "")) : MgrSetting.NumericUpDown5.Value = Val(xValue)
+        End Select
     End Sub
 
     Public Sub SetGeneral()
@@ -567,8 +600,8 @@ Module xSetting
                         ReturnedPath = Path.Combine(MedGuiR.TextBox4.Text, SplitPath(1).Trim)
                     End If
 
-                        Exit Do
-                    End If
+                    Exit Do
+                End If
             Loop Until a Is Nothing
             reader.Close()
             Return (ReturnedPath.Trim & "\")
