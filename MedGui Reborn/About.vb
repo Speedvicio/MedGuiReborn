@@ -1,4 +1,6 @@
-﻿Public Class About
+﻿Imports System.IO
+
+Public Class About
     Private AudioAbout As New Audio
     Private oldSOUNDIR As String
 
@@ -22,28 +24,34 @@
         'wDir = (MedExtra & "Resource\Music")
         'StartProcess()
 
+        If File.Exists(Path.Combine(Application.StartupPath, "External.rtf")) Then
+            RichTextBox1.LoadFile(Path.Combine(Application.StartupPath, "External.rtf"), RichTextBoxStreamType.RichText)
+        Else
+            Me.Width = 326
+        End If
+
         F1 = Me
         CenterForm()
 
         If IO.File.Exists(Application.StartupPath & "\fmod.dll") Then
 RETRYMOD:
-            AudioAbout.SOUNDDIR = GetRandomFilePath(MedExtra & "Resource\Music\module")
-            If oldSOUNDIR <> AudioAbout.SOUNDDIR And AudioAbout.SOUNDDIR <> "" Then
-                AudioAbout.PlaySound()
-                oldSOUNDIR = AudioAbout.SOUNDDIR
-            Else
-                GoTo RETRYMOD
-            End If
+                AudioAbout.SOUNDDIR = GetRandomFilePath(MedExtra & "Resource\Music\module")
+                If oldSOUNDIR <> AudioAbout.SOUNDDIR And AudioAbout.SOUNDDIR <> "" Then
+                    AudioAbout.PlaySound()
+                    oldSOUNDIR = AudioAbout.SOUNDDIR
+                Else
+                    GoTo RETRYMOD
+                End If
 
-            If Environment.OSVersion.Version.Major >= 6 And IO.File.Exists(Application.StartupPath & "\CoreAudioApi.dll") And IO.File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") Then
-                StartPeak()
-                Timer1.Start()
-            Else
-                PeakMeterCtrl1.Dispose()
-                PeakMeterCtrl2.Dispose()
-            End If
+                If Environment.OSVersion.Version.Major >= 6 And IO.File.Exists(Application.StartupPath & "\CoreAudioApi.dll") And IO.File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") Then
+                    StartPeak()
+                    Timer1.Start()
+                Else
+                    PeakMeterCtrl1.Dispose()
+                    PeakMeterCtrl2.Dispose()
+                End If
 
-        End If
+            End If
     End Sub
 
     Public Function GetRandomFilePath(ByVal folderPath As String) As String
@@ -98,6 +106,11 @@ RETRYMOD:
 
     Private Sub LinkLabel5_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel5.LinkClicked
         _link = "https://gamehacking.org/"
+        open_link()
+    End Sub
+
+    Private Sub RichTextBox1_LinkClicked(sender As Object, e As LinkClickedEventArgs)
+        _link = e.LinkText
         open_link()
     End Sub
 

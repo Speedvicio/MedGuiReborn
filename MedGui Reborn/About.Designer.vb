@@ -31,6 +31,7 @@ Partial Class About
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PeakMeterCtrl2 = New Ernzo.WinForms.Controls.PeakMeterCtrl()
@@ -46,11 +47,13 @@ Partial Class About
         Me.LinkLabel9 = New System.Windows.Forms.LinkLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -150,6 +153,20 @@ Partial Class About
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(286, 196)
         Me.Panel3.TabIndex = 5
+        '
+        'LinkLabel5
+        '
+        Me.LinkLabel5.AutoSize = True
+        Me.LinkLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel5.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LinkLabel5.LinkColor = System.Drawing.Color.MediumOrchid
+        Me.LinkLabel5.Location = New System.Drawing.Point(55, 76)
+        Me.LinkLabel5.Name = "LinkLabel5"
+        Me.LinkLabel5.Size = New System.Drawing.Size(61, 16)
+        Me.LinkLabel5.TabIndex = 90
+        Me.LinkLabel5.TabStop = True
+        Me.LinkLabel5.Text = "rimsky82"
+        Me.LinkLabel5.VisitedLinkColor = System.Drawing.Color.Gold
         '
         'LinkLabel4
         '
@@ -331,26 +348,30 @@ Partial Class About
         '
         Me.Timer1.Interval = 1
         '
-        'LinkLabel5
+        'Panel4
         '
-        Me.LinkLabel5.AutoSize = True
-        Me.LinkLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel5.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel5.LinkColor = System.Drawing.Color.MediumOrchid
-        Me.LinkLabel5.Location = New System.Drawing.Point(55, 76)
-        Me.LinkLabel5.Name = "LinkLabel5"
-        Me.LinkLabel5.Size = New System.Drawing.Size(61, 16)
-        Me.LinkLabel5.TabIndex = 90
-        Me.LinkLabel5.TabStop = True
-        Me.LinkLabel5.Text = "rimsky82"
-        Me.LinkLabel5.VisitedLinkColor = System.Drawing.Color.Gold
+        Me.Panel4.Controls.Add(Me.RichTextBox1)
+        Me.Panel4.Location = New System.Drawing.Point(319, 40)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(314, 297)
+        Me.Panel4.TabIndex = 6
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox1.Location = New System.Drawing.Point(0, 0)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(314, 297)
+        Me.RichTextBox1.TabIndex = 0
+        Me.RichTextBox1.Text = ""
         '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(310, 376)
+        Me.ClientSize = New System.Drawing.Size(652, 376)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -366,6 +387,7 @@ Partial Class About
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -394,4 +416,6 @@ Partial Class About
     Friend WithEvents Label10 As Label
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents LinkLabel5 As LinkLabel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class
