@@ -27,7 +27,7 @@ Public Class About
         If File.Exists(Path.Combine(Application.StartupPath, "External.rtf")) Then
             RichTextBox1.LoadFile(Path.Combine(Application.StartupPath, "External.rtf"), RichTextBoxStreamType.RichText)
         Else
-            Me.Width = 326
+            Me.Width = 320
         End If
 
         F1 = Me
@@ -109,7 +109,7 @@ RETRYMOD:
         open_link()
     End Sub
 
-    Private Sub RichTextBox1_LinkClicked(sender As Object, e As LinkClickedEventArgs)
+    Private Sub RichTextBox1_LinkClicked(sender As Object, e As LinkClickedEventArgs) Handles RichTextBox1.LinkClicked
         _link = e.LinkText
         open_link()
     End Sub
