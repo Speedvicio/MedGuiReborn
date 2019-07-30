@@ -1750,6 +1750,9 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
 
         tGwidth = wCol1 + wCol2 + wCol3 + wCol4 + wCol6 + eDataGD
         'Me.Width = Me.Width - DataGridView1.Width
+        If tGwidth + 345 > Screen.PrimaryScreen.Bounds.Width Then
+            tGwidth = Screen.PrimaryScreen.Bounds.Width - 345
+        End If
         DataGridView1.Width = tGwidth
         'Me.Width = Me.Width + DataGridView1.Width
         Me.Width = 345 + tGwidth
