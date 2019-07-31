@@ -104,6 +104,13 @@ Module Prescanned
             MedGuiR.Label95.Text = "Custom Setting"
             MedGuiR.TextBox2.Visible = True
             ProgresStart.Close()
+
+            If MedGuiR.FirstStart = True Then
+                SoxStatus.Text = "Wait a sec..."
+                SoxStatus.Label1.Text = "Preparing the frontend.."
+                SoxStatus.Show()
+                Application.DoEvents()
+            End If
         End Try
 
     End Sub

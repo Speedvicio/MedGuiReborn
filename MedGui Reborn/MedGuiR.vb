@@ -39,6 +39,7 @@ Public Class MedGuiR
 
         If TextBox26.Text = "Speedvicio.dtdns.net" Then TextBox26.Text = "speedvicio.ddns.net"
 
+        SoxStatus.Close()
         FirstStart = False
     End Sub
 

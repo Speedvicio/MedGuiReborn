@@ -39,6 +39,9 @@ Partial Class ProgresStart
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(384, 36)
         Me.Controls.Add(Me.ProgressBar1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "ProgresStart"
         Me.Text = "ProgresStart"
         Me.ResumeLayout(False)
