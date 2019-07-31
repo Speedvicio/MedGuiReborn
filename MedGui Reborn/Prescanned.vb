@@ -77,6 +77,16 @@ Module Prescanned
                             MedGuiR.Label95.Refresh()
                             defreeze += 1
                             If (defreeze Mod 50) = 0 Then Application.DoEvents()
+                        Else
+                            If Linecsv > 100 Then
+                                ProgresStart.ProgressBar1.Maximum = Linecsv
+                                ProgresStart.Show()
+                                ProgresStart.ProgressBar1.PerformStep()
+                                ProgresStart.Text = "Populate the list " & ProgresStart.ProgressBar1.Value & "/" & Linecsv & " file..."
+                                ProgresStart.Refresh()
+                                defreeze += 1
+                                If (defreeze Mod 50) = 0 Then Application.DoEvents()
+                            End If
                         End If
 
                     Loop
@@ -93,6 +103,7 @@ Module Prescanned
             MedGuiR.ProgressBar1.Visible = False
             MedGuiR.Label95.Text = "Custom Setting"
             MedGuiR.TextBox2.Visible = True
+            ProgresStart.Close()
         End Try
 
     End Sub
