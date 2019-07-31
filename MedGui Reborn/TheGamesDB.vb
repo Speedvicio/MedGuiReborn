@@ -32,14 +32,19 @@
 
         For i = 0 To (frmTarget.Controls.Count - 1)
             ctrltarget = frmTarget.Controls(i)
-            If TypeOf ctrltarget Is Label Then
+            If TypeOf ctrltarget Is LinkLabel Or TypeOf ctrltarget Is Label Then
                 ctrltarget.Text = ""
+                ctrltarget.tag = ""
             End If
         Next i
 
         RichTextBox1.Clear()
         PictureBox1.Image = Nothing
         PictureBox2.Image = Nothing
+
+        Label2.Text = "Platform:"
+        Label5.Text = "Publisher:"
+        Label6.Text = "Developer:"
 
     End Sub
 
