@@ -40,6 +40,9 @@ Partial Class TheGamesDB
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,6 +108,9 @@ Partial Class TheGamesDB
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.LinkLabel3)
+        Me.Panel1.Controls.Add(Me.LinkLabel2)
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.Label6)
@@ -242,6 +248,45 @@ Partial Class TheGamesDB
         Me.PictureBox1.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox1, "Double click to Maximize")
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.LinkColor = System.Drawing.Color.White
+        Me.LinkLabel1.Location = New System.Drawing.Point(79, 38)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(73, 16)
+        Me.LinkLabel1.TabIndex = 24
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "LinkLabel1"
+        Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.Lime
+        '
+        'LinkLabel2
+        '
+        Me.LinkLabel2.AutoSize = True
+        Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel2.LinkColor = System.Drawing.Color.White
+        Me.LinkLabel2.Location = New System.Drawing.Point(86, 104)
+        Me.LinkLabel2.Name = "LinkLabel2"
+        Me.LinkLabel2.Size = New System.Drawing.Size(73, 16)
+        Me.LinkLabel2.TabIndex = 25
+        Me.LinkLabel2.TabStop = True
+        Me.LinkLabel2.Text = "LinkLabel2"
+        Me.LinkLabel2.VisitedLinkColor = System.Drawing.Color.Lime
+        '
+        'LinkLabel3
+        '
+        Me.LinkLabel3.AutoSize = True
+        Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel3.LinkColor = System.Drawing.Color.White
+        Me.LinkLabel3.Location = New System.Drawing.Point(94, 126)
+        Me.LinkLabel3.Name = "LinkLabel3"
+        Me.LinkLabel3.Size = New System.Drawing.Size(73, 16)
+        Me.LinkLabel3.TabIndex = 26
+        Me.LinkLabel3.TabStop = True
+        Me.LinkLabel3.Text = "LinkLabel3"
+        Me.LinkLabel3.VisitedLinkColor = System.Drawing.Color.Lime
+        '
         'TheGamesDB
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -285,4 +330,7 @@ Partial Class TheGamesDB
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents LinkLabel2 As LinkLabel
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class

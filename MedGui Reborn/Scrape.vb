@@ -247,7 +247,8 @@ Module Scrape
                                 TGDBGameSelector.DataGridView1.Sort(TGDBGameSelector.DataGridView1.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
                                 'End If
                             End If
-                            TheGamesDB.Label2.Text = "Platform: " & (reader.Value)
+                            If IsNumeric(reader.Value) Then TheGamesDB.LinkLabel1.Tag = reader.Value
+                            TheGamesDB.LinkLabel1.Text = (reader.Value)
                         Case "ReleaseDate", "release_date"
                             Dim fdate As String
                             fdate = Replace(reader.Value, "-", "/")
@@ -287,19 +288,21 @@ Module Scrape
                         Case "Publisher", "publishers"
                             Dim result As String = ""
                             If counTGDB = 1 Then
+                                If IsNumeric(reader.Value) Then TheGamesDB.LinkLabel2.Tag = reader.Value
                                 result = ReadTGDBList("Publishers", reader.Value.Trim)
                             Else
                                 result = reader.Value
                             End If
-                            TheGamesDB.Label5.Text = "Publisher: " & (result)
+                            TheGamesDB.LinkLabel2.Text = (result)
                         Case "Developer", "developers"
                             Dim result As String = ""
                             If counTGDB = 1 Then
+                                If IsNumeric(reader.Value) Then TheGamesDB.LinkLabel3.Tag = reader.Value
                                 result = ReadTGDBList("Developers", reader.Value.Trim)
                             Else
                                 result = reader.Value
                             End If
-                            TheGamesDB.Label6.Text = "Developer: " & (result)
+                            TheGamesDB.LinkLabel3.Text = (result)
                         Case "Co-op", "coop"
                             TheGamesDB.Label7.Text = "Co-op: " & (reader.Value)
                         Case "boxart"

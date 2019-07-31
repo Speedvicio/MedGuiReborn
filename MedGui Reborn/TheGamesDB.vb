@@ -61,4 +61,24 @@
         If Me.Height < 400 Then Me.Height = 400
     End Sub
 
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        If NewAPI = True Then
+            _link = "https://thegamesdb.net/platform.php?id=" & LinkLabel1.Tag
+            open_link()
+        End If
+    End Sub
+
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+        If NewAPI = True Then
+            _link = "https://thegamesdb.net/list_games.php?pub_id=" & LinkLabel2.Tag
+            open_link()
+        End If
+    End Sub
+
+    Private Sub LinkLabel3_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel3.LinkClicked
+        If NewAPI = True Then
+            _link = "https://thegamesdb.net/list_games.php?dev_id=" & LinkLabel3.Tag
+            open_link()
+        End If
+    End Sub
 End Class
