@@ -2,6 +2,7 @@
 
 Module RData
     Public percorso, base_file, riga, fileTXT, ext, romname, country, full_path, status As String
+    Public OthersDat As Boolean
 
     Sub LMain()
 
@@ -18,9 +19,12 @@ Module RData
 
             Using reader As New StreamReader(fileTXT)
                 'If stopscan = True Then Exit Sub
+                OthersDat = True
                 While Not reader.EndOfStream
-                    riga = reader.ReadLine
-                    If riga.Contains(base_file) Then
+                    riga = reader.ReadLine.Trim
+                    If riga.Contains(">No-Intro<") Then OthersDat = False
+
+                    If UCase(riga).Contains(base_file) Then
                         estrapola()
                         Exit While
                     End If
@@ -84,8 +88,14 @@ Boing:
 
     Public Sub estrapola()
         Dim indice = riga.IndexOf(Chr(34))
-        Dim indice1 = riga.IndexOf(ext)
-        'Dim indice1 = riga.IndexOf(").")
+        Dim indice1 As Integer
+
+        If OthersDat = False Then
+            indice1 = riga.IndexOf(ext)
+        Else
+            indice1 = riga.IndexOf(").") + 1
+        End If
+
         Dim indice2 = riga.IndexOf(" (")
         Dim rrom As String
 
