@@ -148,6 +148,7 @@
     <Compile Include="Dat.vb" />
     <Compile Include="DetecTAG.vb" />
     <Compile Include="DetectJoypad.vb" />
+    <Compile Include="DGV_Extensions.vb" />
     <Compile Include="ErLog.Designer.vb">
       <DependentUpon>ErLog.vb</DependentUpon>
     </Compile>

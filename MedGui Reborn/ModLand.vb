@@ -283,6 +283,7 @@ Public Class ModLand
     End Sub
 
     Private Sub ModLand_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridView1.DoubleBuffered(True)
         Me.Icon = gIcon
         Read_Resource()
     End Sub
