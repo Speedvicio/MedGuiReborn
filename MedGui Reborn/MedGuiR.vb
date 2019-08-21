@@ -2760,7 +2760,8 @@ SKIPHASH:
     Private Sub SnesSpecialChip()
 
         If File.Exists(MedExtra & "Plugins\db\SpecialChip.txt") = False And My.Computer.Network.IsAvailable = True Then
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/SpecialChip.txt", MedExtra & "Plugins\db\SpecialChip.txt", "anonymous", "anonymous", True, 1000, True)
+            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/SpecialChip.txt", MedExtra & "Plugins\db\SpecialChip.txt", "anonymous", "anonymous", True, 1000, True)
+            FTPDownloadFile(MedExtra & "Plugins\db\SpecialChip.txt", UpdateServer & "/MedGuiR/SpecialChip.txt", "anonymous", "anonymous")
         ElseIf File.Exists(MedExtra & "Plugins\db\SpecialChip.txt") = False And My.Computer.Network.IsAvailable = False Then
             MsgBox("Connections Is Not Available", vbOKOnly + vbExclamation)
             Exit Sub

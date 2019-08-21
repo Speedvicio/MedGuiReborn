@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Net
 Imports SevenZip
 
 Module Updater
@@ -9,7 +10,8 @@ Module Updater
         If UpdateServer Is Nothing Or UpdateServer = "" Then Test_Server()
         If File.Exists(MedExtra & "Update\update.txt") Then File.Delete(MedExtra & "Update\update.txt")
         Try
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 1000, True)
+            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 1000, True)
+            FTPDownloadFile(MedExtra & "Update\update.txt", UpdateServer & "/MedGuiR/update.txt", "anonymous", "anonymous")
         Catch
             MsgBox("Unable to detect/retrieve updated version." & vbCrLf &
        "Please try again later", vbOKOnly + MsgBoxStyle.Critical, "Unable to update...")
@@ -46,8 +48,8 @@ Module Updater
                            "Do you want download it?", MsgBoxStyle.YesNo + MsgBoxStyle.Information)
 
                     If upd_mr = vbYes Then
-                        My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", MedExtra & "Update\MedGuiR.zip", "anonymous", "anonymous", True, 1000, True)
-
+                        'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", MedExtra & "Update\MedGuiR.zip", "anonymous", "anonymous", True, 1000, True)
+                        FTPDownloadFile(MedExtra & "Update\MedGuiR.zip", UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", "anonymous", "anonymous")
                         'Call contr_os()
                         SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
                         Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\MedGuiR.zip")
@@ -96,7 +98,8 @@ Module Updater
                 Directory.CreateDirectory(MedExtra & "Update\")
             End If
 
-            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/DATs.zip", MedExtra & "Update\DATs.zip", "anonymous", "anonymous", True, 1000, True)
+            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/DATs.zip", MedExtra & "Update\DATs.zip", "anonymous", "anonymous", True, 1000, True)
+            FTPDownloadFile(MedExtra & "Update\DATs.zip", UpdateServer & "/MedGuiR/DATs.zip", "anonymous", "anonymous")
 
             Dim infoReader As System.IO.FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Update\DATs.zip")
@@ -137,7 +140,8 @@ Module Updater
                 Directory.CreateDirectory(MedExtra & "Update\")
             End If
 
-            My.Computer.Network.DownloadFile(ModLand.ModServer & "/allmods.zip", MedExtra & "Update\allmods.zip", "", "", True, 1000, True)
+            'My.Computer.Network.DownloadFile(ModLand.ModServer & "/allmods.zip", MedExtra & "Update\allmods.zip", "", "", True, 1000, True)
+            FTPDownloadFile(MedExtra & "Update\allmods.zip", ModLand.ModServer & "/allmods.zip", "", "")
 
             Dim infoReader As System.IO.FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Update\allmods.zip")
@@ -172,6 +176,37 @@ Module Updater
                 Exit Sub
             End If
         Next
+    End Sub
+
+    Public Sub FTPDownloadFile(ByVal downloadpath As String, ByVal ftpuri As String, ByVal ftpusername As String, ByVal ftppassword As String)
+        'Create a WebClient.
+        Dim request As New WebClient()
+
+        ' Confirm the Network credentials based on the user name and password passed in.
+        request.Credentials = New NetworkCredential(ftpusername, ftppassword)
+
+        'Read the file data into a Byte array
+        Dim bytes() As Byte = request.DownloadData(ftpuri)
+
+        Try
+            If UpdateServer.Contains("ftp://") Then
+                '  Create a FileStream to read the file into
+                Dim DownloadStream As FileStream = IO.File.Create(downloadpath)
+                '  Stream this data into the file
+                DownloadStream.Write(bytes, 0, bytes.Length)
+                '  Close the FileStream
+                DownloadStream.Close()
+            Else
+                My.Computer.Network.DownloadFile(ftpuri, downloadpath, ftpusername, ftppassword, True, 1000, True)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
+
+        'MessageBox.Show("Process Complete")
+
     End Sub
 
 End Module
