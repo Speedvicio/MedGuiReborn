@@ -149,7 +149,7 @@ Module BoxArt
         If dimg < webimagelenght Then
             Try
                 Dim cover As String
-                cover = "http://medguireborn.000webhostapp.com/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
+                cover = "http://medgui.orgfree.com/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
                 My.Computer.Network.DownloadFile(cover, MedExtra & "BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png", "", "", True, 1000, True)
             Catch ex As Exception
                 If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
@@ -167,7 +167,7 @@ Module BoxArt
         Try
 
             Dim myFtpWebRequest As System.Net.WebRequest
-            myFtpWebRequest = System.Net.WebRequest.Create("http://medguireborn.000webhostapp.com/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png")
+            myFtpWebRequest = System.Net.WebRequest.Create("http://medgui.orgfree.com/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png")
             Dim myFtpWebResponse As HttpWebResponse
             myFtpWebResponse = myFtpWebRequest.GetResponse()
             webimagelenght = myFtpWebResponse.ContentLength

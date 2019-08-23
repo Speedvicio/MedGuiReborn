@@ -52,7 +52,7 @@ Module GlobalVar
             Dim webexist As Boolean = False
 
             Try
-                Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("http://medguireborn.000webhostapp.com"), Net.HttpWebRequest)
+                Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("http://medgui.orgfree.com/"), Net.HttpWebRequest)
                 request.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2.3) Gecko/20100401 Firefox/4.0 (.NET CLR 3.5.30729"
                 'request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0"
                 request.KeepAlive = True
@@ -65,7 +65,7 @@ Module GlobalVar
             End Try
 
             If webexist = True Then
-                UpdateServer = "http://medguireborn.000webhostapp.com"
+                UpdateServer = "http://medgui.orgfree.com/"
             Else
                 UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
             End If

@@ -205,7 +205,7 @@ Module Updater
             Exit Sub
         End Try
 
-        'MessageBox.Show("Process Complete")
+        MessageBox.Show("Doanload Completed")
 
     End Sub
 
