@@ -129,14 +129,14 @@ Public Class ModLand
         ServerLink()
 
         Try
-            If Directory.Exists(MedExtra & "/Media/Module") Then
+            If Directory.Exists(MedExtra & "/Media/Module" & Path.GetDirectoryName(download)) Then
             Else
-                Directory.CreateDirectory(MedExtra & "/Media/Module/")
+                Directory.CreateDirectory(MedExtra & "/Media/Module/" & Path.GetDirectoryName(download))
             End If
 
             If File.Exists(MedExtra & "/Media/Module" & download) = False Then
                 'My.Computer.Network.DownloadFile(ModServer & "/pub/modules" & download, MedExtra & "/Media/Module" & download, "anonymous", "", True, 1000, True)
-                FTPDownloadFile(MedExtra & "/Media/Module" & download, ModServer & "/pub/modules" & download, "anonymous", "anonymous")
+                FTPDownloadFile(MedExtra & "/Media/Module" & download, ModServer & "/pub/modules" & download, "anonymous", "")
                 DownloadDriver()
                 changechipstate()
 

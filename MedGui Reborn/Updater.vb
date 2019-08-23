@@ -189,7 +189,7 @@ Module Updater
         Dim bytes() As Byte = request.DownloadData(ftpuri)
 
         Try
-            If UpdateServer.Contains("ftp://") Then
+            If ftpuri.Contains("ftp://") Then
                 '  Create a FileStream to read the file into
                 Dim DownloadStream As FileStream = IO.File.Create(downloadpath)
                 '  Stream this data into the file
