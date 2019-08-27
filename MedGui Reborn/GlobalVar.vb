@@ -48,8 +48,8 @@ Module GlobalVar
     End Sub
 
     Public Sub Test_Server()
+        Dim webexist As Boolean = False
         If My.Computer.Network.IsAvailable = True Then
-            Dim webexist As Boolean = False
 
             Try
                 Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("http://medgui.orgfree.com/"), Net.HttpWebRequest)
@@ -64,12 +64,12 @@ Module GlobalVar
                 webexist = False
             End Try
 
-            If webexist = True Then
-                UpdateServer = "http://medgui.orgfree.com/"
-            Else
-                UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
-            End If
+        End If
 
+        If webexist = True Then
+            UpdateServer = "http://medgui.orgfree.com/"
+        Else
+            UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
         End If
 
     End Sub
@@ -95,7 +95,7 @@ Module GlobalVar
                     'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/SevenZipSharp.txt", Application.StartupPath & "\SevenZipSharp.dll", "anonymous", "anonymous", True, 1000, True)
                     'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/7z.txt", MedExtra & "Plugins\7z.dll", "anonymous", "anonymous", True, 1000, True)
                     FTPDownloadFile(Application.StartupPath & "\SevenZipSharp.dll", UpdateServer & "/MedGuiR/SevenZipSharp.txt", "anonymous", "anonymous")
-                    FTPDownloadFile(MedExtra & "Plugins\7z.dll", UpdateServer & "/MedGuiR/7z.txt", "anonymous", "anonymous")
+                    'FTPDownloadFile(MedExtra & "Plugins\7z.dll", UpdateServer & "/MedGuiR/7z.txt", "anonymous", "anonymous")
                     MsgBox("SevenZipSharp.dll downloaded, please reboot MedGuiR", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation)
                     MedGuiR.Close()
                     Exit Sub
