@@ -1937,6 +1937,9 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         If IO.Directory.Exists(MedExtra & "Palettes\GB") = False Then
             System.IO.Directory.CreateDirectory(MedExtra & "Palettes\GB")
         End If
+        If IO.Directory.Exists(MedExtra & "Plugins") = False Then
+            System.IO.Directory.CreateDirectory(MedExtra & "Plugins")
+        End If
         If IO.Directory.Exists(MedExtra & "Update") = False Then
             System.IO.Directory.CreateDirectory(MedExtra & "Update")
         End If

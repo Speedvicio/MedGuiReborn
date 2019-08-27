@@ -147,6 +147,20 @@ Module GlobalVar
                 End If
             End If
 
+            If File.Exists(Application.StartupPath & "\LinqBridge.dll") = False Then
+                If My.Computer.Network.IsAvailable = True Then
+                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/LinqBridge.txt", Application.StartupPath & "\LinqBridge.dll", "anonymous", "anonymous", True, 1000, True)
+                    FTPDownloadFile(Application.StartupPath & "\LinqBridge.dll", UpdateServer & "/MedGuiR/LinqBridge.txt", "anonymous", "anonymous")
+                End If
+            End If
+
+            If File.Exists(Application.StartupPath & "\Newtonsoft.Json.dll") = False Then
+                If My.Computer.Network.IsAvailable = True Then
+                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/LinqBridge.txt", Application.StartupPath & "\LinqBridge.dll", "anonymous", "anonymous", True, 1000, True)
+                    FTPDownloadFile(Application.StartupPath & "\Newtonsoft.Json.dll", UpdateServer & "/MedGuiR/Newtonsoft.Json.txt", "anonymous", "anonymous")
+                End If
+            End If
+
             If File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") = False Then
                 If My.Computer.Network.IsAvailable = True Then
                     'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/PeakMeterCtrl.txt", Application.StartupPath & "\PeakMeterCtrl.dll", "anonymous", "anonymous", True, 1000, True)
@@ -165,13 +179,6 @@ Module GlobalVar
                 If My.Computer.Network.IsAvailable = True Then
                     'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/fmod.txt", Application.StartupPath & "\fmod.dll", "anonymous", "anonymous", True, 1000, True)
                     FTPDownloadFile(Application.StartupPath & "\fmod.dll", UpdateServer & "/MedGuiR/fmod.txt", "anonymous", "anonymous")
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\LinqBridge.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/LinqBridge.txt", Application.StartupPath & "\LinqBridge.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\LinqBridge.dll", UpdateServer & "/MedGuiR/LinqBridge.txt", "anonymous", "anonymous")
                 End If
             End If
 

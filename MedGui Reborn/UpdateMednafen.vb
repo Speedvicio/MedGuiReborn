@@ -50,8 +50,7 @@ Module UpdateMednafen
         End If
 
         Dim fileReader As StreamReader
-        fileReader =
-        My.Computer.FileSystem.OpenTextFileReader(MedExtra & "Update\MednafenUpdate.txt")
+        fileReader = My.Computer.FileSystem.OpenTextFileReader(MedExtra & "Update\MednafenUpdate.txt")
         Dim stringReader As String
         stringReader = fileReader.ReadLine()
         stringReader = Replace(stringReader, "--", "")
@@ -77,8 +76,8 @@ Module UpdateMednafen
     Public Sub UpdateLastMednafen()
         contr_os()
         Try
-            'My.Computer.Network.DownloadFile(UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", MedExtra & "Update\LastMednafen.zip", "", "", True, 1000, True)
-            FTPDownloadFile(MedExtra & "Update\LastMednafen.zip", UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", "anonymous", "anonymous")
+            My.Computer.Network.DownloadFile(UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", MedExtra & "Update\LastMednafen.zip", "", "", True, 1000, True)
+            'FTPDownloadFile(MedExtra & "Update\LastMednafen.zip", UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", "anonymous", "anonymous")
 
             'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
             'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\LastMednafen.zip")
