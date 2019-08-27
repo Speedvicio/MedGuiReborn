@@ -27,10 +27,11 @@ Module Extract
         End If
 
         szip.ExtractArchive(MedExtra & "RomTemp")
-        'SoxStatus.Text = "Waiting for extraction..."
-        'SoxStatus.Label1.Text = "..."
-        'SoxStatus.Show()
+        SoxStatus.Text = "Waiting for extraction..."
+        SoxStatus.Label1.Text = "..."
+        SoxStatus.Show()
         szip.Dispose()
+        SoxStatus.Close()
         'TempFolder = "RomTemp"
         T_MedExtra = MedExtra
         scansiona()
@@ -72,7 +73,11 @@ Module Extract
 
         Dim szip As SevenZipExtractor = New SevenZipExtractor(p_serv)
         szip.ExtractArchive(MedExtra & "NetPlay")
+        SoxStatus.Text = "Waiting for extraction..."
+        SoxStatus.Label1.Text = "..."
+        SoxStatus.Show()
         szip.Dispose()
+        SoxStatus.Close()
     End Sub
 
     Public Sub ClearFile()
@@ -201,7 +206,11 @@ Module Extract
             Case ".rsn"
                 'If LCase(MedGuiR.DataGridView1.CurrentRow.Cells(7).Value) = ".rsn" Then
                 szip.ExtractArchive(MedExtra & "RomTemp")
+                SoxStatus.Text = "Waiting for extraction..."
+                SoxStatus.Label1.Text = "..."
+                SoxStatus.Show()
                 szip.Dispose()
+                SoxStatus.Close()
             Case Else
 
                 For Each ArchiveFileInfo In szip.ArchiveFileData

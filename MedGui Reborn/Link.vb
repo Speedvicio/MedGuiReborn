@@ -122,7 +122,14 @@
             SevenZip.SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
             Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(MedExtra & "Update\firmware.zip")
             szip.ExtractArchive(MedGuiR.TextBox4.Text)
+            SoxStatus.Text = "Waiting for extraction..."
+            SoxStatus.Label1.Text = "..."
+            SoxStatus.Show()
+
             Threading.Thread.Sleep(1000)
+            szip.Dispose()
+            SoxStatus.Close()
+
             IO.File.Delete(MedExtra & "Update\firmware.zip")
             MsgBox("Firmware extracted on Default Mednafen path!", vbOKOnly + MsgBoxStyle.Information)
         Catch

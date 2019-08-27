@@ -82,10 +82,15 @@ Module UpdateMednafen
             SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
             Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\LastMednafen.zip")
             szip.ExtractArchive(MedGuiR.TextBox4.Text)
+            SoxStatus.Text = "Waiting for extraction..."
+            SoxStatus.Label1.Text = "..."
+            SoxStatus.Show()
+
         Catch
         End Try
 
         Threading.Thread.Sleep(2000)
+        SoxStatus.Close()
 
         File.Delete(MedExtra & "Update\LastMednafen.zip")
         MednafenV()
