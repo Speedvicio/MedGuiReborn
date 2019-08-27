@@ -8,7 +8,7 @@ Module Extract
 
     Public Sub extract_7z()
         'Call contr_os()
-        Dim szip As SevenZipExtractor = New SevenZipExtractor(percorso)
+        'Dim szip As SevenZipExtractor = New SevenZipExtractor(percorso)
 
         Dim dimarch As New System.IO.FileInfo(percorso)
         Console.WriteLine(dimarch.Exists)
@@ -26,12 +26,15 @@ Module Extract
             End If
         End If
 
-        szip.ExtractArchive(MedExtra & "RomTemp")
-        SoxStatus.Text = "Waiting for extraction..."
-        SoxStatus.Label1.Text = "..."
-        SoxStatus.Show()
-        szip.Dispose()
-        SoxStatus.Close()
+        DecompressArchive(percorso, MedExtra & "RomTemp")
+
+        'szip.ExtractArchive(MedExtra & "RomTemp")
+        'SoxStatus.Text = "Waiting for extraction..."
+        'SoxStatus.Label1.Text = "..."
+        'SoxStatus.Show()
+        'szip.Dispose()
+        'SoxStatus.Close()
+
         'TempFolder = "RomTemp"
         T_MedExtra = MedExtra
         scansiona()
@@ -71,13 +74,15 @@ Module Extract
             Exit Sub
         End If
 
-        Dim szip As SevenZipExtractor = New SevenZipExtractor(p_serv)
-        szip.ExtractArchive(MedExtra & "NetPlay")
-        SoxStatus.Text = "Waiting for extraction..."
-        SoxStatus.Label1.Text = "..."
-        SoxStatus.Show()
-        szip.Dispose()
-        SoxStatus.Close()
+        DecompressArchive(p_serv, MedExtra & "NetPlay")
+
+        'Dim szip As SevenZipExtractor = New SevenZipExtractor(p_serv)
+        'szip.ExtractArchive(MedExtra & "NetPlay")
+        'SoxStatus.Text = "Waiting for extraction..."
+        'SoxStatus.Label1.Text = "..."
+        'SoxStatus.Show()
+        'szip.Dispose()
+        'SoxStatus.Close()
     End Sub
 
     Public Sub ClearFile()
@@ -205,12 +210,15 @@ Module Extract
                 MedGuiR.Datagrid_filter()
             Case ".rsn"
                 'If LCase(MedGuiR.DataGridView1.CurrentRow.Cells(7).Value) = ".rsn" Then
-                szip.ExtractArchive(MedExtra & "RomTemp")
-                SoxStatus.Text = "Waiting for extraction..."
-                SoxStatus.Label1.Text = "..."
-                SoxStatus.Show()
-                szip.Dispose()
-                SoxStatus.Close()
+
+                DecompressArchive(percorso, MedExtra & "RomTemp")
+
+                'szip.ExtractArchive(MedExtra & "RomTemp")
+                'SoxStatus.Text = "Waiting for extraction..."
+                'SoxStatus.Label1.Text = "..."
+                'SoxStatus.Show()
+                'szip.Dispose()
+                'SoxStatus.Close()
             Case Else
 
                 For Each ArchiveFileInfo In szip.ArchiveFileData
@@ -240,4 +248,16 @@ Module Extract
 
     End Sub
 
+    Public Function DecompressArchive(archive As String, final_path As String)
+        SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
+        Dim szip As SevenZipExtractor = New SevenZipExtractor(archive)
+        SoxStatus.Text = "Waiting for extraction..."
+        SoxStatus.Label1.Text = "..."
+        SoxStatus.Show()
+
+        szip.ExtractArchive(final_path)
+
+        szip.Dispose()
+        SoxStatus.Close()
+    End Function
 End Module

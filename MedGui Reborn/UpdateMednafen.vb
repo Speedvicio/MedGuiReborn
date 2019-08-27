@@ -79,18 +79,21 @@ Module UpdateMednafen
         Try
             'My.Computer.Network.DownloadFile(UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", MedExtra & "Update\LastMednafen.zip", "", "", True, 1000, True)
             FTPDownloadFile(MedExtra & "Update\LastMednafen.zip", UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", "anonymous", "anonymous")
-            SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
-            Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\LastMednafen.zip")
-            szip.ExtractArchive(MedGuiR.TextBox4.Text)
-            SoxStatus.Text = "Waiting for extraction..."
-            SoxStatus.Label1.Text = "..."
-            SoxStatus.Show()
+
+            'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
+            'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\LastMednafen.zip")
+            'szip.ExtractArchive(MedGuiR.TextBox4.Text)
+            'SoxStatus.Text = "Waiting for extraction..."
+            'SoxStatus.Label1.Text = "..."
+            'SoxStatus.Show()
+
+            DecompressArchive(MedExtra & "Update\LastMednafen.zip", MedGuiR.TextBox4.Text)
 
         Catch
         End Try
 
         Threading.Thread.Sleep(2000)
-        SoxStatus.Close()
+        'SoxStatus.Close()
 
         File.Delete(MedExtra & "Update\LastMednafen.zip")
         MednafenV()

@@ -51,19 +51,23 @@ Module Updater
                         'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", MedExtra & "Update\MedGuiR.zip", "anonymous", "anonymous", True, 1000, True)
                         FTPDownloadFile(MedExtra & "Update\MedGuiR.zip", UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", "anonymous", "anonymous")
                         'Call contr_os()
-                        SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
-                        Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\MedGuiR.zip")
-                        szip.ExtractArchive(MedExtra & "Update")
-                        SoxStatus.Text = "Waiting for extraction..."
-                        SoxStatus.Label1.Text = "..."
-                        SoxStatus.Show()
+
+                        'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
+                        'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\MedGuiR.zip")
+                        'szip.ExtractArchive(MedExtra & "Update")
+                        'SoxStatus.Text = "Waiting for extraction..."
+                        'SoxStatus.Label1.Text = "..."
+                        'SoxStatus.Show()
+
+                        DecompressArchive(MedExtra & "Update\MedGuiR.zip", MedExtra & "Update")
 
                         Dim StartTime As Date = Now
                         Do
                             Application.DoEvents()
                         Loop Until (Now - StartTime).TotalMilliseconds > 2000
-                        szip.Dispose()
-                        SoxStatus.Close()
+
+                        'szip.Dispose()
+                        'SoxStatus.Close()
 
                         OwMedinstR()
 
@@ -115,14 +119,17 @@ Module Updater
             End If
 
             'Call contr_os()
-            SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
-            Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\DATs.zip")
-            szip.ExtractArchive(MedExtra)
-            SoxStatus.Text = "Waiting for extraction..."
-            SoxStatus.Label1.Text = "..."
-            SoxStatus.Show()
-            szip.Dispose()
-            SoxStatus.Close()
+
+            'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
+            'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\DATs.zip")
+            'szip.ExtractArchive(MedExtra)
+            'SoxStatus.Text = "Waiting for extraction..."
+            'SoxStatus.Label1.Text = "..."
+            'SoxStatus.Show()
+            'szip.Dispose()
+            'SoxStatus.Close()
+
+            DecompressArchive(MedExtra & "Update\DATs.zip", MedExtra)
 
             System.IO.File.Delete(MedExtra & "Update\DATs.zip")
 
@@ -161,14 +168,17 @@ Module Updater
             End If
 
             'Call contr_os()
-            SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
-            Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\allmods.zip")
-            szip.ExtractArchive(MedExtra & "Plugins\db\")
-            SoxStatus.Text = "Waiting for extraction..."
-            SoxStatus.Label1.Text = "..."
-            SoxStatus.Show()
-            szip.Dispose()
-            SoxStatus.Close()
+
+            'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
+            'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\allmods.zip")
+            'szip.ExtractArchive(MedExtra & "Plugins\db\")
+            'SoxStatus.Text = "Waiting for extraction..."
+            'SoxStatus.Label1.Text = "..."
+            'SoxStatus.Show()
+            'szip.Dispose()
+            'SoxStatus.Close()
+
+            DecompressArchive(MedExtra & "Update\allmods.zip", MedExtra & "Plugins\db\")
 
             System.IO.File.Delete(MedExtra & "Update\allmods.zip")
             MsgBox("ModLand DATs Updated!")

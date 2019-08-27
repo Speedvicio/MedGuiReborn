@@ -119,16 +119,19 @@
             If UpdateServer = "" Then Test_Server()
             'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/firmware.zip", MedExtra & "Update\firmware.zip", "anonymous", "anonymous", True, 1000, True)
             FTPDownloadFile(MedExtra & "Update\firmware.zip", UpdateServer & "/MedGuiR/firmware.zip", "anonymous", "anonymous")
-            SevenZip.SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
-            Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(MedExtra & "Update\firmware.zip")
-            szip.ExtractArchive(MedGuiR.TextBox4.Text)
-            SoxStatus.Text = "Waiting for extraction..."
-            SoxStatus.Label1.Text = "..."
-            SoxStatus.Show()
+
+            'SevenZip.SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
+            'Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(MedExtra & "Update\firmware.zip")
+            'szip.ExtractArchive(MedGuiR.TextBox4.Text)
+            'SoxStatus.Text = "Waiting for extraction..."
+            'SoxStatus.Label1.Text = "..."
+            'SoxStatus.Show()
+
+            DecompressArchive(MedExtra & "Update\firmware.zip", MedGuiR.TextBox4.Text)
 
             Threading.Thread.Sleep(1000)
-            szip.Dispose()
-            SoxStatus.Close()
+            'szip.Dispose()
+            'SoxStatus.Close()
 
             IO.File.Delete(MedExtra & "Update\firmware.zip")
             MsgBox("Firmware extracted on Default Mednafen path!", vbOKOnly + MsgBoxStyle.Information)

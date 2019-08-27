@@ -200,15 +200,20 @@ Module Resource
             If My.Computer.Network.IsAvailable = True Then
                 'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Resource.zip", MedExtra & "Update\Resource.zip", "anonymous", "anonymous", True, 1000, True)
                 FTPDownloadFile(MedExtra & "Update\Resource.zip", UpdateServer & "/MedGuiR/Resource.zip", "anonymous", "anonymous")
-                SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
-                Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\Resource.zip")
-                szip.ExtractArchive(Application.StartupPath)
-                SoxStatus.Text = "Waiting for extraction..."
-                SoxStatus.Label1.Text = "..."
-                SoxStatus.Show()
+
+                'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
+                'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\Resource.zip")
+                'szip.ExtractArchive(Application.StartupPath)
+                'SoxStatus.Text = "Waiting for extraction..."
+                'SoxStatus.Label1.Text = "..."
+                'SoxStatus.Show()
+
+                DecompressArchive(MedExtra & "Update\Resource.zip", Application.StartupPath)
+
                 Threading.Thread.Sleep(5000)
-                szip.Dispose()
-                SoxStatus.Close()
+
+                'szip.Dispose()
+                'SoxStatus.Close()
 
                 IO.File.Delete(MedExtra & "Update\Resource.zip")
                 Read_Resource()

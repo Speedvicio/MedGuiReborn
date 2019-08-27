@@ -70,10 +70,13 @@ Module Sbi
 PatchSkip:
 
             'Call contr_os()
-            SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
-            Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z")
-            szip.ExtractArchive(MedExtra & "Patch\Psx\Sbi\")
-            szip.Dispose()
+
+            'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
+            'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z")
+            'szip.ExtractArchive(MedExtra & "Patch\Psx\Sbi\")
+            'szip.Dispose()
+
+            DecompressArchive(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", MedExtra & "Patch\Psx\Sbi\")
 
             For Each foundFile As String In My.Computer.FileSystem.GetFiles(
                 MedExtra & "Patch\Psx\Sbi\", FileIO.SearchOption.SearchTopLevelOnly, "*.sbi")
