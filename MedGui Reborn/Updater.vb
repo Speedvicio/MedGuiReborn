@@ -54,12 +54,16 @@ Module Updater
                         SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
                         Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\MedGuiR.zip")
                         szip.ExtractArchive(MedExtra & "Update")
+                        SoxStatus.Text = "Waiting for extraction..."
+                        SoxStatus.Label1.Text = "..."
+                        SoxStatus.Show()
 
                         Dim StartTime As Date = Now
                         Do
                             Application.DoEvents()
                         Loop Until (Now - StartTime).TotalMilliseconds > 2000
                         szip.Dispose()
+                        SoxStatus.Close()
 
                         OwMedinstR()
 
@@ -114,7 +118,11 @@ Module Updater
             SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
             Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\DATs.zip")
             szip.ExtractArchive(MedExtra)
+            SoxStatus.Text = "Waiting for extraction..."
+            SoxStatus.Label1.Text = "..."
+            SoxStatus.Show()
             szip.Dispose()
+            SoxStatus.Close()
 
             System.IO.File.Delete(MedExtra & "Update\DATs.zip")
 
@@ -156,7 +164,11 @@ Module Updater
             SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
             Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\allmods.zip")
             szip.ExtractArchive(MedExtra & "Plugins\db\")
+            SoxStatus.Text = "Waiting for extraction..."
+            SoxStatus.Label1.Text = "..."
+            SoxStatus.Show()
             szip.Dispose()
+            SoxStatus.Close()
 
             System.IO.File.Delete(MedExtra & "Update\allmods.zip")
             MsgBox("ModLand DATs Updated!")
@@ -179,17 +191,17 @@ Module Updater
     End Sub
 
     Public Sub FTPDownloadFile(ByVal downloadpath As String, ByVal ftpuri As String, ByVal ftpusername As String, ByVal ftppassword As String)
-        'Create a WebClient.
-        Dim request As New WebClient()
-
-        ' Confirm the Network credentials based on the user name and password passed in.
-        request.Credentials = New NetworkCredential(ftpusername, ftppassword)
-
-        'Read the file data into a Byte array
-        Dim bytes() As Byte = request.DownloadData(ftpuri)
 
         Try
             If ftpuri.Contains("ftp://") Then
+                SoxStatus.Text = "Waiting To download..."
+                SoxStatus.Show()
+                'Create a WebClient.
+                Dim request As New WebClient()
+                ' Confirm the Network credentials based on the user name and password passed in.
+                request.Credentials = New NetworkCredential(ftpusername, ftppassword)
+                'Read the file data into a Byte array
+                Dim bytes() As Byte = request.DownloadData(ftpuri)
                 '  Create a FileStream to read the file into
                 Dim DownloadStream As FileStream = IO.File.Create(downloadpath)
                 '  Stream this data into the file
@@ -201,11 +213,12 @@ Module Updater
             End If
 
         Catch ex As Exception
+            SoxStatus.Close()
             MessageBox.Show(ex.Message)
             Exit Sub
         End Try
-
-        MessageBox.Show("Doanload Completed")
+        SoxStatus.Close()
+        'MessageBox.Show("Download Completed")
 
     End Sub
 
