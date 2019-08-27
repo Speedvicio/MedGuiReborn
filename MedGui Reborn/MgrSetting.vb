@@ -244,6 +244,16 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
             ComboBox41.Items.Remove("blend")
             ComboBox41.Items.Remove("blend_rg")
         End If
+
+        If Val(vmedClear) > 12220 Then
+            NumericUpDown1.DecimalPlaces = 2
+            NumericUpDown1.Increment = 0.01
+            NumericUpDown2.Maximum = 15
+        Else
+            NumericUpDown1.DecimalPlaces = 1
+            NumericUpDown1.Increment = 1
+            NumericUpDown2.Maximum = 1
+        End If
     End Sub
 
     Public Sub wswan_set()
