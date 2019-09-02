@@ -185,6 +185,7 @@ Partial Class MgrSetting
         Me.Label68 = New System.Windows.Forms.Label()
         Me.TabPage24 = New System.Windows.Forms.TabPage()
         Me.GroupBox22 = New System.Windows.Forms.GroupBox()
+        Me.Button40 = New System.Windows.Forms.Button()
         Me.Button27 = New System.Windows.Forms.Button()
         Me.Button26 = New System.Windows.Forms.Button()
         Me.TextBox25 = New System.Windows.Forms.TextBox()
@@ -565,7 +566,12 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.Button40 = New System.Windows.Forms.Button()
+        Me.NumericUpDown42 = New System.Windows.Forms.NumericUpDown()
+        Me.Label176 = New System.Windows.Forms.Label()
+        Me.Label177 = New System.Windows.Forms.Label()
+        Me.ComboBox59 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox62 = New System.Windows.Forms.ComboBox()
+        Me.Label178 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -687,6 +693,7 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -2444,6 +2451,16 @@ Partial Class MgrSetting
         Me.GroupBox22.TabIndex = 4
         Me.GroupBox22.TabStop = False
         Me.ToolTip1.SetToolTip(Me.GroupBox22, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
+        '
+        'Button40
+        '
+        Me.Button40.Location = New System.Drawing.Point(179, 240)
+        Me.Button40.Name = "Button40"
+        Me.Button40.Size = New System.Drawing.Size(119, 23)
+        Me.Button40.TabIndex = 28
+        Me.Button40.Text = "&Reset All Bioses"
+        Me.ToolTip1.SetToolTip(Me.Button40, "Reset All Bioses to Default Mednafen values")
+        Me.Button40.UseVisualStyleBackColor = True
         '
         'Button27
         '
@@ -5926,6 +5943,10 @@ Partial Class MgrSetting
         '
         'TabPage26
         '
+        Me.TabPage26.Controls.Add(Me.Label177)
+        Me.TabPage26.Controls.Add(Me.ComboBox59)
+        Me.TabPage26.Controls.Add(Me.NumericUpDown42)
+        Me.TabPage26.Controls.Add(Me.Label176)
         Me.TabPage26.Controls.Add(Me.CheckBox102)
         Me.TabPage26.Controls.Add(Me.CheckBox97)
         Me.TabPage26.Controls.Add(Me.CheckBox98)
@@ -6092,6 +6113,8 @@ Partial Class MgrSetting
         '
         'GroupBox25
         '
+        Me.GroupBox25.Controls.Add(Me.ComboBox62)
+        Me.GroupBox25.Controls.Add(Me.Label178)
         Me.GroupBox25.Controls.Add(Me.NumericUpDown41)
         Me.GroupBox25.Controls.Add(Me.Label165)
         Me.GroupBox25.Controls.Add(Me.ComboBox61)
@@ -6609,15 +6632,74 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'Button40
+        'NumericUpDown42
         '
-        Me.Button40.Location = New System.Drawing.Point(179, 240)
-        Me.Button40.Name = "Button40"
-        Me.Button40.Size = New System.Drawing.Size(119, 23)
-        Me.Button40.TabIndex = 28
-        Me.Button40.Text = "&Reset All Bioses"
-        Me.ToolTip1.SetToolTip(Me.Button40, "Reset All Bioses to Default Mednafen values")
-        Me.Button40.UseVisualStyleBackColor = True
+        Me.NumericUpDown42.Enabled = False
+        Me.NumericUpDown42.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown42.Location = New System.Drawing.Point(159, 220)
+        Me.NumericUpDown42.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.NumericUpDown42.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.NumericUpDown42.Name = "NumericUpDown42"
+        Me.NumericUpDown42.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown42.TabIndex = 95
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown42, "CX4 clock rate, specified in percentage of normal." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Overclocking the CX4 will c" &
+        "ause or worsen attract mode desynchronization.")
+        Me.NumericUpDown42.Value = New Decimal(New Integer() {100, 0, 0, 0})
+        '
+        'Label176
+        '
+        Me.Label176.AutoSize = True
+        Me.Label176.Enabled = False
+        Me.Label176.Location = New System.Drawing.Point(6, 222)
+        Me.Label176.Name = "Label176"
+        Me.Label176.Size = New System.Drawing.Size(77, 13)
+        Me.Label176.TabIndex = 94
+        Me.Label176.Text = "CX4 clock rate"
+        Me.ToolTip1.SetToolTip(Me.Label176, resources.GetString("Label176.ToolTip"))
+        '
+        'Label177
+        '
+        Me.Label177.AutoSize = True
+        Me.Label177.Enabled = False
+        Me.Label177.Location = New System.Drawing.Point(6, 249)
+        Me.Label177.Name = "Label177"
+        Me.Label177.Size = New System.Drawing.Size(164, 13)
+        Me.Label177.TabIndex = 97
+        Me.Label177.Text = "Horizontal blending/doubling filter"
+        '
+        'ComboBox59
+        '
+        Me.ComboBox59.Enabled = False
+        Me.ComboBox59.FormattingEnabled = True
+        Me.ComboBox59.Items.AddRange(New Object() {"none", "512", "phr256blend", "phr256blend_512", "512_blend"})
+        Me.ComboBox59.Location = New System.Drawing.Point(176, 246)
+        Me.ComboBox59.Name = "ComboBox59"
+        Me.ComboBox59.Size = New System.Drawing.Size(122, 21)
+        Me.ComboBox59.TabIndex = 96
+        Me.ComboBox59.Text = "none"
+        Me.ToolTip1.SetToolTip(Me.ComboBox59, resources.GetString("ComboBox59.ToolTip"))
+        '
+        'ComboBox62
+        '
+        Me.ComboBox62.Enabled = False
+        Me.ComboBox62.FormattingEnabled = True
+        Me.ComboBox62.Items.AddRange(New Object() {"custom", "rgb", "la7620", "rgb_alt1", "rgb_alt2"})
+        Me.ComboBox62.Location = New System.Drawing.Point(158, 249)
+        Me.ComboBox62.Name = "ComboBox62"
+        Me.ComboBox62.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox62.TabIndex = 115
+        Me.ComboBox62.Text = "composite"
+        Me.ToolTip1.SetToolTip(Me.ComboBox62, resources.GetString("ComboBox62.ToolTip"))
+        '
+        'Label178
+        '
+        Me.Label178.AutoSize = True
+        Me.Label178.Enabled = False
+        Me.Label178.Location = New System.Drawing.Point(6, 252)
+        Me.Label178.Name = "Label178"
+        Me.Label178.Size = New System.Drawing.Size(110, 13)
+        Me.Label178.TabIndex = 114
+        Me.Label178.Text = "Video rendering mode"
         '
         'MgrSetting
         '
@@ -6789,6 +6871,7 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -7335,4 +7418,10 @@ Partial Class MgrSetting
     Friend WithEvents Label175 As Label
     Friend WithEvents Button39 As Button
     Friend WithEvents Button40 As Button
+    Friend WithEvents Label177 As Label
+    Friend WithEvents ComboBox59 As ComboBox
+    Friend WithEvents NumericUpDown42 As NumericUpDown
+    Friend WithEvents Label176 As Label
+    Friend WithEvents ComboBox62 As ComboBox
+    Friend WithEvents Label178 As Label
 End Class

@@ -324,6 +324,11 @@
                     End If
                 Case Is = 12200
                     ss = ss & " -ss.cart auto"
+                Case Is = 12300
+                    If MedGuiR.CheckBox15.Checked = True Then
+                        snes = snes & " -snes_faust.cx4.clock_rate " & MgrSetting.NumericUpDown42.Value & " -snes_faust.h_filter " & MgrSetting.ComboBox59.Text
+                    End If
+                    apple2 = apple2 & " -apple2.video.mode " & MgrSetting.ComboBox62.Text
             End Select
         Next
     End Sub

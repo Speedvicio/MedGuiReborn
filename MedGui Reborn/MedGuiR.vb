@@ -2761,6 +2761,7 @@ SKIPHASH:
     End Sub
 
     Private Sub SnesSpecialChip()
+        If Val(vmedClear) > 12220 Then Exit Sub
 
         If File.Exists(MedExtra & "Plugins\db\SpecialChip.txt") = False And My.Computer.Network.IsAvailable = True Then
             'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/SpecialChip.txt", MedExtra & "Plugins\db\SpecialChip.txt", "anonymous", "anonymous", True, 1000, True)

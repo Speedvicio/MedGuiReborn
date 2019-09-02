@@ -79,6 +79,7 @@ Module xSetting
                 If row.Contains(consoles & ".input.port2 ") Then xValue = Trim(Replace(row, consoles & ".input.port2", "")) : MgrSetting.ComboBox60.Text = xValue
                 If row.Contains(consoles & ".video.matrix ") Then xValue = Trim(Replace(row, consoles & ".video.matrix", "")) : MgrSetting.ComboBox61.Text = xValue
                 If row.Contains(consoles & ".video.force_mono ") Then xValue = Trim(Replace(row, consoles & ".video.force_mono", "")) : MgrSetting.Label163.Text = (xValue) : MgrSetting.Label163.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label163.ForeColor = ColorTranslator.FromHtml(xValue)
+                If row.Contains(consoles & ".video.mode ") Then xValue = Trim(Replace(row, consoles & ".video.mode", "")) : MgrSetting.ComboBox62.Text = xValue
                 MgrSetting.tab_index = 21
             Case ".lnx"
                 If row.Contains(consoles & ".lowpass ") Then xValue = Trim(Replace(row, consoles & ".lowpass", "")) : MgrSetting.CheckBox18.Checked = CBool(xValue)
@@ -171,6 +172,8 @@ Module xSetting
                     If row.Contains(p_c & ".input.sport1.multitap ") Then xValue = Trim(Replace(row, p_c & ".input.sport1.multitap", "")) : MgrSetting.CheckBox99.Checked = CBool(xValue)
                     If row.Contains(p_c & ".input.sport2.multitap ") Then xValue = Trim(Replace(row, p_c & ".input.sport2.multitap", "")) : MgrSetting.CheckBox98.Checked = CBool(xValue)
                     If row.Contains(p_c & ".correct_aspect ") Then xValue = Trim(Replace(row, p_c & ".correct_aspect", "")) : MgrSetting.CheckBox102.Checked = CBool(xValue)
+                    If row.Contains(p_c & ".cx4.clock_rate  ") Then xValue = Trim(Replace(row, p_c & ".cx4.clock_rate ", "")) : MgrSetting.NumericUpDown42.Value = Val(xValue)
+                    If row.Contains(p_c & ".h_filter ") Then xValue = Trim(Replace(row, p_c & ".h_filter", "")) : MgrSetting.ComboBox59.Text = xValue
 
                     For i = 1 To 2
                         Select Case i

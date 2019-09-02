@@ -249,10 +249,22 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
             NumericUpDown1.DecimalPlaces = 2
             NumericUpDown1.Increment = 0.01
             NumericUpDown2.Maximum = 15
+            Label176.Enabled = True
+            Label177.Enabled = True
+            NumericUpDown42.Enabled = True
+            ComboBox59.Enabled = True
+            Label178.Enabled = True
+            ComboBox62.Enabled = True
         Else
             NumericUpDown1.DecimalPlaces = 1
             NumericUpDown1.Increment = 1
             NumericUpDown2.Maximum = 1
+            Label176.Enabled = False
+            Label177.Enabled = False
+            NumericUpDown42.Enabled = False
+            ComboBox59.Enabled = False
+            Label178.Enabled = False
+            ComboBox62.Enabled = False
         End If
     End Sub
 
