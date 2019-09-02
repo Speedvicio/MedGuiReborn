@@ -20,6 +20,8 @@
                 _link = "https://cdromance.com/?s=" & MedGuiR.TextBox35.Text
             Case "CoolROM"
                 _link = "http://coolrom.com/search?q=" & MedGuiR.TextBox35.Text & "&submit"
+            Case "DOMS"
+                _link = "https://www.downloadroms.io/search/?q=" & MedGuiR.TextBox35.Text
             Case "DOPEROMS"
                 _link = "http://www.doperoms.com/search.php?s=" & MedGuiR.TextBox35.Text & "&method=ROM"
             Case "EagleForces"
@@ -32,10 +34,16 @@
                 _link = "http://free-iso.org/search/?q=" & MedGuiR.TextBox35.Text & "+&t=0#"
             Case "Gametronik"
                 _link = "http://www.gametronik.com/site/search.php?q=" & MedGuiR.TextBox35.Text & "&submit"
+            Case "GamingRoms"
+                _link = "https://garoms.com/?s=" & MedGuiR.TextBox35.Text
+            Case "GamulatoR"
+                _link = "https://www.gamulator.com/search?search_term_string=" & MedGuiR.TextBox35.Text
             Case "NITROROMS"
                 _link = "http://nitroroms.com/search/All/" & MedGuiR.TextBox35.Text & "/page-1"
             Case "Planet Emu"
                 _link = "http://www.planetemu.net/?section=recherche&recherche=" & MedGuiR.TextBox35.Text & "&type=Tous%20les%20mots&rubrique=roms"
+            Case "RETRO!"
+                _link = "https://www.retrostic.com/search?search_term_string=" & MedGuiR.TextBox35.Text
             Case "Rom Find"
                 _link = "http://www.romfind.com/game_search?q=" & MedGuiR.TextBox35.Text
             Case "ROM World"
@@ -44,6 +52,8 @@
                 _link = "http://romhustler.net/roms/search/?q=" & MedGuiR.TextBox35.Text
             Case "ROMNation"
                 _link = "http://www.romnation.net/srv/roms/all/title-" & MedGuiR.TextBox35.Text & ".html"
+            Case "RomsMania"
+                _link = "https://romsmania.cc/search?name=" & MedGuiR.TextBox35.Text
             Case "ROMULATION"
                 _link = "https://www.romulation.net/roms/search?query=" & MedGuiR.TextBox35.Text
             Case "Roms Universe"

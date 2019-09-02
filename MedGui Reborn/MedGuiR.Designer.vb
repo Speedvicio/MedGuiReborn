@@ -921,7 +921,7 @@ Partial Class MedGuiR
         'WS
         '
         Me.WS.FormattingEnabled = True
-        Me.WS.Items.AddRange(New Object() {"Cdromance", "CoolROM", "DOPEROMS", "EagleForces", "Edge Emulation", "EMUPARADISE", "Free-ISO", "Gametronik", "Planet Emu", "Rom Find", "Rom Hustler", "ROMNation", "ROMULATION", "RomsMode", "Roms Universe", "Viim's Lair", "WoWroMs", "Hacks", "Translations", "Mednafen Bios", "MedGui BoxArt Pack", "MedGui Snaps Pack"})
+        Me.WS.Items.AddRange(New Object() {"Cdromance", "CoolROM", "DOMS", "DOPEROMS", "EagleForces", "Edge Emulation", "EMUPARADISE", "Free-ISO", "Gametronik", "GamingRoms", "GamulatoR", "Planet Emu", "RETRO!", "Rom Find", "Rom Hustler", "ROMNation", "ROMULATION", "RomsMania", "RomsMode", "Roms Universe", "Viim's Lair", "WoWroMs", "Hacks", "Translations", "Mednafen Bios", "MedGui BoxArt Pack", "MedGui Snaps Pack"})
         Me.WS.Location = New System.Drawing.Point(6, 126)
         Me.WS.Name = "WS"
         Me.WS.Size = New System.Drawing.Size(118, 21)
