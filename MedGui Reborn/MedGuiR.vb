@@ -1636,7 +1636,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                     type_csv = ""
 
                     Dim attributes = File.GetAttributes(Frecord)
-                    If attributes = FileAttributes.Directory Then
+                    If attributes = FileAttributes.Directory Or FileAttributes.Directory.Compressed Then
                         TempFolder = MyFiles(i)
                     Else
                         TempFolder = Path.GetDirectoryName(MyFiles(i))
@@ -2761,12 +2761,18 @@ SKIPHASH:
     End Sub
 
     Private Sub SnesSpecialChip()
-        If Val(vmedClear) > 12220 Then Exit Sub
+        Dim filechip As String
 
-        If File.Exists(MedExtra & "Plugins\db\SpecialChip.txt") = False And My.Computer.Network.IsAvailable = True Then
+        If Val(vmedClear) > 12220 Then
+            filechip = "SpecialChip1"
+        Else
+            filechip = "SpecialChip"
+        End If
+
+        If File.Exists(MedExtra & "Plugins\db\" & filechip & ".txt") = False And My.Computer.Network.IsAvailable = True Then
             'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/SpecialChip.txt", MedExtra & "Plugins\db\SpecialChip.txt", "anonymous", "anonymous", True, 1000, True)
-            FTPDownloadFile(MedExtra & "Plugins\db\SpecialChip.txt", UpdateServer & "/MedGuiR/SpecialChip.txt", "anonymous", "anonymous")
-        ElseIf File.Exists(MedExtra & "Plugins\db\SpecialChip.txt") = False And My.Computer.Network.IsAvailable = False Then
+            FTPDownloadFile(MedExtra & "Plugins\db\" & filechip & ".txt", UpdateServer & "/MedGuiR/SpecialChip.txt", "anonymous", "anonymous")
+        ElseIf File.Exists(MedExtra & "Plugins\db\" & filechip & ".txt") = False And My.Computer.Network.IsAvailable = False Then
             MsgBox("Connections Is Not Available", vbOKOnly + vbExclamation)
             Exit Sub
         End If
@@ -2774,7 +2780,7 @@ SKIPHASH:
         Dim oRead As StreamReader
 
         Try
-            oRead = File.OpenText(MedExtra & "Plugins\db\SpecialChip.txt")
+            oRead = File.OpenText(MedExtra & "Plugins\db\" & filechip & ".txt")
             While oRead.Peek <> -1
                 If rn.Trim = (oRead.ReadLine().Trim) Then
                     MsgBox("Snes Faust Module at the moment Not support Super NES enhancement chips" & vbCrLf &
