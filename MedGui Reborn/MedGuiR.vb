@@ -2773,7 +2773,7 @@ SKIPHASH:
             'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/SpecialChip.txt", MedExtra & "Plugins\db\SpecialChip.txt", "anonymous", "anonymous", True, 1000, True)
             FTPDownloadFile(MedExtra & "Plugins\db\" & filechip & ".txt", UpdateServer & "/MedGuiR/SpecialChip.txt", "anonymous", "anonymous")
         ElseIf File.Exists(MedExtra & "Plugins\db\" & filechip & ".txt") = False And My.Computer.Network.IsAvailable = False Then
-            MsgBox("Connections Is Not Available", vbOKOnly + vbExclamation)
+            'MsgBox("Connections Is Not Available", vbOKOnly + vbExclamation)
             Exit Sub
         End If
 
