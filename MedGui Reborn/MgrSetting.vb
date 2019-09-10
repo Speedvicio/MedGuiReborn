@@ -680,10 +680,10 @@ ErrorHandler:
     Private Sub Button14_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button14.Click
         Try
             If MedGuiR.CheckBox17.Checked = False Then
-                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\mednafen.html" & Chr(34))
+                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\" & p_c & ".html" & Chr(34))
             Else
                 MedBrowser.Show()
-                MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\mednafen.html")
+                MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\" & p_c & ".html")
             End If
         Catch ex As Exception
             MsgBox("No Mednafen Help Detected", MsgBoxStyle.Critical, "Error")
