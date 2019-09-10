@@ -10,7 +10,8 @@
                 MedBrowser.WebBrowser1.Navigate(_link)
             End If
         Catch ex As Exception
-            MsgBox("No Internet connection Available", MsgBoxStyle.Critical, "Error")
+            MsgBox(ex.ToString, MsgBoxStyle.Exclamation, "Error")
+            'MsgBox("No Internet connection Available", MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
 
