@@ -762,6 +762,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub FavouritesToolStripButton_Click(sender As Object, e As EventArgs) Handles FavouritesToolStripButton.Click
+        Dim old_type_csv = type_csv
         If Me.Text.Contains("MedGui Reborn - Favorites Roms") Then
             Me.Text = "MedGui Reborn"
             Select_system()
@@ -770,6 +771,7 @@ Public Class MedGuiR
             RebuildToolStripButton.Enabled = False
             If Dir(MedExtra & "Scanned\" & type_csv & ".csv") = "" Then
                 MsgBox("There Is no list With your favorites roms.", vbInformation + vbOKOnly)
+                type_csv = old_type_csv
                 If Me.Text <> "MedGui Reborn - Recent Roms" And SY.Text <> "" Then RebuildToolStripButton.Enabled = True
             Else
                 Me.Text = "MedGui Reborn - Favorites Roms"
@@ -2074,6 +2076,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Private Sub RecentToolStripButton1_Click(sender As System.Object, e As System.EventArgs) Handles RecentToolStripButton1.Click
+        Dim old_type_csv = type_csv
         If Me.Text.Contains("MedGui Reborn - Recent Roms") Then
             Me.Text = "MedGui Reborn"
             Select_system()
@@ -2082,6 +2085,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
             RebuildToolStripButton.Enabled = False
             If Dir(MedExtra & "Scanned\" & type_csv & ".csv") = "" Then
                 MsgBox("There is no list with your recent roms.", vbInformation + vbOKOnly)
+                type_csv = old_type_csv
                 If Me.Text <> "MedGui Reborn - Favorites Roms" And SY.Text <> "" Then RebuildToolStripButton.Enabled = True
             Else
                 Me.Text = "MedGui Reborn - Recent Roms"
