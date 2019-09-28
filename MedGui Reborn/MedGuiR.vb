@@ -3,7 +3,7 @@
 Public Class MedGuiR
 
     Public StartRom, romName, last_consoles, last_rom, LoadCD, tpce, multimedia, regioni, tempiso, Vjoypad, M3UDisk As String,
-        ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart As Boolean
+        ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart, missingame As Boolean
 
     Public tgdbCID As String
 
@@ -444,6 +444,17 @@ Public Class MedGuiR
     End Sub
 
     Private Sub SelectRom()
+        missingame = False
+
+        If File.Exists(DataGridView1.CurrentRow.Cells(4).Value()) Then
+        Else
+            Dim RMiss = MsgBox("Missing game" & vbCrLf &
+         "Press Del or Canc key to remove from the Games list.",
+         MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation)
+            missingame = True
+            Exit Sub
+        End If
+
         Try
             TextBox1.Text = DataGridView1.CurrentRow.Cells(4).Value()
             romName = Trim(DataGridView1.CurrentRow.Cells(0).Value())
@@ -470,17 +481,19 @@ Public Class MedGuiR
             End Try
         End If
 
-        If File.Exists(DataGridView1.CurrentRow.Cells(4).Value()) = False Then
-            Dim RMiss = MsgBox("Missing game" & vbCrLf &
-                     "Do you want to remove it from the Games list?",
-                     MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation)
-            If RMiss = vbYes Then
-                SendKeys.Send("{DEL}")
-                SaveGridDataInFile()
-            Else
-            End If
-        End If
+    End Sub
 
+    Private Sub RemoveRow()
+        Try
+            DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+            SaveGridDataInFile()
+            If My.Computer.FileSystem.GetFileInfo(MedExtra & "Scanned\" & type_csv & ".csv").Length = 0 Then
+                System.IO.File.Delete(MedExtra & "Scanned\" & type_csv & ".csv")
+            End If
+        Catch es As Exception
+            MsgBox(es.ToString, MsgBoxStyle.Critical)
+        End Try
+        missingame = False
     End Sub
 
     Private Sub DataGridView1_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles DataGridView1.KeyUp
@@ -489,18 +502,12 @@ Public Class MedGuiR
             Case Keys.Enter
                 StartStatic_emu()
             Case Keys.Cancel, Keys.Delete
-                If type_csv = "fav" Or type_csv = "last" Then
-                    DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
-                    SaveGridDataInFile()
-                    If My.Computer.FileSystem.GetFileInfo(MedExtra & "Scanned\" & type_csv & ".csv").Length = 0 Then
-                        System.IO.File.Delete(MedExtra & "Scanned\" & type_csv & ".csv")
-                    End If
+                If type_csv = "fav" Or type_csv = "last" Or missingame = True Then
+                    RemoveRow()
                 End If
             Case Keys.ShiftKey
-
                 RebuilDesync()
                 If last_consoles <> consoles Or MgrSetting.Visible = False Then SwSetting = True : improm() : last_consoles = consoles
-
             Case Keys.F
                 type_csv = "fav"
                 SaveGridDataInRow()
