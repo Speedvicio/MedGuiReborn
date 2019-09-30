@@ -65,7 +65,7 @@ Module MedPlay
                     Case ".cue", ".ccd", ".m3u"
                     Case Else
                         If percorso.Length > 10485760 Then
-                            MsgBox("You can't upload file > then 10 mb", vbOKOnly + MsgBoxStyle.Exclamation, "Upload error...")
+                            MsgBox("You can't upload file > of 10 mb", vbOKOnly + MsgBoxStyle.Exclamation, "Upload error...")
                             ftperror = True
                             MedClient.Close()
                         End If
