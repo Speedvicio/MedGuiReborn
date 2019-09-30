@@ -414,7 +414,27 @@ skiphash:
             '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
             'get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
         Catch ex As Exception
-            MsgBox(ex.ToString)
+            If ex.ToString.Contains("(401)") Then
+                linkcheat = False
+                DetectGameHacking()
+                MessageBox.Show(
+    "Unable to contact gamehacking.org" & vbCrLf &
+    "Press ? to open the link via the default browser." & vbCrLf &
+    "On opened page select Format: Mednafen: " & vbCrLf &
+    "Download and import cheat OR:" & vbCrLf &
+    "1) Press the view button" & vbCrLf &
+    "2) Copy the codes" & vbCrLf &
+    "3) Press the right mouse button on the frontend Downloaded code list and paste them",
+    "Unable to contact gamehacking.org (due to Bitmitigate?)",
+    MessageBoxButtons.OK,
+    MessageBoxIcon.Information,
+    MessageBoxDefaultButton.Button2,
+    0, '0 is default otherwise use MessageBoxOptions Enum
+    "https://gamehacking.org/" & searchcheatcode,
+    "keyword")
+            Else
+                MsgBox(ex.ToString)
+            End If
         End Try
     End Sub
 
