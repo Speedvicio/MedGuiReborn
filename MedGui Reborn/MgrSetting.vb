@@ -1068,6 +1068,18 @@ ErrorHandler:
     Private Sub cmbServer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbServer.SelectedIndexChanged
         SpecificServer = cmbServer.Text
         PopulateNetplay()
+        Try
+            ServerCountry(SpecificServer)
+            PictureBox1.Image = Image.FromFile(SCountry)
+            ToolTip1.SetToolTip(PictureBox1, SLocation)
+        Catch
+            SCountry = MedExtra & "Resource\System\unknow.gif"
+            SLocation = "Unknown"
+        Finally
+            PictureBox1.Image = Image.FromFile(SCountry)
+            ToolTip1.SetToolTip(PictureBox1, SLocation)
+        End Try
+
     End Sub
 
     Private Sub Label27_DoubleClick(sender As Object, e As EventArgs) Handles Label27.DoubleClick

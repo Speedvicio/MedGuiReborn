@@ -4,7 +4,7 @@ Imports System.Net.NetworkInformation
 Imports Utilities.FTP
 
 Module MedPlay
-    Public Server, Password, Nick, NGameName, NRomName, NCRC, NModule, Gamekey, port, ping, NMednafenV As String, NetIn, ftperror As Boolean
+    Public SCountry, SLocation, Server, Password, Nick, NGameName, NRomName, NCRC, NModule, Gamekey, port, ping, NMednafenV As String, NetIn, ftperror As Boolean
     Public ftp As New FTPclient
 
     Public Sub SetFTPData()
@@ -282,9 +282,10 @@ Module MedPlay
         Try
             CheckPing()
             If ping = "" Or ping = Nothing Then ping = "Unknown"
+            ServerCountry(Server)
         Catch
         Finally
-            MedClient.DataGridView1.Rows.Add(Nick, NGameName, NModule, ping, Server, port, Password, Gamekey, NCRC, NRomName, NMednafenV)
+            MedClient.DataGridView1.Rows.Add(Nick, NGameName, NModule, ping, Server, port, Password, Gamekey, NCRC, NRomName, NMednafenV, Image.FromFile(SCountry))
         End Try
     End Sub
 

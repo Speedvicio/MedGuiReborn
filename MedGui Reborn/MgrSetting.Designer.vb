@@ -507,6 +507,10 @@ Partial Class MgrSetting
         Me.ComboBox45 = New System.Windows.Forms.ComboBox()
         Me.Label106 = New System.Windows.Forms.Label()
         Me.TabPage26 = New System.Windows.Forms.TabPage()
+        Me.Label177 = New System.Windows.Forms.Label()
+        Me.ComboBox59 = New System.Windows.Forms.ComboBox()
+        Me.NumericUpDown42 = New System.Windows.Forms.NumericUpDown()
+        Me.Label176 = New System.Windows.Forms.Label()
         Me.CheckBox102 = New System.Windows.Forms.CheckBox()
         Me.CheckBox97 = New System.Windows.Forms.CheckBox()
         Me.CheckBox98 = New System.Windows.Forms.CheckBox()
@@ -521,6 +525,8 @@ Partial Class MgrSetting
         Me.ComboBox47 = New System.Windows.Forms.ComboBox()
         Me.TabPage29 = New System.Windows.Forms.TabPage()
         Me.GroupBox25 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox62 = New System.Windows.Forms.ComboBox()
+        Me.Label178 = New System.Windows.Forms.Label()
         Me.NumericUpDown41 = New System.Windows.Forms.NumericUpDown()
         Me.Label165 = New System.Windows.Forms.Label()
         Me.ComboBox61 = New System.Windows.Forms.ComboBox()
@@ -566,12 +572,7 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.NumericUpDown42 = New System.Windows.Forms.NumericUpDown()
-        Me.Label176 = New System.Windows.Forms.Label()
-        Me.Label177 = New System.Windows.Forms.Label()
-        Me.ComboBox59 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox62 = New System.Windows.Forms.ComboBox()
-        Me.Label178 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -675,6 +676,7 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage26.SuspendLayout()
+        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage29.SuspendLayout()
         Me.GroupBox25.SuspendLayout()
@@ -693,7 +695,7 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -2712,6 +2714,7 @@ Partial Class MgrSetting
         '
         'GroupBox6
         '
+        Me.GroupBox6.Controls.Add(Me.PictureBox1)
         Me.GroupBox6.Controls.Add(Me.ComboBox54)
         Me.GroupBox6.Controls.Add(Me.Label133)
         Me.GroupBox6.Controls.Add(Me.Label125)
@@ -5967,6 +5970,53 @@ Partial Class MgrSetting
         Me.TabPage26.Text = "Super Nintendo Faust"
         Me.TabPage26.UseVisualStyleBackColor = True
         '
+        'Label177
+        '
+        Me.Label177.AutoSize = True
+        Me.Label177.Enabled = False
+        Me.Label177.Location = New System.Drawing.Point(6, 249)
+        Me.Label177.Name = "Label177"
+        Me.Label177.Size = New System.Drawing.Size(164, 13)
+        Me.Label177.TabIndex = 97
+        Me.Label177.Text = "Horizontal blending/doubling filter"
+        '
+        'ComboBox59
+        '
+        Me.ComboBox59.Enabled = False
+        Me.ComboBox59.FormattingEnabled = True
+        Me.ComboBox59.Items.AddRange(New Object() {"none", "512", "phr256blend", "phr256blend_512", "512_blend"})
+        Me.ComboBox59.Location = New System.Drawing.Point(176, 246)
+        Me.ComboBox59.Name = "ComboBox59"
+        Me.ComboBox59.Size = New System.Drawing.Size(122, 21)
+        Me.ComboBox59.TabIndex = 96
+        Me.ComboBox59.Text = "none"
+        Me.ToolTip1.SetToolTip(Me.ComboBox59, resources.GetString("ComboBox59.ToolTip"))
+        '
+        'NumericUpDown42
+        '
+        Me.NumericUpDown42.Enabled = False
+        Me.NumericUpDown42.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown42.Location = New System.Drawing.Point(159, 220)
+        Me.NumericUpDown42.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.NumericUpDown42.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.NumericUpDown42.Name = "NumericUpDown42"
+        Me.NumericUpDown42.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown42.TabIndex = 95
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown42, "CX4 clock rate, specified in percentage of normal." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Overclocking the CX4 will c" &
+        "ause or worsen attract mode desynchronization.")
+        Me.NumericUpDown42.Value = New Decimal(New Integer() {100, 0, 0, 0})
+        '
+        'Label176
+        '
+        Me.Label176.AutoSize = True
+        Me.Label176.Enabled = False
+        Me.Label176.Location = New System.Drawing.Point(6, 222)
+        Me.Label176.Name = "Label176"
+        Me.Label176.Size = New System.Drawing.Size(77, 13)
+        Me.Label176.TabIndex = 94
+        Me.Label176.Text = "CX4 clock rate"
+        Me.ToolTip1.SetToolTip(Me.Label176, resources.GetString("Label176.ToolTip"))
+        '
         'CheckBox102
         '
         Me.CheckBox102.AutoSize = True
@@ -6138,6 +6188,28 @@ Partial Class MgrSetting
         Me.GroupBox25.Size = New System.Drawing.Size(303, 278)
         Me.GroupBox25.TabIndex = 4
         Me.GroupBox25.TabStop = False
+        '
+        'ComboBox62
+        '
+        Me.ComboBox62.Enabled = False
+        Me.ComboBox62.FormattingEnabled = True
+        Me.ComboBox62.Items.AddRange(New Object() {"custom", "rgb", "la7620", "rgb_alt1", "rgb_alt2"})
+        Me.ComboBox62.Location = New System.Drawing.Point(158, 249)
+        Me.ComboBox62.Name = "ComboBox62"
+        Me.ComboBox62.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox62.TabIndex = 115
+        Me.ComboBox62.Text = "composite"
+        Me.ToolTip1.SetToolTip(Me.ComboBox62, resources.GetString("ComboBox62.ToolTip"))
+        '
+        'Label178
+        '
+        Me.Label178.AutoSize = True
+        Me.Label178.Enabled = False
+        Me.Label178.Location = New System.Drawing.Point(6, 252)
+        Me.Label178.Name = "Label178"
+        Me.Label178.Size = New System.Drawing.Size(110, 13)
+        Me.Label178.TabIndex = 114
+        Me.Label178.Text = "Video rendering mode"
         '
         'NumericUpDown41
         '
@@ -6632,74 +6704,14 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'NumericUpDown42
+        'PictureBox1
         '
-        Me.NumericUpDown42.Enabled = False
-        Me.NumericUpDown42.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown42.Location = New System.Drawing.Point(159, 220)
-        Me.NumericUpDown42.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.NumericUpDown42.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.NumericUpDown42.Name = "NumericUpDown42"
-        Me.NumericUpDown42.Size = New System.Drawing.Size(68, 20)
-        Me.NumericUpDown42.TabIndex = 95
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown42, "CX4 clock rate, specified in percentage of normal." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Overclocking the CX4 will c" &
-        "ause or worsen attract mode desynchronization.")
-        Me.NumericUpDown42.Value = New Decimal(New Integer() {100, 0, 0, 0})
-        '
-        'Label176
-        '
-        Me.Label176.AutoSize = True
-        Me.Label176.Enabled = False
-        Me.Label176.Location = New System.Drawing.Point(6, 222)
-        Me.Label176.Name = "Label176"
-        Me.Label176.Size = New System.Drawing.Size(77, 13)
-        Me.Label176.TabIndex = 94
-        Me.Label176.Text = "CX4 clock rate"
-        Me.ToolTip1.SetToolTip(Me.Label176, resources.GetString("Label176.ToolTip"))
-        '
-        'Label177
-        '
-        Me.Label177.AutoSize = True
-        Me.Label177.Enabled = False
-        Me.Label177.Location = New System.Drawing.Point(6, 249)
-        Me.Label177.Name = "Label177"
-        Me.Label177.Size = New System.Drawing.Size(164, 13)
-        Me.Label177.TabIndex = 97
-        Me.Label177.Text = "Horizontal blending/doubling filter"
-        '
-        'ComboBox59
-        '
-        Me.ComboBox59.Enabled = False
-        Me.ComboBox59.FormattingEnabled = True
-        Me.ComboBox59.Items.AddRange(New Object() {"none", "512", "phr256blend", "phr256blend_512", "512_blend"})
-        Me.ComboBox59.Location = New System.Drawing.Point(176, 246)
-        Me.ComboBox59.Name = "ComboBox59"
-        Me.ComboBox59.Size = New System.Drawing.Size(122, 21)
-        Me.ComboBox59.TabIndex = 96
-        Me.ComboBox59.Text = "none"
-        Me.ToolTip1.SetToolTip(Me.ComboBox59, resources.GetString("ComboBox59.ToolTip"))
-        '
-        'ComboBox62
-        '
-        Me.ComboBox62.Enabled = False
-        Me.ComboBox62.FormattingEnabled = True
-        Me.ComboBox62.Items.AddRange(New Object() {"custom", "rgb", "la7620", "rgb_alt1", "rgb_alt2"})
-        Me.ComboBox62.Location = New System.Drawing.Point(158, 249)
-        Me.ComboBox62.Name = "ComboBox62"
-        Me.ComboBox62.Size = New System.Drawing.Size(139, 21)
-        Me.ComboBox62.TabIndex = 115
-        Me.ComboBox62.Text = "composite"
-        Me.ToolTip1.SetToolTip(Me.ComboBox62, resources.GetString("ComboBox62.ToolTip"))
-        '
-        'Label178
-        '
-        Me.Label178.AutoSize = True
-        Me.Label178.Enabled = False
-        Me.Label178.Location = New System.Drawing.Point(6, 252)
-        Me.Label178.Name = "Label178"
-        Me.Label178.Size = New System.Drawing.Size(110, 13)
-        Me.Label178.TabIndex = 114
-        Me.Label178.Text = "Video rendering mode"
+        Me.PictureBox1.Location = New System.Drawing.Point(114, 16)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(25, 18)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 55
+        Me.PictureBox1.TabStop = False
         '
         'MgrSetting
         '
@@ -6851,6 +6863,7 @@ Partial Class MgrSetting
         CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage26.ResumeLayout(False)
         Me.TabPage26.PerformLayout()
+        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage29.ResumeLayout(False)
         Me.GroupBox25.ResumeLayout(False)
@@ -6871,7 +6884,7 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -7424,4 +7437,5 @@ Partial Class MgrSetting
     Friend WithEvents Label176 As Label
     Friend WithEvents ComboBox62 As ComboBox
     Friend WithEvents Label178 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

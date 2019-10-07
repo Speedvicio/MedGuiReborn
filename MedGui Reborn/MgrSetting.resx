@@ -117,6 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="NumericUpDown7.ToolTip" xml:space="preserve">
+    <value>Local player count.
+
+Number of local players for network play. 
+This number is advisory to the server, and the server may assign fewer players 
+if the number of players requested is higher than the number of controllers currently available.
+ </value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
@@ -326,14 +337,6 @@ Set it to "0" if you want to allow constructs like absolute paths in CUE sheets,
 Reads the entire CD image(s) into memory at startup(which will cause a small delay). 
 Can help obviate emulation hiccups due to emulated CD access. 
 May cause more harm than good on low memory systems, systems with swap enabled, and/or when the disc images in question are on a fast SSD.</value>
-  </data>
-  <data name="NumericUpDown7.ToolTip" xml:space="preserve">
-    <value>Local player count.
-
-Number of local players for network play. 
-This number is advisory to the server, and the server may assign fewer players 
-if the number of players requested is higher than the number of controllers currently available.
- </value>
   </data>
   <data name="ComboBox4.ToolTip" xml:space="preserve">
     <value>Video codec to use.
