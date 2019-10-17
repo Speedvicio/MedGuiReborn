@@ -246,6 +246,6 @@ This file will be deleted form external server when you close Netplay session or
     <value>549, 56</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>164</value>
+    <value>61</value>
   </metadata>
 </root>

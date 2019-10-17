@@ -142,14 +142,16 @@ Module BoxArt
             If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
                 SearchScrape()
             Else
-                MedGuiR.PictureBox1.Image = My.Resources.NoPr : MsgBox("No BoxArt Available!", vbOKOnly + vbInformation) : Exit Sub
+                If MedGuiR.CheckBox2.Checked = False Then
+                    MedGuiR.PictureBox1.Image = My.Resources.NoPr : MsgBox("No BoxArt Available!", vbOKOnly + vbInformation) : Exit Sub
+                End If
             End If
-        End If
+            End If
 
         If dimg < webimagelenght Then
             Try
                 Dim cover As String
-                cover = "http://medgui.orgfree.com/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
+                cover = UpdateServer & "/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
                 My.Computer.Network.DownloadFile(cover, MedExtra & "BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png", "", "", True, 1000, True)
             Catch ex As Exception
                 If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
@@ -167,18 +169,18 @@ Module BoxArt
         Try
 
             Dim myFtpWebRequest As System.Net.WebRequest
-            myFtpWebRequest = System.Net.WebRequest.Create("http://medgui.orgfree.com/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png")
+            myFtpWebRequest = System.Net.WebRequest.Create(UpdateServer & "/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png")
             Dim myFtpWebResponse As HttpWebResponse
             myFtpWebResponse = myFtpWebRequest.GetResponse()
             webimagelenght = myFtpWebResponse.ContentLength
             myFtpWebResponse.Close()
         Catch ex As System.Net.WebException
-
-            MessageBox.Show(ex.Message)
-            If (ex.Response IsNot Nothing) Then
-                Dim hr As System.Net.HttpWebResponse = DirectCast(ex.Response, System.Net.HttpWebResponse)
+            If MedGuiR.CheckBox2.Checked = False Then
+                MessageBox.Show(ex.Message)
+                If (ex.Response IsNot Nothing) Then
+                    Dim hr As System.Net.HttpWebResponse = DirectCast(ex.Response, System.Net.HttpWebResponse)
+                End If
             End If
-
         End Try
     End Sub
 

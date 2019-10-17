@@ -466,21 +466,6 @@ Public Class MedGuiR
             MGRWriteLog("MedGuiR - SelectRom: " & Date.Today.ToString & " " & ex.Message)
         End Try
 
-        If CheckBox2.Checked = True Then
-            Try
-                Dim dimBA As New System.IO.FileInfo(MedExtra & "BoxArt\" & DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png")
-                Console.WriteLine(dimBA.Exists)
-                Dim dimension As Integer
-                dimension = (Decimal.Round(dimBA.Length.ToString) / 1024)
-
-                If dimension <= 12 Then
-                    DownloadCover()
-                End If
-            Catch ex As Exception
-                DownloadCover()
-            End Try
-        End If
-
     End Sub
 
     Private Sub RemoveRow()
@@ -1526,7 +1511,30 @@ Public Class MedGuiR
 
     Private Sub Button43_Click_1(sender As Object, e As EventArgs) Handles Button43.Click
         If My.Computer.Network.IsAvailable = False Then MsgBox("Connections is not Available", vbOKOnly + vbExclamation) : Exit Sub
-        DownloadCover()
+
+        If CheckBox2.Checked = True Then
+            For i = 0 To DataGridView1.Rows.Count - 1
+                Try
+                    DataGridView1.Rows(i).Cells(0).Selected = True
+                    Dim dimBA As New System.IO.FileInfo(MedExtra & "BoxArt\" & DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png")
+                    Console.WriteLine(dimBA.Exists)
+                    Dim dimension As Integer
+                    dimension = (Decimal.Round(dimBA.Length.ToString) / 1024)
+
+                    If dimension <= 12 Then
+                        DownloadCover()
+                    End If
+                Catch ex As Exception
+                    DownloadCover()
+                End Try
+                If i = DataGridView1.Rows.Count - 1 Then
+                    MsgBox("All Missing BoxArt Downloaded!", vbOKOnly + MsgBoxStyle.Information, "All Done!")
+                End If
+            Next i
+        Else
+            DownloadCover()
+        End If
+
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click

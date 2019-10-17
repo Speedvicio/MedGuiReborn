@@ -237,7 +237,6 @@ Partial Class MedGuiR
         Me.ModLandToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.TextBox3 = New System.Windows.Forms.ToolStripTextBox()
         Me.FlagToolStripSplitButton = New System.Windows.Forms.ToolStripSplitButton()
         Me.WORLDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -245,6 +244,7 @@ Partial Class MedGuiR
         Me.JPToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MUSICToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextBox3 = New System.Windows.Forms.ToolStripTextBox()
         Me.FindToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -760,13 +760,13 @@ Partial Class MedGuiR
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAudioFileToolStripMenuItem, Me.ToolStripSeparator3, Me.ConvertAudioToToolStripMenuItem, Me.ConvertFolderAudioToToolStripMenuItem, Me.DeleteAfterConversionToolStripMenuItem, Me.ToolStripSeparator4, Me.MultimediaToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(206, 126)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(207, 126)
         '
         'AddAudioFileToolStripMenuItem
         '
         Me.AddAudioFileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripComboBox1})
         Me.AddAudioFileToolStripMenuItem.Name = "AddAudioFileToolStripMenuItem"
-        Me.AddAudioFileToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.AddAudioFileToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.AddAudioFileToolStripMenuItem.Text = "Add &Audio Folder File"
         '
         'ToolStripComboBox1
@@ -779,13 +779,13 @@ Partial Class MedGuiR
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(202, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(203, 6)
         '
         'ConvertAudioToToolStripMenuItem
         '
         Me.ConvertAudioToToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OggToolStripMenuItem, Me.WavToolStripMenuItem})
         Me.ConvertAudioToToolStripMenuItem.Name = "ConvertAudioToToolStripMenuItem"
-        Me.ConvertAudioToToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.ConvertAudioToToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.ConvertAudioToToolStripMenuItem.Text = "Convert &Single Audio To:"
         '
         'OggToolStripMenuItem
@@ -804,7 +804,7 @@ Partial Class MedGuiR
         '
         Me.ConvertFolderAudioToToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OggToolStripMenuItem1, Me.WavToolStripMenuItem1})
         Me.ConvertFolderAudioToToolStripMenuItem.Name = "ConvertFolderAudioToToolStripMenuItem"
-        Me.ConvertFolderAudioToToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.ConvertFolderAudioToToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.ConvertFolderAudioToToolStripMenuItem.Text = "Convert &Folder Audio To:"
         '
         'OggToolStripMenuItem1
@@ -822,19 +822,19 @@ Partial Class MedGuiR
         'DeleteAfterConversionToolStripMenuItem
         '
         Me.DeleteAfterConversionToolStripMenuItem.Name = "DeleteAfterConversionToolStripMenuItem"
-        Me.DeleteAfterConversionToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.DeleteAfterConversionToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.DeleteAfterConversionToolStripMenuItem.Text = "&Delete After Conversion"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(202, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(203, 6)
         '
         'MultimediaToolStripMenuItem
         '
         Me.MultimediaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.NextToolStripMenuItem, Me.PreviousToolStripMenuItem, Me.ToolStripSeparator5, Me.RepeatSingleToolStripMenuItem, Me.RepeatAllToolStripMenuItem})
         Me.MultimediaToolStripMenuItem.Name = "MultimediaToolStripMenuItem"
-        Me.MultimediaToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.MultimediaToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.MultimediaToolStripMenuItem.Text = "&Multimedia"
         '
         'PlayToolStripMenuItem
@@ -2362,7 +2362,7 @@ Partial Class MedGuiR
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SY, Me.RebuildToolStripButton, Me.toolStripSeparator, Me.RecentToolStripButton1, Me.LoadCDToolStripButton, Me.FavouritesToolStripButton, Me.FoldeRomToolStripButton, Me.LoadRomToolStripButton, Me.TextBox1, Me.toolStripSeparator1, Me.NetToolStripButton, Me.ServerToolStripButton, Me.IRCToolStripButton, Me.ModLandToolStripButton, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.FlagToolStripSplitButton, Me.TextBox3, Me.FindToolStripButton})
         Me.ToolStrip1.Location = New System.Drawing.Point(12, 6)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(755, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(701, 25)
         Me.ToolStrip1.TabIndex = 34
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -2495,14 +2495,6 @@ Partial Class MedGuiR
         Me.ToolStripLabel1.Size = New System.Drawing.Size(103, 22)
         Me.ToolStripLabel1.Text = "Rapid Rom Search"
         '
-        'TextBox3
-        '
-        Me.TextBox3.BackColor = System.Drawing.Color.DimGray
-        Me.TextBox3.ForeColor = System.Drawing.Color.White
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(150, 25)
-        Me.TextBox3.ToolTipText = "Filter Rom List by Name"
-        '
         'FlagToolStripSplitButton
         '
         Me.FlagToolStripSplitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -2517,43 +2509,51 @@ Partial Class MedGuiR
         '
         Me.WORLDToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.WORLDToolStripMenuItem.Name = "WORLDToolStripMenuItem"
-        Me.WORLDToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WORLDToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.WORLDToolStripMenuItem.Text = "WORLD"
         '
         'EUToolStripMenuItem
         '
         Me.EUToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.EUToolStripMenuItem.Name = "EUToolStripMenuItem"
-        Me.EUToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EUToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.EUToolStripMenuItem.Text = "EU"
         '
         'USToolStripMenuItem
         '
         Me.USToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.USToolStripMenuItem.Name = "USToolStripMenuItem"
-        Me.USToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.USToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.USToolStripMenuItem.Text = "US"
         '
         'JPToolStripMenuItem
         '
         Me.JPToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.JPToolStripMenuItem.Name = "JPToolStripMenuItem"
-        Me.JPToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.JPToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.JPToolStripMenuItem.Text = "JP"
         '
         'PDToolStripMenuItem
         '
         Me.PDToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PDToolStripMenuItem.Name = "PDToolStripMenuItem"
-        Me.PDToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PDToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.PDToolStripMenuItem.Text = "PD"
         '
         'MUSICToolStripMenuItem
         '
         Me.MUSICToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MUSICToolStripMenuItem.Name = "MUSICToolStripMenuItem"
-        Me.MUSICToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MUSICToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.MUSICToolStripMenuItem.Text = "MUSIC"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.BackColor = System.Drawing.Color.DimGray
+        Me.TextBox3.ForeColor = System.Drawing.Color.White
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(150, 25)
+        Me.TextBox3.ToolTipText = "Filter Rom List by Name"
         '
         'FindToolStripButton
         '
@@ -3550,7 +3550,7 @@ Partial Class MedGuiR
         Me.FontToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem1, Me.CellsToolStripMenuItem})
         Me.FontToolStripMenuItem.Enabled = False
         Me.FontToolStripMenuItem.Name = "FontToolStripMenuItem"
-        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.FontToolStripMenuItem.Text = "&Normal"
         '
         'FontToolStripMenuItem1
@@ -3570,7 +3570,7 @@ Partial Class MedGuiR
         Me.HighlightToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem2, Me.CellsToolStripMenuItem1})
         Me.HighlightToolStripMenuItem.Enabled = False
         Me.HighlightToolStripMenuItem.Name = "HighlightToolStripMenuItem"
-        Me.HighlightToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.HighlightToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.HighlightToolStripMenuItem.Text = "&Highlight"
         '
         'FontToolStripMenuItem2
@@ -3589,21 +3589,21 @@ Partial Class MedGuiR
         '
         Me.BackgroudToolStripMenuItem.Enabled = False
         Me.BackgroudToolStripMenuItem.Name = "BackgroudToolStripMenuItem"
-        Me.BackgroudToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.BackgroudToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.BackgroudToolStripMenuItem.Text = "&Backgroud"
         '
         'GridColToolStripMenuItem
         '
         Me.GridColToolStripMenuItem.Enabled = False
         Me.GridColToolStripMenuItem.Name = "GridColToolStripMenuItem"
-        Me.GridColToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.GridColToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.GridColToolStripMenuItem.Text = "&Grid"
         '
         'ResetToDefaultToolStripMenuItem
         '
         Me.ResetToDefaultToolStripMenuItem.Enabled = False
         Me.ResetToDefaultToolStripMenuItem.Name = "ResetToDefaultToolStripMenuItem"
-        Me.ResetToDefaultToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.ResetToDefaultToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.ResetToDefaultToolStripMenuItem.Text = "&Reset To Default"
         '
         'ResetToolStripMenuItem

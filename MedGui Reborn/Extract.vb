@@ -260,4 +260,11 @@ Module Extract
         szip.Dispose()
         SoxStatus.Close()
     End Function
+
+    Public Sub MountPismo()
+
+        If Microsoft.Win32.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Classes\PismoFileMount", "pfmapi", Nothing) Is Nothing Then
+            Exit Sub
+        End If
+    End Sub
 End Module
