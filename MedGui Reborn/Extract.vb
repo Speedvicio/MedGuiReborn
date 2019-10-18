@@ -4,7 +4,7 @@ Imports SevenZip
 Module Extract
     Public SevenZCounter As Integer
     Public c_os, sevenzdll As String
-    Public MedExtra, T_MedExtra, TempFolder, decrunch_size, o_ext As String, stopzip As Boolean
+    Public MedExtra, T_MedExtra, TempFolder, decrunch_size, o_ext As String, stopzip, checkpismo As Boolean
 
     Public Sub extract_7z()
         'Call contr_os()
@@ -103,7 +103,7 @@ Module Extract
                 System.IO.Directory.Delete(MedExtra & "RomTemp/", True)
             End If
 
-            If CheckPismo() = True Then Shell("pfm unmount", AppWinStyle.Hide, True)
+            Shell("pfm unmount", AppWinStyle.Hide, True)
         Catch ex As Exception
             If Dir(MedExtra & "RomTemp\*.*") <> "" Then
                 MsgBox("File " & fil & " is die hard, please remove it manually or delete RomTemp folder.", MsgBoxStyle.OkCancel + MsgBoxStyle.Critical)
@@ -149,14 +149,14 @@ Module Extract
                 End If
                 Select Case LCase(ext)
                     Case ".iso", ".m3u", ".toc", ".cue", ".ccd"
-                        If CheckPismo() = False Then
+                        If checkpismo = False Then
                             consoles = ""
                             ext = ""
                             Exit Sub
                         Else
                             If LCase(Path.GetExtension(percorso)) = ".zip" Then
                                 MountPismo()
-                                RecuScan()
+                                MedGuiR.ScanFolder()
                                 Exit Sub
                             End If
                         End If
@@ -166,18 +166,19 @@ Module Extract
                         Exit Sub
                     Case ".bin", ".img"
                         If ArchiveFileInfo.Size > 10485760 Then
-                            If CheckPismo() = False Then
+
+                            If checkpismo = False Then
                                 consoles = ""
                                 ext = ""
                                 Exit Sub
                             Else
                                 If LCase(Path.GetExtension(percorso)) = ".zip" Then
                                     MountPismo()
-                                    RecuScan()
+                                    MedGuiR.ScanFolder()
                                     Exit Sub
                                 End If
-
                             End If
+
                         End If
                     Case ".mai"
                         consoles = "apple2"
@@ -284,17 +285,18 @@ Module Extract
         SoxStatus.Close()
     End Function
 
-    Public Function CheckPismo() As Boolean
+    Public Sub Pismo()
 
         If Microsoft.Win32.Registry.GetValue("HKEY_LOCAL_MACHINE\SOFTWARE\Classes\PismoFileMount", "pfmapi", Nothing) Is Nothing Then
-            CheckPismo = False
+            checkpismo = False
         Else
-            CheckPismo = True
+            checkpismo = True
         End If
 
-    End Function
+    End Sub
 
     Public Sub MountPismo()
+        checkpismo = False
         Shell("pfm unmount", AppWinStyle.Hide, True)
         Shell("pfm mount -i " & Chr(34) & percorso & Chr(34), AppWinStyle.Hide, True)
         Dim cleanpath As String = System.Text.RegularExpressions.Regex.Replace(Path.GetFileName(percorso), "[^0-9a-zA-Z-._ ]+", "")

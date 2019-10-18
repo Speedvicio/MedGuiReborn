@@ -455,6 +455,7 @@ CheckMednafen:
         skipother = False
         stopscan = False
         stopiso = False
+        Pismo()
         TempFolder = "RomTemp"
         type_csv = ""
         MedGuiR.Text = "MedGui Reborn"

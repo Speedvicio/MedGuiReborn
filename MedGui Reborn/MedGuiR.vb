@@ -8,6 +8,7 @@ Public Class MedGuiR
     Public tgdbCID As String
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        checkpismo = False
         DataGridView1.DoubleBuffered(True)
 
         gIcon = My.Resources.MedGuiR
@@ -636,7 +637,6 @@ Public Class MedGuiR
     End Sub
 
     Public Sub ScanFolder()
-
         If Directory.Exists(T_MedExtra & TempFolder) = False Then
             If SY.Text.Trim <> "" Then MsgBox("Nothing to Scan...", MsgBoxStyle.Exclamation + vbOKOnly, "Directory not exist...")
             DataGridView1.Rows.Clear()
