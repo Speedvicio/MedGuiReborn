@@ -139,6 +139,18 @@ Module Extract
 
             fileTXT = ""
             For Each ArchiveFileInfo In szip.ArchiveFileData
+                If ArchiveFileInfo.IsDirectory Then
+                    If checkpismo = False Then
+                        consoles = ""
+                        ext = ""
+                    Else
+                        If LCase(Path.GetExtension(percorso)) = ".zip" Then
+                            MountPismo()
+                            RecuScan()
+                        End If
+                    End If
+                    Continue For
+                End If
                 ext = LCase(Path.GetExtension(ArchiveFileInfo.FileName))
                 If ext = "" Or ext Is Nothing Then
                     Continue For
@@ -156,7 +168,7 @@ Module Extract
                         Else
                             If LCase(Path.GetExtension(percorso)) = ".zip" Then
                                 MountPismo()
-                                MedGuiR.ScanFolder()
+                                RecuScan()
                                 Exit Sub
                             End If
                         End If
@@ -174,7 +186,7 @@ Module Extract
                             Else
                                 If LCase(Path.GetExtension(percorso)) = ".zip" Then
                                     MountPismo()
-                                    MedGuiR.ScanFolder()
+                                    RecuScan()
                                     Exit Sub
                                 End If
                             End If
@@ -296,7 +308,7 @@ Module Extract
     End Sub
 
     Public Sub MountPismo()
-        checkpismo = False
+        'checkpismo = False
         Shell("pfm unmount", AppWinStyle.Hide, True)
         Shell("pfm mount -i " & Chr(34) & percorso & Chr(34), AppWinStyle.Hide, True)
         Dim cleanpath As String = System.Text.RegularExpressions.Regex.Replace(Path.GetFileName(percorso), "[^0-9a-zA-Z-._ ]+", "")

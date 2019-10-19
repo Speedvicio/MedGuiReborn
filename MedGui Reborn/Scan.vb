@@ -657,24 +657,29 @@ Module scan
 
             If MedGuiR.FirstStart = True Then Exit Sub
 
-            ResRecu = MsgBox("Do you want to make a recursive folder scan?" &
+            If checkpismo = False Then
+                ResRecu = MsgBox("Do you want to make a recursive folder scan?" &
                           vbCrLf & "Recursive scan could be inaccurate, could generate error and take many time!", vbYesNo + MsgBoxStyle.Exclamation)
-            If ResRecu = vbYes Then
-                MedGuiR.DataGridView1.Rows.Clear()
-                stopiso = True
-                scansiona()
-                For Each subdirectory As String In subdirectoryEntries
-                    LoadSubDirs(subdirectory)
-                Next
-                SoxStatus.Close()
             Else
-                TempFolder = ""
-                Exit Sub
+                ResRecu = vbYes
             End If
-        Else
-            MedGuiR.ScanFolder()
-        End If
 
+            If ResRecu = vbYes Then
+                    MedGuiR.DataGridView1.Rows.Clear()
+                    stopiso = True
+                    scansiona()
+                    For Each subdirectory As String In subdirectoryEntries
+                        LoadSubDirs(subdirectory)
+                    Next
+                    SoxStatus.Close()
+                Else
+                    TempFolder = ""
+                    Exit Sub
+                End If
+            Else
+                MedGuiR.ScanFolder()
+        End If
+        checkpismo = False
     End Sub
 
     Private Sub LoadSubDirs(dir As String)
