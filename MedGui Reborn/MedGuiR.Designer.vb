@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -421,23 +421,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -445,9 +445,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -760,13 +760,13 @@ Partial Class MedGuiR
         '
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAudioFileToolStripMenuItem, Me.ToolStripSeparator3, Me.ConvertAudioToToolStripMenuItem, Me.ConvertFolderAudioToToolStripMenuItem, Me.DeleteAfterConversionToolStripMenuItem, Me.ToolStripSeparator4, Me.MultimediaToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(206, 126)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(207, 126)
         '
         'AddAudioFileToolStripMenuItem
         '
         Me.AddAudioFileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripComboBox1})
         Me.AddAudioFileToolStripMenuItem.Name = "AddAudioFileToolStripMenuItem"
-        Me.AddAudioFileToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.AddAudioFileToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.AddAudioFileToolStripMenuItem.Text = "Add &Audio Folder File"
         '
         'ToolStripComboBox1
@@ -779,13 +779,13 @@ Partial Class MedGuiR
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(202, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(203, 6)
         '
         'ConvertAudioToToolStripMenuItem
         '
         Me.ConvertAudioToToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OggToolStripMenuItem, Me.WavToolStripMenuItem})
         Me.ConvertAudioToToolStripMenuItem.Name = "ConvertAudioToToolStripMenuItem"
-        Me.ConvertAudioToToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.ConvertAudioToToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.ConvertAudioToToolStripMenuItem.Text = "Convert &Single Audio To:"
         '
         'OggToolStripMenuItem
@@ -804,7 +804,7 @@ Partial Class MedGuiR
         '
         Me.ConvertFolderAudioToToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OggToolStripMenuItem1, Me.WavToolStripMenuItem1})
         Me.ConvertFolderAudioToToolStripMenuItem.Name = "ConvertFolderAudioToToolStripMenuItem"
-        Me.ConvertFolderAudioToToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.ConvertFolderAudioToToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.ConvertFolderAudioToToolStripMenuItem.Text = "Convert &Folder Audio To:"
         '
         'OggToolStripMenuItem1
@@ -822,19 +822,19 @@ Partial Class MedGuiR
         'DeleteAfterConversionToolStripMenuItem
         '
         Me.DeleteAfterConversionToolStripMenuItem.Name = "DeleteAfterConversionToolStripMenuItem"
-        Me.DeleteAfterConversionToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.DeleteAfterConversionToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.DeleteAfterConversionToolStripMenuItem.Text = "&Delete After Conversion"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(202, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(203, 6)
         '
         'MultimediaToolStripMenuItem
         '
         Me.MultimediaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlayToolStripMenuItem, Me.StopToolStripMenuItem, Me.NextToolStripMenuItem, Me.PreviousToolStripMenuItem, Me.ToolStripSeparator5, Me.RepeatSingleToolStripMenuItem, Me.RepeatAllToolStripMenuItem})
         Me.MultimediaToolStripMenuItem.Name = "MultimediaToolStripMenuItem"
-        Me.MultimediaToolStripMenuItem.Size = New System.Drawing.Size(205, 22)
+        Me.MultimediaToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.MultimediaToolStripMenuItem.Text = "&Multimedia"
         '
         'PlayToolStripMenuItem
@@ -2318,7 +2318,7 @@ Partial Class MedGuiR
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 13)
         Me.Label6.TabIndex = 30
-        Me.Label6.Text = "MedGuiR v.0.107"
+        Me.Label6.Text = "MedGuiR v.0.108"
         '
         'Label7
         '
@@ -3550,7 +3550,7 @@ Partial Class MedGuiR
         Me.FontToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem1, Me.CellsToolStripMenuItem})
         Me.FontToolStripMenuItem.Enabled = False
         Me.FontToolStripMenuItem.Name = "FontToolStripMenuItem"
-        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.FontToolStripMenuItem.Text = "&Normal"
         '
         'FontToolStripMenuItem1
@@ -3570,7 +3570,7 @@ Partial Class MedGuiR
         Me.HighlightToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem2, Me.CellsToolStripMenuItem1})
         Me.HighlightToolStripMenuItem.Enabled = False
         Me.HighlightToolStripMenuItem.Name = "HighlightToolStripMenuItem"
-        Me.HighlightToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.HighlightToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.HighlightToolStripMenuItem.Text = "&Highlight"
         '
         'FontToolStripMenuItem2
@@ -3589,21 +3589,21 @@ Partial Class MedGuiR
         '
         Me.BackgroudToolStripMenuItem.Enabled = False
         Me.BackgroudToolStripMenuItem.Name = "BackgroudToolStripMenuItem"
-        Me.BackgroudToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.BackgroudToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.BackgroudToolStripMenuItem.Text = "&Backgroud"
         '
         'GridColToolStripMenuItem
         '
         Me.GridColToolStripMenuItem.Enabled = False
         Me.GridColToolStripMenuItem.Name = "GridColToolStripMenuItem"
-        Me.GridColToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.GridColToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.GridColToolStripMenuItem.Text = "&Grid"
         '
         'ResetToDefaultToolStripMenuItem
         '
         Me.ResetToDefaultToolStripMenuItem.Enabled = False
         Me.ResetToDefaultToolStripMenuItem.Name = "ResetToDefaultToolStripMenuItem"
-        Me.ResetToDefaultToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.ResetToDefaultToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.ResetToDefaultToolStripMenuItem.Text = "&Reset To Default"
         '
         'ResetToolStripMenuItem
