@@ -64,7 +64,7 @@
             Case "SnesOrama"
                 _link = "http://snesorama.us/ROMS/?s=%2A&q=" & MedGuiR.TextBox35.Text
             Case "Viim's Lair"
-                _link = "http://vimm.net/vault/?p=list&search=" & MedGuiR.TextBox35.Text & "&submitButton=Go"
+                _link = "http://vimm.net/vault/?p=list&system=All&q=" & MedGuiR.TextBox35.Text & "&submitButton=Go"
             Case "WoWroMs"
                 _link = "https://wowroms.com/en/roms/list?search=" & MedGuiR.TextBox35.Text
             Case "Mednafen Bios"
