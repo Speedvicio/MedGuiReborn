@@ -264,6 +264,7 @@
     <Compile Include="TheGamesDB.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ThemeChanger.vb" />
     <Compile Include="UCI.designer.vb">
       <DependentUpon>UCI.vb</DependentUpon>
     </Compile>

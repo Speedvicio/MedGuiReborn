@@ -300,6 +300,8 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         Threading.Thread.CurrentThread.CurrentCulture = customCulture
 
         Me.Icon = gIcon
+        'ChangeControlColors(Me, "Both")
+
         ComboBox6.Items.Clear()
         ComboBox6.Items.Add("0x0")
         ComboBox6.Items.AddRange(SupportedScrnSizes.GetSizesAsStrings)

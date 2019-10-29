@@ -2719,13 +2719,13 @@ SKIPHASH:
 
     Private Sub CellsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CellsToolStripMenuItem.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.RowsDefaultCellStyle.BackColor = ColorDialog1.Color
+            DataGridView1.RowsDefaultCellStyle.BackColor = DefBack
         End If
     End Sub
 
     Private Sub FontToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles FontToolStripMenuItem2.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.RowsDefaultCellStyle.SelectionForeColor = ColorDialog1.Color
+            DataGridView1.RowsDefaultCellStyle.SelectionForeColor = DefFore
         End If
     End Sub
 
@@ -2749,6 +2749,31 @@ SKIPHASH:
 
     Private Sub TestPCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TestPCToolStripMenuItem.Click
         TestCPU.Show()
+    End Sub
+
+    Private Sub BackgroundToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackgroundToolStripMenuItem.Click
+        If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
+            DefBack = ColorDialog1.Color
+            ChangeControlColors(Me, "Background")
+        End If
+    End Sub
+
+    Private Sub ForeColorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ForeColorToolStripMenuItem.Click
+        If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
+            DefFore = ColorDialog1.Color
+            ChangeControlColors(Me, "Forecolor")
+        End If
+    End Sub
+
+    Private Sub ContrastToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContrastToolStripMenuItem.Click
+        If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
+            DefBack = ColorDialog1.Color
+            ChangeControlColors(Me, "Contrast")
+        End If
+    End Sub
+
+    Private Sub ResetToDefaultToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ResetToDefaultToolStripMenuItem1.Click
+        ChangeControlColors(Me, "Reset")
     End Sub
 
     Private Sub ResetToDefaultToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetToDefaultToolStripMenuItem.Click
