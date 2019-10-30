@@ -44,7 +44,8 @@ Module GlobalVar
         End If
 
         'If IO.File.Exists(MedExtra & "\NetPlay\mednafen-server.exe") = False Then MedGuiR.ServerToolStripButton.Enabled = False
-
+        F1 = MedGuiR
+        ColorizeForm()
     End Sub
 
     Public Sub Test_Server()

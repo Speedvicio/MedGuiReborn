@@ -8,6 +8,7 @@ Public Class TestCPU
         Me.Icon = gIcon
         F1 = Me
         CenterForm()
+        ColorizeForm()
 
         Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
         customCulture.NumberFormat.NumberDecimalSeparator = "."

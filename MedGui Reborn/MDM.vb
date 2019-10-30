@@ -143,6 +143,7 @@ Public Class MDM
         Next
         F1 = Me
         CenterForm()
+        ColorizeForm()
     End Sub
 
     Private Sub cleaning()

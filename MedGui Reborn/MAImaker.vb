@@ -161,6 +161,7 @@ Public Class MAImaker
         Me.Icon = gIcon
         F1 = Me
         CenterForm()
+        ColorizeForm()
     End Sub
 
     Private Sub MaiTask()

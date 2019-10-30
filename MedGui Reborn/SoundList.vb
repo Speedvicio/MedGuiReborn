@@ -84,6 +84,7 @@
         Read_Resource()
         F1 = Me
         CenterForm()
+        ColorizeForm()
         'Me.TopMost = True
     End Sub
 

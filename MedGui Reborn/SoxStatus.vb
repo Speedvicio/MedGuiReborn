@@ -4,6 +4,7 @@
         Me.Icon = gIcon
         F1 = Me
         CenterForm()
+        ColorizeForm()
         Label1.Refresh()
         Me.Refresh()
     End Sub

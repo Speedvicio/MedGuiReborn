@@ -217,6 +217,7 @@ Partial Class CPM
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(49, 30)
         Me.Button4.TabIndex = 7
+        Me.Button4.Tag = "MeNot"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button1
@@ -226,6 +227,7 @@ Partial Class CPM
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(49, 30)
         Me.Button1.TabIndex = 4
+        Me.Button1.Tag = "MeNot"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button3
@@ -235,6 +237,7 @@ Partial Class CPM
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(49, 30)
         Me.Button3.TabIndex = 6
+        Me.Button3.Tag = "MeNot"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
@@ -244,6 +247,7 @@ Partial Class CPM
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(49, 30)
         Me.Button2.TabIndex = 5
+        Me.Button2.Tag = "MeNot"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'GroupBox3
@@ -267,6 +271,7 @@ Partial Class CPM
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(49, 30)
         Me.Button8.TabIndex = 7
+        Me.Button8.Tag = "MeNot"
         Me.Button8.UseVisualStyleBackColor = True
         '
         'Button9
@@ -276,6 +281,7 @@ Partial Class CPM
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(49, 30)
         Me.Button9.TabIndex = 4
+        Me.Button9.Tag = "MeNot"
         Me.Button9.UseVisualStyleBackColor = True
         '
         'Button10
@@ -285,6 +291,7 @@ Partial Class CPM
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(49, 30)
         Me.Button10.TabIndex = 6
+        Me.Button10.Tag = "MeNot"
         Me.Button10.UseVisualStyleBackColor = True
         '
         'Button11
@@ -294,6 +301,7 @@ Partial Class CPM
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(49, 30)
         Me.Button11.TabIndex = 5
+        Me.Button11.Tag = "MeNot"
         Me.Button11.UseVisualStyleBackColor = True
         '
         'GroupBox4
@@ -317,6 +325,7 @@ Partial Class CPM
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(49, 30)
         Me.Button12.TabIndex = 7
+        Me.Button12.Tag = "MeNot"
         Me.Button12.UseVisualStyleBackColor = True
         '
         'Button13
@@ -326,6 +335,7 @@ Partial Class CPM
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(49, 30)
         Me.Button13.TabIndex = 4
+        Me.Button13.Tag = "MeNot"
         Me.Button13.UseVisualStyleBackColor = True
         '
         'Button14
@@ -335,6 +345,7 @@ Partial Class CPM
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(49, 30)
         Me.Button14.TabIndex = 6
+        Me.Button14.Tag = "MeNot"
         Me.Button14.UseVisualStyleBackColor = True
         '
         'Button15
@@ -344,6 +355,7 @@ Partial Class CPM
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(49, 30)
         Me.Button15.TabIndex = 5
+        Me.Button15.Tag = "MeNot"
         Me.Button15.UseVisualStyleBackColor = True
         '
         'CPM

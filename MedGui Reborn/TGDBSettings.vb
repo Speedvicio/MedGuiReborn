@@ -17,6 +17,7 @@ Public Class TGDBSettings
         Me.Icon = gIcon
         F1 = Me
         CenterForm()
+        ColorizeForm()
         CheckBox1.Checked = GlobalVar.NewAPI
     End Sub
 

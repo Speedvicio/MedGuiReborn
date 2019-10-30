@@ -7,6 +7,7 @@ Public Class PerConf
         Refresh_listbox()
         F1 = Me
         CenterForm()
+        ColorizeForm()
     End Sub
 
     Private Sub Refresh_listbox()

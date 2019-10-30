@@ -49,6 +49,7 @@ Partial Class Alpha
         Me.PictureBox1.Size = New System.Drawing.Size(140, 64)
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Tag = "MeNot"
         '
         'TextBox1
         '
@@ -57,6 +58,7 @@ Partial Class Alpha
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(139, 20)
         Me.TextBox1.TabIndex = 3
+        Me.TextBox1.Tag = "MeNot"
         '
         'Button1
         '

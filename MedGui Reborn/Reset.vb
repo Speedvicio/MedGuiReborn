@@ -66,6 +66,7 @@
         Me.Icon = gIcon
         F1 = Me
         CenterForm()
+        ColorizeForm()
     End Sub
 
 End Class

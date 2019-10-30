@@ -213,6 +213,7 @@ Partial Class MgrSetting
         Me.Label115 = New System.Windows.Forms.Label()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ComboBox54 = New System.Windows.Forms.ComboBox()
         Me.Label133 = New System.Windows.Forms.Label()
         Me.Label125 = New System.Windows.Forms.Label()
@@ -572,7 +573,6 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -610,6 +610,7 @@ Partial Class MgrSetting
         Me.GroupBox22.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -695,7 +696,6 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -1025,6 +1025,7 @@ Partial Class MgrSetting
         Me.Label136.Name = "Label136"
         Me.Label136.Size = New System.Drawing.Size(30, 15)
         Me.Label136.TabIndex = 99
+        Me.Label136.Tag = "MeNot"
         Me.Label136.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label136, "FPS display background color.")
         '
@@ -1037,6 +1038,7 @@ Partial Class MgrSetting
         Me.Label135.Name = "Label135"
         Me.Label135.Size = New System.Drawing.Size(30, 15)
         Me.Label135.TabIndex = 98
+        Me.Label135.Tag = "MeNot"
         Me.Label135.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label135, "FPS display text color.")
         '
@@ -2747,6 +2749,15 @@ Partial Class MgrSetting
         Me.GroupBox6.TabIndex = 1
         Me.GroupBox6.TabStop = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(114, 16)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(25, 18)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 55
+        Me.PictureBox1.TabStop = False
+        '
         'ComboBox54
         '
         Me.ComboBox54.FormattingEnabled = True
@@ -2999,6 +3010,7 @@ Partial Class MgrSetting
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(72, 13)
         Me.Label27.TabIndex = 1
+        Me.Label27.Tag = "MeNot"
         Me.Label27.Text = "Net-Play Host"
         Me.ToolTip1.SetToolTip(Me.Label27, "Wait for host and port check!!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Green Text = Server Open" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Red Text = Server Clo" &
         "se" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Double click to open Server List on notepad")
@@ -4348,6 +4360,7 @@ Partial Class MgrSetting
         Me.Label93.Name = "Label93"
         Me.Label93.Size = New System.Drawing.Size(30, 15)
         Me.Label93.TabIndex = 90
+        Me.Label93.Tag = "MeNot"
         Me.Label93.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label93, "Anaglyph maximum-brightness color for right view.")
         '
@@ -4358,6 +4371,7 @@ Partial Class MgrSetting
         Me.Label91.Name = "Label91"
         Me.Label91.Size = New System.Drawing.Size(30, 15)
         Me.Label91.TabIndex = 89
+        Me.Label91.Tag = "MeNot"
         Me.Label91.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label91, "Default maximum-brightness color to use in non-anaglyph 3D modes.")
         '
@@ -4368,6 +4382,7 @@ Partial Class MgrSetting
         Me.Label92.Name = "Label92"
         Me.Label92.Size = New System.Drawing.Size(30, 15)
         Me.Label92.TabIndex = 88
+        Me.Label92.Tag = "MeNot"
         Me.Label92.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label92, "Anaglyph maximum-brightness color for left view.")
         '
@@ -5426,6 +5441,7 @@ Partial Class MgrSetting
         Me.Label87.Name = "Label87"
         Me.Label87.Size = New System.Drawing.Size(30, 15)
         Me.Label87.TabIndex = 87
+        Me.Label87.Tag = "MeNot"
         Me.Label87.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label87, "Crosshairs color for lightgun on port 2/2A." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A value of 0x1000000 disables cros" &
         "shair drawing.")
@@ -5446,6 +5462,7 @@ Partial Class MgrSetting
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(30, 15)
         Me.Label86.TabIndex = 85
+        Me.Label86.Tag = "MeNot"
         Me.Label86.Text = "XXX"
         Me.ToolTip1.SetToolTip(Me.Label86, "Crosshairs color for lightgun on port 1/1A." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "A value of 0x1000000 disables cros" &
         "shair drawing.")
@@ -6704,15 +6721,6 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(114, 16)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(25, 18)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 55
-        Me.PictureBox1.TabStop = False
-        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -6776,6 +6784,7 @@ Partial Class MgrSetting
         Me.TabPage6.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6884,7 +6893,6 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -44,6 +44,7 @@ Public Class MedGuiR
 
         SoxStatus.Close()
         FirstStart = False
+
     End Sub
 
     Private Sub ParseCommandLineArgs()

@@ -33,6 +33,7 @@ Public Class IsoSelector
 
         F1 = Me
         CenterForm()
+        ColorizeForm()
         'Dim driveInfo As System.IO.DriveInfo() = _
         'System.IO.DriveInfo.GetDrives()
         'For Each d As System.IO.DriveInfo In driveInfo

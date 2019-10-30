@@ -304,6 +304,10 @@ Public Class UCI
 
         irc_reload()
         If NetPlay.MyLocalIp <> "" Then Label3.Text = "MyIP: " & NetPlay.MyLocalIp Else Label3.Visible = False
+
+        F1 = Me
+        CenterForm()
+        ColorizeForm()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

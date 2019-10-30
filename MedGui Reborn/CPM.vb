@@ -231,6 +231,7 @@ ErrorHandler:
         Refresh_listbox()
         F1 = Me
         CenterForm()
+        ColorizeForm()
     End Sub
 
     Private Sub Load_Def_Pal()

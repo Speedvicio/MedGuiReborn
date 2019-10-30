@@ -45,6 +45,10 @@
 
             forMax = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Form_State")
             MGRH = RIni.IniRead(MedExtra & "\Mini.ini", "General", "MGRH")
+
+            DefBack = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Form Style", "Background_Color"))
+            DefFore = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Form Style", "Forecolor_Color"))
+
         Catch ex As Exception
             MGRWriteLog("ManageIni - GeneralRMini: " & ex.Message)
         Finally
@@ -264,6 +268,9 @@
                 WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color", MedGuiR.DataGridView1.GridColor.ToArgb)
                 WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Background_Color", MedGuiR.DataGridView1.BackgroundColor.ToArgb)
             End If
+
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Form Style", "Background_Color", DefBack.ToArgb)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Form Style", "Forecolor_Color", DefFore.ToArgb)
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Default", MedGuiR.TextBox9.Text)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Apple2", MedGuiR.TextBox22.Text)

@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -346,6 +346,11 @@ Partial Class MedGuiR
         Me.ImportFromFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddShortuctToDesktopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
+        Me.FormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BackgroundToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ForeColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContrastToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ResetToDefaultToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -356,7 +361,6 @@ Partial Class MedGuiR
         Me.BackgroudToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GridColToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResetToDefaultToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FormToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ResetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator()
         Me.mMetroMed = New System.Windows.Forms.ToolStripMenuItem()
@@ -368,10 +372,6 @@ Partial Class MedGuiR
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-        Me.BackgroundToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ForeColorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ContrastToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ResetToDefaultToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -426,23 +426,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -450,9 +450,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -3382,7 +3382,7 @@ Partial Class MedGuiR
         '
         Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.FormToolStripMenuItem, Me.GridToolStripMenuItem, Me.ResetToolStripMenuItem, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 510)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 488)
         '
         'StartGameToolStripMenuItem
         '
@@ -3560,6 +3560,42 @@ Partial Class MedGuiR
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
         Me.ToolStripSeparator9.Size = New System.Drawing.Size(205, 6)
         '
+        'FormToolStripMenuItem
+        '
+        Me.FormToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackgroundToolStripMenuItem, Me.ForeColorToolStripMenuItem, Me.ContrastToolStripMenuItem, Me.ResetToDefaultToolStripMenuItem1})
+        Me.FormToolStripMenuItem.Name = "FormToolStripMenuItem"
+        Me.FormToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
+        Me.FormToolStripMenuItem.Text = "&Custom Theme"
+        Me.FormToolStripMenuItem.ToolTipText = "Change Frontend Colors"
+        '
+        'BackgroundToolStripMenuItem
+        '
+        Me.BackgroundToolStripMenuItem.Name = "BackgroundToolStripMenuItem"
+        Me.BackgroundToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.BackgroundToolStripMenuItem.Text = "&Background"
+        Me.BackgroundToolStripMenuItem.ToolTipText = "Change Background Color"
+        '
+        'ForeColorToolStripMenuItem
+        '
+        Me.ForeColorToolStripMenuItem.Name = "ForeColorToolStripMenuItem"
+        Me.ForeColorToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.ForeColorToolStripMenuItem.Text = "&Fore Color"
+        Me.ForeColorToolStripMenuItem.ToolTipText = "Change Font Color"
+        '
+        'ContrastToolStripMenuItem
+        '
+        Me.ContrastToolStripMenuItem.Name = "ContrastToolStripMenuItem"
+        Me.ContrastToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.ContrastToolStripMenuItem.Text = "&Contrast"
+        Me.ContrastToolStripMenuItem.ToolTipText = "Change Background and Font Color"
+        '
+        'ResetToDefaultToolStripMenuItem1
+        '
+        Me.ResetToDefaultToolStripMenuItem1.Name = "ResetToDefaultToolStripMenuItem1"
+        Me.ResetToDefaultToolStripMenuItem1.Size = New System.Drawing.Size(159, 22)
+        Me.ResetToDefaultToolStripMenuItem1.Text = "&Reset To Default"
+        Me.ResetToDefaultToolStripMenuItem1.ToolTipText = "Reset To Default"
+        '
         'GridToolStripMenuItem
         '
         Me.GridToolStripMenuItem.CheckOnClick = True
@@ -3574,7 +3610,7 @@ Partial Class MedGuiR
         Me.FontToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem1, Me.CellsToolStripMenuItem})
         Me.FontToolStripMenuItem.Enabled = False
         Me.FontToolStripMenuItem.Name = "FontToolStripMenuItem"
-        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.FontToolStripMenuItem.Text = "&Normal"
         '
         'FontToolStripMenuItem1
@@ -3594,7 +3630,7 @@ Partial Class MedGuiR
         Me.HighlightToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FontToolStripMenuItem2, Me.CellsToolStripMenuItem1})
         Me.HighlightToolStripMenuItem.Enabled = False
         Me.HighlightToolStripMenuItem.Name = "HighlightToolStripMenuItem"
-        Me.HighlightToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.HighlightToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.HighlightToolStripMenuItem.Text = "&Highlight"
         '
         'FontToolStripMenuItem2
@@ -3613,31 +3649,22 @@ Partial Class MedGuiR
         '
         Me.BackgroudToolStripMenuItem.Enabled = False
         Me.BackgroudToolStripMenuItem.Name = "BackgroudToolStripMenuItem"
-        Me.BackgroudToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BackgroudToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.BackgroudToolStripMenuItem.Text = "&Backgroud"
         '
         'GridColToolStripMenuItem
         '
         Me.GridColToolStripMenuItem.Enabled = False
         Me.GridColToolStripMenuItem.Name = "GridColToolStripMenuItem"
-        Me.GridColToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GridColToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.GridColToolStripMenuItem.Text = "&Grid"
         '
         'ResetToDefaultToolStripMenuItem
         '
         Me.ResetToDefaultToolStripMenuItem.Enabled = False
         Me.ResetToDefaultToolStripMenuItem.Name = "ResetToDefaultToolStripMenuItem"
-        Me.ResetToDefaultToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ResetToDefaultToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.ResetToDefaultToolStripMenuItem.Text = "&Reset To Default"
-        '
-        'FormToolStripMenuItem
-        '
-        Me.FormToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BackgroundToolStripMenuItem, Me.ForeColorToolStripMenuItem, Me.ContrastToolStripMenuItem, Me.ResetToDefaultToolStripMenuItem1})
-        Me.FormToolStripMenuItem.Name = "FormToolStripMenuItem"
-        Me.FormToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
-        Me.FormToolStripMenuItem.Text = "&Custom Theme"
-        Me.FormToolStripMenuItem.ToolTipText = "Change Frontend Colors"
-        Me.FormToolStripMenuItem.Visible = False
         '
         'ResetToolStripMenuItem
         '
@@ -3706,34 +3733,6 @@ Partial Class MedGuiR
         'ColorDialog1
         '
         Me.ColorDialog1.AnyColor = True
-        '
-        'BackgroundToolStripMenuItem
-        '
-        Me.BackgroundToolStripMenuItem.Name = "BackgroundToolStripMenuItem"
-        Me.BackgroundToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.BackgroundToolStripMenuItem.Text = "&Background"
-        Me.BackgroundToolStripMenuItem.ToolTipText = "Change Background Color"
-        '
-        'ForeColorToolStripMenuItem
-        '
-        Me.ForeColorToolStripMenuItem.Name = "ForeColorToolStripMenuItem"
-        Me.ForeColorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ForeColorToolStripMenuItem.Text = "&Fore Color"
-        Me.ForeColorToolStripMenuItem.ToolTipText = "Change Font Color"
-        '
-        'ContrastToolStripMenuItem
-        '
-        Me.ContrastToolStripMenuItem.Name = "ContrastToolStripMenuItem"
-        Me.ContrastToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ContrastToolStripMenuItem.Text = "&Contrast"
-        Me.ContrastToolStripMenuItem.ToolTipText = "Change Background and Font Color"
-        '
-        'ResetToDefaultToolStripMenuItem1
-        '
-        Me.ResetToDefaultToolStripMenuItem1.Name = "ResetToDefaultToolStripMenuItem1"
-        Me.ResetToDefaultToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.ResetToDefaultToolStripMenuItem1.Text = "&Reset To Default"
-        Me.ResetToDefaultToolStripMenuItem1.ToolTipText = "Reset To Default"
         '
         'MedGuiR
         '

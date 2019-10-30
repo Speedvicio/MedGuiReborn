@@ -33,7 +33,7 @@
                                 DefFore = Color.FromArgb(DefBack.ToArgb() Xor &HFFFFFF)
                                 x.ForeColor = DefFore
                             Case "Reset"
-                                DefBack = Color.FromKnownColor(KnownColor.Transparent)
+                                DefBack = Color.FromKnownColor(KnownColor.Control)
                                 DefFore = Color.FromKnownColor(KnownColor.Black)
                                 x.BackColor = DefBack
                                 x.ForeColor = DefFore
@@ -45,5 +45,7 @@
             x.Enabled = en
         Next
 
+        MainParent.Refresh()
+        'Application.DoEvents()
     End Sub
 End Module

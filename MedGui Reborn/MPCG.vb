@@ -106,6 +106,9 @@ Public Class MPCG
     Private Sub MPCG_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
         Read_Resource()
+        F1 = Me
+        CenterForm()
+        ColorizeForm()
     End Sub
 
 End Class

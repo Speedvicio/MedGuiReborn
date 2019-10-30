@@ -23,6 +23,9 @@ Public Class MedClient
         TextBox1.Text = Nick
         ParseUsedData()
 
+        F1 = Me
+        CenterForm()
+        ColorizeForm()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerNetPlay.Tick

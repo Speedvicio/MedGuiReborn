@@ -294,6 +294,7 @@ Public Class Mcheat
         Me.Icon = gIcon
         F1 = Me
         CenterForm()
+        ColorizeForm()
 
         ResetAll()
 

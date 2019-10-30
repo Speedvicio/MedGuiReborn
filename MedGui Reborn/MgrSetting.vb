@@ -300,7 +300,6 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         Threading.Thread.CurrentThread.CurrentCulture = customCulture
 
         Me.Icon = gIcon
-        'ChangeControlColors(Me, "Both")
 
         ComboBox6.Items.Clear()
         ComboBox6.Items.Add("0x0")
@@ -311,6 +310,7 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         'If My.Computer.Network.IsAvailable = True And NetVerified = False Then check_NetPlayServer()
         F1 = Me
         CenterForm()
+        ColorizeForm()
 
         If rn IsNot Nothing Then
             Select Case True

@@ -287,6 +287,9 @@ Public Class ModLand
         DataGridView1.DoubleBuffered(True)
         Me.Icon = gIcon
         Read_Resource()
+        F1 = Me
+        CenterForm()
+        ColorizeForm()
     End Sub
 
     Private Sub TextBox1_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox1.KeyUp

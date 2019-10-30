@@ -38,4 +38,15 @@
         F1.BringToFront()
     End Sub
 
+    Public Sub ColorizeForm()
+        If DefBack = Color.Empty And DefFore = Color.Empty Then
+            ChangeControlColors(F1, "Reset")
+        ElseIf DefBack = Color.Empty Then
+            ChangeControlColors(F1, "Forecolor")
+        ElseIf DefFore = Color.Empty Then
+            ChangeControlColors(F1, "Backcolor")
+        Else
+            ChangeControlColors(F1, "Both")
+        End If
+    End Sub
 End Module

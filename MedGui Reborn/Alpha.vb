@@ -10,6 +10,7 @@
         TrackBar1.Value = Convert.ToInt32(TextBox1.Text.Substring(0, 2), 16)
         F1 = Me
         CenterForm()
+        ColorizeForm()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
