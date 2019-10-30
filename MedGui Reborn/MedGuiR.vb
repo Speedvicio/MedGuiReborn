@@ -3145,4 +3145,13 @@ MisScan:
         End If
     End Sub
 
+    Private Sub MedGuiR_SizeChanged(sender As Object, e As EventArgs) Handles Me.SizeChanged
+        'If Me.WindowState = FormWindowState.Normal Then
+        Dim actualtab As Integer = TabControl1.SelectedIndex
+        TabControl1.SelectedIndex = 0
+        TabControl1.SelectedIndex = 1
+        TabControl1.SelectedIndex = actualtab
+        'End If
+    End Sub
+
 End Class

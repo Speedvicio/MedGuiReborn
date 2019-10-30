@@ -149,6 +149,7 @@ Module Resource
             MedGuiR.AddShortuctToDesktopToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\buggy.png"))
             MedGuiR.AboutToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\info.png"))
             MedGuiR.ImportFromFile.Image = (New Bitmap(MedExtra & "Resource\Gui\cover.png"))
+            MedGuiR.FormToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\theme.png"))
             MedGuiR.ResetToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.CheatToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\cheat.png"))
             MedGuiR.TestPCToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))

@@ -1,5 +1,6 @@
 ﻿Module ThemeChanger
     Public DefBack, DefFore As Color
+
     Public Sub ChangeControlColors(ByRef MainParent As Control, Preset As String)
 
         If Not MainParent.HasChildren Then Exit Sub
@@ -39,13 +40,20 @@
                                 x.ForeColor = DefFore
                                 MainParent.BackColor = Color.FromKnownColor(KnownColor.Control)
                         End Select
-
                     End If
             End Select
             x.Enabled = en
         Next
 
+        If MainParent Is MedGuiR Then
+            Dim actualtab As Integer = MedGuiR.TabControl1.SelectedIndex
+            MedGuiR.TabControl1.SelectedIndex = 0
+            MedGuiR.TabControl1.SelectedIndex = 1
+            MedGuiR.TabControl1.SelectedIndex = actualtab
+        End If
+
         MainParent.Refresh()
         'Application.DoEvents()
     End Sub
+
 End Module
