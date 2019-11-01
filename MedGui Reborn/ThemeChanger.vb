@@ -23,9 +23,11 @@
                                 MainParent.BackColor = DefBack
                                 x.BackColor = DefBack
                                 x.ForeColor = DefFore
+                                FlatC(x)
                             Case "Background"
                                 x.BackColor = DefBack
                                 MainParent.BackColor = DefBack
+                                FlatC(x)
                             Case "Forecolor"
                                 x.ForeColor = DefFore
                             Case "Contrast"
@@ -33,14 +35,17 @@
                                 x.BackColor = DefBack
                                 DefFore = Color.FromArgb(DefBack.ToArgb() Xor &HFFFFFF)
                                 x.ForeColor = DefFore
+                                FlatC(x)
                             Case "Reset"
                                 DefBack = Color.FromKnownColor(KnownColor.Control)
                                 DefFore = Color.FromKnownColor(KnownColor.Black)
                                 x.BackColor = DefBack
                                 x.ForeColor = DefFore
                                 MainParent.BackColor = Color.FromKnownColor(KnownColor.Control)
+                                FlatC(x)
                         End Select
                     End If
+
             End Select
             x.Enabled = en
         Next
@@ -54,6 +59,23 @@
 
         MainParent.Refresh()
         'Application.DoEvents()
+    End Sub
+
+    Public Sub FlatC(x As Control)
+
+        If TypeOf x Is Button Then
+            If DefBack.ToArgb = -986896 And DefFore.ToArgb = -16777216 Then
+                DirectCast(x, Button).FlatStyle = FlatStyle.Standard
+            Else
+                DirectCast(x, Button).FlatStyle = FlatStyle.Flat
+            End If
+        ElseIf TypeOf x Is GroupBox Then
+            If DefBack.ToArgb = -986896 And DefFore.ToArgb = -16777216 Then
+                DirectCast(x, GroupBox).FlatStyle = FlatStyle.Standard
+            Else
+                DirectCast(x, GroupBox).FlatStyle = FlatStyle.Flat
+            End If
+        End If
     End Sub
 
 End Module

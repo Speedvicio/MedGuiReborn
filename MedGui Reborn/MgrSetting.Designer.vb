@@ -1911,6 +1911,7 @@ Partial Class MgrSetting
         Me.Button30.Name = "Button30"
         Me.Button30.Size = New System.Drawing.Size(23, 23)
         Me.Button30.TabIndex = 29
+        Me.Button30.Text = "..."
         Me.Button30.UseVisualStyleBackColor = True
         '
         'TextBox26
@@ -1936,6 +1937,7 @@ Partial Class MgrSetting
         Me.Button31.Name = "Button31"
         Me.Button31.Size = New System.Drawing.Size(23, 23)
         Me.Button31.TabIndex = 26
+        Me.Button31.Text = "..."
         Me.Button31.UseVisualStyleBackColor = True
         '
         'TextBox27
@@ -1962,6 +1964,7 @@ Partial Class MgrSetting
         Me.Button32.Name = "Button32"
         Me.Button32.Size = New System.Drawing.Size(23, 23)
         Me.Button32.TabIndex = 23
+        Me.Button32.Text = "..."
         Me.Button32.UseVisualStyleBackColor = True
         '
         'TextBox28
@@ -1988,6 +1991,7 @@ Partial Class MgrSetting
         Me.Button33.Name = "Button33"
         Me.Button33.Size = New System.Drawing.Size(23, 23)
         Me.Button33.TabIndex = 20
+        Me.Button33.Text = "..."
         Me.Button33.UseVisualStyleBackColor = True
         '
         'TextBox29
@@ -2014,6 +2018,7 @@ Partial Class MgrSetting
         Me.Button34.Name = "Button34"
         Me.Button34.Size = New System.Drawing.Size(23, 23)
         Me.Button34.TabIndex = 17
+        Me.Button34.Text = "..."
         Me.Button34.UseVisualStyleBackColor = True
         '
         'TextBox30
@@ -2039,6 +2044,7 @@ Partial Class MgrSetting
         Me.Button35.Name = "Button35"
         Me.Button35.Size = New System.Drawing.Size(23, 23)
         Me.Button35.TabIndex = 14
+        Me.Button35.Text = "..."
         Me.Button35.UseVisualStyleBackColor = True
         '
         'TextBox31
@@ -2065,6 +2071,7 @@ Partial Class MgrSetting
         Me.Button36.Name = "Button36"
         Me.Button36.Size = New System.Drawing.Size(23, 23)
         Me.Button36.TabIndex = 11
+        Me.Button36.Text = "..."
         Me.Button36.UseVisualStyleBackColor = True
         '
         'TextBox32
@@ -2091,6 +2098,7 @@ Partial Class MgrSetting
         Me.Button37.Name = "Button37"
         Me.Button37.Size = New System.Drawing.Size(23, 23)
         Me.Button37.TabIndex = 8
+        Me.Button37.Text = "..."
         Me.Button37.UseVisualStyleBackColor = True
         '
         'TextBox33
@@ -2116,6 +2124,7 @@ Partial Class MgrSetting
         Me.Button38.Name = "Button38"
         Me.Button38.Size = New System.Drawing.Size(23, 23)
         Me.Button38.TabIndex = 5
+        Me.Button38.Text = "..."
         Me.Button38.UseVisualStyleBackColor = True
         '
         'TextBox34

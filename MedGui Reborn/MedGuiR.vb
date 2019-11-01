@@ -2720,13 +2720,13 @@ SKIPHASH:
 
     Private Sub CellsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CellsToolStripMenuItem.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.RowsDefaultCellStyle.BackColor = DefBack
+            DataGridView1.RowsDefaultCellStyle.BackColor = ColorDialog1.Color
         End If
     End Sub
 
     Private Sub FontToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles FontToolStripMenuItem2.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.RowsDefaultCellStyle.SelectionForeColor = DefFore
+            DataGridView1.RowsDefaultCellStyle.SelectionForeColor = ColorDialog1.Color
         End If
     End Sub
 
