@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports System.Net
-Imports SevenZip
 
 Module UpdateMednafen
     Public LastMednafenClean, LastMednafenFull As String
@@ -87,7 +86,6 @@ Module UpdateMednafen
             'SoxStatus.Show()
 
             DecompressArchive(MedExtra & "Update\LastMednafen.zip", MedGuiR.TextBox4.Text)
-
         Catch
         End Try
 

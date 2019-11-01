@@ -6,4 +6,5 @@
         CenterForm()
         Me.Refresh()
     End Sub
+
 End Class

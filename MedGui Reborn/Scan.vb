@@ -665,19 +665,19 @@ Module scan
             End If
 
             If ResRecu = vbYes Then
-                    MedGuiR.DataGridView1.Rows.Clear()
-                    stopiso = True
-                    scansiona()
-                    For Each subdirectory As String In subdirectoryEntries
-                        LoadSubDirs(subdirectory)
-                    Next
-                    SoxStatus.Close()
-                Else
-                    TempFolder = ""
-                    Exit Sub
-                End If
+                MedGuiR.DataGridView1.Rows.Clear()
+                stopiso = True
+                scansiona()
+                For Each subdirectory As String In subdirectoryEntries
+                    LoadSubDirs(subdirectory)
+                Next
+                SoxStatus.Close()
             Else
-                MedGuiR.ScanFolder()
+                TempFolder = ""
+                Exit Sub
+            End If
+        Else
+            MedGuiR.ScanFolder()
         End If
         checkpismo = False
     End Sub

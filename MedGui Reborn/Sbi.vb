@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports DiscTools
-Imports SevenZip
 
 Module Sbi
     Dim patchname As String

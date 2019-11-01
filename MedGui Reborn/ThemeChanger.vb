@@ -2,6 +2,10 @@
     Public DefBack, DefFore As Color
 
     Public Sub ChangeControlColors(ByRef MainParent As Control, Preset As String)
+        If DefBack = DefFore Then
+            MsgBox("Backgroud and Forecolour has the same value, change one of this to prevent visualization problems.", MsgBoxStyle.Exclamation + vbOKOnly, "Change one colour...")
+            Exit Sub
+        End If
 
         If Not MainParent.HasChildren Then Exit Sub
 

@@ -1,6 +1,4 @@
-﻿Imports SevenZip
-
-Module Resource
+﻿Module Resource
 
     Public Sub Read_Resource()
         Try

@@ -146,7 +146,7 @@ Module BoxArt
                     MedGuiR.PictureBox1.Image = My.Resources.NoPr : MsgBox("No BoxArt Available!", vbOKOnly + vbInformation) : Exit Sub
                 End If
             End If
-            End If
+        End If
 
         If dimg < webimagelenght Then
             Try

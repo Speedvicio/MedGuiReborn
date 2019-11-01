@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports System.Net
-Imports SevenZip
 
 Module Updater
 
@@ -221,7 +220,6 @@ Module Updater
             Else
                 My.Computer.Network.DownloadFile(ftpuri, downloadpath, ftpusername, ftppassword, True, 1000, True)
             End If
-
         Catch ex As Exception
             SoxStatus.Close()
             MessageBox.Show(ex.Message)

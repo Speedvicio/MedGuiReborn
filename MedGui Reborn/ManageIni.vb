@@ -48,7 +48,6 @@
 
             DefBack = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Form Style", "Background_Color"))
             DefFore = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Form Style", "Forecolor_Color"))
-
         Catch ex As Exception
             MGRWriteLog("ManageIni - GeneralRMini: " & ex.Message)
         Finally

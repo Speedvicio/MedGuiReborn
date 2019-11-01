@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports System.Xml
 
 Module Scrape
     Public SBoxF, SboxR As String, ScrapeForce, xmlAttemp As Integer

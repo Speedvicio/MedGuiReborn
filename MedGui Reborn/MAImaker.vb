@@ -94,6 +94,7 @@ Public Class MAImaker
         End Try
 #Disable Warning BC42105 ' La funzione 'IDassigned' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+
 #Enable Warning BC42105 ' La funzione 'IDassigned' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click

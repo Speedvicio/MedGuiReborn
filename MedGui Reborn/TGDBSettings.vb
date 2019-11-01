@@ -74,6 +74,7 @@ Public Class TGDBSettings
         End Try
 #Disable Warning BC42105 ' La funzione 'MakeTGDBList' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
     End Function
+
 #Enable Warning BC42105 ' La funzione 'MakeTGDBList' non restituisce un valore in tutti i percorsi del codice. È possibile che in fase di esecuzione venga restituita un'eccezione dovuta a un riferimento Null quando viene usato il risultato.
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click

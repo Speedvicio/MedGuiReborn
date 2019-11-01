@@ -86,4 +86,5 @@
             open_link()
         End If
     End Sub
+
 End Class

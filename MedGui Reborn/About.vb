@@ -35,23 +35,23 @@ Public Class About
 
         If IO.File.Exists(Application.StartupPath & "\fmod.dll") Then
 RETRYMOD:
-                AudioAbout.SOUNDDIR = GetRandomFilePath(MedExtra & "Resource\Music\module")
-                If oldSOUNDIR <> AudioAbout.SOUNDDIR And AudioAbout.SOUNDDIR <> "" Then
-                    AudioAbout.PlaySound()
-                    oldSOUNDIR = AudioAbout.SOUNDDIR
-                Else
-                    GoTo RETRYMOD
-                End If
-
-                If Environment.OSVersion.Version.Major >= 6 And IO.File.Exists(Application.StartupPath & "\CoreAudioApi.dll") And IO.File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") Then
-                    StartPeak()
-                    Timer1.Start()
-                Else
-                    PeakMeterCtrl1.Dispose()
-                    PeakMeterCtrl2.Dispose()
-                End If
-
+            AudioAbout.SOUNDDIR = GetRandomFilePath(MedExtra & "Resource\Music\module")
+            If oldSOUNDIR <> AudioAbout.SOUNDDIR And AudioAbout.SOUNDDIR <> "" Then
+                AudioAbout.PlaySound()
+                oldSOUNDIR = AudioAbout.SOUNDDIR
+            Else
+                GoTo RETRYMOD
             End If
+
+            If Environment.OSVersion.Version.Major >= 6 And IO.File.Exists(Application.StartupPath & "\CoreAudioApi.dll") And IO.File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") Then
+                StartPeak()
+                Timer1.Start()
+            Else
+                PeakMeterCtrl1.Dispose()
+                PeakMeterCtrl2.Dispose()
+            End If
+
+        End If
     End Sub
 
     Public Function GetRandomFilePath(ByVal folderPath As String) As String
