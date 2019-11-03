@@ -2774,6 +2774,8 @@ SKIPHASH:
     End Sub
 
     Private Sub ResetToDefaultToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ResetToDefaultToolStripMenuItem1.Click
+        DefBack = Color.FromKnownColor(KnownColor.Control)
+        DefFore = Color.FromKnownColor(KnownColor.Black)
         ChangeControlColors(Me, "Reset")
     End Sub
 

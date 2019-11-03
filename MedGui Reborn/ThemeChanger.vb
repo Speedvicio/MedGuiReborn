@@ -2,6 +2,15 @@
     Public DefBack, DefFore As Color
 
     Public Sub ChangeControlColors(ByRef MainParent As Control, Preset As String)
+
+        If DefBack = Color.Empty Then
+            DefBack = Color.FromKnownColor(KnownColor.Control)
+        End If
+
+        If DefFore = Color.Empty Then
+            DefFore = Color.FromKnownColor(KnownColor.Black)
+        End If
+
         If DefBack = DefFore Then
             MsgBox("Backgroud and Forecolour has the same value, change one of this to prevent visualization problems.", MsgBoxStyle.Exclamation + vbOKOnly, "Change one colour...")
             Exit Sub
@@ -41,8 +50,6 @@
                                 x.ForeColor = DefFore
                                 FlatC(x)
                             Case "Reset"
-                                DefBack = Color.FromKnownColor(KnownColor.Control)
-                                DefFore = Color.FromKnownColor(KnownColor.Black)
                                 x.BackColor = DefBack
                                 x.ForeColor = DefFore
                                 MainParent.BackColor = Color.FromKnownColor(KnownColor.Control)
