@@ -2769,6 +2769,7 @@ SKIPHASH:
     Private Sub ContrastToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContrastToolStripMenuItem.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
             DefBack = ColorDialog1.Color
+            DefFore = Color.FromArgb(DefBack.ToArgb() Xor &HFFFFFF)
             ChangeControlColors(Me, "Contrast")
         End If
     End Sub

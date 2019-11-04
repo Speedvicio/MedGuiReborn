@@ -32,7 +32,7 @@
                     If x.HasChildren Then ChangeControlColors(x, Preset)
                     If Not x.Tag = "MeNot" Then
                         Select Case Preset
-                            Case "Both"
+                            Case "Both", "Contrast", "Reset"
                                 MainParent.BackColor = DefBack
                                 x.BackColor = DefBack
                                 x.ForeColor = DefFore
@@ -43,17 +43,6 @@
                                 FlatC(x)
                             Case "Forecolor"
                                 x.ForeColor = DefFore
-                            Case "Contrast"
-                                MainParent.BackColor = DefBack
-                                x.BackColor = DefBack
-                                DefFore = Color.FromArgb(DefBack.ToArgb() Xor &HFFFFFF)
-                                x.ForeColor = DefFore
-                                FlatC(x)
-                            Case "Reset"
-                                x.BackColor = DefBack
-                                x.ForeColor = DefFore
-                                MainParent.BackColor = Color.FromKnownColor(KnownColor.Control)
-                                FlatC(x)
                         End Select
                     End If
 
