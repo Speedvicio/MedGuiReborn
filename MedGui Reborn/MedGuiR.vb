@@ -2792,6 +2792,8 @@ SKIPHASH:
         DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
         DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
         DataGridView1.RowsDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+        DataGridView1.GridColor = Color.FromKnownColor(KnownColor.ControlDark)
+        DataGridView1.BackgroundColor = Color.FromKnownColor(KnownColor.AppWorkspace)
         DataGridView1.Refresh()
 
         If CheckBox8.Checked = True Then
@@ -3126,6 +3128,7 @@ MisScan:
     End Sub
 
     Private Sub GridToolStripMenuItem_CheckStateChanged(sender As Object, e As EventArgs) Handles GridToolStripMenuItem.CheckStateChanged
+
         If GridToolStripMenuItem.Checked = True Then
             FontToolStripMenuItem.Enabled = True
             HighlightToolStripMenuItem.Enabled = True
@@ -3145,6 +3148,7 @@ MisScan:
             DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
             DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
             DataGridView1.RowsDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+            DataGridView1.Refresh()
         End If
     End Sub
 
