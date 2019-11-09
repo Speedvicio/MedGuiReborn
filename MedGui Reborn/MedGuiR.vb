@@ -2976,7 +2976,7 @@ SKIPHASH:
                 Dim DelBox As String = MsgBox("Do you want to delete Boxart?", vbYesNo + MsgBoxStyle.Exclamation, "Delete Boxart")
                 If DelBox = vbYes Then
                     File.Delete(pathimage)
-                    PictureBox1.Image = My.Resources.NoPr
+                    EmptyBoxart(PictureBox1)
                 End If
             End If
         Catch
@@ -2991,7 +2991,7 @@ SKIPHASH:
                 Dim DelBox As String = MsgBox("Do you want to delete Tile Image?", vbYesNo + MsgBoxStyle.Exclamation, "Delete Tile Image")
                 If DelBox = vbYes Then
                     File.Delete(title)
-                    PictureBox4.Image = My.Resources.NoPr
+                    EmptyBoxart(PictureBox4)
                 End If
             End If
         Catch
@@ -3006,7 +3006,7 @@ SKIPHASH:
                 Dim DelBox As String = MsgBox("Do you want to delete Snap Image?", vbYesNo + MsgBoxStyle.Exclamation, "Delete Snap Image")
                 If DelBox = vbYes Then
                     File.Delete(snap)
-                    PictureBox5.Image = My.Resources.NoPr
+                    EmptyBoxart(PictureBox5)
                 End If
             End If
         Catch
