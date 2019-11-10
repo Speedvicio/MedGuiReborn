@@ -206,12 +206,12 @@ Module BoxArt
         real_name = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
         detect_icon()
         Dim PathEmptyBox As String = MedExtra & "Resource\Logos\" & gif & ".png"
-        Select Case gif
-            Case "apple2", "cdplay", "fds", "gb", "gba", "gbc", "gg", "nes", "ngp", "ngpc",
-                 "pce", "pcfx", "psx", "snes", "wswan", "wswanc", "ss"
-                boxart.BackColor = Color.White
-        End Select
         If IO.File.Exists(PathEmptyBox) Then
+            Select Case gif
+                Case "apple2", "cdplay", "fds", "gb", "gba", "gbc", "gg", "nes", "ngp", "ngpc",
+                 "pce", "pcfx", "psx", "snes", "wswan", "wswanc", "ss"
+                    boxart.BackColor = Color.White
+            End Select
             boxart.Load(PathEmptyBox)
         Else
             boxart.Image = My.Resources.NoPr
