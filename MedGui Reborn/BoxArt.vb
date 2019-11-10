@@ -5,6 +5,10 @@ Module BoxArt
     Public rn, pathimage, snap, title As String
 
     Public Sub Specific_Info()
+        MedGuiR.PictureBox1.BackColor = Color.Black
+        MedGuiR.PictureBox5.BackColor = Color.Black
+        MedGuiR.PictureBox4.BackColor = Color.Black
+
         Try
             Dim drom As Integer
             Select Case LCase(Right(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value(), 3))
@@ -185,22 +189,28 @@ Module BoxArt
     End Sub
 
     Private Sub SearchScrape()
+
+        For Each foundFile As String In My.Computer.FileSystem.GetFiles(
+    MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()))
+            If foundFile.Contains("tfront") Then MedGuiR.PictureBox1.Load(foundFile) : pathimage = foundFile : Exit Sub
+        Next
+
         Try
             EmptyBoxart(MedGuiR.PictureBox1)
         Catch
             MedGuiR.PictureBox1.Image = Nothing
         End Try
-
-        For Each foundFile As String In My.Computer.FileSystem.GetFiles(
-    MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()))
-            If foundFile.Contains("tfront") Then MedGuiR.PictureBox1.Load(foundFile) : pathimage = foundFile
-        Next
     End Sub
 
     Public Function EmptyBoxart(boxart As PictureBox)
         real_name = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
         detect_icon()
         Dim PathEmptyBox As String = MedExtra & "Resource\Logos\" & gif & ".png"
+        Select Case gif
+            Case "apple2", "cdplay", "fds", "gb", "gba", "gbc", "gg", "nes", "ngp", "ngpc",
+                 "pce", "pcfx", "psx", "snes", "wswan", "wswanc", "ss"
+                boxart.BackColor = Color.White
+        End Select
         If IO.File.Exists(PathEmptyBox) Then
             boxart.Load(PathEmptyBox)
         Else
