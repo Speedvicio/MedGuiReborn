@@ -144,7 +144,7 @@
             MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color"))
             MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color"))
             MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color"))
-            MedGuiR.DataGridView1.GridColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Background_Color"))
+            MedGuiR.DataGridView1.BackgroundColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Background_Color"))
             MedGuiR.DataGridView1.GridColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color"))
             MedGuiR.DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
             MedGuiR.DataGridView1.Refresh()
