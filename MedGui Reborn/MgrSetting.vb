@@ -79,7 +79,9 @@ Public Class MgrSetting
                 TabControl1.SelectedTab = TabPage27
             Case 20
                 TabControl1.TabPages.Insert(10, TabPage26)
+                TabControl1.TabPages.Insert(10, TabPage32)
                 TabControl1.SelectedTab = TabPage26
+                TabControl1.SelectedTab = TabPage32
             Case 21
                 TabControl1.TabPages.Insert(10, TabPage29)
                 TabControl1.TabPages.Insert(11, TabPage30)
@@ -324,6 +326,9 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         oxfsr = NumericUpDown6.Value
         oyfsr = NumericUpDown6.Value
 
+        If Val(vmedClear) > 12300 Then
+            CheckBox65.Visible = False
+        End If
     End Sub
 
     Private Sub Button41_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button41.Click

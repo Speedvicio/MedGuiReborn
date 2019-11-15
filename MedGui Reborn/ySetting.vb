@@ -329,6 +329,12 @@
                         snes = snes & " -snes_faust.cx4.clock_rate " & MgrSetting.NumericUpDown42.Value & " -snes_faust.h_filter " & MgrSetting.ComboBox59.Text
                     End If
                     apple2 = apple2 & " -apple2.video.mode " & MgrSetting.ComboBox62.Text
+                Case Is = 12400
+                    ss = Replace(ss, " -ss.midsync " & MgrSetting.CheckBox65.CheckState, Nothing)
+
+                    apple2 = Replace(apple2, "rgb_alt1", "rgb_alt")
+                    apple2 = Replace(apple2, "rgb_alt2", "rgb_alt_tfr")
+
             End Select
         Next
     End Sub

@@ -573,6 +573,25 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.TabPage32 = New System.Windows.Forms.TabPage()
+        Me.GroupBox28 = New System.Windows.Forms.GroupBox()
+        Me.Label179 = New System.Windows.Forms.Label()
+        Me.ComboBox63 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox109 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox110 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox111 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox112 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox113 = New System.Windows.Forms.CheckBox()
+        Me.NumericUpDown43 = New System.Windows.Forms.NumericUpDown()
+        Me.Label180 = New System.Windows.Forms.Label()
+        Me.CheckBox114 = New System.Windows.Forms.CheckBox()
+        Me.TrackBar21 = New System.Windows.Forms.TrackBar()
+        Me.Label181 = New System.Windows.Forms.Label()
+        Me.CheckBox115 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox64 = New System.Windows.Forms.ComboBox()
+        Me.Label182 = New System.Windows.Forms.Label()
+        Me.ComboBox65 = New System.Windows.Forms.ComboBox()
+        Me.Label183 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -696,6 +715,10 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage32.SuspendLayout()
+        Me.GroupBox28.SuspendLayout()
+        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar21, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -729,6 +752,7 @@ Partial Class MgrSetting
         Me.TabControl1.Controls.Add(Me.TabPage25)
         Me.TabControl1.Controls.Add(Me.TabPage27)
         Me.TabControl1.Controls.Add(Me.TabPage26)
+        Me.TabControl1.Controls.Add(Me.TabPage32)
         Me.TabControl1.Controls.Add(Me.TabPage29)
         Me.TabControl1.Controls.Add(Me.TabPage30)
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
@@ -6730,6 +6754,227 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'TabPage32
+        '
+        Me.TabPage32.Controls.Add(Me.GroupBox28)
+        Me.TabPage32.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage32.Name = "TabPage32"
+        Me.TabPage32.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage32.TabIndex = 31
+        Me.TabPage32.Text = "Super Nintendo Faust"
+        Me.TabPage32.UseVisualStyleBackColor = True
+        '
+        'GroupBox28
+        '
+        Me.GroupBox28.Controls.Add(Me.Label179)
+        Me.GroupBox28.Controls.Add(Me.ComboBox63)
+        Me.GroupBox28.Controls.Add(Me.CheckBox109)
+        Me.GroupBox28.Controls.Add(Me.CheckBox110)
+        Me.GroupBox28.Controls.Add(Me.CheckBox111)
+        Me.GroupBox28.Controls.Add(Me.CheckBox112)
+        Me.GroupBox28.Controls.Add(Me.CheckBox113)
+        Me.GroupBox28.Controls.Add(Me.NumericUpDown43)
+        Me.GroupBox28.Controls.Add(Me.Label180)
+        Me.GroupBox28.Controls.Add(Me.CheckBox114)
+        Me.GroupBox28.Controls.Add(Me.TrackBar21)
+        Me.GroupBox28.Controls.Add(Me.Label181)
+        Me.GroupBox28.Controls.Add(Me.CheckBox115)
+        Me.GroupBox28.Controls.Add(Me.ComboBox64)
+        Me.GroupBox28.Controls.Add(Me.Label182)
+        Me.GroupBox28.Controls.Add(Me.ComboBox65)
+        Me.GroupBox28.Controls.Add(Me.Label183)
+        Me.GroupBox28.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox28.Name = "GroupBox28"
+        Me.GroupBox28.Size = New System.Drawing.Size(304, 278)
+        Me.GroupBox28.TabIndex = 6
+        Me.GroupBox28.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.GroupBox28, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
+        '
+        'Label179
+        '
+        Me.Label179.AutoSize = True
+        Me.Label179.Location = New System.Drawing.Point(157, 64)
+        Me.Label179.Name = "Label179"
+        Me.Label179.Size = New System.Drawing.Size(68, 13)
+        Me.Label179.TabIndex = 121
+        Me.Label179.Text = "3Dpad mode"
+        Me.Label179.Visible = False
+        '
+        'ComboBox63
+        '
+        Me.ComboBox63.FormattingEnabled = True
+        Me.ComboBox63.Items.AddRange(New Object() {"digital", "analog"})
+        Me.ComboBox63.Location = New System.Drawing.Point(231, 61)
+        Me.ComboBox63.Name = "ComboBox63"
+        Me.ComboBox63.Size = New System.Drawing.Size(64, 21)
+        Me.ComboBox63.TabIndex = 120
+        Me.ComboBox63.Text = "digital"
+        Me.ToolTip1.SetToolTip(Me.ComboBox63, resources.GetString("ComboBox63.ToolTip"))
+        Me.ComboBox63.Visible = False
+        '
+        'CheckBox109
+        '
+        Me.CheckBox109.AutoSize = True
+        Me.CheckBox109.Location = New System.Drawing.Point(3, 42)
+        Me.CheckBox109.Name = "CheckBox109"
+        Me.CheckBox109.Size = New System.Drawing.Size(147, 17)
+        Me.CheckBox109.TabIndex = 119
+        Me.CheckBox109.Text = "Enable Multi&tap On Port 2"
+        Me.CheckBox109.UseVisualStyleBackColor = True
+        Me.CheckBox109.Visible = False
+        '
+        'CheckBox110
+        '
+        Me.CheckBox110.AutoSize = True
+        Me.CheckBox110.Location = New System.Drawing.Point(3, 19)
+        Me.CheckBox110.Name = "CheckBox110"
+        Me.CheckBox110.Size = New System.Drawing.Size(147, 17)
+        Me.CheckBox110.TabIndex = 118
+        Me.CheckBox110.Text = "Enable Multi&tap On Port 1"
+        Me.CheckBox110.UseVisualStyleBackColor = True
+        Me.CheckBox110.Visible = False
+        '
+        'CheckBox111
+        '
+        Me.CheckBox111.AutoSize = True
+        Me.CheckBox111.Location = New System.Drawing.Point(3, 242)
+        Me.CheckBox111.Name = "CheckBox111"
+        Me.CheckBox111.Size = New System.Drawing.Size(172, 17)
+        Me.CheckBox111.TabIndex = 117
+        Me.CheckBox111.Text = "&Show horizontal overscan area"
+        Me.ToolTip1.SetToolTip(Me.CheckBox111, "Show horizontal overscan area")
+        Me.CheckBox111.UseVisualStyleBackColor = True
+        Me.CheckBox111.Visible = False
+        '
+        'CheckBox112
+        '
+        Me.CheckBox112.AutoSize = True
+        Me.CheckBox112.Location = New System.Drawing.Point(3, 219)
+        Me.CheckBox112.Name = "CheckBox112"
+        Me.CheckBox112.Size = New System.Drawing.Size(181, 17)
+        Me.CheckBox112.TabIndex = 116
+        Me.CheckBox112.Text = "Enable horizontal &blend(blur) filter"
+        Me.ToolTip1.SetToolTip(Me.CheckBox112, "Enable horizontal blend(blur) filter." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Has a more noticeable effect with the Satu" &
+        "rn's higher horizontal resolution modes(640/704).")
+        Me.CheckBox112.UseVisualStyleBackColor = True
+        Me.CheckBox112.Visible = False
+        '
+        'CheckBox113
+        '
+        Me.CheckBox113.AutoSize = True
+        Me.CheckBox113.Location = New System.Drawing.Point(3, 196)
+        Me.CheckBox113.Name = "CheckBox113"
+        Me.CheckBox113.Size = New System.Drawing.Size(118, 17)
+        Me.CheckBox113.TabIndex = 115
+        Me.CheckBox113.Text = "&Correct aspect ratio"
+        Me.ToolTip1.SetToolTip(Me.CheckBox113, "Correct aspect ratio")
+        Me.CheckBox113.UseVisualStyleBackColor = True
+        Me.CheckBox113.Visible = False
+        '
+        'NumericUpDown43
+        '
+        Me.NumericUpDown43.DecimalPlaces = 2
+        Me.NumericUpDown43.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
+        Me.NumericUpDown43.Location = New System.Drawing.Point(188, 142)
+        Me.NumericUpDown43.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown43.Name = "NumericUpDown43"
+        Me.NumericUpDown43.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown43.TabIndex = 111
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown43, "Emulated mouse sensitivity.")
+        Me.NumericUpDown43.Value = New Decimal(New Integer() {125, 0, 0, 131072})
+        '
+        'Label180
+        '
+        Me.Label180.AutoSize = True
+        Me.Label180.Location = New System.Drawing.Point(3, 144)
+        Me.Label180.Name = "Label180"
+        Me.Label180.Size = New System.Drawing.Size(89, 13)
+        Me.Label180.TabIndex = 110
+        Me.Label180.Text = "Mouse Sensitivity"
+        '
+        'CheckBox114
+        '
+        Me.CheckBox114.AutoSize = True
+        Me.CheckBox114.Checked = True
+        Me.CheckBox114.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox114.Location = New System.Drawing.Point(188, 30)
+        Me.CheckBox114.Name = "CheckBox114"
+        Me.CheckBox114.Size = New System.Drawing.Size(107, 17)
+        Me.CheckBox114.TabIndex = 109
+        Me.CheckBox114.Text = "&Ignore Other Port"
+        Me.ToolTip1.SetToolTip(Me.CheckBox114, "Disable automatic setting of 12 controller to same device on port 1")
+        Me.CheckBox114.UseVisualStyleBackColor = True
+        '
+        'TrackBar21
+        '
+        Me.TrackBar21.Location = New System.Drawing.Point(188, 168)
+        Me.TrackBar21.Name = "TrackBar21"
+        Me.TrackBar21.Size = New System.Drawing.Size(107, 45)
+        Me.TrackBar21.TabIndex = 108
+        Me.ToolTip1.SetToolTip(Me.TrackBar21, resources.GetString("TrackBar21.ToolTip"))
+        Me.TrackBar21.Value = 5
+        '
+        'Label181
+        '
+        Me.Label181.AutoSize = True
+        Me.Label181.Location = New System.Drawing.Point(3, 168)
+        Me.Label181.Name = "Label181"
+        Me.Label181.Size = New System.Drawing.Size(158, 13)
+        Me.Label181.TabIndex = 107
+        Me.Label181.Text = "SCSP Output Resampler Quality"
+        '
+        'CheckBox115
+        '
+        Me.CheckBox115.AutoSize = True
+        Me.CheckBox115.Location = New System.Drawing.Point(3, 65)
+        Me.CheckBox115.Name = "CheckBox115"
+        Me.CheckBox115.Size = New System.Drawing.Size(138, 17)
+        Me.CheckBox115.TabIndex = 6
+        Me.CheckBox115.Text = "Enable &mid-frame synch"
+        Me.ToolTip1.SetToolTip(Me.CheckBox115, "Enable mid-frame synchronization." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mid-frame synchronization can reduce input lat" &
+        "ency, but it will increase CPU requirements.")
+        Me.CheckBox115.UseVisualStyleBackColor = True
+        '
+        'ComboBox64
+        '
+        Me.ComboBox64.FormattingEnabled = True
+        Me.ComboBox64.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
+        Me.ComboBox64.Location = New System.Drawing.Point(188, 115)
+        Me.ComboBox64.Name = "ComboBox64"
+        Me.ComboBox64.Size = New System.Drawing.Size(107, 21)
+        Me.ComboBox64.TabIndex = 101
+        Me.ComboBox64.Text = "gamepad"
+        Me.ToolTip1.SetToolTip(Me.ComboBox64, resources.GetString("ComboBox64.ToolTip"))
+        '
+        'Label182
+        '
+        Me.Label182.AutoSize = True
+        Me.Label182.Location = New System.Drawing.Point(3, 118)
+        Me.Label182.Name = "Label182"
+        Me.Label182.Size = New System.Drawing.Size(114, 13)
+        Me.Label182.TabIndex = 100
+        Me.Label182.Text = "Input Device for Port 2"
+        '
+        'ComboBox65
+        '
+        Me.ComboBox65.FormattingEnabled = True
+        Me.ComboBox65.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
+        Me.ComboBox65.Location = New System.Drawing.Point(188, 88)
+        Me.ComboBox65.Name = "ComboBox65"
+        Me.ComboBox65.Size = New System.Drawing.Size(107, 21)
+        Me.ComboBox65.TabIndex = 99
+        Me.ComboBox65.Text = "gamepad"
+        Me.ToolTip1.SetToolTip(Me.ComboBox65, resources.GetString("ComboBox65.ToolTip"))
+        '
+        'Label183
+        '
+        Me.Label183.AutoSize = True
+        Me.Label183.Location = New System.Drawing.Point(3, 91)
+        Me.Label183.Name = "Label183"
+        Me.Label183.Size = New System.Drawing.Size(114, 13)
+        Me.Label183.TabIndex = 98
+        Me.Label183.Text = "Input Device for Port 1"
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -6902,6 +7147,11 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage32.ResumeLayout(False)
+        Me.GroupBox28.ResumeLayout(False)
+        Me.GroupBox28.PerformLayout()
+        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar21, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -7455,4 +7705,23 @@ Partial Class MgrSetting
     Friend WithEvents ComboBox62 As ComboBox
     Friend WithEvents Label178 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TabPage32 As TabPage
+    Friend WithEvents GroupBox28 As GroupBox
+    Friend WithEvents Label179 As Label
+    Friend WithEvents ComboBox63 As ComboBox
+    Friend WithEvents CheckBox109 As CheckBox
+    Friend WithEvents CheckBox110 As CheckBox
+    Friend WithEvents CheckBox111 As CheckBox
+    Friend WithEvents CheckBox112 As CheckBox
+    Friend WithEvents CheckBox113 As CheckBox
+    Friend WithEvents NumericUpDown43 As NumericUpDown
+    Friend WithEvents Label180 As Label
+    Friend WithEvents CheckBox114 As CheckBox
+    Friend WithEvents TrackBar21 As TrackBar
+    Friend WithEvents Label181 As Label
+    Friend WithEvents CheckBox115 As CheckBox
+    Friend WithEvents ComboBox64 As ComboBox
+    Friend WithEvents Label182 As Label
+    Friend WithEvents ComboBox65 As ComboBox
+    Friend WithEvents Label183 As Label
 End Class
