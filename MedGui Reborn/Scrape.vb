@@ -376,6 +376,7 @@ Module Scrape
 
                                     If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
                                         If File.Exists(SBoxF) Then
+                                            MedGuiR.PictureBox1.BackColor = Color.Black
                                             MedGuiR.PictureBox1.Load(SBoxF)
                                             pathimage = SBoxF
                                         End If
@@ -428,6 +429,7 @@ Module Scrape
 
                                     If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
                                         If File.Exists(SBoxF) Then
+                                            MedGuiR.PictureBox1.BackColor = Color.Black
                                             MedGuiR.PictureBox1.Load(SBoxF)
                                             pathimage = SBoxF
                                         End If

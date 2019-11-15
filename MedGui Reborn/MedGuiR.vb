@@ -446,6 +446,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub SelectRom()
+
         missingame = False
 
         If File.Exists(DataGridView1.CurrentRow.Cells(4).Value()) Then
@@ -456,6 +457,8 @@ Public Class MedGuiR
             missingame = True
             Exit Sub
         End If
+
+        If last_rom = DataGridView1.CurrentRow.Cells(4).Value() Then Exit Sub
 
         Try
             TextBox1.Text = DataGridView1.CurrentRow.Cells(4).Value()
