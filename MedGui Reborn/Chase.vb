@@ -5,6 +5,8 @@
         Try
             If MedGuiR.Width >= Screen.PrimaryScreen.Bounds.Width Then
                 MgrSetting.StartPosition = FormStartPosition.CenterScreen
+                F1 = MgrSetting
+                CenterForm()
             Else
                 If MgrSetting.Visible = True Then
                     MgrSetting.Location = New Point(MedGuiR.Location.X - MgrSetting.Width - 14, MedGuiR.Location.Y - ((MgrSetting.Height - MedGuiR.Height) / 2))

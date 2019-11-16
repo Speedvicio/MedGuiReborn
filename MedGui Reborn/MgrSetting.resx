@@ -722,85 +722,6 @@ NOTE: Currently does not work properly when on any of ports 1B-1D and 2B-2D.
 dancepad - Dance Pad
 Dingo Dingo Rodeo!</value>
   </data>
-  <data name="ComboBox52.ToolTip" xml:space="preserve">
-    <value>Default position for switch "Mode".
-Sets the position for the switch to the value specified upon startup and virtual input device change.
-
-digital - Digital(+)
-
-analog - Analog(○)
-Analog mode is not compatible with all games. For some compatible games, 
-analog mode reportedly must be enabled before the game boots up for the game to recognize it properly.</value>
-  </data>
-  <data name="TrackBar16.ToolTip" xml:space="preserve">
-    <value>SCSP output resampler quality.
-0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
-The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
-Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" may bypass the resampler, which can decrease CPU usage by Mednafen,
- and can increase or decrease audio quality, depending on various operating system and hardware factors.
-
- </value>
-  </data>
-  <data name="ComboBox44.ToolTip" xml:space="preserve">
-    <value>Input device for Virtual Port 
-none - none
-
-gamepad - Digital Gamepad
-Standard Saturn digital gamepad.
-
-3dpad - 3D Control Pad
-3D Control Pad
-
-mouse - Mouse
-Mouse
-
-wheel - Steering Wheel
-Arcade Racer/Racing Controller
-
-mission - Mission Stick
-Mission Stick
-
-dmission - Dual Mission
-Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
-
-keyboard - Keyboard (US)
-101-key US keyboard.
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
-
-jpkeyboard - Keyboard (JP)
-89-key Japanese keyboard(e.g. HSS-0129).
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
-  </data>
-  <data name="ComboBox45.ToolTip" xml:space="preserve">
-    <value>Input device for Virtual Port 1
-none - none
-
-gamepad - Digital Gamepad
-Standard Saturn digital gamepad.
-
-3dpad - 3D Control Pad
-3D Control Pad
-
-mouse - Mouse
-Mouse
-
-wheel - Steering Wheel
-Arcade Racer/Racing Controller
-
-mission - Mission Stick
-Mission Stick
-
-dmission - Dual Mission
-Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
-
-keyboard - Keyboard (US)
-101-key US keyboard.
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
-
-jpkeyboard - Keyboard (JP)
-89-key Japanese keyboard(e.g. HSS-0129).
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
-  </data>
   <data name="ComboBox59.ToolTip" xml:space="preserve">
     <value>Horizontal blending/doubling filter.
 
@@ -888,6 +809,85 @@ jpkeyboard - Keyboard (JP)
 Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
   </data>
   <data name="ComboBox65.ToolTip" xml:space="preserve">
+    <value>Input device for Virtual Port 1
+none - none
+
+gamepad - Digital Gamepad
+Standard Saturn digital gamepad.
+
+3dpad - 3D Control Pad
+3D Control Pad
+
+mouse - Mouse
+Mouse
+
+wheel - Steering Wheel
+Arcade Racer/Racing Controller
+
+mission - Mission Stick
+Mission Stick
+
+dmission - Dual Mission
+Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
+
+keyboard - Keyboard (US)
+101-key US keyboard.
+Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
+
+jpkeyboard - Keyboard (JP)
+89-key Japanese keyboard(e.g. HSS-0129).
+Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
+  </data>
+  <data name="ComboBox52.ToolTip" xml:space="preserve">
+    <value>Default position for switch "Mode".
+Sets the position for the switch to the value specified upon startup and virtual input device change.
+
+digital - Digital(+)
+
+analog - Analog(○)
+Analog mode is not compatible with all games. For some compatible games, 
+analog mode reportedly must be enabled before the game boots up for the game to recognize it properly.</value>
+  </data>
+  <data name="TrackBar16.ToolTip" xml:space="preserve">
+    <value>SCSP output resampler quality.
+0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
+The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
+Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" may bypass the resampler, which can decrease CPU usage by Mednafen,
+ and can increase or decrease audio quality, depending on various operating system and hardware factors.
+
+ </value>
+  </data>
+  <data name="ComboBox44.ToolTip" xml:space="preserve">
+    <value>Input device for Virtual Port 
+none - none
+
+gamepad - Digital Gamepad
+Standard Saturn digital gamepad.
+
+3dpad - 3D Control Pad
+3D Control Pad
+
+mouse - Mouse
+Mouse
+
+wheel - Steering Wheel
+Arcade Racer/Racing Controller
+
+mission - Mission Stick
+Mission Stick
+
+dmission - Dual Mission
+Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
+
+keyboard - Keyboard (US)
+101-key US keyboard.
+Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
+
+jpkeyboard - Keyboard (JP)
+89-key Japanese keyboard(e.g. HSS-0129).
+Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
+  </data>
+  <data name="ComboBox45.ToolTip" xml:space="preserve">
     <value>Input device for Virtual Port 1
 none - none
 
