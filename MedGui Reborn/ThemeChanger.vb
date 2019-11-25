@@ -1,5 +1,5 @@
 ﻿Module ThemeChanger
-    Public DefBack, DefFore As Color
+    Public DefBack, DefFore As Color, switchTheme As Boolean = False
 
     Public Sub ChangeControlColors(ByRef MainParent As Control, Preset As String)
 

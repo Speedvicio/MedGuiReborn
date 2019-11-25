@@ -2718,6 +2718,11 @@ SKIPHASH:
                 DataGridView1.AutoResizeColumns()
                 ResizeGrid()
             End If
+
+            If ThemeChanger.switchTheme = False Then
+                MsgBox("If the font appearance has not changed, please reload the games list from the top left menu in the main form.", MsgBoxStyle.Information + vbOKOnly, "Information...")
+                ThemeChanger.switchTheme = True
+            End If
         End If
     End Sub
 
