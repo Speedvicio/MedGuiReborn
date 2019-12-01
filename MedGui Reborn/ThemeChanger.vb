@@ -26,7 +26,7 @@
             End If
 
             Select Case True
-                Case TypeOf x Is Label, TypeOf x Is CheckBox, TypeOf x Is Panel,
+                Case TypeOf x Is Label, TypeOf x Is CheckBox, TypeOf x Is Panel, TypeOf x Is LinkLabel,
                      TypeOf x Is GroupBox, TypeOf x Is Button, TypeOf x Is TabControl,
                       TypeOf x Is ToolStrip, TypeOf x Is RadioButton, TypeOf x Is TrackBar
                     If x.HasChildren Then ChangeControlColors(x, Preset)
@@ -36,6 +36,12 @@
                                 MainParent.BackColor = DefBack
                                 x.BackColor = DefBack
                                 x.ForeColor = DefFore
+
+                                If TypeOf x Is LinkLabel Then
+                                    Dim y As LinkLabel = x
+                                    y.LinkColor = DefFore
+                                End If
+
                                 FlatC(x)
                             Case "Background"
                                 x.BackColor = DefBack
@@ -43,6 +49,11 @@
                                 FlatC(x)
                             Case "Forecolor"
                                 x.ForeColor = DefFore
+
+                                If TypeOf x Is LinkLabel Then
+                                    Dim y As LinkLabel = x
+                                    y.LinkColor = DefFore
+                                End If
                         End Select
                     End If
 
