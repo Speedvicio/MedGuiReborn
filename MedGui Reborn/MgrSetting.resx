@@ -327,6 +327,15 @@ Reads the entire CD image(s) into memory at startup(which will cause a small del
 Can help obviate emulation hiccups due to emulated CD access. 
 May cause more harm than good on low memory systems, systems with swap enabled, and/or when the disc images in question are on a fast SSD.</value>
   </data>
+  <data name="Button27.ToolTip" xml:space="preserve">
+    <value>- Scan and compare all bioses in "firmware folder" by hash.
+
+if the hash of a bios matches the one requested by the mednafen, 
+it will be highlighted in green and autoselected by default.
+
+On PSX you can use also POPS PSP bios or NO$CASH PSX-XBOO bios.
+If MedGui detect POPS PSP bios, it will be used as default PSX bios on Mednafen.</value>
+  </data>
   <data name="NumericUpDown7.ToolTip" xml:space="preserve">
     <value>Local player count.
 

@@ -470,25 +470,6 @@ Partial Class MgrSetting
         Me.Label83 = New System.Windows.Forms.Label()
         Me.NumericUpDown13 = New System.Windows.Forms.NumericUpDown()
         Me.Label82 = New System.Windows.Forms.Label()
-        Me.TabPage25 = New System.Windows.Forms.TabPage()
-        Me.GroupBox24 = New System.Windows.Forms.GroupBox()
-        Me.Button21 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label112 = New System.Windows.Forms.Label()
-        Me.Button22 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label113 = New System.Windows.Forms.Label()
-        Me.CheckBox68 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox67 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox66 = New System.Windows.Forms.CheckBox()
-        Me.Label111 = New System.Windows.Forms.Label()
-        Me.ComboBox49 = New System.Windows.Forms.ComboBox()
-        Me.Label110 = New System.Windows.Forms.Label()
-        Me.ComboBox48 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox43 = New System.Windows.Forms.ComboBox()
-        Me.Label103 = New System.Windows.Forms.Label()
-        Me.CheckBox62 = New System.Windows.Forms.CheckBox()
-        Me.TabPage27 = New System.Windows.Forms.TabPage()
         Me.TabPage26 = New System.Windows.Forms.TabPage()
         Me.Label177 = New System.Windows.Forms.Label()
         Me.ComboBox59 = New System.Windows.Forms.ComboBox()
@@ -525,6 +506,43 @@ Partial Class MgrSetting
         Me.Label182 = New System.Windows.Forms.Label()
         Me.ComboBox65 = New System.Windows.Forms.ComboBox()
         Me.Label183 = New System.Windows.Forms.Label()
+        Me.TabPage25 = New System.Windows.Forms.TabPage()
+        Me.GroupBox24 = New System.Windows.Forms.GroupBox()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label112 = New System.Windows.Forms.Label()
+        Me.Button22 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label113 = New System.Windows.Forms.Label()
+        Me.CheckBox68 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox67 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox66 = New System.Windows.Forms.CheckBox()
+        Me.Label111 = New System.Windows.Forms.Label()
+        Me.ComboBox49 = New System.Windows.Forms.ComboBox()
+        Me.Label110 = New System.Windows.Forms.Label()
+        Me.ComboBox48 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox43 = New System.Windows.Forms.ComboBox()
+        Me.Label103 = New System.Windows.Forms.Label()
+        Me.CheckBox62 = New System.Windows.Forms.CheckBox()
+        Me.TabPage27 = New System.Windows.Forms.TabPage()
+        Me.GroupBox23 = New System.Windows.Forms.GroupBox()
+        Me.Label132 = New System.Windows.Forms.Label()
+        Me.ComboBox52 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox100 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox101 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox77 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox76 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox75 = New System.Windows.Forms.CheckBox()
+        Me.NumericUpDown19 = New System.Windows.Forms.NumericUpDown()
+        Me.Label116 = New System.Windows.Forms.Label()
+        Me.CheckBox69 = New System.Windows.Forms.CheckBox()
+        Me.TrackBar16 = New System.Windows.Forms.TrackBar()
+        Me.Label104 = New System.Windows.Forms.Label()
+        Me.CheckBox65 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox44 = New System.Windows.Forms.ComboBox()
+        Me.Label105 = New System.Windows.Forms.Label()
+        Me.ComboBox45 = New System.Windows.Forms.ComboBox()
+        Me.Label106 = New System.Windows.Forms.Label()
         Me.TabPage29 = New System.Windows.Forms.TabPage()
         Me.GroupBox25 = New System.Windows.Forms.GroupBox()
         Me.ComboBox62 = New System.Windows.Forms.ComboBox()
@@ -574,24 +592,6 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.Label106 = New System.Windows.Forms.Label()
-        Me.ComboBox45 = New System.Windows.Forms.ComboBox()
-        Me.Label105 = New System.Windows.Forms.Label()
-        Me.ComboBox44 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox65 = New System.Windows.Forms.CheckBox()
-        Me.Label104 = New System.Windows.Forms.Label()
-        Me.TrackBar16 = New System.Windows.Forms.TrackBar()
-        Me.CheckBox69 = New System.Windows.Forms.CheckBox()
-        Me.Label116 = New System.Windows.Forms.Label()
-        Me.NumericUpDown19 = New System.Windows.Forms.NumericUpDown()
-        Me.GroupBox23 = New System.Windows.Forms.GroupBox()
-        Me.Label132 = New System.Windows.Forms.Label()
-        Me.ComboBox52 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox100 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox101 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox77 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox76 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox75 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -689,9 +689,6 @@ Partial Class MgrSetting
         CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage23.SuspendLayout()
         CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage25.SuspendLayout()
-        Me.GroupBox24.SuspendLayout()
-        Me.TabPage27.SuspendLayout()
         Me.TabPage26.SuspendLayout()
         CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -699,6 +696,12 @@ Partial Class MgrSetting
         Me.GroupBox28.SuspendLayout()
         CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar21, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage25.SuspendLayout()
+        Me.GroupBox24.SuspendLayout()
+        Me.TabPage27.SuspendLayout()
+        Me.GroupBox23.SuspendLayout()
+        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage29.SuspendLayout()
         Me.GroupBox25.SuspendLayout()
         CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -716,9 +719,6 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox23.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -2506,9 +2506,7 @@ Partial Class MgrSetting
         Me.Button27.Size = New System.Drawing.Size(119, 23)
         Me.Button27.TabIndex = 27
         Me.Button27.Text = "Check All &Bioses"
-        Me.ToolTip1.SetToolTip(Me.Button27, "- Scan and compare all bioses in ""firmware folder"" by hash." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "if the hash of a b" &
-        "ios matches the one requested by the mednafen, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "it will be highlighted in green" &
-        " and autoselected by default.")
+        Me.ToolTip1.SetToolTip(Me.Button27, resources.GetString("Button27.ToolTip"))
         Me.Button27.UseVisualStyleBackColor = True
         '
         'Button26
@@ -5580,209 +5578,6 @@ Partial Class MgrSetting
         Me.Label82.TabIndex = 76
         Me.Label82.Text = "Mouse Sensitivity"
         '
-        'TabPage25
-        '
-        Me.TabPage25.Controls.Add(Me.GroupBox24)
-        Me.TabPage25.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage25.Name = "TabPage25"
-        Me.TabPage25.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage25.Size = New System.Drawing.Size(310, 284)
-        Me.TabPage25.TabIndex = 24
-        Me.TabPage25.Text = "Saturn"
-        Me.TabPage25.UseVisualStyleBackColor = True
-        '
-        'GroupBox24
-        '
-        Me.GroupBox24.Controls.Add(Me.Button21)
-        Me.GroupBox24.Controls.Add(Me.TextBox1)
-        Me.GroupBox24.Controls.Add(Me.Label112)
-        Me.GroupBox24.Controls.Add(Me.Button22)
-        Me.GroupBox24.Controls.Add(Me.TextBox2)
-        Me.GroupBox24.Controls.Add(Me.Label113)
-        Me.GroupBox24.Controls.Add(Me.CheckBox68)
-        Me.GroupBox24.Controls.Add(Me.CheckBox67)
-        Me.GroupBox24.Controls.Add(Me.CheckBox66)
-        Me.GroupBox24.Controls.Add(Me.Label111)
-        Me.GroupBox24.Controls.Add(Me.ComboBox49)
-        Me.GroupBox24.Controls.Add(Me.Label110)
-        Me.GroupBox24.Controls.Add(Me.ComboBox48)
-        Me.GroupBox24.Controls.Add(Me.ComboBox43)
-        Me.GroupBox24.Controls.Add(Me.Label103)
-        Me.GroupBox24.Controls.Add(Me.CheckBox62)
-        Me.GroupBox24.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox24.Name = "GroupBox24"
-        Me.GroupBox24.Size = New System.Drawing.Size(298, 272)
-        Me.GroupBox24.TabIndex = 0
-        Me.GroupBox24.TabStop = False
-        '
-        'Button21
-        '
-        Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button21.Location = New System.Drawing.Point(269, 220)
-        Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(23, 23)
-        Me.Button21.TabIndex = 119
-        Me.Button21.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(115, 222)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(148, 20)
-        Me.TextBox1.TabIndex = 118
-        '
-        'Label112
-        '
-        Me.Label112.AutoSize = True
-        Me.Label112.Location = New System.Drawing.Point(6, 225)
-        Me.Label112.Name = "Label112"
-        Me.Label112.Size = New System.Drawing.Size(77, 13)
-        Me.Label112.TabIndex = 117
-        Me.Label112.Text = "Ultraman ROM"
-        '
-        'Button22
-        '
-        Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button22.Location = New System.Drawing.Point(269, 194)
-        Me.Button22.Name = "Button22"
-        Me.Button22.Size = New System.Drawing.Size(23, 23)
-        Me.Button22.TabIndex = 116
-        Me.Button22.UseVisualStyleBackColor = True
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(115, 196)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(148, 20)
-        Me.TextBox2.TabIndex = 115
-        '
-        'Label113
-        '
-        Me.Label113.AutoSize = True
-        Me.Label113.Location = New System.Drawing.Point(6, 199)
-        Me.Label113.Name = "Label113"
-        Me.Label113.Size = New System.Drawing.Size(69, 13)
-        Me.Label113.TabIndex = 114
-        Me.Label113.Text = "KoF 95 ROM"
-        '
-        'CheckBox68
-        '
-        Me.CheckBox68.AutoSize = True
-        Me.CheckBox68.Location = New System.Drawing.Point(6, 88)
-        Me.CheckBox68.Name = "CheckBox68"
-        Me.CheckBox68.Size = New System.Drawing.Size(182, 17)
-        Me.CheckBox68.TabIndex = 113
-        Me.CheckBox68.Text = "&Enable CD (image) sanity checks"
-        Me.CheckBox68.UseVisualStyleBackColor = True
-        '
-        'CheckBox67
-        '
-        Me.CheckBox67.AutoSize = True
-        Me.CheckBox67.Location = New System.Drawing.Point(6, 65)
-        Me.CheckBox67.Name = "CheckBox67"
-        Me.CheckBox67.Size = New System.Drawing.Size(214, 17)
-        Me.CheckBox67.TabIndex = 112
-        Me.CheckBox67.Text = "&Enable BIOS ROM image sanity checks"
-        Me.CheckBox67.UseVisualStyleBackColor = True
-        '
-        'CheckBox66
-        '
-        Me.CheckBox66.AutoSize = True
-        Me.CheckBox66.Location = New System.Drawing.Point(6, 42)
-        Me.CheckBox66.Name = "CheckBox66"
-        Me.CheckBox66.Size = New System.Drawing.Size(197, 17)
-        Me.CheckBox66.TabIndex = 111
-        Me.CheckBox66.Text = "Automatically set RTC on game load"
-        Me.ToolTip1.SetToolTip(Me.CheckBox66, "Automatically set RTC on game load." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Automatically set the SMPC's emulated Real-T" &
-        "ime Clock to the host system's current time and date upon game load.")
-        Me.CheckBox66.UseVisualStyleBackColor = True
-        '
-        'Label111
-        '
-        Me.Label111.AutoSize = True
-        Me.Label111.Location = New System.Drawing.Point(6, 170)
-        Me.Label111.Name = "Label111"
-        Me.Label111.Size = New System.Drawing.Size(77, 13)
-        Me.Label111.TabIndex = 110
-        Me.Label111.Text = "Expansion cart"
-        '
-        'ComboBox49
-        '
-        Me.ComboBox49.FormattingEnabled = True
-        Me.ComboBox49.Items.AddRange(New Object() {"auto", "none", "backup", "extram1", "extram4", "cs1ram16"})
-        Me.ComboBox49.Location = New System.Drawing.Point(115, 167)
-        Me.ComboBox49.Name = "ComboBox49"
-        Me.ComboBox49.Size = New System.Drawing.Size(73, 21)
-        Me.ComboBox49.TabIndex = 109
-        Me.ComboBox49.Text = "auto"
-        Me.ToolTip1.SetToolTip(Me.ComboBox49, "Expansion cart." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "auto - Automatic" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - None" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "backup - Backup Memory(512KiB" &
-        ")" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "extram1 - 1MiB Extended RAM" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "extram4 - 4MiB Extended RAM")
-        '
-        'Label110
-        '
-        Me.Label110.AutoSize = True
-        Me.Label110.Location = New System.Drawing.Point(6, 143)
-        Me.Label110.Name = "Label110"
-        Me.Label110.Size = New System.Drawing.Size(79, 13)
-        Me.Label110.TabIndex = 108
-        Me.Label110.Text = "BIOS language"
-        '
-        'ComboBox48
-        '
-        Me.ComboBox48.FormattingEnabled = True
-        Me.ComboBox48.Items.AddRange(New Object() {"english", "german", "french", "spanish", "italian", "japanese"})
-        Me.ComboBox48.Location = New System.Drawing.Point(115, 140)
-        Me.ComboBox48.Name = "ComboBox48"
-        Me.ComboBox48.Size = New System.Drawing.Size(73, 21)
-        Me.ComboBox48.TabIndex = 107
-        Me.ComboBox48.Text = "english"
-        Me.ToolTip1.SetToolTip(Me.ComboBox48, "BIOS language." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "english - English" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "german - Deutsch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "french - Français" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "spa" &
-        "nish - Español" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "italian - Italiano" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "japanese - 日本語")
-        '
-        'ComboBox43
-        '
-        Me.ComboBox43.FormattingEnabled = True
-        Me.ComboBox43.Items.AddRange(New Object() {"jp", "na", "eu", "kr", "tw", "as", "br", "la"})
-        Me.ComboBox43.Location = New System.Drawing.Point(114, 111)
-        Me.ComboBox43.Name = "ComboBox43"
-        Me.ComboBox43.Size = New System.Drawing.Size(74, 21)
-        Me.ComboBox43.TabIndex = 104
-        Me.ComboBox43.Text = "jp"
-        Me.ToolTip1.SetToolTip(Me.ComboBox43, "Default region to use." & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "Used if region autodetection fails or is disabled." & Global.Microsoft.VisualBasic.ChrW(10) & "jp - J" &
-        "apan" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "na - North America" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "eu - Europe" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "kr - South Korea" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "tw - Taiwan" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "as - China" &
-        "" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "br - Brazil" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "la - Latin America")
-        '
-        'Label103
-        '
-        Me.Label103.AutoSize = True
-        Me.Label103.Location = New System.Drawing.Point(6, 114)
-        Me.Label103.Name = "Label103"
-        Me.Label103.Size = New System.Drawing.Size(105, 13)
-        Me.Label103.TabIndex = 103
-        Me.Label103.Text = "Default region to use"
-        '
-        'CheckBox62
-        '
-        Me.CheckBox62.AutoSize = True
-        Me.CheckBox62.Location = New System.Drawing.Point(6, 19)
-        Me.CheckBox62.Name = "CheckBox62"
-        Me.CheckBox62.Size = New System.Drawing.Size(216, 17)
-        Me.CheckBox62.TabIndex = 102
-        Me.CheckBox62.Text = "Attempt to Auto-Detect &Region Of Game"
-        Me.ToolTip1.SetToolTip(Me.CheckBox62, "Attempt to auto-detect region of game.")
-        Me.CheckBox62.UseVisualStyleBackColor = True
-        '
-        'TabPage27
-        '
-        Me.TabPage27.Controls.Add(Me.GroupBox23)
-        Me.TabPage27.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage27.Name = "TabPage27"
-        Me.TabPage27.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage27.Size = New System.Drawing.Size(310, 284)
-        Me.TabPage27.TabIndex = 26
-        Me.TabPage27.Text = "Saturn"
-        Me.TabPage27.UseVisualStyleBackColor = True
-        '
         'TabPage26
         '
         Me.TabPage26.Controls.Add(Me.Label177)
@@ -6209,6 +6004,420 @@ Partial Class MgrSetting
         Me.Label183.Size = New System.Drawing.Size(114, 13)
         Me.Label183.TabIndex = 98
         Me.Label183.Text = "Input Device for Port 1"
+        '
+        'TabPage25
+        '
+        Me.TabPage25.Controls.Add(Me.GroupBox24)
+        Me.TabPage25.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage25.Name = "TabPage25"
+        Me.TabPage25.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage25.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage25.TabIndex = 24
+        Me.TabPage25.Text = "Saturn"
+        Me.TabPage25.UseVisualStyleBackColor = True
+        '
+        'GroupBox24
+        '
+        Me.GroupBox24.Controls.Add(Me.Button21)
+        Me.GroupBox24.Controls.Add(Me.TextBox1)
+        Me.GroupBox24.Controls.Add(Me.Label112)
+        Me.GroupBox24.Controls.Add(Me.Button22)
+        Me.GroupBox24.Controls.Add(Me.TextBox2)
+        Me.GroupBox24.Controls.Add(Me.Label113)
+        Me.GroupBox24.Controls.Add(Me.CheckBox68)
+        Me.GroupBox24.Controls.Add(Me.CheckBox67)
+        Me.GroupBox24.Controls.Add(Me.CheckBox66)
+        Me.GroupBox24.Controls.Add(Me.Label111)
+        Me.GroupBox24.Controls.Add(Me.ComboBox49)
+        Me.GroupBox24.Controls.Add(Me.Label110)
+        Me.GroupBox24.Controls.Add(Me.ComboBox48)
+        Me.GroupBox24.Controls.Add(Me.ComboBox43)
+        Me.GroupBox24.Controls.Add(Me.Label103)
+        Me.GroupBox24.Controls.Add(Me.CheckBox62)
+        Me.GroupBox24.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox24.Name = "GroupBox24"
+        Me.GroupBox24.Size = New System.Drawing.Size(298, 272)
+        Me.GroupBox24.TabIndex = 0
+        Me.GroupBox24.TabStop = False
+        '
+        'Button21
+        '
+        Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button21.Location = New System.Drawing.Point(269, 220)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(23, 23)
+        Me.Button21.TabIndex = 119
+        Me.Button21.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(115, 222)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(148, 20)
+        Me.TextBox1.TabIndex = 118
+        '
+        'Label112
+        '
+        Me.Label112.AutoSize = True
+        Me.Label112.Location = New System.Drawing.Point(6, 225)
+        Me.Label112.Name = "Label112"
+        Me.Label112.Size = New System.Drawing.Size(77, 13)
+        Me.Label112.TabIndex = 117
+        Me.Label112.Text = "Ultraman ROM"
+        '
+        'Button22
+        '
+        Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button22.Location = New System.Drawing.Point(269, 194)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(23, 23)
+        Me.Button22.TabIndex = 116
+        Me.Button22.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(115, 196)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(148, 20)
+        Me.TextBox2.TabIndex = 115
+        '
+        'Label113
+        '
+        Me.Label113.AutoSize = True
+        Me.Label113.Location = New System.Drawing.Point(6, 199)
+        Me.Label113.Name = "Label113"
+        Me.Label113.Size = New System.Drawing.Size(69, 13)
+        Me.Label113.TabIndex = 114
+        Me.Label113.Text = "KoF 95 ROM"
+        '
+        'CheckBox68
+        '
+        Me.CheckBox68.AutoSize = True
+        Me.CheckBox68.Location = New System.Drawing.Point(6, 88)
+        Me.CheckBox68.Name = "CheckBox68"
+        Me.CheckBox68.Size = New System.Drawing.Size(182, 17)
+        Me.CheckBox68.TabIndex = 113
+        Me.CheckBox68.Text = "&Enable CD (image) sanity checks"
+        Me.CheckBox68.UseVisualStyleBackColor = True
+        '
+        'CheckBox67
+        '
+        Me.CheckBox67.AutoSize = True
+        Me.CheckBox67.Location = New System.Drawing.Point(6, 65)
+        Me.CheckBox67.Name = "CheckBox67"
+        Me.CheckBox67.Size = New System.Drawing.Size(214, 17)
+        Me.CheckBox67.TabIndex = 112
+        Me.CheckBox67.Text = "&Enable BIOS ROM image sanity checks"
+        Me.CheckBox67.UseVisualStyleBackColor = True
+        '
+        'CheckBox66
+        '
+        Me.CheckBox66.AutoSize = True
+        Me.CheckBox66.Location = New System.Drawing.Point(6, 42)
+        Me.CheckBox66.Name = "CheckBox66"
+        Me.CheckBox66.Size = New System.Drawing.Size(197, 17)
+        Me.CheckBox66.TabIndex = 111
+        Me.CheckBox66.Text = "Automatically set RTC on game load"
+        Me.ToolTip1.SetToolTip(Me.CheckBox66, "Automatically set RTC on game load." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Automatically set the SMPC's emulated Real-T" &
+        "ime Clock to the host system's current time and date upon game load.")
+        Me.CheckBox66.UseVisualStyleBackColor = True
+        '
+        'Label111
+        '
+        Me.Label111.AutoSize = True
+        Me.Label111.Location = New System.Drawing.Point(6, 170)
+        Me.Label111.Name = "Label111"
+        Me.Label111.Size = New System.Drawing.Size(77, 13)
+        Me.Label111.TabIndex = 110
+        Me.Label111.Text = "Expansion cart"
+        '
+        'ComboBox49
+        '
+        Me.ComboBox49.FormattingEnabled = True
+        Me.ComboBox49.Items.AddRange(New Object() {"auto", "none", "backup", "extram1", "extram4", "cs1ram16"})
+        Me.ComboBox49.Location = New System.Drawing.Point(115, 167)
+        Me.ComboBox49.Name = "ComboBox49"
+        Me.ComboBox49.Size = New System.Drawing.Size(73, 21)
+        Me.ComboBox49.TabIndex = 109
+        Me.ComboBox49.Text = "auto"
+        Me.ToolTip1.SetToolTip(Me.ComboBox49, "Expansion cart." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "auto - Automatic" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - None" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "backup - Backup Memory(512KiB" &
+        ")" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "extram1 - 1MiB Extended RAM" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "extram4 - 4MiB Extended RAM")
+        '
+        'Label110
+        '
+        Me.Label110.AutoSize = True
+        Me.Label110.Location = New System.Drawing.Point(6, 143)
+        Me.Label110.Name = "Label110"
+        Me.Label110.Size = New System.Drawing.Size(79, 13)
+        Me.Label110.TabIndex = 108
+        Me.Label110.Text = "BIOS language"
+        '
+        'ComboBox48
+        '
+        Me.ComboBox48.FormattingEnabled = True
+        Me.ComboBox48.Items.AddRange(New Object() {"english", "german", "french", "spanish", "italian", "japanese"})
+        Me.ComboBox48.Location = New System.Drawing.Point(115, 140)
+        Me.ComboBox48.Name = "ComboBox48"
+        Me.ComboBox48.Size = New System.Drawing.Size(73, 21)
+        Me.ComboBox48.TabIndex = 107
+        Me.ComboBox48.Text = "english"
+        Me.ToolTip1.SetToolTip(Me.ComboBox48, "BIOS language." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "english - English" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "german - Deutsch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "french - Français" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "spa" &
+        "nish - Español" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "italian - Italiano" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "japanese - 日本語")
+        '
+        'ComboBox43
+        '
+        Me.ComboBox43.FormattingEnabled = True
+        Me.ComboBox43.Items.AddRange(New Object() {"jp", "na", "eu", "kr", "tw", "as", "br", "la"})
+        Me.ComboBox43.Location = New System.Drawing.Point(114, 111)
+        Me.ComboBox43.Name = "ComboBox43"
+        Me.ComboBox43.Size = New System.Drawing.Size(74, 21)
+        Me.ComboBox43.TabIndex = 104
+        Me.ComboBox43.Text = "jp"
+        Me.ToolTip1.SetToolTip(Me.ComboBox43, "Default region to use." & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "Used if region autodetection fails or is disabled." & Global.Microsoft.VisualBasic.ChrW(10) & "jp - J" &
+        "apan" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "na - North America" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "eu - Europe" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "kr - South Korea" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "tw - Taiwan" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "as - China" &
+        "" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "br - Brazil" & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(10) & "la - Latin America")
+        '
+        'Label103
+        '
+        Me.Label103.AutoSize = True
+        Me.Label103.Location = New System.Drawing.Point(6, 114)
+        Me.Label103.Name = "Label103"
+        Me.Label103.Size = New System.Drawing.Size(105, 13)
+        Me.Label103.TabIndex = 103
+        Me.Label103.Text = "Default region to use"
+        '
+        'CheckBox62
+        '
+        Me.CheckBox62.AutoSize = True
+        Me.CheckBox62.Location = New System.Drawing.Point(6, 19)
+        Me.CheckBox62.Name = "CheckBox62"
+        Me.CheckBox62.Size = New System.Drawing.Size(216, 17)
+        Me.CheckBox62.TabIndex = 102
+        Me.CheckBox62.Text = "Attempt to Auto-Detect &Region Of Game"
+        Me.ToolTip1.SetToolTip(Me.CheckBox62, "Attempt to auto-detect region of game.")
+        Me.CheckBox62.UseVisualStyleBackColor = True
+        '
+        'TabPage27
+        '
+        Me.TabPage27.Controls.Add(Me.GroupBox23)
+        Me.TabPage27.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage27.Name = "TabPage27"
+        Me.TabPage27.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage27.Size = New System.Drawing.Size(310, 284)
+        Me.TabPage27.TabIndex = 26
+        Me.TabPage27.Text = "Saturn"
+        Me.TabPage27.UseVisualStyleBackColor = True
+        '
+        'GroupBox23
+        '
+        Me.GroupBox23.Controls.Add(Me.Label132)
+        Me.GroupBox23.Controls.Add(Me.ComboBox52)
+        Me.GroupBox23.Controls.Add(Me.CheckBox100)
+        Me.GroupBox23.Controls.Add(Me.CheckBox101)
+        Me.GroupBox23.Controls.Add(Me.CheckBox77)
+        Me.GroupBox23.Controls.Add(Me.CheckBox76)
+        Me.GroupBox23.Controls.Add(Me.CheckBox75)
+        Me.GroupBox23.Controls.Add(Me.NumericUpDown19)
+        Me.GroupBox23.Controls.Add(Me.Label116)
+        Me.GroupBox23.Controls.Add(Me.CheckBox69)
+        Me.GroupBox23.Controls.Add(Me.TrackBar16)
+        Me.GroupBox23.Controls.Add(Me.Label104)
+        Me.GroupBox23.Controls.Add(Me.CheckBox65)
+        Me.GroupBox23.Controls.Add(Me.ComboBox44)
+        Me.GroupBox23.Controls.Add(Me.Label105)
+        Me.GroupBox23.Controls.Add(Me.ComboBox45)
+        Me.GroupBox23.Controls.Add(Me.Label106)
+        Me.GroupBox23.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox23.Name = "GroupBox23"
+        Me.GroupBox23.Size = New System.Drawing.Size(304, 278)
+        Me.GroupBox23.TabIndex = 5
+        Me.GroupBox23.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.GroupBox23, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
+        '
+        'Label132
+        '
+        Me.Label132.AutoSize = True
+        Me.Label132.Location = New System.Drawing.Point(157, 64)
+        Me.Label132.Name = "Label132"
+        Me.Label132.Size = New System.Drawing.Size(68, 13)
+        Me.Label132.TabIndex = 128
+        Me.Label132.Text = "3Dpad mode"
+        Me.Label132.Visible = False
+        '
+        'ComboBox52
+        '
+        Me.ComboBox52.FormattingEnabled = True
+        Me.ComboBox52.Items.AddRange(New Object() {"digital", "analog"})
+        Me.ComboBox52.Location = New System.Drawing.Point(231, 61)
+        Me.ComboBox52.Name = "ComboBox52"
+        Me.ComboBox52.Size = New System.Drawing.Size(64, 21)
+        Me.ComboBox52.TabIndex = 127
+        Me.ComboBox52.Text = "digital"
+        Me.ToolTip1.SetToolTip(Me.ComboBox52, resources.GetString("ComboBox52.ToolTip"))
+        Me.ComboBox52.Visible = False
+        '
+        'CheckBox100
+        '
+        Me.CheckBox100.AutoSize = True
+        Me.CheckBox100.Location = New System.Drawing.Point(3, 42)
+        Me.CheckBox100.Name = "CheckBox100"
+        Me.CheckBox100.Size = New System.Drawing.Size(147, 17)
+        Me.CheckBox100.TabIndex = 126
+        Me.CheckBox100.Text = "Enable Multi&tap On Port 2"
+        Me.CheckBox100.UseVisualStyleBackColor = True
+        Me.CheckBox100.Visible = False
+        '
+        'CheckBox101
+        '
+        Me.CheckBox101.AutoSize = True
+        Me.CheckBox101.Location = New System.Drawing.Point(3, 19)
+        Me.CheckBox101.Name = "CheckBox101"
+        Me.CheckBox101.Size = New System.Drawing.Size(147, 17)
+        Me.CheckBox101.TabIndex = 125
+        Me.CheckBox101.Text = "Enable Multi&tap On Port 1"
+        Me.CheckBox101.UseVisualStyleBackColor = True
+        Me.CheckBox101.Visible = False
+        '
+        'CheckBox77
+        '
+        Me.CheckBox77.AutoSize = True
+        Me.CheckBox77.Location = New System.Drawing.Point(3, 242)
+        Me.CheckBox77.Name = "CheckBox77"
+        Me.CheckBox77.Size = New System.Drawing.Size(172, 17)
+        Me.CheckBox77.TabIndex = 124
+        Me.CheckBox77.Text = "&Show horizontal overscan area"
+        Me.ToolTip1.SetToolTip(Me.CheckBox77, "Show horizontal overscan area")
+        Me.CheckBox77.UseVisualStyleBackColor = True
+        Me.CheckBox77.Visible = False
+        '
+        'CheckBox76
+        '
+        Me.CheckBox76.AutoSize = True
+        Me.CheckBox76.Location = New System.Drawing.Point(3, 219)
+        Me.CheckBox76.Name = "CheckBox76"
+        Me.CheckBox76.Size = New System.Drawing.Size(181, 17)
+        Me.CheckBox76.TabIndex = 123
+        Me.CheckBox76.Text = "Enable horizontal &blend(blur) filter"
+        Me.ToolTip1.SetToolTip(Me.CheckBox76, "Enable horizontal blend(blur) filter." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Has a more noticeable effect with the Satu" &
+        "rn's higher horizontal resolution modes(640/704).")
+        Me.CheckBox76.UseVisualStyleBackColor = True
+        Me.CheckBox76.Visible = False
+        '
+        'CheckBox75
+        '
+        Me.CheckBox75.AutoSize = True
+        Me.CheckBox75.Location = New System.Drawing.Point(3, 196)
+        Me.CheckBox75.Name = "CheckBox75"
+        Me.CheckBox75.Size = New System.Drawing.Size(118, 17)
+        Me.CheckBox75.TabIndex = 122
+        Me.CheckBox75.Text = "&Correct aspect ratio"
+        Me.ToolTip1.SetToolTip(Me.CheckBox75, "Correct aspect ratio")
+        Me.CheckBox75.UseVisualStyleBackColor = True
+        Me.CheckBox75.Visible = False
+        '
+        'NumericUpDown19
+        '
+        Me.NumericUpDown19.DecimalPlaces = 2
+        Me.NumericUpDown19.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
+        Me.NumericUpDown19.Location = New System.Drawing.Point(188, 142)
+        Me.NumericUpDown19.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown19.Name = "NumericUpDown19"
+        Me.NumericUpDown19.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown19.TabIndex = 111
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown19, "Emulated mouse sensitivity.")
+        Me.NumericUpDown19.Value = New Decimal(New Integer() {125, 0, 0, 131072})
+        '
+        'Label116
+        '
+        Me.Label116.AutoSize = True
+        Me.Label116.Location = New System.Drawing.Point(3, 144)
+        Me.Label116.Name = "Label116"
+        Me.Label116.Size = New System.Drawing.Size(89, 13)
+        Me.Label116.TabIndex = 110
+        Me.Label116.Text = "Mouse Sensitivity"
+        '
+        'CheckBox69
+        '
+        Me.CheckBox69.AutoSize = True
+        Me.CheckBox69.Checked = True
+        Me.CheckBox69.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox69.Location = New System.Drawing.Point(188, 30)
+        Me.CheckBox69.Name = "CheckBox69"
+        Me.CheckBox69.Size = New System.Drawing.Size(107, 17)
+        Me.CheckBox69.TabIndex = 109
+        Me.CheckBox69.Text = "&Ignore Other Port"
+        Me.ToolTip1.SetToolTip(Me.CheckBox69, "Disable automatic setting of 12 controller to same device on port 1")
+        Me.CheckBox69.UseVisualStyleBackColor = True
+        '
+        'TrackBar16
+        '
+        Me.TrackBar16.Location = New System.Drawing.Point(188, 168)
+        Me.TrackBar16.Name = "TrackBar16"
+        Me.TrackBar16.Size = New System.Drawing.Size(107, 45)
+        Me.TrackBar16.TabIndex = 108
+        Me.ToolTip1.SetToolTip(Me.TrackBar16, resources.GetString("TrackBar16.ToolTip"))
+        Me.TrackBar16.Value = 5
+        '
+        'Label104
+        '
+        Me.Label104.AutoSize = True
+        Me.Label104.Location = New System.Drawing.Point(3, 168)
+        Me.Label104.Name = "Label104"
+        Me.Label104.Size = New System.Drawing.Size(158, 13)
+        Me.Label104.TabIndex = 107
+        Me.Label104.Text = "SCSP Output Resampler Quality"
+        '
+        'CheckBox65
+        '
+        Me.CheckBox65.AutoSize = True
+        Me.CheckBox65.Location = New System.Drawing.Point(3, 65)
+        Me.CheckBox65.Name = "CheckBox65"
+        Me.CheckBox65.Size = New System.Drawing.Size(138, 17)
+        Me.CheckBox65.TabIndex = 6
+        Me.CheckBox65.Text = "Enable &mid-frame synch"
+        Me.ToolTip1.SetToolTip(Me.CheckBox65, "Enable mid-frame synchronization." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mid-frame synchronization can reduce input lat" &
+        "ency, but it will increase CPU requirements.")
+        Me.CheckBox65.UseVisualStyleBackColor = True
+        '
+        'ComboBox44
+        '
+        Me.ComboBox44.FormattingEnabled = True
+        Me.ComboBox44.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
+        Me.ComboBox44.Location = New System.Drawing.Point(188, 115)
+        Me.ComboBox44.Name = "ComboBox44"
+        Me.ComboBox44.Size = New System.Drawing.Size(107, 21)
+        Me.ComboBox44.TabIndex = 101
+        Me.ComboBox44.Text = "gamepad"
+        Me.ToolTip1.SetToolTip(Me.ComboBox44, resources.GetString("ComboBox44.ToolTip"))
+        '
+        'Label105
+        '
+        Me.Label105.AutoSize = True
+        Me.Label105.Location = New System.Drawing.Point(3, 118)
+        Me.Label105.Name = "Label105"
+        Me.Label105.Size = New System.Drawing.Size(114, 13)
+        Me.Label105.TabIndex = 100
+        Me.Label105.Text = "Input Device for Port 2"
+        '
+        'ComboBox45
+        '
+        Me.ComboBox45.FormattingEnabled = True
+        Me.ComboBox45.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
+        Me.ComboBox45.Location = New System.Drawing.Point(188, 88)
+        Me.ComboBox45.Name = "ComboBox45"
+        Me.ComboBox45.Size = New System.Drawing.Size(107, 21)
+        Me.ComboBox45.TabIndex = 99
+        Me.ComboBox45.Text = "gamepad"
+        Me.ToolTip1.SetToolTip(Me.ComboBox45, resources.GetString("ComboBox45.ToolTip"))
+        '
+        'Label106
+        '
+        Me.Label106.AutoSize = True
+        Me.Label106.Location = New System.Drawing.Point(3, 91)
+        Me.Label106.Name = "Label106"
+        Me.Label106.Size = New System.Drawing.Size(114, 13)
+        Me.Label106.TabIndex = 98
+        Me.Label106.Text = "Input Device for Port 1"
         '
         'TabPage29
         '
@@ -6764,217 +6973,6 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'Label106
-        '
-        Me.Label106.AutoSize = True
-        Me.Label106.Location = New System.Drawing.Point(3, 91)
-        Me.Label106.Name = "Label106"
-        Me.Label106.Size = New System.Drawing.Size(114, 13)
-        Me.Label106.TabIndex = 98
-        Me.Label106.Text = "Input Device for Port 1"
-        '
-        'ComboBox45
-        '
-        Me.ComboBox45.FormattingEnabled = True
-        Me.ComboBox45.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
-        Me.ComboBox45.Location = New System.Drawing.Point(188, 88)
-        Me.ComboBox45.Name = "ComboBox45"
-        Me.ComboBox45.Size = New System.Drawing.Size(107, 21)
-        Me.ComboBox45.TabIndex = 99
-        Me.ComboBox45.Text = "gamepad"
-        Me.ToolTip1.SetToolTip(Me.ComboBox45, resources.GetString("ComboBox45.ToolTip"))
-        '
-        'Label105
-        '
-        Me.Label105.AutoSize = True
-        Me.Label105.Location = New System.Drawing.Point(3, 118)
-        Me.Label105.Name = "Label105"
-        Me.Label105.Size = New System.Drawing.Size(114, 13)
-        Me.Label105.TabIndex = 100
-        Me.Label105.Text = "Input Device for Port 2"
-        '
-        'ComboBox44
-        '
-        Me.ComboBox44.FormattingEnabled = True
-        Me.ComboBox44.Items.AddRange(New Object() {"none", "gamepad", "3dpad", "mouse", "wheel", "mission", "dmission", "gun", "keyboard", "jpkeyboard"})
-        Me.ComboBox44.Location = New System.Drawing.Point(188, 115)
-        Me.ComboBox44.Name = "ComboBox44"
-        Me.ComboBox44.Size = New System.Drawing.Size(107, 21)
-        Me.ComboBox44.TabIndex = 101
-        Me.ComboBox44.Text = "gamepad"
-        Me.ToolTip1.SetToolTip(Me.ComboBox44, resources.GetString("ComboBox44.ToolTip"))
-        '
-        'CheckBox65
-        '
-        Me.CheckBox65.AutoSize = True
-        Me.CheckBox65.Location = New System.Drawing.Point(3, 65)
-        Me.CheckBox65.Name = "CheckBox65"
-        Me.CheckBox65.Size = New System.Drawing.Size(138, 17)
-        Me.CheckBox65.TabIndex = 6
-        Me.CheckBox65.Text = "Enable &mid-frame synch"
-        Me.ToolTip1.SetToolTip(Me.CheckBox65, "Enable mid-frame synchronization." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mid-frame synchronization can reduce input lat" &
-        "ency, but it will increase CPU requirements.")
-        Me.CheckBox65.UseVisualStyleBackColor = True
-        '
-        'Label104
-        '
-        Me.Label104.AutoSize = True
-        Me.Label104.Location = New System.Drawing.Point(3, 168)
-        Me.Label104.Name = "Label104"
-        Me.Label104.Size = New System.Drawing.Size(158, 13)
-        Me.Label104.TabIndex = 107
-        Me.Label104.Text = "SCSP Output Resampler Quality"
-        '
-        'TrackBar16
-        '
-        Me.TrackBar16.Location = New System.Drawing.Point(188, 168)
-        Me.TrackBar16.Name = "TrackBar16"
-        Me.TrackBar16.Size = New System.Drawing.Size(107, 45)
-        Me.TrackBar16.TabIndex = 108
-        Me.ToolTip1.SetToolTip(Me.TrackBar16, resources.GetString("TrackBar16.ToolTip"))
-        Me.TrackBar16.Value = 5
-        '
-        'CheckBox69
-        '
-        Me.CheckBox69.AutoSize = True
-        Me.CheckBox69.Checked = True
-        Me.CheckBox69.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox69.Location = New System.Drawing.Point(188, 30)
-        Me.CheckBox69.Name = "CheckBox69"
-        Me.CheckBox69.Size = New System.Drawing.Size(107, 17)
-        Me.CheckBox69.TabIndex = 109
-        Me.CheckBox69.Text = "&Ignore Other Port"
-        Me.ToolTip1.SetToolTip(Me.CheckBox69, "Disable automatic setting of 12 controller to same device on port 1")
-        Me.CheckBox69.UseVisualStyleBackColor = True
-        '
-        'Label116
-        '
-        Me.Label116.AutoSize = True
-        Me.Label116.Location = New System.Drawing.Point(3, 144)
-        Me.Label116.Name = "Label116"
-        Me.Label116.Size = New System.Drawing.Size(89, 13)
-        Me.Label116.TabIndex = 110
-        Me.Label116.Text = "Mouse Sensitivity"
-        '
-        'NumericUpDown19
-        '
-        Me.NumericUpDown19.DecimalPlaces = 2
-        Me.NumericUpDown19.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown19.Location = New System.Drawing.Point(188, 142)
-        Me.NumericUpDown19.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown19.Name = "NumericUpDown19"
-        Me.NumericUpDown19.Size = New System.Drawing.Size(68, 20)
-        Me.NumericUpDown19.TabIndex = 111
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown19, "Emulated mouse sensitivity.")
-        Me.NumericUpDown19.Value = New Decimal(New Integer() {125, 0, 0, 131072})
-        '
-        'GroupBox23
-        '
-        Me.GroupBox23.Controls.Add(Me.Label132)
-        Me.GroupBox23.Controls.Add(Me.ComboBox52)
-        Me.GroupBox23.Controls.Add(Me.CheckBox100)
-        Me.GroupBox23.Controls.Add(Me.CheckBox101)
-        Me.GroupBox23.Controls.Add(Me.CheckBox77)
-        Me.GroupBox23.Controls.Add(Me.CheckBox76)
-        Me.GroupBox23.Controls.Add(Me.CheckBox75)
-        Me.GroupBox23.Controls.Add(Me.NumericUpDown19)
-        Me.GroupBox23.Controls.Add(Me.Label116)
-        Me.GroupBox23.Controls.Add(Me.CheckBox69)
-        Me.GroupBox23.Controls.Add(Me.TrackBar16)
-        Me.GroupBox23.Controls.Add(Me.Label104)
-        Me.GroupBox23.Controls.Add(Me.CheckBox65)
-        Me.GroupBox23.Controls.Add(Me.ComboBox44)
-        Me.GroupBox23.Controls.Add(Me.Label105)
-        Me.GroupBox23.Controls.Add(Me.ComboBox45)
-        Me.GroupBox23.Controls.Add(Me.Label106)
-        Me.GroupBox23.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox23.Name = "GroupBox23"
-        Me.GroupBox23.Size = New System.Drawing.Size(304, 278)
-        Me.GroupBox23.TabIndex = 5
-        Me.GroupBox23.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox23, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
-        '
-        'Label132
-        '
-        Me.Label132.AutoSize = True
-        Me.Label132.Location = New System.Drawing.Point(157, 64)
-        Me.Label132.Name = "Label132"
-        Me.Label132.Size = New System.Drawing.Size(68, 13)
-        Me.Label132.TabIndex = 128
-        Me.Label132.Text = "3Dpad mode"
-        Me.Label132.Visible = False
-        '
-        'ComboBox52
-        '
-        Me.ComboBox52.FormattingEnabled = True
-        Me.ComboBox52.Items.AddRange(New Object() {"digital", "analog"})
-        Me.ComboBox52.Location = New System.Drawing.Point(231, 61)
-        Me.ComboBox52.Name = "ComboBox52"
-        Me.ComboBox52.Size = New System.Drawing.Size(64, 21)
-        Me.ComboBox52.TabIndex = 127
-        Me.ComboBox52.Text = "digital"
-        Me.ToolTip1.SetToolTip(Me.ComboBox52, resources.GetString("ComboBox52.ToolTip"))
-        Me.ComboBox52.Visible = False
-        '
-        'CheckBox100
-        '
-        Me.CheckBox100.AutoSize = True
-        Me.CheckBox100.Location = New System.Drawing.Point(3, 42)
-        Me.CheckBox100.Name = "CheckBox100"
-        Me.CheckBox100.Size = New System.Drawing.Size(147, 17)
-        Me.CheckBox100.TabIndex = 126
-        Me.CheckBox100.Text = "Enable Multi&tap On Port 2"
-        Me.CheckBox100.UseVisualStyleBackColor = True
-        Me.CheckBox100.Visible = False
-        '
-        'CheckBox101
-        '
-        Me.CheckBox101.AutoSize = True
-        Me.CheckBox101.Location = New System.Drawing.Point(3, 19)
-        Me.CheckBox101.Name = "CheckBox101"
-        Me.CheckBox101.Size = New System.Drawing.Size(147, 17)
-        Me.CheckBox101.TabIndex = 125
-        Me.CheckBox101.Text = "Enable Multi&tap On Port 1"
-        Me.CheckBox101.UseVisualStyleBackColor = True
-        Me.CheckBox101.Visible = False
-        '
-        'CheckBox77
-        '
-        Me.CheckBox77.AutoSize = True
-        Me.CheckBox77.Location = New System.Drawing.Point(3, 242)
-        Me.CheckBox77.Name = "CheckBox77"
-        Me.CheckBox77.Size = New System.Drawing.Size(172, 17)
-        Me.CheckBox77.TabIndex = 124
-        Me.CheckBox77.Text = "&Show horizontal overscan area"
-        Me.ToolTip1.SetToolTip(Me.CheckBox77, "Show horizontal overscan area")
-        Me.CheckBox77.UseVisualStyleBackColor = True
-        Me.CheckBox77.Visible = False
-        '
-        'CheckBox76
-        '
-        Me.CheckBox76.AutoSize = True
-        Me.CheckBox76.Location = New System.Drawing.Point(3, 219)
-        Me.CheckBox76.Name = "CheckBox76"
-        Me.CheckBox76.Size = New System.Drawing.Size(181, 17)
-        Me.CheckBox76.TabIndex = 123
-        Me.CheckBox76.Text = "Enable horizontal &blend(blur) filter"
-        Me.ToolTip1.SetToolTip(Me.CheckBox76, "Enable horizontal blend(blur) filter." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Has a more noticeable effect with the Satu" &
-        "rn's higher horizontal resolution modes(640/704).")
-        Me.CheckBox76.UseVisualStyleBackColor = True
-        Me.CheckBox76.Visible = False
-        '
-        'CheckBox75
-        '
-        Me.CheckBox75.AutoSize = True
-        Me.CheckBox75.Location = New System.Drawing.Point(3, 196)
-        Me.CheckBox75.Name = "CheckBox75"
-        Me.CheckBox75.Size = New System.Drawing.Size(118, 17)
-        Me.CheckBox75.TabIndex = 122
-        Me.CheckBox75.Text = "&Correct aspect ratio"
-        Me.ToolTip1.SetToolTip(Me.CheckBox75, "Correct aspect ratio")
-        Me.CheckBox75.UseVisualStyleBackColor = True
-        Me.CheckBox75.Visible = False
-        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7116,10 +7114,6 @@ Partial Class MgrSetting
         Me.TabPage23.ResumeLayout(False)
         Me.TabPage23.PerformLayout()
         CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage25.ResumeLayout(False)
-        Me.GroupBox24.ResumeLayout(False)
-        Me.GroupBox24.PerformLayout()
-        Me.TabPage27.ResumeLayout(False)
         Me.TabPage26.ResumeLayout(False)
         Me.TabPage26.PerformLayout()
         CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit()
@@ -7129,6 +7123,14 @@ Partial Class MgrSetting
         Me.GroupBox28.PerformLayout()
         CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar21, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage25.ResumeLayout(False)
+        Me.GroupBox24.ResumeLayout(False)
+        Me.GroupBox24.PerformLayout()
+        Me.TabPage27.ResumeLayout(False)
+        Me.GroupBox23.ResumeLayout(False)
+        Me.GroupBox23.PerformLayout()
+        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage29.ResumeLayout(False)
         Me.GroupBox25.ResumeLayout(False)
         Me.GroupBox25.PerformLayout()
@@ -7148,10 +7150,6 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox23.ResumeLayout(False)
-        Me.GroupBox23.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
