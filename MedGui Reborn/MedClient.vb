@@ -93,13 +93,21 @@ Public Class MedClient
                 Exit Sub
             End If
 
-            If File.Exists(MedGuiR.TextBox21.Text & "\" & DataGridView1.CurrentRow.Cells(9).Value()) Then
-                MsgBox("You have already donwloaded this game", vbOKOnly + MsgBoxStyle.Information, "Rom already Downloaded...")
-                Exit Sub
+            Dim rom As String = DataGridView1.CurrentRow.Cells(9).Value()
+
+            If File.Exists(MedGuiR.TextBox21.Text & "\" & rom) Then
+                Dim Drom = MsgBox("You have already a game with this name" & vbCrLf &
+                    "Do you want to download anyway?" & vbCrLf &
+                    "I will rename it", vbYesNo + MsgBoxStyle.Information, "Same rom name...")
+                If Drom = MsgBoxResult.No Then
+                    Exit Sub
+                Else
+                    rom = Path.GetFileNameWithoutExtension(rom) & "_" & DataGridView1.CurrentRow.Cells(2).Value() & Path.GetExtension(rom)
+                End If
             End If
 
             If ftp.FtpFileExists(ftp.CurrentDirectory & "Rom_" & DataGridView1.CurrentRow.Cells(0).Value() & "/" & Path.GetFileName(DataGridView1.CurrentRow.Cells(9).Value())) Then
-                ftp.Download(ftp.CurrentDirectory & "Rom_" & DataGridView1.CurrentRow.Cells(0).Value() & "/" & DataGridView1.CurrentRow.Cells(9).Value(), MedGuiR.TextBox21.Text & "\" & DataGridView1.CurrentRow.Cells(9).Value(), True)
+                ftp.Download(ftp.CurrentDirectory & "Rom_" & DataGridView1.CurrentRow.Cells(0).Value() & "/" & DataGridView1.CurrentRow.Cells(9).Value(), MedGuiR.TextBox21.Text & "\" & rom, True)
                 MsgBox("Download Done!", MsgBoxStyle.OkOnly + MsgBoxStyle.Information, "File download done...")
             End If
         Catch
