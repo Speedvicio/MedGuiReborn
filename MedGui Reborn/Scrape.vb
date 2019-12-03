@@ -488,6 +488,26 @@ Module Scrape
         cleanpsx = cleanstring
     End Function
 
+    Friend Function CleanRom(Gname As String)
+        Dim index As Integer
+
+        If Gname.Contains("(") Or Gname.Contains("[") Then
+            Gname = Path.GetFileNameWithoutExtension(Gname)
+        End If
+
+        If Gname.Contains("(") Then
+            index = Gname.IndexOf("(")
+            Gname = Gname.Remove(index - 1)
+        End If
+
+        If Gname.Contains("[") Then
+            index = Gname.IndexOf("[")
+            Gname = Gname.Remove(index - 1)
+        End If
+
+        Return Gname.Trim
+    End Function
+
     Public Function RemoveAmpersand(ByVal CleanAmp As String) As String
         RemoveAmpersand = Replace(CleanAmp, " &amp; ", " & ")
     End Function

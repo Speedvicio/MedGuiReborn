@@ -37,11 +37,6 @@ Partial Class MedClient
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.TimerRefresh = New System.Windows.Forms.Timer(Me.components)
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -54,6 +49,11 @@ Partial Class MedClient
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Country = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TimerRefresh = New System.Windows.Forms.Timer(Me.components)
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,6 +131,9 @@ Partial Class MedClient
         Me.TextBox1.TabIndex = 35
         Me.ToolTip1.SetToolTip(Me.TextBox1, "The Nick used on NetPlay Session")
         '
+        'OpenFileDialog1
+        '
+        '
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -173,59 +176,6 @@ Partial Class MedClient
         Me.DataGridView1.Size = New System.Drawing.Size(744, 404)
         Me.DataGridView1.TabIndex = 41
         Me.ToolTip1.SetToolTip(Me.DataGridView1, "Double lest mouse click to access in a session")
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Location = New System.Drawing.Point(762, 238)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(200, 23)
-        Me.Button3.TabIndex = 45
-        Me.Button3.Text = "&Open UCI Client"
-        Me.ToolTip1.SetToolTip(Me.Button3, "Open UCI client and join into MedPlay Channel")
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'TimerRefresh
-        '
-        Me.TimerRefresh.Interval = 30000
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(762, 12)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(135, 17)
-        Me.CheckBox1.TabIndex = 42
-        Me.CheckBox1.Text = "&Refresh grid every sec:"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDown1.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(903, 11)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {600, 0, 0, 0})
-        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(59, 20)
-        Me.NumericUpDown1.TabIndex = 43
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {30, 0, 0, 0})
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(762, 215)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(171, 17)
-        Me.CheckBox2.TabIndex = 44
-        Me.CheckBox2.Text = "&Autojoin MedPlay IRC Channel"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        Me.CheckBox2.Visible = False
         '
         'Column1
         '
@@ -314,6 +264,59 @@ Partial Class MedClient
         Me.Country.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Country.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Country.Width = 68
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.Location = New System.Drawing.Point(762, 238)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(200, 23)
+        Me.Button3.TabIndex = 45
+        Me.Button3.Text = "&Open UCI Client"
+        Me.ToolTip1.SetToolTip(Me.Button3, "Open UCI client and join into MedPlay Channel")
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'TimerRefresh
+        '
+        Me.TimerRefresh.Interval = 30000
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(762, 12)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(135, 17)
+        Me.CheckBox1.TabIndex = 42
+        Me.CheckBox1.Text = "&Refresh grid every sec:"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDown1.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown1.Location = New System.Drawing.Point(903, 11)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {600, 0, 0, 0})
+        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(59, 20)
+        Me.NumericUpDown1.TabIndex = 43
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {30, 0, 0, 0})
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(762, 215)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(171, 17)
+        Me.CheckBox2.TabIndex = 44
+        Me.CheckBox2.Text = "&Autojoin MedPlay IRC Channel"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.CheckBox2.Visible = False
         '
         'MedClient
         '

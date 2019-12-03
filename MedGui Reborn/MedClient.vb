@@ -98,11 +98,11 @@ Public Class MedClient
             If File.Exists(MedGuiR.TextBox21.Text & "\" & rom) Then
                 Dim Drom = MsgBox("You have already a game with this name" & vbCrLf &
                     "Do you want to download anyway?" & vbCrLf &
-                    "I will rename it", vbYesNo + MsgBoxStyle.Information, "Same rom name...")
+                    "I will append " & DataGridView1.CurrentRow.Cells(2).Value() & " to the game name", vbYesNo + MsgBoxStyle.Information, "Same rom name...")
                 If Drom = MsgBoxResult.No Then
                     Exit Sub
                 Else
-                    rom = Path.GetFileNameWithoutExtension(rom) & "_" & DataGridView1.CurrentRow.Cells(2).Value() & Path.GetExtension(rom)
+                    rom = DataGridView1.CurrentRow.Cells(1).Value() & "_" & DataGridView1.CurrentRow.Cells(2).Value() & Path.GetExtension(DataGridView1.CurrentRow.Cells(9).Value())
                 End If
             End If
 
@@ -164,33 +164,38 @@ Public Class MedClient
             Exit Sub
         End If
 
-        If File.Exists(MedGuiR.TextBox21.Text & "\" & DataGridView1.CurrentRow.Cells(9).Value()) Then
+        Dim Trom As String = DataGridView1.CurrentRow.Cells(1).Value() & "_" & DataGridView1.CurrentRow.Cells(2).Value() & Path.GetExtension(DataGridView1.CurrentRow.Cells(9).Value())
+
+        If File.Exists(MedGuiR.TextBox21.Text & "\" & Trom) Then
+            percorso = MedGuiR.TextBox21.Text & "\" & Trom
+        ElseIf File.Exists(MedGuiR.TextBox21.Text & "\" & DataGridView1.CurrentRow.Cells(9).Value()) Then
             percorso = MedGuiR.TextBox21.Text & "\" & DataGridView1.CurrentRow.Cells(9).Value()
         Else
 
 tryagain:
             If NGameName.EndsWith("?") Then NGameName.Substring(0, NGameName.Length - 1)
-            OpenFileDialog1.Title = "Select a " & NGameName.Trim & " game"
-            OpenFileDialog1.Filter = "All files (*.*)|*.*|Game (" & NGameName.Trim & ".*)|" & NGameName.Trim & ".*"
-            'OpenFileDialog1.FileName = NGameName.Trim & ".*"
-            StartNetPath()
-            OpenFileDialog1.InitialDirectory = InitialNetPath
-            If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-                percorso = (OpenFileDialog1.FileName)
-                CheckCRCNet()
+            OpenFileDialog1.Title = "Select " & NGameName.Trim & " game"
+            OpenFileDialog1.Filter = "All files|*.*|Game Name|" & CleanRom(NGameName.Trim) & "*.*"
+            'OpenFileDialog1.FileName = CleanRom(NGameName.Trim) & "*"
 
-                If NCRC.Trim = DataGridView1.CurrentRow.Cells(8).Value().ToString.Trim Or NCRC.Trim = "image" Then
+            StartNetPath()
+                OpenFileDialog1.InitialDirectory = InitialNetPath
+                If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+                    percorso = (OpenFileDialog1.FileName)
+                    CheckCRCNet()
+
+                    If NCRC.Trim = DataGridView1.CurrentRow.Cells(8).Value().ToString.Trim Or NCRC.Trim = "image" Then
+                    Else
+                        MsgBox("CRC Rom mismatch, select a different rom", vbOKOnly + MsgBoxStyle.Exclamation, "CRC mismatch...")
+                        GoTo tryagain
+                    End If
                 Else
-                    MsgBox("CRC Rom mismatch, select a different rom", vbOKOnly + MsgBoxStyle.Exclamation, "CRC mismatch...")
-                    GoTo tryagain
+                    Exit Sub
                 End If
-            Else
-                Exit Sub
+
             End If
 
-        End If
-
-        If NModule = "psx" Then
+            If NModule = "psx" Then
             MedGuiR.TextBox1.Text = percorso
             BackupMCR()
         End If
