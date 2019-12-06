@@ -190,12 +190,15 @@ Module Extract
                                     Exit Sub
                                 End If
                             End If
-
+                        Else
+                            fileTXT = ""
                         End If
                     Case ".mai"
                         consoles = "apple2"
                         LMain()
                         Exit Sub
+                    Case Else
+                        fileTXT = ""
                 End Select
                 'Dim o
                 'Dim oi
