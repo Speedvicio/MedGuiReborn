@@ -5,6 +5,8 @@ Public Class MedGuiR
     Public StartRom, romName, last_consoles, last_rom, LoadCD, tpce, multimedia, regioni, tempiso, Vjoypad, M3UDisk As String,
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart, missingame As Boolean
 
+    Dim prevcrc As String
+
     Public tgdbCID As String
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -458,13 +460,16 @@ Public Class MedGuiR
             Exit Sub
         End If
 
-        If last_rom = DataGridView1.CurrentRow.Cells(4).Value() Then Exit Sub
+        If prevcrc = DataGridView1.CurrentRow.Cells(8).Value() Then Exit Sub
+
+        'If last_rom = DataGridView1.CurrentRow.Cells(4).Value() Then Exit Sub
 
         Try
             TextBox1.Text = DataGridView1.CurrentRow.Cells(4).Value()
             romName = Trim(DataGridView1.CurrentRow.Cells(0).Value())
             percorso = TextBox1.Text
             last_rom = TextBox1.Text
+            prevcrc = DataGridView1.CurrentRow.Cells(8).Value()
             Specific_Info()
             consoles = DataGridView1.CurrentRow.Cells(6).Value()
         Catch ex As Exception
@@ -1068,7 +1073,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 

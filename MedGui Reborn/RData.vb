@@ -91,7 +91,7 @@ Boing:
         Dim indice1 As Integer
 
         If OthersDat = False Then
-            indice1 = riga.IndexOf(ext)
+            indice1 = riga.IndexOf(".")
         Else
             indice1 = riga.IndexOf(").") + 1
         End If
