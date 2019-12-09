@@ -337,12 +337,32 @@ CheckMednafen:
         DetectMedGuiR()
         Detectx86_4()
 
-        Dim readText() As String = File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
+        Dim readText() As String = File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg", System.Text.Encoding.UTF8)
+
+        Dim exist4crt As Boolean = False
+        For Each s In readText
+            If s.ToString.Contains("video.resolution_switch") Then
+                exist4crt = True
+                Exit For
+            End If
+        Next
+
+        If exist4crt = True Then
+            If File.Exists(MedGuiR.TextBox4.Text & "\emu4crt.yes") = False Then
+                File.Create(MedGuiR.TextBox4.Text & "\emu4crt.yes").Dispose()
+            End If
+        Else
+            If File.Exists(MedGuiR.TextBox4.Text & "\emu4crt.yes") = True Then
+                File.Delete(MedGuiR.TextBox4.Text & "\emu4crt.yes")
+            End If
+        End If
+
         Dim vmedFull As String
         vmedFull = readText.GetValue(0)
         vmedFull = Replace(vmedFull, ";VERSION ", "")
         vmedClear = Replace(vmedFull, ".", "")
         vmedClear = Replace(vmedClear, "-UNSTABLE", "")
+
         If Len(vmedClear.Trim) < 5 Then vmedClear = vmedClear & "0"
         If Val(vmedClear) < 9380 And vmedClear <> "" Then
             Message.Label1.Text = "MedGui Reborn support only Mednafen >= 0.9.38" & vbCrLf &
