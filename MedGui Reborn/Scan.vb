@@ -155,7 +155,7 @@ Module scan
                         consoles = "md"
                         gif = "md"
                         real_name = "Sega - Mega Drive - Genesis"
-                        fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
+                        fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\Sega - Mega Drive - Genesis.dat"
                     Case Else
                         decrunch_size = dettaglio.Length
 
@@ -183,7 +183,7 @@ Module scan
                                 consoles = ""
                                 gif = ""
                                 real_name = ""
-                                fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\Sega - Mega Drive - Genesis.dat"
+                                fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
                             End If
                         End If
                 End Select
