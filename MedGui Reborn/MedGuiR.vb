@@ -265,6 +265,7 @@ Public Class MedGuiR
     End Sub
 
     Public Sub StartEmu()
+
         If ErLog.Visible = True Then ErLog.Close()
 
         If File.Exists(TextBox4.Text & "\mednafen.exe") = False Then
@@ -1906,7 +1907,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                 Select Case True
                     Case Eriga.Contains("File format is unknown")
                         ErLog.RichTextBox1.SelectionColor = Color.Fuchsia
-                    Case Eriga.Contains("Error") Or Eriga.Contains("is an incorrect size")
+                    Case Eriga.Contains("Error") Or Eriga.Contains("is an incorrect size") Or Eriga.Contains("Unrecognized system")
                         Select Case True
                             Case LCase(Eriga.Contains(".sbi")), LCase(Eriga.Contains(".cfg")), LCase(Eriga.Contains(".cht")), LCase(Eriga.Contains(".ips"))
                                 ErLog.RichTextBox1.SelectionColor = Color.DarkGreen

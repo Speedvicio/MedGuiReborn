@@ -5,6 +5,9 @@
         F1 = Me
         CenterForm()
         ColorizeForm()
+
+        'RichTextBox1.SelectionStart = RichTextBox1.Text.Length
+        RichTextBox1.ScrollToCaret()
     End Sub
 
 End Class
