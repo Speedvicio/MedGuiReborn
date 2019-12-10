@@ -27,7 +27,15 @@ Public Class MedGuiR
         exist_Mednafen()
         Read_Resource()
         MednafenV()
-        Detect_Faust()
+
+        If detect_module("snes_faust") = True Then
+            CheckBox15.Visible = True
+            CheckBox15.Enabled = True
+        Else
+            CheckBox15.Visible = False
+            CheckBox15.Enabled = False
+        End If
+
         contr_os()
         list_DATs()
         CustomScanFolder()

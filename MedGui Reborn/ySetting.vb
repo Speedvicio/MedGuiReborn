@@ -319,9 +319,11 @@
                     " -fps.textcolor " & MgrSetting.Label135.Text & " -fps.bgcolor " & MgrSetting.Label136.Text &
                     " -fps.font " & MgrSetting.ComboBox55.Text & " -fps.position " & MgrSetting.ComboBox56.Text & " -fps.scale " & CInt(MgrSetting.NumericUpDown28.Value)
 
-                    If IO.File.Exists(MedGuiR.TextBox4.Text & "\emu4crt.yes") Then
+                    If detect_module("video.resolution_switch") = True Then
                         video = video & " -video.resolution_switch " & MgrSetting.ComboBox57.Text
+                        filters = Nothing
                     End If
+
                 Case Is = 12200
                     ss = ss & " -ss.cart auto"
                 Case Is = 12300

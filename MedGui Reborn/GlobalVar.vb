@@ -339,24 +339,6 @@ CheckMednafen:
 
         Dim readText() As String = File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg", System.Text.Encoding.UTF8)
 
-        Dim exist4crt As Boolean = False
-        For Each s In readText
-            If s.ToString.Contains("video.resolution_switch") Then
-                exist4crt = True
-                Exit For
-            End If
-        Next
-
-        If exist4crt = True Then
-            If File.Exists(MedGuiR.TextBox4.Text & "\emu4crt.yes") = False Then
-                File.Create(MedGuiR.TextBox4.Text & "\emu4crt.yes").Dispose()
-            End If
-        Else
-            If File.Exists(MedGuiR.TextBox4.Text & "\emu4crt.yes") = True Then
-                File.Delete(MedGuiR.TextBox4.Text & "\emu4crt.yes")
-            End If
-        End If
-
         Dim vmedFull As String
         vmedFull = readText.GetValue(0)
         vmedFull = Replace(vmedFull, ";VERSION ", "")
@@ -428,41 +410,27 @@ CheckMednafen:
         End Try
     End Sub
 
-    Public Sub Detect_Faust()
+    Public Function detect_module(parameter) As Boolean
         Dim cont As Integer = 0
         If Dir(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg") <> "" Then
             Dim readText() As String = File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
             Dim s As String
             For Each s In readText
-                If s.Contains("snes_faust") Then
-                    MedGuiR.CheckBox15.Visible = True
+                If s.Contains(parameter) Then
                     cont = cont + 1
                     Exit For
-                ElseIf s.Contains("snes_faust") = False Then
+                ElseIf s.Contains(parameter) = False Then
                     cont = 0
                 End If
             Next
-            If cont = 0 Then MedGuiR.CheckBox15.Enabled = False
-        End If
-    End Sub
 
-    Public Sub detect_saturn()
-        Dim cont As Integer = 0
-        If Dir(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg") <> "" Then
-            Dim readText() As String = File.ReadAllLines(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
-            Dim s As String
-            For Each s In readText
-                If s.Contains("ss.region") Then
-                    IsoSelector.Button1.Visible = True
-                    cont = cont + 1
-                    Exit For
-                ElseIf s.Contains("ss.region") = False Then
-                    cont = 0
-                End If
-            Next
-            If cont = 0 Then IsoSelector.Button1.Enabled = False
+            If cont = 1 Then
+                detect_module = True
+            Else
+                detect_module = False
+            End If
         End If
-    End Sub
+    End Function
 
     Public Sub OS_Version()
         If UCase(My.Computer.Info.OSFullName.Contains("XP")) Then

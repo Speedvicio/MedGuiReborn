@@ -21,7 +21,14 @@ Public Class IsoSelector
             NumericUpDown1.Visible = False
         End If
 
-        detect_saturn()
+        If detect_module("ss.enable") = True Then
+            Button1.Visible = True
+            Button1.Enabled = True
+        Else
+            Button1.Visible = False
+            Button1.Enabled = False
+        End If
+
         UNI.Items.Clear()
         For Each drive In IO.DriveInfo.GetDrives()
 
