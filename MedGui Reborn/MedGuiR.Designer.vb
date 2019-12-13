@@ -201,11 +201,11 @@ Partial Class MedGuiR
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Button28 = New System.Windows.Forms.Button()
         Me.Label24 = New System.Windows.Forms.Label()
+        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.Button59 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label57 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.CheckBox8 = New System.Windows.Forms.CheckBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
@@ -2155,6 +2155,15 @@ Partial Class MedGuiR
         Me.Label24.TabIndex = 66
         Me.Label24.Text = "Master System "
         '
+        'ComboBox6
+        '
+        Me.ComboBox6.FormattingEnabled = True
+        Me.ComboBox6.Location = New System.Drawing.Point(189, 88)
+        Me.ComboBox6.Name = "ComboBox6"
+        Me.ComboBox6.Size = New System.Drawing.Size(42, 21)
+        Me.ComboBox6.TabIndex = 47
+        Me.ToolTip1.SetToolTip(Me.ComboBox6, "Select Port of attached joypad")
+        '
         'Button59
         '
         Me.Button59.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -2222,15 +2231,6 @@ Partial Class MedGuiR
         Me.GroupBox2.TabIndex = 41
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Grid Columns"
-        '
-        'ComboBox6
-        '
-        Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(189, 88)
-        Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(42, 21)
-        Me.ComboBox6.TabIndex = 47
-        Me.ToolTip1.SetToolTip(Me.ComboBox6, "Select Port of attached joypad")
         '
         'CheckBox8
         '

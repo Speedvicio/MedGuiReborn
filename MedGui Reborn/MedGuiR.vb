@@ -2989,7 +2989,7 @@ CHECKDEAD:
             ComboBox6.Enabled = False
             MYJOYEX.dwSize = 64
             MYJOYEX.dwFlags = &HFF
-            TimerControlJoy.Interval = 200
+            TimerControlJoy.Interval = 150
             deadPOV = ""
             countPOV = 0
             TimerControlJoy.Start()
