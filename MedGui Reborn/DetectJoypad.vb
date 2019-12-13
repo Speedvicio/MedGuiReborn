@@ -94,6 +94,8 @@ Module DetectJoypad
         customCulture.NumberFormat.NumberDecimalSeparator = "."
         Threading.Thread.CurrentThread.CurrentCulture = customCulture
 
+        MedGuiR.ComboBox6.Items.Clear()
+
         'Get the joystick number in the system and about information
         Dim xJa, xRj As Long
         Dim xJn As Integer
@@ -118,40 +120,21 @@ Module DetectJoypad
                 Case MMSYSERR_INVALPARAM
                     ' An invalid parameter was passed or joystick identifier is invalid
                     MsgBox("An invalid parameter was passed or joystick identifier is invalid", MsgBoxStyle.Critical)
+                Case JOYERR_NOERROR
+                    MedGuiR.ComboBox6.Items.Add(xJn)
                 Case Else
                     ' default
             End Select
-
-            If Val(CapX.wPid) <> 0 Then
-                CountJoy = CountJoy + 1
-                'sdj = "Joystick attached on port:" & Trim(Str(xJn + 1))
-                'sdj &= Str(CapX.wNumAxes) & " Axes"
-                'sdj &= Str(CapX.wNumButtons) & " Buttons "
-                'sdj &= CapX.szPname
-                'MsgBox(sDJ)
-                'If CountJoy > 0 And MJoyConfig.Visible = True Then MJoyConfig.ListBox1.Items.Add(sdj)
-                sdj = xJn + 1
-            End If
         Next
 
-        If CountJoy >= 1 Then
-            JoyMin = 1
-            JoyMax = CountJoy
-
-            If CountJoy = 1 Then
-                JoyMin = Val(sdj)
-                JoyMax = Val(sdj)
-            End If
-
-            MedGuiR.NumericUpDown2.Minimum = JoyMin
-            MedGuiR.NumericUpDown2.Maximum = JoyMax
+        If MedGuiR.ComboBox6.Items.Count > 0 Then
             MedGuiR.CheckBox16.Enabled = True
 
-            If MedGuiR.CheckBox16.Checked = False Then MedGuiR.NumericUpDown2.Enabled = True
+            If MedGuiR.CheckBox16.Checked = False Then MedGuiR.ComboBox6.Enabled = True
         Else
             MedGuiR.CheckBox16.Checked = False
             MedGuiR.CheckBox16.Enabled = False
-            MedGuiR.NumericUpDown2.Enabled = False
+            MedGuiR.ComboBox6.Enabled = False
         End If
     End Sub
 

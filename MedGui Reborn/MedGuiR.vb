@@ -6,6 +6,8 @@ Public Class MedGuiR
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart, missingame As Boolean
 
     Dim prevcrc As String
+    Dim deadPOV As String
+    Dim countPOV As Integer
 
     Public tgdbCID As String
 
@@ -1082,7 +1084,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -2893,14 +2895,21 @@ SKIPHASH:
         Threading.Thread.CurrentThread.CurrentCulture = customCulture
 
         Try
-            joyGetPosEx(NumericUpDown2.Value - 1, MYJOYEX)
+            joyGetPosEx(ComboBox6.Text, MYJOYEX)
 
             Dim Buttonjoypad As String = MYJOYEX.dwButtons.ToString
             Dim povjoypad As String = (MYJOYEX.dwPOV / 100).ToString
 
-            If povjoypad = "655.35" And Buttonjoypad <> "0" Then
+CHECKDEAD:
+            If countPOV < 51 Then
+                deadPOV = povjoypad
+                countPOV += 1
+                GoTo CHECKDEAD
+            End If
+
+            If povjoypad = deadPOV And Buttonjoypad <> "0" Then
                 Vjoypad = Buttonjoypad
-            ElseIf Buttonjoypad = "0" And povjoypad <> "655.35" Then
+            ElseIf Buttonjoypad = "0" And povjoypad <> deadPOV Then
                 Vjoypad = povjoypad
             Else
                 Vjoypad = ""
@@ -2969,7 +2978,7 @@ SKIPHASH:
                     SendKeys.Send("{DOWN}")
             End Select
         Catch
-            MsgBox("Unrecognized Joypad on port " & NumericUpDown2.Value, vbOKOnly + vbCritical, "unrecognized Joypad")
+            MsgBox("Unrecognized Joypad on port " & ComboBox6.Text, vbOKOnly + vbCritical, "unrecognized Joypad")
             CheckBox16.Checked = False
         End Try
     End Sub
@@ -2977,15 +2986,17 @@ SKIPHASH:
     Private Sub CheckBox16_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox16.CheckedChanged
         If CheckBox16.Checked = True And CheckBox16.Enabled = True Then
             Button51.Enabled = True
-            NumericUpDown2.Enabled = False
+            ComboBox6.Enabled = False
             MYJOYEX.dwSize = 64
             MYJOYEX.dwFlags = &HFF
             TimerControlJoy.Interval = 200
+            deadPOV = ""
+            countPOV = 0
             TimerControlJoy.Start()
             DataGridView1.Focus()
         Else
             CheckBox16.Checked = False
-            NumericUpDown2.Enabled = True
+            ComboBox6.Enabled = True
             Button51.Enabled = False
             TimerControlJoy.Stop()
         End If

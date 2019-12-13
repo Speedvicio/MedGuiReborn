@@ -9,7 +9,7 @@
         MYJOYEX.dwSize = 64
         MYJOYEX.dwFlags = &HFF
         Timer1.Interval = 200
-        Label13.Text = "Configure Joypad on port: " & MedGuiR.NumericUpDown2.Value
+        Label13.Text = "Configure Joypad on port: " & MedGuiR.ComboBox6.Text
 
         ArrTxt(0) = Me.TextBox1
         ArrTxt(1) = Me.TextBox2
@@ -115,7 +115,7 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Try
-            joyGetPosEx(MedGuiR.NumericUpDown2.Value - 1, MYJOYEX)
+            joyGetPosEx(MedGuiR.ComboBox6.Text, MYJOYEX)
 
             Dim bjoy As String = MYJOYEX.dwButtons.ToString
             Dim pjoy As String = (MYJOYEX.dwPOV / 100).ToString
@@ -139,7 +139,7 @@
             End If
         Catch
             Timer1.Stop()
-            MsgBox("Unrecognized Joypad on port " & MedGuiR.NumericUpDown2.Value, vbOKOnly + vbCritical, "unrecognized Joypad")
+            MsgBox("Unrecognized Joypad on port " & MedGuiR.ComboBox6.Text, vbOKOnly + vbCritical, "unrecognized Joypad")
         End Try
     End Sub
 
