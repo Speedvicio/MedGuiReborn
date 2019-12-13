@@ -120,7 +120,7 @@
             Dim bjoy As String = MYJOYEX.dwButtons.ToString
             Dim pjoy As String = (MYJOYEX.dwPOV / 100).ToString
             If bjoy <> "0" Then buttonjoypad = bjoy
-            If pjoy <> "655.35" Then povjoypad = pjoy
+            If pjoy <> MedGuiR.deadPOV Then povjoypad = pjoy
 
             If ArrTxt(yi - 1).Enabled = True And ArrTxt(yi - 1).Text = "" Then
                 If yi <= 4 Then

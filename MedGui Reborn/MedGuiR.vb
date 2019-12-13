@@ -6,7 +6,7 @@ Public Class MedGuiR
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart, missingame As Boolean
 
     Dim prevcrc As String
-    Dim deadPOV As String
+    Public deadPOV As String
     Dim countPOV As Integer
 
     Public tgdbCID As String
@@ -1084,7 +1084,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
