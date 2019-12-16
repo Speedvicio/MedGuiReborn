@@ -119,8 +119,23 @@
 
             Dim bjoy As String = MYJOYEX.dwButtons.ToString
             Dim pjoy As String = (MYJOYEX.dwPOV / 100).ToString
-            If bjoy <> "0" Then buttonjoypad = bjoy
-            If pjoy <> MedGuiR.deadPOV Then povjoypad = pjoy
+
+            Label2.Text = "Dead POV: " & MedGuiR.deadPOV
+            Label1.Text = "POV: " & pjoy
+            Label3.Text = "BUT: " & bjoy
+
+            If pjoy = MedGuiR.deadPOV And bjoy <> "0" Then
+                buttonjoypad = bjoy
+                'Label1.Text = "Current: " & bjoy
+            ElseIf bjoy = "0" And pjoy <> MedGuiR.deadPOV Then
+                povjoypad = pjoy
+                'Label1.Text = "Current: " & pjoy
+            Else
+                'Vjoypad = ""
+            End If
+
+            'If bjoy <> "0" Then buttonjoypad = bjoy
+            'If pjoy <> MedGuiR.deadPOV Then povjoypad = pjoy
 
             If ArrTxt(yi - 1).Enabled = True And ArrTxt(yi - 1).Text = "" Then
                 If yi <= 4 Then

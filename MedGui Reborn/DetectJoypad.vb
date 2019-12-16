@@ -6,7 +6,7 @@ Module DetectJoypad
     Declare Function joyGetPosEx Lib "winmm.dll" (ByVal uJoyID As Integer, ByRef pji As JOYINFOEX) As Integer
     Declare Function joyGetDevCaps Lib "winmm.dll" Alias "joyGetDevCapsA" (ByVal uJoyID As Integer, ByRef pjc As JOYCAPS, ByVal cjc As Integer) As Integer
     Declare Function joyGetNumDevs Lib "winmm.dll" () As Integer
-    Public JoyMin, JoyMax As Integer, sdj As String
+    Public HASPOV As Integer, sdj As String
 
     <StructLayout(LayoutKind.Sequential)>
     Public Structure JOYCAPS
@@ -31,7 +31,7 @@ Module DetectJoypad
         Dim wUmax As Integer
         Dim wVmin As Integer
         Dim wVmax As Integer
-        Dim wCaps As Integer
+        Dim wCaps As JoyCapOpts
         Dim wMaxAxes As Integer
         Dim wNumAxes As Integer
         Dim wMaxButtons As Integer
@@ -60,6 +60,24 @@ Module DetectJoypad
         Public dwReserved1 As Integer 'Reserved; do not use.
         Public dwReserved2 As Integer 'Reserved; do not use.
     End Structure
+
+    <Flags>
+    Public Enum JoyCapOpts As UInteger
+        ''' <summary>Joystick has z-coordinate information.</summary>
+        Has_Z_Axis = &H1
+        ''' <summary>Joystick has rudder (fourth axis) information.</summary>
+        Has_R_Axis = &H2
+        ''' <summary>Joystick has u-coordinate (fifth axis) information.</summary>
+        Has_U_Axis = &H4
+        ''' <summary>Joystick has v-coordinate (sixth axis) information.</summary>
+        Has_V_Axis = &H8
+        ''' <summary>Joystick has point-of-view information.</summary>
+        Has_PointOfView = &H10
+        ''' <summary>Joystick point-of-view supports discrete values (centered, forward, backward, left, and right).</summary>
+        Has_PointOfView_4Direction = &H20
+        ''' <summary>Joystick point-of-view supports continuous degree bearings.</summary>
+        Has_PointOfView_Continuous = &H40
+    End Enum
 
     Public Const JOYSTICKID1 = 0
     Public Const JOYSTICKID2 = 1
@@ -101,7 +119,6 @@ Module DetectJoypad
         Dim xJn As Integer
         'Dim sDJ As String
         Dim CapX As JOYCAPS
-        Dim CountJoy As Integer
 
         xJa = joyGetNumDevs
         ' The joyGetNumDevs function returns the number of joysticks supported by the
@@ -113,6 +130,7 @@ Module DetectJoypad
         For xJn = 0 To (xJa - 1)
             'MsgBox(xJn)
             xRj = joyGetDevCaps(xJn, CapX, 404)
+
             Select Case xRj
                 Case MMSYSERR_NODRIVER
                     'The joystick driver is not present or joystick identifier is invalid
@@ -122,6 +140,7 @@ Module DetectJoypad
                     MsgBox("An invalid parameter was passed or joystick identifier is invalid", MsgBoxStyle.Critical)
                 Case JOYERR_NOERROR
                     MedGuiR.ComboBox6.Items.Add(xJn)
+                    HASPOV = CapX.wCaps.Has_PointOfView
                 Case Else
                     ' default
             End Select
