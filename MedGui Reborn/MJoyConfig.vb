@@ -27,6 +27,14 @@
         F1 = Me
         CenterForm()
         ColorizeForm()
+
+        Dim joyinfo As JOYCAPS
+        Dim retval As Long
+
+        retval = joyGetDevCaps(MedGuiR.ComboBox6.Text, joyinfo, 404)
+        If retval = 0 Then
+            HASPOV = joyinfo.wCaps.Has_PointOfView
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -115,13 +123,6 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Try
-            Dim joyinfo As JOYCAPS
-            Dim retval As Long
-
-            retval = joyGetDevCaps(MedGuiR.ComboBox6.Text, joyinfo, Len(joyinfo))
-            If retval = 0 Then
-                HASPOV = joyinfo.wCaps.Has_PointOfView
-            End If
 
             joyGetPosEx(MedGuiR.ComboBox6.Text, MYJOYEX)
 
@@ -134,10 +135,8 @@
 
             If pjoy = MedGuiR.deadPOV And bjoy <> "0" Then
                 buttonjoypad = bjoy
-                'Label1.Text = "Current: " & bjoy
-            ElseIf bjoy = "0" And pjoy <> MedGuiR.deadPOV Then
+            ElseIf bjoy = "0" And pjoy <> MedGuiR.deadPOV And HASPOV = 16 Then
                 povjoypad = pjoy
-                'Label1.Text = "Current: " & pjoy
             Else
                 'Vjoypad = ""
             End If
@@ -147,7 +146,11 @@
 
             If ArrTxt(yi - 1).Enabled = True And ArrTxt(yi - 1).Text = "" Then
                 If yi <= 4 Then
-                    ArrTxt(yi - 1).Text = povjoypad
+                    If HASPOV = 16 Then
+                        ArrTxt(yi - 1).Text = povjoypad
+                    Else
+                        ArrTxt(yi - 1).Text = buttonjoypad
+                    End If
                 Else
                     ArrTxt(yi - 1).Text = buttonjoypad
                 End If
