@@ -115,6 +115,14 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Try
+            Dim joyinfo As JOYCAPS
+            Dim retval As Long
+
+            retval = joyGetDevCaps(MedGuiR.ComboBox6.Text, joyinfo, Len(joyinfo))
+            If retval = 0 Then
+                HASPOV = joyinfo.wCaps.Has_PointOfView
+            End If
+
             joyGetPosEx(MedGuiR.ComboBox6.Text, MYJOYEX)
 
             Dim bjoy As String = MYJOYEX.dwButtons.ToString

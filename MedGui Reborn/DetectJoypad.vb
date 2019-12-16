@@ -140,7 +140,6 @@ Module DetectJoypad
                     MsgBox("An invalid parameter was passed or joystick identifier is invalid", MsgBoxStyle.Critical)
                 Case JOYERR_NOERROR
                     MedGuiR.ComboBox6.Items.Add(xJn)
-                    HASPOV = CapX.wCaps.Has_PointOfView
                 Case Else
                     ' default
             End Select
