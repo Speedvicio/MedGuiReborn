@@ -6,7 +6,7 @@ Module DetectJoypad
     Declare Function joyGetPosEx Lib "winmm.dll" (ByVal uJoyID As Integer, ByRef pji As JOYINFOEX) As Integer
     Declare Function joyGetDevCaps Lib "winmm.dll" Alias "joyGetDevCapsA" (ByVal uJoyID As Integer, ByRef pjc As JOYCAPS, ByVal cjc As Integer) As Integer
     Declare Function joyGetNumDevs Lib "winmm.dll" () As Integer
-    Public HASPOV As Integer, sdj As String
+    Public HASPOV As Boolean, sdj As String
 
     <StructLayout(LayoutKind.Sequential)>
     Public Structure JOYCAPS
@@ -31,7 +31,7 @@ Module DetectJoypad
         Dim wUmax As Integer
         Dim wVmin As Integer
         Dim wVmax As Integer
-        Dim wCaps As JoyCapOpts
+        Dim wCaps As Integer
         Dim wMaxAxes As Integer
         Dim wNumAxes As Integer
         Dim wMaxButtons As Integer
@@ -60,24 +60,6 @@ Module DetectJoypad
         Public dwReserved1 As Integer 'Reserved; do not use.
         Public dwReserved2 As Integer 'Reserved; do not use.
     End Structure
-
-    <Flags>
-    Public Enum JoyCapOpts As UInteger
-        ''' <summary>Joystick has z-coordinate information.</summary>
-        Has_Z_Axis = &H1
-        ''' <summary>Joystick has rudder (fourth axis) information.</summary>
-        Has_R_Axis = &H2
-        ''' <summary>Joystick has u-coordinate (fifth axis) information.</summary>
-        Has_U_Axis = &H4
-        ''' <summary>Joystick has v-coordinate (sixth axis) information.</summary>
-        Has_V_Axis = &H8
-        ''' <summary>Joystick has point-of-view information.</summary>
-        Has_PointOfView = &H10
-        ''' <summary>Joystick point-of-view supports discrete values (centered, forward, backward, left, and right).</summary>
-        Has_PointOfView_4Direction = &H20
-        ''' <summary>Joystick point-of-view supports continuous degree bearings.</summary>
-        Has_PointOfView_Continuous = &H40
-    End Enum
 
     Public Const JOYSTICKID1 = 0
     Public Const JOYSTICKID2 = 1

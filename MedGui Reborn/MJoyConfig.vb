@@ -28,12 +28,10 @@
         CenterForm()
         ColorizeForm()
 
-        Dim joyinfo As JOYCAPS
-        Dim retval As Long
-
-        retval = joyGetDevCaps(MedGuiR.ComboBox6.Text, joyinfo, 404)
-        If retval = 0 Then
-            HASPOV = joyinfo.wCaps.Has_PointOfView
+        If MedGuiR.deadPOV = "0" Then
+            HASPOV = False
+        Else
+            HASPOV = True
         End If
     End Sub
 
@@ -135,7 +133,7 @@
 
             If pjoy = MedGuiR.deadPOV And bjoy <> "0" Then
                 buttonjoypad = bjoy
-            ElseIf bjoy = "0" And pjoy <> MedGuiR.deadPOV And HASPOV = 16 Then
+            ElseIf bjoy = "0" And pjoy <> MedGuiR.deadPOV And HASPOV = True Then
                 povjoypad = pjoy
             Else
                 'Vjoypad = ""
@@ -146,7 +144,7 @@
 
             If ArrTxt(yi - 1).Enabled = True And ArrTxt(yi - 1).Text = "" Then
                 If yi <= 4 Then
-                    If HASPOV = 16 Then
+                    If HASPOV = True Then
                         ArrTxt(yi - 1).Text = povjoypad
                     Else
                         ArrTxt(yi - 1).Text = buttonjoypad
