@@ -2899,6 +2899,7 @@ SKIPHASH:
 
             Dim Buttonjoypad As String = MYJOYEX.dwButtons.ToString
             Dim povjoypad As String = (MYJOYEX.dwPOV / 100).ToString
+            Dim IsPressed As Boolean = MYJOYEX.dwButtonNumber
 
 CHECKDEAD:
             If countPOV < 51 Then
@@ -2907,9 +2908,9 @@ CHECKDEAD:
                 GoTo CHECKDEAD
             End If
 
-            If povjoypad = deadPOV And Buttonjoypad <> "0" Then
+            If povjoypad = deadPOV And IsPressed = True Then
                 Vjoypad = Buttonjoypad
-            ElseIf Buttonjoypad = "0" And povjoypad <> deadPOV Then
+            ElseIf IsPressed = False And povjoypad <> deadPOV Then
                 Vjoypad = povjoypad
             Else
                 Vjoypad = ""

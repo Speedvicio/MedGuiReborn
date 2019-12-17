@@ -126,14 +126,15 @@
 
             Dim bjoy As String = MYJOYEX.dwButtons.ToString
             Dim pjoy As String = (MYJOYEX.dwPOV / 100).ToString
+            Dim ispjoy As Boolean = MYJOYEX.dwButtonNumber
 
             Label2.Text = "Dead POV: " & MedGuiR.deadPOV
             Label1.Text = "POV: " & pjoy
             Label3.Text = "BUT: " & bjoy
 
-            If pjoy = MedGuiR.deadPOV And bjoy <> "0" Then
+            If pjoy = MedGuiR.deadPOV And ispjoy = True Then
                 buttonjoypad = bjoy
-            ElseIf bjoy = "0" And pjoy <> MedGuiR.deadPOV And HASPOV = True Then
+            ElseIf ispjoy = False And pjoy <> MedGuiR.deadPOV And HASPOV = True Then
                 povjoypad = pjoy
             Else
                 'Vjoypad = ""
