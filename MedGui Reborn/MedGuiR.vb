@@ -2888,8 +2888,11 @@ SKIPHASH:
         Button31.Enabled = False
     End Sub
 
+    Private Declare Function GetActiveWindow Lib "user32" () As Long
+
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles TimerControlJoy.Tick
-        If Me.Focused = False Then Exit Sub
+
+        If GetActiveWindow = 0 Then Exit Sub
 
         Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
         customCulture.NumberFormat.NumberDecimalSeparator = "."
