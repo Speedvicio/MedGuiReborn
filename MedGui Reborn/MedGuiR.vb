@@ -2889,6 +2889,7 @@ SKIPHASH:
     End Sub
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles TimerControlJoy.Tick
+        If Me.Focused = False Then Exit Sub
 
         Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
         customCulture.NumberFormat.NumberDecimalSeparator = "."
