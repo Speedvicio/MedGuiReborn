@@ -120,6 +120,18 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
+  <data name="TrackBar15.ToolTip" xml:space="preserve">
+    <value>SPU output resampler quality.
+
+0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
+The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
+Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" will bypass the resampler, 
+which will decrease CPU usage by Mednafen, and can increase or decrease audio quality, 
+depending on various operating system and hardware factors.</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
   <data name="TrackBar3.ToolTip" xml:space="preserve">
     <value>Desired period size in microseconds.
 
@@ -645,22 +657,6 @@ auto - Auto Mode
 Selects "fast" or "accurate" automatically based on an internal database. 
 If the CD image is not recognized, defaults to "fast".</value>
   </data>
-  <data name="TrackBar15.ToolTip" xml:space="preserve">
-    <value>SPU output resampler quality.
-
-0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
-The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
-Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" will bypass the resampler, 
-which will decrease CPU usage by Mednafen, and can increase or decrease audio quality, 
-depending on various operating system and hardware factors.</value>
-  </data>
-  <data name="CheckBox51.ToolTip" xml:space="preserve">
-    <value>Enable analog mode combo-button alternate toggle.
-
-When enabled, instead of the configured Analog mode toggle button for the emulated DualShock, 
-use a combination of buttons to toggle it instead. 
-When Select, Start, and all four shoulder buttons are held down for about 1 second, the mode will toggle.</value>
-  </data>
   <data name="ComboBox38.ToolTip" xml:space="preserve">
     <value>Input device for Port 2/2A
 
@@ -1001,6 +997,13 @@ and won't exactly replicate the colors these ICs would reproduce when fed an App
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="CheckBox51.ToolTip" xml:space="preserve">
+    <value>Enable analog mode combo-button alternate toggle.
+
+When enabled, instead of the configured Analog mode toggle button for the emulated DualShock, 
+use a combination of buttons to toggle it instead. 
+When Select, Start, and all four shoulder buttons are held down for about 1 second, the mode will toggle.</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
   </metadata>

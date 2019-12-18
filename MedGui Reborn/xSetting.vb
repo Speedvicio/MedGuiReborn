@@ -510,6 +510,7 @@ Module xSetting
                 If row.Contains(consoles & ".bios_sanity ") Then xValue = Trim(Replace(row, consoles & ".bios_sanity", "")) : MgrSetting.CheckBox58.Checked = CBool(xValue)
                 If row.Contains(consoles & ".region_default ") Then xValue = Trim(Replace(row, consoles & ".region_default", "")) : MgrSetting.ComboBox39.Text = xValue
                 If row.Contains(consoles & ".spu.resamp_quality ") Then xValue = Trim(Replace(row, consoles & ".spu.resamp_quality", "")) : MgrSetting.TrackBar15.Value = Val(xValue)
+                If row.Contains(consoles & ".correct_aspect ") Then xValue = Trim(Replace(row, consoles & ".correct_aspect", "")) : MgrSetting.CheckBox116.Checked = CBool(xValue)
                 MgrSetting.tab_index = 18
             Case "ss"
                 For i = 1 To 12

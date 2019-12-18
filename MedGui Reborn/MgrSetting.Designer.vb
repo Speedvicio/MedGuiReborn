@@ -429,23 +429,6 @@ Partial Class MgrSetting
         Me.ComboBox36 = New System.Windows.Forms.ComboBox()
         Me.TabPage22 = New System.Windows.Forms.TabPage()
         Me.CheckBox104 = New System.Windows.Forms.CheckBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CheckBox93 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox92 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox91 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox90 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox89 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox88 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox87 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox86 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox84 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox85 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox83 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox82 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox81 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox80 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox79 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox78 = New System.Windows.Forms.CheckBox()
         Me.CheckBox58 = New System.Windows.Forms.CheckBox()
         Me.CheckBox57 = New System.Windows.Forms.CheckBox()
         Me.CheckBox55 = New System.Windows.Forms.CheckBox()
@@ -455,7 +438,6 @@ Partial Class MgrSetting
         Me.Label89 = New System.Windows.Forms.Label()
         Me.CheckBox53 = New System.Windows.Forms.CheckBox()
         Me.CheckBox52 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox51 = New System.Windows.Forms.CheckBox()
         Me.TabPage23 = New System.Windows.Forms.TabPage()
         Me.CheckBox61 = New System.Windows.Forms.CheckBox()
         Me.CheckBox56 = New System.Windows.Forms.CheckBox()
@@ -592,6 +574,25 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CheckBox93 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox92 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox91 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox90 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox89 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox88 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox87 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox86 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox84 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox85 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox83 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox82 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox81 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox80 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox79 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox78 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox51 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox116 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -685,7 +686,6 @@ Partial Class MgrSetting
         CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage21.SuspendLayout()
         Me.TabPage22.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage23.SuspendLayout()
         CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -719,6 +719,7 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -5101,8 +5102,8 @@ Partial Class MgrSetting
         '
         'TabPage22
         '
+        Me.TabPage22.Controls.Add(Me.CheckBox116)
         Me.TabPage22.Controls.Add(Me.CheckBox104)
-        Me.TabPage22.Controls.Add(Me.Panel1)
         Me.TabPage22.Controls.Add(Me.CheckBox58)
         Me.TabPage22.Controls.Add(Me.CheckBox57)
         Me.TabPage22.Controls.Add(Me.CheckBox55)
@@ -5112,7 +5113,6 @@ Partial Class MgrSetting
         Me.TabPage22.Controls.Add(Me.Label89)
         Me.TabPage22.Controls.Add(Me.CheckBox53)
         Me.TabPage22.Controls.Add(Me.CheckBox52)
-        Me.TabPage22.Controls.Add(Me.CheckBox51)
         Me.TabPage22.Location = New System.Drawing.Point(4, 22)
         Me.TabPage22.Name = "TabPage22"
         Me.TabPage22.Size = New System.Drawing.Size(310, 284)
@@ -5130,191 +5130,6 @@ Partial Class MgrSetting
         Me.CheckBox104.TabIndex = 92
         Me.CheckBox104.Text = "&Fix Video PAL"
         Me.CheckBox104.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.CheckBox93)
-        Me.Panel1.Controls.Add(Me.CheckBox92)
-        Me.Panel1.Controls.Add(Me.CheckBox91)
-        Me.Panel1.Controls.Add(Me.CheckBox90)
-        Me.Panel1.Controls.Add(Me.CheckBox89)
-        Me.Panel1.Controls.Add(Me.CheckBox88)
-        Me.Panel1.Controls.Add(Me.CheckBox87)
-        Me.Panel1.Controls.Add(Me.CheckBox86)
-        Me.Panel1.Controls.Add(Me.CheckBox84)
-        Me.Panel1.Controls.Add(Me.CheckBox85)
-        Me.Panel1.Controls.Add(Me.CheckBox83)
-        Me.Panel1.Controls.Add(Me.CheckBox82)
-        Me.Panel1.Controls.Add(Me.CheckBox81)
-        Me.Panel1.Controls.Add(Me.CheckBox80)
-        Me.Panel1.Controls.Add(Me.CheckBox79)
-        Me.Panel1.Controls.Add(Me.CheckBox78)
-        Me.Panel1.Location = New System.Drawing.Point(11, 207)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(289, 69)
-        Me.Panel1.TabIndex = 91
-        Me.ToolTip1.SetToolTip(Me.Panel1, "Select the combo buttons assgn to enable analog mode")
-        Me.Panel1.Visible = False
-        '
-        'CheckBox93
-        '
-        Me.CheckBox93.AutoSize = True
-        Me.CheckBox93.Location = New System.Drawing.Point(211, 49)
-        Me.CheckBox93.Name = "CheckBox93"
-        Me.CheckBox93.Size = New System.Drawing.Size(71, 17)
-        Me.CheckBox93.TabIndex = 15
-        Me.CheckBox93.Text = "D-RIGHT"
-        Me.CheckBox93.UseVisualStyleBackColor = True
-        '
-        'CheckBox92
-        '
-        Me.CheckBox92.AutoSize = True
-        Me.CheckBox92.Location = New System.Drawing.Point(62, 49)
-        Me.CheckBox92.Name = "CheckBox92"
-        Me.CheckBox92.Size = New System.Drawing.Size(63, 17)
-        Me.CheckBox92.TabIndex = 14
-        Me.CheckBox92.Text = "D-LEFT"
-        Me.CheckBox92.UseVisualStyleBackColor = True
-        '
-        'CheckBox91
-        '
-        Me.CheckBox91.AutoSize = True
-        Me.CheckBox91.Location = New System.Drawing.Point(132, 49)
-        Me.CheckBox91.Name = "CheckBox91"
-        Me.CheckBox91.Size = New System.Drawing.Size(72, 17)
-        Me.CheckBox91.TabIndex = 13
-        Me.CheckBox91.Text = "D-DOWN"
-        Me.CheckBox91.UseVisualStyleBackColor = True
-        '
-        'CheckBox90
-        '
-        Me.CheckBox90.AutoSize = True
-        Me.CheckBox90.Location = New System.Drawing.Point(3, 49)
-        Me.CheckBox90.Name = "CheckBox90"
-        Me.CheckBox90.Size = New System.Drawing.Size(52, 17)
-        Me.CheckBox90.TabIndex = 12
-        Me.CheckBox90.Text = "D-UP"
-        Me.CheckBox90.UseVisualStyleBackColor = True
-        '
-        'CheckBox89
-        '
-        Me.CheckBox89.AutoSize = True
-        Me.CheckBox89.Location = New System.Drawing.Point(250, 26)
-        Me.CheckBox89.Name = "CheckBox89"
-        Me.CheckBox89.Size = New System.Drawing.Size(34, 17)
-        Me.CheckBox89.TabIndex = 11
-        Me.CheckBox89.Text = "O"
-        Me.CheckBox89.UseVisualStyleBackColor = True
-        '
-        'CheckBox88
-        '
-        Me.CheckBox88.AutoSize = True
-        Me.CheckBox88.Location = New System.Drawing.Point(208, 26)
-        Me.CheckBox88.Name = "CheckBox88"
-        Me.CheckBox88.Size = New System.Drawing.Size(33, 17)
-        Me.CheckBox88.TabIndex = 10
-        Me.CheckBox88.Text = "X"
-        Me.CheckBox88.UseVisualStyleBackColor = True
-        '
-        'CheckBox87
-        '
-        Me.CheckBox87.AutoSize = True
-        Me.CheckBox87.Location = New System.Drawing.Point(250, 3)
-        Me.CheckBox87.Name = "CheckBox87"
-        Me.CheckBox87.Size = New System.Drawing.Size(33, 17)
-        Me.CheckBox87.TabIndex = 9
-        Me.CheckBox87.Text = "□"
-        Me.CheckBox87.UseVisualStyleBackColor = True
-        '
-        'CheckBox86
-        '
-        Me.CheckBox86.AutoSize = True
-        Me.CheckBox86.Location = New System.Drawing.Point(208, 3)
-        Me.CheckBox86.Name = "CheckBox86"
-        Me.CheckBox86.Size = New System.Drawing.Size(35, 17)
-        Me.CheckBox86.TabIndex = 8
-        Me.CheckBox86.Text = "△"
-        Me.CheckBox86.UseVisualStyleBackColor = True
-        '
-        'CheckBox84
-        '
-        Me.CheckBox84.AutoSize = True
-        Me.CheckBox84.Location = New System.Drawing.Point(71, 26)
-        Me.CheckBox84.Name = "CheckBox84"
-        Me.CheckBox84.Size = New System.Drawing.Size(40, 17)
-        Me.CheckBox84.TabIndex = 7
-        Me.CheckBox84.Text = "R1"
-        Me.CheckBox84.UseVisualStyleBackColor = True
-        '
-        'CheckBox85
-        '
-        Me.CheckBox85.AutoSize = True
-        Me.CheckBox85.Location = New System.Drawing.Point(71, 3)
-        Me.CheckBox85.Name = "CheckBox85"
-        Me.CheckBox85.Size = New System.Drawing.Size(38, 17)
-        Me.CheckBox85.TabIndex = 6
-        Me.CheckBox85.Text = "L1"
-        Me.CheckBox85.UseVisualStyleBackColor = True
-        '
-        'CheckBox83
-        '
-        Me.CheckBox83.AutoSize = True
-        Me.CheckBox83.Location = New System.Drawing.Point(120, 26)
-        Me.CheckBox83.Name = "CheckBox83"
-        Me.CheckBox83.Size = New System.Drawing.Size(40, 17)
-        Me.CheckBox83.TabIndex = 5
-        Me.CheckBox83.Text = "R2"
-        Me.CheckBox83.UseVisualStyleBackColor = True
-        '
-        'CheckBox82
-        '
-        Me.CheckBox82.AutoSize = True
-        Me.CheckBox82.Location = New System.Drawing.Point(120, 3)
-        Me.CheckBox82.Name = "CheckBox82"
-        Me.CheckBox82.Size = New System.Drawing.Size(38, 17)
-        Me.CheckBox82.TabIndex = 4
-        Me.CheckBox82.Text = "L2"
-        Me.CheckBox82.UseVisualStyleBackColor = True
-        '
-        'CheckBox81
-        '
-        Me.CheckBox81.AutoSize = True
-        Me.CheckBox81.Location = New System.Drawing.Point(164, 26)
-        Me.CheckBox81.Name = "CheckBox81"
-        Me.CheckBox81.Size = New System.Drawing.Size(40, 17)
-        Me.CheckBox81.TabIndex = 3
-        Me.CheckBox81.Text = "R3"
-        Me.CheckBox81.UseVisualStyleBackColor = True
-        '
-        'CheckBox80
-        '
-        Me.CheckBox80.AutoSize = True
-        Me.CheckBox80.Location = New System.Drawing.Point(164, 3)
-        Me.CheckBox80.Name = "CheckBox80"
-        Me.CheckBox80.Size = New System.Drawing.Size(38, 17)
-        Me.CheckBox80.TabIndex = 2
-        Me.CheckBox80.Text = "L3"
-        Me.CheckBox80.UseVisualStyleBackColor = True
-        '
-        'CheckBox79
-        '
-        Me.CheckBox79.AutoSize = True
-        Me.CheckBox79.Location = New System.Drawing.Point(3, 26)
-        Me.CheckBox79.Name = "CheckBox79"
-        Me.CheckBox79.Size = New System.Drawing.Size(62, 17)
-        Me.CheckBox79.TabIndex = 1
-        Me.CheckBox79.Text = "START"
-        Me.CheckBox79.UseVisualStyleBackColor = True
-        '
-        'CheckBox78
-        '
-        Me.CheckBox78.AutoSize = True
-        Me.CheckBox78.Location = New System.Drawing.Point(3, 3)
-        Me.CheckBox78.Name = "CheckBox78"
-        Me.CheckBox78.Size = New System.Drawing.Size(67, 17)
-        Me.CheckBox78.TabIndex = 0
-        Me.CheckBox78.Text = "SELECT"
-        Me.CheckBox78.UseVisualStyleBackColor = True
         '
         'CheckBox58
         '
@@ -5408,19 +5223,10 @@ Partial Class MgrSetting
         Me.ToolTip1.SetToolTip(Me.CheckBox52, "Emulate memcard on port 1/1A.")
         Me.CheckBox52.UseVisualStyleBackColor = True
         '
-        'CheckBox51
-        '
-        Me.CheckBox51.AutoSize = True
-        Me.CheckBox51.Location = New System.Drawing.Point(6, 179)
-        Me.CheckBox51.Name = "CheckBox51"
-        Me.CheckBox51.Size = New System.Drawing.Size(195, 17)
-        Me.CheckBox51.TabIndex = 45
-        Me.CheckBox51.Text = "Enable &Analog Mode Combo-Button"
-        Me.ToolTip1.SetToolTip(Me.CheckBox51, resources.GetString("CheckBox51.ToolTip"))
-        Me.CheckBox51.UseVisualStyleBackColor = True
-        '
         'TabPage23
         '
+        Me.TabPage23.Controls.Add(Me.Panel1)
+        Me.TabPage23.Controls.Add(Me.CheckBox51)
         Me.TabPage23.Controls.Add(Me.CheckBox61)
         Me.TabPage23.Controls.Add(Me.CheckBox56)
         Me.TabPage23.Controls.Add(Me.Label87)
@@ -6973,6 +6779,215 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.CheckBox93)
+        Me.Panel1.Controls.Add(Me.CheckBox92)
+        Me.Panel1.Controls.Add(Me.CheckBox91)
+        Me.Panel1.Controls.Add(Me.CheckBox90)
+        Me.Panel1.Controls.Add(Me.CheckBox89)
+        Me.Panel1.Controls.Add(Me.CheckBox88)
+        Me.Panel1.Controls.Add(Me.CheckBox87)
+        Me.Panel1.Controls.Add(Me.CheckBox86)
+        Me.Panel1.Controls.Add(Me.CheckBox84)
+        Me.Panel1.Controls.Add(Me.CheckBox85)
+        Me.Panel1.Controls.Add(Me.CheckBox83)
+        Me.Panel1.Controls.Add(Me.CheckBox82)
+        Me.Panel1.Controls.Add(Me.CheckBox81)
+        Me.Panel1.Controls.Add(Me.CheckBox80)
+        Me.Panel1.Controls.Add(Me.CheckBox79)
+        Me.Panel1.Controls.Add(Me.CheckBox78)
+        Me.Panel1.Location = New System.Drawing.Point(12, 203)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(289, 69)
+        Me.Panel1.TabIndex = 93
+        Me.ToolTip1.SetToolTip(Me.Panel1, "Select the combo buttons assgn to enable analog mode")
+        Me.Panel1.Visible = False
+        '
+        'CheckBox93
+        '
+        Me.CheckBox93.AutoSize = True
+        Me.CheckBox93.Location = New System.Drawing.Point(211, 49)
+        Me.CheckBox93.Name = "CheckBox93"
+        Me.CheckBox93.Size = New System.Drawing.Size(71, 17)
+        Me.CheckBox93.TabIndex = 15
+        Me.CheckBox93.Text = "D-RIGHT"
+        Me.CheckBox93.UseVisualStyleBackColor = True
+        '
+        'CheckBox92
+        '
+        Me.CheckBox92.AutoSize = True
+        Me.CheckBox92.Location = New System.Drawing.Point(62, 49)
+        Me.CheckBox92.Name = "CheckBox92"
+        Me.CheckBox92.Size = New System.Drawing.Size(63, 17)
+        Me.CheckBox92.TabIndex = 14
+        Me.CheckBox92.Text = "D-LEFT"
+        Me.CheckBox92.UseVisualStyleBackColor = True
+        '
+        'CheckBox91
+        '
+        Me.CheckBox91.AutoSize = True
+        Me.CheckBox91.Location = New System.Drawing.Point(132, 49)
+        Me.CheckBox91.Name = "CheckBox91"
+        Me.CheckBox91.Size = New System.Drawing.Size(72, 17)
+        Me.CheckBox91.TabIndex = 13
+        Me.CheckBox91.Text = "D-DOWN"
+        Me.CheckBox91.UseVisualStyleBackColor = True
+        '
+        'CheckBox90
+        '
+        Me.CheckBox90.AutoSize = True
+        Me.CheckBox90.Location = New System.Drawing.Point(3, 49)
+        Me.CheckBox90.Name = "CheckBox90"
+        Me.CheckBox90.Size = New System.Drawing.Size(52, 17)
+        Me.CheckBox90.TabIndex = 12
+        Me.CheckBox90.Text = "D-UP"
+        Me.CheckBox90.UseVisualStyleBackColor = True
+        '
+        'CheckBox89
+        '
+        Me.CheckBox89.AutoSize = True
+        Me.CheckBox89.Location = New System.Drawing.Point(250, 26)
+        Me.CheckBox89.Name = "CheckBox89"
+        Me.CheckBox89.Size = New System.Drawing.Size(34, 17)
+        Me.CheckBox89.TabIndex = 11
+        Me.CheckBox89.Text = "O"
+        Me.CheckBox89.UseVisualStyleBackColor = True
+        '
+        'CheckBox88
+        '
+        Me.CheckBox88.AutoSize = True
+        Me.CheckBox88.Location = New System.Drawing.Point(208, 26)
+        Me.CheckBox88.Name = "CheckBox88"
+        Me.CheckBox88.Size = New System.Drawing.Size(33, 17)
+        Me.CheckBox88.TabIndex = 10
+        Me.CheckBox88.Text = "X"
+        Me.CheckBox88.UseVisualStyleBackColor = True
+        '
+        'CheckBox87
+        '
+        Me.CheckBox87.AutoSize = True
+        Me.CheckBox87.Location = New System.Drawing.Point(250, 3)
+        Me.CheckBox87.Name = "CheckBox87"
+        Me.CheckBox87.Size = New System.Drawing.Size(33, 17)
+        Me.CheckBox87.TabIndex = 9
+        Me.CheckBox87.Text = "□"
+        Me.CheckBox87.UseVisualStyleBackColor = True
+        '
+        'CheckBox86
+        '
+        Me.CheckBox86.AutoSize = True
+        Me.CheckBox86.Location = New System.Drawing.Point(208, 3)
+        Me.CheckBox86.Name = "CheckBox86"
+        Me.CheckBox86.Size = New System.Drawing.Size(35, 17)
+        Me.CheckBox86.TabIndex = 8
+        Me.CheckBox86.Text = "△"
+        Me.CheckBox86.UseVisualStyleBackColor = True
+        '
+        'CheckBox84
+        '
+        Me.CheckBox84.AutoSize = True
+        Me.CheckBox84.Location = New System.Drawing.Point(71, 26)
+        Me.CheckBox84.Name = "CheckBox84"
+        Me.CheckBox84.Size = New System.Drawing.Size(40, 17)
+        Me.CheckBox84.TabIndex = 7
+        Me.CheckBox84.Text = "R1"
+        Me.CheckBox84.UseVisualStyleBackColor = True
+        '
+        'CheckBox85
+        '
+        Me.CheckBox85.AutoSize = True
+        Me.CheckBox85.Location = New System.Drawing.Point(71, 3)
+        Me.CheckBox85.Name = "CheckBox85"
+        Me.CheckBox85.Size = New System.Drawing.Size(38, 17)
+        Me.CheckBox85.TabIndex = 6
+        Me.CheckBox85.Text = "L1"
+        Me.CheckBox85.UseVisualStyleBackColor = True
+        '
+        'CheckBox83
+        '
+        Me.CheckBox83.AutoSize = True
+        Me.CheckBox83.Location = New System.Drawing.Point(120, 26)
+        Me.CheckBox83.Name = "CheckBox83"
+        Me.CheckBox83.Size = New System.Drawing.Size(40, 17)
+        Me.CheckBox83.TabIndex = 5
+        Me.CheckBox83.Text = "R2"
+        Me.CheckBox83.UseVisualStyleBackColor = True
+        '
+        'CheckBox82
+        '
+        Me.CheckBox82.AutoSize = True
+        Me.CheckBox82.Location = New System.Drawing.Point(120, 3)
+        Me.CheckBox82.Name = "CheckBox82"
+        Me.CheckBox82.Size = New System.Drawing.Size(38, 17)
+        Me.CheckBox82.TabIndex = 4
+        Me.CheckBox82.Text = "L2"
+        Me.CheckBox82.UseVisualStyleBackColor = True
+        '
+        'CheckBox81
+        '
+        Me.CheckBox81.AutoSize = True
+        Me.CheckBox81.Location = New System.Drawing.Point(164, 26)
+        Me.CheckBox81.Name = "CheckBox81"
+        Me.CheckBox81.Size = New System.Drawing.Size(40, 17)
+        Me.CheckBox81.TabIndex = 3
+        Me.CheckBox81.Text = "R3"
+        Me.CheckBox81.UseVisualStyleBackColor = True
+        '
+        'CheckBox80
+        '
+        Me.CheckBox80.AutoSize = True
+        Me.CheckBox80.Location = New System.Drawing.Point(164, 3)
+        Me.CheckBox80.Name = "CheckBox80"
+        Me.CheckBox80.Size = New System.Drawing.Size(38, 17)
+        Me.CheckBox80.TabIndex = 2
+        Me.CheckBox80.Text = "L3"
+        Me.CheckBox80.UseVisualStyleBackColor = True
+        '
+        'CheckBox79
+        '
+        Me.CheckBox79.AutoSize = True
+        Me.CheckBox79.Location = New System.Drawing.Point(3, 26)
+        Me.CheckBox79.Name = "CheckBox79"
+        Me.CheckBox79.Size = New System.Drawing.Size(62, 17)
+        Me.CheckBox79.TabIndex = 1
+        Me.CheckBox79.Text = "START"
+        Me.CheckBox79.UseVisualStyleBackColor = True
+        '
+        'CheckBox78
+        '
+        Me.CheckBox78.AutoSize = True
+        Me.CheckBox78.Location = New System.Drawing.Point(3, 3)
+        Me.CheckBox78.Name = "CheckBox78"
+        Me.CheckBox78.Size = New System.Drawing.Size(67, 17)
+        Me.CheckBox78.TabIndex = 0
+        Me.CheckBox78.Text = "SELECT"
+        Me.CheckBox78.UseVisualStyleBackColor = True
+        '
+        'CheckBox51
+        '
+        Me.CheckBox51.AutoSize = True
+        Me.CheckBox51.Location = New System.Drawing.Point(7, 175)
+        Me.CheckBox51.Name = "CheckBox51"
+        Me.CheckBox51.Size = New System.Drawing.Size(195, 17)
+        Me.CheckBox51.TabIndex = 92
+        Me.CheckBox51.Text = "Enable &Analog Mode Combo-Button"
+        Me.ToolTip1.SetToolTip(Me.CheckBox51, resources.GetString("CheckBox51.ToolTip"))
+        Me.CheckBox51.UseVisualStyleBackColor = True
+        '
+        'CheckBox116
+        '
+        Me.CheckBox116.AutoSize = True
+        Me.CheckBox116.Enabled = False
+        Me.CheckBox116.Location = New System.Drawing.Point(7, 179)
+        Me.CheckBox116.Name = "CheckBox116"
+        Me.CheckBox116.Size = New System.Drawing.Size(124, 17)
+        Me.CheckBox116.TabIndex = 94
+        Me.CheckBox116.Text = "Correct &Aspect Ratio"
+        Me.ToolTip1.SetToolTip(Me.CheckBox116, "Correct the aspect ratio.")
+        Me.CheckBox116.UseVisualStyleBackColor = True
+        Me.CheckBox116.Visible = False
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7108,8 +7123,6 @@ Partial Class MgrSetting
         Me.TabPage21.PerformLayout()
         Me.TabPage22.ResumeLayout(False)
         Me.TabPage22.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage23.ResumeLayout(False)
         Me.TabPage23.PerformLayout()
@@ -7150,6 +7163,8 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -7386,7 +7401,6 @@ Partial Class MgrSetting
     Friend WithEvents Label81 As System.Windows.Forms.Label
     Friend WithEvents ComboBox36 As System.Windows.Forms.ComboBox
     Friend WithEvents Button41 As System.Windows.Forms.Button
-    Friend WithEvents CheckBox51 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox53 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox52 As System.Windows.Forms.CheckBox
     Friend WithEvents TrackBar15 As System.Windows.Forms.TrackBar
@@ -7489,23 +7503,6 @@ Partial Class MgrSetting
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents CheckBox73 As CheckBox
     Friend WithEvents CheckBox72 As CheckBox
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents CheckBox93 As CheckBox
-    Friend WithEvents CheckBox92 As CheckBox
-    Friend WithEvents CheckBox91 As CheckBox
-    Friend WithEvents CheckBox90 As CheckBox
-    Friend WithEvents CheckBox89 As CheckBox
-    Friend WithEvents CheckBox88 As CheckBox
-    Friend WithEvents CheckBox87 As CheckBox
-    Friend WithEvents CheckBox86 As CheckBox
-    Friend WithEvents CheckBox84 As CheckBox
-    Friend WithEvents CheckBox85 As CheckBox
-    Friend WithEvents CheckBox83 As CheckBox
-    Friend WithEvents CheckBox82 As CheckBox
-    Friend WithEvents CheckBox81 As CheckBox
-    Friend WithEvents CheckBox80 As CheckBox
-    Friend WithEvents CheckBox79 As CheckBox
-    Friend WithEvents CheckBox78 As CheckBox
     Friend WithEvents TrackBar20 As TrackBar
     Friend WithEvents Label123 As Label
     Friend WithEvents TrackBar19 As TrackBar
@@ -7722,4 +7719,23 @@ Partial Class MgrSetting
     Friend WithEvents Label105 As Label
     Friend WithEvents ComboBox45 As ComboBox
     Friend WithEvents Label106 As Label
+    Friend WithEvents CheckBox116 As CheckBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents CheckBox93 As CheckBox
+    Friend WithEvents CheckBox92 As CheckBox
+    Friend WithEvents CheckBox91 As CheckBox
+    Friend WithEvents CheckBox90 As CheckBox
+    Friend WithEvents CheckBox89 As CheckBox
+    Friend WithEvents CheckBox88 As CheckBox
+    Friend WithEvents CheckBox87 As CheckBox
+    Friend WithEvents CheckBox86 As CheckBox
+    Friend WithEvents CheckBox84 As CheckBox
+    Friend WithEvents CheckBox85 As CheckBox
+    Friend WithEvents CheckBox83 As CheckBox
+    Friend WithEvents CheckBox82 As CheckBox
+    Friend WithEvents CheckBox81 As CheckBox
+    Friend WithEvents CheckBox80 As CheckBox
+    Friend WithEvents CheckBox79 As CheckBox
+    Friend WithEvents CheckBox78 As CheckBox
+    Friend WithEvents CheckBox51 As CheckBox
 End Class

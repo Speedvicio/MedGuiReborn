@@ -275,8 +275,10 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
 
         If Val(vmedClear) > 12300 Then
             CheckBox65.Visible = False
+            CheckBox116.Visible = True
         Else
             TabControl1.TabPages.Remove(TabPage32)
+            CheckBox116.Visible = False
         End If
     End Sub
 

@@ -337,6 +337,7 @@
                     apple2 = Replace(apple2, "rgb_alt1", "rgb_alt")
                     apple2 = Replace(apple2, "rgb_alt2", "rgb_alt_tfr")
 
+                    psx = psx & " -psx.correct_aspect " & MgrSetting.CheckBox116.CheckState
             End Select
         Next
     End Sub
