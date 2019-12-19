@@ -276,9 +276,18 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         If Val(vmedClear) > 12300 Then
             CheckBox65.Visible = False
             CheckBox116.Visible = True
+            ComboBox62.Items.Add("phr256blend_auto512")
+            ComboBox62.Items.Clear()
+            ComboBox62.Items.AddRange(New String() {"composite", "RGB", "rgb_tfr", "rgb_alt", "rgb_alt_tfr"})
+            CheckBox102.Enabled = False
         Else
             TabControl1.TabPages.Remove(TabPage32)
+            ComboBox62.Items.RemoveAt("phr256blend_auto512")
             CheckBox116.Visible = False
+            CheckBox65.Visible = True
+            ComboBox62.Items.Clear()
+            ComboBox62.Items.AddRange(New String() {"composite", "rgb", "rgb_alt1", "rgb_alt2"})
+            CheckBox102.Enabled = True
         End If
     End Sub
 

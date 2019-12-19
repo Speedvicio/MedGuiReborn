@@ -120,18 +120,6 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
-  <data name="TrackBar15.ToolTip" xml:space="preserve">
-    <value>SPU output resampler quality.
-
-0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
-The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
-Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" will bypass the resampler, 
-which will decrease CPU usage by Mednafen, and can increase or decrease audio quality, 
-depending on various operating system and hardware factors.</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
   <data name="TrackBar3.ToolTip" xml:space="preserve">
     <value>Desired period size in microseconds.
 
@@ -657,6 +645,34 @@ auto - Auto Mode
 Selects "fast" or "accurate" automatically based on an internal database. 
 If the CD image is not recognized, defaults to "fast".</value>
   </data>
+  <data name="CheckBox116.ToolTip" xml:space="preserve">
+    <value>Correct aspect ratio.
+
+Disabling aspect ratio correction with this setting should be considered a hack.
+
+If disabling it to allow for sharper pixels by also separately disabling interpolation(though using Mednafen's "autoipsharper" 
+OpenGL shader is usually a better option), remember to use scale factors that are multiples of 2, 
+or else games that use high-resolution and interlaced modes will have distorted pixels.
+
+Disabling aspect ratio correction with this setting will allow for the QuickTime movie recording 
+feature to produce much smaller files using much less CPU time.</value>
+  </data>
+  <data name="TrackBar15.ToolTip" xml:space="preserve">
+    <value>SPU output resampler quality.
+
+0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
+The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
+Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" will bypass the resampler, 
+which will decrease CPU usage by Mednafen, and can increase or decrease audio quality, 
+depending on various operating system and hardware factors.</value>
+  </data>
+  <data name="CheckBox51.ToolTip" xml:space="preserve">
+    <value>Enable analog mode combo-button alternate toggle.
+
+When enabled, instead of the configured Analog mode toggle button for the emulated DualShock, 
+use a combination of buttons to toggle it instead. 
+When Select, Start, and all four shoulder buttons are held down for about 1 second, the mode will toggle.</value>
+  </data>
   <data name="ComboBox38.ToolTip" xml:space="preserve">
     <value>Input device for Port 2/2A
 
@@ -764,84 +780,50 @@ Higher values correspond to better SNR and better preservation of higher frequen
 Higher values will also slightly increase the probability of sample clipping(relevant if Mednafen's volume control settings are set too high), 
 due to increased (time-domain) ringing.</value>
   </data>
-  <data name="ComboBox63.ToolTip" xml:space="preserve">
-    <value>Default position for switch "Mode".
-Sets the position for the switch to the value specified upon startup and virtual input device change.
+  <data name="Label183.ToolTip" xml:space="preserve">
+    <value>Higher values correspond to better SNR and better preservation of higher frequencies("brightness"), 
+at the cost of increased computational complexity and a negligible increase in latency.
 
-digital - Digital(+)
-
-analog - Analog(○)
-Analog mode is not compatible with all games. For some compatible games, 
-analog mode reportedly must be enabled before the game boots up for the game to recognize it properly.</value>
-  </data>
-  <data name="TrackBar21.ToolTip" xml:space="preserve">
-    <value>SCSP output resampler quality.
-0 is lowest quality and CPU usage, 10 is highest quality and CPU usage. 
-The resampler that this setting refers to is used for converting from 44.1KHz to the sampling rate of the host audio device Mednafen is using. 
-Changing Mednafen's output rate, via the "sound.rate" setting, to "44100" may bypass the resampler, which can decrease CPU usage by Mednafen,
- and can increase or decrease audio quality, depending on various operating system and hardware factors.
-
- </value>
+Higher values will also slightly increase the probability of sample clipping
+(relevant if Mednafen's volume control settings are set too high), due to increased (time-domain) ringing.</value>
   </data>
   <data name="ComboBox64.ToolTip" xml:space="preserve">
-    <value>Input device for Virtual Port 
-none - none
+    <value>Region of SNES to emulate.
 
-gamepad - Digital Gamepad
-Standard Saturn digital gamepad.
+    auto - Auto
 
-3dpad - 3D Control Pad
-3D Control Pad
+    ntsc - NTSC(North America/Japan)
 
-mouse - Mouse
-Mouse
+    pal - PAL(Europe)
 
-wheel - Steering Wheel
-Arcade Racer/Racing Controller
+    ntsc_lie_auto - NTSC, but PPU bit as if "auto".
 
-mission - Mission Stick
-Mission Stick
+    pal_lie_auto - PAL, but PPU bit as if "auto".
 
-dmission - Dual Mission
-Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
+    ntsc_lie_pal - NTSC, but PPU bit as if PAL.
 
-keyboard - Keyboard (US)
-101-key US keyboard.
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
-
-jpkeyboard - Keyboard (JP)
-89-key Japanese keyboard(e.g. HSS-0129).
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
+    pal_lie_ntsc - PAL, but PPU bit as if NTSC.</value>
   </data>
-  <data name="ComboBox65.ToolTip" xml:space="preserve">
-    <value>Input device for Virtual Port 1
-none - none
+  <data name="NumericUpDown43.ToolTip" xml:space="preserve">
+    <value>MSU1 sound quality.
 
-gamepad - Digital Gamepad
-Standard Saturn digital gamepad.
+Higher values correspond to better SNR and better preservation of higher frequencies("brightness"), 
+at the cost of increased computational complexity and a negligible increase in latency.
 
-3dpad - 3D Control Pad
-3D Control Pad
+Higher values will also slightly increase the probability of sample clipping(relevant if Mednafen's 
+volume control settings are set too high), due to increased (time-domain) ringing.</value>
+  </data>
+  <data name="ComboBox63.ToolTip" xml:space="preserve">
+    <value>PPU renderer.
 
-mouse - Mouse
-Mouse
+If you have only one CPU with one physical CPU core, 
+select the single-threaded renderer for better performance.
 
-wheel - Steering Wheel
-Arcade Racer/Racing Controller
+    st - Single-threaded
+    PPU rendering is performed in the main emulation thread.
 
-mission - Mission Stick
-Mission Stick
-
-dmission - Dual Mission
-Dual Mission Sticks, useful for "Panzer Dragoon Zwei". With 30 inputs to map, don't get distracted by..LOOK A LOBSTER!
-
-keyboard - Keyboard (US)
-101-key US keyboard.
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.
-
-jpkeyboard - Keyboard (JP)
-89-key Japanese keyboard(e.g. HSS-0129).
-Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
+    mt - Multi-threaded
+    PPU rendering is performed in a dedicated thread.</value>
   </data>
   <data name="ComboBox52.ToolTip" xml:space="preserve">
     <value>Default position for switch "Mode".
@@ -997,13 +979,6 @@ and won't exactly replicate the colors these ICs would reproduce when fed an App
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="CheckBox51.ToolTip" xml:space="preserve">
-    <value>Enable analog mode combo-button alternate toggle.
-
-When enabled, instead of the configured Analog mode toggle button for the emulated DualShock, 
-use a combination of buttons to toggle it instead. 
-When Select, Start, and all four shoulder buttons are held down for about 1 second, the mode will toggle.</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
   </metadata>

@@ -333,11 +333,15 @@
                     apple2 = apple2 & " -apple2.video.mode " & MgrSetting.ComboBox62.Text
                 Case Is = 12400
                     ss = Replace(ss, " -ss.midsync " & MgrSetting.CheckBox65.CheckState, Nothing)
-
-                    apple2 = Replace(apple2, "rgb_alt1", "rgb_alt")
-                    apple2 = Replace(apple2, "rgb_alt2", "rgb_alt_tfr")
-
                     psx = psx & " -psx.correct_aspect " & MgrSetting.CheckBox116.CheckState
+                    If MedGuiR.CheckBox15.Checked = True Then
+                        snes = Replace(snes & " -snes_faust.correct_aspect " & MgrSetting.CheckBox102.CheckState,
+                                       " -snes_faust.correct_aspect " & MgrSetting.CheckBox102.CheckState, Nothing)
+                        snes = snes & " -snes_faust.correct_aspect " & MgrSetting.ComboBox65.Text
+                    End If
+                    snes = snes & " -snes_faust.renderer " & MgrSetting.ComboBox63.Text & " -msu1.resamp_quality " & MgrSetting.NumericUpDown43.Value &
+                        " -snes_faust.region " & MgrSetting.ComboBox64.Text & " -snes_faust.superfx.clock_rate " & MgrSetting.NumericUpDown44.Value &
+                        " -snes_faust.superfx.icache " & MgrSetting.CheckBox111.CheckState
             End Select
         Next
     End Sub
