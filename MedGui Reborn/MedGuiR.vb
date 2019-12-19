@@ -2838,7 +2838,9 @@ SKIPHASH:
     Private Sub SnesSpecialChip()
         Dim filechip As String
 
-        If Val(vmedClear) > 12220 Then
+        If Val(vmedClear) >= 12400 Then
+            Exit Sub
+        ElseIf Val(vmedClear) = 12220 Then
             filechip = "SpecialChip1"
         Else
             filechip = "SpecialChip"
