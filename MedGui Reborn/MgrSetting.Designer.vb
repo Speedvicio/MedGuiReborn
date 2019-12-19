@@ -6779,7 +6779,8 @@ Partial Class MgrSetting
         Me.CheckBox111.Size = New System.Drawing.Size(136, 17)
         Me.CheckBox111.TabIndex = 117
         Me.CheckBox111.Text = "&Enable SuperFX cache"
-        Me.ToolTip1.SetToolTip(Me.CheckBox111, "Show horizontal overscan area")
+        Me.ToolTip1.SetToolTip(Me.CheckBox111, "Enable SuperFX instruction cache emulation." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Enabling will likely increase CPU " &
+        "usage.")
         Me.CheckBox111.UseVisualStyleBackColor = True
         '
         'ComboBox63
