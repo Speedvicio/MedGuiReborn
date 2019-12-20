@@ -120,54 +120,6 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
-  <data name="Label183.ToolTip" xml:space="preserve">
-    <value>Higher values correspond to better SNR and better preservation of higher frequencies("brightness"), 
-at the cost of increased computational complexity and a negligible increase in latency.
-
-Higher values will also slightly increase the probability of sample clipping
-(relevant if Mednafen's volume control settings are set too high), due to increased (time-domain) ringing.</value>
-  </data>
-  <data name="ComboBox64.ToolTip" xml:space="preserve">
-    <value>Region of SNES to emulate.
-
-    auto - Auto
-
-    ntsc - NTSC(North America/Japan)
-
-    pal - PAL(Europe)
-
-    ntsc_lie_auto - NTSC, but PPU bit as if "auto".
-
-    pal_lie_auto - PAL, but PPU bit as if "auto".
-
-    ntsc_lie_pal - NTSC, but PPU bit as if PAL.
-
-    pal_lie_ntsc - PAL, but PPU bit as if NTSC.</value>
-  </data>
-  <data name="NumericUpDown43.ToolTip" xml:space="preserve">
-    <value>MSU1 sound quality.
-
-Higher values correspond to better SNR and better preservation of higher frequencies("brightness"), 
-at the cost of increased computational complexity and a negligible increase in latency.
-
-Higher values will also slightly increase the probability of sample clipping(relevant if Mednafen's 
-volume control settings are set too high), due to increased (time-domain) ringing.</value>
-  </data>
-  <data name="ComboBox63.ToolTip" xml:space="preserve">
-    <value>PPU renderer.
-
-If you have only one CPU with one physical CPU core, 
-select the single-threaded renderer for better performance.
-
-    st - Single-threaded
-    PPU rendering is performed in the main emulation thread.
-
-    mt - Multi-threaded
-    PPU rendering is performed in a dedicated thread.</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
   <data name="TrackBar3.ToolTip" xml:space="preserve">
     <value>Desired period size in microseconds.
 
@@ -827,6 +779,51 @@ Enabling will increase CPU usage, and may cause video glitches(such as \"jerkine
 Higher values correspond to better SNR and better preservation of higher frequencies, at the cost of increased computational complexity and a negligible increase in latency.
 Higher values will also slightly increase the probability of sample clipping(relevant if Mednafen's volume control settings are set too high), 
 due to increased (time-domain) ringing.</value>
+  </data>
+  <data name="Label183.ToolTip" xml:space="preserve">
+    <value>Higher values correspond to better SNR and better preservation of higher frequencies("brightness"), 
+at the cost of increased computational complexity and a negligible increase in latency.
+
+Higher values will also slightly increase the probability of sample clipping
+(relevant if Mednafen's volume control settings are set too high), due to increased (time-domain) ringing.</value>
+  </data>
+  <data name="ComboBox64.ToolTip" xml:space="preserve">
+    <value>Region of SNES to emulate.
+
+    auto - Auto
+
+    ntsc - NTSC(North America/Japan)
+
+    pal - PAL(Europe)
+
+    ntsc_lie_auto - NTSC, but PPU bit as if "auto".
+
+    pal_lie_auto - PAL, but PPU bit as if "auto".
+
+    ntsc_lie_pal - NTSC, but PPU bit as if PAL.
+
+    pal_lie_ntsc - PAL, but PPU bit as if NTSC.</value>
+  </data>
+  <data name="NumericUpDown43.ToolTip" xml:space="preserve">
+    <value>MSU1 sound quality.
+
+Higher values correspond to better SNR and better preservation of higher frequencies("brightness"), 
+at the cost of increased computational complexity and a negligible increase in latency.
+
+Higher values will also slightly increase the probability of sample clipping(relevant if Mednafen's 
+volume control settings are set too high), due to increased (time-domain) ringing.</value>
+  </data>
+  <data name="ComboBox63.ToolTip" xml:space="preserve">
+    <value>PPU renderer.
+
+If you have only one CPU with one physical CPU core, 
+select the single-threaded renderer for better performance.
+
+    st - Single-threaded
+    PPU rendering is performed in the main emulation thread.
+
+    mt - Multi-threaded
+    PPU rendering is performed in a dedicated thread.</value>
   </data>
   <data name="ComboBox52.ToolTip" xml:space="preserve">
     <value>Default position for switch "Mode".

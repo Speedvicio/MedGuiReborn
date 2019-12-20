@@ -100,7 +100,6 @@ Public Class MgrSetting
         TabControl1.SelectedTab = TabPage24
         TabControl1.SelectedTab = TabPage1
         EnableSetOptions()
-        'ReadXValue()
 
         'StartControlBios()
     End Sub
@@ -276,7 +275,6 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         If Val(vmedClear) > 12300 Then
             CheckBox65.Visible = False
             CheckBox116.Visible = True
-            ComboBox59.Items.Add("phr256blend_auto512")
             ComboBox62.Items.Clear()
             ComboBox62.Items.AddRange(New String() {"composite", "RGB", "rgb_tfr", "rgb_alt", "rgb_alt_tfr"})
             CheckBox102.Enabled = False

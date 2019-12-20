@@ -243,7 +243,6 @@ Public Class MedGuiR
         MgrSetting.Close()
         real_name = DataGridView1.CurrentRow.Cells(5).Value()
         ext = DataGridView1.CurrentRow.Cells(7).Value()
-        'ReadXValue()
 
         ReadPSValue()
 
@@ -1084,7 +1083,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 

@@ -5117,7 +5117,6 @@ Partial Class MgrSetting
         'CheckBox116
         '
         Me.CheckBox116.AutoSize = True
-        Me.CheckBox116.Enabled = False
         Me.CheckBox116.Location = New System.Drawing.Point(7, 179)
         Me.CheckBox116.Name = "CheckBox116"
         Me.CheckBox116.Size = New System.Drawing.Size(124, 17)
@@ -5627,7 +5626,7 @@ Partial Class MgrSetting
         '
         Me.ComboBox59.Enabled = False
         Me.ComboBox59.FormattingEnabled = True
-        Me.ComboBox59.Items.AddRange(New Object() {"none", "512", "phr256blend", "phr256blend_512", "512_blend"})
+        Me.ComboBox59.Items.AddRange(New Object() {"none", "512", "phr256blend", "phr256blend_auto512", "phr256blend_512", "512_blend"})
         Me.ComboBox59.Location = New System.Drawing.Point(176, 246)
         Me.ComboBox59.Name = "ComboBox59"
         Me.ComboBox59.Size = New System.Drawing.Size(122, 21)
