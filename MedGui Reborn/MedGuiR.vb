@@ -588,7 +588,7 @@ Public Class MedGuiR
 
         record = " -qtrecord.vcodec " & MgrSetting.ComboBox4.Text & " -qtrecord.h_double_threshold " & MgrSetting.TrackBar5.Value & " -qtrecord.w_double_threshold " & MgrSetting.TrackBar4.Value &
         mrec & srec
-        If Button11.BackColor = SystemColors.Control And Button12.BackColor = SystemColors.Control Then record = ""
+        If Button11.BackColor = Color.FromKnownColor(KnownColor.Transparent) And Button12.BackColor = Color.FromKnownColor(KnownColor.Transparent) Then record = Nothing
     End Sub
 
     Private Sub ver_rec()

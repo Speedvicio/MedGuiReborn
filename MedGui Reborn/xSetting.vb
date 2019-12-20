@@ -28,7 +28,7 @@ Module xSetting
 
         If IO.File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c & ".cfg")) = True Then
             MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
-            'ReadXValue()
+            ReadXValue()
             MedConfSpecific = Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c)
             MgrSetting.CheckBox6.Checked = False
             MgrSetting.CheckBox59.Checked = True
@@ -40,7 +40,7 @@ Module xSetting
                 'File.Delete(MedGuiR.TextBox4.Text & "\" & consoles & ".cfg”)
             Else
                 MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
-                'ReadXValue()
+                ReadXValue()
                 MedConfSpecific = p_c
                 MgrSetting.CheckBox59.Checked = False
                 MgrSetting.CheckBox6.Checked = True
