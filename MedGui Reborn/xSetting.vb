@@ -168,38 +168,39 @@ Module xSetting
                 ElseIf p_c = "snes_faust" Then
                     If row.Contains(p_c & ".spex ") Then xValue = Trim(Replace(row, p_c & ".spex", "")) : MgrSetting.CheckBox63.Checked = CBool(xValue)
                     If row.Contains(p_c & ".spex.sound ") Then xValue = Trim(Replace(row, p_c & ".spex.sound", "")) : MgrSetting.CheckBox64.Checked = CBool(xValue)
-                    If row.Contains(p_c & ".resamp_quality ") Then xValue = Trim(Replace(row, p_c & ".resamp_quality", "")) : MgrSetting.ComboBox65.Text = Val(xValue)
+                    If row.Contains(p_c & ".resamp_quality ") Then xValue = Trim(Replace(row, p_c & ".resamp_quality", "")) : MgrSetting.NumericUpDown18.Value = Val(xValue)
                     If row.Contains(p_c & ".input.sport1.multitap ") Then xValue = Trim(Replace(row, p_c & ".input.sport1.multitap", "")) : MgrSetting.CheckBox99.Checked = CBool(xValue)
                     If row.Contains(p_c & ".input.sport2.multitap ") Then xValue = Trim(Replace(row, p_c & ".input.sport2.multitap", "")) : MgrSetting.CheckBox98.Checked = CBool(xValue)
                     If row.Contains(p_c & ".renderer ") Then xValue = Trim(Replace(row, p_c & ".renderer", "")) : MgrSetting.ComboBox63.Text = xValue
+                    If row.Contains(p_c & ".msu1.resamp_quality ") Then xValue = Trim(Replace(row, p_c & ".msu1.resamp_quality", "")) : MgrSetting.NumericUpDown43.Value = Val(xValue)
                     If row.Contains(p_c & ".region ") Then xValue = Trim(Replace(row, p_c & ".region", "")) : MgrSetting.ComboBox64.Text = xValue
-                    If row.Contains(p_c & ".superfx.clock_rate  ") Then xValue = Trim(Replace(row, p_c & ".superfx.clock_rate ", "")) : MgrSetting.NumericUpDown44.Value = Val(xValue)
+                    If row.Contains(p_c & ".superfx.clock_rate ") Then xValue = Trim(Replace(row, p_c & ".superfx.clock_rate ", "")) : MgrSetting.NumericUpDown44.Value = Val(xValue)
                     If row.Contains(p_c & ".superfx.icache ") Then xValue = Trim(Replace(row, p_c & ".superfx.icache", "")) : MgrSetting.CheckBox111.Checked = CBool(xValue)
 
                     If row.Contains(p_c & ".correct_aspect ") Then
-                        Trim(Replace(row, p_c & ".correct_aspect", ""))
+                        xValue = Trim(Replace(row, p_c & ".correct_aspect", ""))
                         If Val(vmedClear) > 12300 Then
-                            MgrSetting.NumericUpDown18.Value = Val(xValue)
+                            MgrSetting.ComboBox65.Text = xValue
                         Else
                             MgrSetting.CheckBox102.Checked = CBool(xValue)
                         End If
                     End If
 
-                    If row.Contains(p_c & ".cx4.clock_rate  ") Then xValue = Trim(Replace(row, p_c & ".cx4.clock_rate ", "")) : MgrSetting.NumericUpDown42.Value = Val(xValue)
+                    If row.Contains(p_c & ".cx4.clock_rate ") Then xValue = Trim(Replace(row, p_c & ".cx4.clock_rate ", "")) : MgrSetting.NumericUpDown42.Value = Val(xValue)
                     If row.Contains(p_c & ".h_filter ") Then xValue = Trim(Replace(row, p_c & ".h_filter", "")) : MgrSetting.ComboBox59.Text = xValue
 
-                        For i = 1 To 2
-                            Select Case i
-                                Case 1
-                                    If row.Contains(p_c & ".input.port" & i & " ") Then xValue = Trim(Replace(row, p_c & ".input.port" & i, "")) : MgrSetting.ComboBox46.Text = xValue
-                                Case 2
-                                    If row.Contains(p_c & ".input.port" & i & " ") Then xValue = Trim(Replace(row, p_c & ".input.port" & i, "")) : MgrSetting.ComboBox47.Text = xValue
-                            End Select
+                    For i = 1 To 2
+                        Select Case i
+                            Case 1
+                                If row.Contains(p_c & ".input.port" & i & " ") Then xValue = Trim(Replace(row, p_c & ".input.port" & i, "")) : MgrSetting.ComboBox46.Text = xValue
+                            Case 2
+                                If row.Contains(p_c & ".input.port" & i & " ") Then xValue = Trim(Replace(row, p_c & ".input.port" & i, "")) : MgrSetting.ComboBox47.Text = xValue
+                        End Select
 
-                        Next
-                        MgrSetting.tab_index = 20
-                    End If
-                    Case ".vb", ".vboy"
+                    Next
+                    MgrSetting.tab_index = 20
+                End If
+            Case ".vb", ".vboy"
                 If row.Contains(consoles & ".3dmode ") Then xValue = Trim(Replace(row, consoles & ".3dmode", "")) : MgrSetting.ComboBox24.Text = xValue
                 If row.Contains(consoles & ".3dreverse ") Then xValue = Trim(Replace(row, consoles & ".3dreverse", "")) : MgrSetting.CheckBox39.Checked = CBool(xValue)
                 If row.Contains(consoles & ".allow_draw_skip ") Then xValue = Trim(Replace(row, consoles & ".allow_draw_skip", "")) : MgrSetting.CheckBox40.Checked = CBool(xValue)

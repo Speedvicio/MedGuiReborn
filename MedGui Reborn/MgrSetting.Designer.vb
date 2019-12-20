@@ -489,6 +489,18 @@ Partial Class MgrSetting
         Me.Label109 = New System.Windows.Forms.Label()
         Me.ComboBox47 = New System.Windows.Forms.ComboBox()
         Me.TabPage32 = New System.Windows.Forms.TabPage()
+        Me.GroupBox28 = New System.Windows.Forms.GroupBox()
+        Me.NumericUpDown44 = New System.Windows.Forms.NumericUpDown()
+        Me.Label183 = New System.Windows.Forms.Label()
+        Me.ComboBox65 = New System.Windows.Forms.ComboBox()
+        Me.Label182 = New System.Windows.Forms.Label()
+        Me.ComboBox64 = New System.Windows.Forms.ComboBox()
+        Me.Label181 = New System.Windows.Forms.Label()
+        Me.NumericUpDown43 = New System.Windows.Forms.NumericUpDown()
+        Me.Label180 = New System.Windows.Forms.Label()
+        Me.Label179 = New System.Windows.Forms.Label()
+        Me.ComboBox63 = New System.Windows.Forms.ComboBox()
+        Me.CheckBox111 = New System.Windows.Forms.CheckBox()
         Me.TabPage25 = New System.Windows.Forms.TabPage()
         Me.GroupBox24 = New System.Windows.Forms.GroupBox()
         Me.Button21 = New System.Windows.Forms.Button()
@@ -575,18 +587,6 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox111 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox63 = New System.Windows.Forms.ComboBox()
-        Me.Label179 = New System.Windows.Forms.Label()
-        Me.GroupBox28 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown43 = New System.Windows.Forms.NumericUpDown()
-        Me.Label180 = New System.Windows.Forms.Label()
-        Me.ComboBox64 = New System.Windows.Forms.ComboBox()
-        Me.Label181 = New System.Windows.Forms.Label()
-        Me.ComboBox65 = New System.Windows.Forms.ComboBox()
-        Me.Label182 = New System.Windows.Forms.Label()
-        Me.NumericUpDown44 = New System.Windows.Forms.NumericUpDown()
-        Me.Label183 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -688,6 +688,9 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage32.SuspendLayout()
+        Me.GroupBox28.SuspendLayout()
+        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage25.SuspendLayout()
         Me.GroupBox24.SuspendLayout()
         Me.TabPage27.SuspendLayout()
@@ -711,9 +714,6 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox28.SuspendLayout()
-        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -5803,6 +5803,141 @@ Partial Class MgrSetting
         Me.TabPage32.Text = "Super Nintendo Faust"
         Me.TabPage32.UseVisualStyleBackColor = True
         '
+        'GroupBox28
+        '
+        Me.GroupBox28.Controls.Add(Me.NumericUpDown44)
+        Me.GroupBox28.Controls.Add(Me.Label183)
+        Me.GroupBox28.Controls.Add(Me.ComboBox65)
+        Me.GroupBox28.Controls.Add(Me.Label182)
+        Me.GroupBox28.Controls.Add(Me.ComboBox64)
+        Me.GroupBox28.Controls.Add(Me.Label181)
+        Me.GroupBox28.Controls.Add(Me.NumericUpDown43)
+        Me.GroupBox28.Controls.Add(Me.Label180)
+        Me.GroupBox28.Controls.Add(Me.Label179)
+        Me.GroupBox28.Controls.Add(Me.ComboBox63)
+        Me.GroupBox28.Controls.Add(Me.CheckBox111)
+        Me.GroupBox28.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox28.Name = "GroupBox28"
+        Me.GroupBox28.Size = New System.Drawing.Size(304, 278)
+        Me.GroupBox28.TabIndex = 6
+        Me.GroupBox28.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.GroupBox28, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
+        '
+        'NumericUpDown44
+        '
+        Me.NumericUpDown44.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown44.Location = New System.Drawing.Point(202, 126)
+        Me.NumericUpDown44.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
+        Me.NumericUpDown44.Minimum = New Decimal(New Integer() {25, 0, 0, 0})
+        Me.NumericUpDown44.Name = "NumericUpDown44"
+        Me.NumericUpDown44.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown44.TabIndex = 129
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown44, "Super FX clock rate, specified in percentage of normal." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Overclocking the Super" &
+        " FX will cause or worsen attract mode desynchronization.")
+        Me.NumericUpDown44.Value = New Decimal(New Integer() {100, 0, 0, 0})
+        '
+        'Label183
+        '
+        Me.Label183.AutoSize = True
+        Me.Label183.Location = New System.Drawing.Point(7, 128)
+        Me.Label183.Name = "Label183"
+        Me.Label183.Size = New System.Drawing.Size(101, 13)
+        Me.Label183.TabIndex = 128
+        Me.Label183.Text = "Super FX clock rate"
+        Me.ToolTip1.SetToolTip(Me.Label183, resources.GetString("Label183.ToolTip"))
+        '
+        'ComboBox65
+        '
+        Me.ComboBox65.FormattingEnabled = True
+        Me.ComboBox65.Items.AddRange(New Object() {"0", "1", "force_ntsc", "force_pal"})
+        Me.ComboBox65.Location = New System.Drawing.Point(202, 99)
+        Me.ComboBox65.Name = "ComboBox65"
+        Me.ComboBox65.Size = New System.Drawing.Size(96, 21)
+        Me.ComboBox65.TabIndex = 127
+        Me.ComboBox65.Text = "1"
+        Me.ToolTip1.SetToolTip(Me.ComboBox65, "Correct aspect ratio." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    0 - Disabled" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    1 - Enabled" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    force_ntsc - " &
+        "Enabled, force NTSC PAR." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    force_pal - Enabled, force PAL PAR.")
+        '
+        'Label182
+        '
+        Me.Label182.AutoSize = True
+        Me.Label182.Location = New System.Drawing.Point(7, 102)
+        Me.Label182.Name = "Label182"
+        Me.Label182.Size = New System.Drawing.Size(76, 13)
+        Me.Label182.TabIndex = 126
+        Me.Label182.Text = "Correct aspect"
+        '
+        'ComboBox64
+        '
+        Me.ComboBox64.FormattingEnabled = True
+        Me.ComboBox64.Items.AddRange(New Object() {"auto", "ntsc", "pal", "ntsc_lie_auto", "pal_lie_auto", "ntsc_lie_pal", "pal_lie_ntsc"})
+        Me.ComboBox64.Location = New System.Drawing.Point(201, 72)
+        Me.ComboBox64.Name = "ComboBox64"
+        Me.ComboBox64.Size = New System.Drawing.Size(96, 21)
+        Me.ComboBox64.TabIndex = 125
+        Me.ComboBox64.Text = "auto"
+        Me.ToolTip1.SetToolTip(Me.ComboBox64, resources.GetString("ComboBox64.ToolTip"))
+        '
+        'Label181
+        '
+        Me.Label181.AutoSize = True
+        Me.Label181.Location = New System.Drawing.Point(6, 75)
+        Me.Label181.Name = "Label181"
+        Me.Label181.Size = New System.Drawing.Size(137, 13)
+        Me.Label181.TabIndex = 124
+        Me.Label181.Text = "Region of SNES to emulate"
+        '
+        'NumericUpDown43
+        '
+        Me.NumericUpDown43.Location = New System.Drawing.Point(201, 46)
+        Me.NumericUpDown43.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.NumericUpDown43.Name = "NumericUpDown43"
+        Me.NumericUpDown43.Size = New System.Drawing.Size(96, 20)
+        Me.NumericUpDown43.TabIndex = 123
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown43, resources.GetString("NumericUpDown43.ToolTip"))
+        Me.NumericUpDown43.Value = New Decimal(New Integer() {4, 0, 0, 0})
+        '
+        'Label180
+        '
+        Me.Label180.AutoSize = True
+        Me.Label180.Location = New System.Drawing.Point(6, 48)
+        Me.Label180.Name = "Label180"
+        Me.Label180.Size = New System.Drawing.Size(102, 13)
+        Me.Label180.TabIndex = 122
+        Me.Label180.Text = "MSU1 sound quality"
+        '
+        'Label179
+        '
+        Me.Label179.AutoSize = True
+        Me.Label179.Location = New System.Drawing.Point(6, 22)
+        Me.Label179.Name = "Label179"
+        Me.Label179.Size = New System.Drawing.Size(71, 13)
+        Me.Label179.TabIndex = 121
+        Me.Label179.Text = "PPU renderer"
+        '
+        'ComboBox63
+        '
+        Me.ComboBox63.FormattingEnabled = True
+        Me.ComboBox63.Items.AddRange(New Object() {"st", "mt"})
+        Me.ComboBox63.Location = New System.Drawing.Point(201, 19)
+        Me.ComboBox63.Name = "ComboBox63"
+        Me.ComboBox63.Size = New System.Drawing.Size(96, 21)
+        Me.ComboBox63.TabIndex = 120
+        Me.ComboBox63.Text = "st"
+        Me.ToolTip1.SetToolTip(Me.ComboBox63, resources.GetString("ComboBox63.ToolTip"))
+        '
+        'CheckBox111
+        '
+        Me.CheckBox111.AutoSize = True
+        Me.CheckBox111.Location = New System.Drawing.Point(10, 152)
+        Me.CheckBox111.Name = "CheckBox111"
+        Me.CheckBox111.Size = New System.Drawing.Size(136, 17)
+        Me.CheckBox111.TabIndex = 117
+        Me.CheckBox111.Text = "&Enable SuperFX cache"
+        Me.ToolTip1.SetToolTip(Me.CheckBox111, "Enable SuperFX instruction cache emulation." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Enabling will likely increase CPU " &
+        "usage.")
+        Me.CheckBox111.UseVisualStyleBackColor = True
+        '
         'TabPage25
         '
         Me.TabPage25.Controls.Add(Me.GroupBox24)
@@ -6771,143 +6906,6 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'CheckBox111
-        '
-        Me.CheckBox111.AutoSize = True
-        Me.CheckBox111.Location = New System.Drawing.Point(10, 152)
-        Me.CheckBox111.Name = "CheckBox111"
-        Me.CheckBox111.Size = New System.Drawing.Size(136, 17)
-        Me.CheckBox111.TabIndex = 117
-        Me.CheckBox111.Text = "&Enable SuperFX cache"
-        Me.ToolTip1.SetToolTip(Me.CheckBox111, "Enable SuperFX instruction cache emulation." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Enabling will likely increase CPU " &
-        "usage.")
-        Me.CheckBox111.UseVisualStyleBackColor = True
-        '
-        'ComboBox63
-        '
-        Me.ComboBox63.FormattingEnabled = True
-        Me.ComboBox63.Items.AddRange(New Object() {"st", "mt"})
-        Me.ComboBox63.Location = New System.Drawing.Point(201, 19)
-        Me.ComboBox63.Name = "ComboBox63"
-        Me.ComboBox63.Size = New System.Drawing.Size(96, 21)
-        Me.ComboBox63.TabIndex = 120
-        Me.ComboBox63.Text = "st"
-        Me.ToolTip1.SetToolTip(Me.ComboBox63, resources.GetString("ComboBox63.ToolTip"))
-        '
-        'Label179
-        '
-        Me.Label179.AutoSize = True
-        Me.Label179.Location = New System.Drawing.Point(6, 22)
-        Me.Label179.Name = "Label179"
-        Me.Label179.Size = New System.Drawing.Size(71, 13)
-        Me.Label179.TabIndex = 121
-        Me.Label179.Text = "PPU renderer"
-        '
-        'GroupBox28
-        '
-        Me.GroupBox28.Controls.Add(Me.NumericUpDown44)
-        Me.GroupBox28.Controls.Add(Me.Label183)
-        Me.GroupBox28.Controls.Add(Me.ComboBox65)
-        Me.GroupBox28.Controls.Add(Me.Label182)
-        Me.GroupBox28.Controls.Add(Me.ComboBox64)
-        Me.GroupBox28.Controls.Add(Me.Label181)
-        Me.GroupBox28.Controls.Add(Me.NumericUpDown43)
-        Me.GroupBox28.Controls.Add(Me.Label180)
-        Me.GroupBox28.Controls.Add(Me.Label179)
-        Me.GroupBox28.Controls.Add(Me.ComboBox63)
-        Me.GroupBox28.Controls.Add(Me.CheckBox111)
-        Me.GroupBox28.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox28.Name = "GroupBox28"
-        Me.GroupBox28.Size = New System.Drawing.Size(304, 278)
-        Me.GroupBox28.TabIndex = 6
-        Me.GroupBox28.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox28, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
-        '
-        'NumericUpDown43
-        '
-        Me.NumericUpDown43.Location = New System.Drawing.Point(201, 46)
-        Me.NumericUpDown43.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.NumericUpDown43.Name = "NumericUpDown43"
-        Me.NumericUpDown43.Size = New System.Drawing.Size(96, 20)
-        Me.NumericUpDown43.TabIndex = 123
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown43, resources.GetString("NumericUpDown43.ToolTip"))
-        Me.NumericUpDown43.Value = New Decimal(New Integer() {4, 0, 0, 0})
-        '
-        'Label180
-        '
-        Me.Label180.AutoSize = True
-        Me.Label180.Location = New System.Drawing.Point(6, 48)
-        Me.Label180.Name = "Label180"
-        Me.Label180.Size = New System.Drawing.Size(102, 13)
-        Me.Label180.TabIndex = 122
-        Me.Label180.Text = "MSU1 sound quality"
-        '
-        'ComboBox64
-        '
-        Me.ComboBox64.FormattingEnabled = True
-        Me.ComboBox64.Items.AddRange(New Object() {"auto", "ntsc", "pal", "ntsc_lie_auto", "pal_lie_auto", "ntsc_lie_pal", "pal_lie_ntsc"})
-        Me.ComboBox64.Location = New System.Drawing.Point(201, 72)
-        Me.ComboBox64.Name = "ComboBox64"
-        Me.ComboBox64.Size = New System.Drawing.Size(96, 21)
-        Me.ComboBox64.TabIndex = 125
-        Me.ComboBox64.Text = "auto"
-        Me.ToolTip1.SetToolTip(Me.ComboBox64, resources.GetString("ComboBox64.ToolTip"))
-        '
-        'Label181
-        '
-        Me.Label181.AutoSize = True
-        Me.Label181.Location = New System.Drawing.Point(6, 75)
-        Me.Label181.Name = "Label181"
-        Me.Label181.Size = New System.Drawing.Size(137, 13)
-        Me.Label181.TabIndex = 124
-        Me.Label181.Text = "Region of SNES to emulate"
-        '
-        'ComboBox65
-        '
-        Me.ComboBox65.FormattingEnabled = True
-        Me.ComboBox65.Items.AddRange(New Object() {"0", "1", "force_ntsc", "force_pal"})
-        Me.ComboBox65.Location = New System.Drawing.Point(202, 99)
-        Me.ComboBox65.Name = "ComboBox65"
-        Me.ComboBox65.Size = New System.Drawing.Size(96, 21)
-        Me.ComboBox65.TabIndex = 127
-        Me.ComboBox65.Text = "1"
-        Me.ToolTip1.SetToolTip(Me.ComboBox65, "Correct aspect ratio." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    0 - Disabled" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    1 - Enabled" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    force_ntsc - " &
-        "Enabled, force NTSC PAR." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    force_pal - Enabled, force PAL PAR.")
-        '
-        'Label182
-        '
-        Me.Label182.AutoSize = True
-        Me.Label182.Location = New System.Drawing.Point(7, 102)
-        Me.Label182.Name = "Label182"
-        Me.Label182.Size = New System.Drawing.Size(76, 13)
-        Me.Label182.TabIndex = 126
-        Me.Label182.Text = "Correct aspect"
-        '
-        'NumericUpDown44
-        '
-        Me.NumericUpDown44.Enabled = False
-        Me.NumericUpDown44.Increment = New Decimal(New Integer() {5, 0, 0, 0})
-        Me.NumericUpDown44.Location = New System.Drawing.Point(202, 126)
-        Me.NumericUpDown44.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
-        Me.NumericUpDown44.Minimum = New Decimal(New Integer() {25, 0, 0, 0})
-        Me.NumericUpDown44.Name = "NumericUpDown44"
-        Me.NumericUpDown44.Size = New System.Drawing.Size(68, 20)
-        Me.NumericUpDown44.TabIndex = 129
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown44, "Super FX clock rate, specified in percentage of normal." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Overclocking the Super" &
-        " FX will cause or worsen attract mode desynchronization.")
-        Me.NumericUpDown44.Value = New Decimal(New Integer() {100, 0, 0, 0})
-        '
-        'Label183
-        '
-        Me.Label183.AutoSize = True
-        Me.Label183.Enabled = False
-        Me.Label183.Location = New System.Drawing.Point(7, 128)
-        Me.Label183.Name = "Label183"
-        Me.Label183.Size = New System.Drawing.Size(101, 13)
-        Me.Label183.TabIndex = 128
-        Me.Label183.Text = "Super FX clock rate"
-        Me.ToolTip1.SetToolTip(Me.Label183, resources.GetString("Label183.ToolTip"))
-        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7054,6 +7052,10 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage32.ResumeLayout(False)
+        Me.GroupBox28.ResumeLayout(False)
+        Me.GroupBox28.PerformLayout()
+        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage25.ResumeLayout(False)
         Me.GroupBox24.ResumeLayout(False)
         Me.GroupBox24.PerformLayout()
@@ -7081,10 +7083,6 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox28.ResumeLayout(False)
-        Me.GroupBox28.PerformLayout()
-        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
