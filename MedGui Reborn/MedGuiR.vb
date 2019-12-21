@@ -316,6 +316,8 @@ Public Class MedGuiR
                 SoundList.Close()
         End Select
 
+        consoles = DataGridView1.CurrentRow.Cells(6).Value()
+
         If consoles = "psx" Then Sbi_Scan()
 
         If ssetting = 0 Then percorso = " "
@@ -3154,7 +3156,7 @@ MisScan:
                 portpad = "Built-In"
         End Select
 
-        Dim FileParameter As String = "-folder=" & Chr(34) & TextBox4.Text & Chr(34) & " -console=" & p_c & " -port=" & Chr(34) & portpad & Chr(34) & " -file=" & Chr(34) & Path.GetFileNameWithoutExtension(DataGridView1.CurrentRow.Cells(4).Value()) & Chr(34)
+        Dim FileParameter As String = "-folder=" & Chr(34) & TextBox4.Text & Chr(34) & " -console=" & p_c & " -port=" & Chr(34) & portpad & Chr(34) & " -file=" & Chr(34) & Path.GetFileNameWithoutExtension(percorso) & Chr(34)
 
         If File.Exists(MedExtra & "\Plugins\Controller\MedPad.exe") Then
             tProcess = "MedPad"
