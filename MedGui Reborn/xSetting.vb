@@ -176,6 +176,10 @@ Module xSetting
                     If row.Contains(p_c & ".region ") Then xValue = Trim(Replace(row, p_c & ".region", "")) : MgrSetting.ComboBox64.Text = xValue
                     If row.Contains(p_c & ".superfx.clock_rate ") Then xValue = Trim(Replace(row, p_c & ".superfx.clock_rate ", "")) : MgrSetting.NumericUpDown44.Value = Val(xValue)
                     If row.Contains(p_c & ".superfx.icache ") Then xValue = Trim(Replace(row, p_c & ".superfx.icache", "")) : MgrSetting.CheckBox111.Checked = CBool(xValue)
+                    If row.Contains(p_c & ".slstart ") Then xValue = Trim(Replace(row, p_c & ".slstart ", "")) : MgrSetting.NumericUpDown45.Value = Val(xValue)
+                    If row.Contains(p_c & ".slend ") Then xValue = Trim(Replace(row, p_c & ".slend ", "")) : MgrSetting.NumericUpDown46.Value = Val(xValue)
+                    If row.Contains(p_c & ".slstartp ") Then xValue = Trim(Replace(row, p_c & ".slstartp ", "")) : MgrSetting.NumericUpDown47.Value = Val(xValue)
+                    If row.Contains(p_c & ".slendp ") Then xValue = Trim(Replace(row, p_c & ".slendp ", "")) : MgrSetting.NumericUpDown48.Value = Val(xValue)
 
                     If row.Contains(p_c & ".correct_aspect ") Then
                         xValue = Trim(Replace(row, p_c & ".correct_aspect", ""))

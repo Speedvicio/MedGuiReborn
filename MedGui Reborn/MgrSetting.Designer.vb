@@ -587,6 +587,14 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.Label184 = New System.Windows.Forms.Label()
+        Me.NumericUpDown45 = New System.Windows.Forms.NumericUpDown()
+        Me.NumericUpDown46 = New System.Windows.Forms.NumericUpDown()
+        Me.Label185 = New System.Windows.Forms.Label()
+        Me.NumericUpDown47 = New System.Windows.Forms.NumericUpDown()
+        Me.Label186 = New System.Windows.Forms.Label()
+        Me.NumericUpDown48 = New System.Windows.Forms.NumericUpDown()
+        Me.Label187 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -714,6 +722,10 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -5804,6 +5816,14 @@ Partial Class MgrSetting
         '
         'GroupBox28
         '
+        Me.GroupBox28.Controls.Add(Me.NumericUpDown48)
+        Me.GroupBox28.Controls.Add(Me.Label187)
+        Me.GroupBox28.Controls.Add(Me.NumericUpDown47)
+        Me.GroupBox28.Controls.Add(Me.Label186)
+        Me.GroupBox28.Controls.Add(Me.NumericUpDown46)
+        Me.GroupBox28.Controls.Add(Me.Label185)
+        Me.GroupBox28.Controls.Add(Me.NumericUpDown45)
+        Me.GroupBox28.Controls.Add(Me.Label184)
         Me.GroupBox28.Controls.Add(Me.NumericUpDown44)
         Me.GroupBox28.Controls.Add(Me.Label183)
         Me.GroupBox28.Controls.Add(Me.ComboBox65)
@@ -5825,7 +5845,7 @@ Partial Class MgrSetting
         'NumericUpDown44
         '
         Me.NumericUpDown44.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown44.Location = New System.Drawing.Point(202, 126)
+        Me.NumericUpDown44.Location = New System.Drawing.Point(230, 126)
         Me.NumericUpDown44.Maximum = New Decimal(New Integer() {500, 0, 0, 0})
         Me.NumericUpDown44.Minimum = New Decimal(New Integer() {25, 0, 0, 0})
         Me.NumericUpDown44.Name = "NumericUpDown44"
@@ -5928,7 +5948,7 @@ Partial Class MgrSetting
         'CheckBox111
         '
         Me.CheckBox111.AutoSize = True
-        Me.CheckBox111.Location = New System.Drawing.Point(10, 152)
+        Me.CheckBox111.Location = New System.Drawing.Point(10, 150)
         Me.CheckBox111.Name = "CheckBox111"
         Me.CheckBox111.Size = New System.Drawing.Size(136, 17)
         Me.CheckBox111.TabIndex = 117
@@ -6905,6 +6925,80 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'Label184
+        '
+        Me.Label184.AutoSize = True
+        Me.Label184.Location = New System.Drawing.Point(7, 175)
+        Me.Label184.Name = "Label184"
+        Me.Label184.Size = New System.Drawing.Size(187, 13)
+        Me.Label184.TabIndex = 130
+        Me.Label184.Text = "First displayed scanline in NTSC mode"
+        '
+        'NumericUpDown45
+        '
+        Me.NumericUpDown45.Location = New System.Drawing.Point(231, 173)
+        Me.NumericUpDown45.Maximum = New Decimal(New Integer() {223, 0, 0, 0})
+        Me.NumericUpDown45.Name = "NumericUpDown45"
+        Me.NumericUpDown45.Size = New System.Drawing.Size(67, 20)
+        Me.NumericUpDown45.TabIndex = 131
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown45, "First displayed scanline in NTSC mode.")
+        '
+        'NumericUpDown46
+        '
+        Me.NumericUpDown46.Location = New System.Drawing.Point(231, 199)
+        Me.NumericUpDown46.Maximum = New Decimal(New Integer() {223, 0, 0, 0})
+        Me.NumericUpDown46.Name = "NumericUpDown46"
+        Me.NumericUpDown46.Size = New System.Drawing.Size(67, 20)
+        Me.NumericUpDown46.TabIndex = 133
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown46, "Last displayed scanline in NTSC mode.")
+        Me.NumericUpDown46.Value = New Decimal(New Integer() {223, 0, 0, 0})
+        '
+        'Label185
+        '
+        Me.Label185.AutoSize = True
+        Me.Label185.Location = New System.Drawing.Point(7, 201)
+        Me.Label185.Name = "Label185"
+        Me.Label185.Size = New System.Drawing.Size(191, 13)
+        Me.Label185.TabIndex = 132
+        Me.Label185.Text = "Last displayed scanline in NTSC mode."
+        '
+        'NumericUpDown47
+        '
+        Me.NumericUpDown47.Location = New System.Drawing.Point(230, 225)
+        Me.NumericUpDown47.Maximum = New Decimal(New Integer() {238, 0, 0, 0})
+        Me.NumericUpDown47.Name = "NumericUpDown47"
+        Me.NumericUpDown47.Size = New System.Drawing.Size(67, 20)
+        Me.NumericUpDown47.TabIndex = 135
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown47, "First displayed scanline in PAL mode.")
+        '
+        'Label186
+        '
+        Me.Label186.AutoSize = True
+        Me.Label186.Location = New System.Drawing.Point(6, 227)
+        Me.Label186.Name = "Label186"
+        Me.Label186.Size = New System.Drawing.Size(178, 13)
+        Me.Label186.TabIndex = 134
+        Me.Label186.Text = "" & Global.Microsoft.VisualBasic.ChrW(9) & "First displayed scanline in PAL mode"
+        '
+        'NumericUpDown48
+        '
+        Me.NumericUpDown48.Location = New System.Drawing.Point(230, 251)
+        Me.NumericUpDown48.Maximum = New Decimal(New Integer() {238, 0, 0, 0})
+        Me.NumericUpDown48.Name = "NumericUpDown48"
+        Me.NumericUpDown48.Size = New System.Drawing.Size(67, 20)
+        Me.NumericUpDown48.TabIndex = 137
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown48, "Last displayed scanline in PAL mode.")
+        Me.NumericUpDown48.Value = New Decimal(New Integer() {238, 0, 0, 0})
+        '
+        'Label187
+        '
+        Me.Label187.AutoSize = True
+        Me.Label187.Location = New System.Drawing.Point(6, 253)
+        Me.Label187.Name = "Label187"
+        Me.Label187.Size = New System.Drawing.Size(182, 13)
+        Me.Label187.TabIndex = 136
+        Me.Label187.Text = "Last displayed scanline in PAL mode."
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7082,6 +7176,10 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -7649,4 +7747,12 @@ Partial Class MgrSetting
     Friend WithEvents Label182 As Label
     Friend WithEvents NumericUpDown44 As NumericUpDown
     Friend WithEvents Label183 As Label
+    Friend WithEvents NumericUpDown48 As NumericUpDown
+    Friend WithEvents Label187 As Label
+    Friend WithEvents NumericUpDown47 As NumericUpDown
+    Friend WithEvents Label186 As Label
+    Friend WithEvents NumericUpDown46 As NumericUpDown
+    Friend WithEvents Label185 As Label
+    Friend WithEvents NumericUpDown45 As NumericUpDown
+    Friend WithEvents Label184 As Label
 End Class

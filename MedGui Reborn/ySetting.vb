@@ -339,7 +339,9 @@
                                        " -snes_faust.correct_aspect " & MgrSetting.CheckBox102.CheckState, Nothing)
                         snes = snes & " -snes_faust.renderer " & MgrSetting.ComboBox63.Text & " -snes_faust.correct_aspect " & MgrSetting.ComboBox65.Text &
                         " -snes_faust.msu1.resamp_quality " & MgrSetting.NumericUpDown43.Value & " -snes_faust.region " & MgrSetting.ComboBox64.Text &
-                        " -snes_faust.superfx.clock_rate " & MgrSetting.NumericUpDown44.Value & " -snes_faust.superfx.icache " & MgrSetting.CheckBox111.CheckState
+                        " -snes_faust.superfx.clock_rate " & MgrSetting.NumericUpDown44.Value & " -snes_faust.superfx.icache " & MgrSetting.CheckBox111.CheckState &
+                        " -snes_faust.slend " & MgrSetting.NumericUpDown46.Value & " -snes_faust.slendp " & MgrSetting.NumericUpDown48.Value & " -snes_faust.slstart " &
+                        MgrSetting.NumericUpDown45.Value & " -snes_faust.slstartp " & MgrSetting.NumericUpDown47.Value
                     End If
 
             End Select
