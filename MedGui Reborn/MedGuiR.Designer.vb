@@ -2330,7 +2330,7 @@ Partial Class MedGuiR
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 13)
         Me.Label6.TabIndex = 30
-        Me.Label6.Text = "MedGuiR v.0.108"
+        Me.Label6.Text = "MedGuiR v.0.109"
         '
         'Label7
         '
@@ -3383,7 +3383,7 @@ Partial Class MedGuiR
         '
         Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.FormToolStripMenuItem, Me.GridToolStripMenuItem, Me.ResetToolStripMenuItem, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 510)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 488)
         '
         'StartGameToolStripMenuItem
         '
