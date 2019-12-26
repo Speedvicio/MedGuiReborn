@@ -859,6 +859,9 @@ Public Class MedGuiR
 
     Private Sub FindToolStripButton_Click(sender As Object, e As EventArgs) Handles FindToolStripButton.Click
         SearchGridDataInRow()
+        Datagrid_filter()
+        TextBox3.Focus()
+        TextBox3.SelectionStart = TextBox3.Text.Length + 1
     End Sub
 
     Private Sub IRCToolStripButton_Click(sender As Object, e As EventArgs) Handles IRCToolStripButton.Click
@@ -869,6 +872,9 @@ Public Class MedGuiR
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True    ' evita il Beep!
             SearchGridDataInRow()
+            Datagrid_filter()
+            TextBox3.Focus()
+            TextBox3.SelectionStart = TextBox3.Text.Length + 1
         End If
     End Sub
 
@@ -878,14 +884,18 @@ Public Class MedGuiR
     End Sub
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
-        If Len(TextBox3.Text) > 2 Or TextBox3.Text.Trim = "" Then
+        'If Len(TextBox3.Text) > 2 Or TextBox3.Text.Trim = "" Then
+        'SearchGridDataInRow()
+        'Datagrid_filter()
+        'End If
+        'If TextBox3.Text.Length > 2 And Trim(TextBox3.Text) <> "" Then
+        'RebuildToolStripButton.Enabled = False
+        'ElseIf Trim(TextBox3.Text) = "" And SY.Text <> "" Then
+        'RebuildToolStripButton.Enabled = True
+        'End If
+        If TextBox3.Text.Trim = "" Then
             SearchGridDataInRow()
             Datagrid_filter()
-        End If
-        If TextBox3.Text.Length > 2 And Trim(TextBox3.Text) <> "" Then
-            RebuildToolStripButton.Enabled = False
-        ElseIf Trim(TextBox3.Text) = "" And SY.Text <> "" Then
-            RebuildToolStripButton.Enabled = True
         End If
     End Sub
 
