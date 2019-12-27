@@ -280,7 +280,8 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
             CheckBox102.Enabled = False
         Else
             TabControl1.TabPages.Remove(TabPage32)
-            ComboBox59.Items.RemoveAt("phr256blend_auto512")
+            Dim resultIndex As Integer = ComboBox59.FindStringExact("phr256blend_auto512")
+            ComboBox59.Items.RemoveAt(resultIndex)
             CheckBox116.Visible = False
             CheckBox65.Visible = True
             ComboBox62.Items.Clear()
