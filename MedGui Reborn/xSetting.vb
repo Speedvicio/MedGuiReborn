@@ -41,7 +41,7 @@ Module xSetting
             Else
                 MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
                 ReadXValue()
-                MedConfSpecific = p_c
+                MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, p_c)
                 MgrSetting.CheckBox59.Checked = False
                 MgrSetting.CheckBox6.Checked = True
                 MsgBox("Detected a specific console config, global settings will be ignored", vbOKOnly + MsgBoxStyle.Information)
