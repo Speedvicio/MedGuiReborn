@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports System.IO
+Imports System.Net
 Imports System.Net.NetworkInformation
 
 Public Class MgrSetting
@@ -651,19 +652,56 @@ ErrorHandler:
                 sperset = ""
         End Select
 
+        Dim Cvideo, Cfilters As String
+        Cvideo = FixNegative(video, "video.fs.display")
+        Cfilters = FixNegative(filters, ".scanlines")
+        Cfilters = FixNegative(Cfilters, ".shader.goat.vdiv")
+        Cfilters = FixNegative(Cfilters, ".shader.goat.hdiv")
+
         Dim objStreamWriter As IO.StreamWriter
-        Dim per_sett As String = "; << Sound Config >>" & vbCrLf & sound & vbCrLf & vbCrLf & "; << Video Config >>" & vbCrLf & video &
-           vbCrLf & vbCrLf & "; << Filters Config >>" & vbCrLf & filters & vbCrLf & vbCrLf & "; << Specific Console Config >>" & vbCrLf & sperset
+        Dim per_sett As String = "; << Sound Config >>" & vbCrLf & sound & vbCrLf & vbCrLf & "; << Video Config >>" & vbCrLf & Cvideo &
+           vbCrLf & vbCrLf & "; << Filters Config >>" & vbCrLf & Cfilters & vbCrLf & vbCrLf & "; << Specific Console Config >>" & vbCrLf & sperset
+
+        per_sett = Replace(per_sett, " -", vbCrLf)
+        per_sett = Replace(per_sett, "*", "-")
+        per_sett = per_sett & CheckInputConfig(per_conf_path_name)
 
         If IO.File.Exists(per_conf_path_name & ".cfg") Then IO.File.Delete(per_conf_path_name & ".cfg")
 
         objStreamWriter = New IO.StreamWriter(per_conf_path_name & ".cfg")
-        objStreamWriter.WriteLine(Replace(per_sett, " -", vbCrLf))
+        objStreamWriter.WriteLine(per_sett)
         objStreamWriter.Close()
-        StudioRemoveLinesFromFile()
+        'StudioRemoveLinesFromFile()
 
         TPerC = False
     End Sub
+
+    Private Function FixNegative(testo As String, parametro As String)
+        Dim c_ As Integer
+        c_ = testo.IndexOf(parametro)
+        If testo.Substring(c_ + parametro.Length + 1, 1) = "-" Then
+            testo = testo.Remove(c_ + parametro.Length + 1, 1).Insert(c_ + parametro.Length + 1, "*")
+        End If
+
+        Return testo
+    End Function
+
+    Private Function CheckInputConfig(Ipath As String)
+        Dim startSplit As Integer
+        Dim result As String = ""
+
+        If File.Exists(Ipath & ".cfg") Then
+            Dim Ivalue As String = File.ReadAllText(Ipath & ".cfg")
+            If Ivalue.Contains("; << Specific Input Config >>") Then
+                startSplit = Ivalue.IndexOf("; << Specific Input Config >>")
+                result = Ivalue.Substring(startSplit, Ivalue.Length - startSplit)
+            End If
+        End If
+
+        If result <> "" Then
+            Return vbCrLf & vbCrLf & result
+        End If
+    End Function
 
     Private Sub StudioRemoveLinesFromFile()
         Dim Sr As New IO.StreamReader(per_conf_path_name & ".cfg")
