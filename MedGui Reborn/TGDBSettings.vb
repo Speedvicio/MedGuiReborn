@@ -29,7 +29,7 @@ Public Class TGDBSettings
 
         Dim SplittedScrapedValue() As String
         Dim ResultScraped As String
-        Dim JsonT As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/" & APIvalue & "?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA=="))
+        Dim JsonT As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/v1/" & APIvalue & "?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA=="))
 
         If File.Exists(MedExtra & "\Plugins\db\TGDB") = False Then
             Directory.CreateDirectory(MedExtra & "\Plugins\db\TGDB")
