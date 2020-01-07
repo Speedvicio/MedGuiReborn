@@ -740,12 +740,24 @@ ErrorHandler:
     End Sub
 
     Private Sub Button14_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button14.Click
+        Dim doc As String
+        Dim MDoc = MsgBox("Do you want to open specific module documentation?" & vbCrLf &
+                       "Yes = " & Me.Text & " Documentation" & vbCrLf & "No = General Documentation", MsgBoxStyle.YesNoCancel + MsgBoxStyle.Information, "Open Mednafen Doc...")
+
+        If MDoc = MsgBoxResult.Yes Then
+            doc = p_c
+        ElseIf MDoc = MsgBoxResult.No Then
+            doc = "mednafen"
+        ElseIf MDoc = MsgBoxResult.Cancel Then
+            Exit Sub
+        End If
+
         Try
             If MedGuiR.CheckBox17.Checked = False Then
-                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\" & p_c & ".html" & Chr(34))
+                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\" & doc & ".html" & Chr(34))
             Else
                 MedBrowser.Show()
-                MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\" & p_c & ".html")
+                MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\" & doc & ".html")
             End If
         Catch ex As Exception
             MsgBox("No Mednafen Help Detected", MsgBoxStyle.Critical, "Error")
