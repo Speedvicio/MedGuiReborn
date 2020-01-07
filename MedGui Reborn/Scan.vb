@@ -364,11 +364,19 @@ Module scan
                     If stopiso = False Then Make_Temp_CUE()
                 End If
             Case ".ecm"
-                If skipother = False Then
-                    If stopiso = False Then
-                        stopscan = True
-                        unECM()
+                If File.Exists(MedExtra & "Plugins\unecm.exe") Then
+
+                    If skipother = False Then
+                        If stopiso = False Then
+                            stopscan = True
+                            unECM()
+                        End If
                     End If
+                Else
+                    MsgBox("I can't extract .ECM, missing unecm.exe into Plugins folder", MsgBoxStyle.Exclamation + vbOKOnly, "Missing unecm...")
+                    consoles = ""
+                    ext = ""
+                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                 End If
                 'Make_Temp_CUE()
             Case ".pbp"
@@ -382,6 +390,21 @@ Module scan
                     End If
                 Else
                     MsgBox("I can't extract .PBP, missing Copstation.exe into Plugins folder", MsgBoxStyle.Exclamation + vbOKOnly, "Missing copstation...")
+                    consoles = ""
+                    ext = ""
+                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+                End If
+            Case ".chd"
+                If File.Exists(MedExtra & "Plugins\chdman.exe") Then
+
+                    If skipother = False Then
+                        If stopiso = False Then
+                            stopscan = True
+                            unCHD()
+                        End If
+                    End If
+                Else
+                    MsgBox("I can't extract .CHD, missing chdman.exe into Plugins folder", MsgBoxStyle.Exclamation + vbOKOnly, "Missing chdman...")
                     consoles = ""
                     ext = ""
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
@@ -527,6 +550,36 @@ Module scan
             File.Delete(Path.Combine(wDir, "cygwin1.dll"))
             File.Delete(Path.Combine(wDir, "cygz.dll"))
             percorso = Path.Combine(wDir, cleanPBP & ".iso")
+        Else
+            Exit Sub
+        End If
+
+        SoxStatus.Close()
+        get_ext()
+        stopscan = False
+    End Sub
+
+    Private Sub unCHD()
+        Dim cleanCHD As String = Path.Combine(Path.GetDirectoryName(percorso), Path.GetFileNameWithoutExtension(percorso))
+
+        wDir = (MedExtra & "Plugins")
+        tProcess = "chdman"
+
+        Arg = "extractcd -i " & Chr(34) & percorso & Chr(34) & " -o " & Chr(34) & cleanCHD & ".cue" & Chr(34) & " -ob " & Chr(34) & cleanCHD & ".bin" & Chr(34)
+
+        SoxStatus.Text = "Waiting For CHD Conversion..."
+        SoxStatus.Label1.Text = "Decrunching..."
+        SoxStatus.Show()
+        Application.DoEvents()
+
+        StartProcess()
+
+        execute.WaitForExit()
+
+        If File.Exists(cleanCHD & ".bin") Then
+            percorso = cleanCHD & ".cue"
+        Else
+            Exit Sub
         End If
 
         SoxStatus.Close()

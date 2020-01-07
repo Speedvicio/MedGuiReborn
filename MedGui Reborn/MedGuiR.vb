@@ -823,7 +823,7 @@ Public Class MedGuiR
         If StartRom = "" Then StartRom = Application.StartupPath
         fdlg.Title = "Select rom"
         fdlg.InitialDirectory = ssr
-        fdlg.Filter = "All supported format (*.zip,*.7z,*.rar,*.cue,*.toc,*.m3u,*.ccd,*.iso,*.ecm,*.pbp)|*.zip;*.7z;*.rar;*.cue;*.toc;*.m3u;*.ccd;*.iso;*.ecm;*.pbp|File CUE (*.cue)|*.cue|File TOC (*.toc)|*.toc|File M3U (*.m3u)|*.m3u|File CCD (*.ccd)|*.ccd|File MAI (*.mai)|*.rar|File ZIP (*.zip)|*.zip|File 7z (*.7z)|*.7z|File rar (*.rar)|*.rar|PS-X EXE (*.exe)|*.exe|All files (*.*)|*.*"
+        fdlg.Filter = "All supported format (*.zip,*.7z,*.rar,*.cue,*.toc,*.m3u,*.ccd,*.iso,*.ecm,*.pbp,*.chd)|*.zip;*.7z;*.rar;*.cue;*.toc;*.m3u;*.ccd;*.iso;*.ecm;*.pbp;*.chd|File CUE (*.cue)|*.cue|File TOC (*.toc)|*.toc|File M3U (*.m3u)|*.m3u|File CCD (*.ccd)|*.ccd|File MAI (*.mai)|*.rar|File ZIP (*.zip)|*.zip|File 7z (*.7z)|*.7z|File rar (*.rar)|*.rar|Compressed CD (*.ecm,*.pbp,*.chd)|*.ecm;*.pbp;*.chd|PS-X EXE (*.exe)|*.exe|All files (*.*)|*.*"
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then

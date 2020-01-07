@@ -172,7 +172,7 @@ Module Extract
                                 Exit Sub
                             End If
                         End If
-                    Case ".ecm", ".pbp", ".zip", ".rar", ".7z"
+                    Case ".ecm", ".pbp", ".zip", ".rar", ".7z", ".chd"
                         consoles = ""
                         ext = ""
                         Exit Sub

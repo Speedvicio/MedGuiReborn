@@ -178,7 +178,7 @@ Public Class IsoSelector
         Dim mnt_iso As OpenFileDialog = New OpenFileDialog()
         Dim dtl_iso As String
         mnt_iso.Title = "Select rom"
-        mnt_iso.Filter = "All supported format (*.mds,*.mdx,*.b5t,*.b6t,*.bwt,*.cue,*.ccd,*.isz,*.nrg,*.cdi,*.iso,*.ecm)|*.mds;*.mdx;*.b5t;*.b6t;*.bwt;*.cue;*.ccd;*.isz;*.nrg;*.cdi;*.iso;*.ecm|All file (*.*)|*.*"
+        mnt_iso.Filter = "All supported format (*.mds,*.mdx,*.b5t,*.b6t,*.bwt,*.cue,*.ccd,*.isz,*.nrg,*.cdi,*.iso,*.ecm,*.chd)|*.mds;*.mdx;*.b5t;*.b6t;*.bwt;*.cue;*.ccd;*.isz;*.nrg;*.cdi;*.iso;*.ecm;*.chd|All file (*.*)|*.*"
         mnt_iso.RestoreDirectory = True
         If mnt_iso.ShowDialog() = DialogResult.OK Then
             dtl_iso = mnt_iso.FileName
