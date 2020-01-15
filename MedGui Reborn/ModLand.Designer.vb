@@ -49,10 +49,9 @@ Partial Class ModLand
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Location = New System.Drawing.Point(758, 15)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button1.Location = New System.Drawing.Point(505, 10)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(34, 35)
+        Me.Button1.Size = New System.Drawing.Size(23, 23)
         Me.Button1.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.Button1, "Find a Sound Chip Module On ModLand Server")
         Me.Button1.UseVisualStyleBackColor = True
@@ -61,10 +60,9 @@ Partial Class ModLand
         '
         Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(312, 18)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TextBox1.Location = New System.Drawing.Point(208, 12)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(434, 26)
+        Me.TextBox1.Size = New System.Drawing.Size(291, 20)
         Me.TextBox1.TabIndex = 1
         Me.ToolTip1.SetToolTip(Me.TextBox1, "Input a Sound Chip to Search" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You Can Search By:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Title" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Composer" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Format F" &
         "ile" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Extension")
@@ -73,10 +71,9 @@ Partial Class ModLand
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"All System", "Bandai Wonderswan", "Game Boy", "Game Boy Advence", "NEC Pc Engine", "Nintendo Entraiment System", "Sega 32X", "Sega Game Gear", "Sega Master System", "Sega Megadrive - Genesis", "Sega Saturn", "Sony Playstation", "Super Nintendo"})
-        Me.ComboBox1.Location = New System.Drawing.Point(56, 17)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.ComboBox1.Location = New System.Drawing.Point(37, 11)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(246, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(165, 21)
         Me.ComboBox1.Sorted = True
         Me.ComboBox1.TabIndex = 2
         Me.ComboBox1.Text = "All System"
@@ -94,63 +91,63 @@ Partial Class ModLand
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 60)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.DataGridView1.Location = New System.Drawing.Point(8, 39)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(910, 498)
+        Me.DataGridView1.Size = New System.Drawing.Size(607, 324)
         Me.DataGridView1.TabIndex = 3
-        Me.ToolTip1.SetToolTip(Me.DataGridView1, "- Double Click to Download a SoundChip" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Right Mouse Button Click to Copy Cell T" &
-        "ext To Clipboard")
+        Me.ToolTip1.SetToolTip(Me.DataGridView1, "- Left mouse Double Click to Download a SoundChip" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Right Mouse Button Click to " &
+        "Copy Cell Text To Clipboard" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "After download, again left mouse Double Click to ad" &
+        "d chip module into medguir grid")
         '
         'Column1
         '
         Me.Column1.HeaderText = "File Format"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 125
+        Me.Column1.Width = 83
         '
         'Column2
         '
         Me.Column2.HeaderText = "..."
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 57
+        Me.Column2.Width = 41
         '
         'Column3
         '
         Me.Column3.HeaderText = "..."
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 57
+        Me.Column3.Width = 41
         '
         'Column4
         '
         Me.Column4.HeaderText = "..."
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 57
+        Me.Column4.Width = 41
         '
         'Column5
         '
         Me.Column5.HeaderText = "..."
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
-        Me.Column5.Width = 57
+        Me.Column5.Width = 41
         '
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripComboBox2})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(182, 41)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(182, 31)
         '
         'ToolStripComboBox2
         '
         Me.ToolStripComboBox2.Items.AddRange(New Object() {"AmigaScne", "Modland", "Exotica", "Scenesat", "Antarctica"})
         Me.ToolStripComboBox2.Name = "ToolStripComboBox2"
-        Me.ToolStripComboBox2.Size = New System.Drawing.Size(121, 33)
+        Me.ToolStripComboBox2.Size = New System.Drawing.Size(121, 23)
         Me.ToolStripComboBox2.Text = "Modland"
         '
         'Button2
@@ -158,10 +155,9 @@ Partial Class ModLand
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.Enabled = False
-        Me.Button2.Location = New System.Drawing.Point(844, 15)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button2.Location = New System.Drawing.Point(563, 10)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(34, 35)
+        Me.Button2.Size = New System.Drawing.Size(23, 23)
         Me.Button2.TabIndex = 4
         Me.ToolTip1.SetToolTip(Me.Button2, "- Left Mouse Click Delete Single Sound Chip File In Cache" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Right Mouse Click De" &
         "lete Entire Sound Chip Cache")
@@ -178,10 +174,9 @@ Partial Class ModLand
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button3.Enabled = False
-        Me.Button3.Location = New System.Drawing.Point(801, 15)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button3.Location = New System.Drawing.Point(534, 10)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(34, 35)
+        Me.Button3.Size = New System.Drawing.Size(23, 23)
         Me.Button3.TabIndex = 9
         Me.ToolTip1.SetToolTip(Me.Button3, "Point to Directory File")
         Me.Button3.UseVisualStyleBackColor = True
@@ -190,13 +185,13 @@ Partial Class ModLand
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(888, 15)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PictureBox1.Location = New System.Drawing.Point(592, 10)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(34, 35)
+        Me.PictureBox1.Size = New System.Drawing.Size(23, 23)
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Sound Chip Status" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Res = Not In Cache (Downloadable)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Green = In Cache (Playa" &
+        Me.PictureBox1.Tag = "MeNot"
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Sound Chip Status" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Red = Not In Cache (Downloadable)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Green = In Cache (Playa" &
         "ble)")
         '
         'PictureBox2
@@ -204,10 +199,9 @@ Partial Class ModLand
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox2.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 15)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.PictureBox2.Location = New System.Drawing.Point(8, 10)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(34, 34)
+        Me.PictureBox2.Size = New System.Drawing.Size(23, 23)
         Me.PictureBox2.TabIndex = 33
         Me.PictureBox2.TabStop = False
         Me.ToolTip1.SetToolTip(Me.PictureBox2, "Left mouse click - Download Latest ModLand DATs" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Right mouse click - Open availab" &
@@ -216,9 +210,9 @@ Partial Class ModLand
         '
         'ModLand
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(940, 577)
+        Me.ClientSize = New System.Drawing.Size(627, 375)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button3)
@@ -227,7 +221,6 @@ Partial Class ModLand
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "ModLand"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ModLand Player"
