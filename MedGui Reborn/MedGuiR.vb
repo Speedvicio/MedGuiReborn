@@ -2968,7 +2968,7 @@ SKIPHASH:
 
     Private Sub ConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfigToolStripMenuItem.Click
         If DataGridView1.Rows.Count < 1 Then
-            MsgBox("You need to load a game on the grid to select a server", vbOKOnly + vbCritical, "No games on grid...")
+            MsgBox("You need to load a game on the grid to configure options", vbOKOnly + vbCritical, "No games on grid...")
             Exit Sub
         End If
         AdvancedSettingToolStripMenuItem.PerformClick()
