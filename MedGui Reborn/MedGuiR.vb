@@ -682,36 +682,42 @@ Public Class MedGuiR
 
     Private Sub WORLDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WORLDToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
+        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
         regioni = ""
         SearchGridDataInRow()
     End Sub
 
     Private Sub EUToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EUToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\eu.png"))
+        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
         regioni = "eu"
         SearchGridDataInRow()
     End Sub
 
     Private Sub USToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles USToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\us.png"))
+        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
         regioni = "us"
         SearchGridDataInRow()
     End Sub
 
     Private Sub JPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JPToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\jp.png"))
+        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
         regioni = "ja"
         SearchGridDataInRow()
     End Sub
 
     Private Sub PDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\pd.png"))
+        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
         regioni = "pd"
         SearchGridDataInRow()
     End Sub
 
     Private Sub MUSICToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MUSICToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Gui\modland.png"))
+        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
         regioni = "soundtrack"
         SearchGridDataInRow()
     End Sub
@@ -1095,7 +1101,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -2925,9 +2931,39 @@ SKIPHASH:
         NetToolStripButton.PerformClick()
     End Sub
 
+    Private Sub StartAServerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartAServerToolStripMenuItem.Click
+        ServerToolStripButton.PerformClick()
+    End Sub
+
+    Private Sub OpenIRCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenIRCToolStripMenuItem.Click
+        IRCToolStripButton.PerformClick()
+    End Sub
+
+    Private Sub DownloadMusicModuleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DownloadMusicModuleToolStripMenuItem.Click
+        ModLandToolStripButton.PerformClick()
+    End Sub
+
+    Private Sub ToolStripTextBox2_Click(sender As Object, e As EventArgs) Handles ToolStripTextBox2.Click
+
+    End Sub
+
     Private Sub RadioButton1_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton1.CheckedChanged
         Button30.Enabled = False
         Button31.Enabled = True
+    End Sub
+
+    Private Sub CheckBox23_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox23.CheckedChanged
+        If CheckBox23.Checked = True Then
+            RE_tar_DDIT.Visible = True
+            IconStrip.Visible = False
+        Else
+            RE_tar_DDIT.Visible = False
+            IconStrip.Visible = True
+        End If
+    End Sub
+
+    Private Sub RapidGameSearchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RapidGameSearchToolStripMenuItem.Click
+        FindToolStripButton.PerformClick()
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton2.CheckedChanged
@@ -3254,4 +3290,13 @@ MisScan:
     Private Sub ModuleToolStripComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ModuleToolStripComboBox2.SelectedIndexChanged
         SY.Text = ModuleToolStripComboBox2.Text
     End Sub
+
+    Private Sub ToolStripTextBox2_KeyUp(sender As Object, e As KeyEventArgs) Handles ToolStripTextBox2.KeyUp
+        TextBox3.Text = ToolStripTextBox2.Text
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True    ' evita il Beep!
+            FindToolStripButton.PerformClick()
+        End If
+    End Sub
+
 End Class

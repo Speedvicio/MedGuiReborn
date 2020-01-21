@@ -23,10 +23,17 @@
             MedGuiR.CheckBox17.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "MedBrowser")
             MedGuiR.CheckBox20.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoUpdate")
             MedGuiR.CheckBox21.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoScanCD")
+            MedGuiR.CheckBox23.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "TextMenu")
             MedGuiR.NetToolStripButton.BackColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoConn"))
             MedGuiR.GridToolStripMenuItem.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Customizable")
             Dim GNA As String = RIni.IniRead(MedExtra & "\Mini.ini", "TGDB API", "NEW_API").Trim
             UpdateServer = RIni.IniRead(MedExtra & "\Mini.ini", "General", "UpdateServer").Trim
+
+            If MedGuiR.NetToolStripButton.BackColor = Color.Red Then
+                MedGuiR.AutoConnectToolStripMenuItem.Checked = True
+            Else
+                MedGuiR.AutoConnectToolStripMenuItem.Checked = False
+            End If
 
             If UpdateServer = "" Then
                 Test_Server()
@@ -213,6 +220,7 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "MedBrowser", MedGuiR.CheckBox17.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoUpdate", MedGuiR.CheckBox20.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoScanCD", MedGuiR.CheckBox21.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "TextMenu", MedGuiR.CheckBox23.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoConn", MedGuiR.NetToolStripButton.BackColor.Name)
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "UpdateServer", UpdateServer)
             'WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Gui_Size", MedGuiR.Size.Width & "x" & MedGuiR.Size.Height)

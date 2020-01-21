@@ -11,9 +11,13 @@
             'Next
 
             MedGuiR.ModLandToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\modland.png"))
+            MedGuiR.DownloadMusicModuleToolStripMenuItem.Image = MedGuiR.ModLandToolStripButton.Image
             MedGuiR.LoadRomToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
+            MedGuiR.OpenFileToolStripMenuItem.Image = MedGuiR.LoadRomToolStripButton.Image
             MedGuiR.NetToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\net.png"))
+            MedGuiR.ConnectAsClientToolStripMenuItem.Image = MedGuiR.NetToolStripButton.Image
             MedGuiR.ServerToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\netplay.png"))
+            MedGuiR.ServerToolStripMenuItem.Image = MedGuiR.ServerToolStripButton.Image
             MedGuiR.LoadCDToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\cd_rom.png"))
             MedGuiR.CheckBox1.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\fast.png"))
             MedGuiR.CheckBox15.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\faust.png"))
@@ -25,8 +29,11 @@
             MedGuiR.Button4.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\target.png"))
             MedGuiR.Button35.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\scrape.png"))
             MedGuiR.FavouritesToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\favourite.png"))
+            MedGuiR.OpenFavouritesToolStripMenuItem.Image = MedGuiR.FavouritesToolStripButton.Image
             MedGuiR.RecentToolStripButton1.Image = (New Bitmap(MedExtra & "Resource\Gui\recent.png"))
+            MedGuiR.RecentsToolStripMenuItem.Image = MedGuiR.RecentToolStripButton1.Image
             MedGuiR.FoldeRomToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
+            MedGuiR.OpenFolderToolStripMenuItem.Image = MedGuiR.FoldeRomToolStripButton.Image
             MedGuiR.Button11.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\arecord.png"))
             MedGuiR.Button12.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\mrecord.png"))
             MedGuiR.Button43.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\download.png"))
@@ -34,6 +41,7 @@
             MedGuiR.FindToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\find.png"))
             MedGuiR.RebuildToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
+            MedGuiR.ToolStripMenuItem2.Image = MedGuiR.FlagToolStripSplitButton.Image
             MedGuiR.WORLDToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
             MedGuiR.EUToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Flags\eu.png"))
             MedGuiR.USToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Flags\us.png"))
@@ -41,6 +49,7 @@
             MedGuiR.PDToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Flags\pd.png"))
             MedGuiR.MUSICToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\modland.png"))
             MedGuiR.IRCToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\irc.png"))
+            MedGuiR.OpenIRCToolStripMenuItem.Image = MedGuiR.IRCToolStripButton.Image
             MedGuiR.Button33.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\palette.png"))
             MedGuiR.Button50.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\audio.png"))
             MedGuiR.Button51.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\joypad.png"))
