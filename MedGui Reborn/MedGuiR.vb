@@ -2966,6 +2966,14 @@ SKIPHASH:
         FindToolStripButton.PerformClick()
     End Sub
 
+    Private Sub ConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfigToolStripMenuItem.Click
+        If DataGridView1.Rows.Count < 1 Then
+            MsgBox("You need to load a game on the grid to select a server", vbOKOnly + vbCritical, "No games on grid...")
+            Exit Sub
+        End If
+        AdvancedSettingToolStripMenuItem.PerformClick()
+    End Sub
+
     Private Sub RadioButton2_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton2.CheckedChanged
         Button30.Enabled = False
         Button31.Enabled = True
