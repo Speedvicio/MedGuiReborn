@@ -25,7 +25,8 @@ Module GlobalVar
         If Startup_Path = "fav" Then
             MedGuiR.FavouritesToolStripButton.PerformClick()
         Else
-            MedGuiR.SY.SelectedItem = Startup_Path
+            'MedGuiR.SY.SelectedItem = Startup_Path
+            MedGuiR.ModuleToolStripComboBox2.SelectedItem = Startup_Path
         End If
 
         GridRMIni()

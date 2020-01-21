@@ -49,7 +49,7 @@ Partial Class Standard_Conf
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(70, 23)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "&Make"
+        Me.Button1.Text = "&Save"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'S_PASS

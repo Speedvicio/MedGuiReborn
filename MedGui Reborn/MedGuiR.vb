@@ -2032,8 +2032,10 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     Private Sub NetToolStripButton_Click_1(sender As Object, e As EventArgs) Handles NetToolStripButton.Click
         If NetToolStripButton.BackColor = SystemColors.Control Then
             NetToolStripButton.BackColor = Color.Red
+            AutoConnectToolStripMenuItem.Checked = True
         Else
             NetToolStripButton.BackColor = SystemColors.Control
+            AutoConnectToolStripMenuItem.Checked = False
         End If
 
     End Sub
@@ -2846,6 +2848,26 @@ SKIPHASH:
         End Try
     End Sub
 
+    Private Sub OpenFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenFileToolStripMenuItem.Click
+        LoadRomToolStripButton.PerformClick()
+    End Sub
+
+    Private Sub OpenFolderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenFolderToolStripMenuItem.Click
+        FoldeRomToolStripButton.PerformClick()
+    End Sub
+
+    Private Sub RescanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RescanToolStripMenuItem.Click
+        RebuildToolStripButton.PerformClick()
+    End Sub
+
+    Private Sub OpenFavouritesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenFavouritesToolStripMenuItem.Click
+        FavouritesToolStripButton.PerformClick()
+    End Sub
+
+    Private Sub RecentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RecentsToolStripMenuItem.Click
+        RecentToolStripButton1.PerformClick()
+    End Sub
+
     Private Sub SnesSpecialChip()
         Dim filechip As String
 
@@ -2884,6 +2906,23 @@ SKIPHASH:
             oRead.Dispose()
             oRead.Close()
         End Try
+    End Sub
+
+    Private Sub ClientOptionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientOptionToolStripMenuItem.Click
+        If DataGridView1.Rows.Count < 1 Then
+            MsgBox("You need to load a game on the grid to select a server", vbOKOnly + vbCritical, "No games on grid...")
+            Exit Sub
+        End If
+        AdvancedSettingToolStripMenuItem.PerformClick()
+        MgrSetting.TabControl1.SelectedIndex = 8
+    End Sub
+
+    Private Sub ConfigureServerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfigureServerToolStripMenuItem.Click
+        Standard_Conf.Show()
+    End Sub
+
+    Private Sub AutoConnectToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AutoConnectToolStripMenuItem.Click
+        NetToolStripButton.PerformClick()
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton1.CheckedChanged
@@ -3212,4 +3251,7 @@ MisScan:
         'End If
     End Sub
 
+    Private Sub ModuleToolStripComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ModuleToolStripComboBox2.SelectedIndexChanged
+        SY.Text = ModuleToolStripComboBox2.Text
+    End Sub
 End Class
