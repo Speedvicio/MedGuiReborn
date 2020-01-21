@@ -434,11 +434,14 @@ CheckMednafen:
     End Function
 
     Public Sub OS_Version()
-        If UCase(My.Computer.Info.OSFullName.Contains("XP")) Then
-            Exit Sub
-        Else
-            Application.EnableVisualStyles()
-        End If
+        Try
+            If UCase(My.Computer.Info.OSFullName.Contains("XP")) Then
+                Exit Sub
+            Else
+                Application.EnableVisualStyles()
+            End If
+        Catch
+        End Try
     End Sub
 
     Public Sub SingleScan()
