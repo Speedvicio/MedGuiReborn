@@ -102,7 +102,7 @@
             MedGuiR.Button39.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
 
             MedGuiR.PictureBox3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
-            MedGuiR.RescanToolStripMenuItem.Image = MedGuiR.PictureBox3.BackgroundImage
+            'MedGuiR.RescanToolStripMenuItem.Image = MedGuiR.PictureBox3.BackgroundImage
             MedGuiR.Button2.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\buggy.png"))
             MedGuiR.Button20.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\save.png"))
             MedGuiR.Button21.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
@@ -126,7 +126,7 @@
             MedGuiR.Button49.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MedGuiR.Button58.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MedGuiR.Button42.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\find.png"))
-            MedGuiR.RapidGameSearchToolStripMenuItem.Image = MedGuiR.Button42.BackgroundImage
+            'MedGuiR.RapidGameSearchToolStripMenuItem.Image = MedGuiR.Button42.BackgroundImage
             MedGuiR.Button47.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\download.png"))
             MedGuiR.Button44.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\dat.png"))
@@ -156,7 +156,7 @@
             MedGuiR.AddToFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\favourite.png"))
             MedGuiR.RemoveFromFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.AdvancedSettingToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\setting.png"))
-            MedGuiR.ConfigToolStripMenuItem.Image = MedGuiR.AdvancedSettingToolStripMenuItem.Image
+            'MedGuiR.ConfigToolStripMenuItem.Image = MedGuiR.AdvancedSettingToolStripMenuItem.Image
             MedGuiR.AddShortuctToDesktopToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\buggy.png"))
             MedGuiR.AboutToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\info.png"))
             MedGuiR.ImportFromFile.Image = (New Bitmap(MedExtra & "Resource\Gui\cover.png"))

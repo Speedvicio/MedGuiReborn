@@ -723,16 +723,19 @@ Public Class MedGuiR
     End Sub
 
     Private Sub ToolStripComboBox1_SelectedIndexChanged1(sender As Object, e As EventArgs) Handles SY.SelectedIndexChanged
+        ModuleToolStripComboBox2.Text = SY.Text
         If SY.Text = "" Then 'Or SY.Text = "psx" Or SY.Text = "ss" Or SY.Text = "pcfx"
             Me.Text = "MedGui Reborn"
             DataGridView1.Rows.Clear()
             Datagrid_filter()
             RebuildToolStripButton.Enabled = False
+            RescanToolStripMenuItem.Enabled = False
             type_csv = SY.Text
             Exit Sub
         Else
             Button55.Enabled = False
             RebuildToolStripButton.Enabled = True
+            RescanToolStripMenuItem.Enabled = True
         End If
         Select_system()
         Datagrid_filter()
@@ -1101,7 +1104,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -2220,10 +2223,14 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         Try
             Dim AppendInp As String = ""
             If CheckBox14.Checked = True Then AppendInp = "R - " Else AppendInp = "- "
-            If TempFolder = "" Then Exit Sub
+            If TempFolder = "" Then
+                MsgBox("Unable to save a playlist" & vbCrLf &
+                       "Select a directory to scan", vbOKOnly + vbExclamation, "No directory to scan...")
+                Exit Sub
+            End If
 inputagain:
             Dim Rmsg = InputBox("Select a Name for Prescanned File", "Put a Folder Name (Default: Selected Folder Name)", Path.GetFileName(TempFolder))
-            If Rmsg.Trim = "" Then GoTo inputagain 'Exit Sub
+            If Rmsg.Trim = "" Then Exit Sub 'GoTo inputagain
 
             'If Len(Rmsg) >= 3 Then
             'If Rmsg.Substring(0, 2) <> "- " Or Rmsg.Substring(0, 4) <> "R - " Then Rmsg = AppendInp & Rmsg.Trim
@@ -2967,7 +2974,7 @@ SKIPHASH:
     End Sub
 
     Private Sub RapidGameSearchToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RapidGameSearchToolStripMenuItem.Click
-        FindToolStripButton.PerformClick()
+        'FindToolStripButton.PerformClick()
     End Sub
 
     Private Sub ConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfigToolStripMenuItem.Click
@@ -2986,12 +2993,10 @@ SKIPHASH:
         CustomPlaylist()
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        If TempFolder = "" Then
-            SaveCutomPlaylistToolStripMenuItem.Enabled = False
-        Else
-            SaveCutomPlaylistToolStripMenuItem.Enabled = True
-        End If
+    Private Sub XToolStripMenuItem_MouseUp(sender As Object, e As MouseEventArgs) Handles XToolStripMenuItem.MouseUp
+        ToolStripTextBox2.Focus()
+        ToolStripTextBox2.Text = ""
+        SendKeys.Send("{ENTER}")
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton2.CheckedChanged
