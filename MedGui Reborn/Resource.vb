@@ -91,6 +91,7 @@
 
             MPCG.Button1.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MPCG.Button2.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\add.png"))
+            MedGuiR.SaveCutomPlaylistToolStripMenuItem.Image = MPCG.Button2.BackgroundImage
             MPCG.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MPCG.Button4.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\converter.png"))
             MPCG.Button5.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\cd_rom.png"))
@@ -101,6 +102,7 @@
             MedGuiR.Button39.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
 
             MedGuiR.PictureBox3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
+            MedGuiR.RescanToolStripMenuItem.Image = MedGuiR.PictureBox3.BackgroundImage
             MedGuiR.Button2.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\buggy.png"))
             MedGuiR.Button20.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\save.png"))
             MedGuiR.Button21.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
@@ -124,6 +126,7 @@
             MedGuiR.Button49.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MedGuiR.Button58.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MedGuiR.Button42.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\find.png"))
+            MedGuiR.RapidGameSearchToolStripMenuItem.Image = MedGuiR.Button42.BackgroundImage
             MedGuiR.Button47.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\download.png"))
             MedGuiR.Button44.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\dat.png"))

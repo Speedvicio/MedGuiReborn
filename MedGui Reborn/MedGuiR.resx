@@ -150,6 +150,9 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="AudioStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>338, 17</value>
   </metadata>
@@ -222,28 +225,28 @@ No sensible data are stored, (Nick, Server, Port, Title Game, Mednafen Module an
 This file will be deleted form external server when you close Netplay session or when you close MedClient window.</value>
   </data>
   <metadata name="TimerSoxConv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>495, 17</value>
+    <value>447, 17</value>
   </metadata>
   <metadata name="TimerControlMednafen.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>625, 17</value>
+    <value>577, 17</value>
   </metadata>
   <metadata name="TimerControlJoy.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>803, 17</value>
+    <value>755, 17</value>
   </metadata>
   <metadata name="TimerLabelScroll.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>944, 17</value>
+    <value>17, 56</value>
   </metadata>
   <metadata name="AdvancedMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1085, 17</value>
+    <value>158, 56</value>
   </metadata>
   <metadata name="TimerPerConfig.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1222, 17</value>
+    <value>295, 56</value>
   </metadata>
   <metadata name="FontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1358, 17</value>
+    <value>431, 56</value>
   </metadata>
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>549, 56</value>
   </metadata>
   <metadata name="RE_tar_DDIT.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>223, 17</value>
@@ -271,6 +274,6 @@ wswan = Wonderswan
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>136</value>
+    <value>81</value>
   </metadata>
 </root>

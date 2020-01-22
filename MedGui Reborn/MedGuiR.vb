@@ -2207,31 +2207,35 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
 
     Private Sub FolderRomToolStripButton_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles FoldeRomToolStripButton.MouseDown
 
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+            TempFolder = ""
+            stopscan = False
+            ScanFolderRom()
+            CustomPlaylist()
+        End If
+
+    End Sub
+
+    Private Sub CustomPlaylist()
         Try
-            If e.Button = Windows.Forms.MouseButtons.Right Then
-                TempFolder = ""
-                stopscan = False
-                ScanFolderRom()
-                Dim AppendInp As String = ""
-                If CheckBox14.Checked = True Then AppendInp = "R - " Else AppendInp = "- "
-                If TempFolder = "" Then Exit Sub
+            Dim AppendInp As String = ""
+            If CheckBox14.Checked = True Then AppendInp = "R - " Else AppendInp = "- "
+            If TempFolder = "" Then Exit Sub
 inputagain:
-                Dim Rmsg = InputBox("Select a Name for Prescanned File", "Put a Folder Name (Default: Selected Folder Name)", Path.GetFileName(TempFolder))
-                If Rmsg.Trim = "" Then GoTo inputagain 'Exit Sub
+            Dim Rmsg = InputBox("Select a Name for Prescanned File", "Put a Folder Name (Default: Selected Folder Name)", Path.GetFileName(TempFolder))
+            If Rmsg.Trim = "" Then GoTo inputagain 'Exit Sub
 
-                'If Len(Rmsg) >= 3 Then
-                'If Rmsg.Substring(0, 2) <> "- " Or Rmsg.Substring(0, 4) <> "R - " Then Rmsg = AppendInp & Rmsg.Trim
-                'End If
+            'If Len(Rmsg) >= 3 Then
+            'If Rmsg.Substring(0, 2) <> "- " Or Rmsg.Substring(0, 4) <> "R - " Then Rmsg = AppendInp & Rmsg.Trim
+            'End If
 
-                Rmsg = AppendInp & Rmsg.Trim
-                type_csv = Rmsg
-                SaveGridDataInFile()
-                Datagrid_filter()
-                CustomScanFolder()
-            End If
+            Rmsg = AppendInp & Rmsg.Trim
+            type_csv = Rmsg
+            SaveGridDataInFile()
+            Datagrid_filter()
+            CustomScanFolder()
         Catch
         End Try
-
     End Sub
 
     Private Sub ScanFolderRom()
@@ -2972,6 +2976,22 @@ SKIPHASH:
             Exit Sub
         End If
         AdvancedSettingToolStripMenuItem.PerformClick()
+    End Sub
+
+    Private Sub SaveCutomPlaylistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveCutomPlaylistToolStripMenuItem.Click
+        If DataGridView1.Rows.Count < 1 Then
+            MsgBox("You need to load any games on the grid to save playlist", vbOKOnly + vbCritical, "No games on grid...")
+            Exit Sub
+        End If
+        CustomPlaylist()
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        If TempFolder = "" Then
+            SaveCutomPlaylistToolStripMenuItem.Enabled = False
+        Else
+            SaveCutomPlaylistToolStripMenuItem.Enabled = True
+        End If
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton2.CheckedChanged
