@@ -156,6 +156,7 @@
             MedGuiR.AddToFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\favourite.png"))
             MedGuiR.RemoveFromFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.AdvancedSettingToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\setting.png"))
+            MedGuiR.ConfigToolStripMenuItem.Image = MedGuiR.AdvancedSettingToolStripMenuItem.Image
             MedGuiR.AddShortuctToDesktopToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\buggy.png"))
             MedGuiR.AboutToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\info.png"))
             MedGuiR.ImportFromFile.Image = (New Bitmap(MedExtra & "Resource\Gui\cover.png"))
