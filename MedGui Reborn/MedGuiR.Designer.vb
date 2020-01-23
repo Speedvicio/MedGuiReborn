@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -386,6 +386,8 @@ Partial Class MedGuiR
         Me.ToolStripSeparator20 = New System.Windows.Forms.ToolStripSeparator()
         Me.SaveCutomPlaylistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmulatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControllerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConnectAsClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientOptionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -404,6 +406,7 @@ Partial Class MedGuiR
         Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheatToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -458,23 +461,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle20
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle21
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -482,9 +485,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle19
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -3781,7 +3784,7 @@ Partial Class MedGuiR
         '
         'RE_tar_DDIT
         '
-        Me.RE_tar_DDIT.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ModuleToolStripComboBox2, Me.RescanToolStripMenuItem, Me.ToolStripMenuItem4, Me.ToolStripMenuItem1, Me.ConfigToolStripMenuItem, Me.NetToolStripMenuItem, Me.ToolStripMenuItem5, Me.RapidGameSearchToolStripMenuItem, Me.ToolStripTextBox2, Me.ToolStripMenuItem2, Me.XToolStripMenuItem})
+        Me.RE_tar_DDIT.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ModuleToolStripComboBox2, Me.RescanToolStripMenuItem, Me.ToolStripMenuItem4, Me.ToolStripMenuItem1, Me.ConfigToolStripMenuItem, Me.NetToolStripMenuItem, Me.CheatToolStripMenuItem1, Me.ToolStripMenuItem5, Me.RapidGameSearchToolStripMenuItem, Me.ToolStripTextBox2, Me.ToolStripMenuItem2, Me.XToolStripMenuItem})
         Me.RE_tar_DDIT.Location = New System.Drawing.Point(0, 0)
         Me.RE_tar_DDIT.Name = "RE_tar_DDIT"
         Me.RE_tar_DDIT.Size = New System.Drawing.Size(821, 27)
@@ -3862,9 +3865,24 @@ Partial Class MedGuiR
         '
         'ConfigToolStripMenuItem
         '
+        Me.ConfigToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmulatorToolStripMenuItem, Me.ControllerToolStripMenuItem})
         Me.ConfigToolStripMenuItem.Name = "ConfigToolStripMenuItem"
         Me.ConfigToolStripMenuItem.Size = New System.Drawing.Size(55, 23)
         Me.ConfigToolStripMenuItem.Text = "&Config"
+        '
+        'EmulatorToolStripMenuItem
+        '
+        Me.EmulatorToolStripMenuItem.Name = "EmulatorToolStripMenuItem"
+        Me.EmulatorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmulatorToolStripMenuItem.Text = "&Emulator"
+        Me.EmulatorToolStripMenuItem.ToolTipText = "Configure Mednafen Setting"
+        '
+        'ControllerToolStripMenuItem
+        '
+        Me.ControllerToolStripMenuItem.Name = "ControllerToolStripMenuItem"
+        Me.ControllerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ControllerToolStripMenuItem.Text = "&Joypad"
+        Me.ControllerToolStripMenuItem.ToolTipText = "Configure Emulator Input"
         '
         'NetToolStripMenuItem
         '
@@ -3987,6 +4005,13 @@ Partial Class MedGuiR
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
+        '
+        'CheatToolStripMenuItem1
+        '
+        Me.CheatToolStripMenuItem1.Name = "CheatToolStripMenuItem1"
+        Me.CheatToolStripMenuItem1.Size = New System.Drawing.Size(50, 23)
+        Me.CheatToolStripMenuItem1.Text = "C&heat"
+        Me.CheatToolStripMenuItem1.ToolTipText = "Open cheat Manager"
         '
         'MedGuiR
         '
@@ -4450,4 +4475,7 @@ Partial Class MedGuiR
     Friend WithEvents SaveCutomPlaylistToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents XToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RapidGameSearchToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmulatorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ControllerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheatToolStripMenuItem1 As ToolStripMenuItem
 End Class

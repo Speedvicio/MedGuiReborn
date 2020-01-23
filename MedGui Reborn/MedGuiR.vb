@@ -2977,14 +2977,6 @@ SKIPHASH:
         'FindToolStripButton.PerformClick()
     End Sub
 
-    Private Sub ConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfigToolStripMenuItem.Click
-        If DataGridView1.Rows.Count < 1 Then
-            MsgBox("You need to load a game on the grid to configure options", vbOKOnly + vbCritical, "No games on grid...")
-            Exit Sub
-        End If
-        AdvancedSettingToolStripMenuItem.PerformClick()
-    End Sub
-
     Private Sub SaveCutomPlaylistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveCutomPlaylistToolStripMenuItem.Click
         If DataGridView1.Rows.Count < 2 Then
             MsgBox("You need to load more than 2 games on the grid to save playlist", vbOKOnly + vbCritical, "No games on grid...")
@@ -3005,6 +2997,26 @@ SKIPHASH:
         Else
             SaveCutomPlaylistToolStripMenuItem.Enabled = True
         End If
+    End Sub
+
+    Private Sub EmulatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmulatorToolStripMenuItem.Click
+        If DataGridView1.Rows.Count < 1 Then
+            MsgBox("You need to load a game on the grid to configure options", vbOKOnly + vbCritical, "No games on grid...")
+            Exit Sub
+        End If
+        AdvancedSettingToolStripMenuItem.PerformClick()
+    End Sub
+
+    Private Sub ControllerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControllerToolStripMenuItem.Click
+        SendToMedPad()
+    End Sub
+
+    Private Sub CheatToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CheatToolStripMenuItem1.Click
+        If DataGridView1.Rows.Count < 1 Then
+            MsgBox("You need to load a game on the grid to open cheat manager", vbOKOnly + vbCritical, "No games on grid...")
+            Exit Sub
+        End If
+        CheatToolStripMenuItem.PerformClick()
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton2.CheckedChanged
