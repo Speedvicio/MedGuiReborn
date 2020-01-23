@@ -2994,9 +2994,9 @@ SKIPHASH:
     End Sub
 
     Private Sub XToolStripMenuItem_MouseUp(sender As Object, e As MouseEventArgs) Handles XToolStripMenuItem.MouseUp
-        ToolStripTextBox2.Focus()
         ToolStripTextBox2.Text = ""
-        SendKeys.Send("{ENTER}")
+        ToolStripTextBox2.Focus()
+        SendKeys.Send("{BKSP}") '("{ENTER}")
     End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
