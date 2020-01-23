@@ -741,6 +741,7 @@ Public Class MedGuiR
         Datagrid_filter()
         type_csv = SY.Text
         Purge_Grid()
+        TempFolder = ""
     End Sub
 
     Private Sub RebuildToolStripButton_Click(sender As Object, e As EventArgs) Handles RebuildToolStripButton.Click
@@ -2325,6 +2326,7 @@ inputagain:
             End If
         End If
         ListBox2.SelectedItem = varcomodo
+        TempFolder = ""
     End Sub
 
     Private Sub Button47_Click(sender As System.Object, e As System.EventArgs) Handles Button47.Click
@@ -2566,10 +2568,8 @@ inputagain:
             type_csv = ListBox2.SelectedItem
             SaveGridDataInFile()
             Datagrid_filter()
-        Else
-            TempFolder = ""
-            Exit Sub
         End If
+        TempFolder = ""
     End Sub
 
     Private Sub Button56_Click(sender As Object, e As EventArgs) Handles Button56.Click
@@ -2986,8 +2986,8 @@ SKIPHASH:
     End Sub
 
     Private Sub SaveCutomPlaylistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveCutomPlaylistToolStripMenuItem.Click
-        If DataGridView1.Rows.Count < 1 Then
-            MsgBox("You need to load any games on the grid to save playlist", vbOKOnly + vbCritical, "No games on grid...")
+        If DataGridView1.Rows.Count < 2 Then
+            MsgBox("You need to load more than 2 games on the grid to save playlist", vbOKOnly + vbCritical, "No games on grid...")
             Exit Sub
         End If
         CustomPlaylist()
@@ -2997,6 +2997,14 @@ SKIPHASH:
         ToolStripTextBox2.Focus()
         ToolStripTextBox2.Text = ""
         SendKeys.Send("{ENTER}")
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        If TempFolder = "" Then
+            SaveCutomPlaylistToolStripMenuItem.Enabled = False
+        Else
+            SaveCutomPlaylistToolStripMenuItem.Enabled = True
+        End If
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton2.CheckedChanged
