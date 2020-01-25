@@ -2964,6 +2964,10 @@ SKIPHASH:
     End Sub
 
     Private Sub CheckBox23_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox23.CheckedChanged
+        SetGUI()
+    End Sub
+
+    Public Sub SetGUI()
         If CheckBox23.Checked = True Then
             RE_tar_DDIT.Visible = True
             IconStrip.Visible = False
