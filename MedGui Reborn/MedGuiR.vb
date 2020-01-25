@@ -2040,11 +2040,11 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Private Sub NetToolStripButton_Click_1(sender As Object, e As EventArgs) Handles NetToolStripButton.Click
-        If NetToolStripButton.BackColor = SystemColors.Control Then
+        If NetToolStripButton.BackColor = Color.Transparent Then
             NetToolStripButton.BackColor = Color.Red
             AutoConnectToolStripMenuItem.Checked = True
         Else
-            NetToolStripButton.BackColor = SystemColors.Control
+            NetToolStripButton.BackColor = Color.Transparent
             AutoConnectToolStripMenuItem.Checked = False
         End If
 
