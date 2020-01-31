@@ -204,7 +204,7 @@ tryagain:
         QuestionMultitap()
 
         Arg = egkey & " -netplay.host " & Server & " -netplay.nick " & Nick & epass & " -netplay.port " &
-              port & " -connect" & pargMT & " -force_module " & NModule & " " & Chr(34) & percorso & Chr(34)
+              port & " -connect" & pargMT & " -force_module " & NModule & " " & NNetParameters & " " & Chr(34) & percorso & Chr(34)
 
         tProcess = "mednafen"
         wDir = MedGuiR.TextBox4.Text

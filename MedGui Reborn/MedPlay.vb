@@ -4,7 +4,8 @@ Imports System.Net.NetworkInformation
 Imports Utilities.FTP
 
 Module MedPlay
-    Public SCountry, SLocation, Server, Password, Nick, NGameName, NRomName, NCRC, NModule, Gamekey, port, ping, NMednafenV As String, NetIn, ftperror As Boolean
+    Public SCountry, SLocation, Server, Password, Nick, NGameName, NRomName, NCRC, NModule, Gamekey, port, ping, NMednafenV, NNetParameters As String, NetIn, ftperror As Boolean
+    Public GamePar As String
     Public ftp As New FTPclient
 
     Public Sub SetFTPData()
@@ -97,12 +98,14 @@ Module MedPlay
     End Sub
 
     Public Sub ParseMednafenConfig()
+        GamePar = ""
         Dim row, splitrow() As String
         Try
             Using reader As New StreamReader(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
                 While Not reader.EndOfStream
                     row = reader.ReadLine
                     splitrow = row.Split(" ")
+                    Dim splitrow1() = row.Split(".")
                     Select Case True
                         Case row.Contains("netplay.host")
                             Server = splitrow(1)
@@ -118,6 +121,18 @@ Module MedPlay
                         Case row.Contains("netplay.gamekey")
                             Gamekey = splitrow(1)
                             MedGuiR.GameKeyToolStripTextBox1.Text = Gamekey.Trim
+                            'Case row.Contains(".input.port") And row.Contains(consoles & MedGuiR.tpce)
+                            'GamePar += row.ToString & " "
+                        Case row.Contains(".multitap ") And splitrow1(0) = consoles & MedGuiR.tpce
+                            GamePar += "-" & row.ToString & " "
+                        Case row.Contains(".memcard ") And splitrow1(0) = consoles & MedGuiR.tpce
+                            GamePar += "-" & row.ToString & " "
+                        Case row.Contains(".input.port") And splitrow1(0) = consoles & MedGuiR.tpce
+                            For i = 1 To 8
+                                If row.Contains(".input.port" & i & " ") Then
+                                    GamePar += "-" & row.ToString & " "
+                                End If
+                            Next
                     End Select
                 End While
 
@@ -158,7 +173,8 @@ Module MedPlay
         Dim fiso As StreamWriter
         Dim ContentUp = VSTripleDES.EncryptData("Nick=" & Nick) & vbCrLf & VSTripleDES.EncryptData("Server=" & Server) & vbCrLf & VSTripleDES.EncryptData("Port=" & port) & vbCrLf &
         VSTripleDES.EncryptData("GameName=" & NGameName) & vbCrLf & VSTripleDES.EncryptData("Module=" & NModule) & vbCrLf & VSTripleDES.EncryptData("Password=" & Password) & vbCrLf &
-        VSTripleDES.EncryptData("Gamekey=" & Gamekey) & vbCrLf & VSTripleDES.EncryptData("RomFile=" & NRomName) & vbCrLf & VSTripleDES.EncryptData("CRC=" & NCRC) & vbCrLf & VSTripleDES.EncryptData("MednafenV=" & NMednafenV)
+        VSTripleDES.EncryptData("Gamekey=" & Gamekey) & vbCrLf & VSTripleDES.EncryptData("RomFile=" & NRomName) & vbCrLf & VSTripleDES.EncryptData("CRC=" & NCRC) & vbCrLf & VSTripleDES.EncryptData("MednafenV=" & NMednafenV) &
+         vbCrLf & VSTripleDES.EncryptData("NetParameter=" & GamePar.Trim)
         fiso = File.CreateText(MedExtra & "\MedPlay\" & Nick)
         fiso.WriteLine(ContentUp)
         fiso.Flush()
@@ -239,6 +255,8 @@ Module MedPlay
                                     NCRC = splitrow(1)
                                 Case splitrow(0) = ("MednafenV")
                                     NMednafenV = splitrow(1)
+                                Case splitrow(0) = ("NetParameter")
+                                    NNetParameters = splitrow(1)
                             End Select
                         End While
                         ReadNetPlaySession()
