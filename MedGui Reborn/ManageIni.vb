@@ -91,7 +91,7 @@
     Public Sub NetPlayMini()
         Try
 
-            MedGuiR.TextBox26.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "FTP_Adress"))
+            MedGuiR.ComboBox7.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "FTP_Adress"))
             MedGuiR.TextBox25.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Username"))
             MedGuiR.TextBox24.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Password"))
             MedGuiR.TextBox23.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Start_Path"))
@@ -246,7 +246,7 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Form_State", forMax)
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "MGRH", MGRH)
 
-            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "FTP_Adress", VSTripleDES.EncryptData(MedGuiR.TextBox26.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "FTP_Adress", VSTripleDES.EncryptData(MedGuiR.ComboBox7.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Username", VSTripleDES.EncryptData(MedGuiR.TextBox25.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Password", VSTripleDES.EncryptData(MedGuiR.TextBox24.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Start_Path", VSTripleDES.EncryptData(MedGuiR.TextBox23.Text))

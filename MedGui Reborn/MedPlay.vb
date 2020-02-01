@@ -13,7 +13,7 @@ Module MedPlay
         'NetRom = "/" & MedClient.TextBox7.Text
         ftp.Username = MedGuiR.TextBox25.Text
         ftp.Password = MedGuiR.TextBox24.Text
-        ftp.Hostname = "ftp://" & MedGuiR.TextBox26.Text
+        ftp.Hostname = "ftp://" & MedGuiR.ComboBox7.Text
     End Sub
 
     Public Sub FtpDownloadOnConnect()
@@ -31,7 +31,7 @@ Module MedPlay
                     ftp.Download(file, MedExtra & "\MedPlay\" & file.Filename, True)
                 Next
             Else
-                MsgBox("Invalid " & MedGuiR.TextBox23.Text & " Path on " & MedGuiR.TextBox26.Text & " Server", vbOKOnly + MsgBoxStyle.Critical, "Path not Detected on this server")
+                MsgBox("Invalid " & MedGuiR.TextBox23.Text & " Path on " & MedGuiR.ComboBox7.Text & " Server", vbOKOnly + MsgBoxStyle.Critical, "Path not Detected on this server")
                 ftperror = True
                 MedClient.Close()
             End If

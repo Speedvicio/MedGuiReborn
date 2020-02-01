@@ -52,7 +52,7 @@ Public Class MedGuiR
         End If
         ParseCommandLineArgs()
 
-        If TextBox26.Text = "Speedvicio.dtdns.net" Then TextBox26.Text = "speedvicio.ddns.net"
+        If ComboBox7.Text = "Speedvicio.dtdns.net" Then ComboBox7.Text = "speedvicio.ddns.net"
 
         SoxStatus.Close()
         FirstStart = False
@@ -1105,7 +1105,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -2341,7 +2341,7 @@ inputagain:
     End Sub
 
     Private Sub Button53_Click(sender As Object, e As EventArgs) Handles Button53.Click
-        If TextBox26.Text.Trim = "" Then
+        If ComboBox7.Text.Trim = "" Then
             MsgBox("FTP Adress empty!", vbOKOnly + vbExclamation)
         ElseIf TextBox25.Text.Trim = "" Then
             MsgBox("Username empty!", vbOKOnly + vbExclamation)
@@ -2573,7 +2573,7 @@ inputagain:
     End Sub
 
     Private Sub Button56_Click(sender As Object, e As EventArgs) Handles Button56.Click
-        TextBox26.Enabled = True
+        ComboBox7.Enabled = True
         TextBox25.Enabled = True
         TextBox24.Enabled = True
         TextBox23.Enabled = True
@@ -3274,7 +3274,7 @@ MisScan:
         Try
             If e.Button = Windows.Forms.MouseButtons.Right Then
 
-                TextBox26.Text = "speedvicio.ddns.net"
+                ComboBox7.Text = "speedvicio.ddns.net"
                 TextBox25.Text = "medguir"
                 TextBox24.Text = "Mednafen"
                 TextBox23.Text = "NetPlay"
