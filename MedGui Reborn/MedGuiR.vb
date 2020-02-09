@@ -724,6 +724,11 @@ Public Class MedGuiR
 
     Private Sub ToolStripComboBox1_SelectedIndexChanged1(sender As Object, e As EventArgs) Handles SY.SelectedIndexChanged
         ModuleToolStripComboBox2.Text = SY.Text
+        ChangeModule()
+    End Sub
+
+    Private Sub ChangeModule()
+        If type_csv = SY.Text Then Exit Sub
         If SY.Text = "" Then 'Or SY.Text = "psx" Or SY.Text = "ss" Or SY.Text = "pcfx"
             Me.Text = "MedGui Reborn"
             DataGridView1.Rows.Clear()
@@ -3346,6 +3351,7 @@ MisScan:
 
     Private Sub ModuleToolStripComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ModuleToolStripComboBox2.SelectedIndexChanged
         SY.Text = ModuleToolStripComboBox2.Text
+        ChangeModule()
     End Sub
 
     Private Sub ToolStripTextBox2_KeyUp(sender As Object, e As KeyEventArgs) Handles ToolStripTextBox2.KeyUp
