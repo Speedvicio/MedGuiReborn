@@ -363,15 +363,15 @@ Public Class MedGuiR
             If contdes = 0 Then My.Computer.FileSystem.MoveFile(TextBox4.Text & "\" & consoles & tpce & ".cfg", MedExtra & "\NoDesync\Backup\" & consoles & tpce & ".cfg")
             If File.Exists(MedExtra & "\NoDesync\" & consoles & tpce & ".cfg") Then
                 Dim wjoy As String = ""
-                If consoles = "psx" Then
-                    wjoy = MsgBox("Set NoDesync with all 8 joypad to dualshock?", vbYesNo + vbInformation, "Set with dualshock")
-                    If wjoy = vbYes Then wjoy = "J" Else wjoy = ""
-                End If
+                'If consoles = "psx" Then
+                'wjoy = MsgBox("Set NoDesync with all 8 joypad to dualshock?", vbYesNo + vbInformation, "Set with dualshock")
+                'If wjoy = vbYes Then wjoy = "J" Else wjoy = ""
+                'End If
 
-                If consoles = "nes" Then
-                    wjoy = MsgBox("Have you enabled 4-player or partytap Adapter?", vbYesNo + vbInformation, "Set with 4-player/partytap Adapter")
-                    If wjoy = vbYes Then wjoy = "M" Else wjoy = ""
-                End If
+                'If consoles = "nes" Then
+                'wjoy = MsgBox("Have you enabled 4-player or partytap Adapter?", vbYesNo + vbInformation, "Set with 4-player/partytap Adapter")
+                'If wjoy = vbYes Then wjoy = "M" Else wjoy = ""
+                'End If
 
                 File.Copy(MedExtra & "\NoDesync\" & consoles & tpce & wjoy & ".cfg", TextBox4.Text & "\" & consoles & tpce & ".cfg", True)
             End If
@@ -1110,7 +1110,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
