@@ -179,23 +179,23 @@ tryagain:
             'OpenFileDialog1.FileName = CleanRom(NGameName.Trim) & "*"
 
             StartNetPath()
-                OpenFileDialog1.InitialDirectory = InitialNetPath
-                If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-                    percorso = (OpenFileDialog1.FileName)
-                    CheckCRCNet()
+            OpenFileDialog1.InitialDirectory = InitialNetPath
+            If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+                percorso = (OpenFileDialog1.FileName)
+                CheckCRCNet()
 
-                    If NCRC.Trim = DataGridView1.CurrentRow.Cells(8).Value().ToString.Trim Or NCRC.Trim = "image" Then
-                    Else
-                        MsgBox("CRC Rom mismatch, select a different rom", vbOKOnly + MsgBoxStyle.Exclamation, "CRC mismatch...")
-                        GoTo tryagain
-                    End If
+                If NCRC.Trim = DataGridView1.CurrentRow.Cells(8).Value().ToString.Trim Or NCRC.Trim = "image" Then
                 Else
-                    Exit Sub
+                    MsgBox("CRC Rom mismatch, select a different rom", vbOKOnly + MsgBoxStyle.Exclamation, "CRC mismatch...")
+                    GoTo tryagain
                 End If
-
+            Else
+                Exit Sub
             End If
 
-            If NModule = "psx" Then
+        End If
+
+        If NModule = "psx" Then
             MedGuiR.TextBox1.Text = percorso
             BackupMCR()
         End If
@@ -251,6 +251,19 @@ tryagain:
         UCI.txtNick.Text = TextBox1.Text
         UCI.cmbChannel.Text = "#MedPlay"
         UCI.btnIRCConnect()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Try
+            If MedGuiR.CheckBox17.Checked = False Then
+                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\netplay.html" & Chr(34))
+            Else
+                MedBrowser.Show()
+                MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\netplay.html")
+            End If
+        Catch ex As Exception
+            MsgBox("No Mednafen Help Detected", MsgBoxStyle.Critical, "Error")
+        End Try
     End Sub
 
     Private Sub StartNetPath()

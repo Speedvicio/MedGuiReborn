@@ -54,6 +54,7 @@ Partial Class MedClient
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,9 +131,6 @@ Partial Class MedClient
         Me.TextBox1.Size = New System.Drawing.Size(132, 20)
         Me.TextBox1.TabIndex = 35
         Me.ToolTip1.SetToolTip(Me.TextBox1, "The Nick used on NetPlay Session")
-        '
-        'OpenFileDialog1
-        '
         '
         'Button2
         '
@@ -268,7 +266,7 @@ Partial Class MedClient
         'Button3
         '
         Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Location = New System.Drawing.Point(762, 238)
+        Me.Button3.Location = New System.Drawing.Point(762, 202)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(200, 23)
         Me.Button3.TabIndex = 45
@@ -310,7 +308,7 @@ Partial Class MedClient
         Me.CheckBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(762, 215)
+        Me.CheckBox2.Location = New System.Drawing.Point(791, 399)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(171, 17)
         Me.CheckBox2.TabIndex = 44
@@ -318,12 +316,23 @@ Partial Class MedClient
         Me.CheckBox2.UseVisualStyleBackColor = True
         Me.CheckBox2.Visible = False
         '
+        'Button4
+        '
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button4.Location = New System.Drawing.Point(939, 231)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(23, 23)
+        Me.Button4.TabIndex = 46
+        Me.ToolTip1.SetToolTip(Me.Button4, "Open Mednafen NetPlay Help")
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'MedClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(970, 428)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.NumericUpDown1)
@@ -372,4 +381,5 @@ Partial Class MedClient
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Country As DataGridViewImageColumn
+    Friend WithEvents Button4 As Button
 End Class
