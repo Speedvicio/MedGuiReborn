@@ -2986,7 +2986,7 @@ SKIPHASH:
         'FindToolStripButton.PerformClick()
     End Sub
 
-    Private Sub SaveCutomPlaylistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveCutomPlaylistToolStripMenuItem.Click
+    Private Sub SavesCutomPlaylistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveCustomPlaylistToolStripMenuItem.Click
         If DataGridView1.Rows.Count < 2 Then
             MsgBox("You need to load more than 2 games on the grid to save playlist", vbOKOnly + vbCritical, "No games on grid...")
             Exit Sub
@@ -3000,12 +3000,8 @@ SKIPHASH:
         SendKeys.Send("{BKSP}") '("{ENTER}")
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        If TempFolder = "" Then
-            SaveCutomPlaylistToolStripMenuItem.Enabled = False
-        Else
-            SaveCutomPlaylistToolStripMenuItem.Enabled = True
-        End If
+    Private Sub LoadToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem1.Click
+
     End Sub
 
     Private Sub EmulatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmulatorToolStripMenuItem.Click
@@ -3359,6 +3355,14 @@ MisScan:
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True    ' evita il Beep!
             FindToolStripButton.PerformClick()
+        End If
+    End Sub
+
+    Private Sub LoadToolStripMenuItem1_MouseEnter(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem1.MouseEnter
+        If TempFolder = "" Then
+            SaveCustomPlaylistToolStripMenuItem.Enabled = False
+        Else
+            SaveCustomPlaylistToolStripMenuItem.Enabled = True
         End If
     End Sub
 

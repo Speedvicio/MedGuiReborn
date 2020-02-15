@@ -91,7 +91,7 @@
 
             MPCG.Button1.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
             MPCG.Button2.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\add.png"))
-            MedGuiR.SaveCutomPlaylistToolStripMenuItem.Image = MPCG.Button2.BackgroundImage
+            MedGuiR.SaveCustomPlaylistToolStripMenuItem.Image = MPCG.Button2.BackgroundImage
             MPCG.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MPCG.Button4.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\converter.png"))
             MPCG.Button5.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\cd_rom.png"))
