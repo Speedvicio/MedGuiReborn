@@ -249,6 +249,7 @@ tryagain:
         End If
 
         UCI.txtNick.Text = TextBox1.Text
+        UCI.cmbServer.Text = "irc.freenode.net"
         UCI.cmbChannel.Text = "#MedPlay"
         UCI.btnIRCConnect()
     End Sub
