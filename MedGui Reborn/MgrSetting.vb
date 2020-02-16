@@ -440,7 +440,7 @@ ErrorHandler:
 
     Private Sub xPath()
         sPath.Title = tPath
-        sPath.InitialDirectory = System.IO.Path.Combine(ExtractPath("path_firmware"), "firmware")
+        sPath.InitialDirectory = ExtractPath("path_firmware")
         sPath.Filter = fPath
         If sPath.ShowDialog() = DialogResult.OK Then
             pPath = sPath.FileName
