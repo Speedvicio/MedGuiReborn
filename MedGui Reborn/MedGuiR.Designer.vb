@@ -2423,7 +2423,7 @@ Partial Class MedGuiR
         Me.IconStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SY, Me.RebuildToolStripButton, Me.toolStripSeparator, Me.RecentToolStripButton1, Me.LoadCDToolStripButton, Me.FavouritesToolStripButton, Me.FoldeRomToolStripButton, Me.LoadRomToolStripButton, Me.TextBox1, Me.toolStripSeparator1, Me.NetToolStripButton, Me.ServerToolStripButton, Me.IRCToolStripButton, Me.ModLandToolStripButton, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.FlagToolStripSplitButton, Me.TextBox3, Me.FindToolStripButton})
         Me.IconStrip.Location = New System.Drawing.Point(12, 6)
         Me.IconStrip.Name = "IconStrip"
-        Me.IconStrip.Size = New System.Drawing.Size(755, 25)
+        Me.IconStrip.Size = New System.Drawing.Size(701, 25)
         Me.IconStrip.TabIndex = 34
         Me.IconStrip.Text = "ToolStrip1"
         Me.IconStrip.Visible = False
@@ -3906,7 +3906,7 @@ Partial Class MedGuiR
         'ClientOptionToolStripMenuItem
         '
         Me.ClientOptionToolStripMenuItem.Name = "ClientOptionToolStripMenuItem"
-        Me.ClientOptionToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClientOptionToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.ClientOptionToolStripMenuItem.Text = "&Client Option"
         Me.ClientOptionToolStripMenuItem.ToolTipText = "- Select a external server to connect" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Set a Nick" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Configure parameters"
         '
@@ -3914,7 +3914,7 @@ Partial Class MedGuiR
         '
         Me.AutoConnectToolStripMenuItem.CheckOnClick = True
         Me.AutoConnectToolStripMenuItem.Name = "AutoConnectToolStripMenuItem"
-        Me.AutoConnectToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AutoConnectToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.AutoConnectToolStripMenuItem.Text = "&Auto Connect"
         Me.AutoConnectToolStripMenuItem.ToolTipText = "Auto-join a server when you launch a game"
         '
@@ -4026,8 +4026,8 @@ Partial Class MedGuiR
         Me.Controls.Add(Me.CheckBox15)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.RE_tar_DDIT)
         Me.Controls.Add(Me.IconStrip)
+        Me.Controls.Add(Me.RE_tar_DDIT)
         Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button6)

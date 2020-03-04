@@ -3,7 +3,9 @@
 Public Class MedGuiR
 
     Public StartRom, romName, last_consoles, last_rom, LoadCD, tpce, multimedia, regioni, tempiso, Vjoypad, M3UDisk As String,
-        ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, FirstStart, missingame As Boolean
+        ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, missingame As Boolean
+
+    Public FirstStart As Boolean = True
 
     Dim prevcrc As String
     Public deadPOV As String
@@ -18,7 +20,7 @@ Public Class MedGuiR
         gIcon = My.Resources.MedGuiR
         Me.Icon = gIcon
 
-        FirstStart = True
+        'FirstStart = True
         InitJoy()
         MedExtra = Application.StartupPath & "\MedGuiR\"
         If File.Exists(Application.StartupPath & "\MGRerr.log") Then File.Delete(Application.StartupPath & "\MGRerr.log")
@@ -672,6 +674,9 @@ Public Class MedGuiR
             TempFolder = ""
             Exit Sub
         End If
+        TextBox3.Text = ""
+        ToolStripTextBox2.Text = ""
+
         SevenZCounter = 0
         stopscan = False
         stopiso = True
@@ -1567,7 +1572,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub CheckBox8_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox8.CheckedChanged
-        Datagrid_filter()
+        If FirstStart = False Then Datagrid_filter()
     End Sub
 
     Private Sub Button43_Click_1(sender As Object, e As EventArgs) Handles Button43.Click
@@ -1590,7 +1595,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
-        Datagrid_filter()
+        If FirstStart = False Then Datagrid_filter()
     End Sub
 
     Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
@@ -1712,7 +1717,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                         ScanFolder()
                     End If
                     Me.Text = "MedGui Reborn"
-                    Datagrid_filter()
+                    'Datagrid_filter()
                 Else
                     'For i = 0 To MyFiles.Length - 1
                     percorso = Frecord
@@ -1721,6 +1726,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                     'Next
                 End If
             Next
+
             Datagrid_filter()
 
         End If
@@ -2105,9 +2111,9 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         End If
         If SY.Text <> "" Then RebuildToolStripButton.Enabled = True
 
-        Datagrid_filter()
+        'Datagrid_filter()
         Try : DataGridView1.Focus() : DataGridView1.Rows(0).Cells(0).Selected = True : Catch ex As Exception : MGRWriteLog("MedGuiR - Select_system: " & ex.Message)
-            SY.Focus() : Datagrid_filter() : End Try
+            SY.Focus() : End Try 'Datagrid_filter() :
     End Sub
 
     Private Sub Button36_Click(sender As System.Object, e As System.EventArgs) Handles Button36.Click

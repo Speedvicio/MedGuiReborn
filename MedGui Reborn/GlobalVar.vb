@@ -445,6 +445,8 @@ CheckMednafen:
     End Sub
 
     Public Sub SingleScan()
+        MedGuiR.TextBox3.Text = ""
+        MedGuiR.ToolStripTextBox2.Text = ""
         skipother = False
         stopscan = False
         stopiso = False
@@ -465,7 +467,7 @@ CheckMednafen:
         fileTXT = ""
 
         'MedGuiR.remove_double()
-        MedGuiR.Datagrid_filter()
+        'MedGuiR.Datagrid_filter()
     End Sub
 
     Public Sub CustomScanFolder()
