@@ -6,7 +6,7 @@ Public Class MedGuiR
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, missingame As Boolean
 
     Public FirstStart As Boolean = True
-    Public GoodMode As Boolean = False
+    Public GodMode As Boolean = False
 
     Dim prevcrc As String
     Public deadPOV As String
@@ -757,7 +757,7 @@ Public Class MedGuiR
 
     Private Sub RebuildToolStripButton_Click(sender As Object, e As EventArgs) Handles RebuildToolStripButton.Click
 
-        If GoodMode = True Then
+        If GodMode = True Then
             RenameLikeDat = False
             Select Case SY.Text
                 Case "ss", "psx", "pcfx", ""
@@ -1023,7 +1023,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub Button42_Click(sender As Object, e As EventArgs) Handles Button42.Click
-        If TextBox35.Text = "SUCA_FORTE" Then GoodMode = True
+        If TextBox35.Text = "SUCA_FORTE" Then GodMode = True : MsgBox("GodMode Enabled!", MsgBoxStyle.Information + vbOKOnly) : Exit Sub
         select_link()
         If WS.Text <> "Mednafen Bios" Then open_link()
     End Sub
@@ -1132,7 +1132,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
