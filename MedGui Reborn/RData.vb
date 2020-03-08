@@ -3,6 +3,7 @@
 Module RData
     Public percorso, base_file, riga, fileTXT, ext, romname, country, full_path, status As String
     Public OthersDat As Boolean
+    Public RenameLikeDat As Boolean = False
 
     Sub LMain()
 
@@ -55,7 +56,7 @@ Boing:
                 'End If
                 'End If
 
-                If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Then
+                If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or UCase(romname).Contains("Enhancement Chip") Then
                 Else
                     If ext <> "" Then
                         Select Case LCase(ext)
@@ -90,11 +91,15 @@ Boing:
         Dim indice = riga.IndexOf(Chr(34))
         Dim indice1 As Integer
 
-        If OthersDat = False Then
-            indice1 = riga.IndexOf(".")
+        'If OthersDat = False Then
+        'indice1 = riga.IndexOf(".")
+        'Else
+        If riga.Contains("].") Then
+            indice1 = riga.IndexOf("].") + 1
         Else
             indice1 = riga.IndexOf(").") + 1
         End If
+        'End If
 
         Dim indice2 = riga.IndexOf(" (")
         Dim rrom As String
@@ -107,6 +112,9 @@ Boing:
                 indice3 = rrom.IndexOf("(")
                 country = rrom.Substring(indice3, Len(rrom) - indice3)
                 status = "Ok"
+
+                If RenameLikeDat = True Then RenameFile(rrom)
+
                 'stopscan = True
                 rrom = Replace(rrom, country, "")
 
@@ -118,7 +126,7 @@ Boing:
                 'End If
                 'End If
 
-                If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Then
+                If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or UCase(romname).Contains("Enhancement Chip") Then
                 Else
                     If ext <> "" Then
                         MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(rrom.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
@@ -128,9 +136,19 @@ Boing:
                 'If Counter = 0 Then stopscan = True
             End If
         Catch
-            'MsgBox("suca")
         End Try
 
+    End Sub
+
+    Private Sub RenameFile(FixedRomName)
+        Dim frpath As String = Path.GetDirectoryName(full_path)
+        Dim GetFixedExt As String = Path.GetExtension(full_path)
+        Dim newFile As String = Path.Combine(frpath, FixedRomName & GetFixedExt)
+
+        If full_path <> newFile Then
+            Rename(full_path, newFile)
+            full_path = newFile
+        End If
     End Sub
 
     Public Sub RealcdIsoName()

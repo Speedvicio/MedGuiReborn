@@ -6,6 +6,7 @@ Public Class MedGuiR
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, missingame As Boolean
 
     Public FirstStart As Boolean = True
+    Public GoodMode As Boolean = False
 
     Dim prevcrc As String
     Public deadPOV As String
@@ -755,6 +756,21 @@ Public Class MedGuiR
     End Sub
 
     Private Sub RebuildToolStripButton_Click(sender As Object, e As EventArgs) Handles RebuildToolStripButton.Click
+
+        If GoodMode = True Then
+            RenameLikeDat = False
+            Select Case SY.Text
+                Case "ss", "psx", "pcfx", ""
+                Case Else
+                    Dim RRenameFile As String
+                    RRenameFile = MsgBox("During the scan I can rename the correct ROMs following the convention of the selected DAT file." & vbCrLf &
+        "Do you want me to rename the ROMs?" & vbCrLf & "(THE OPERATION IS IRREVERSIBLE)", MsgBoxStyle.Exclamation + vbYesNo, "Rename the romset?...")
+                    If RRenameFile = vbYes Then
+                        RenameLikeDat = True
+                    End If
+            End Select
+        End If
+
         SetSRom()
 
         If StartRom.Trim = "" Or Directory.Exists(StartRom.Trim) = False Then
@@ -1007,6 +1023,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub Button42_Click(sender As Object, e As EventArgs) Handles Button42.Click
+        If TextBox35.Text = "SUCA_FORTE" Then GoodMode = True
         select_link()
         If WS.Text <> "Mednafen Bios" Then open_link()
     End Sub
