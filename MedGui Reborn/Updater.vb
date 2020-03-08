@@ -132,12 +132,13 @@ Module Updater
 
             System.IO.File.Delete(MedExtra & "Update\DATs.zip")
 
-            MsgBox("All rom database updated!", vbOKOnly + MsgBoxStyle.Information, "DATs updated...")
+            MsgBox("All rom database updated!" & vbCrLf &
+                   "If you want you can scan again the games playlist", vbOKOnly + MsgBoxStyle.Information, "DATs updated...")
 
-            If MedGuiR.Text = "MedGui Reborn - Recent Roms" Or MedGuiR.Text = "MedGui Reborn - Favorites Roms" Or MedGuiR.SY.Text.Trim = "" Then
-            Else
-                MedGuiR.ScanFolder()
-            End If
+            'If MedGuiR.Text = "MedGui Reborn - Recent Roms" Or MedGuiR.Text = "MedGui Reborn - Favorites Roms" Or MedGuiR.SY.Text.Trim = "" Then
+            'Else
+            'MedGuiR.ScanFolder()
+            'End If
         Catch exio As IOException
             MGRWriteLog("Updater - get_Datupdate: " & exio.Message)
         Catch ex As Exception

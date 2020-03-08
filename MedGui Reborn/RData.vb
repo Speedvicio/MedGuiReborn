@@ -91,15 +91,13 @@ Boing:
         Dim indice = riga.IndexOf(Chr(34))
         Dim indice1 As Integer
 
-        'If OthersDat = False Then
-        'indice1 = riga.IndexOf(".")
-        'Else
         If riga.Contains("].") Then
             indice1 = riga.IndexOf("].") + 1
-        Else
+        ElseIf riga.Contains(").") Then
             indice1 = riga.IndexOf(").") + 1
+        Else
+            indice1 = riga.IndexOf(".")
         End If
-        'End If
 
         Dim indice2 = riga.IndexOf(" (")
         Dim rrom As String
@@ -107,7 +105,6 @@ Boing:
         Try
             If indice >= 0 Then
                 Dim indice3 As Integer
-                'rrom = riga.Substring(indice + 1, indice1 - indice - 1)
                 rrom = riga.Substring(indice + 1, indice1 - indice - 1)
                 indice3 = rrom.IndexOf("(")
                 country = rrom.Substring(indice3, Len(rrom) - indice3)
