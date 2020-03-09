@@ -28,4 +28,9 @@ Public Class FGodMode
         F1 = Me
         CenterForm()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        RenameLikeDat = 0
+        Me.Close()
+    End Sub
 End Class

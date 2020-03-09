@@ -28,6 +28,7 @@ Partial Class FGodMode
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -71,16 +72,26 @@ Partial Class FGodMode
         '
         Me.Button1.Location = New System.Drawing.Point(0, 79)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 23)
+        Me.Button1.Size = New System.Drawing.Size(70, 23)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "&DO IT"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(80, 79)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(70, 23)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "&ABORT"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'FGodMode
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(155, 106)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -99,4 +110,5 @@ Partial Class FGodMode
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Button1 As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Button2 As Button
 End Class
