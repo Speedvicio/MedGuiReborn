@@ -80,7 +80,7 @@ Module scan
         MedGuiR.Label95.Text = "Custom Setting"
         MedGuiR.TextBox2.Visible = True
         SoxStatus.Close()
-        RenameLikeDat = False
+        RenameLikeDat = 0
     End Sub
 
     Public Sub decript()

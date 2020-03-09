@@ -157,6 +157,12 @@
     </Compile>
     <Compile Include="Extract.vb" />
     <Compile Include="GlobalSuppressions.vb" />
+    <Compile Include="FGodMode.Designer.vb">
+      <DependentUpon>FGodMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FGodMode.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ListChip.vb" />
     <Compile Include="MAImaker.Designer.vb">
       <DependentUpon>MAImaker.vb</DependentUpon>
@@ -369,6 +375,9 @@
     <EmbeddedResource Include="ErLog.resx">
       <DependentUpon>ErLog.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGodMode.resx">
+      <DependentUpon>FGodMode.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MAImaker.resx">
       <DependentUpon>MAImaker.vb</DependentUpon>

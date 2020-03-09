@@ -756,18 +756,12 @@ Public Class MedGuiR
     End Sub
 
     Private Sub RebuildToolStripButton_Click(sender As Object, e As EventArgs) Handles RebuildToolStripButton.Click
-
+        RenameLikeDat = 0
         If GodMode = True Then
-            RenameLikeDat = False
             Select Case SY.Text
                 Case "ss", "psx", "pcfx", ""
                 Case Else
-                    Dim RRenameFile As String
-                    RRenameFile = MsgBox("During the scan I can rename the correct ROMs following the convention of the selected DAT file." & vbCrLf &
-        "Do you want me to rename the ROMs?" & vbCrLf & "(THE OPERATION IS IRREVERSIBLE)", MsgBoxStyle.Exclamation + vbYesNo, "Rename the romset?...")
-                    If RRenameFile = vbYes Then
-                        RenameLikeDat = True
-                    End If
+                    FGodMode.ShowDialog()
             End Select
         End If
 
@@ -1023,7 +1017,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub Button42_Click(sender As Object, e As EventArgs) Handles Button42.Click
-        If TextBox35.Text = "SUCA_FORTE" Then GodMode = True : MsgBox("GodMode Enabled!", MsgBoxStyle.Information + vbOKOnly) : Exit Sub
+        If TextBox35.Text = "SUCA_FORTE" Then GodMode = True : MsgBox("God Mode Enabled!", MsgBoxStyle.Information + vbOKOnly) : Exit Sub
         select_link()
         If WS.Text <> "Mednafen Bios" Then open_link()
     End Sub

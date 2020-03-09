@@ -3,7 +3,7 @@
 Module RData
     Public percorso, base_file, riga, fileTXT, ext, romname, country, full_path, status As String
     Public OthersDat As Boolean
-    Public RenameLikeDat As Boolean = False
+    Public RenameLikeDat As Integer = 0
 
     Sub LMain()
 
@@ -110,7 +110,7 @@ Boing:
                 country = rrom.Substring(indice3, Len(rrom) - indice3)
                 status = "Ok"
 
-                If RenameLikeDat = True Then RenameFile(rrom)
+                If RenameLikeDat <> 0 Then RenameFile(rrom)
 
                 'stopscan = True
                 rrom = Replace(rrom, country, "")
@@ -146,6 +146,13 @@ Boing:
             Rename(full_path, newFile)
             full_path = newFile
         End If
+
+        If RenameLikeDat = 2 Then
+            Dim newfolder As String = Path.Combine(FGodMode.DestFile, real_name)
+            My.Computer.FileSystem.CreateDirectory(newfolder)
+            My.Computer.FileSystem.CopyFile(newFile, Path.Combine(newfolder, Path.GetFileName(newFile)), True)
+        End If
+
     End Sub
 
     Public Sub RealcdIsoName()
