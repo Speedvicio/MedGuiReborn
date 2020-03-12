@@ -147,8 +147,22 @@ Boing:
             full_path = newFile
         End If
 
+        Dim TNewFolder As String
+        Select Case ext
+            Case ".gbc", ".gb"
+                TNewFolder = "Nintendo - Game Boy/"
+            Case ".ws", ".wsc"
+                TNewFolder = "Bandai - WonderSwan/"
+            Case ".ngp", ".ngc"
+                TNewFolder = "SNK -Neo Geo Pocket/"
+            Case ".nes", ".fds"
+                TNewFolder = "Nintendo Entertainment System/"
+            Case Else
+                TNewFolder = Nothing
+        End Select
+
         If RenameLikeDat = 2 Then
-            Dim newfolder As String = Path.Combine(FGodMode.DestFile, real_name)
+            Dim newfolder As String = Path.Combine(FGodMode.DestFile, TNewFolder & real_name)
             My.Computer.FileSystem.CreateDirectory(newfolder)
             My.Computer.FileSystem.CopyFile(newFile, Path.Combine(newfolder, Path.GetFileName(newFile)), True)
         End If

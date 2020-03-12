@@ -130,6 +130,8 @@
             MedGuiR.Button47.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\download.png"))
             MedGuiR.Button44.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\dat.png"))
+            MedGuiR.ManageFileToolStripMenuItem.Image = MedGuiR.Button44.BackgroundImage
+            MedGuiR.ADVManageToolStripMenuItem.Image = MedGuiR.Button44.BackgroundImage
             MedGuiR.ConvertAudioToToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\converter.png"))
             MedGuiR.ConvertFolderAudioToToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\converter.png"))
             MedGuiR.AddAudioFileToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\audio.png"))

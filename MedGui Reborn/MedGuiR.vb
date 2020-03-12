@@ -6,7 +6,6 @@ Public Class MedGuiR
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, missingame As Boolean
 
     Public FirstStart As Boolean = True
-    Public GodMode As Boolean = False
 
     Dim prevcrc As String
     Public deadPOV As String
@@ -137,6 +136,13 @@ Public Class MedGuiR
                     Else
                         RemoveFromFavoritesToolStripMenuItem.Enabled = False
                     End If
+
+                    Select Case SY.Text
+                        Case "ss", "psx", "pcfx", ""
+                            ADVManageToolStripMenuItem.Enabled = False
+                        Case Else
+                            ADVManageToolStripMenuItem.Enabled = True
+                    End Select
 
                     If percorso.Trim <> "" Then
                         If File.Exists(percorso & ".ips") Then
@@ -756,15 +762,6 @@ Public Class MedGuiR
     End Sub
 
     Private Sub RebuildToolStripButton_Click(sender As Object, e As EventArgs) Handles RebuildToolStripButton.Click
-        RenameLikeDat = 0
-        If GodMode = True Then
-            Select Case SY.Text
-                Case "ss", "psx", "pcfx", ""
-                Case Else
-                    FGodMode.ShowDialog()
-            End Select
-        End If
-
         SetSRom()
 
         If StartRom.Trim = "" Or Directory.Exists(StartRom.Trim) = False Then
@@ -1017,7 +1014,6 @@ Public Class MedGuiR
     End Sub
 
     Private Sub Button42_Click(sender As Object, e As EventArgs) Handles Button42.Click
-        If TextBox35.Text = "SUCA_FORTE" Then GodMode = True : MsgBox("God Mode Enabled!", MsgBoxStyle.Information + vbOKOnly) : Exit Sub
         select_link()
         If WS.Text <> "Mednafen Bios" Then open_link()
     End Sub
@@ -3018,7 +3014,12 @@ SKIPHASH:
     End Sub
 
     Private Sub LoadToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoadToolStripMenuItem1.Click
-
+        Select Case SY.Text
+            Case "ss", "psx", "pcfx", ""
+                ManageFileToolStripMenuItem.Enabled = False
+            Case Else
+                ManageFileToolStripMenuItem.Enabled = True
+        End Select
     End Sub
 
     Private Sub EmulatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmulatorToolStripMenuItem.Click
@@ -3049,6 +3050,14 @@ SKIPHASH:
     Private Sub RadioButton3_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton3.CheckedChanged
         Button30.Enabled = True
         Button31.Enabled = False
+    End Sub
+
+    Private Sub ManageFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageFileToolStripMenuItem.Click
+        FGodMode.ShowDialog()
+    End Sub
+
+    Private Sub ManageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ADVManageToolStripMenuItem.Click
+        FGodMode.ShowDialog()
     End Sub
 
     Private Declare Function GetActiveWindow Lib "user32" () As Long
