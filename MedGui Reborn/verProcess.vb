@@ -2,19 +2,26 @@
     Public tProcess, wDir, Arg, pSox As String, execute As New Process
 
     Public Sub verMednafen()
-        Dim Mednafen_Exe() As Process
-        Mednafen_Exe = Process.GetProcessesByName("mednafen", My.Computer.Name)
 
-        Threading.Thread.Sleep(200)
-        If Mednafen_Exe.Length > 0 Then
+        If ISON_Mednafen(200) = True Then
             My.Computer.FileSystem.CopyFile(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg", MedExtra & "Backup\" & "Bkp.tmp", True)
-            'System.IO.File.SetAttributes(MedExtra & "Backup\" & "Bkp.tmp", System.IO.FileAttributes.Hidden)
             KillProcess()
             My.Computer.FileSystem.MoveFile(MedExtra & "Backup\" & "Bkp.tmp", MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg", True)
-            'System.IO.File.SetAttributes(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg", System.IO.FileAttributes.Normal)
         End If
+        'End If
 
     End Sub
+
+    Friend Function ISON_Mednafen(sleep As Integer) As Boolean
+        Threading.Thread.Sleep(sleep)
+        Dim Mednafen_Exe() As Process
+        Mednafen_Exe = Process.GetProcessesByName("mednafen", My.Computer.Name)
+        If Mednafen_Exe.Length > 0 Then
+            ISON_Mednafen = True
+        Else
+            ISON_Mednafen = False
+        End If
+    End Function
 
     Public Sub EmbProcess()
         'Dim myProcess As New Process()

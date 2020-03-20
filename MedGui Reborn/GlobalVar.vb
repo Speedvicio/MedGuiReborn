@@ -291,49 +291,42 @@ Module GlobalVar
     Public Sub MednafenV()
         If MedGuiR.TextBox4.Text = "" Or File.Exists(MedGuiR.TextBox4.Text & "\mednafen.exe") = False Then Exit Sub
 
-CheckConfig:
+        Dim CountAttemp As Integer = 0
 
         tProcess = "mednafen"
         wDir = MedGuiR.TextBox4.Text
         Arg = Nothing
         StartProcess()
-        'Process.Start(MedGuiR.TextBox4.Text & "\mednafen.exe")
-        Threading.Thread.Sleep(2000)
 
-        If File.Exists(MedGuiR.TextBox4.Text & "\mednafen.cfg") And File.Exists(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg") Then
-            If File.Exists(MedExtra & "\Backup\OLD_mednafen-09x.cfg") Then File.Delete(MedExtra & "\Backup\OLD_mednafen-09x.cfg")
-            File.Move(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg", MedExtra & "\Backup\OLD_mednafen-09x.cfg")
-            MsgBox("Old Mednafen Configuration File moved into Backup folder.", vbInformation + MsgBoxStyle.OkOnly)
-            DMedConf = "mednafen"
-        ElseIf File.Exists(MedGuiR.TextBox4.Text & "\mednafen.cfg") Then
-            DMedConf = "mednafen"
-        ElseIf File.Exists(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg") Then
-            DMedConf = "mednafen-09x"
-        Else
-            MsgBox("No Mednafen Configuration File Found , I proceeded to create one myself.", vbInformation + MsgBoxStyle.OkOnly)
-            GoTo CheckConfig
-        End If
+ReCheckConfig:
 
-        Dim CountAttemp As Integer = 0
+        CountAttemp += 1
 
-CheckMednafen:
-        Threading.Thread.Sleep(500)
-
-        'If File.Exists(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg") = True Then
-        'Threading.Thread.Sleep(1000)
-        Dim cmed() As Process = Process.GetProcessesByName("mednafen", My.Computer.Name)
-        If cmed.Length > 0 Then
-            CountAttemp = CountAttemp + 1
-            If CountAttemp > 10 Then
-                Dim mop = MsgBox("Please close Mednafen emulation to open MedGui Reborn" & vbCrLf &
-                                 "Ok = Continue, Cancel = Close MedGuiR", MsgBoxStyle.Information + vbOKCancel, "Can't run MedGui Reborn...")
-
-                If mop = MsgBoxResult.Cancel Then MedGuiR.ResetAll = True : MedGuiR.Close()
+        If ISON_Mednafen(150) = False Then
+            If File.Exists(MedGuiR.TextBox4.Text & "\mednafen.cfg") And File.Exists(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg") Then
+                If File.Exists(MedExtra & "\Backup\OLD_mednafen-09x.cfg") Then File.Delete(MedExtra & "\Backup\OLD_mednafen-09x.cfg")
+                File.Move(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg", MedExtra & "\Backup\OLD_mednafen-09x.cfg")
+                MsgBox("Old Mednafen Configuration File moved into Backup folder.", vbInformation + MsgBoxStyle.OkOnly)
+                DMedConf = "mednafen"
+            ElseIf File.Exists(MedGuiR.TextBox4.Text & "\mednafen.cfg") Then
+                DMedConf = "mednafen"
+            ElseIf File.Exists(MedGuiR.TextBox4.Text & "\mednafen-09x.cfg") Then
+                DMedConf = "mednafen-09x"
+            Else
+                MsgBox("No Mednafen Configuration File Found , I proceeded to create one myself.", vbInformation + MsgBoxStyle.OkOnly)
+                Threading.Thread.Sleep(2000)
             End If
-            GoTo CheckMednafen
-        End If
+        Else
+            If CountAttemp > 20 Then
+                Dim mop As MsgBoxResult = MsgBox("Please close Mednafen emulation to open MedGui Reborn" & vbCrLf &
+                             "Ok = Continue, Cancel = Close MedGuiR", MsgBoxStyle.Information + vbOKCancel, "Can't run MedGui Reborn...")
 
-        'End If
+                If mop = vbCancel Then MedGuiR.ResetAll = True : MedGuiR.Close() : Exit Sub
+            End If
+
+            GoTo ReCheckConfig
+
+        End If
 
         DetectMedGuiR()
         Detectx86_4()
@@ -349,7 +342,7 @@ CheckMednafen:
         If Len(vmedClear.Trim) < 5 Then vmedClear = vmedClear & "0"
         If Val(vmedClear) < 9380 And vmedClear <> "" Then
             Message.Label1.Text = "MedGui Reborn support only Mednafen >= 0.9.38" & vbCrLf &
-                "Please download Last Mednafen version at:"
+        "Please download Last Mednafen version at:"
             Message.LinkLabel1.Text = "http://forum.fobby.net/index.php?t=thread&frm_id=19&"
             Message.ShowDialog()
             MedGuiR.Close()

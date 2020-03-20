@@ -1892,10 +1892,8 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles TimerControlMednafen.Tick
-        Threading.Thread.Sleep(1500)
-        Dim process_med() As Process
-        process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
-        If process_med.Length > 0 Then
+
+        If ISON_Mednafen(1500) = True Then
             TimerControlMednafen.Stop()
             TimerControlMednafen.Enabled = False
 
