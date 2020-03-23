@@ -1122,7 +1122,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -2357,6 +2357,8 @@ inputagain:
     End Sub
 
     Private Sub Button53_Click(sender As Object, e As EventArgs) Handles Button53.Click
+        If CheckBox18.Checked = False Then CheckBox18.Checked = True
+
         If ComboBox7.Text.Trim = "" Then
             MsgBox("FTP Adress empty!", vbOKOnly + vbExclamation)
         ElseIf TextBox25.Text.Trim = "" Then
@@ -2387,11 +2389,15 @@ inputagain:
                 Dim rnd1 As New Random()
                 inputnick = InputBox("You don't have set a netplay nick on Mednafen, please input one")
                 If inputnick.Trim = "" Then inputnick = "Idontwantanick" & rnd1.Next(1000)
+
+                Arg = " -netplay.nick " & inputnick
+                tProcess = "mednafen"
+                wDir = TextBox4.Text
+                StartProcess()
             End If
-            Arg = " -netplay.nick " & inputnick
-            tProcess = "mednafen"
-            wDir = TextBox4.Text
-            StartProcess()
+        End If
+
+        If CheckBox18.Checked = True Then
             CheckBox19.Enabled = True
         Else
             CheckBox19.Enabled = False
