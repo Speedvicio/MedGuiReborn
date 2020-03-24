@@ -10,6 +10,7 @@ Public Class MedGuiR
     Dim prevcrc As String
     Public deadPOV As String
     Dim countPOV As Integer
+    Dim FormIsON As Boolean
 
     Public tgdbCID As String
 
@@ -529,6 +530,7 @@ Public Class MedGuiR
 
     Private Sub DataGridView1_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles DataGridView1.KeyUp
         If DataGridView1.CurrentRow Is Nothing Then Exit Sub
+        If FormIsON = False Then Exit Sub
         Select Case e.KeyCode
             Case Keys.Enter
                 StartStatic_emu()
@@ -3068,7 +3070,8 @@ SKIPHASH:
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles TimerControlJoy.Tick
 
-        If GetActiveWindow = 0 Then Exit Sub
+        'If GetActiveWindow = 0 Then Exit Sub
+        If FormIsON = False Then Exit Sub
 
         Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
         customCulture.NumberFormat.NumberDecimalSeparator = "."
@@ -3397,6 +3400,14 @@ MisScan:
         Else
             SaveCustomPlaylistToolStripMenuItem.Enabled = True
         End If
+    End Sub
+
+    Private Sub MedGuiR_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        FormIsON = True
+    End Sub
+
+    Private Sub MedGuiR_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
+        FormIsON = False
     End Sub
 
 End Class
