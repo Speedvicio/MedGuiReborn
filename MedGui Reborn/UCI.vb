@@ -3,6 +3,7 @@
 Public Class UCI
     Public WithEvents irc As IrcClient, oldch, nuser, RawCommand As String
     Public p As New System.Diagnostics.Process
+    Dim rnd1 As New Random()
 
     Private Sub btnConnect_Click(sender As System.Object, e As System.EventArgs) Handles btnConnect.Click
         btnIRCConnect()
@@ -81,7 +82,7 @@ Public Class UCI
 
     Private Sub irc_PvtMessage(User As String, Message As String) Handles irc.PrivateMessage
         Try
-            My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+            If MedClient.MuteNotification = False Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
             rtbOutput.SelectionColor = Color.Fuchsia
             rtbOutput.AppendText(User & vbTab + Message & vbNewLine)
             rtbOutput.ScrollToCaret()
@@ -91,7 +92,7 @@ Public Class UCI
 
     Private Sub irc_OvtMessage(Channel As String, User As String, Message As String) Handles irc.ChannelMessage
         Try
-            If Message.Contains(txtNick.Text) Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+            If Message.Contains(txtNick.Text) Then If MedClient.MuteNotification = False Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
             rtbOutput.AppendText(User & vbTab + Message & vbNewLine)
             rtbOutput.ScrollToCaret()
         Catch
@@ -159,10 +160,18 @@ Public Class UCI
 
     Private Sub irc_sendnotice(Channel As String, Message As String) Handles irc.NoticeMessage
         If MedPlay.VerifyForm("MedClient") And cmbChannel.Text = "#MedPlay" Then
-            My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+            If MedClient.MuteNotification = False Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
         End If
 
         Try
+            Select Case True
+                Case Message.Contains("This nickname is registered.")
+                    Dim InputPsw As Object
+                    InputPsw = InputBox("This nickname is registered, input the password", "Input your password...")
+                    txtSend.Text = "/msg NickServ identify " & txtNick.Text & " " & InputPsw
+                    'irc.ServerPass = InputPsw
+                    If txtSend.Text.Trim <> "" Then btnSend.PerformClick()
+            End Select
             rtbOutput.SelectionColor = Color.Goldenrod
             rtbOutput.AppendText(Message & vbNewLine)
             rtbOutput.ScrollToCaret()
@@ -172,6 +181,10 @@ Public Class UCI
 
     Private Sub irc_ServerMessage(message As String) Handles irc.ServerMessage
         Try
+            Select Case True
+                Case message.Contains("Nick/channel is temporarily unavailable")
+                    UsedNick("Nick/channel is temporarily unavailable, select another", Nick & rnd1.Next(10, 99))
+            End Select
             rtbOutput.AppendText(message & vbNewLine)
             rtbOutput.ScrollToCaret()
         Catch
@@ -182,22 +195,26 @@ Public Class UCI
         Try
             rtbOutput.SelectionColor = Color.Purple
             rtbOutput.AppendText("*** " & Nick & " already used" & vbNewLine)
-            Dim ChangeNick As String
-            ChangeNick = InputBox(Nick & " already used" & vbCrLf & "Select a new Nick",
-                              "Select a new Nick", Nick & "_")
-            txtNick.Text = ChangeNick
-
-            If btnConnect.Text = "&Connect" Then
-                txtPort.Enabled = True
-                cmbServer.Enabled = True
-                txtNick.Enabled = True
-                btnConnect.PerformClick()
-            ElseIf btnConnect.Text = "&Disconnect" Then
-                txtSend.Text = "/nick " & ChangeNick
-                btnSend.PerformClick()
-            End If
+            UsedNick(Nick & " already used" & vbCrLf & "Select a new Nick", Nick & rnd1.Next(10, 99))
         Catch
         End Try
+    End Sub
+
+    Private Sub UsedNick(mxg As String, res As String)
+
+        Dim ChangeNick As Object
+        ChangeNick = InputBox(mxg, "Change Nick...", res)
+        txtNick.Text = ChangeNick
+
+        If btnConnect.Text = "&Connect" Then
+            txtPort.Enabled = True
+            cmbServer.Enabled = True
+            txtNick.Enabled = True
+            btnConnect.PerformClick()
+        ElseIf btnConnect.Text = "&Disconnect" Then
+            txtSend.Text = "/nick " & ChangeNick
+            btnSend.PerformClick()
+        End If
     End Sub
 
     Private Sub irc_UpdateUsers(Channel As String, userlist() As String) Handles irc.UpdateUsers
@@ -290,10 +307,9 @@ Public Class UCI
 
     Private Sub SIrClient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
-        Dim rnd1 As New Random()
 
         If GlobalVar.UCInick = "" Then
-            If MgrSetting.TextBox5.Text <> "" Then txtNick.Text = MgrSetting.TextBox5.Text Else : txtNick.Text = "Crappy" & rnd1.Next(1000)
+            If MgrSetting.TextBox5.Text <> "" Then txtNick.Text = MgrSetting.TextBox5.Text Else : txtNick.Text = "Crappy" & rnd1.Next(500)
         Else
             txtNick.Text = GlobalVar.UCInick
         End If
@@ -352,14 +368,6 @@ Public Class UCI
 
     Private Sub rtbOutput_LinkClicked(sender As Object, e As LinkClickedEventArgs) Handles rtbOutput.LinkClicked
         p = Process.Start(e.LinkText)
-    End Sub
-
-    Private Sub ToolTip1_Popup(sender As Object, e As PopupEventArgs) Handles ToolTip1.Popup
-
-    End Sub
-
-    Private Sub rtbOutput_TextChanged(sender As Object, e As EventArgs) Handles rtbOutput.TextChanged
-
     End Sub
 
     Private Sub irc_reload()
