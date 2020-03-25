@@ -88,7 +88,7 @@ Public Class MedClient
         ParseUsedData()
     End Sub
 
-    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs)
+    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
         VerifyRomOnServer()
     End Sub
 
@@ -122,7 +122,7 @@ Public Class MedClient
         End Try
     End Sub
 
-    Private Sub DataGridView1_Click(sender As Object, e As EventArgs)
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
         VerifyRomOnServer()
     End Sub
 
@@ -139,7 +139,7 @@ Public Class MedClient
         End Try
     End Sub
 
-    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs)
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
         If DataGridView1.Rows.Count <= 0 Then Exit Sub
         If TextBox1.Text.Trim = DataGridView1.CurrentRow.Cells(0).Value().Trim Then
             MsgBox("Same Nickname for players, change your Nickname", vbOKOnly + MsgBoxStyle.Exclamation, "Same Nickname...")
@@ -245,10 +245,12 @@ tryagain:
 
         NotifyIcon1.Text = "MedClient" & vbCrLf & "Online Session: " & DataGridView1.Rows.Count & vbCrLf & "Connected On IRC: " & UCI.lstUsers.Items.Count
 
-        If MuteNotification = False Or Me.Visible = False Then NotifyEz()
+        NotifyEz()
     End Sub
 
     Private Sub NotifyEz()
+        If MuteNotification = True Or Me.Visible = True Then Exit Sub
+
         Dim notify As New EZNotification
         Dim style As EZNotification.Style
         Dim design As EZNotification.FormDesign
@@ -273,12 +275,11 @@ tryagain:
                 Dim CN, CG, CC, sessions As String
                 For i = 0 To DataGridView1.Rows.Count - 1
                     CN = DataGridView1.Rows(i).Cells(0).Value
-                    CG = DataGridView1.Rows(i).Cells(0).Value
-                    CC = DataGridView1.Rows(i).Cells(0).Value
+                    CG = DataGridView1.Rows(i).Cells(1).Value
+                    CC = DataGridView1.Rows(i).Cells(2).Value
                     sessions += CN & " Play: " & CG & " By: " & CC & vbCrLf
                 Next
-                sessions = "MedClient Opened Sessions:" & vbCrLf & sessions
-                notify.Show("Online Session Info", sessions, style, design)
+                notify.Show("Online Session Info", "MedClient Opened Sessions:" & vbCrLf & sessions, style, design)
             End If
         End If
     End Sub
