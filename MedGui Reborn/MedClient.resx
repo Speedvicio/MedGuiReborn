@@ -129,6 +129,39 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>283, 17</value>
   </metadata>
+  <metadata name="TimerRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>382, 17</value>
+  </metadata>
+  <data name="RichTextBox1.Text" xml:space="preserve">
+    <value>Pressing the 'T' key will bring up the network play console
+
+/ping	      
+Pings the server.
+
+/swap A B	
+Swap/Exchange all instances of controllers A and B(numbered from 1).
+
+/dupe [A] [...]	
+Duplicate and take instances of specified controller(s)(numbered from 1).
+
+/drop [A] [...]	
+Drop all instances of specified controller(s).
+
+/take [A] [...]	
+Take all instances of specified controller(s).
+
+/list	               
+ List players in game.
+
+/quit	               
+Disconnects from the netplay server.</value>
+  </data>
+  <metadata name="NotifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>505, 17</value>
+  </metadata>
+  <metadata name="NotifyContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>620, 17</value>
+  </metadata>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -165,31 +198,4 @@
   <metadata name="Country.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="TimerRefresh.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>382, 17</value>
-  </metadata>
-  <data name="RichTextBox1.Text" xml:space="preserve">
-    <value>Pressing the 'T' key will bring up the network play console
-
-/ping	      
-Pings the server.
-
-/swap A B	
-Swap/Exchange all instances of controllers A and B(numbered from 1).
-
-/dupe [A] [...]	
-Duplicate and take instances of specified controller(s)(numbered from 1).
-
-/drop [A] [...]	
-Drop all instances of specified controller(s).
-
-/take [A] [...]	
-Take all instances of specified controller(s).
-
-/list	               
- List players in game.
-
-/quit	               
-Disconnects from the netplay server.</value>
-  </data>
 </root>

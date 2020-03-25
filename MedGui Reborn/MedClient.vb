@@ -2,6 +2,7 @@
 
 Public Class MedClient
     Public checkmed As Boolean
+    Public MuteNotification As Boolean = False
     Private InitialNetPath, NMedVersion() As String
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -11,6 +12,7 @@ Public Class MedClient
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
+        NotifyIcon1.Icon = gIcon
         Read_Resource()
         If Directory.Exists(MedExtra & "\MedPlay") = False Then Directory.CreateDirectory(MedExtra & "\MedPlay")
         Label4.Text = MedGuiR.Label8.Text & " " & MedGuiR.Label57.Text
@@ -27,6 +29,10 @@ Public Class MedClient
         F1 = Me
         CenterForm()
         ColorizeForm()
+
+        AddUCI()
+        Me.WindowState = 2
+        CheckBox1.Checked = True
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerNetPlay.Tick
@@ -115,7 +121,7 @@ Public Class MedClient
         End Try
     End Sub
 
-    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
+    Private Sub DataGridView1_Click(sender As Object, e As EventArgs)
         VerifyRomOnServer()
     End Sub
 
@@ -132,7 +138,7 @@ Public Class MedClient
         End Try
     End Sub
 
-    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DataGridView1.DoubleClick
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs)
         If DataGridView1.Rows.Count <= 0 Then Exit Sub
         If TextBox1.Text.Trim = DataGridView1.CurrentRow.Cells(0).Value().Trim Then
             MsgBox("Same Nickname for players, change your Nickname", vbOKOnly + MsgBoxStyle.Exclamation, "Same Nickname...")
@@ -241,31 +247,20 @@ tryagain:
         TimerRefresh.Interval = NumericUpDown1.Value * 1000
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If UCI.Visible = True Then
-            UCI.Close()
-            UCI.Show()
-        Else
-            UCI.Show()
-        End If
+    Private Sub AddUCI()
+        If UCI.Visible = True Then UCI.Close()
+
+        UCI.TopLevel = False
+        UCI.TopMost = True
+        Panel1.Controls.Add(UCI)
+        UCI.Dock = DockStyle.Fill
+        UCI.FormBorderStyle = FormBorderStyle.None
+        UCI.Show()
 
         UCI.txtNick.Text = TextBox1.Text
         UCI.cmbServer.Text = "irc.freenode.net"
         UCI.cmbChannel.Text = "#MedPlay"
         UCI.btnIRCConnect()
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Try
-            If MedGuiR.CheckBox17.Checked = False Then
-                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\netplay.html" & Chr(34))
-            Else
-                MedBrowser.Show()
-                MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\netplay.html")
-            End If
-        Catch ex As Exception
-            MsgBox("No Mednafen Help Detected", MsgBoxStyle.Critical, "Error")
-        End Try
     End Sub
 
     Private Sub StartNetPath()
@@ -304,6 +299,64 @@ tryagain:
             Case ""
                 InitialNetPath = ""
         End Select
+    End Sub
+
+    Private Sub MedClient_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        UCI.irc.Disconnect()
+        UCI.FormBorderStyle = FormBorderStyle.Sizable
+        UCI.Dock = DockStyle.None
+        NotifyIcon1.Dispose()
+        MuteNotification = False
+        MedGuiR.Button53.Enabled = True
+    End Sub
+
+    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
+        ShowMClient()
+    End Sub
+
+    Private Sub MedClient_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        If Me.Visible = True Then
+            If Me.WindowState = FormWindowState.Minimized Then
+                Me.Hide()
+                NotifyIcon1.Visible = True
+            End If
+        End If
+    End Sub
+
+    Private Sub ShowMedClientToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowMedClientToolStripMenuItem.Click
+        ShowMClient()
+    End Sub
+
+    Private Sub CloseMedClientToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseMedClientToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+        If CheckBox3.Checked = True Then
+            MuteNotification = True
+        Else
+            MuteNotification = False
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Try
+            If MedGuiR.CheckBox17.Checked = False Then
+                Process.Start(Chr(34) & MedGuiR.TextBox4.Text & "\Documentation\netplay.html" & Chr(34))
+            Else
+                MedBrowser.Show()
+                MedBrowser.WebBrowser1.Navigate(MedGuiR.TextBox4.Text & "\Documentation\netplay.html")
+            End If
+        Catch ex As Exception
+            MsgBox("No Mednafen Help Detected", MsgBoxStyle.Critical, "Error")
+        End Try
+    End Sub
+
+    Private Sub ShowMClient()
+        Me.Show()
+        Me.WindowState = FormWindowState.Maximized
+        Me.Activate()
+        NotifyIcon1.Visible = False
     End Sub
 
 End Class

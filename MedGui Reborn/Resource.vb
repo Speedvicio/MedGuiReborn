@@ -202,7 +202,7 @@
             TGDBSettings.PictureBox3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             TGDBSettings.PictureBox4.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
 
-            MedClient.Button4.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\help.png"))
+            MedClient.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\help.png"))
 
             MedBrowser.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\net.png"))
         Catch ex As Exception
