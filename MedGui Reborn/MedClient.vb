@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports EZNotifications
 
 Public Class MedClient
     Public checkmed As Boolean
@@ -241,6 +242,45 @@ tryagain:
         SetFTPData()
         FtpDownloadOnConnect()
         ParseUsedData()
+
+        NotifyIcon1.Text = "MedClient" & vbCrLf & "Online Session: " & DataGridView1.Rows.Count & vbCrLf & "Connected On IRC: " & UCI.lstUsers.Items.Count
+
+        If MuteNotification = False Or Me.Visible = False Then NotifyEz()
+    End Sub
+
+    Private Sub NotifyEz()
+        Dim notify As New EZNotification
+        Dim style As EZNotification.Style
+        Dim design As EZNotification.FormDesign
+
+        style = EZNotification.Style.Exclamation
+
+        Dim codecolor As Integer = 0
+        Select Case EzColoursToolStripComboBox.Text
+            Case "Bright"
+                codecolor = 0
+            Case "Colorful"
+                codecolor = 1
+            Case "Dark"
+                codecolor = 2
+        End Select
+
+        design = codecolor
+
+        If DataGridView1.Rows.Count > 0 Then
+            If DataGridView1.Rows.Count = 1 And DataGridView1.Rows(0).Cells(0).Value = TextBox1.Text Then
+            Else
+                Dim CN, CG, CC, sessions As String
+                For i = 0 To DataGridView1.Rows.Count - 1
+                    CN = DataGridView1.Rows(i).Cells(0).Value
+                    CG = DataGridView1.Rows(i).Cells(0).Value
+                    CC = DataGridView1.Rows(i).Cells(0).Value
+                    sessions += CN & " Play: " & CG & " By: " & CC & vbCrLf
+                Next
+                sessions = "MedClient Opened Sessions:" & vbCrLf & sessions
+                notify.Show("Online Session Info", sessions, style, design)
+            End If
+        End If
     End Sub
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged

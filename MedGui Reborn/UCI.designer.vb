@@ -252,7 +252,6 @@ Partial Class UCI
 
     End Sub
     Private WithEvents rtbOutput As System.Windows.Forms.RichTextBox
-    Private WithEvents lstUsers As System.Windows.Forms.ListBox
     Private WithEvents label2 As System.Windows.Forms.Label
     Private WithEvents label1 As System.Windows.Forms.Label
     Private WithEvents LabelPort As System.Windows.Forms.Label
@@ -268,4 +267,5 @@ Partial Class UCI
     Public WithEvents btnConnect As Button
     Public WithEvents txtSend As TextBox
     Public WithEvents btnSend As Button
+    Friend WithEvents lstUsers As ListBox
 End Class

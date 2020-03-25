@@ -79,6 +79,9 @@
     <Reference Include="DiscTools">
       <HintPath>.\DiscTools.dll</HintPath>
     </Reference>
+    <Reference Include="EZNotifications">
+      <HintPath>.\EZNotifications.dll</HintPath>
+    </Reference>
     <Reference Include="FTPclient">
       <HintPath>.\FTPclient.dll</HintPath>
     </Reference>

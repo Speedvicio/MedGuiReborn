@@ -23,9 +23,9 @@ Partial Class MedClient
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedClient))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TimerNetPlay = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -37,18 +37,6 @@ Partial Class MedClient
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.TimerRefresh = New System.Windows.Forms.Timer(Me.components)
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.NotifyContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ShowMedClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CloseMedClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,15 +50,29 @@ Partial Class MedClient
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Country = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.TimerRefresh = New System.Windows.Forms.Timer(Me.components)
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.NotifyContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ShowMedClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CloseMedClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.EzColoursToolStripComboBox = New System.Windows.Forms.ToolStripComboBox()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.NotifyContextMenuStrip.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TimerNetPlay
@@ -158,122 +160,6 @@ Partial Class MedClient
         "load the same copy of game on your Hard Disk.")
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'TimerRefresh
-        '
-        Me.TimerRefresh.Interval = 30000
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(762, 12)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(135, 17)
-        Me.CheckBox1.TabIndex = 42
-        Me.CheckBox1.Text = "&Refresh grid every sec:"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDown1.Increment = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(903, 11)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {600, 0, 0, 0})
-        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(59, 20)
-        Me.NumericUpDown1.TabIndex = 43
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {30, 0, 0, 0})
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.RichTextBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(762, 202)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 334)
-        Me.GroupBox1.TabIndex = 47
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Using Mednafen's netplay console"
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RichTextBox1.Location = New System.Drawing.Point(3, 16)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(194, 315)
-        Me.RichTextBox1.TabIndex = 0
-        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
-        '
-        'NotifyIcon1
-        '
-        Me.NotifyIcon1.ContextMenuStrip = Me.NotifyContextMenuStrip
-        Me.NotifyIcon1.Text = "MedClient "
-        '
-        'NotifyContextMenuStrip
-        '
-        Me.NotifyContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowMedClientToolStripMenuItem, Me.CloseMedClientToolStripMenuItem})
-        Me.NotifyContextMenuStrip.Name = "NotifyContextMenuStrip"
-        Me.NotifyContextMenuStrip.Size = New System.Drawing.Size(162, 48)
-        '
-        'ShowMedClientToolStripMenuItem
-        '
-        Me.ShowMedClientToolStripMenuItem.Name = "ShowMedClientToolStripMenuItem"
-        Me.ShowMedClientToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
-        Me.ShowMedClientToolStripMenuItem.Text = "&Show MedClient"
-        '
-        'CloseMedClientToolStripMenuItem
-        '
-        Me.CloseMedClientToolStripMenuItem.Name = "CloseMedClientToolStripMenuItem"
-        Me.CloseMedClientToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
-        Me.CloseMedClientToolStripMenuItem.Text = "&Close MedClient"
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(765, 546)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(140, 17)
-        Me.CheckBox3.TabIndex = 50
-        Me.CheckBox3.Text = "&Mute Notification Sound"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.Location = New System.Drawing.Point(936, 542)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(23, 23)
-        Me.Button3.TabIndex = 51
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'SplitContainer1
-        '
-        Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SplitContainer1.Location = New System.Drawing.Point(2, -1)
-        Me.SplitContainer1.Name = "SplitContainer1"
-        Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
-        '
-        'SplitContainer1.Panel1
-        '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.DataGridView1)
-        '
-        'SplitContainer1.Panel2
-        '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.Panel1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(754, 575)
-        Me.SplitContainer1.SplitterDistance = 196
-        Me.SplitContainer1.TabIndex = 52
-        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
@@ -288,16 +174,16 @@ Partial Class MedClient
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Size = New System.Drawing.Size(754, 196)
         Me.DataGridView1.TabIndex = 42
         Me.ToolTip1.SetToolTip(Me.DataGridView1, "Double lest mouse click to access in a session")
@@ -390,6 +276,124 @@ Partial Class MedClient
         Me.Country.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Country.Width = 68
         '
+        'TimerRefresh
+        '
+        Me.TimerRefresh.Interval = 30000
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(762, 12)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(135, 17)
+        Me.CheckBox1.TabIndex = 42
+        Me.CheckBox1.Text = "&Refresh grid every sec:"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.NumericUpDown1.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown1.Location = New System.Drawing.Point(903, 11)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {600, 0, 0, 0})
+        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(59, 20)
+        Me.NumericUpDown1.TabIndex = 43
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {30, 0, 0, 0})
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox1.Location = New System.Drawing.Point(762, 202)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(200, 334)
+        Me.GroupBox1.TabIndex = 47
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Using Mednafen's netplay console"
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RichTextBox1.Location = New System.Drawing.Point(3, 16)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(194, 315)
+        Me.RichTextBox1.TabIndex = 0
+        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.ContextMenuStrip = Me.NotifyContextMenuStrip
+        Me.NotifyIcon1.Text = "MedClient "
+        '
+        'NotifyContextMenuStrip
+        '
+        Me.NotifyContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EzColoursToolStripComboBox, Me.ToolStripSeparator2, Me.ShowMedClientToolStripMenuItem, Me.CloseMedClientToolStripMenuItem})
+        Me.NotifyContextMenuStrip.Name = "NotifyContextMenuStrip"
+        Me.NotifyContextMenuStrip.Size = New System.Drawing.Size(182, 103)
+        Me.NotifyContextMenuStrip.Text = "MedClient"
+        '
+        'ShowMedClientToolStripMenuItem
+        '
+        Me.ShowMedClientToolStripMenuItem.Name = "ShowMedClientToolStripMenuItem"
+        Me.ShowMedClientToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.ShowMedClientToolStripMenuItem.Text = "&Show MedClient"
+        '
+        'CloseMedClientToolStripMenuItem
+        '
+        Me.CloseMedClientToolStripMenuItem.Name = "CloseMedClientToolStripMenuItem"
+        Me.CloseMedClientToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
+        Me.CloseMedClientToolStripMenuItem.Text = "&Close MedClient"
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(762, 546)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(106, 17)
+        Me.CheckBox3.TabIndex = 50
+        Me.CheckBox3.Text = "&Mute Notification"
+        Me.ToolTip1.SetToolTip(Me.CheckBox3, "Mute Sound and  Hide Notification Widget ")
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Location = New System.Drawing.Point(936, 542)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(23, 23)
+        Me.Button3.TabIndex = 51
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'SplitContainer1
+        '
+        Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SplitContainer1.Location = New System.Drawing.Point(2, -1)
+        Me.SplitContainer1.Name = "SplitContainer1"
+        Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.DataGridView1)
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Panel1)
+        Me.SplitContainer1.Size = New System.Drawing.Size(754, 575)
+        Me.SplitContainer1.SplitterDistance = 196
+        Me.SplitContainer1.TabIndex = 52
+        '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -397,6 +401,18 @@ Partial Class MedClient
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(754, 375)
         Me.Panel1.TabIndex = 49
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(178, 6)
+        '
+        'EzColoursToolStripComboBox
+        '
+        Me.EzColoursToolStripComboBox.Items.AddRange(New Object() {"Bright", "Colorful", "Dark"})
+        Me.EzColoursToolStripComboBox.Name = "EzColoursToolStripComboBox"
+        Me.EzColoursToolStripComboBox.Size = New System.Drawing.Size(121, 23)
+        Me.EzColoursToolStripComboBox.Text = "Bright"
         '
         'MedClient
         '
@@ -418,13 +434,13 @@ Partial Class MedClient
         Me.Text = "MedClient"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.NotifyContextMenuStrip.ResumeLayout(False)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -468,4 +484,6 @@ Partial Class MedClient
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Country As DataGridViewImageColumn
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents EzColoursToolStripComboBox As ToolStripComboBox
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
 End Class
