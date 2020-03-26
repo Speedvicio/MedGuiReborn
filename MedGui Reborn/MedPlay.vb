@@ -99,6 +99,7 @@ Module MedPlay
 
     Public Sub ParseMednafenConfig()
         GamePar = ""
+        Dim rnd3 As New Random()
         Dim row, splitrow() As String
         Try
             Using reader As New StreamReader(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg")
@@ -115,6 +116,7 @@ Module MedPlay
                             MedGuiR.PortToolStripTextBox1.Text = port.Trim
                         Case row.Contains("netplay.nick")
                             Nick = splitrow(1)
+                            If Nick.Trim = "" Then Nick = "NoNick" & rnd3.Next(1, 500)
                             MedGuiR.NickToolStripTextBox1.Text = Nick.Trim
                         Case row.Contains("netplay.password")
                             If splitrow(1) = "" Then Password = "No" Else Password = "Yes"

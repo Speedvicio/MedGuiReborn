@@ -2392,7 +2392,7 @@ inputagain:
             If Nick = "" Then
                 Dim rnd1 As New Random()
                 inputnick = InputBox("You don't have set a netplay nick on Mednafen, please input one")
-                If inputnick.Trim = "" Then inputnick = "Idontwantanick" & rnd1.Next(1000)
+                If inputnick.Trim = "" Then inputnick = "NoNick" & rnd1.Next(1, 300)
 
                 Arg = " -netplay.nick " & inputnick
                 tProcess = "mednafen"

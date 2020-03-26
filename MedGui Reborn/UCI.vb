@@ -13,7 +13,10 @@ Public Class UCI
         Try
             If (String.IsNullOrEmpty(cmbServer.Text.Trim())) Then MessageBox.Show("Please specify a server") : Return
             If (String.IsNullOrEmpty(cmbChannel.Text.Trim())) Then MessageBox.Show("Please specify a channel") : Return
-            If (String.IsNullOrEmpty(txtNick.Text.Trim())) Then MessageBox.Show("Please specify a nick") : Return
+            If (String.IsNullOrEmpty(txtNick.Text.Trim())) Then
+                Dim rinp As Object = InputBox("Please specify a nick", "Input a nick...", "Crappy" & rnd1.Next(1, 99))
+                If rinp.trim = "" Then Exit Sub Else txtNick.Text = rinp
+            End If
 
             If cmbChannel.Text.Contains("#") = False Then cmbChannel.Text = "#" & cmbChannel.Text
 

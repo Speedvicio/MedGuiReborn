@@ -5,6 +5,7 @@ Public Class MedClient
     Public checkmed As Boolean
     Public MuteNotification As Boolean = False
     Private InitialNetPath, NMedVersion() As String
+    Dim rnd2 As New Random()
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         CloseNetSession()
@@ -151,7 +152,10 @@ Public Class MedClient
         port = DataGridView1.CurrentRow.Cells(5).Value()
         Gamekey = DataGridView1.CurrentRow.Cells(7).Value()
         NMednafenV = DataGridView1.CurrentRow.Cells(10).Value()
-        If TextBox1.Text = "" Then TextBox1.Text = "Idontwantanick" Else : Nick = TextBox1.Text
+        If TextBox1.Text = "" Then
+            TextBox1.Text = "NoNick" & rnd2.Next(1, 300)
+        End If
+        Nick = TextBox1.Text
         Dim epass, egkey As String
         If TextBox2.Text.Trim = "" Then
             Password = "No"
@@ -348,7 +352,10 @@ tryagain:
     End Sub
 
     Private Sub MedClient_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        UCI.irc.Disconnect()
+        Try
+            UCI.irc.Disconnect()
+        Catch
+        End Try
         UCI.FormBorderStyle = FormBorderStyle.Sizable
         UCI.Dock = DockStyle.None
         NotifyIcon1.Dispose()
