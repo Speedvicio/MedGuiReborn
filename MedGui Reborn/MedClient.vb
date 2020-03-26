@@ -276,9 +276,16 @@ tryagain:
                 CN = DataGridView1.Rows(i).Cells(0).Value
                 CG = DataGridView1.Rows(i).Cells(1).Value
                 CC = DataGridView1.Rows(i).Cells(2).Value
-                sessions += CN & " Play: " & CG & " By: " & UCase(CC) & vbCrLf
+                sessions += CN & " PLAY: " & CG & " USING: " & UCase(CC)
+
+                Dim cl As String
+                For x = 0 To sessions.Length / 2
+                    cl += "-"
+                    cl += " "
+                Next
+                sessions += vbCrLf & cl & vbCrLf
             Next
-            If sessions <> "" Then notify.Show("Online Session Info", "MedClient Opened Sessions:" & vbCrLf & sessions, style, design)
+            If sessions <> "" Then notify.Show("Online Session Info", "MedClient Opened Sessions:" & vbCrLf & vbCrLf & sessions, style, design)
         End If
     End Sub
 
