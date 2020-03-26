@@ -6,7 +6,7 @@ Public Class MedGuiR
         ssetting, dwnboxm, SorF, label2index As Integer, SwSetting, AutoUp, ResetAll, missingame As Boolean
 
     Public FirstStart As Boolean = True
-
+    Public HideUCIEz As Boolean = False
     Dim prevcrc As String
     Public deadPOV As String
     Dim countPOV As Integer
@@ -895,6 +895,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub IRCToolStripButton_Click(sender As Object, e As EventArgs) Handles IRCToolStripButton.Click
+        HideUCIEz = True
         UCI.Show()
     End Sub
 

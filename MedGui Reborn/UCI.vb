@@ -85,7 +85,10 @@ Public Class UCI
 
     Private Sub irc_PvtMessage(User As String, Message As String) Handles irc.PrivateMessage
         Try
-            If MedClient.MuteNotification = False Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+            If MedClient.MuteNotification = False Then
+                My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+                MedClient.NotifyEz("Private Message From:", User & vbTab + Message, 0)
+            End If
             rtbOutput.SelectionColor = Color.Fuchsia
             rtbOutput.AppendText(User & vbTab + Message & vbNewLine)
             rtbOutput.ScrollToCaret()
@@ -95,7 +98,12 @@ Public Class UCI
 
     Private Sub irc_OvtMessage(Channel As String, User As String, Message As String) Handles irc.ChannelMessage
         Try
-            If Message.Contains(txtNick.Text) Then If MedClient.MuteNotification = False Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+            If Message.Contains(txtNick.Text) Then
+                If MedClient.MuteNotification = False Then
+                    My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+                    MedClient.NotifyEz("Message From Irc Channel:", User & vbTab + Message, 0)
+                End If
+            End If
             rtbOutput.AppendText(User & vbTab + Message & vbNewLine)
             rtbOutput.ScrollToCaret()
         Catch
@@ -129,6 +137,7 @@ Public Class UCI
     Private Sub irc_userleft(channel As String, User As String) Handles irc.UserLeft
         Try
             rtbOutput.SelectionColor = Color.Red
+            MedClient.NotifyEz(cmbChannel.Text & " Notice:", "*** " & User & " has left the chat-room", 2)
             rtbOutput.AppendText("*** " & User & " has left the chat-room" & vbNewLine)
             lstUsers.Items.Remove(User)
             lstUsers.Update()
@@ -142,9 +151,10 @@ Public Class UCI
         Try
             rtbOutput.SelectionColor = Color.Blue
             'newUser = nuser
+            MedClient.NotifyEz(cmbChannel.Text & " Notice:", "*** " & oldUser & " is now knows as " & newUser, 0)
             rtbOutput.AppendText("*** " & oldUser & " is now knows as " & newUser & vbNewLine)
             lstUsers.Items.Remove(oldUser)
-            If newUser <> "" Then lstUsers.Items.Add(newUser)
+            If newUser <> "" Then lstUsers.Items.Add(newUser) : lstUsers.Update()
             rtbOutput.ScrollToCaret()
         Catch
         End Try
@@ -153,9 +163,9 @@ Public Class UCI
     Private Sub irc_userjoin(channel As String, User As String) Handles irc.UserJoined
         Try
             rtbOutput.SelectionColor = Color.Green
+            MedClient.NotifyEz(cmbChannel.Text & " Notice:", "*** " & User & " has joined the chat-room", 0)
             rtbOutput.AppendText("*** " & User & " has joined the chat-room" & vbNewLine)
-            lstUsers.Items.Add(User)
-            lstUsers.Update()
+            If User.Trim <> txtNick.Text Then lstUsers.Items.Add(User) : lstUsers.Update()
             rtbOutput.ScrollToCaret()
         Catch
         End Try
@@ -175,6 +185,7 @@ Public Class UCI
                     'irc.ServerPass = InputPsw
                     If txtSend.Text.Trim <> "" Then btnSend.PerformClick()
             End Select
+            MedClient.NotifyEz(cmbChannel.Text & " Notice:", Message, 0)
             rtbOutput.SelectionColor = Color.Goldenrod
             rtbOutput.AppendText(Message & vbNewLine)
             rtbOutput.ScrollToCaret()
@@ -221,16 +232,16 @@ Public Class UCI
     End Sub
 
     Private Sub irc_UpdateUsers(Channel As String, userlist() As String) Handles irc.UpdateUsers
-        lstUsers.Items.Clear()
+        'lstUsers.Items.Clear()
 
         For Each s As String In userlist
-            If Not lstUsers.Items.Contains(s) Then
+            If Not lstUsers.Items.Contains(s) Then 'And Not lstUsers.Items.Contains("@" & s) Then
                 lstUsers.Items.Add(s)
             End If
         Next
 
         'lstUsers.Items.AddRange(userlist)
-        'lstUsers.Update()
+        lstUsers.Update()
     End Sub
 
     Private Sub SIrClient_FormClosed(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
@@ -303,7 +314,11 @@ Public Class UCI
     Private Sub lstUsers_DoubleClick(sender As Object, e As EventArgs) Handles lstUsers.DoubleClick
         If lstUsers.Items.Count <= 1 Or lstUsers.SelectedItem = txtNick.Text Then Return
         'CreatePVTForm()
-        txtSend.Text = "/msg " & lstUsers.SelectedItem & " "
+
+        Dim cleanuser As String
+        If lstUsers.SelectedItem.ToString.Substring(0, 1) = "@" Then cleanuser = lstUsers.SelectedItem.ToString.Remove(0, 1)
+
+        txtSend.Text = "/msg " & cleanuser & " "
         txtSend.Focus()
         txtSend.SelectionStart = txtSend.Text.Length
     End Sub
@@ -356,6 +371,7 @@ Public Class UCI
             irc.PartChannel(oldch)
             irc.JoinChannel(cmbChannel.Text)
             oldch = cmbChannel.Text.Trim()
+            lstUsers.Items.Clear()
         End If
     End Sub
 

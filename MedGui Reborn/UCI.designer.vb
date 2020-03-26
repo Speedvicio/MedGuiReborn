@@ -267,5 +267,5 @@ Partial Class UCI
     Public WithEvents btnConnect As Button
     Public WithEvents txtSend As TextBox
     Public WithEvents btnSend As Button
-    Friend WithEvents lstUsers As ListBox
+    Public WithEvents lstUsers As ListBox
 End Class

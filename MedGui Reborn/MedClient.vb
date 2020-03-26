@@ -10,6 +10,7 @@ Public Class MedClient
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         CloseNetSession()
         CleanLocalParsed()
+        MedGuiR.IRCToolStripButton.Enabled = True
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -32,9 +33,11 @@ Public Class MedClient
         CenterForm()
         ColorizeForm()
 
+        MedGuiR.HideUCIEz = False
         AddUCI()
         Me.WindowState = 2
         CheckBox1.Checked = True
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerNetPlay.Tick
@@ -247,31 +250,7 @@ tryagain:
         FtpDownloadOnConnect()
         ParseUsedData()
 
-        NotifyIcon1.Text = "MedClient" & vbCrLf & "Online Session: " & DataGridView1.Rows.Count & vbCrLf & "Connected On IRC: " & UCI.lstUsers.Items.Count
-
-        NotifyEz()
-    End Sub
-
-    Private Sub NotifyEz()
-        If MuteNotification = True Or Me.Visible = True Then Exit Sub
-
-        Dim notify As New EZNotification
-        Dim style As EZNotification.Style
-        Dim design As EZNotification.FormDesign
-
-        style = EZNotification.Style.Exclamation
-
-        Dim codecolor As Integer = 0
-        Select Case EzColoursToolStripComboBox.Text
-            Case "Bright"
-                codecolor = 0
-            Case "Colorful"
-                codecolor = 1
-            Case "Dark"
-                codecolor = 2
-        End Select
-
-        design = codecolor
+        NotifyIcon1.Text = "MedClient" & vbCrLf & "NetPlay Session: " & DataGridView1.Rows.Count & vbCrLf & "Connected On IRC: " & UCI.lstUsers.Items.Count
 
         If DataGridView1.Rows.Count > 0 Then
             Dim CN, CG, CC, sessions As String
@@ -289,9 +268,35 @@ tryagain:
                 Next
                 sessions += vbCrLf & cl & vbCrLf
             Next
-            If sessions <> "" Then notify.Show("Online Session Info", "MedClient Opened Sessions:" & vbCrLf & vbCrLf & sessions, style, design)
+            If sessions <> "" Then NotifyEz("NetPlay Session Info", "MedClient Opened Sessions:" & vbCrLf & vbCrLf & sessions, 2)
         End If
+
     End Sub
+
+    Friend Function NotifyEz(title As String, message As String, alert As Integer)
+        If MuteNotification = True Or Me.Visible = True Or MedGuiR.HideUCIEz = True Then Exit Function
+
+        Dim notify As New EZNotification
+        Dim style As EZNotification.Style
+        Dim design As EZNotification.FormDesign
+
+        style = alert
+
+        Dim codecolor As Integer = 0
+        Select Case EzColoursToolStripComboBox.Text
+            Case "Bright"
+                codecolor = 0
+            Case "Colorful"
+                codecolor = 1
+            Case "Dark"
+                codecolor = 2
+        End Select
+
+        design = codecolor
+
+        notify.Show(title, message, style, design)
+
+    End Function
 
     Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
         TimerRefresh.Interval = NumericUpDown1.Value * 1000
@@ -360,7 +365,6 @@ tryagain:
         UCI.Dock = DockStyle.None
         NotifyIcon1.Dispose()
         MuteNotification = False
-        MedGuiR.Button53.Enabled = True
     End Sub
 
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
