@@ -105,6 +105,7 @@ Public Class MedGuiR
 
         ClearFile()
         If noftp = False Then MedClient.CloseNetSession() : CleanLocalParsed() '
+        If MedClient.NotifyIcon1.Visible = True Then MedClient.NotifyIcon1.Dispose()
     End Sub
 
     Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
