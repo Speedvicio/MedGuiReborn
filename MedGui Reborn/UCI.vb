@@ -316,7 +316,11 @@ Public Class UCI
         'CreatePVTForm()
 
         Dim cleanuser As String
-        If lstUsers.SelectedItem.ToString.Substring(0, 1) = "@" Then cleanuser = lstUsers.SelectedItem.ToString.Remove(0, 1)
+        If lstUsers.SelectedItem.ToString.Substring(0, 1) = "@" Then
+            cleanuser = lstUsers.SelectedItem.ToString.Remove(0, 1)
+        Else
+            cleanuser = lstUsers.SelectedItem.ToString
+        End If
 
         txtSend.Text = "/msg " & cleanuser & " "
         txtSend.Focus()
