@@ -58,6 +58,7 @@ Partial Class UCI
         Me.rtbOutput.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.rtbOutput.BackColor = System.Drawing.Color.White
         Me.rtbOutput.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtbOutput.Location = New System.Drawing.Point(12, 38)
         Me.rtbOutput.Name = "rtbOutput"

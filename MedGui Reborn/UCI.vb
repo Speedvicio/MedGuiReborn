@@ -60,7 +60,7 @@ Public Class UCI
                     rtbOutput.AppendText("TO " & Replace(RawCommand, "PRIVMSG ", "") &
                                      vbTab & txtSend.Text & vbCrLf)
                 ElseIf RawCommand.Contains("NOTICE ") Then
-                    rtbOutput.SelectionColor = Color.Goldenrod
+                    rtbOutput.SelectionColor = Color.OrangeRed
                     rtbOutput.AppendText(Replace(RawCommand, "NOTICE ", "") &
                                      vbTab & txtSend.Text & vbCrLf)
                 End If
@@ -186,7 +186,7 @@ Public Class UCI
                     If txtSend.Text.Trim <> "" Then btnSend.PerformClick()
             End Select
             MedClient.NotifyEz(cmbChannel.Text & " Notice:", Message, 0)
-            rtbOutput.SelectionColor = Color.Goldenrod
+            rtbOutput.SelectionColor = Color.Indigo
             rtbOutput.AppendText(Message & vbNewLine)
             rtbOutput.ScrollToCaret()
         Catch

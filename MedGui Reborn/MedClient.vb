@@ -254,6 +254,7 @@ tryagain:
 
         If DataGridView1.Rows.Count > 0 Then
             Dim CN, CG, CC, sessions As String
+            Dim olen As Integer
             For i = 0 To DataGridView1.Rows.Count - 1
                 If DataGridView1.Rows(i).Cells(0).Value = TextBox1.Text Then Continue For
                 CN = DataGridView1.Rows(i).Cells(0).Value
@@ -261,12 +262,13 @@ tryagain:
                 CC = DataGridView1.Rows(i).Cells(2).Value
                 sessions += CN & " PLAY: " & CG & " USING: " & UCase(CC)
 
-                Dim cl As String
-                For x = 0 To sessions.Length / 2
-                    cl += "-"
-                    cl += " "
+                Dim cl As String = ""
+                For x = 0 To (sessions.Length - olen)
+                    cl += "- "
                 Next
+
                 sessions += vbCrLf & cl & vbCrLf
+                olen = sessions.Length
             Next
             If sessions <> "" Then NotifyEz("NetPlay Session Info", "MedClient Opened Sessions:" & vbCrLf & vbCrLf & sessions, 2)
         End If
