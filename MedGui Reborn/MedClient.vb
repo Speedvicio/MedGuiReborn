@@ -44,6 +44,7 @@ Public Class MedClient
         Dim process_med() As Process
         process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
         If process_med.Length > 0 Then
+            CheckBox1.Checked = False
             TextBox1.Enabled = False
             If checkmed = False Then
                 NetIn = True
@@ -53,7 +54,7 @@ Public Class MedClient
         Else
             CloseNetSession()
             TextBox1.Enabled = True
-
+            CheckBox1.Checked = True
             'Read_Desync()
             'If contdes = 1 Then
             'File.Delete(MedGuiR.TextBox4.Text & "\" & consoles & ".cfg”)
@@ -367,6 +368,7 @@ tryagain:
         UCI.Dock = DockStyle.None
         NotifyIcon1.Dispose()
         MuteNotification = False
+        MedGuiR.Button53.Enabled = True
     End Sub
 
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
