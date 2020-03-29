@@ -97,6 +97,7 @@
             MedGuiR.TextBox23.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Start_Path"))
             MedGuiR.TextBox21.Text = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom")
             MedGuiR.CheckBox18.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Data_On")
+            MedClient.CheckBox3.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Mute_Notify")
         Catch ex As Exception
             MGRWriteLog("ManageIni - NetPlay: " & ex.Message)
         Finally
@@ -252,6 +253,8 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Start_Path", VSTripleDES.EncryptData(MedGuiR.TextBox23.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom", MedGuiR.TextBox21.Text)
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Data_On", MedGuiR.CheckBox18.CheckState)
+
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Mute_Notify", MedGuiR.CheckBox3.CheckState)
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Nick", UCInick)
             WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Server", UCIserver)

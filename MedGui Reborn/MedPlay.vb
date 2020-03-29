@@ -7,6 +7,7 @@ Module MedPlay
     Public SCountry, SLocation, Server, Password, Nick, NGameName, NRomName, NCRC, NModule, Gamekey, port, ping, NMednafenV, NNetParameters As String, NetIn, ftperror As Boolean
     Public GamePar As String
     Public ftp As New FTPclient
+    Dim dcWeb As dWebHook
 
     Public Sub SetFTPData()
         ftp.CurrentDirectory = "/" & MedGuiR.TextBox23.Text
@@ -43,6 +44,7 @@ Module MedPlay
     End Sub
 
     Public Sub FtpUploadOnConnect()
+
         Try
             'If ftp.FtpFileExists("/pub/upload.exe") Then
 
@@ -61,6 +63,9 @@ Module MedPlay
 
             ftp.Upload(MedExtra & "\MedPlay\" & Nick, Nick)
 
+            DiscordMessage("MedClient Netplay session opened:" & vbCrLf & "User: " & Nick & vbCrLf &
+                              "Game: " & NGameName & vbCrLf & "Platform: " & UCase(NModule), 33)
+
             If MedGuiR.CheckBox19.Checked = True Then
                 Select Case LCase(Path.GetExtension(percorso))
                     Case ".cue", ".ccd", ".m3u"
@@ -73,12 +78,22 @@ Module MedPlay
                         ftp.FtpCreateDirectory(ftp.CurrentDirectory & "Rom_" & Nick)
                         ftp.Upload(percorso, ftp.CurrentDirectory & "Rom_" & Nick & "/" & Path.GetFileName(percorso))
                 End Select
+
             End If
         Catch
             MsgBox("Unable to detect server ftp, verify data access or try to connect later", vbOKOnly + MsgBoxStyle.Exclamation, "FTP Connection error...")
             ftperror = True
             MedClient.Close()
         End Try
+    End Sub
+
+    Private Sub DiscordMessage(Message As String, lunghezza As Integer)
+        If MedClient.MuteNotification = False Then
+            Dim MyString As New String("- ", lunghezza)
+            dcWeb = New dWebHook
+            dcWeb.WebHook = VSTripleDES.DecryptData("LFIbuEfNFTOhwkOCQdewqUZhJKgXsw33NcxP8GfGPp8KQGlraxyzp5kaaKdNw9MJgXNeAJYEDvqhDQGqxl1zvoQL3ssxJ+JE4Ki+2N4tCTR31bPOsu7V/fHKHZYhqXDtRM32O/ATsp/GTFpBmVS9D5R/liqf0v0U1X5y5ipmRJdaU58BgLyy8eee0AASQECDB3tDZvie5SQj0AIKea7p/kLKRD2mbc1f6euSAx+xmOktXP98ZeyDM/FpnEj+on1hb26dG0FJ6rWMf9TO4r+Q4ccctOejeTXmCvVlcbdGD7SwqqUX/5sfLVpecRtEFPhBg0N3yZr9F0E=")
+            dcWeb.SendMessage(Message & vbCrLf & MyString)
+        End If
     End Sub
 
     Public Sub FtpDeleteOnDisconnect()
@@ -90,6 +105,7 @@ Module MedPlay
                 ftp.FtpDelete(ftp.CurrentDirectory & "Rom_" & Nick & "/" & NRomName)
                 ftp.FtpDeleteDirectory(ftp.CurrentDirectory & "Rom_" & Nick)
             End If
+            DiscordMessage("User: " & Nick & " has left MedClient Netplay session.", Nick.Trim.Length + 36)
         Catch
             MsgBox("Unable to detect server ftp, verify data access or try to connect later", vbOKOnly + MsgBoxStyle.Exclamation, "FTP Connection error...")
             ftperror = True

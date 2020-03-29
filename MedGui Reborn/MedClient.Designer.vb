@@ -50,6 +50,7 @@ Partial Class MedClient
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Country = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.TimerRefresh = New System.Windows.Forms.Timer(Me.components)
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
@@ -57,14 +58,13 @@ Partial Class MedClient
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.NotifyContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EzColoursToolStripComboBox = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ShowMedClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseMedClientToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.EzColoursToolStripComboBox = New System.Windows.Forms.ToolStripComboBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -276,6 +276,18 @@ Partial Class MedClient
         Me.Country.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Country.Width = 68
         '
+        'CheckBox3
+        '
+        Me.CheckBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(762, 546)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(106, 17)
+        Me.CheckBox3.TabIndex = 50
+        Me.CheckBox3.Text = "&Mute Notification"
+        Me.ToolTip1.SetToolTip(Me.CheckBox3, "Mute Sound ,  Hide Notification Widget , Hide Discord Announcement")
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
         'TimerRefresh
         '
         Me.TimerRefresh.Interval = 30000
@@ -337,8 +349,20 @@ Partial Class MedClient
         '
         Me.NotifyContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EzColoursToolStripComboBox, Me.ToolStripSeparator2, Me.ShowMedClientToolStripMenuItem, Me.CloseMedClientToolStripMenuItem})
         Me.NotifyContextMenuStrip.Name = "NotifyContextMenuStrip"
-        Me.NotifyContextMenuStrip.Size = New System.Drawing.Size(182, 103)
+        Me.NotifyContextMenuStrip.Size = New System.Drawing.Size(182, 81)
         Me.NotifyContextMenuStrip.Text = "MedClient"
+        '
+        'EzColoursToolStripComboBox
+        '
+        Me.EzColoursToolStripComboBox.Items.AddRange(New Object() {"Bright", "Colorful", "Dark"})
+        Me.EzColoursToolStripComboBox.Name = "EzColoursToolStripComboBox"
+        Me.EzColoursToolStripComboBox.Size = New System.Drawing.Size(121, 23)
+        Me.EzColoursToolStripComboBox.Text = "Bright"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(178, 6)
         '
         'ShowMedClientToolStripMenuItem
         '
@@ -351,18 +375,6 @@ Partial Class MedClient
         Me.CloseMedClientToolStripMenuItem.Name = "CloseMedClientToolStripMenuItem"
         Me.CloseMedClientToolStripMenuItem.Size = New System.Drawing.Size(181, 22)
         Me.CloseMedClientToolStripMenuItem.Text = "&Close MedClient"
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(762, 546)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(106, 17)
-        Me.CheckBox3.TabIndex = 50
-        Me.CheckBox3.Text = "&Mute Notification"
-        Me.ToolTip1.SetToolTip(Me.CheckBox3, "Mute Sound and  Hide Notification Widget ")
-        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -401,18 +413,6 @@ Partial Class MedClient
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(754, 375)
         Me.Panel1.TabIndex = 49
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(178, 6)
-        '
-        'EzColoursToolStripComboBox
-        '
-        Me.EzColoursToolStripComboBox.Items.AddRange(New Object() {"Bright", "Colorful", "Dark"})
-        Me.EzColoursToolStripComboBox.Name = "EzColoursToolStripComboBox"
-        Me.EzColoursToolStripComboBox.Size = New System.Drawing.Size(121, 23)
-        Me.EzColoursToolStripComboBox.Text = "Bright"
         '
         'MedClient
         '
