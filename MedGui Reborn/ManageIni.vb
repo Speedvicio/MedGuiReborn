@@ -97,7 +97,6 @@
             MedGuiR.TextBox23.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Start_Path"))
             MedGuiR.TextBox21.Text = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom")
             MedGuiR.CheckBox18.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Data_On")
-            MedClient.CheckBox3.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Mute_Notify")
         Catch ex As Exception
             MGRWriteLog("ManageIni - NetPlay: " & ex.Message)
         Finally
@@ -254,8 +253,6 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom", MedGuiR.TextBox21.Text)
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Data_On", MedGuiR.CheckBox18.CheckState)
 
-            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Mute_Notify", MedGuiR.CheckBox3.CheckState)
-
             WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Nick", UCInick)
             WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Server", UCIserver)
             WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Port", UCIport)
@@ -322,6 +319,25 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "TGDB API", "NEW_API", TGDBSettings.CheckBox1.CheckState)
         Catch ex As Exception
             MGRWriteLog("ManageIni - TGDB API: " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub MedClIniW()
+        Try
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Mute_Notify", MedClient.CheckBox3.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Notify_Interval", MedClient.NumericUpDown1.Value)
+        Catch ex As Exception
+            MGRWriteLog("ManageIni - MedClient: " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub RMedClIni()
+        Try
+            MedClient.CheckBox3.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Mute_Notify")
+            MedClient.NumericUpDown1.Value = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Notify_Interval")
+        Catch ex As Exception
+            MGRWriteLog("ManageIni - MedClIni: " & ex.Message)
+        Finally
         End Try
     End Sub
 

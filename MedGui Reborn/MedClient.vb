@@ -11,6 +11,7 @@ Public Class MedClient
         CloseNetSession()
         CleanLocalParsed()
         MedGuiR.IRCToolStripButton.Enabled = True
+        MedClIniW()
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -35,6 +36,7 @@ Public Class MedClient
 
         MedGuiR.HideUCIEz = False
         AddUCI()
+        RMedClIni()
         Me.WindowState = 2
         CheckBox1.Checked = True
 
