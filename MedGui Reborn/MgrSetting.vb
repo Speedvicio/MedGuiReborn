@@ -569,7 +569,7 @@ ErrorHandler:
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-        NetPlay.MyIp()
+        TextBox8.Text = MyIp()
     End Sub
 
     Private Sub Button5_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button5.Click

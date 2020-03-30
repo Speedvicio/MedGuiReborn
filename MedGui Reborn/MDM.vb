@@ -101,8 +101,8 @@ Public Class MDM
         Dim in_dat As String
         If ComboBox1.Text = "" Then
             in_dat = InputBox("Select a name for Dat")
-            ComboBox1.Text = in_dat
             If in_dat = "" Then Exit Sub
+            ComboBox1.Text = in_dat
         End If
         scans()
         MsgBox("Dat Created!", vbOKOnly + MsgBoxStyle.Information)

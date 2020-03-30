@@ -2,9 +2,9 @@
 Imports System.Net
 
 Module NetPlay
-    Public MyLocalIp As String
 
-    Public Sub MyIp()
+    Friend Function MyIp() As String
+        Dim MyLocalIp As String
         Try
             Dim wrq As WebRequest = WebRequest.Create("http://checkip.dyndns.org/") 'http://pchelplive.com/ip.php http://www.vocesuip.com/getip.php http://checkip.dyndns.org/
             Dim wrp As WebResponse = wrq.GetResponse()
@@ -23,7 +23,7 @@ Module NetPlay
                 MyLocalIp = Replace(MyLocalIp, ":", "")
                 MyLocalIp = Replace(MyLocalIp, "</body></html>", "")
 
-                MgrSetting.TextBox8.Text = MyLocalIp.Trim
+                MyIp = MyLocalIp.Trim
 
                 wrp.Close()
                 sr.Dispose()
@@ -33,7 +33,7 @@ Module NetPlay
             MsgBox("Server not Available at the moment, try later", MsgBoxStyle.Exclamation, "IP not found")
         End Try
 
-    End Sub
+    End Function
 
     Public Sub ServerCountry(CServer)
         Try

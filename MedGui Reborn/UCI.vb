@@ -14,8 +14,8 @@ Public Class UCI
             If (String.IsNullOrEmpty(cmbServer.Text.Trim())) Then MessageBox.Show("Please specify a server") : Return
             If (String.IsNullOrEmpty(cmbChannel.Text.Trim())) Then MessageBox.Show("Please specify a channel") : Return
             If (String.IsNullOrEmpty(txtNick.Text.Trim())) Then
-                Dim rinp As Object = InputBox("Please specify a nick", "Input a nick...", "Crappy" & rnd1.Next(1, 99))
-                If rinp.trim = "" Then Exit Sub Else txtNick.Text = rinp
+                Dim rinp As Object = InputBox("Please specify a nick", "Input a nick...", "")
+                If rinp.trim = "" Then Exit Sub Else txtNick.Text = rinp : NickButton.Text = "&" & txtNick.Text
             End If
 
             If cmbChannel.Text.Contains("#") = False Then cmbChannel.Text = "#" & cmbChannel.Text
@@ -23,8 +23,9 @@ Public Class UCI
             If btnConnect.Text = "&Connect" Then
                 irc = New IrcClient(cmbServer.Text, CInt(txtPort.Text))
                 irc.Nick = txtNick.Text
-                'btnConnect.Enabled = False
-                'cmbChannel.Enabled = False
+
+                'NickButton.Text = txtNick.Text
+
                 txtPort.Enabled = False
                 cmbServer.Enabled = False
                 txtNick.Enabled = False
@@ -42,6 +43,7 @@ Public Class UCI
                 'btnSend.Enabled = False
                 irc.Disconnect()
                 btnConnect.Text = "&Connect"
+                NickButton.Enabled = False
             End If
         Catch
         End Try
@@ -57,7 +59,7 @@ Public Class UCI
                 irc.SendRAW(Replace(Trim(RawCommand), "/", ""))
                 If RawCommand.Contains("PRIVMSG ") Then
                     rtbOutput.SelectionColor = Color.Chocolate
-                    rtbOutput.AppendText("TO " & Replace(RawCommand, "PRIVMSG ", "") &
+                    rtbOutput.AppendText("PVT TO " & Replace(RawCommand, "PRIVMSG ", "") &
                                      vbTab & txtSend.Text & vbCrLf)
                 ElseIf RawCommand.Contains("NOTICE ") Then
                     rtbOutput.SelectionColor = Color.OrangeRed
@@ -67,7 +69,7 @@ Public Class UCI
                 rtbOutput.ScrollToCaret()
             Else
                 irc.SendMessage(cmbChannel.Text, Trim(txtSend.Text))
-                rtbOutput.AppendText("<" & txtNick.Text & "> " & vbTab & txtSend.Text & vbCrLf)
+                rtbOutput.AppendText("<" & txtNick.Text & "> " & txtSend.Text & vbCrLf)
                 rtbOutput.ScrollToCaret()
                 txtSend.Clear()
             End If
@@ -154,6 +156,10 @@ Public Class UCI
             MedClient.NotifyEz(cmbChannel.Text & " Notice:", "*** " & oldUser & " is now knows as " & newUser, 0)
             rtbOutput.AppendText("*** " & oldUser & " is now knows as " & newUser & vbNewLine)
             lstUsers.Items.Remove(oldUser)
+            If oldUser = txtNick.Text Then
+                txtNick.Text = newUser
+                NickButton.Text = newUser
+            End If
             If newUser <> "" Then lstUsers.Items.Add(newUser) : lstUsers.Update()
             rtbOutput.ScrollToCaret()
         Catch
@@ -165,8 +171,12 @@ Public Class UCI
             rtbOutput.SelectionColor = Color.Green
             MedClient.NotifyEz(cmbChannel.Text & " Notice:", "*** " & User & " has joined the chat-room", 0)
             rtbOutput.AppendText("*** " & User & " has joined the chat-room" & vbNewLine)
-            If User.Trim <> txtNick.Text Then lstUsers.Items.Add(User) : lstUsers.Update()
+            If User.Trim <> txtNick.Text Then lstUsers.Items.Add(User.ToString.Trim) : lstUsers.Update()
             rtbOutput.ScrollToCaret()
+            If User = txtNick.Text Then
+                NickButton.Text = User
+                NickButton.Enabled = True
+            End If
         Catch
         End Try
     End Sub
@@ -181,7 +191,7 @@ Public Class UCI
                 Case Message.Contains("This nickname is registered.")
                     Dim InputPsw As Object
                     InputPsw = InputBox("This nickname is registered, input the password", "Input your password...")
-                    txtSend.Text = "/msg NickServ identify " & txtNick.Text & " " & InputPsw
+                    If InputPsw.trim = "" Then Exit Sub Else txtSend.Text = "/msg NickServ identify " & txtNick.Text & " " & InputPsw
                     'irc.ServerPass = InputPsw
                     If txtSend.Text.Trim <> "" Then btnSend.PerformClick()
             End Select
@@ -197,7 +207,18 @@ Public Class UCI
         Try
             Select Case True
                 Case message.Contains("Nick/channel is temporarily unavailable")
-                    UsedNick("Nick/channel is temporarily unavailable, select another", Nick & rnd1.Next(10, 99))
+                    If Nick = "" Then Nick = txtNick.Text.Trim
+                    UsedNick("Nick/channel is temporarily unavailable, select another", "")
+                Case message.Trim = "+o " & txtNick.Text.Trim
+                    lstUsers.Items.Remove(txtNick.Text.Trim)
+                    lstUsers.Items.Add("@" & txtNick.Text.Trim)
+                Case message.Contains("End of /WHOIS list")
+                    rtbOutput.SelectionColor = Color.DarkRed
+                Case message = ("Connected!")
+                    NickButton.Text = txtNick.Text
+                    'Case message = "No nickname given"
+                    '   txtNick.Enabled = True
+                    '  txtNick.Text += rnd1.Next(10, 50)
             End Select
             rtbOutput.AppendText(message & vbNewLine)
             rtbOutput.ScrollToCaret()
@@ -209,7 +230,7 @@ Public Class UCI
         Try
             rtbOutput.SelectionColor = Color.Purple
             rtbOutput.AppendText("*** " & Nick & " already used" & vbNewLine)
-            UsedNick(Nick & " already used" & vbCrLf & "Select a new Nick", Nick & rnd1.Next(10, 99))
+            UsedNick(Nick & " already used" & vbCrLf & "Select a new Nick", "")
         Catch
         End Try
     End Sub
@@ -218,16 +239,20 @@ Public Class UCI
 
         Dim ChangeNick As Object
         ChangeNick = InputBox(mxg, "Change Nick...", res)
-        txtNick.Text = ChangeNick
+        If ChangeNick.Trim <> "" And IsNumeric(ChangeNick.Trim) = False Then
+            txtNick.Text = ChangeNick
+            'NickButton.Text = "&" & txtNick.Text
 
-        If btnConnect.Text = "&Connect" Then
-            txtPort.Enabled = True
-            cmbServer.Enabled = True
-            txtNick.Enabled = True
-            btnConnect.PerformClick()
-        ElseIf btnConnect.Text = "&Disconnect" Then
-            txtSend.Text = "/nick " & ChangeNick
-            btnSend.PerformClick()
+            If btnConnect.Text = "&Connect" Then
+                txtPort.Enabled = True
+                cmbServer.Enabled = True
+                txtNick.Enabled = True
+                btnConnect.PerformClick()
+            ElseIf btnConnect.Text = "&Disconnect" Then
+                txtSend.Text = "/nick " & ChangeNick
+                btnSend.PerformClick()
+            End If
+
         End If
     End Sub
 
@@ -235,8 +260,16 @@ Public Class UCI
         'lstUsers.Items.Clear()
 
         For Each s As String In userlist
-            If Not lstUsers.Items.Contains(s) Then 'And Not lstUsers.Items.Contains("@" & s) Then
-                lstUsers.Items.Add(s)
+            If Array.IndexOf(userlist, s) = 0 Then
+                If s.Contains(txtSend.Text.Trim) Then
+                    Dim at As String = ""
+                    If s.Substring(0, 1) = "@" Then at = "@"
+                    lstUsers.Items.Add(at & txtNick.Text.Trim)
+                End If
+            Else
+                If Not lstUsers.Items.Contains(s) Then 'And Not lstUsers.Items.Contains("@" & s) Then
+                    lstUsers.Items.Add(s.ToString)
+                End If
             End If
         Next
 
@@ -251,6 +284,7 @@ Public Class UCI
             If risp = vbNo Then
                 e.Cancel = True
             Else
+                NickButton.Enabled = False
                 irc.Disconnect()
             End If
         Catch
@@ -272,18 +306,14 @@ Public Class UCI
                 txtPort.Enabled = True
                 cmbServer.Enabled = True
                 txtNick.Enabled = True
+                NickButton.Enabled = False
             Case LCase(txtSend.Text.StartsWith("/nick"))
                 RawCommand = Replace(txtSend.Text, "/nick", "NICK")
                 nuser = txtSend.Text.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)(1)
-                'If lstUsers.Items.Count > 0 Then
-                '   For i = 0 To lstUsers.Items.Count
-                '      If lstUsers.Items(i) = txtNick.Text Then
-                '         lstUsers.Items(i) = nuser
-                '        Exit For
-                '   End If
-                'Next
-                txtNick.Text = nuser
-                'End If
+
+                'txtNick.Text = nuser
+                'NickButton.Text = "&" & txtNick.Text
+
             Case LCase(txtSend.Text.StartsWith("/away"))
                 RawCommand = Replace(txtSend.Text, "/away", "AWAY")
             Case txtSend.Text.StartsWith("/me")
@@ -311,21 +341,13 @@ Public Class UCI
         txtSend.Clear()
     End Sub
 
-    Private Sub lstUsers_DoubleClick(sender As Object, e As EventArgs) Handles lstUsers.DoubleClick
-        If lstUsers.Items.Count <= 1 Or lstUsers.SelectedItem = txtNick.Text Then Return
-        'CreatePVTForm()
-
-        Dim cleanuser As String
-        If lstUsers.SelectedItem.ToString.Substring(0, 1) = "@" Then
-            cleanuser = lstUsers.SelectedItem.ToString.Remove(0, 1)
+    Private Function cleanuser(user As String) As String
+        If user.Substring(0, 1) = "@" Then
+            cleanuser = user.Remove(0, 1)
         Else
-            cleanuser = lstUsers.SelectedItem.ToString
+            cleanuser = user
         End If
-
-        txtSend.Text = "/msg " & cleanuser & " "
-        txtSend.Focus()
-        txtSend.SelectionStart = txtSend.Text.Length
-    End Sub
+    End Function
 
     Private Sub SIrClient_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
@@ -334,6 +356,7 @@ Public Class UCI
             If MgrSetting.TextBox5.Text <> "" Then txtNick.Text = MgrSetting.TextBox5.Text Else : txtNick.Text = "Crappy" & rnd1.Next(500)
         Else
             txtNick.Text = GlobalVar.UCInick
+            NickButton.Text = "&" & txtNick.Text
         End If
 
         If GlobalVar.UCIserver <> "" Then cmbServer.Text = GlobalVar.UCIserver
@@ -341,7 +364,7 @@ Public Class UCI
         If GlobalVar.UCIchannel <> "" Then cmbChannel.Text = GlobalVar.UCIchannel
 
         irc_reload()
-        If NetPlay.MyLocalIp <> "" Then Label3.Text = "MyIP: " & NetPlay.MyLocalIp Else Label3.Visible = False
+        If MyIp() <> "" Then Label3.Text = "MyIP: " & MyIp() Else Label3.Visible = False
 
         F1 = Me
         CenterForm()
@@ -393,6 +416,13 @@ Public Class UCI
         p = Process.Start(e.LinkText)
     End Sub
 
+    Private Sub NickButton_Click(sender As Object, e As EventArgs) Handles NickButton.Click
+        Dim ninp As Object = InputBox("Please specify a new nick", "Input a new nick...", "")
+        If ninp.trim = "" Then Exit Sub 'Else txtNick.Text = ninp : NickButton.Text = "&" & txtNick.Text
+        txtSend.Text = "/nick " & ninp.trim
+        If txtSend.Text.Trim <> "" Then btnSend.PerformClick()
+    End Sub
+
     Private Sub irc_reload()
         cmbChannel.Items.Clear()
         Try
@@ -405,6 +435,26 @@ Public Class UCI
             MessageBox.Show(ex.Message)
             MGRWriteLog("UCI - irc_reload: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub UserInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UserInfoToolStripMenuItem.Click
+        txtSend.Text = "/whois " & cleanuser(lstUsers.SelectedItem.ToString.Trim)
+        If txtSend.Text.Trim <> "" Then
+            rtbOutput.SelectionColor = Color.DarkRed
+            rtbOutput.AppendText(vbNewLine & "*** WHOIS " & lstUsers.SelectedItem.ToString.Trim & vbNewLine)
+            rtbOutput.ScrollToCaret()
+            btnSend.PerformClick()
+        End If
+
+    End Sub
+
+    Private Sub PrivateMessageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrivateMessageToolStripMenuItem.Click
+        If lstUsers.Items.Count <= 1 Or lstUsers.SelectedItem = txtNick.Text Then Return
+
+        Dim pvtMessage As Object = InputBox("Private message to: " & cleanuser(lstUsers.SelectedItem.ToString), "Send a private message...", "")
+        If pvtMessage.trim = "" Then Exit Sub
+        txtSend.Text = "/msg " & cleanuser(lstUsers.SelectedItem.ToString) & " " & pvtMessage.trim
+        If txtSend.Text.Trim <> "" Then btnSend.PerformClick()
     End Sub
 
     Private Sub Label3_DoubleClick(sender As Object, e As EventArgs) Handles Label3.DoubleClick
@@ -421,6 +471,18 @@ Public Class UCI
             Process.Start(MedExtra & "UCI.txt")
         Catch ex As Exception
             MGRWriteLog("UCI - " & sender & ":  " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub lstUsers_MouseDown(sender As Object, e As MouseEventArgs) Handles lstUsers.MouseDown
+        Try
+            lstUsers.SelectedIndex = lstUsers.IndexFromPoint(e.X, e.Y)
+            If cleanuser(lstUsers.SelectedItem.ToString) = txtNick.Text Then
+                PrivateMessageToolStripMenuItem.Enabled = False
+            Else
+                PrivateMessageToolStripMenuItem.Enabled = True
+            End If
+        Catch
         End Try
     End Sub
 

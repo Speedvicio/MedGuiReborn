@@ -28,6 +28,15 @@ Partial Class UCI
         Me.btnSend = New System.Windows.Forms.Button()
         Me.txtSend = New System.Windows.Forms.TextBox()
         Me.lstUsers = New System.Windows.Forms.ListBox()
+        Me.IRCContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.UserInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrivateMessageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.OPActionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OPUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeOPUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.KickToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.label2 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
         Me.LabelPort = New System.Windows.Forms.Label()
@@ -39,7 +48,9 @@ Partial Class UCI
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.cmbServer = New System.Windows.Forms.ComboBox()
+        Me.NickButton = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.IRCContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnConnect
@@ -83,9 +94,9 @@ Partial Class UCI
         Me.txtSend.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSend.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSend.Location = New System.Drawing.Point(12, 329)
+        Me.txtSend.Location = New System.Drawing.Point(111, 329)
         Me.txtSend.Name = "txtSend"
-        Me.txtSend.Size = New System.Drawing.Size(518, 22)
+        Me.txtSend.Size = New System.Drawing.Size(419, 22)
         Me.txtSend.TabIndex = 7
         Me.ToolTip1.SetToolTip(Me.txtSend, "Text Send Message")
         '
@@ -93,16 +104,72 @@ Partial Class UCI
         '
         Me.lstUsers.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lstUsers.ContextMenuStrip = Me.IRCContextMenuStrip
         Me.lstUsers.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstUsers.FormattingEnabled = True
+        Me.lstUsers.HorizontalScrollbar = True
         Me.lstUsers.ItemHeight = 16
         Me.lstUsers.Location = New System.Drawing.Point(617, 41)
         Me.lstUsers.Name = "lstUsers"
         Me.lstUsers.Size = New System.Drawing.Size(135, 276)
         Me.lstUsers.Sorted = True
         Me.lstUsers.TabIndex = 6
-        Me.ToolTip1.SetToolTip(Me.lstUsers, "List of User On Channel" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Double click on a nick to send a /msg to the specified" &
-        " user")
+        Me.ToolTip1.SetToolTip(Me.lstUsers, "List of User On Channel" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Right mouse click on a nick for more options")
+        '
+        'IRCContextMenuStrip
+        '
+        Me.IRCContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UserInfoToolStripMenuItem, Me.PrivateMessageToolStripMenuItem, Me.ToolStripSeparator1, Me.OPActionsToolStripMenuItem})
+        Me.IRCContextMenuStrip.Name = "IRCContextMenuStrip"
+        Me.IRCContextMenuStrip.Size = New System.Drawing.Size(160, 76)
+        '
+        'UserInfoToolStripMenuItem
+        '
+        Me.UserInfoToolStripMenuItem.Name = "UserInfoToolStripMenuItem"
+        Me.UserInfoToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.UserInfoToolStripMenuItem.Text = "User &Info"
+        '
+        'PrivateMessageToolStripMenuItem
+        '
+        Me.PrivateMessageToolStripMenuItem.Name = "PrivateMessageToolStripMenuItem"
+        Me.PrivateMessageToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.PrivateMessageToolStripMenuItem.Text = "&Private Message"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(156, 6)
+        Me.ToolStripSeparator1.Visible = False
+        '
+        'OPActionsToolStripMenuItem
+        '
+        Me.OPActionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OPUserToolStripMenuItem, Me.DeOPUserToolStripMenuItem, Me.ToolStripSeparator2, Me.KickToolStripMenuItem})
+        Me.OPActionsToolStripMenuItem.Name = "OPActionsToolStripMenuItem"
+        Me.OPActionsToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.OPActionsToolStripMenuItem.Text = "OP &Actions"
+        Me.OPActionsToolStripMenuItem.Visible = False
+        '
+        'OPUserToolStripMenuItem
+        '
+        Me.OPUserToolStripMenuItem.Name = "OPUserToolStripMenuItem"
+        Me.OPUserToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.OPUserToolStripMenuItem.Text = "&OP User"
+        '
+        'DeOPUserToolStripMenuItem
+        '
+        Me.DeOPUserToolStripMenuItem.Name = "DeOPUserToolStripMenuItem"
+        Me.DeOPUserToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.DeOPUserToolStripMenuItem.Text = "&DeOP User"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(127, 6)
+        '
+        'KickToolStripMenuItem
+        '
+        Me.KickToolStripMenuItem.Name = "KickToolStripMenuItem"
+        Me.KickToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.KickToolStripMenuItem.Text = "&Kick"
         '
         'label2
         '
@@ -214,21 +281,38 @@ Partial Class UCI
         Me.cmbServer.Text = "irc.freenode.net"
         Me.ToolTip1.SetToolTip(Me.cmbServer, "Server List")
         '
+        'NickButton
+        '
+        Me.NickButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.NickButton.AutoSize = True
+        Me.NickButton.Enabled = False
+        Me.NickButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.NickButton.Location = New System.Drawing.Point(12, 327)
+        Me.NickButton.Name = "NickButton"
+        Me.NickButton.Size = New System.Drawing.Size(93, 25)
+        Me.NickButton.TabIndex = 32
+        Me.NickButton.Text = "Nick"
+        Me.ToolTip1.SetToolTip(Me.NickButton, "Press to change Nickname")
+        Me.NickButton.UseVisualStyleBackColor = True
+        '
         'Label3
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(617, 329)
+        Me.Label3.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(617, 334)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.Size = New System.Drawing.Size(50, 13)
         Me.Label3.TabIndex = 30
         Me.Label3.Text = "Label3"
+        Me.ToolTip1.SetToolTip(Me.Label3, "Double click to copy paste on the input text")
         '
         'UCI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(764, 361)
+        Me.Controls.Add(Me.NickButton)
         Me.Controls.Add(Me.cmbServer)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button2)
@@ -245,9 +329,11 @@ Partial Class UCI
         Me.Controls.Add(Me.btnSend)
         Me.Controls.Add(Me.txtSend)
         Me.Controls.Add(Me.lstUsers)
+        Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Name = "UCI"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ultra Crappy IRC"
+        Me.IRCContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -269,4 +355,14 @@ Partial Class UCI
     Public WithEvents txtSend As TextBox
     Public WithEvents btnSend As Button
     Public WithEvents lstUsers As ListBox
+    Friend WithEvents NickButton As Button
+    Friend WithEvents IRCContextMenuStrip As ContextMenuStrip
+    Friend WithEvents UserInfoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PrivateMessageToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents OPActionsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OPUserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeOPUserToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents KickToolStripMenuItem As ToolStripMenuItem
 End Class

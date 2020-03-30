@@ -895,8 +895,11 @@ Public Class MedGuiR
     End Sub
 
     Private Sub IRCToolStripButton_Click(sender As Object, e As EventArgs) Handles IRCToolStripButton.Click
-        HideUCIEz = True
-        UCI.Show()
+        Try
+            HideUCIEz = True
+            UCI.Show()
+        Catch
+        End Try
     End Sub
 
     Private Sub TextBox3_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox3.KeyUp
