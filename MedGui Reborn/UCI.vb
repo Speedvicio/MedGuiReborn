@@ -141,6 +141,7 @@ Public Class UCI
             rtbOutput.SelectionColor = Color.Red
             MedClient.NotifyEz(cmbChannel.Text & " Notice:", "*** " & User & " has left the chat-room", 2)
             rtbOutput.AppendText("*** " & User & " has left the chat-room" & vbNewLine)
+            lstUsers.Items.Remove("@" & User)
             lstUsers.Items.Remove(User)
             lstUsers.Update()
             If channel = cmbChannel.Text Then lstUsers.Items.Clear()
@@ -209,9 +210,10 @@ Public Class UCI
                 Case message.Contains("Nick/channel is temporarily unavailable")
                     If Nick = "" Then Nick = txtNick.Text.Trim
                     UsedNick("Nick/channel is temporarily unavailable, select another", "")
-                Case message.Trim = "+o " & txtNick.Text.Trim
-                    lstUsers.Items.Remove(txtNick.Text.Trim)
-                    lstUsers.Items.Add("@" & txtNick.Text.Trim)
+                Case message.Substring(0, 2) = "+o"
+                    Dim Op As String = Replace(message, "+o", "")
+                    lstUsers.Items.Remove(Op.Trim)
+                    lstUsers.Items.Add("@" & Op.Trim)
                 Case message.Contains("End of /WHOIS list")
                     rtbOutput.SelectionColor = Color.DarkRed
                 Case message = ("Connected!")
