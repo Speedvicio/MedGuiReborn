@@ -4,8 +4,11 @@ Public Class UCI
     Public WithEvents irc As IrcClient, oldch, nuser, RawCommand As String
     Public p As New System.Diagnostics.Process
     Dim rnd1 As New Random()
+    Dim NickPsw As String
+    Dim ConnAttemp As Integer = 0
 
     Private Sub btnConnect_Click(sender As System.Object, e As System.EventArgs) Handles btnConnect.Click
+        ConnAttemp = 0
         btnIRCConnect()
     End Sub
 
@@ -114,9 +117,14 @@ Public Class UCI
 
     Private Sub irc_ExceptionThrown(ex As System.Exception) Handles irc.ExceptionThrown
         MessageBox.Show(ex.Message)
+        ResetOnError()
+    End Sub
+
+    Private Sub ResetOnError()
         txtPort.Enabled = True
         cmbServer.Enabled = True
         txtNick.Enabled = True
+        btnConnect.Text = "&Connect"
         lstUsers.Items.Clear()
     End Sub
 
@@ -192,7 +200,12 @@ Public Class UCI
                 Case Message.Contains("This nickname is registered.")
                     Dim InputPsw As Object
                     InputPsw = InputBox("This nickname is registered, input the password", "Input your password...")
-                    If InputPsw.trim = "" Then Exit Sub Else txtSend.Text = "/msg NickServ identify " & txtNick.Text & " " & InputPsw
+                    If InputPsw.trim = "" Then
+                        Exit Sub
+                    Else
+                        NickPsw = InputPsw.trim
+                        txtSend.Text = "/msg NickServ identify " & txtNick.Text & " " & NickPsw
+                    End If
                     'irc.ServerPass = InputPsw
                     If txtSend.Text.Trim <> "" Then btnSend.PerformClick()
             End Select
@@ -217,10 +230,23 @@ Public Class UCI
                 Case message.Contains("End of /WHOIS list")
                     rtbOutput.SelectionColor = Color.DarkRed
                 Case message = ("Connected!")
-                    NickButton.Text = txtNick.Text
-                    'Case message = "No nickname given"
-                    '   txtNick.Enabled = True
-                    '  txtNick.Text += rnd1.Next(10, 50)
+                    ConnAttemp = 0
+                Case message.Contains("(Connection timed out)")
+                    ConnAttemp += 1
+                    If ConnAttemp < 4 Then
+                        rtbOutput.SelectionColor = Color.Red
+                        rtbOutput.AppendText(message & vbNewLine & "Connection attempt n°" & ConnAttemp & vbNewLine)
+                        rtbOutput.ScrollToCaret()
+                        irc = New IrcClient(cmbServer.Text, CInt(txtPort.Text))
+                        irc.Nick = txtNick.Text
+                        irc.Connect()
+                    Else
+                        rtbOutput.SelectionColor = Color.Red
+                        rtbOutput.AppendText(message & vbNewLine & (ConnAttemp - 1) & " CONNECTION ATTEMPT! CONNECT MANUALLT." & vbNewLine)
+                        rtbOutput.ScrollToCaret()
+                        ResetOnError()
+                    End If
+                    Exit Sub
             End Select
             rtbOutput.AppendText(message & vbNewLine)
             rtbOutput.ScrollToCaret()
