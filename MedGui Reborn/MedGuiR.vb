@@ -277,154 +277,157 @@ Public Class MedGuiR
     End Sub
 
     Public Sub StartEmu()
+        Try
+            If ErLog.Visible = True Then ErLog.Close()
 
-        If ErLog.Visible = True Then ErLog.Close()
-
-        If File.Exists(TextBox4.Text & "\mednafen.exe") = False Then
-            MsgBox("Can't find mednafen.exe, please reselect it in general tab", vbOKOnly + vbCritical, "Missing mednafen.exe")
-            TabControl1.SelectedTab = TabPage2
-            TextBox4.Focus()
-            Exit Sub
-        End If
-
-        verMednafen()
-        percorso = TextBox1.Text
-        If ssetting = 0 Then percorso = ""
-
-        Select Case LCase(Path.GetExtension(percorso))
-            Case ".zip"
-                Dim existMAI As Boolean = False
-                Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(percorso)
-                If szip.ArchiveFileData.Count > 1 Then
-                    For Each ArchiveFileInfo In szip.ArchiveFileData
-                        Select Case LCase(Path.GetExtension(ArchiveFileInfo.FileName))
-                            Case ".mai"
-                                existMAI = True
-                                Exit For
-                        End Select
-                    Next
-                    If existMAI = False Then simple_extract()
-                End If
-            Case ".rar", ".7z"
-                simple_extract()
-            Case ".rsn"
-                simple_extract()
-                PopulateChip()
-                'LoadChipInfo()
-                'SoundList.Show()
+            If File.Exists(TextBox4.Text & "\mednafen.exe") = False Then
+                MsgBox("Can't find mednafen.exe, please reselect it in general tab", vbOKOnly + vbCritical, "Missing mednafen.exe")
+                TabControl1.SelectedTab = TabPage2
+                TextBox4.Focus()
                 Exit Sub
-            Case ".vgm", ".vgz"
-                scan.VGtoBIN()
-            Case ".gbs"
-                scan.GBS2GB()
-            Case ".iso", ".bin"
-                'If percorso.Contains(".bin.ecm") Then TextBox1.Text = Replace(percorso, "bin.", "")
-                If Dir(Replace(TextBox1.Text, dettaglio.Extension, ".cue")) <> "" And dettaglio.Length > 10485760 Then
-                    percorso = (Replace(TextBox1.Text, dettaglio.Extension, ".cue"))
-                    If Label34.Text <> "" Then Label34.Text = ""
-                End If
-            Case Is <> ".spc", ".rsn"
-                SoundList.Close()
-        End Select
-
-        consoles = DataGridView1.CurrentRow.Cells(6).Value()
-
-        If consoles = "psx" Then Sbi_Scan()
-
-        If ssetting = 0 Then percorso = " "
-        tProcess = "mednafen"
-        wDir = TextBox4.Text
-
-        If TextBox2.Text.Trim <> "" And TextBox2.Text.Contains("-") Then
-            custom = " " & TextBox2.Text.Trim
-        Else
-            custom = Nothing
-        End If
-
-        'Enable NoDesync option
-        Dim net As String
-        pargMT = ""
-
-        SetSpecialModule()
-
-        If consoles = "ss" Then
-            If c_os = "32" Then
-                MsgBox("Saturn emulation is supported only on Windows 64 bit version" & vbCrLf &
-                       "This time you can listen only good music from your game", vbOKOnly + vbInformation, "Saturn emulation not supported...")
-                consoles = "cdplay"
             End If
-            If c_os = "64" And Label57.Text = "x86" Then
-                MsgBox("You are running Mednafen 32 bit version on  Windows 64 bit version" & vbCrLf &
+
+            verMednafen()
+            percorso = TextBox1.Text
+            If ssetting = 0 Then percorso = ""
+
+            Select Case LCase(Path.GetExtension(percorso))
+                Case ".zip"
+                    Dim existMAI As Boolean = False
+                    Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(percorso)
+                    If szip.ArchiveFileData.Count > 1 Then
+                        For Each ArchiveFileInfo In szip.ArchiveFileData
+                            Select Case LCase(Path.GetExtension(ArchiveFileInfo.FileName))
+                                Case ".mai"
+                                    existMAI = True
+                                    Exit For
+                            End Select
+                        Next
+                        If existMAI = False Then simple_extract()
+                    End If
+                Case ".rar", ".7z"
+                    simple_extract()
+                Case ".rsn"
+                    simple_extract()
+                    PopulateChip()
+                    'LoadChipInfo()
+                    'SoundList.Show()
+                    Exit Sub
+                Case ".vgm", ".vgz"
+                    scan.VGtoBIN()
+                Case ".gbs"
+                    scan.GBS2GB()
+                Case ".iso", ".bin"
+                    'If percorso.Contains(".bin.ecm") Then TextBox1.Text = Replace(percorso, "bin.", "")
+                    If Dir(Replace(TextBox1.Text, dettaglio.Extension, ".cue")) <> "" And dettaglio.Length > 10485760 Then
+                        percorso = (Replace(TextBox1.Text, dettaglio.Extension, ".cue"))
+                        If Label34.Text <> "" Then Label34.Text = ""
+                    End If
+                Case Is <> ".spc", ".rsn"
+                    SoundList.Close()
+            End Select
+
+            consoles = DataGridView1.CurrentRow.Cells(6).Value()
+
+            If consoles = "psx" Then Sbi_Scan()
+
+            If ssetting = 0 Then percorso = " "
+            tProcess = "mednafen"
+            wDir = TextBox4.Text
+
+            If TextBox2.Text.Trim <> "" And TextBox2.Text.Contains("-") Then
+                custom = " " & TextBox2.Text.Trim
+            Else
+                custom = Nothing
+            End If
+
+            'Enable NoDesync option
+            Dim net As String
+            pargMT = ""
+
+            SetSpecialModule()
+
+            If consoles = "ss" Then
+                If c_os = "32" Then
+                    MsgBox("Saturn emulation is supported only on Windows 64 bit version" & vbCrLf &
+                       "This time you can listen only good music from your game", vbOKOnly + vbInformation, "Saturn emulation not supported...")
+                    consoles = "cdplay"
+                End If
+                If c_os = "64" And Label57.Text = "x86" Then
+                    MsgBox("You are running Mednafen 32 bit version on  Windows 64 bit version" & vbCrLf &
        "Saturn emulation is supported only by Mednafen 64 bit version" & vbCrLf &
        "Please upgrade your Mednafen to a 64 bit version", vbOKOnly + vbInformation, "Saturn emulation not supported...")
-                TabControl1.SelectedTab = TabPage2
+                    TabControl1.SelectedTab = TabPage2
+                End If
             End If
-        End If
 
-        If consoles = "psx" And ssetting = 1 Then RestoreMCR()
-        If consoles = "gba" Then GBAMemory()
+            If consoles = "psx" And ssetting = 1 Then RestoreMCR()
+            If consoles = "gba" Then GBAMemory()
 
-        If File.Exists(TextBox4.Text & "\" & consoles & tpce & ".cfg") Then Read_Desync() Else contdes = 3
-        If NetToolStripButton.BackColor = Color.Red And ssetting <> 0 Then
+            If File.Exists(TextBox4.Text & "\" & consoles & tpce & ".cfg") Then Read_Desync() Else contdes = 3
+            If NetToolStripButton.BackColor = Color.Red And ssetting <> 0 Then
 
-            If consoles = "psx" Then BackupMCR()
+                If consoles = "psx" Then BackupMCR()
 
-            QuestionMultitap()
-            net = " -connect" & pargMT
-            If contdes = 0 Then My.Computer.FileSystem.MoveFile(TextBox4.Text & "\" & consoles & tpce & ".cfg", MedExtra & "\NoDesync\Backup\" & consoles & tpce & ".cfg")
-            If File.Exists(MedExtra & "\NoDesync\" & consoles & tpce & ".cfg") Then
-                Dim wjoy As String = ""
-                'If consoles = "psx" Then
-                'wjoy = MsgBox("Set NoDesync with all 8 joypad to dualshock?", vbYesNo + vbInformation, "Set with dualshock")
-                'If wjoy = vbYes Then wjoy = "J" Else wjoy = ""
-                'End If
+                QuestionMultitap()
+                net = " -connect" & pargMT
+                If contdes = 0 Then My.Computer.FileSystem.MoveFile(TextBox4.Text & "\" & consoles & tpce & ".cfg", MedExtra & "\NoDesync\Backup\" & consoles & tpce & ".cfg")
+                If File.Exists(MedExtra & "\NoDesync\" & consoles & tpce & ".cfg") Then
+                    Dim wjoy As String = ""
+                    'If consoles = "psx" Then
+                    'wjoy = MsgBox("Set NoDesync with all 8 joypad to dualshock?", vbYesNo + vbInformation, "Set with dualshock")
+                    'If wjoy = vbYes Then wjoy = "J" Else wjoy = ""
+                    'End If
 
-                'If consoles = "nes" Then
-                'wjoy = MsgBox("Have you enabled 4-player or partytap Adapter?", vbYesNo + vbInformation, "Set with 4-player/partytap Adapter")
-                'If wjoy = vbYes Then wjoy = "M" Else wjoy = ""
-                'End If
+                    'If consoles = "nes" Then
+                    'wjoy = MsgBox("Have you enabled 4-player or partytap Adapter?", vbYesNo + vbInformation, "Set with 4-player/partytap Adapter")
+                    'If wjoy = vbYes Then wjoy = "M" Else wjoy = ""
+                    'End If
 
-                File.Copy(MedExtra & "\NoDesync\" & consoles & tpce & wjoy & ".cfg", TextBox4.Text & "\" & consoles & tpce & ".cfg", True)
+                    File.Copy(MedExtra & "\NoDesync\" & consoles & tpce & wjoy & ".cfg", TextBox4.Text & "\" & consoles & tpce & ".cfg", True)
+                End If
+            Else
+                net = Nothing
+                RebuilDesync()
             End If
-        Else
-            net = Nothing
-            RebuilDesync()
-        End If
 
-        If LoadCD = "" And DataGridView1.SelectedRows.Count <> 0 Then consoles = DataGridView1.CurrentRow.Cells(6).Value()
+            If LoadCD = "" And DataGridView1.SelectedRows.Count <> 0 Then consoles = DataGridView1.CurrentRow.Cells(6).Value()
 
-        If Len(TextBox1.Text) >= 3 Then LoadCD = "" Else percorso = "\\.\" & percorso
-        LoadCD = Nothing
-        'If TextBox1.Text.Contains("\\.\*") Then  Else  : LoadCD = ""
+            If Len(TextBox1.Text) >= 3 Then LoadCD = "" Else percorso = "\\.\" & percorso
+            LoadCD = Nothing
+            'If TextBox1.Text.Contains("\\.\*") Then  Else  : LoadCD = ""
 
-        Dim skipm3u As Boolean = False
-        If MgrSetting.NoCheck = False Then
-            skipm3u = False
-        Else
-            skipm3u = True
-        End If
-
-        If skipm3u = False Then
-            If DataGridView1.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = Nothing Then
-                M3UDisk = InputBox("Input the disk that you want to load from 1 to " & System.IO.File.ReadAllLines(TextBox1.Text).Length, "Select a CD", "1")
-                If M3UDisk = "" Then Exit Sub
-                M3UDisk = " -which_medium " & (M3UDisk - 1)
+            Dim skipm3u As Boolean = False
+            If MgrSetting.NoCheck = False Then
+                skipm3u = False
+            Else
+                skipm3u = True
             End If
-        End If
 
-        Arg = pArg & net & custom & LoadCD & " -force_module " & consoles & tpce & M3UDisk & " " & Chr(34) & percorso & Chr(34)
+            If skipm3u = False Then
+                If DataGridView1.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = Nothing Then
+                    M3UDisk = InputBox("Input the disk that you want to load from 1 to " & System.IO.File.ReadAllLines(TextBox1.Text).Length, "Select a CD", "1")
+                    If M3UDisk = "" Then Exit Sub
+                    M3UDisk = " -which_medium " & (M3UDisk - 1)
+                End If
+            End If
 
-        'VerifyPerSystem()
+            Arg = pArg & net & custom & LoadCD & " -force_module " & consoles & tpce & M3UDisk & " " & Chr(34) & percorso & Chr(34)
 
-        StartProcess()
+            'VerifyPerSystem()
 
-        If MgrSetting.NoCheck = True Then MgrSetting.NoCheck = False : Exit Sub
-        Threading.Thread.Sleep(200)
+            StartProcess()
 
-        TimerControlMednafen.Enabled = True
-        TimerControlMednafen.Start()
+            If MgrSetting.NoCheck = True Then MgrSetting.NoCheck = False : Exit Sub
+            Threading.Thread.Sleep(200)
 
-        M3UDisk = Nothing
+            TimerControlMednafen.Enabled = True
+            TimerControlMednafen.Start()
+
+            M3UDisk = Nothing
+        Catch ex As Exception
+            MsgBox(ex.ToString, vbCritical)
+        End Try
     End Sub
 
     Private Sub VerifyPerSystem()

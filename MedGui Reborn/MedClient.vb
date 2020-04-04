@@ -415,11 +415,100 @@ tryagain:
         End Try
     End Sub
 
+    Private allItems As New List(Of String)()
+    Private csvList As String
+
+    Private Sub ConsoleComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ConsoleComboBox.SelectedIndexChanged
+        GameListBox.Items.Clear()
+        csvList = MedExtra & "Scanned\" & ConsoleComboBox.Text.Trim & ".csv"
+        ReadCsvList("GameN")
+    End Sub
+
+    Private Function ReadCsvList(GSplit As String) As String
+
+        If File.Exists(csvList) Then
+            Dim objReader As New StreamReader(csvList)
+            Dim sLine As String = ""
+            Dim arrText As New ArrayList()
+
+            Dim FullGame() As String
+
+            Do
+                sLine = objReader.ReadLine()
+                If Not sLine Is Nothing Then
+                    arrText.Add(sLine)
+                End If
+            Loop Until sLine Is Nothing
+            objReader.Close()
+
+            For Each sLine In arrText
+                FullGame = sLine.Split("|")
+                If GSplit = "GameN" Then
+                    GameListBox.Items.Add(Path.GetFileName(FullGame(4).ToString))
+                    allItems.Add(Path.GetFileName(FullGame(4).ToString))
+                Else
+                    If FullGame(4).ToString.Contains(GSplit) Then
+                        ReadCsvList = FullGame(4).ToString
+                        Exit For
+                    End If
+                End If
+            Next
+        End If
+    End Function
+
     Private Sub ShowMClient()
         Me.Show()
         Me.WindowState = FormWindowState.Maximized
         Me.Activate()
         NotifyIcon1.Visible = False
+    End Sub
+
+    Private Sub GameListBox_DoubleClick(sender As Object, e As EventArgs) Handles GameListBox.DoubleClick
+        If GameListBox.Items.Count > 0 Then
+            StartMedFromClient(ReadCsvList(GameListBox.SelectedItem.ToString))
+        End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+
+        fd.Title = "Select a Game"
+        fd.Filter = "All files (*.*)|*.*"
+        fd.FilterIndex = 2
+        fd.RestoreDirectory = True
+
+        If fd.ShowDialog() = DialogResult.OK Then
+            StartMedFromClient(fd.FileName)
+        End If
+    End Sub
+
+    Private Sub StartMedFromClient(Gpath As String)
+        MedGuiR.SY.Text = ""
+        MedGuiR.DataGridView1.Rows.Clear()
+        percorso = Gpath
+        SingleScan()
+
+        'Arg = "-netplay.nick " & TextBox1.Text.Trim & " -netplay.host " & "" &
+        '" -netplay.port " & "" & " -netplay.gamekey " & "" & " -netplay.password " & TextBox1.Text.Trim
+
+        MedGuiR.CheckBox18.Checked = True
+        MedGuiR.NetToolStripButton.BackColor = Color.Red
+        MedGuiR.StartStatic_emu()
+    End Sub
+
+    Private Sub ConsoleComboBox_TextChanged(sender As Object, e As EventArgs) Handles ConsoleComboBox.TextChanged
+        If GameListBox.Items.Count > 1 Then GameListBox.Items.Clear()
+
+        If ConsoleComboBox.Text.Trim = "" Then
+            GameListBox.Items.AddRange(allItems.ToArray())
+        Else
+            For Each item As String In allItems
+                If item.StartsWith(ConsoleComboBox.Text, StringComparison.CurrentCultureIgnoreCase) Then
+                    GameListBox.Items.Add(item)
+                End If
+            Next
+        End If
+
     End Sub
 
 End Class
