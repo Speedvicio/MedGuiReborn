@@ -39,7 +39,7 @@ Public Class MedClient
         RMedClIni()
         Me.WindowState = 2
         CheckBox1.Checked = True
-
+        ConsoleComboBox.Text = MedGuiR.SY.Text
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerNetPlay.Tick
