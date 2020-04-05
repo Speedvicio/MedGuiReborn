@@ -3,7 +3,6 @@ Imports EZNotifications
 
 Public Class MedClient
     Public checkmed As Boolean
-    Public MuteNotification As Boolean = False
     Private InitialNetPath, NMedVersion() As String
     Dim rnd2 As New Random()
 
@@ -43,6 +42,13 @@ Public Class MedClient
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerNetPlay.Tick
+
+        If CheckBox3.Checked = True Then
+            MuteNotification = True
+        Else
+            MuteNotification = False
+        End If
+
         Dim process_med() As Process
         process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
         If process_med.Length > 0 Then
@@ -248,6 +254,13 @@ tryagain:
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles TimerRefresh.Tick
+
+        If CheckBox3.Checked = True Then
+            MuteNotification = True
+        Else
+            MuteNotification = False
+        End If
+
         CleanLocalParsed()
         SetFTPData()
         FtpDownloadOnConnect()

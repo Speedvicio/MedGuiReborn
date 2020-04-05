@@ -51,6 +51,9 @@ Partial Class MedClient
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Country = New System.Windows.Forms.DataGridViewImageColumn()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.ConsoleComboBox = New System.Windows.Forms.ComboBox()
+        Me.GameListBox = New System.Windows.Forms.ListBox()
         Me.TimerRefresh = New System.Windows.Forms.Timer(Me.components)
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
@@ -67,9 +70,6 @@ Partial Class MedClient
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.ConsoleComboBox = New System.Windows.Forms.ComboBox()
-        Me.GameListBox = New System.Windows.Forms.ListBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,6 +195,7 @@ Partial Class MedClient
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.Size = New System.Drawing.Size(754, 196)
         Me.DataGridView1.TabIndex = 42
+        Me.DataGridView1.Tag = "MeNot"
         Me.ToolTip1.SetToolTip(Me.DataGridView1, "Double lest mouse click to access in a session")
         '
         'Column1
@@ -297,6 +298,43 @@ Partial Class MedClient
         Me.ToolTip1.SetToolTip(Me.CheckBox3, "Mute Sound ,  Hide Notification Widget , Hide Discord Announcement")
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.Location = New System.Drawing.Point(171, 18)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(23, 23)
+        Me.Button4.TabIndex = 52
+        Me.Button4.Text = "..."
+        Me.ToolTip1.SetToolTip(Me.Button4, "Load any game file")
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'ConsoleComboBox
+        '
+        Me.ConsoleComboBox.FormattingEnabled = True
+        Me.ConsoleComboBox.Items.AddRange(New Object() {"", "def", "apple2", "gb", "gba", "gg", "lynx", "md", "nes", "ngp", "pce", "pcfx", "psx", "sms", "snes", "ss", "vb", "wswan"})
+        Me.ConsoleComboBox.Location = New System.Drawing.Point(7, 20)
+        Me.ConsoleComboBox.Name = "ConsoleComboBox"
+        Me.ConsoleComboBox.Size = New System.Drawing.Size(158, 21)
+        Me.ConsoleComboBox.TabIndex = 1
+        Me.ToolTip1.SetToolTip(Me.ConsoleComboBox, "Load Prescanned list" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You can also filter loaded game list by input a game name" &
+        " onto this box")
+        '
+        'GameListBox
+        '
+        Me.GameListBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GameListBox.FormattingEnabled = True
+        Me.GameListBox.HorizontalScrollbar = True
+        Me.GameListBox.Location = New System.Drawing.Point(7, 47)
+        Me.GameListBox.Name = "GameListBox"
+        Me.GameListBox.Size = New System.Drawing.Size(187, 108)
+        Me.GameListBox.Sorted = True
+        Me.GameListBox.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.GameListBox, "Double click on a Game to start a netplay session")
+        '
         'TimerRefresh
         '
         Me.TimerRefresh.Interval = 30000
@@ -384,13 +422,16 @@ Partial Class MedClient
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.Controls.Add(Me.DataGridView1)
+        Me.SplitContainer1.Panel1.Tag = ""
         '
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel1)
+        Me.SplitContainer1.Panel2.Tag = ""
         Me.SplitContainer1.Size = New System.Drawing.Size(754, 575)
         Me.SplitContainer1.SplitterDistance = 196
         Me.SplitContainer1.TabIndex = 52
+        Me.SplitContainer1.Tag = "MeNot"
         '
         'Panel1
         '
@@ -453,43 +494,6 @@ Partial Class MedClient
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Game List"
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.Location = New System.Drawing.Point(171, 18)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(23, 23)
-        Me.Button4.TabIndex = 52
-        Me.Button4.Text = "..."
-        Me.ToolTip1.SetToolTip(Me.Button4, "Load any game file")
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'ConsoleComboBox
-        '
-        Me.ConsoleComboBox.FormattingEnabled = True
-        Me.ConsoleComboBox.Items.AddRange(New Object() {"", "def", "apple2", "gb", "gba", "gg", "lynx", "md", "nes", "ngp", "pce", "pcfx", "psx", "sms", "snes", "ss", "vb", "wswan"})
-        Me.ConsoleComboBox.Location = New System.Drawing.Point(7, 20)
-        Me.ConsoleComboBox.Name = "ConsoleComboBox"
-        Me.ConsoleComboBox.Size = New System.Drawing.Size(158, 21)
-        Me.ConsoleComboBox.TabIndex = 1
-        Me.ToolTip1.SetToolTip(Me.ConsoleComboBox, "Load Prescanned list" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "You can also filter loaded game list by input a game name" &
-        " onto this box")
-        '
-        'GameListBox
-        '
-        Me.GameListBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GameListBox.FormattingEnabled = True
-        Me.GameListBox.HorizontalScrollbar = True
-        Me.GameListBox.Location = New System.Drawing.Point(7, 47)
-        Me.GameListBox.Name = "GameListBox"
-        Me.GameListBox.Size = New System.Drawing.Size(187, 108)
-        Me.GameListBox.Sorted = True
-        Me.GameListBox.TabIndex = 0
-        Me.ToolTip1.SetToolTip(Me.GameListBox, "Double click on a Game to start a netplay session")
         '
         'MedClient
         '

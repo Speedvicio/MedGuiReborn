@@ -90,7 +90,7 @@ Public Class UCI
 
     Private Sub irc_PvtMessage(User As String, Message As String) Handles irc.PrivateMessage
         Try
-            If MedClient.MuteNotification = False Then
+            If MuteNotification = False Then
                 My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
                 MedClient.NotifyEz("Private Message From:", User & vbTab + Message, 0)
             End If
@@ -104,7 +104,7 @@ Public Class UCI
     Private Sub irc_OvtMessage(Channel As String, User As String, Message As String) Handles irc.ChannelMessage
         Try
             If Message.Contains(txtNick.Text) Then
-                If MedClient.MuteNotification = False Then
+                If MuteNotification = False Then
                     My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
                     MedClient.NotifyEz("Message From Irc Channel:", User & vbTab + Message, 0)
                 End If
@@ -192,7 +192,7 @@ Public Class UCI
 
     Private Sub irc_sendnotice(Channel As String, Message As String) Handles irc.NoticeMessage
         If MedPlay.VerifyForm("MedClient") And cmbChannel.Text = "#MedPlay" Then
-            If MedClient.MuteNotification = False Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
+            If MuteNotification = False Then My.Computer.Audio.Play(MedExtra & "Resource\Music\notification.wav")
         End If
 
         Try

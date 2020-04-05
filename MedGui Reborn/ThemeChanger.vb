@@ -25,10 +25,13 @@
                 x.Enabled = True
             End If
 
+            If x.Tag = "MeNot" Then Continue For
+
             Select Case True
                 Case TypeOf x Is Label, TypeOf x Is CheckBox, TypeOf x Is Panel, TypeOf x Is LinkLabel,
                      TypeOf x Is GroupBox, TypeOf x Is Button, TypeOf x Is TabControl,
                       TypeOf x Is ToolStrip, TypeOf x Is RadioButton, TypeOf x Is TrackBar, TypeOf x Is SplitContainer
+
                     If x.HasChildren Then ChangeControlColors(x, Preset)
                     If Not x.Tag = "MeNot" Then
                         Select Case Preset
