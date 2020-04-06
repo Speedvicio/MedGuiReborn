@@ -974,6 +974,22 @@ ErrorHandler:
         Me.Close()
     End Sub
 
+    Private Sub TrackBar17_Scroll(sender As Object, e As EventArgs) Handles TrackBar17.Scroll
+        update_setting()
+    End Sub
+
+    Private Sub TrackBar18_Scroll(sender As Object, e As EventArgs) Handles TrackBar18.Scroll
+        update_setting()
+    End Sub
+
+    Private Sub TrackBar19_Scroll(sender As Object, e As EventArgs) Handles TrackBar19.Scroll
+        update_setting()
+    End Sub
+
+    Private Sub TrackBar20_Scroll(sender As Object, e As EventArgs) Handles TrackBar20.Scroll
+        update_setting()
+    End Sub
+
     Private Sub CheckBox6_Click(sender As Object, e As System.EventArgs) Handles CheckBox6.Click
         If CheckBox59.Checked = True Then CheckBox59.Checked = False
     End Sub
