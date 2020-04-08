@@ -12,6 +12,19 @@
             MedGuiR.TextBox4.Text = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Mednafen_path")
             Startup_Path = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Startup_Path")
             MedGuiR.ComboBox1.Text = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Dat")
+
+            If (RIni.IniRead(MedExtra & "\Mini.ini", "General", "TextMenu")) = "" Then
+                Dim Rtxt = MsgBox("Do you want to start MedGui with top icon menu or old style text menu?" & vbCrLf &
+                                  "YES = ICON" & vbCrLf & "NO = TEXTUAL OLD STYLE", vbYesNo + MsgBoxStyle.Information, "Select top menu...")
+                If Rtxt = MsgBoxResult.Yes Then
+                    MedGuiR.CheckBox23.Checked = False
+                Else
+                    MedGuiR.CheckBox23.Checked = True
+                End If
+            Else
+                MedGuiR.CheckBox23.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "TextMenu")
+            End If
+
             'MedGuiR.CheckBox3.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Mantain_RomTemp")
             MedGuiR.CheckBox3.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "PopUP")
             MedGuiR.CheckBox16.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Menu_Joypad")
@@ -25,18 +38,6 @@
             MedGuiR.CheckBox21.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoScanCD")
             MedGuiR.NetToolStripButton.BackColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoConn"))
             MedGuiR.GridToolStripMenuItem.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Customizable")
-
-            If (RIni.IniRead(MedExtra & "\Mini.ini", "General", "TextMenu")) = "" Then
-                Dim Rtxt = MsgBox("Do you want to start MedGui with top icon menu or old style text menu?" & vbCrLf &
-                                  "YES = ICON" & vbCrLf & "NO = TEXTUAL OLD STYLE", vbYesNo + MsgBoxStyle.Information, "Select top menu...")
-                If Rtxt = MsgBoxResult.Yes Then
-                    MedGuiR.CheckBox23.Checked = False
-                Else
-                    MedGuiR.CheckBox23.Checked = True
-                End If
-            Else
-                MedGuiR.CheckBox23.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "TextMenu")
-            End If
             MedGuiR.SetGUI()
 
             Dim GNA As String = RIni.IniRead(MedExtra & "\Mini.ini", "TGDB API", "NEW_API").Trim
