@@ -1132,7 +1132,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -1641,10 +1641,6 @@ Public Class MedGuiR
             TopMost = False
         Catch
         End Try
-    End Sub
-
-    Private Sub PictureBox1_MouseHover(sender As Object, e As EventArgs) Handles PictureBox1.MouseHover
-        If CheckBox3.Checked = True And File.Exists(pathimage) = True Then PopUp.PopupPic = pathimage : PopUp.Show()
     End Sub
 
     Private Sub PictureBox4_DoubleClick(sender As Object, e As System.EventArgs) Handles PictureBox4.DoubleClick
@@ -3417,6 +3413,22 @@ MisScan:
 
     Private Sub MedGuiR_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
         FormIsON = False
+    End Sub
+
+    Private Sub PictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox1.MouseEnter
+        If CheckBox3.Checked = True And File.Exists(pathimage) = True Then PopUp.PopupPic = pathimage : PopUp.Show()
+    End Sub
+
+    Private Sub PictureBox1_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox1.MouseLeave
+        PopUp.Close()
+    End Sub
+
+    Private Sub PictureBox4_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox4.MouseLeave
+        PopUp.Close()
+    End Sub
+
+    Private Sub PictureBox5_MouseLeave(sender As Object, e As EventArgs) Handles PictureBox5.MouseLeave
+        PopUp.Close()
     End Sub
 
 End Class
