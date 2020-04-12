@@ -483,7 +483,7 @@ Partial Class MedGuiR
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowTemplate.ReadOnly = True
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
         Me.DataGridView1.TabIndex = 4
         '
