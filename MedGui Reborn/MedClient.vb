@@ -460,7 +460,7 @@ tryagain:
                     GameListBox.Items.Add(Path.GetFileName(FullGame(4).ToString))
                     allItems.Add(Path.GetFileName(FullGame(4).ToString))
                 Else
-                    If FullGame(4).ToString.Contains(GSplit) Then
+                    If FullGame(4).ToString.Contains("\" & GSplit) Then
                         ReadCsvList = FullGame(4).ToString
                         Exit For
                     End If
