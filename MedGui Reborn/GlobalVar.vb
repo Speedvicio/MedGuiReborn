@@ -438,6 +438,7 @@ ReCheckConfig:
             Dim p() As Process = Process.GetProcessesByName(“winlogon”, My.Computer.Name)
             If p.Length <= 0 Then
                 uWine = True
+                MedGuiR.CheckBox17.Checked = True
             End If
         Catch
         End Try
