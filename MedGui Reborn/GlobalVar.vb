@@ -6,6 +6,7 @@ Module GlobalVar
     JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf, SScart As String, forMax, stopiso, noftp As Boolean
 
     Public NewAPI As Boolean = True
+    Public uWine As Boolean = False
     Public gIcon As Icon
 
     Public Sub Startup_setting()
@@ -432,6 +433,11 @@ ReCheckConfig:
                 Exit Sub
             Else
                 Application.EnableVisualStyles()
+            End If
+
+            Dim p() As Process = Process.GetProcessesByName(“winlogon”, My.Computer.Name)
+            If p.Length <= 0 Then
+                uWine = True
             End If
         Catch
         End Try

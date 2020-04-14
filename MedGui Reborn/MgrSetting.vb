@@ -90,16 +90,19 @@ Public Class MgrSetting
                 TabControl1.SelectedTab = TabPage30
         End Select
 
-        TabControl1.SelectedTab = TabPage2
-        TabControl1.SelectedTab = TabPage3
-        TabControl1.SelectedTab = TabPage4
-        TabControl1.SelectedTab = TabPage31
-        TabControl1.SelectedTab = TabPage28
-        TabControl1.SelectedTab = TabPage5
-        TabControl1.SelectedTab = TabPage6
-        TabControl1.SelectedTab = TabPage7
-        TabControl1.SelectedTab = TabPage24
-        TabControl1.SelectedTab = TabPage1
+        If uWine = False Then
+            TabControl1.SelectedTab = TabPage2
+            TabControl1.SelectedTab = TabPage3
+            TabControl1.SelectedTab = TabPage4
+            TabControl1.SelectedTab = TabPage31
+            TabControl1.SelectedTab = TabPage28
+            TabControl1.SelectedTab = TabPage5
+            TabControl1.SelectedTab = TabPage6
+            TabControl1.SelectedTab = TabPage7
+            TabControl1.SelectedTab = TabPage24
+            TabControl1.SelectedTab = TabPage1
+        End If
+
         EnableSetOptions()
 
         'StartControlBios()
