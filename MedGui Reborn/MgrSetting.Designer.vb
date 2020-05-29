@@ -1914,7 +1914,6 @@ Partial Class MgrSetting
         Me.GroupBox27.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox27.TabIndex = 4
         Me.GroupBox27.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox27, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
         '
         'Button39
         '
@@ -5840,7 +5839,6 @@ Partial Class MgrSetting
         Me.GroupBox28.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox28.TabIndex = 6
         Me.GroupBox28.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox28, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
         '
         'NumericUpDown48
         '
@@ -5877,7 +5875,7 @@ Partial Class MgrSetting
         Me.Label186.Name = "Label186"
         Me.Label186.Size = New System.Drawing.Size(178, 13)
         Me.Label186.TabIndex = 134
-        Me.Label186.Text = "" & Global.Microsoft.VisualBasic.ChrW(9) & "First displayed scanline in PAL mode"
+        Me.Label186.Text = "First displayed scanline in PAL mode"
         '
         'NumericUpDown46
         '
@@ -6258,7 +6256,6 @@ Partial Class MgrSetting
         Me.GroupBox23.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox23.TabIndex = 5
         Me.GroupBox23.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.GroupBox23, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
         '
         'Label132
         '
