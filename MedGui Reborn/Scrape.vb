@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Net
 
 Module Scrape
     Public SBoxF, SboxR As String, ScrapeForce, xmlAttemp As Integer
@@ -166,13 +167,13 @@ Module Scrape
             End If
 
             ReadXml()
-        Catch ex As System.Net.WebException
+        Catch ex As WebException
             If ex.Message.ToString.Contains("403") Then
                 MsgBox("You have exceded per month, per ip limit of 1000 request" & vbCrLf &
                                 "Try the next month or swap to old TGDB API.", vbInformation + vbOKOnly, "TGDB request limit exceded...")
             End If
             If (ex.Response IsNot Nothing) Then
-                Dim hr As System.Net.HttpWebResponse = DirectCast(ex.Response, System.Net.HttpWebResponse)
+                Dim hr As HttpWebResponse = DirectCast(ex.Response, HttpWebResponse)
             End If
             SoxStatus.Close()
         End Try
@@ -180,7 +181,7 @@ Module Scrape
     End Sub
 
     Private Sub TheGamesDb_newapi()
-
+        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
         '<TheGamesDb newapi>
         MedGuiR.TGDBPlatform()
         Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/v1/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _

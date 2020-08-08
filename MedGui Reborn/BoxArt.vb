@@ -124,6 +124,8 @@ Module BoxArt
     End Sub
 
     Public Sub DownloadCover()
+        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+
         Dim dimg As Integer
         If IO.File.Exists(pathimage) = False Then
             dimg = 0
@@ -169,20 +171,21 @@ Module BoxArt
     End Sub
 
     Public Sub httpGetFileSize()
+        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
 
         Try
 
-            Dim myFtpWebRequest As System.Net.WebRequest
-            myFtpWebRequest = System.Net.WebRequest.Create(UpdateServer & "/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png")
+            Dim myFtpWebRequest As WebRequest
+            myFtpWebRequest = WebRequest.Create(UpdateServer & "/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png")
             Dim myFtpWebResponse As HttpWebResponse
             myFtpWebResponse = myFtpWebRequest.GetResponse()
             webimagelenght = myFtpWebResponse.ContentLength
             myFtpWebResponse.Close()
-        Catch ex As System.Net.WebException
+        Catch ex As WebException
             If MedGuiR.CheckBox2.Checked = False Then
                 MessageBox.Show(ex.Message)
                 If (ex.Response IsNot Nothing) Then
-                    Dim hr As System.Net.HttpWebResponse = DirectCast(ex.Response, System.Net.HttpWebResponse)
+                    Dim hr As HttpWebResponse = DirectCast(ex.Response, HttpWebResponse)
                 End If
             End If
         End Try

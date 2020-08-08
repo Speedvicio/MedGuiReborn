@@ -7,7 +7,9 @@ Public Class CookieAwareWebClient
     Private cc As New CookieContainer()
     Private lastPage As String
 
-    Protected Overrides Function GetWebRequest(ByVal address As System.Uri) As System.Net.WebRequest
+    Protected Overrides Function GetWebRequest(ByVal address As System.Uri) As WebRequest
+        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+
         Dim R = MyBase.GetWebRequest(address)
         If TypeOf R Is HttpWebRequest Then
             With DirectCast(R, HttpWebRequest)
