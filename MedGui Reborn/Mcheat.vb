@@ -415,7 +415,7 @@ skiphash:
             '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
             'get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
         Catch ex As Exception
-            If ex.ToString.Contains("(401)") Then
+            If ex.ToString.Contains("(401)") Or ex.ToString.Contains("(404)") Then
                 linkcheat = False
                 DetectGameHacking()
                 MessageBox.Show(
