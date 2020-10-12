@@ -1159,6 +1159,9 @@ ErrorHandler:
     End Sub
 
     Private Sub cmbServer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbServer.SelectedIndexChanged
+        Label27.Text = "Net-Play Host"
+        Label27.ForeColor = Label28.ForeColor
+        PictureBox1.Image = Nothing
         SpecificServer = cmbServer.Text
         PopulateNetplay()
         Try
@@ -1300,7 +1303,8 @@ ErrorHandler:
                 If My.Computer.Network.Ping(cmbServer.Text) = True Then
                     check_NetPlayServer()
                 Else
-                    Label27.ForeColor = Drawing.Color.Red
+                    MsgBox("Server Unpingable!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly)
+                    'Label27.ForeColor = Drawing.Color.Red
                 End If
             Catch ex As System.Net.NetworkInformation.PingException
                 MsgBox("No Connection Available!", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly)
