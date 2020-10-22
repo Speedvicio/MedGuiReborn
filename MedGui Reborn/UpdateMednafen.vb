@@ -27,7 +27,8 @@ Module UpdateMednafen
                  "You must to install a Microsoft update to enables the use of TLS v1.2 in the .NET Framework 3.5 and earlier." & vbCrLf &
                 "Follow this instruction to install specific version for your OS"
                 Message.LinkLabel1.Text = "https://community.qualys.com/thread/16917-net-framework"
-                Process.Start(Message.LinkLabel1.Text)
+                Message.ShowDialog()
+                'Process.Start(Message.LinkLabel1.Text)
                 Exit Sub
             End Try
 
