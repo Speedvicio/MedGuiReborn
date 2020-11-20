@@ -811,7 +811,7 @@ Partial Class MedGuiR
         '
         Me.AudioStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddAudioFileToolStripMenuItem, Me.ToolStripSeparator3, Me.ConvertAudioToToolStripMenuItem, Me.ConvertFolderAudioToToolStripMenuItem, Me.DeleteAfterConversionToolStripMenuItem, Me.ToolStripSeparator4, Me.MultimediaToolStripMenuItem})
         Me.AudioStrip.Name = "ContextMenuStrip1"
-        Me.AudioStrip.Size = New System.Drawing.Size(206, 126)
+        Me.AudioStrip.Size = New System.Drawing.Size(206, 148)
         '
         'AddAudioFileToolStripMenuItem
         '

@@ -1132,7 +1132,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -1409,6 +1409,11 @@ Public Class MedGuiR
         Next
     End Sub
 
+    Function ContainsSpecialChars(s As String) As Boolean
+        s = Replace(s, Path.GetDirectoryName(s) & "\", "")
+        Return s.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1
+    End Function
+
     Private Sub ToolStripComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ToolStripComboBox1.SelectedIndexChanged
 
         rDes = "Select Supported Multimedia File"
@@ -1416,6 +1421,11 @@ Public Class MedGuiR
         Dim ssa As String = rPath
         If Dir(rPath & "\*.*") = "" Or rPath = "" Then Exit Sub
         ListAddsFile.Items.Clear()
+
+        If ContainsSpecialChars(ssa) = True Then
+            MsgBox("Detected special char in folder name" & vbCrLf &
+                   "It is recommended that you remove these characters from the path", vbExclamation + vbOKOnly, "Check your folder name...")
+        End If
 
         Dim SouCartella As New IO.DirectoryInfo(ssa)
         Dim Soufile() As IO.FileInfo
