@@ -3438,7 +3438,7 @@ Partial Class MedGuiR
         '
         Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.ADVManageToolStripMenuItem, Me.ToolStripSeparator22, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.FormToolStripMenuItem, Me.GridToolStripMenuItem, Me.ResetToolStripMenuItem, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 516)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 538)
         '
         'StartGameToolStripMenuItem
         '
@@ -3640,28 +3640,28 @@ Partial Class MedGuiR
         'BackgroundToolStripMenuItem
         '
         Me.BackgroundToolStripMenuItem.Name = "BackgroundToolStripMenuItem"
-        Me.BackgroundToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.BackgroundToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BackgroundToolStripMenuItem.Text = "&Background"
         Me.BackgroundToolStripMenuItem.ToolTipText = "Change Background Color"
         '
         'ForeColorToolStripMenuItem
         '
         Me.ForeColorToolStripMenuItem.Name = "ForeColorToolStripMenuItem"
-        Me.ForeColorToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.ForeColorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ForeColorToolStripMenuItem.Text = "&Fore Color"
         Me.ForeColorToolStripMenuItem.ToolTipText = "Change Font Color"
         '
         'ContrastToolStripMenuItem
         '
         Me.ContrastToolStripMenuItem.Name = "ContrastToolStripMenuItem"
-        Me.ContrastToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.ContrastToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ContrastToolStripMenuItem.Text = "&Contrast"
         Me.ContrastToolStripMenuItem.ToolTipText = "Change Background and Font Color"
         '
         'ResetToDefaultToolStripMenuItem1
         '
         Me.ResetToDefaultToolStripMenuItem1.Name = "ResetToDefaultToolStripMenuItem1"
-        Me.ResetToDefaultToolStripMenuItem1.Size = New System.Drawing.Size(158, 22)
+        Me.ResetToDefaultToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ResetToDefaultToolStripMenuItem1.Text = "&Reset To Default"
         Me.ResetToDefaultToolStripMenuItem1.ToolTipText = "Reset To Default"
         '

@@ -29,7 +29,7 @@
 
             Select Case True
                 Case TypeOf x Is Label, TypeOf x Is CheckBox, TypeOf x Is Panel, TypeOf x Is LinkLabel,
-                     TypeOf x Is GroupBox, TypeOf x Is Button, TypeOf x Is TabControl,
+                     TypeOf x Is GroupBox, TypeOf x Is Button, TypeOf x Is TabControl, TypeOf x Is PictureBox,
                       TypeOf x Is ToolStrip, TypeOf x Is RadioButton, TypeOf x Is TrackBar, TypeOf x Is SplitContainer
 
                     If x.HasChildren Then ChangeControlColors(x, Preset)

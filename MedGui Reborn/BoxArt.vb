@@ -5,9 +5,9 @@ Module BoxArt
     Public rn, pathimage, snap, title As String
 
     Public Sub Specific_Info()
-        MedGuiR.PictureBox1.BackColor = Color.Black
-        MedGuiR.PictureBox5.BackColor = Color.Black
-        MedGuiR.PictureBox4.BackColor = Color.Black
+        MedGuiR.PictureBox1.BackColor = DefBack
+        MedGuiR.PictureBox5.BackColor = DefBack
+        MedGuiR.PictureBox4.BackColor = DefBack
 
         Try
             Dim drom As Integer
@@ -212,8 +212,10 @@ Module BoxArt
         If IO.File.Exists(PathEmptyBox) Then
             Select Case gif
                 Case "apple2", "cdplay", "fds", "gb", "gba", "gbc", "gg", "nes", "ngp", "ngpc",
-                 "pce", "pcfx", "psx", "snes", "wswan", "wswanc", "ss"
+                 "pce", "pcfx", "psx", "snes", "wswan", "wswanc" ', "ss"
                     boxart.BackColor = Color.White
+                Case Else
+                    boxart.BackColor = Color.Black
             End Select
             boxart.Load(PathEmptyBox)
         Else
