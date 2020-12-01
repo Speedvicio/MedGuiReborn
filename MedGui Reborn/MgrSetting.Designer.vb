@@ -762,6 +762,7 @@ Partial Class MgrSetting
         Me.TabControl1.Controls.Add(Me.TabPage27)
         Me.TabControl1.Controls.Add(Me.TabPage29)
         Me.TabControl1.Controls.Add(Me.TabPage30)
+        Me.TabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
