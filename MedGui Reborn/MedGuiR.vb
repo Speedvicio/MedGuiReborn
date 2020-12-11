@@ -765,6 +765,7 @@ Public Class MedGuiR
         type_csv = SY.Text
         Purge_Grid()
         TempFolder = ""
+
     End Sub
 
     Private Sub RebuildToolStripButton_Click(sender As Object, e As EventArgs) Handles RebuildToolStripButton.Click
@@ -2190,6 +2191,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
             T_MedExtra = MedExtra
             'Datagrid_filter()
             Purge_Grid()
+            DataGridView1.Focus()
         End If
     End Sub
 
@@ -3165,8 +3167,7 @@ CHECKDEAD:
                         If IconStrip.Visible = True Then
                             SY.Focus()
                         ElseIf RE_tar_DDIT.Visible = True Then
-                            RE_tar_DDIT.Focus()
-                            ModuleToolStripComboBox2.Select()
+                            Me.ActiveControl = ModuleToolStripComboBox2.Control
                         End If
                     End If
                 Case JSTART 'menu start
@@ -3260,6 +3261,10 @@ CHECKDEAD:
         If label2index > rn.Length Then label2index = 0
     End Sub
 
+    Private Sub SY_Click(sender As Object, e As EventArgs) Handles SY.Click
+
+    End Sub
+
     Private Sub Label47_DoubleClick(sender As Object, e As System.EventArgs) Handles Label47.DoubleClick
         Dim tdebug As String = rn
         tdebug = Replace(tdebug, "&&", "&").Trim
@@ -3311,6 +3316,7 @@ MisScan:
 
             End If
         End If
+        DataGridView1.Focus()
     End Sub
 
     Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
@@ -3458,7 +3464,7 @@ MisScan:
         sf.Alignment = StringAlignment.Center
         sf.LineAlignment = StringAlignment.Center
 
-        'If we are currently painting the Selected TabItem we'll 
+        'If we are currently painting the Selected TabItem we'll
         'change the brush colors and inflate the rectangle.
         If CBool(e.State And DrawItemState.Selected) Then
             FillBrush.Color = DefFore
