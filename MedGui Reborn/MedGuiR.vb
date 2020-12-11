@@ -3162,7 +3162,12 @@ CHECKDEAD:
                     If DataGridView1.Focused = False Then
                         DataGridView1.Focus()
                     Else
-                        SY.Focus()
+                        If IconStrip.Visible = True Then
+                            SY.Focus()
+                        ElseIf RE_tar_DDIT.Visible = True Then
+                            RE_tar_DDIT.Focus()
+                            ModuleToolStripComboBox2.Select()
+                        End If
                     End If
                 Case JSTART 'menu start
                     If TabControl1.Focused = False Then
