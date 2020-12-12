@@ -364,6 +364,18 @@ Module scan
                 If skipother = False Then
                     If stopiso = False Then Make_Temp_CUE()
                 End If
+            Case ".cfs"
+                If checkpismo = False Then
+                    MsgBox("I can't mount .cfs, you need to install Pismo File Mount Audit Package", MsgBoxStyle.Exclamation + vbOKOnly, "Missing Pismo File Mount...")
+                    consoles = ""
+                    ext = ""
+                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+                Else
+                    MountPismo()
+                    Counter = 1
+                    RecuScan()
+                    Exit Sub
+                End If
             Case ".ecm"
                 If File.Exists(MedExtra & "Plugins\unecm.exe") Then
 
