@@ -486,8 +486,6 @@ Public Class MedGuiR
             Exit Sub
         End If
 
-        If prevcrc = DataGridView1.CurrentRow.Cells(8).Value() Then Exit Sub
-
         'If last_rom = DataGridView1.CurrentRow.Cells(4).Value() Then Exit Sub
 
         Try
@@ -502,6 +500,7 @@ Public Class MedGuiR
             MGRWriteLog("MedGuiR - SelectRom: " & Date.Today.ToString & " " & ex.Message)
         End Try
 
+        If prevcrc = DataGridView1.CurrentRow.Cells(8).Value() Then Exit Sub
         If CheckBox2.Checked = True Then
             Try
                 Dim dimBA As New System.IO.FileInfo(MedExtra & "BoxArt\" & DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png")
