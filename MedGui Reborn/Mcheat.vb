@@ -261,11 +261,11 @@ Public Class Mcheat
                 Case "B"
                     CheckBox2.Checked = False
                 Case "L"
-                    If CheatConsole = "ss" Then
-                        CheckBox2.Checked = False
-                    Else
-                        CheckBox2.Checked = True
-                    End If
+                    'If CheatConsole = "ss" Then
+                    'CheckBox2.Checked = False
+                    'Else
+                    CheckBox2.Checked = True
+                    'End If
             End Select
 
             'TextBox1.MaxLength = RetrieveCheatValue(5).Length + 1
