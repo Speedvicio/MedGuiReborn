@@ -364,7 +364,7 @@ Module scan
                 If skipother = False Then
                     If stopiso = False Then Make_Temp_CUE()
                 End If
-            Case ".cfs"
+            Case ".cfs", ".ciso"
                 If checkpismo = False Then
                     MsgBox("I can't mount .cfs, you need to install Pismo File Mount Audit Package", MsgBoxStyle.Exclamation + vbOKOnly, "Missing Pismo File Mount...")
                     consoles = ""
