@@ -371,10 +371,14 @@ Module scan
                     ext = ""
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                 Else
-                    MountPismo()
-                    Counter = 1
-                    RecuScan()
-                    Exit Sub
+                    If skipother = False Then
+                        If stopiso = False Then
+                            stopscan = True
+                            MountPismo()
+                            Counter = 1
+                            RecuScan()
+                        End If
+                    End If
                 End If
             Case ".ecm"
                 If File.Exists(MedExtra & "Plugins\unecm.exe") Then
