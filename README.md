@@ -19,7 +19,7 @@ For Bugs/Suggestions/Feature Requests or simply to request help, you can refer t
 * Modern "Metro" style by [MetroMed GUI](https://github.com/Speedvicio/MetroMed) appendix
 * Scanning of rom with comparization with NoIntro Dats
 * Support for compressed files and multi archive in. rar, .7zip (via SevenZipSharp.dll Library)
-* Mount on the fly cd based games in compressed zip format by [Pismo File Mount](https://pismotec.com/download/pfmap-192-win.exe)
+* Mount on the fly cd based games in compressed zip/cfs/ciso format by [Pismo File Mount](https://pismotec.com/download/pfmap-192-win.exe)
 * Configure by [Medpad](https://github.com/Speedvicio/MedPad) GUI all Input for all module and device supported by Mednafen
 * Convert audio and cue file in a format compatible with Mednafen (through Sox converter)
 * Playback of cue sheet audio files supported by Mednafen (wav/ogg through Sox converter or by Mednafen itself)
@@ -42,8 +42,8 @@ For Bugs/Suggestions/Feature Requests or simply to request help, you can refer t
 * Create Desktop Shortcut of Game with icons (if boxart available)
 * Convert on the fly vgm/vgz/gbs to make it playable by Mednafen
 * Any game utility
-* Customizable grid aspect
-* Convert ecm and pbp file into generic iso format
+* Customizable grid and GUI aspect
+* Convert ecm/pbp/chd file into generic iso format
 
 ### Requirements
 * Microsoft .NET Framework 2.0 (all Microsoft OS are supported from XP version)

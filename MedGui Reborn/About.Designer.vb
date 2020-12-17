@@ -31,6 +31,7 @@ Partial Class About
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -49,7 +50,10 @@ Partial Class About
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -104,6 +108,8 @@ Partial Class About
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.Controls.Add(Me.LinkLabel7)
+        Me.Panel2.Controls.Add(Me.LinkLabel6)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Location = New System.Drawing.Point(12, 108)
@@ -118,9 +124,9 @@ Partial Class About
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(84, 29)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(118, 16)
+        Me.Label4.Size = New System.Drawing.Size(58, 16)
         Me.Label4.TabIndex = 1
-        Me.Label4.Text = "License: Freeware"
+        Me.Label4.Text = "License:"
         '
         'Label3
         '
@@ -129,9 +135,9 @@ Partial Class About
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(72, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(143, 16)
+        Me.Label3.Size = New System.Drawing.Size(71, 16)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Coded By: Speedvicio"
+        Me.Label3.Text = "Coded By:"
         '
         'Panel3
         '
@@ -155,6 +161,17 @@ Partial Class About
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(286, 196)
         Me.Panel3.TabIndex = 5
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(179, 61)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(70, 16)
+        Me.Label11.TabIndex = 91
+        Me.Label11.Text = "orthicviper"
         '
         'LinkLabel5
         '
@@ -369,16 +386,58 @@ Partial Class About
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
-        'Label11
+        'LinkLabel6
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(179, 61)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(70, 16)
-        Me.Label11.TabIndex = 91
-        Me.Label11.Text = "orthicviper"
+        Me.LinkLabel6.AutoSize = True
+        Me.LinkLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel6.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LinkLabel6.LinkColor = System.Drawing.Color.MediumOrchid
+        Me.LinkLabel6.Location = New System.Drawing.Point(149, 9)
+        Me.LinkLabel6.Name = "LinkLabel6"
+        Me.LinkLabel6.Size = New System.Drawing.Size(77, 16)
+        Me.LinkLabel6.TabIndex = 83
+        Me.LinkLabel6.TabStop = True
+        Me.LinkLabel6.Text = "Speedvicio"
+        Me.LinkLabel6.VisitedLinkColor = System.Drawing.Color.Gold
+        '
+        'LinkLabel7
+        '
+        Me.LinkLabel7.AutoSize = True
+        Me.LinkLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel7.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LinkLabel7.LinkColor = System.Drawing.Color.MediumOrchid
+        Me.LinkLabel7.Location = New System.Drawing.Point(149, 29)
+        Me.LinkLabel7.Name = "LinkLabel7"
+        Me.LinkLabel7.Size = New System.Drawing.Size(54, 16)
+        Me.LinkLabel7.TabIndex = 84
+        Me.LinkLabel7.TabStop = True
+        Me.LinkLabel7.Text = "CC0-1.0"
+        Me.LinkLabel7.VisitedLinkColor = System.Drawing.Color.Gold
+        '
+        'LinkLabel8
+        '
+        Me.LinkLabel8.AutoSize = True
+        Me.LinkLabel8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel8.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LinkLabel8.LinkColor = System.Drawing.Color.MediumOrchid
+        Me.LinkLabel8.Location = New System.Drawing.Point(464, 348)
+        Me.LinkLabel8.Name = "LinkLabel8"
+        Me.LinkLabel8.Size = New System.Drawing.Size(110, 16)
+        Me.LinkLabel8.TabIndex = 85
+        Me.LinkLabel8.TabStop = True
+        Me.LinkLabel8.Text = "The Mod Archive"
+        Me.LinkLabel8.VisitedLinkColor = System.Drawing.Color.Gold
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(316, 348)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(142, 16)
+        Me.Label12.TabIndex = 84
+        Me.Label12.Text = "My Milkytracker music:"
         '
         'About
         '
@@ -386,6 +445,8 @@ Partial Class About
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(652, 376)
+        Me.Controls.Add(Me.LinkLabel8)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
@@ -404,6 +465,7 @@ Partial Class About
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -434,4 +496,8 @@ Partial Class About
     Friend WithEvents Panel4 As Panel
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents LinkLabel6 As LinkLabel
+    Friend WithEvents LinkLabel7 As LinkLabel
+    Friend WithEvents LinkLabel8 As LinkLabel
+    Friend WithEvents Label12 As Label
 End Class

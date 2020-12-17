@@ -114,4 +114,18 @@ RETRYMOD:
         open_link()
     End Sub
 
+    Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel6.LinkClicked
+        _link = "https://github.com/Speedvicio"
+        open_link()
+    End Sub
+
+    Private Sub LinkLabel7_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel7.LinkClicked
+        _link = "https://github.com/Speedvicio/MedGuiReborn/blob/master/LICENSE"
+        open_link()
+    End Sub
+
+    Private Sub LinkLabel8_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel8.LinkClicked
+        _link = "https://modarchive.org/index.php?request=view_profile&query=93077"
+        open_link()
+    End Sub
 End Class
