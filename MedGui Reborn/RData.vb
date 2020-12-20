@@ -56,7 +56,7 @@ Boing:
                 'End If
                 'End If
 
-                If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or UCase(romname).Contains("Enhancement Chip") Then
+                If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or LCase(romname).Contains("enhancement chip") Then
                 Else
                     If ext <> "" Then
                         Select Case LCase(ext)
