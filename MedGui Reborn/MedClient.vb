@@ -432,6 +432,7 @@ tryagain:
     Private csvList As String
 
     Private Sub ConsoleComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ConsoleComboBox.SelectedIndexChanged
+        allItems.Clear()
         GameListBox.Items.Clear()
         csvList = MedExtra & "Scanned\" & ConsoleComboBox.Text.Trim & ".csv"
         ReadCsvList("GameN")
