@@ -687,7 +687,7 @@ Public Class MedGuiR
             Exit Sub
         End If
         TextBox3.Text = ""
-        ToolStripTextBox2.Text = ""
+        FNameToolStripTextBox.Text = ""
 
         SevenZCounter = 0
         stopscan = False
@@ -699,42 +699,42 @@ Public Class MedGuiR
 
     Private Sub WORLDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WORLDToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
-        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
+        FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = ""
         SearchGridDataInRow()
     End Sub
 
     Private Sub EUToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EUToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\eu.png"))
-        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
+        FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "eu"
         SearchGridDataInRow()
     End Sub
 
     Private Sub USToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles USToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\us.png"))
-        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
+        FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "us"
         SearchGridDataInRow()
     End Sub
 
     Private Sub JPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JPToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\jp.png"))
-        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
+        FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "ja"
         SearchGridDataInRow()
     End Sub
 
     Private Sub PDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\pd.png"))
-        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
+        FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "pd"
         SearchGridDataInRow()
     End Sub
 
     Private Sub MUSICToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MUSICToolStripMenuItem.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Gui\modland.png"))
-        ToolStripMenuItem2.Image = FlagToolStripSplitButton.Image
+        FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "soundtrack"
         SearchGridDataInRow()
     End Sub
@@ -2075,9 +2075,11 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         If NetToolStripButton.BackColor = Color.Transparent Then
             NetToolStripButton.BackColor = Color.Red
             AutoConnectToolStripMenuItem.Checked = True
+            ConnectedToolStripMenuItem.BackColor = Color.Green
         Else
             NetToolStripButton.BackColor = Color.Transparent
             AutoConnectToolStripMenuItem.Checked = False
+            ConnectedToolStripMenuItem.BackColor = Color.Red
         End If
 
     End Sub
@@ -2994,7 +2996,7 @@ SKIPHASH:
         ModLandToolStripButton.PerformClick()
     End Sub
 
-    Private Sub ToolStripTextBox2_Click(sender As Object, e As EventArgs) Handles ToolStripTextBox2.Click
+    Private Sub ToolStripTextBox2_Click(sender As Object, e As EventArgs) Handles FNameToolStripTextBox.Click
 
     End Sub
 
@@ -3030,8 +3032,8 @@ SKIPHASH:
     End Sub
 
     Private Sub XToolStripMenuItem_MouseUp(sender As Object, e As MouseEventArgs) Handles XToolStripMenuItem.MouseUp
-        ToolStripTextBox2.Text = ""
-        ToolStripTextBox2.Focus()
+        FNameToolStripTextBox.Text = ""
+        FNameToolStripTextBox.Focus()
         SendKeys.Send("{BKSP}") '("{ENTER}")
     End Sub
 
@@ -3260,8 +3262,8 @@ CHECKDEAD:
         If label2index > rn.Length Then label2index = 0
     End Sub
 
-    Private Sub SY_Click(sender As Object, e As EventArgs) Handles SY.Click
-
+    Private Sub ConnectedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConnectedToolStripMenuItem.Click
+        NetToolStripButton.PerformClick()
     End Sub
 
     Private Sub Label47_DoubleClick(sender As Object, e As System.EventArgs) Handles Label47.DoubleClick
@@ -3411,8 +3413,8 @@ MisScan:
         ChangeModule()
     End Sub
 
-    Private Sub ToolStripTextBox2_KeyUp(sender As Object, e As KeyEventArgs) Handles ToolStripTextBox2.KeyUp
-        TextBox3.Text = ToolStripTextBox2.Text
+    Private Sub ToolStripTextBox2_KeyUp(sender As Object, e As KeyEventArgs) Handles FNameToolStripTextBox.KeyUp
+        TextBox3.Text = FNameToolStripTextBox.Text
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True    ' evita il Beep!
             FindToolStripButton.PerformClick()

@@ -45,8 +45,10 @@
 
             If MedGuiR.NetToolStripButton.BackColor = Color.Red Then
                 MedGuiR.AutoConnectToolStripMenuItem.Checked = True
+                MedGuiR.ConnectedToolStripMenuItem.BackColor = Color.Green
             Else
                 MedGuiR.AutoConnectToolStripMenuItem.Checked = False
+                MedGuiR.ConnectedToolStripMenuItem.BackColor = Color.Red
             End If
 
             If UpdateServer = "" Then

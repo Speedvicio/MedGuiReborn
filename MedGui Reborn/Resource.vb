@@ -41,7 +41,7 @@
             MedGuiR.FindToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\find.png"))
             MedGuiR.RebuildToolStripButton.Image = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
-            MedGuiR.ToolStripMenuItem2.Image = MedGuiR.FlagToolStripSplitButton.Image
+            MedGuiR.FilterToolStripMenuItem.Image = MedGuiR.FlagToolStripSplitButton.Image
             MedGuiR.WORLDToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
             MedGuiR.EUToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Flags\eu.png"))
             MedGuiR.USToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Flags\us.png"))

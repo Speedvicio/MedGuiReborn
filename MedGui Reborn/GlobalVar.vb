@@ -446,7 +446,7 @@ ReCheckConfig:
 
     Public Sub SingleScan()
         MedGuiR.TextBox3.Text = ""
-        MedGuiR.ToolStripTextBox2.Text = ""
+        MedGuiR.FNameToolStripTextBox.Text = ""
         skipother = False
         stopscan = False
         stopiso = False
