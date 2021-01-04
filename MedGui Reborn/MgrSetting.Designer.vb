@@ -595,6 +595,8 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.Label188 = New System.Windows.Forms.Label()
+        Me.ComboBox66 = New System.Windows.Forms.ComboBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -929,6 +931,8 @@ Partial Class MgrSetting
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label188)
+        Me.GroupBox2.Controls.Add(Me.ComboBox66)
         Me.GroupBox2.Controls.Add(Me.ComboBox56)
         Me.GroupBox2.Controls.Add(Me.Label141)
         Me.GroupBox2.Controls.Add(Me.ComboBox55)
@@ -1261,9 +1265,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"0", "full", "aspect", "aspect_int", "aspect_mult2"})
-        Me.ComboBox5.Location = New System.Drawing.Point(153, 92)
+        Me.ComboBox5.Location = New System.Drawing.Point(184, 92)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox5.Size = New System.Drawing.Size(108, 21)
         Me.ComboBox5.TabIndex = 15
         Me.ComboBox5.Text = "aspect_mult2"
         Me.ToolTip1.SetToolTip(Me.ComboBox5, resources.GetString("ComboBox5.ToolTip"))
@@ -1271,7 +1275,7 @@ Partial Class MgrSetting
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(6, 95)
+        Me.Label14.Location = New System.Drawing.Point(137, 95)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(41, 13)
         Me.Label14.TabIndex = 14
@@ -6997,6 +7001,28 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'Label188
+        '
+        Me.Label188.AutoSize = True
+        Me.Label188.Location = New System.Drawing.Point(7, 95)
+        Me.Label188.Name = "Label188"
+        Me.Label188.Size = New System.Drawing.Size(51, 13)
+        Me.Label188.TabIndex = 109
+        Me.Label188.Text = "Video GL"
+        '
+        'ComboBox66
+        '
+        Me.ComboBox66.Enabled = False
+        Me.ComboBox66.FormattingEnabled = True
+        Me.ComboBox66.Items.AddRange(New Object() {"default", "opengl", "overlay", "sdl", "softfb"})
+        Me.ComboBox66.Location = New System.Drawing.Point(64, 92)
+        Me.ComboBox66.Name = "ComboBox66"
+        Me.ComboBox66.Size = New System.Drawing.Size(52, 21)
+        Me.ComboBox66.Sorted = True
+        Me.ComboBox66.TabIndex = 108
+        Me.ComboBox66.Text = "opengl"
+        Me.ToolTip1.SetToolTip(Me.ComboBox66, resources.GetString("ComboBox66.ToolTip"))
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7753,4 +7779,6 @@ Partial Class MgrSetting
     Friend WithEvents Label185 As Label
     Friend WithEvents NumericUpDown45 As NumericUpDown
     Friend WithEvents Label184 As Label
+    Friend WithEvents Label188 As Label
+    Friend WithEvents ComboBox66 As ComboBox
 End Class

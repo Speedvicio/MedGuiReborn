@@ -343,6 +343,8 @@
                         " -snes_faust.slend " & MgrSetting.NumericUpDown46.Value & " -snes_faust.slendp " & MgrSetting.NumericUpDown48.Value & " -snes_faust.slstart " &
                         MgrSetting.NumericUpDown45.Value & " -snes_faust.slstartp " & MgrSetting.NumericUpDown47.Value
                     End If
+                Case Is = 12700
+                    'video = video & " -video.glformat " & MgrSetting.ComboBox55.Text
 
             End Select
         Next

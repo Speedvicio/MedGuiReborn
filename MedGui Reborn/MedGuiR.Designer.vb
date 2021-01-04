@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -466,23 +466,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -490,9 +490,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -2603,42 +2603,42 @@ Partial Class MedGuiR
         '
         Me.WORLDToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.WORLDToolStripMenuItem.Name = "WORLDToolStripMenuItem"
-        Me.WORLDToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WORLDToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.WORLDToolStripMenuItem.Text = "WORLD"
         '
         'EUToolStripMenuItem
         '
         Me.EUToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.EUToolStripMenuItem.Name = "EUToolStripMenuItem"
-        Me.EUToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EUToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.EUToolStripMenuItem.Text = "EU"
         '
         'USToolStripMenuItem
         '
         Me.USToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.USToolStripMenuItem.Name = "USToolStripMenuItem"
-        Me.USToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.USToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.USToolStripMenuItem.Text = "US"
         '
         'JPToolStripMenuItem
         '
         Me.JPToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.JPToolStripMenuItem.Name = "JPToolStripMenuItem"
-        Me.JPToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.JPToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.JPToolStripMenuItem.Text = "JP"
         '
         'PDToolStripMenuItem
         '
         Me.PDToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PDToolStripMenuItem.Name = "PDToolStripMenuItem"
-        Me.PDToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PDToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.PDToolStripMenuItem.Text = "PD"
         '
         'MUSICToolStripMenuItem
         '
         Me.MUSICToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MUSICToolStripMenuItem.Name = "MUSICToolStripMenuItem"
-        Me.MUSICToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MUSICToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.MUSICToolStripMenuItem.Text = "MUSIC"
         '
         'TabControl1
