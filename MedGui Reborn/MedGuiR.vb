@@ -10,7 +10,7 @@ Public Class MedGuiR
     Dim prevcrc As String
     Public deadPOV As String
     Dim countPOV As Integer
-    Dim FormIsON As Boolean
+    Public FormIsON As Boolean
 
     Public tgdbCID As String
 
@@ -59,7 +59,7 @@ Public Class MedGuiR
 
         SoxStatus.Close()
         FirstStart = False
-
+        DataGridView1.Focus()
     End Sub
 
     Private Sub ParseCommandLineArgs()
@@ -1132,7 +1132,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -3127,6 +3127,12 @@ CHECKDEAD:
                     If DataGridView1.Focused = True Then
                         SendKeys.Send("{DELETE}")
                     ElseIf Me.Focused = True Then
+                    ElseIf VirtualKbrd.Visible Then
+                        If VirtualKbrd.ActiveControl Is VirtualKbrd.TextBox1 Then
+                            SendKeys.Send("{DEL}")
+                        Else
+                            VirtualKbrd.btnBack.PerformClick()
+                        End If
                     Else
                         SendKeys.Send("%{F4}")
                     End If
@@ -3134,12 +3140,22 @@ CHECKDEAD:
                     'SendKeys.Send("{SPACE}")
                     If DataGridView1.Focused = True Then
                         SendKeys.Send("+")
+                    ElseIf VirtualKbrd.Visible = True Then
+                        VirtualKbrd.TextBox1.Text = ""
                     Else
                         SendKeys.Send(" ")
                     End If
                 Case JY 'giallo - agg preferiti
                     If DataGridView1.Focused = True Then
                         SendKeys.Send("{F}")
+                    End If
+                    If VirtualKbrd.Visible = True Then
+                        If VirtualKbrd.ActiveControl Is VirtualKbrd.TextBox1 Then
+                            VirtualKbrd.oldbutton.Select()
+                        Else
+                            VirtualKbrd.oldbutton = VirtualKbrd.ActiveControl
+                            VirtualKbrd.TextBox1.Select()
+                        End If
                     End If
                 Case JL 'L - menu indietro
                     If DataGridView1.Focused = False Then
@@ -3162,21 +3178,30 @@ CHECKDEAD:
                         End If
                     End If
                 Case JSELECT 'menu select
-                    If DataGridView1.Focused = False Then
-                        DataGridView1.Focus()
+                    If VirtualKbrd.Visible = True Then
+                        VirtualKbrd.btnCaps.PerformClick()
                     Else
-                        If IconStrip.Visible = True Then
-                            SY.Focus()
-                        ElseIf RE_tar_DDIT.Visible = True Then
-                            Me.ActiveControl = ModuleToolStripComboBox2.Control
+                        If DataGridView1.Focused = False Then
+                            DataGridView1.Focus()
+                        Else
+                            If IconStrip.Visible = True Then
+                                SY.Focus()
+                            ElseIf RE_tar_DDIT.Visible = True Then
+                                Me.ActiveControl = ModuleToolStripComboBox2.Control
+                            End If
                         End If
                     End If
                 Case JSTART 'menu start
-                    If TabControl1.Focused = False Then
-                        TabControl1.Select()
+                    If VirtualKbrd.Visible = True Then
+                        VirtualKbrd.Close()
                     Else
-                        DataGridView1.Focus()
+                        If DataGridView1.Rows.Count > 9 Then VirtualKbrd.ShowDialog()
                     End If
+                    'If TabControl1.Focused = False Then
+                    'TabControl1.Select()
+                    'Else
+                    'DataGridView1.Focus()
+                    'End If
                 Case JRIGHT 'destra
                     SendKeys.Send("{RIGHT}")
                 Case JLEFT 'sinistra
@@ -3434,7 +3459,7 @@ MisScan:
     End Sub
 
     Private Sub MedGuiR_Deactivate(sender As Object, e As EventArgs) Handles Me.Deactivate
-        FormIsON = False
+        If VirtualKbrd.Visible = False Then FormIsON = False
     End Sub
 
     Private Sub PictureBox1_MouseEnter(sender As Object, e As EventArgs) Handles PictureBox1.MouseEnter

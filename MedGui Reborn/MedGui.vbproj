@@ -159,6 +159,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Extract.vb" />
+    <Compile Include="VirtualKbrd.designer.vb">
+      <DependentUpon>VirtualKbrd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VirtualKbrd.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GlobalSuppressions.vb" />
     <Compile Include="FGodMode.Designer.vb">
       <DependentUpon>FGodMode.vb</DependentUpon>
@@ -382,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FGodMode.resx">
       <DependentUpon>FGodMode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VirtualKbrd.resx">
+      <DependentUpon>VirtualKbrd.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MAImaker.resx">
       <DependentUpon>MAImaker.vb</DependentUpon>
