@@ -1,6 +1,4 @@
 ﻿Imports System.IO
-Imports EZNotifications
-
 Public Class MedGuiR
 
     Public StartRom, romName, last_consoles, last_rom, LoadCD, tpce, multimedia, regioni, tempiso, Vjoypad, M3UDisk As String,
@@ -60,11 +58,7 @@ Public Class MedGuiR
 
         SoxStatus.Close()
         FirstStart = False
-        If DataGridView1.Rows.Count > 0 Then
-            DataGridView1.Focus()
-        Else
-            SY.Focus()
-        End If
+        DataGridView1.Focus()
     End Sub
 
     Private Sub ParseCommandLineArgs()
@@ -3213,10 +3207,8 @@ CHECKDEAD:
                     SendKeys.Send("{LEFT}")
                 Case JUP 'su
                     SendKeys.Send("{UP}")
-                    NotifyEz(Replace(Label1.Text, "Console:", "").Trim, (Label47.Text & " " & Replace(Label3.Text, "Version:", "")).Trim)
                 Case JDOWN 'giu'
                     SendKeys.Send("{DOWN}")
-                    NotifyEz(Replace(Label1.Text, "Console:", "").Trim, (Label47.Text & " " & Replace(Label3.Text, "Version:", "")).Trim)
             End Select
         Catch
             MsgBox("Unrecognized Joypad on port " & ComboBox6.Text, vbOKOnly + vbCritical, "unrecognized Joypad")
@@ -3530,14 +3522,4 @@ MisScan:
 
     End Sub
 
-    Friend Function NotifyEz(title As String, message As String)
-
-        Dim notify As New EZNotification
-        EZNotification.image_choosen = pathimage
-
-        If TextBox1.Text <> last_rom Then
-            notify.Show(title, message, 0, 2)
-        End If
-
-    End Function
 End Class
