@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+
 Public Class MedGuiR
 
     Public StartRom, romName, last_consoles, last_rom, LoadCD, tpce, multimedia, regioni, tempiso, Vjoypad, M3UDisk As String,
@@ -3138,7 +3139,8 @@ CHECKDEAD:
                 Case JX 'blu - seleziona
                     'SendKeys.Send("{SPACE}")
                     If DataGridView1.Focused = True Then
-                        SendKeys.Send("+")
+                        'SendKeys.Send("+")
+                        NetToolStripButton.PerformClick()
                     ElseIf VirtualKbrd.Visible = True Then
                         VirtualKbrd.TextBox1.Text = ""
                     Else

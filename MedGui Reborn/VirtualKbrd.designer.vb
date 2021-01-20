@@ -82,11 +82,12 @@ Partial Class VirtualKbrd
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnShiftR = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btn1
         '
-        Me.btn1.Location = New System.Drawing.Point(71, 45)
+        Me.btn1.Location = New System.Drawing.Point(54, 45)
         Me.btn1.Name = "btn1"
         Me.btn1.Size = New System.Drawing.Size(36, 30)
         Me.btn1.TabIndex = 0
@@ -95,7 +96,7 @@ Partial Class VirtualKbrd
         '
         'btn2
         '
-        Me.btn2.Location = New System.Drawing.Point(113, 45)
+        Me.btn2.Location = New System.Drawing.Point(96, 45)
         Me.btn2.Name = "btn2"
         Me.btn2.Size = New System.Drawing.Size(36, 30)
         Me.btn2.TabIndex = 1
@@ -104,7 +105,7 @@ Partial Class VirtualKbrd
         '
         'btn3
         '
-        Me.btn3.Location = New System.Drawing.Point(155, 45)
+        Me.btn3.Location = New System.Drawing.Point(138, 45)
         Me.btn3.Name = "btn3"
         Me.btn3.Size = New System.Drawing.Size(36, 30)
         Me.btn3.TabIndex = 2
@@ -113,7 +114,7 @@ Partial Class VirtualKbrd
         '
         'btn4
         '
-        Me.btn4.Location = New System.Drawing.Point(197, 45)
+        Me.btn4.Location = New System.Drawing.Point(180, 45)
         Me.btn4.Name = "btn4"
         Me.btn4.Size = New System.Drawing.Size(36, 30)
         Me.btn4.TabIndex = 3
@@ -122,7 +123,7 @@ Partial Class VirtualKbrd
         '
         'btn5
         '
-        Me.btn5.Location = New System.Drawing.Point(239, 45)
+        Me.btn5.Location = New System.Drawing.Point(222, 45)
         Me.btn5.Name = "btn5"
         Me.btn5.Size = New System.Drawing.Size(36, 30)
         Me.btn5.TabIndex = 4
@@ -131,7 +132,7 @@ Partial Class VirtualKbrd
         '
         'btn6
         '
-        Me.btn6.Location = New System.Drawing.Point(281, 45)
+        Me.btn6.Location = New System.Drawing.Point(264, 45)
         Me.btn6.Name = "btn6"
         Me.btn6.Size = New System.Drawing.Size(36, 30)
         Me.btn6.TabIndex = 5
@@ -140,7 +141,7 @@ Partial Class VirtualKbrd
         '
         'btn7
         '
-        Me.btn7.Location = New System.Drawing.Point(323, 45)
+        Me.btn7.Location = New System.Drawing.Point(306, 45)
         Me.btn7.Name = "btn7"
         Me.btn7.Size = New System.Drawing.Size(36, 30)
         Me.btn7.TabIndex = 6
@@ -149,7 +150,7 @@ Partial Class VirtualKbrd
         '
         'btn8
         '
-        Me.btn8.Location = New System.Drawing.Point(365, 45)
+        Me.btn8.Location = New System.Drawing.Point(348, 45)
         Me.btn8.Name = "btn8"
         Me.btn8.Size = New System.Drawing.Size(36, 30)
         Me.btn8.TabIndex = 7
@@ -158,7 +159,7 @@ Partial Class VirtualKbrd
         '
         'btn9
         '
-        Me.btn9.Location = New System.Drawing.Point(407, 45)
+        Me.btn9.Location = New System.Drawing.Point(390, 45)
         Me.btn9.Name = "btn9"
         Me.btn9.Size = New System.Drawing.Size(36, 30)
         Me.btn9.TabIndex = 8
@@ -167,7 +168,7 @@ Partial Class VirtualKbrd
         '
         'btn10
         '
-        Me.btn10.Location = New System.Drawing.Point(449, 45)
+        Me.btn10.Location = New System.Drawing.Point(432, 45)
         Me.btn10.Name = "btn10"
         Me.btn10.Size = New System.Drawing.Size(36, 30)
         Me.btn10.TabIndex = 9
@@ -176,7 +177,7 @@ Partial Class VirtualKbrd
         '
         'btn11
         '
-        Me.btn11.Location = New System.Drawing.Point(491, 45)
+        Me.btn11.Location = New System.Drawing.Point(474, 45)
         Me.btn11.Name = "btn11"
         Me.btn11.Size = New System.Drawing.Size(36, 30)
         Me.btn11.TabIndex = 10
@@ -185,7 +186,7 @@ Partial Class VirtualKbrd
         '
         'btn12
         '
-        Me.btn12.Location = New System.Drawing.Point(533, 45)
+        Me.btn12.Location = New System.Drawing.Point(516, 45)
         Me.btn12.Name = "btn12"
         Me.btn12.Size = New System.Drawing.Size(36, 30)
         Me.btn12.TabIndex = 11
@@ -194,7 +195,7 @@ Partial Class VirtualKbrd
         '
         'btn13
         '
-        Me.btn13.Location = New System.Drawing.Point(29, 45)
+        Me.btn13.Location = New System.Drawing.Point(12, 45)
         Me.btn13.Name = "btn13"
         Me.btn13.Size = New System.Drawing.Size(36, 30)
         Me.btn13.TabIndex = 12
@@ -203,7 +204,7 @@ Partial Class VirtualKbrd
         '
         'btnBack
         '
-        Me.btnBack.Location = New System.Drawing.Point(575, 45)
+        Me.btnBack.Location = New System.Drawing.Point(558, 45)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(67, 30)
         Me.btnBack.TabIndex = 13
@@ -212,7 +213,7 @@ Partial Class VirtualKbrd
         '
         'btnTab
         '
-        Me.btnTab.Location = New System.Drawing.Point(29, 81)
+        Me.btnTab.Location = New System.Drawing.Point(12, 81)
         Me.btnTab.Name = "btnTab"
         Me.btnTab.Size = New System.Drawing.Size(67, 30)
         Me.btnTab.TabIndex = 14
@@ -221,7 +222,7 @@ Partial Class VirtualKbrd
         '
         'btnQ
         '
-        Me.btnQ.Location = New System.Drawing.Point(102, 81)
+        Me.btnQ.Location = New System.Drawing.Point(85, 81)
         Me.btnQ.Name = "btnQ"
         Me.btnQ.Size = New System.Drawing.Size(36, 30)
         Me.btnQ.TabIndex = 15
@@ -230,7 +231,7 @@ Partial Class VirtualKbrd
         '
         'btnW
         '
-        Me.btnW.Location = New System.Drawing.Point(144, 81)
+        Me.btnW.Location = New System.Drawing.Point(127, 81)
         Me.btnW.Name = "btnW"
         Me.btnW.Size = New System.Drawing.Size(36, 30)
         Me.btnW.TabIndex = 16
@@ -239,7 +240,7 @@ Partial Class VirtualKbrd
         '
         'btnE
         '
-        Me.btnE.Location = New System.Drawing.Point(186, 81)
+        Me.btnE.Location = New System.Drawing.Point(169, 81)
         Me.btnE.Name = "btnE"
         Me.btnE.Size = New System.Drawing.Size(36, 30)
         Me.btnE.TabIndex = 17
@@ -248,7 +249,7 @@ Partial Class VirtualKbrd
         '
         'btnR
         '
-        Me.btnR.Location = New System.Drawing.Point(228, 81)
+        Me.btnR.Location = New System.Drawing.Point(211, 81)
         Me.btnR.Name = "btnR"
         Me.btnR.Size = New System.Drawing.Size(36, 30)
         Me.btnR.TabIndex = 18
@@ -257,7 +258,7 @@ Partial Class VirtualKbrd
         '
         'btnT
         '
-        Me.btnT.Location = New System.Drawing.Point(270, 81)
+        Me.btnT.Location = New System.Drawing.Point(253, 81)
         Me.btnT.Name = "btnT"
         Me.btnT.Size = New System.Drawing.Size(36, 30)
         Me.btnT.TabIndex = 19
@@ -266,7 +267,7 @@ Partial Class VirtualKbrd
         '
         'btnY
         '
-        Me.btnY.Location = New System.Drawing.Point(312, 81)
+        Me.btnY.Location = New System.Drawing.Point(295, 81)
         Me.btnY.Name = "btnY"
         Me.btnY.Size = New System.Drawing.Size(36, 30)
         Me.btnY.TabIndex = 20
@@ -275,7 +276,7 @@ Partial Class VirtualKbrd
         '
         'btnU
         '
-        Me.btnU.Location = New System.Drawing.Point(354, 81)
+        Me.btnU.Location = New System.Drawing.Point(337, 81)
         Me.btnU.Name = "btnU"
         Me.btnU.Size = New System.Drawing.Size(36, 30)
         Me.btnU.TabIndex = 21
@@ -284,7 +285,7 @@ Partial Class VirtualKbrd
         '
         'btnI
         '
-        Me.btnI.Location = New System.Drawing.Point(396, 81)
+        Me.btnI.Location = New System.Drawing.Point(379, 81)
         Me.btnI.Name = "btnI"
         Me.btnI.Size = New System.Drawing.Size(36, 30)
         Me.btnI.TabIndex = 22
@@ -293,7 +294,7 @@ Partial Class VirtualKbrd
         '
         'btnO
         '
-        Me.btnO.Location = New System.Drawing.Point(438, 81)
+        Me.btnO.Location = New System.Drawing.Point(421, 81)
         Me.btnO.Name = "btnO"
         Me.btnO.Size = New System.Drawing.Size(36, 30)
         Me.btnO.TabIndex = 23
@@ -302,7 +303,7 @@ Partial Class VirtualKbrd
         '
         'btnP
         '
-        Me.btnP.Location = New System.Drawing.Point(480, 81)
+        Me.btnP.Location = New System.Drawing.Point(463, 81)
         Me.btnP.Name = "btnP"
         Me.btnP.Size = New System.Drawing.Size(36, 30)
         Me.btnP.TabIndex = 24
@@ -311,7 +312,7 @@ Partial Class VirtualKbrd
         '
         'btn16
         '
-        Me.btn16.Location = New System.Drawing.Point(522, 81)
+        Me.btn16.Location = New System.Drawing.Point(505, 81)
         Me.btn16.Name = "btn16"
         Me.btn16.Size = New System.Drawing.Size(36, 30)
         Me.btn16.TabIndex = 25
@@ -320,7 +321,7 @@ Partial Class VirtualKbrd
         '
         'btn15
         '
-        Me.btn15.Location = New System.Drawing.Point(564, 81)
+        Me.btn15.Location = New System.Drawing.Point(547, 81)
         Me.btn15.Name = "btn15"
         Me.btn15.Size = New System.Drawing.Size(36, 30)
         Me.btn15.TabIndex = 26
@@ -329,7 +330,7 @@ Partial Class VirtualKbrd
         '
         'btn14
         '
-        Me.btn14.Location = New System.Drawing.Point(606, 81)
+        Me.btn14.Location = New System.Drawing.Point(589, 81)
         Me.btn14.Name = "btn14"
         Me.btn14.Size = New System.Drawing.Size(36, 30)
         Me.btn14.TabIndex = 27
@@ -338,7 +339,7 @@ Partial Class VirtualKbrd
         '
         'btnCaps
         '
-        Me.btnCaps.Location = New System.Drawing.Point(29, 117)
+        Me.btnCaps.Location = New System.Drawing.Point(12, 117)
         Me.btnCaps.Name = "btnCaps"
         Me.btnCaps.Size = New System.Drawing.Size(36, 30)
         Me.btnCaps.TabIndex = 28
@@ -347,7 +348,7 @@ Partial Class VirtualKbrd
         '
         'btnA
         '
-        Me.btnA.Location = New System.Drawing.Point(71, 117)
+        Me.btnA.Location = New System.Drawing.Point(54, 117)
         Me.btnA.Name = "btnA"
         Me.btnA.Size = New System.Drawing.Size(36, 30)
         Me.btnA.TabIndex = 29
@@ -356,7 +357,7 @@ Partial Class VirtualKbrd
         '
         'btnS
         '
-        Me.btnS.Location = New System.Drawing.Point(113, 117)
+        Me.btnS.Location = New System.Drawing.Point(96, 117)
         Me.btnS.Name = "btnS"
         Me.btnS.Size = New System.Drawing.Size(36, 30)
         Me.btnS.TabIndex = 30
@@ -365,7 +366,7 @@ Partial Class VirtualKbrd
         '
         'btnD
         '
-        Me.btnD.Location = New System.Drawing.Point(155, 117)
+        Me.btnD.Location = New System.Drawing.Point(138, 117)
         Me.btnD.Name = "btnD"
         Me.btnD.Size = New System.Drawing.Size(36, 30)
         Me.btnD.TabIndex = 31
@@ -374,7 +375,7 @@ Partial Class VirtualKbrd
         '
         'btnF
         '
-        Me.btnF.Location = New System.Drawing.Point(197, 117)
+        Me.btnF.Location = New System.Drawing.Point(180, 117)
         Me.btnF.Name = "btnF"
         Me.btnF.Size = New System.Drawing.Size(36, 30)
         Me.btnF.TabIndex = 32
@@ -383,7 +384,7 @@ Partial Class VirtualKbrd
         '
         'btnG
         '
-        Me.btnG.Location = New System.Drawing.Point(239, 117)
+        Me.btnG.Location = New System.Drawing.Point(222, 117)
         Me.btnG.Name = "btnG"
         Me.btnG.Size = New System.Drawing.Size(36, 30)
         Me.btnG.TabIndex = 33
@@ -392,7 +393,7 @@ Partial Class VirtualKbrd
         '
         'btnH
         '
-        Me.btnH.Location = New System.Drawing.Point(281, 117)
+        Me.btnH.Location = New System.Drawing.Point(264, 117)
         Me.btnH.Name = "btnH"
         Me.btnH.Size = New System.Drawing.Size(36, 30)
         Me.btnH.TabIndex = 34
@@ -401,7 +402,7 @@ Partial Class VirtualKbrd
         '
         'btnJ
         '
-        Me.btnJ.Location = New System.Drawing.Point(323, 117)
+        Me.btnJ.Location = New System.Drawing.Point(306, 117)
         Me.btnJ.Name = "btnJ"
         Me.btnJ.Size = New System.Drawing.Size(36, 30)
         Me.btnJ.TabIndex = 35
@@ -410,7 +411,7 @@ Partial Class VirtualKbrd
         '
         'btnK
         '
-        Me.btnK.Location = New System.Drawing.Point(365, 117)
+        Me.btnK.Location = New System.Drawing.Point(348, 117)
         Me.btnK.Name = "btnK"
         Me.btnK.Size = New System.Drawing.Size(36, 30)
         Me.btnK.TabIndex = 36
@@ -419,7 +420,7 @@ Partial Class VirtualKbrd
         '
         'btnL
         '
-        Me.btnL.Location = New System.Drawing.Point(407, 117)
+        Me.btnL.Location = New System.Drawing.Point(390, 117)
         Me.btnL.Name = "btnL"
         Me.btnL.Size = New System.Drawing.Size(36, 30)
         Me.btnL.TabIndex = 37
@@ -428,7 +429,7 @@ Partial Class VirtualKbrd
         '
         'btn30
         '
-        Me.btn30.Location = New System.Drawing.Point(449, 117)
+        Me.btn30.Location = New System.Drawing.Point(432, 117)
         Me.btn30.Name = "btn30"
         Me.btn30.Size = New System.Drawing.Size(36, 30)
         Me.btn30.TabIndex = 38
@@ -437,7 +438,7 @@ Partial Class VirtualKbrd
         '
         'btn29
         '
-        Me.btn29.Location = New System.Drawing.Point(491, 117)
+        Me.btn29.Location = New System.Drawing.Point(474, 117)
         Me.btn29.Name = "btn29"
         Me.btn29.Size = New System.Drawing.Size(36, 30)
         Me.btn29.TabIndex = 39
@@ -447,7 +448,7 @@ Partial Class VirtualKbrd
         'btnEnter
         '
         Me.btnEnter.Enabled = False
-        Me.btnEnter.Location = New System.Drawing.Point(533, 117)
+        Me.btnEnter.Location = New System.Drawing.Point(516, 117)
         Me.btnEnter.Name = "btnEnter"
         Me.btnEnter.Size = New System.Drawing.Size(109, 30)
         Me.btnEnter.TabIndex = 40
@@ -457,7 +458,7 @@ Partial Class VirtualKbrd
         'btnShiftL
         '
         Me.btnShiftL.Enabled = False
-        Me.btnShiftL.Location = New System.Drawing.Point(50, 153)
+        Me.btnShiftL.Location = New System.Drawing.Point(33, 153)
         Me.btnShiftL.Name = "btnShiftL"
         Me.btnShiftL.Size = New System.Drawing.Size(57, 30)
         Me.btnShiftL.TabIndex = 41
@@ -466,7 +467,7 @@ Partial Class VirtualKbrd
         '
         'btnZ
         '
-        Me.btnZ.Location = New System.Drawing.Point(113, 153)
+        Me.btnZ.Location = New System.Drawing.Point(96, 153)
         Me.btnZ.Name = "btnZ"
         Me.btnZ.Size = New System.Drawing.Size(36, 30)
         Me.btnZ.TabIndex = 42
@@ -475,7 +476,7 @@ Partial Class VirtualKbrd
         '
         'btnX
         '
-        Me.btnX.Location = New System.Drawing.Point(155, 153)
+        Me.btnX.Location = New System.Drawing.Point(138, 153)
         Me.btnX.Name = "btnX"
         Me.btnX.Size = New System.Drawing.Size(36, 30)
         Me.btnX.TabIndex = 43
@@ -484,7 +485,7 @@ Partial Class VirtualKbrd
         '
         'btnC
         '
-        Me.btnC.Location = New System.Drawing.Point(197, 153)
+        Me.btnC.Location = New System.Drawing.Point(180, 153)
         Me.btnC.Name = "btnC"
         Me.btnC.Size = New System.Drawing.Size(36, 30)
         Me.btnC.TabIndex = 44
@@ -493,7 +494,7 @@ Partial Class VirtualKbrd
         '
         'btnV
         '
-        Me.btnV.Location = New System.Drawing.Point(239, 153)
+        Me.btnV.Location = New System.Drawing.Point(222, 153)
         Me.btnV.Name = "btnV"
         Me.btnV.Size = New System.Drawing.Size(36, 30)
         Me.btnV.TabIndex = 45
@@ -502,7 +503,7 @@ Partial Class VirtualKbrd
         '
         'btnB
         '
-        Me.btnB.Location = New System.Drawing.Point(281, 153)
+        Me.btnB.Location = New System.Drawing.Point(264, 153)
         Me.btnB.Name = "btnB"
         Me.btnB.Size = New System.Drawing.Size(36, 30)
         Me.btnB.TabIndex = 46
@@ -511,7 +512,7 @@ Partial Class VirtualKbrd
         '
         'btnN
         '
-        Me.btnN.Location = New System.Drawing.Point(323, 153)
+        Me.btnN.Location = New System.Drawing.Point(306, 153)
         Me.btnN.Name = "btnN"
         Me.btnN.Size = New System.Drawing.Size(36, 30)
         Me.btnN.TabIndex = 47
@@ -520,7 +521,7 @@ Partial Class VirtualKbrd
         '
         'btnM
         '
-        Me.btnM.Location = New System.Drawing.Point(365, 153)
+        Me.btnM.Location = New System.Drawing.Point(348, 153)
         Me.btnM.Name = "btnM"
         Me.btnM.Size = New System.Drawing.Size(36, 30)
         Me.btnM.TabIndex = 48
@@ -529,7 +530,7 @@ Partial Class VirtualKbrd
         '
         'btn41
         '
-        Me.btn41.Location = New System.Drawing.Point(407, 153)
+        Me.btn41.Location = New System.Drawing.Point(390, 153)
         Me.btn41.Name = "btn41"
         Me.btn41.Size = New System.Drawing.Size(36, 30)
         Me.btn41.TabIndex = 49
@@ -538,7 +539,7 @@ Partial Class VirtualKbrd
         '
         'btn40
         '
-        Me.btn40.Location = New System.Drawing.Point(449, 153)
+        Me.btn40.Location = New System.Drawing.Point(432, 153)
         Me.btn40.Name = "btn40"
         Me.btn40.Size = New System.Drawing.Size(36, 30)
         Me.btn40.TabIndex = 50
@@ -547,7 +548,7 @@ Partial Class VirtualKbrd
         '
         'btn28
         '
-        Me.btn28.Location = New System.Drawing.Point(491, 153)
+        Me.btn28.Location = New System.Drawing.Point(474, 153)
         Me.btn28.Name = "btn28"
         Me.btn28.Size = New System.Drawing.Size(36, 30)
         Me.btn28.TabIndex = 51
@@ -556,7 +557,7 @@ Partial Class VirtualKbrd
         '
         'btnSpace
         '
-        Me.btnSpace.Location = New System.Drawing.Point(158, 189)
+        Me.btnSpace.Location = New System.Drawing.Point(141, 189)
         Me.btnSpace.Name = "btnSpace"
         Me.btnSpace.Size = New System.Drawing.Size(348, 30)
         Me.btnSpace.TabIndex = 53
@@ -565,7 +566,7 @@ Partial Class VirtualKbrd
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(29, 12)
+        Me.TextBox1.Location = New System.Drawing.Point(12, 12)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(612, 20)
         Me.TextBox1.TabIndex = 54
@@ -573,7 +574,7 @@ Partial Class VirtualKbrd
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(648, 45)
+        Me.Label2.Location = New System.Drawing.Point(631, 45)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(92, 13)
         Me.Label2.TabIndex = 55
@@ -582,7 +583,7 @@ Partial Class VirtualKbrd
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(648, 63)
+        Me.Label3.Location = New System.Drawing.Point(631, 63)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(90, 13)
         Me.Label3.TabIndex = 56
@@ -591,7 +592,7 @@ Partial Class VirtualKbrd
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(648, 81)
+        Me.Label4.Location = New System.Drawing.Point(631, 81)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 13)
         Me.Label4.TabIndex = 57
@@ -600,7 +601,7 @@ Partial Class VirtualKbrd
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(648, 99)
+        Me.Label5.Location = New System.Drawing.Point(631, 99)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(104, 13)
         Me.Label5.TabIndex = 58
@@ -609,7 +610,7 @@ Partial Class VirtualKbrd
         'btnShiftR
         '
         Me.btnShiftR.Enabled = False
-        Me.btnShiftR.Location = New System.Drawing.Point(533, 153)
+        Me.btnShiftR.Location = New System.Drawing.Point(516, 153)
         Me.btnShiftR.Name = "btnShiftR"
         Me.btnShiftR.Size = New System.Drawing.Size(57, 30)
         Me.btnShiftR.TabIndex = 52
@@ -619,17 +620,27 @@ Partial Class VirtualKbrd
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(648, 117)
+        Me.Label6.Location = New System.Drawing.Point(631, 117)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(119, 13)
         Me.Label6.TabIndex = 60
         Me.Label6.Text = "SELECT = CAPS LOCK"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(631, 134)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(146, 13)
+        Me.Label7.TabIndex = 61
+        Me.Label7.Text = "START = CLOSE && SEARCH"
+        '
         'VirtualKbrd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(776, 229)
+        Me.ClientSize = New System.Drawing.Size(784, 229)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -692,7 +703,7 @@ Partial Class VirtualKbrd
         Me.Controls.Add(Me.btn1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "VirtualKbrd"
-        Me.Text = "Filter game name..."
+        Me.Text = "Filter List By Game Name..."
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -758,4 +769,5 @@ Partial Class VirtualKbrd
     Friend WithEvents Label5 As Label
     Friend WithEvents btnShiftR As Button
     Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
 End Class

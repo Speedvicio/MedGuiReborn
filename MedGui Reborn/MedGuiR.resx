@@ -170,13 +170,13 @@ Layout joypad reflect XBox controller:
 
 D-PAD directions = Keyboard Arrow direction
 A button = ENTER KEY
-X button = SHIFT KEY (on list rom), SPACE key on GUI
+X button = Enable/Disable NetPlay
 Y button = F KEY (add to favourites)
 B button = CANCEL KEY 
 L button = BACK TAB KEY, on list rom swap rear 10 entries
 R button = TAB KEY, on list rom swap next 10 entries
 SELECT = Swap from list rom to upper Gui menu
-START = Swap from list rom to Tabcontrol</value>
+START = Open Virtual Keyboard for Rom Search</value>
   </data>
   <data name="CheckBox12.ToolTip" xml:space="preserve">
     <value>Add real time clock (rtc) option to  ".type" file text to specify the backup memory type on a per-game basis
