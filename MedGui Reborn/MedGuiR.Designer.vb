@@ -412,6 +412,7 @@ Partial Class MedGuiR
         Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox24 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1687,12 +1688,11 @@ Partial Class MedGuiR
         Me.CheckBox22.AutoSize = True
         Me.CheckBox22.Location = New System.Drawing.Point(98, 65)
         Me.CheckBox22.Name = "CheckBox22"
-        Me.CheckBox22.Size = New System.Drawing.Size(127, 17)
+        Me.CheckBox22.Size = New System.Drawing.Size(123, 17)
         Me.CheckBox22.TabIndex = 46
-        Me.CheckBox22.Text = "&Truncate Long Name"
-        Me.ToolTip1.SetToolTip(Me.CheckBox22, "Truncate Long Rom name")
+        Me.CheckBox22.Text = "&Fast Game List Load"
+        Me.ToolTip1.SetToolTip(Me.CheckBox22, "Disable all rom controls and visual scan to improve games list load on the grid")
         Me.CheckBox22.UseVisualStyleBackColor = False
-        Me.CheckBox22.Visible = False
         '
         'Panel2
         '
@@ -2271,6 +2271,7 @@ Partial Class MedGuiR
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.CheckBox24)
         Me.GroupBox2.Controls.Add(Me.ComboBox6)
         Me.GroupBox2.Controls.Add(Me.CheckBox22)
         Me.GroupBox2.Controls.Add(Me.Button51)
@@ -4068,6 +4069,18 @@ Partial Class MedGuiR
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
         '
+        'CheckBox24
+        '
+        Me.CheckBox24.AutoSize = True
+        Me.CheckBox24.Location = New System.Drawing.Point(53, 123)
+        Me.CheckBox24.Name = "CheckBox24"
+        Me.CheckBox24.Size = New System.Drawing.Size(127, 17)
+        Me.CheckBox24.TabIndex = 48
+        Me.CheckBox24.Text = "&Truncate Long Name"
+        Me.ToolTip1.SetToolTip(Me.CheckBox24, "Truncate Long Rom name")
+        Me.CheckBox24.UseVisualStyleBackColor = False
+        Me.CheckBox24.Visible = False
+        '
         'MedGuiR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4077,8 +4090,6 @@ Partial Class MedGuiR
         Me.Controls.Add(Me.CheckBox15)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.TabControl1)
-        Me.Controls.Add(Me.IconStrip)
-        Me.Controls.Add(Me.RE_tar_DDIT)
         Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button6)
@@ -4086,6 +4097,8 @@ Partial Class MedGuiR
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.IconStrip)
+        Me.Controls.Add(Me.RE_tar_DDIT)
         Me.MainMenuStrip = Me.RE_tar_DDIT
         Me.Name = "MedGuiR"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -4538,4 +4551,5 @@ Partial Class MedGuiR
     Friend WithEvents ADVManageToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator22 As ToolStripSeparator
     Friend WithEvents ConnectedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckBox24 As CheckBox
 End Class

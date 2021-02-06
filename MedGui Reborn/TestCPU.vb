@@ -170,6 +170,7 @@ This PC can start all Mednafen modules and graphic filters without restrictions.
             MedGuiR.CheckBox15.Checked = False
         End If
 
+        If Mhz <= 1500 Then MedGuiR.CheckBox22.Checked = True
     End Sub
 
     Private Sub Label12_MouseEnter(sender As Object, e As EventArgs) Handles Label12.MouseEnter

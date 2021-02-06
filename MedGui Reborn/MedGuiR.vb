@@ -1132,7 +1132,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -3224,7 +3224,7 @@ CHECKDEAD:
             ComboBox6.Enabled = False
             MYJOYEX.dwSize = 64
             MYJOYEX.dwFlags = &HFF
-            TimerControlJoy.Interval = 150
+            TimerControlJoy.Interval = 130
             deadPOV = ""
             countPOV = 0
             TimerControlJoy.Start()
@@ -3304,6 +3304,8 @@ CHECKDEAD:
     End Sub
 
     Private Sub Purge_Grid()
+        If CheckBox22.Checked = True Then Exit Sub
+
         Dim countmissing As Integer = 0
 
         If DataGridView1.RowCount <= 0 And File.Exists(MedExtra & "Scanned\" & type_csv & ".csv") = True Then

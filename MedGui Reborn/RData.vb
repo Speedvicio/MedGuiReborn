@@ -57,6 +57,7 @@ Boing:
                 'End If
 
                 If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or LCase(romname).Contains("enhancement chip") Then
+                ElseIf UCase(country).Contains("[BIOS]") Or UCase(country).Contains(" BIOS ") Or LCase(country).Contains("enhancement chip") Then
                 Else
                     If ext <> "" Then
                         Select Case LCase(ext)
@@ -123,7 +124,8 @@ Boing:
                 'End If
                 'End If
 
-                If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or UCase(romname).Contains("Enhancement Chip") Then
+                If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or LCase(romname).Contains("enhancement chip") Then
+                ElseIf UCase(country).Contains("[BIOS]") Or UCase(country).Contains(" BIOS ") Or LCase(country).Contains("enhancement chip") Then
                 Else
                     If ext <> "" Then
                         MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(rrom.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)

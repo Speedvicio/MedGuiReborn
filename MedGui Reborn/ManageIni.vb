@@ -148,6 +148,7 @@
             MedGuiR.CheckBox6.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Version")
             MedGuiR.CheckBox4.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Status")
             MedGuiR.CheckBox5.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "System")
+            MedGuiR.CheckBox22.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Fast_Load")
             MedGuiR.ComboBox2.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Columns_Order")
         Catch ex As Exception
             MGRWriteLog("ManageIni - GridRMini: " & ex.Message)
@@ -280,6 +281,7 @@
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Status", MedGuiR.CheckBox4.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "System", MedGuiR.CheckBox5.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Columns_Order", MedGuiR.ComboBox2.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Fast_Load", MedGuiR.CheckBox22.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Customizable", MedGuiR.GridToolStripMenuItem.CheckState)
 
             If MedGuiR.GridToolStripMenuItem.Checked = True Then

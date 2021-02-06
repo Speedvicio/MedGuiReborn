@@ -47,36 +47,41 @@ Module Prescanned
                             MedGuiR.DataGridView1.Rows(cr - 1).Cells(1).Value() = New Bitmap(MedExtra & "Resource\System\" & UCase(gif) & ".gif")
                             MedGuiR.DataGridView1.Rows(cr - 1).Cells(9).Value() = cr - 1
 
-                            If File.Exists(SplitLine(4)) = False Then
-                                If MedGuiR.GridToolStripMenuItem.Checked = False Then
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.DarkRed
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.White
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.Black
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Strikeout)
-                                End If
-                                MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Name, MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Size, FontStyle.Strikeout)
-                            Else
-                                If MedGuiR.GridToolStripMenuItem.Checked = False Then
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.Black
-                                    MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.Black
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
-                                End If
-                                'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Name, MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Size, FontStyle.Regular)
-                            End If
+                            If MedGuiR.CheckBox22.Checked = False Then
 
+                                If File.Exists(SplitLine(4)) = False Then
+                                    If MedGuiR.GridToolStripMenuItem.Checked = False Then
+                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.DarkRed
+                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.White
+                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.Black
+                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Strikeout)
+                                    End If
+                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Name, MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Size, FontStyle.Strikeout)
+                                Else
+                                    If MedGuiR.GridToolStripMenuItem.Checked = False Then
+                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.Black
+                                        MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
+                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.Black
+                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
+                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+                                    End If
+                                    'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Name, MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Size, FontStyle.Regular)
+                                End If
+
+                            End If
                         End If
 
                         If MedGuiR.FirstStart = False Then
-                            MedGuiR.TextBox2.Visible = False
-                            MedGuiR.ProgressBar1.Visible = True
-                            MedGuiR.ProgressBar1.Maximum = Linecsv
-                            MedGuiR.ProgressBar1.PerformStep()
-                            MedGuiR.Label95.Text = "Read " & MedGuiR.ProgressBar1.Value & "/" & Linecsv
-                            MedGuiR.Label95.Refresh()
-                            defreeze += 1
-                            If (defreeze Mod 50) = 0 Then Application.DoEvents()
+                            If MedGuiR.CheckBox22.Checked = False Then
+                                MedGuiR.TextBox2.Visible = False
+                                MedGuiR.ProgressBar1.Visible = True
+                                MedGuiR.ProgressBar1.Maximum = Linecsv
+                                MedGuiR.ProgressBar1.PerformStep()
+                                MedGuiR.Label95.Text = "Read " & MedGuiR.ProgressBar1.Value & "/" & Linecsv
+                                MedGuiR.Label95.Refresh()
+                                defreeze += 1
+                                If (defreeze Mod 50) = 0 Then Application.DoEvents()
+                            End If
                         Else
                             If Linecsv > 100 Then
                                 ProgresStart.ProgressBar1.Maximum = Linecsv
