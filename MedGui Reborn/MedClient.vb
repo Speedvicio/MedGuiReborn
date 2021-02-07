@@ -14,6 +14,7 @@ Public Class MedClient
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MedGuiR.Button53.Enabled = False
         Me.Icon = gIcon
         NotifyIcon1.Icon = gIcon
         Read_Resource()
@@ -24,6 +25,7 @@ Public Class MedClient
         CleanLocalParsed()
         SetFTPData()
         FtpDownloadOnConnect()
+        If ftperror = True Then Exit Sub
         NetIn = True
         ParseMednafenConfig()
         TextBox1.Text = Nick

@@ -40,6 +40,7 @@ Module MedPlay
         Catch
             MsgBox("Unable to detect server ftp, verify data access or try to connect later", vbOKOnly + MsgBoxStyle.Exclamation, "FTP Connection error...")
             ftperror = True
+            MedGuiR.Button53.Enabled = True
             MedClient.Close()
         End Try
     End Sub
