@@ -1767,6 +1767,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Public Sub Datagrid_filter()
+
         If CheckBox7.Checked = True Then
             DataGridView1.Columns(1).Visible = False
         Else
@@ -3304,7 +3305,11 @@ CHECKDEAD:
     End Sub
 
     Private Sub Purge_Grid()
-        If CheckBox22.Checked = True Then Exit Sub
+        If CheckBox22.Checked = True Then
+            SoxStatus.Close()
+            DataGridView1.Focus()
+            Exit Sub
+        End If
 
         Dim countmissing As Integer = 0
 

@@ -67,6 +67,13 @@ Module Prescanned
                                     End If
                                     'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Name, MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Size, FontStyle.Regular)
                                 End If
+                            Else
+                                If SoxStatus.Visible = False Then
+                                    SoxStatus.Text = "Wait a sec..."
+                                    SoxStatus.Label1.Text = "Populating the Games List"
+                                    SoxStatus.Show()
+                                    Application.DoEvents()
+                                End If
 
                             End If
                         End If
