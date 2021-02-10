@@ -37,9 +37,11 @@ Module Prescanned
                         TextLine = objReader.ReadLine()
                         SplitLine = Split(TextLine, "|")
 
+                        If MedGuiR.CheckBox22.Checked = True Then GoTo SKIP_LIST
                         If File.Exists(SplitLine(4)) = False And cr - 1 = 0 Then
                             cr = cr - 1
                         Else
+SKIP_LIST:
                             SplitLine(1) = Nothing
                             MedGuiR.DataGridView1.Rows.Add(SplitLine)
                             real_name = SplitLine(5)
