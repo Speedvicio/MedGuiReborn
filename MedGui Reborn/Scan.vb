@@ -34,7 +34,7 @@ Module scan
                         percorso = fileName
                         get_ext()
 
-                        If dettaglio.Length < 10485760 Then 'And LCase(dettaglio.Extension) <> ".bin"
+                        If dettaglio.Length < 40000000 Then 'And LCase(dettaglio.Extension) <> ".bin"
                             Select Case LCase(Path.GetExtension(fileName))
                                 Case ".zip", ".rar", ".7z"
                                 Case Else
