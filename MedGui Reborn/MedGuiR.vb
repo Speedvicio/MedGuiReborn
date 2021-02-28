@@ -146,6 +146,8 @@ Public Class MedGuiR
                             ADVManageToolStripMenuItem.Enabled = True
                     End Select
 
+                    If type_csv <> "" Then RenameEntryStripMenuItem.Enabled = True Else RenameEntryStripMenuItem.Enabled = False
+
                     If percorso.Trim <> "" Then
                         If File.Exists(percorso & ".ips") Then
                             RIPSToolStripMenuItem.Enabled = True
@@ -1132,7 +1134,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -3290,6 +3292,16 @@ CHECKDEAD:
 
     Private Sub ConnectedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConnectedToolStripMenuItem.Click
         NetToolStripButton.PerformClick()
+    End Sub
+
+    Private Sub RenameEntryStripMenuItem_Click(sender As Object, e As EventArgs) Handles RenameEntryStripMenuItem.Click
+
+        Dim newEntry As String
+        newEntry = InputBox("Input the new name for this game ", "Rename Entry...", DataGridView1.CurrentRow.Cells(0).Value)
+        If newEntry.Trim = "" Then Exit Sub
+        DataGridView1.CurrentRow.Cells(0).Value = newEntry
+        DataGridView1.Refresh()
+        SaveGridDataInFile()
     End Sub
 
     Private Sub Label47_DoubleClick(sender As Object, e As System.EventArgs) Handles Label47.DoubleClick

@@ -156,6 +156,7 @@
             MedGuiR.RSBIToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.MedPadToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\medpad.ico"))
             MedGuiR.ControllerToolStripMenuItem.Image = MedGuiR.MedPadToolStripMenuItem.Image
+            MedGuiR.RenameEntryStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\save.png"))
             MedGuiR.AddToFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\favourite.png"))
             MedGuiR.RemoveFromFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
             MedGuiR.AdvancedSettingToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\setting.png"))
