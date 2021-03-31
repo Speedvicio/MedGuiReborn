@@ -362,7 +362,7 @@ Module xSetting
 
         If row.Contains("video.resolution_switch ") Then xValue = Trim(Replace(row, "video.resolution_switch", "")) : MgrSetting.ComboBox57.Text = xValue
 
-        'If row.Contains("video.glformat ") Then xValue = Trim(Replace(row, "video.glformat", "")) : MgrSetting.ComboBox57.Text = xValue
+        If row.Contains("video.glformat ") Then xValue = Trim(Replace(row, "video.glformat", "")) : MgrSetting.ComboBox66.Text = xValue
 
         If row.Contains("fps.autoenable ") Then xValue = Trim(Replace(row, "fps.autoenable", "")) : MgrSetting.CheckBox103.Checked = CBool(xValue)
         If row.Contains("fps.font ") Then xValue = Trim(Replace(row, "fps.font", "")) : MgrSetting.ComboBox55.Text = xValue

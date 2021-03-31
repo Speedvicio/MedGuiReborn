@@ -120,21 +120,58 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
+  <data name="TrackBar3.ToolTip" xml:space="preserve">
+    <value>Desired period size in microseconds.
+
+Currently only affects OSS, ALSA, and SDL output. 
+A value of 0 defers to the default in the driver code in SexyAL.
+
+ Note: This is not the "sound buffer size" setting, that would be "sound.buffer_time".</value>
+  </data>
+  <data name="ComboBox2.ToolTip" xml:space="preserve">
+    <value>Select sound driver.
+
+The following choices are possible, sorted by preference, high to low, when "default" driver is used, 
+but dependent on being compiled in.
+
+default - Default
+Default sound driver.
+
+dsound - DirectSound
+A recommended driver, and the default for Microsoft Windows.
+
+sdl - Simple Directmedia Layer
+This driver is not recommended, but it serves as a backup driver if the others aren't available.
+ Its performance is generally sub-par, requiring higher latency or faster CPUs/SMP for glitch-free playback, 
+except where the OS provides a sound callback API itself, such as with Mac OS X and BeOS.
+
+wasapish - WASAPI(Shared Mode)
+Shared-mode WASAPI driver, usable on Windows Vista and newer.
+
+wasapi - WASAPI(Exclusive Mode)
+Experimental exclusive-mode WASAPI driver, usable on Windows Vista and newer.
+ Use it for lower-latency sound. May not work properly on all sound cards.</value>
+  </data>
   <data name="ComboBox66.ToolTip" xml:space="preserve">
-    <value>Video output method/driver.
+    <value>Preferred source data pixel format for emulated video.
 
-opengl - OpenGL + SDL
-This output method is preferred, as all features are available with it.
+Using hicolor(RGB555/RGB565) formats may boost performance, but at the cost of color fidelity. 
+Noticeability of color degradation depends on the emulated system and features, such as custom palettes or NTSC blitter, being used. 
+When hicolor format support is not available for the emulation module or special scaler being used, Mednafen will automatically fall back to using a truecolor format. 
+Examine Mednafen's startup output to see the actual OpenGL texture formats being used.
 
-sdl - SDL Surface
-Slower with lower-quality scaling than OpenGL, but if you don't have hardware-accelerated OpenGL rendering, it will be faster than software OpenGL rendering. 
-Bilinear interpolation not available. Pixel shaders do not work with this output method, of course.
+    auto - Auto
+    Currently the same as "truecolor", but may automatically select deeper color formats in the future.
 
-overlay - SDL Overlay
-As fast as OpenGL, perhaps faster in some situations, *if* it's hardware-accelerated. 
-Scanline effects are not available. hq2x, hq3x, hq4x are not available. 
-The OSD may be missing or glitchy. Bilinear interpolation can't be turned off. Harsh chroma subsampling blurring in some picture types.
-If you use this output method, it is strongly recommended to use a special scaler with it, such as nn2x.</value>
+    truecolor - Truecolor, 16M colors
+    RGB, 8 bits per color component.
+
+    hicolor - Hicolor, 32K/64K colors
+    RGB565 or RGB555, with priority given to RGB565.
+
+    rgb565 - RGB565, 64K colors
+
+    rgb555 - RGB555, 32K colors</value>
   </data>
   <data name="ComboBox41.ToolTip" xml:space="preserve">
     <value>Deinterlacer to use for interlaced video.
@@ -196,41 +233,6 @@ Disable to reduce latency, at the cost of potentially increased video "juddering
 with the maximum reduction in latency being about 1 video frame's time.
  Will work best with emulated systems that are not very computationally expensive to emulate, 
 combined with running on a relatively fast CPU</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
-  <data name="TrackBar3.ToolTip" xml:space="preserve">
-    <value>Desired period size in microseconds.
-
-Currently only affects OSS, ALSA, and SDL output. 
-A value of 0 defers to the default in the driver code in SexyAL.
-
- Note: This is not the "sound buffer size" setting, that would be "sound.buffer_time".</value>
-  </data>
-  <data name="ComboBox2.ToolTip" xml:space="preserve">
-    <value>Select sound driver.
-
-The following choices are possible, sorted by preference, high to low, when "default" driver is used, 
-but dependent on being compiled in.
-
-default - Default
-Default sound driver.
-
-dsound - DirectSound
-A recommended driver, and the default for Microsoft Windows.
-
-sdl - Simple Directmedia Layer
-This driver is not recommended, but it serves as a backup driver if the others aren't available.
- Its performance is generally sub-par, requiring higher latency or faster CPUs/SMP for glitch-free playback, 
-except where the OS provides a sound callback API itself, such as with Mac OS X and BeOS.
-
-wasapish - WASAPI(Shared Mode)
-Shared-mode WASAPI driver, usable on Windows Vista and newer.
-
-wasapi - WASAPI(Exclusive Mode)
-Experimental exclusive-mode WASAPI driver, usable on Windows Vista and newer.
- Use it for lower-latency sound. May not work properly on all sound cards.</value>
   </data>
   <data name="TrackBar8.ToolTip" xml:space="preserve">
     <value>Enable scanlines with specified opacity.

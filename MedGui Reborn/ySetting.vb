@@ -344,8 +344,7 @@
                         MgrSetting.NumericUpDown45.Value & " -snes_faust.slstartp " & MgrSetting.NumericUpDown47.Value
                     End If
                 Case Is = 12700
-                    'video = video & " -video.glformat " & MgrSetting.ComboBox55.Text
-
+                    video = video & " -video.glformat " & MgrSetting.ComboBox66.Text
             End Select
         Next
     End Sub

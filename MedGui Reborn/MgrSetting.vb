@@ -296,12 +296,7 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         If Val(vmedClear) > 12610 Then
             ComboBox66.Enabled = True
             ComboBox66.Items.Clear()
-            ComboBox66.Items.AddRange(New String() {"composite", "rgb", "rgb_alt1", "rgb_alt2"})
-            Dim resultIndex As Integer = ComboBox59.FindStringExact("phr256blend_auto512")
-            Select Case consoles
-                Case "pce", "pcfx", "psx", "snes", "ss", "vb"
-                    ComboBox59.Items.RemoveAt(resultIndex)
-            End Select
+            ComboBox66.Items.AddRange(New String() {"auto", "truecolor", "hicolor", "rgb565", "rgb555"})
         Else
             ComboBox66.Enabled = False
         End If
