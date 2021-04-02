@@ -28,9 +28,12 @@ Partial Class About
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.LinkLabel5 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
@@ -50,8 +53,6 @@ Partial Class About
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.LinkLabel6 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel7 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel8 = New System.Windows.Forms.LinkLabel()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -117,6 +118,34 @@ Partial Class About
         Me.Panel2.Size = New System.Drawing.Size(286, 54)
         Me.Panel2.TabIndex = 4
         '
+        'LinkLabel7
+        '
+        Me.LinkLabel7.AutoSize = True
+        Me.LinkLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel7.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LinkLabel7.LinkColor = System.Drawing.Color.MediumOrchid
+        Me.LinkLabel7.Location = New System.Drawing.Point(149, 29)
+        Me.LinkLabel7.Name = "LinkLabel7"
+        Me.LinkLabel7.Size = New System.Drawing.Size(54, 16)
+        Me.LinkLabel7.TabIndex = 84
+        Me.LinkLabel7.TabStop = True
+        Me.LinkLabel7.Text = "CC0-1.0"
+        Me.LinkLabel7.VisitedLinkColor = System.Drawing.Color.Gold
+        '
+        'LinkLabel6
+        '
+        Me.LinkLabel6.AutoSize = True
+        Me.LinkLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel6.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.LinkLabel6.LinkColor = System.Drawing.Color.MediumOrchid
+        Me.LinkLabel6.Location = New System.Drawing.Point(149, 9)
+        Me.LinkLabel6.Name = "LinkLabel6"
+        Me.LinkLabel6.Size = New System.Drawing.Size(77, 16)
+        Me.LinkLabel6.TabIndex = 83
+        Me.LinkLabel6.TabStop = True
+        Me.LinkLabel6.Text = "Speedvicio"
+        Me.LinkLabel6.VisitedLinkColor = System.Drawing.Color.Gold
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -142,6 +171,7 @@ Partial Class About
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
+        Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.Label11)
         Me.Panel3.Controls.Add(Me.LinkLabel5)
         Me.Panel3.Controls.Add(Me.LinkLabel4)
@@ -161,6 +191,17 @@ Partial Class About
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(286, 196)
         Me.Panel3.TabIndex = 5
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Calibri", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label13.Location = New System.Drawing.Point(167, 173)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(86, 13)
+        Me.Label13.TabIndex = 92
+        Me.Label13.Text = "YOU ARE MY LOVE"
         '
         'Label11
         '
@@ -386,34 +427,6 @@ Partial Class About
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = ""
         '
-        'LinkLabel6
-        '
-        Me.LinkLabel6.AutoSize = True
-        Me.LinkLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel6.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel6.LinkColor = System.Drawing.Color.MediumOrchid
-        Me.LinkLabel6.Location = New System.Drawing.Point(149, 9)
-        Me.LinkLabel6.Name = "LinkLabel6"
-        Me.LinkLabel6.Size = New System.Drawing.Size(77, 16)
-        Me.LinkLabel6.TabIndex = 83
-        Me.LinkLabel6.TabStop = True
-        Me.LinkLabel6.Text = "Speedvicio"
-        Me.LinkLabel6.VisitedLinkColor = System.Drawing.Color.Gold
-        '
-        'LinkLabel7
-        '
-        Me.LinkLabel7.AutoSize = True
-        Me.LinkLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel7.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LinkLabel7.LinkColor = System.Drawing.Color.MediumOrchid
-        Me.LinkLabel7.Location = New System.Drawing.Point(149, 29)
-        Me.LinkLabel7.Name = "LinkLabel7"
-        Me.LinkLabel7.Size = New System.Drawing.Size(54, 16)
-        Me.LinkLabel7.TabIndex = 84
-        Me.LinkLabel7.TabStop = True
-        Me.LinkLabel7.Text = "CC0-1.0"
-        Me.LinkLabel7.VisitedLinkColor = System.Drawing.Color.Gold
-        '
         'LinkLabel8
         '
         Me.LinkLabel8.AutoSize = True
@@ -500,4 +513,5 @@ Partial Class About
     Friend WithEvents LinkLabel7 As LinkLabel
     Friend WithEvents LinkLabel8 As LinkLabel
     Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
 End Class

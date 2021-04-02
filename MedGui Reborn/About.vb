@@ -128,4 +128,13 @@ RETRYMOD:
         _link = "https://modarchive.org/index.php?request=view_profile&query=93077"
         open_link()
     End Sub
+
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+        If Label13.ForeColor = SystemColors.ControlText Then
+            Label13.ForeColor = Color.DarkRed
+        Else
+            Label13.ForeColor = SystemColors.ControlText
+        End If
+    End Sub
+
 End Class
