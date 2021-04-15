@@ -600,135 +600,135 @@ Partial Class MgrSetting
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
         Me.GroupBox1.SuspendLayout
-        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage2.SuspendLayout
-        Me.GroupBox2.SuspendLayout
-        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage3.SuspendLayout
-        Me.GroupBox5.SuspendLayout
-        CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage28.SuspendLayout
-        Me.GroupBox21.SuspendLayout
-        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage4.SuspendLayout
-        Me.GroupBox4.SuspendLayout
-        CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage31.SuspendLayout
-        Me.GroupBox27.SuspendLayout
-        Me.TabPage5.SuspendLayout
-        Me.GroupBox19.SuspendLayout
-        Me.TabPage24.SuspendLayout
-        Me.GroupBox22.SuspendLayout
-        Me.TabPage6.SuspendLayout
-        Me.GroupBox6.SuspendLayout
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage7.SuspendLayout
-        Me.GroupBox3.SuspendLayout
-        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage19.SuspendLayout
-        Me.GroupBox7.SuspendLayout
-        Me.TabPage8.SuspendLayout
-        Me.GroupBox8.SuspendLayout
-        Me.TabPage9.SuspendLayout
-        Me.GroupBox9.SuspendLayout
-        Me.TabPage10.SuspendLayout
-        Me.GroupBox10.SuspendLayout
-        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage11.SuspendLayout
-        Me.GroupBox11.SuspendLayout
-        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar12, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar11, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage12.SuspendLayout
-        Me.GroupBox12.SuspendLayout
-        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage13.SuspendLayout
-        Me.GroupBox13.SuspendLayout
-        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage14.SuspendLayout
-        Me.GroupBox14.SuspendLayout
-        CType(Me.TrackBar20, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar19, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar18, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar17, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage15.SuspendLayout
-        Me.GroupBox15.SuspendLayout
-        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage16.SuspendLayout
-        Me.GroupBox16.SuspendLayout
-        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage17.SuspendLayout
-        Me.GroupBox17.SuspendLayout
-        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage18.SuspendLayout
-        Me.GroupBox18.SuspendLayout
-        Me.TabPage20.SuspendLayout
-        Me.GroupBox20.SuspendLayout
-        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage21.SuspendLayout
-        Me.TabPage22.SuspendLayout
-        CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage23.SuspendLayout
-        Me.Panel1.SuspendLayout
-        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage26.SuspendLayout
-        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage32.SuspendLayout
-        Me.GroupBox28.SuspendLayout
-        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage25.SuspendLayout
-        Me.GroupBox24.SuspendLayout
-        Me.TabPage27.SuspendLayout
-        Me.GroupBox23.SuspendLayout
-        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage29.SuspendLayout
-        Me.GroupBox25.SuspendLayout
-        CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage30.SuspendLayout
-        Me.GroupBox26.SuspendLayout
-        CType(Me.NumericUpDown40, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown39, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown38, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown37, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage28.SuspendLayout()
+        Me.GroupBox21.SuspendLayout()
+        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage31.SuspendLayout()
+        Me.GroupBox27.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        Me.GroupBox19.SuspendLayout()
+        Me.TabPage24.SuspendLayout()
+        Me.GroupBox22.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage7.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage19.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        Me.TabPage8.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
+        Me.TabPage9.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
+        Me.TabPage10.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage11.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage12.SuspendLayout()
+        Me.GroupBox12.SuspendLayout()
+        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage13.SuspendLayout()
+        Me.GroupBox13.SuspendLayout()
+        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage14.SuspendLayout()
+        Me.GroupBox14.SuspendLayout()
+        CType(Me.TrackBar20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar17, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage15.SuspendLayout()
+        Me.GroupBox15.SuspendLayout()
+        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage16.SuspendLayout()
+        Me.GroupBox16.SuspendLayout()
+        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage17.SuspendLayout()
+        Me.GroupBox17.SuspendLayout()
+        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage18.SuspendLayout()
+        Me.GroupBox18.SuspendLayout()
+        Me.TabPage20.SuspendLayout()
+        Me.GroupBox20.SuspendLayout()
+        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage21.SuspendLayout()
+        Me.TabPage22.SuspendLayout()
+        CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage23.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage26.SuspendLayout()
+        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage32.SuspendLayout()
+        Me.GroupBox28.SuspendLayout()
+        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage25.SuspendLayout()
+        Me.GroupBox24.SuspendLayout()
+        Me.TabPage27.SuspendLayout()
+        Me.GroupBox23.SuspendLayout()
+        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage29.SuspendLayout()
+        Me.GroupBox25.SuspendLayout()
+        CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage30.SuspendLayout()
+        Me.GroupBox26.SuspendLayout()
+        CType(Me.NumericUpDown40, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown39, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown38, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown37, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'TabControl1
         '
@@ -998,13 +998,14 @@ Partial Class MgrSetting
         'ComboBox56
         '
         Me.ComboBox56.FormattingEnabled = True
-        Me.ComboBox56.Items.AddRange(New Object() {"upper_left", "upper_right"})
+        Me.ComboBox56.Items.AddRange(New Object() {"upper_left", "upper_right", "upper_center", "center"})
         Me.ComboBox56.Location = New System.Drawing.Point(134, 225)
         Me.ComboBox56.Name = "ComboBox56"
         Me.ComboBox56.Size = New System.Drawing.Size(74, 21)
         Me.ComboBox56.TabIndex = 107
         Me.ComboBox56.Text = "upper_left"
-        Me.ToolTip1.SetToolTip(Me.ComboBox56, "FPS display position.")
+        Me.ToolTip1.SetToolTip(Me.ComboBox56, "FPS display position:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- upper_left - Upper left." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- upper_right - Upper right." &
+        "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- upper_center - Upper center." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- center - Center.")
         '
         'Label141
         '
@@ -7042,169 +7043,169 @@ Partial Class MgrSetting
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout
-        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox1.PerformLayout()
+        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout
-        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox2.PerformLayout()
+        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout
-        CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox5.PerformLayout()
+        CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage28.ResumeLayout(False)
         Me.GroupBox21.ResumeLayout(False)
-        Me.GroupBox21.PerformLayout
-        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox21.PerformLayout()
+        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout
-        CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox4.PerformLayout()
+        CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage31.ResumeLayout(False)
         Me.GroupBox27.ResumeLayout(False)
-        Me.GroupBox27.PerformLayout
+        Me.GroupBox27.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.GroupBox19.ResumeLayout(False)
-        Me.GroupBox19.PerformLayout
+        Me.GroupBox19.PerformLayout()
         Me.TabPage24.ResumeLayout(False)
         Me.GroupBox22.ResumeLayout(False)
-        Me.GroupBox22.PerformLayout
+        Me.GroupBox22.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox6.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout
-        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox3.PerformLayout()
+        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage19.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout
+        Me.GroupBox7.PerformLayout()
         Me.TabPage8.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout
+        Me.GroupBox8.PerformLayout()
         Me.TabPage9.ResumeLayout(False)
         Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox9.PerformLayout
+        Me.GroupBox9.PerformLayout()
         Me.TabPage10.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
-        Me.GroupBox10.PerformLayout
-        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox10.PerformLayout()
+        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage11.ResumeLayout(False)
         Me.GroupBox11.ResumeLayout(False)
-        Me.GroupBox11.PerformLayout
-        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar12, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar11, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox11.PerformLayout()
+        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage12.ResumeLayout(False)
         Me.GroupBox12.ResumeLayout(False)
-        Me.GroupBox12.PerformLayout
-        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox12.PerformLayout()
+        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage13.ResumeLayout(False)
         Me.GroupBox13.ResumeLayout(False)
-        Me.GroupBox13.PerformLayout
-        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox13.PerformLayout()
+        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage14.ResumeLayout(False)
         Me.GroupBox14.ResumeLayout(False)
-        Me.GroupBox14.PerformLayout
-        CType(Me.TrackBar20, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar19, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar18, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar17, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox14.PerformLayout()
+        CType(Me.TrackBar20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar17, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage15.ResumeLayout(False)
         Me.GroupBox15.ResumeLayout(False)
-        Me.GroupBox15.PerformLayout
-        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox15.PerformLayout()
+        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage16.ResumeLayout(False)
         Me.GroupBox16.ResumeLayout(False)
-        Me.GroupBox16.PerformLayout
-        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox16.PerformLayout()
+        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage17.ResumeLayout(False)
         Me.GroupBox17.ResumeLayout(False)
-        Me.GroupBox17.PerformLayout
-        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox17.PerformLayout()
+        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage18.ResumeLayout(False)
         Me.GroupBox18.ResumeLayout(False)
-        Me.GroupBox18.PerformLayout
+        Me.GroupBox18.PerformLayout()
         Me.TabPage20.ResumeLayout(False)
         Me.GroupBox20.ResumeLayout(False)
-        Me.GroupBox20.PerformLayout
-        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox20.PerformLayout()
+        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage21.ResumeLayout(False)
-        Me.TabPage21.PerformLayout
+        Me.TabPage21.PerformLayout()
         Me.TabPage22.ResumeLayout(False)
-        Me.TabPage22.PerformLayout
-        CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).EndInit
+        Me.TabPage22.PerformLayout()
+        CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage23.ResumeLayout(False)
-        Me.TabPage23.PerformLayout
+        Me.TabPage23.PerformLayout()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout
-        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).EndInit
+        Me.Panel1.PerformLayout()
+        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage26.ResumeLayout(False)
-        Me.TabPage26.PerformLayout
-        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).EndInit
+        Me.TabPage26.PerformLayout()
+        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage32.ResumeLayout(False)
         Me.GroupBox28.ResumeLayout(False)
-        Me.GroupBox28.PerformLayout
-        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox28.PerformLayout()
+        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage25.ResumeLayout(False)
         Me.GroupBox24.ResumeLayout(False)
-        Me.GroupBox24.PerformLayout
+        Me.GroupBox24.PerformLayout()
         Me.TabPage27.ResumeLayout(False)
         Me.GroupBox23.ResumeLayout(False)
-        Me.GroupBox23.PerformLayout
-        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox23.PerformLayout()
+        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage29.ResumeLayout(False)
         Me.GroupBox25.ResumeLayout(False)
-        Me.GroupBox25.PerformLayout
-        CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox25.PerformLayout()
+        CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage30.ResumeLayout(False)
         Me.GroupBox26.ResumeLayout(False)
-        Me.GroupBox26.PerformLayout
-        CType(Me.NumericUpDown40, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown39, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown38, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown37, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit
+        Me.GroupBox26.PerformLayout()
+        CType(Me.NumericUpDown40, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown39, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown38, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown37, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
