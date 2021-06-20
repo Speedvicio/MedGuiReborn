@@ -45,6 +45,13 @@ Module GlobalVar
             MedGuiR.Label25.Text = "Sox.exe missing, this utility will be disabled"
         End If
 
+        If File.Exists(MedExtra & "\DATs\genre.txt") Then
+            MedGuiR.GENREToolStripMenuItem.Enabled = True
+            MedGuiR.GENREToolStripMenuItem1.Enabled = True
+            MedGuiR.GENREToolStripComboBox2.Items.AddRange(IO.File.ReadAllLines(MedExtra & "\DATs\genre.txt"))
+            MedGuiR.GENREComboBox1.Items.AddRange(IO.File.ReadAllLines(MedExtra & "\DATs\genre.txt"))
+        End If
+
         'If IO.File.Exists(MedExtra & "\NetPlay\mednafen-server.exe") = False Then MedGuiR.ServerToolStripButton.Enabled = False
         F1 = MedGuiR
         ColorizeForm()

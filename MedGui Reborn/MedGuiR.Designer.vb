@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -247,6 +247,9 @@ Partial Class MedGuiR
         Me.JPToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PDToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MUSICToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator23 = New System.Windows.Forms.ToolStripSeparator()
+        Me.GENREToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GENREToolStripComboBox2 = New System.Windows.Forms.ToolStripComboBox()
         Me.FindToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.WORLDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EUToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -417,6 +420,9 @@ Partial Class MedGuiR
         Me.RapidGameSearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FNameToolStripTextBox = New System.Windows.Forms.ToolStripTextBox()
         Me.FilterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator24 = New System.Windows.Forms.ToolStripSeparator()
+        Me.GENREToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GENREComboBox1 = New System.Windows.Forms.ToolStripComboBox()
         Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -474,23 +480,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -498,9 +504,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle4
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -2451,7 +2457,7 @@ Partial Class MedGuiR
         Me.IconStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SY, Me.RebuildToolStripButton, Me.toolStripSeparator, Me.RecentToolStripButton1, Me.LoadCDToolStripButton, Me.FavouritesToolStripButton, Me.FoldeRomToolStripButton, Me.LoadRomToolStripButton, Me.TextBox1, Me.toolStripSeparator1, Me.NetToolStripButton, Me.ServerToolStripButton, Me.IRCToolStripButton, Me.ModLandToolStripButton, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.TextBox3, Me.FlagToolStripSplitButton, Me.FindToolStripButton})
         Me.IconStrip.Location = New System.Drawing.Point(12, 6)
         Me.IconStrip.Name = "IconStrip"
-        Me.IconStrip.Size = New System.Drawing.Size(701, 25)
+        Me.IconStrip.Size = New System.Drawing.Size(755, 25)
         Me.IconStrip.TabIndex = 34
         Me.IconStrip.Text = "ToolStrip1"
         Me.IconStrip.Visible = False
@@ -2606,7 +2612,7 @@ Partial Class MedGuiR
         'FlagToolStripSplitButton
         '
         Me.FlagToolStripSplitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.FlagToolStripSplitButton.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WORLDToolStripMenuItem1, Me.EUToolStripMenuItem1, Me.USToolStripMenuItem1, Me.JPToolStripMenuItem1, Me.PDToolStripMenuItem1, Me.MUSICToolStripMenuItem1})
+        Me.FlagToolStripSplitButton.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WORLDToolStripMenuItem1, Me.EUToolStripMenuItem1, Me.USToolStripMenuItem1, Me.JPToolStripMenuItem1, Me.PDToolStripMenuItem1, Me.MUSICToolStripMenuItem1, Me.ToolStripSeparator23, Me.GENREToolStripMenuItem})
         Me.FlagToolStripSplitButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.FlagToolStripSplitButton.Name = "FlagToolStripSplitButton"
         Me.FlagToolStripSplitButton.Size = New System.Drawing.Size(16, 22)
@@ -2616,38 +2622,57 @@ Partial Class MedGuiR
         'WORLDToolStripMenuItem1
         '
         Me.WORLDToolStripMenuItem1.Name = "WORLDToolStripMenuItem1"
-        Me.WORLDToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
+        Me.WORLDToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.WORLDToolStripMenuItem1.Text = "WORLD"
         '
         'EUToolStripMenuItem1
         '
         Me.EUToolStripMenuItem1.Name = "EUToolStripMenuItem1"
-        Me.EUToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
+        Me.EUToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.EUToolStripMenuItem1.Text = "EU"
         '
         'USToolStripMenuItem1
         '
         Me.USToolStripMenuItem1.Name = "USToolStripMenuItem1"
-        Me.USToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
+        Me.USToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.USToolStripMenuItem1.Text = "US"
         '
         'JPToolStripMenuItem1
         '
         Me.JPToolStripMenuItem1.Name = "JPToolStripMenuItem1"
-        Me.JPToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
+        Me.JPToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.JPToolStripMenuItem1.Text = "JP"
         '
         'PDToolStripMenuItem1
         '
         Me.PDToolStripMenuItem1.Name = "PDToolStripMenuItem1"
-        Me.PDToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
+        Me.PDToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.PDToolStripMenuItem1.Text = "PD"
         '
         'MUSICToolStripMenuItem1
         '
         Me.MUSICToolStripMenuItem1.Name = "MUSICToolStripMenuItem1"
-        Me.MUSICToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
+        Me.MUSICToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.MUSICToolStripMenuItem1.Text = "MUSIC"
+        '
+        'ToolStripSeparator23
+        '
+        Me.ToolStripSeparator23.Name = "ToolStripSeparator23"
+        Me.ToolStripSeparator23.Size = New System.Drawing.Size(177, 6)
+        '
+        'GENREToolStripMenuItem
+        '
+        Me.GENREToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GENREToolStripComboBox2})
+        Me.GENREToolStripMenuItem.Enabled = False
+        Me.GENREToolStripMenuItem.Name = "GENREToolStripMenuItem"
+        Me.GENREToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GENREToolStripMenuItem.Text = "GENRE"
+        '
+        'GENREToolStripComboBox2
+        '
+        Me.GENREToolStripComboBox2.Name = "GENREToolStripComboBox2"
+        Me.GENREToolStripComboBox2.Size = New System.Drawing.Size(121, 23)
+        Me.GENREToolStripComboBox2.Text = "All"
         '
         'FindToolStripButton
         '
@@ -2662,42 +2687,42 @@ Partial Class MedGuiR
         '
         Me.WORLDToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.WORLDToolStripMenuItem.Name = "WORLDToolStripMenuItem"
-        Me.WORLDToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WORLDToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.WORLDToolStripMenuItem.Text = "WORLD"
         '
         'EUToolStripMenuItem
         '
         Me.EUToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.EUToolStripMenuItem.Name = "EUToolStripMenuItem"
-        Me.EUToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EUToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.EUToolStripMenuItem.Text = "EU"
         '
         'USToolStripMenuItem
         '
         Me.USToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.USToolStripMenuItem.Name = "USToolStripMenuItem"
-        Me.USToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.USToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.USToolStripMenuItem.Text = "US"
         '
         'JPToolStripMenuItem
         '
         Me.JPToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.JPToolStripMenuItem.Name = "JPToolStripMenuItem"
-        Me.JPToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.JPToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.JPToolStripMenuItem.Text = "JP"
         '
         'PDToolStripMenuItem
         '
         Me.PDToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PDToolStripMenuItem.Name = "PDToolStripMenuItem"
-        Me.PDToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PDToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.PDToolStripMenuItem.Text = "PD"
         '
         'MUSICToolStripMenuItem
         '
         Me.MUSICToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MUSICToolStripMenuItem.Name = "MUSICToolStripMenuItem"
-        Me.MUSICToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MUSICToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.MUSICToolStripMenuItem.Text = "MUSIC"
         '
         'TabControl1
@@ -4113,10 +4138,29 @@ Partial Class MedGuiR
         'FilterToolStripMenuItem
         '
         Me.FilterToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.FilterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WORLDToolStripMenuItem, Me.EUToolStripMenuItem, Me.USToolStripMenuItem, Me.JPToolStripMenuItem, Me.PDToolStripMenuItem, Me.MUSICToolStripMenuItem})
+        Me.FilterToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WORLDToolStripMenuItem, Me.EUToolStripMenuItem, Me.USToolStripMenuItem, Me.JPToolStripMenuItem, Me.PDToolStripMenuItem, Me.MUSICToolStripMenuItem, Me.ToolStripSeparator24, Me.GENREToolStripMenuItem1})
         Me.FilterToolStripMenuItem.Name = "FilterToolStripMenuItem"
         Me.FilterToolStripMenuItem.Size = New System.Drawing.Size(12, 23)
         Me.FilterToolStripMenuItem.ToolTipText = "Filter Rom By:"
+        '
+        'ToolStripSeparator24
+        '
+        Me.ToolStripSeparator24.Name = "ToolStripSeparator24"
+        Me.ToolStripSeparator24.Size = New System.Drawing.Size(112, 6)
+        '
+        'GENREToolStripMenuItem1
+        '
+        Me.GENREToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GENREComboBox1})
+        Me.GENREToolStripMenuItem1.Enabled = False
+        Me.GENREToolStripMenuItem1.Name = "GENREToolStripMenuItem1"
+        Me.GENREToolStripMenuItem1.Size = New System.Drawing.Size(115, 22)
+        Me.GENREToolStripMenuItem1.Text = "GENRE"
+        '
+        'GENREComboBox1
+        '
+        Me.GENREComboBox1.Name = "GENREComboBox1"
+        Me.GENREComboBox1.Size = New System.Drawing.Size(121, 23)
+        Me.GENREComboBox1.Text = "All"
         '
         'XToolStripMenuItem
         '
@@ -4614,4 +4658,10 @@ Partial Class MedGuiR
     Friend WithEvents JPToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PDToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents MUSICToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator23 As ToolStripSeparator
+    Friend WithEvents GENREToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GENREToolStripComboBox2 As ToolStripComboBox
+    Friend WithEvents ToolStripSeparator24 As ToolStripSeparator
+    Friend WithEvents GENREToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents GENREComboBox1 As ToolStripComboBox
 End Class

@@ -3566,4 +3566,16 @@ MisScan:
 
     End Sub
 
+    Private Sub GENREComboBox1_TextChanged(sender As Object, e As EventArgs) Handles GENREComboBox1.TextChanged
+        GENREToolStripComboBox2.Text = GENREComboBox1.Text
+    End Sub
+
+    Private Sub GENREToolStripComboBox2_TextChanged(sender As Object, e As EventArgs) Handles GENREToolStripComboBox2.TextChanged
+        '
+    End Sub
+
+    Private Sub GENREToolStripComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GENREToolStripComboBox2.SelectedIndexChanged
+        SearchGridGenreInRow()
+    End Sub
+
 End Class
