@@ -30,7 +30,7 @@ Module Scrape
                     ConsoleID = "Nintendo Game Boy"
                 Case "Super Nintendo Entertainment System"
                     ConsoleID = "Super Nintendo (SNES)"
-                Case ("Virtual Boy")
+                Case ("Nintendo - Virtual Boy")
                     ConsoleID = "Nintendo Virtual Boy"
                 Case "Nintendo Entertainment System"
                     ConsoleID = "Nintendo Entertainment System (NES)"
