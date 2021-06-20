@@ -699,42 +699,42 @@ Public Class MedGuiR
         SoxStatus.Close()
     End Sub
 
-    Private Sub WORLDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WORLDToolStripMenuItem.Click
+    Private Sub WORLDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WORLDToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = ""
         SearchGridDataInRow()
     End Sub
 
-    Private Sub EUToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EUToolStripMenuItem.Click
+    Private Sub EUToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EUToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\eu.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "eu"
         SearchGridDataInRow()
     End Sub
 
-    Private Sub USToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles USToolStripMenuItem.Click
+    Private Sub USToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles USToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\us.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "us"
         SearchGridDataInRow()
     End Sub
 
-    Private Sub JPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JPToolStripMenuItem.Click
+    Private Sub JPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JPToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\jp.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "ja"
         SearchGridDataInRow()
     End Sub
 
-    Private Sub PDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDToolStripMenuItem.Click
+    Private Sub PDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\pd.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "pd"
         SearchGridDataInRow()
     End Sub
 
-    Private Sub MUSICToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MUSICToolStripMenuItem.Click
+    Private Sub MUSICToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MUSICToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Gui\modland.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "soundtrack"
@@ -3302,6 +3302,30 @@ CHECKDEAD:
         DataGridView1.CurrentRow.Cells(0).Value = newEntry
         DataGridView1.Refresh()
         SaveGridDataInFile()
+    End Sub
+
+    Private Sub WORLDToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles WORLDToolStripMenuItem.Click
+        WORLDToolStripMenuItem1.PerformClick()
+    End Sub
+
+    Private Sub EUToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles EUToolStripMenuItem.Click
+        EUToolStripMenuItem1.PerformClick()
+    End Sub
+
+    Private Sub USToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles USToolStripMenuItem.Click
+        USToolStripMenuItem1.PerformClick()
+    End Sub
+
+    Private Sub JPToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles JPToolStripMenuItem.Click
+        JPToolStripMenuItem1.PerformClick()
+    End Sub
+
+    Private Sub PDToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles PDToolStripMenuItem.Click
+        PDToolStripMenuItem1.PerformClick()
+    End Sub
+
+    Private Sub MUSICToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles MUSICToolStripMenuItem.Click
+        MUSICToolStripMenuItem1.PerformClick()
     End Sub
 
     Private Sub Label47_DoubleClick(sender As Object, e As System.EventArgs) Handles Label47.DoubleClick
