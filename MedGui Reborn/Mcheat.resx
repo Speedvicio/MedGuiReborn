@@ -122,7 +122,8 @@
   </metadata>
   <data name="Label10.Text" xml:space="preserve">
     <value>PS: Code must to be in RAW Decrypted format (use RAM Write code).
-If you want to input original Crypted code in Action Replay Pro, GameSharck or Game Genie standard, use the console inside Mednafen (ALT + C)</value>
+If you want to input original Crypted code in Action Replay Pro, GameSharck or Game Genie standard, use the console inside Mednafen (ALT + C)
+TO ENABLE A CHEAT: Selsect a cheat on Code List window, Tick Active on the left box and then press Modify.</value>
   </data>
   <metadata name="PasteContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>

@@ -234,7 +234,7 @@ Partial Class UCI
         Me.txtPort.Name = "txtPort"
         Me.txtPort.Size = New System.Drawing.Size(44, 20)
         Me.txtPort.TabIndex = 26
-        Me.txtPort.Text = "6667"
+        Me.txtPort.Text = "6697"
         Me.ToolTip1.SetToolTip(Me.txtPort, "Server Port")
         '
         'Button1
@@ -272,13 +272,13 @@ Partial Class UCI
         'cmbServer
         '
         Me.cmbServer.FormattingEnabled = True
-        Me.cmbServer.Items.AddRange(New Object() {"irc.dal.net", "irc.efnet.org", "irc.freenode.net", "irc.gamesurge.net", "irc.irchighway.net", "irc.ircnet.org", "irc.quakenet.org", "irc.rizon.net", "irc.swiftirc.net", "irc.undernet.org", "irc.ustream.tv"})
+        Me.cmbServer.Items.AddRange(New Object() {"irc.dal.net", "irc.efnet.org", "irc.freenode.net", "irc.gamesurge.net", "irc.irchighway.net", "irc.ircnet.org", "irc.oftc.net", "irc.quakenet.org", "irc.rizon.net", "irc.swiftirc.net", "irc.undernet.org", "irc.ustream.tv"})
         Me.cmbServer.Location = New System.Drawing.Point(203, 13)
         Me.cmbServer.Name = "cmbServer"
         Me.cmbServer.Size = New System.Drawing.Size(100, 21)
         Me.cmbServer.Sorted = True
         Me.cmbServer.TabIndex = 31
-        Me.cmbServer.Text = "irc.freenode.net"
+        Me.cmbServer.Text = "irc.oftc.net"
         Me.ToolTip1.SetToolTip(Me.cmbServer, "Server List")
         '
         'NickButton

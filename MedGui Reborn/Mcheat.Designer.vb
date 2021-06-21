@@ -320,7 +320,7 @@ Partial Class Mcheat
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(343, 351)
+        Me.Label11.Location = New System.Drawing.Point(673, 351)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(93, 16)
         Me.Label11.TabIndex = 15
@@ -393,7 +393,7 @@ Partial Class Mcheat
         '
         Me.Label10.Location = New System.Drawing.Point(9, 282)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(497, 54)
+        Me.Label10.Size = New System.Drawing.Size(497, 69)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = resources.GetString("Label10.Text")
         '
