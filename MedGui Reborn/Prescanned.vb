@@ -239,12 +239,12 @@ SKIP_LIST:
     End Sub
 
     Public Sub SearchGridGenreInRow()
-
+        Dim Genre As String = MedGuiR.GENREToolStripComboBox2.Text.Trim
         For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
             If MedGuiR.GENREToolStripComboBox2.Text.Trim = "All" Then
                 dr.Visible = True
             Else
-                Dim GenreFile As String = Path.Combine(MedExtra, "DATs\metadat\genre\" & dr.Cells(5).Value.ToString & ".csv")
+                Dim GenreFile As String = Path.Combine(MedExtra, "DATs\metadat\genre\" & dr.Cells(5).Value.ToString & "_" & Genre & ".csv")
                 Dim InGenre As Boolean = False
                 If File.Exists(GenreFile) Then
                     Dim objReader As New StreamReader(GenreFile)
@@ -263,7 +263,7 @@ SKIP_LIST:
 
                     For Each sLine In arrText
                         GenreGame = sLine.Split("|")
-                        If GenreGame(1).Trim = MedGuiR.GENREToolStripComboBox2.Text.Trim And GenreGame(2).Trim = dr.Cells(8).Value.ToString Then
+                        If GenreGame(1).Trim = Genre And GenreGame(2).Trim = dr.Cells(8).Value.ToString Then
                             InGenre = True
                             Exit For
                         End If
