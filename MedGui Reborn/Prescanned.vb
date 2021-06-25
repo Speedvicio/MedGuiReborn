@@ -227,6 +227,7 @@ SKIP_LIST:
 
     End Sub
 
+    'Disabled because improved by SearchGridGenreInRow
     Public Sub SearchGridDataInRow()
         For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
             If LCase(dr.Cells(0).Value.ToString).Contains(Trim(LCase(MedGuiR.TextBox3.Text))) _
@@ -242,7 +243,12 @@ SKIP_LIST:
         Dim Genre As String = MedGuiR.GENREToolStripComboBox2.Text.Trim
         For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
             If MedGuiR.GENREToolStripComboBox2.Text.Trim = "All" Then
-                dr.Visible = True
+                If LCase(dr.Cells(0).Value.ToString).Contains(Trim(LCase(MedGuiR.TextBox3.Text))) _
+               And LCase(dr.Cells(2).Value.ToString).Contains(Trim(LCase(MedGuiR.regioni))) Then
+                    dr.Visible = True
+                Else
+                    dr.Visible = False
+                End If
             Else
                 Dim GenreFile As String = Path.Combine(MedExtra, "DATs\metadat\genre\" & dr.Cells(5).Value.ToString & "_" & Genre & ".csv")
                 Dim InGenre As Boolean = False
@@ -263,7 +269,9 @@ SKIP_LIST:
 
                     For Each sLine In arrText
                         GenreGame = sLine.Split("|")
-                        If GenreGame(1).Trim.Contains(Genre) And GenreGame(2).Trim = dr.Cells(8).Value.ToString Then
+                        If GenreGame(1).Trim.Contains(Genre) And GenreGame(2).Trim = dr.Cells(8).Value.ToString _
+               And LCase(dr.Cells(2).Value.ToString).Contains(Trim(LCase(MedGuiR.regioni))) _
+               And LCase(dr.Cells(0).Value.ToString).Contains(Trim(LCase(MedGuiR.TextBox3.Text))) Then
                             InGenre = True
                             Exit For
                         End If

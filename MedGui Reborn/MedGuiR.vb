@@ -703,42 +703,48 @@ Public Class MedGuiR
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = ""
-        SearchGridDataInRow()
+        'SearchGridDataInRow()
+        SearchGridGenreInRow()
     End Sub
 
     Private Sub EUToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EUToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\eu.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "eu"
-        SearchGridDataInRow()
+        'SearchGridDataInRow()
+        SearchGridGenreInRow()
     End Sub
 
     Private Sub USToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles USToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\us.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "us"
-        SearchGridDataInRow()
+        'SearchGridDataInRow()
+        SearchGridGenreInRow()
     End Sub
 
     Private Sub JPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JPToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\jp.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "ja"
-        SearchGridDataInRow()
+        'SearchGridDataInRow()
+        SearchGridGenreInRow()
     End Sub
 
     Private Sub PDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\pd.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "pd"
-        SearchGridDataInRow()
+        'SearchGridDataInRow()
+        SearchGridGenreInRow()
     End Sub
 
     Private Sub MUSICToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MUSICToolStripMenuItem1.Click
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Gui\modland.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "soundtrack"
-        SearchGridDataInRow()
+        'SearchGridDataInRow()
+        SearchGridGenreInRow()
     End Sub
 
     Private Sub ToolStripComboBox1_SelectedIndexChanged1(sender As Object, e As EventArgs) Handles SY.SelectedIndexChanged
@@ -893,7 +899,8 @@ Public Class MedGuiR
     End Sub
 
     Private Sub FindToolStripButton_Click(sender As Object, e As EventArgs) Handles FindToolStripButton.Click
-        SearchGridDataInRow()
+        'SearchGridDataInRow()
+        SearchGridGenreInRow()
         Datagrid_filter()
         TextBox3.Focus()
         TextBox3.SelectionStart = TextBox3.Text.Length + 1
@@ -910,7 +917,8 @@ Public Class MedGuiR
     Private Sub TextBox3_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox3.KeyUp
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True    ' evita il Beep!
-            SearchGridDataInRow()
+            'SearchGridDataInRow()
+            SearchGridGenreInRow()
             Datagrid_filter()
             TextBox3.Focus()
             TextBox3.SelectionStart = TextBox3.Text.Length + 1
@@ -933,7 +941,8 @@ Public Class MedGuiR
         'RebuildToolStripButton.Enabled = True
         'End If
         If TextBox3.Text.Trim = "" Then
-            SearchGridDataInRow()
+            'SearchGridDataInRow()
+            SearchGridGenreInRow()
             Datagrid_filter()
         End If
     End Sub
@@ -2123,7 +2132,8 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
 
                 If DataGridView1.RowCount >= 0 Then DataGridView1.Refresh() : DataGridView1.Rows.Clear()
                 LoadGridDataInFile()
-                SearchGridDataInRow()
+                'SearchGridDataInRow()
+                SearchGridGenreInRow()
 
             End If
         ElseIf StartRom = "" And SY.Text = "" Then
