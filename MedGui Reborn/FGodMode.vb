@@ -55,10 +55,12 @@ Public Class FGodMode
 
         If folder.ShowDialog = Windows.Forms.DialogResult.OK Then
             For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
-                Dim newfolder As String = Path.Combine(folder.SelectedPath, dr.Cells(5).Value.ToString)
-                If Directory.Exists(newfolder) = False Then My.Computer.FileSystem.CreateDirectory(newfolder)
                 If dr.Visible = True Then
-                    My.Computer.FileSystem.CopyFile(dr.Cells(4).Value.ToString, Path.Combine(newfolder, Path.GetFileName(dr.Cells(4).Value.ToString)), True)
+                    Dim newfolder As String = Path.Combine(folder.SelectedPath, dr.Cells(5).Value.ToString)
+                    If Directory.Exists(newfolder) = False Then My.Computer.FileSystem.CreateDirectory(newfolder)
+                    Dim cleanedRomName As String
+                    cleanedRomName = dr.Cells(0).Value.ToString & " " & dr.Cells(2).Value.ToString & Path.GetExtension(dr.Cells(4).Value.ToString)
+                    My.Computer.FileSystem.CopyFile(dr.Cells(4).Value.ToString, Path.Combine(newfolder, cleanedRomName), True)
                 End If
             Next
         End If

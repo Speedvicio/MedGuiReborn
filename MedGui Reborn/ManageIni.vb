@@ -1,4 +1,6 @@
-﻿Module ManageIni
+﻿Imports System.IO
+
+Module ManageIni
     Dim RIni As New Ini
     Dim WIni As New Ini
 
@@ -193,6 +195,12 @@
         Try
 
             MedGuiR.TextBox9.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Default")
+            If MedGuiR.TextBox9.Text.Trim = "" Or Directory.Exists(MedGuiR.TextBox9.Text.Trim) = False Then
+                If Directory.Exists(Path.Combine(Application.StartupPath, "ROMS")) = False Then
+                    My.Computer.FileSystem.CreateDirectory(Path.Combine(Application.StartupPath, "ROMS"))
+                End If
+                MedGuiR.TextBox9.Text = Path.Combine(Application.StartupPath, "ROMS")
+            End If
             MedGuiR.TextBox22.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Apple2")
             MedGuiR.TextBox8.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Lynx")
             MedGuiR.TextBox7.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameBoy")
