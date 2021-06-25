@@ -1,4 +1,6 @@
-﻿Public Class FGodMode
+﻿Imports System.IO
+
+Public Class FGodMode
     Public DestFile As String = ""
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -7,7 +9,7 @@
         If RRenameFile = vbYes Then
             If RadioButton1.Checked = True Then
                 RenameLikeDat = 1
-            Else
+            ElseIf RadioButton2.Checked = True Then
                 Dim folder As New FolderBrowserDialog
                 folder.Description = "Choose the folder where the files will be sorted"
                 folder.ShowNewFolderButton = True
@@ -16,8 +18,15 @@
                     DestFile = folder.SelectedPath
                     RenameLikeDat = 2
                 End If
+            ElseIf RadioButton3.Checked = True Then
+                If MedGuiR.DataGridView1.Rows.Count = 0 Then
+                    MsgBox("Nothing to do here...", MsgBoxStyle.Exclamation + vbOKOnly, "Grid empty...")
+                    RenameLikeDat = 0
+                    Exit Sub
+                End If
+                CloneFile()
             End If
-            MedGuiR.RebuildToolStripButton.PerformClick()
+            If RadioButton3.Checked = False Then MedGuiR.RebuildToolStripButton.PerformClick()
             MsgBox("All Done!", MsgBoxStyle.Information + vbOKOnly, "Job Performed...")
             Me.Close()
         Else
@@ -37,6 +46,23 @@
 
     Private Sub FGodMode_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         RenameLikeDat = 0
+    End Sub
+
+    Private Sub CloneFile()
+        Dim folder As New FolderBrowserDialog
+        folder.Description = "Choose the folder where the files will be sorted"
+        folder.ShowNewFolderButton = True
+
+        If folder.ShowDialog = Windows.Forms.DialogResult.OK Then
+            For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
+                Dim newfolder As String = Path.Combine(folder.SelectedPath, dr.Cells(5).Value.ToString)
+                If Directory.Exists(newfolder) = False Then My.Computer.FileSystem.CreateDirectory(newfolder)
+                If dr.Visible = True Then
+                    My.Computer.FileSystem.CopyFile(dr.Cells(4).Value.ToString, Path.Combine(newfolder, Path.GetFileName(dr.Cells(4).Value.ToString)), True)
+                End If
+            Next
+        End If
+
     End Sub
 
 End Class

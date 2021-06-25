@@ -263,7 +263,7 @@ SKIP_LIST:
 
                     For Each sLine In arrText
                         GenreGame = sLine.Split("|")
-                        If GenreGame(1).Trim = Genre And GenreGame(2).Trim = dr.Cells(8).Value.ToString Then
+                        If GenreGame(1).Trim.Contains(Genre) And GenreGame(2).Trim = dr.Cells(8).Value.ToString Then
                             InGenre = True
                             Exit For
                         End If

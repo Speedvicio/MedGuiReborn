@@ -29,16 +29,18 @@ Partial Class FGodMode
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(150, 73)
+        Me.GroupBox1.Size = New System.Drawing.Size(150, 94)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "File Operations"
@@ -70,7 +72,7 @@ Partial Class FGodMode
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(4, 79)
+        Me.Button1.Location = New System.Drawing.Point(4, 100)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(70, 23)
         Me.Button1.TabIndex = 1
@@ -79,18 +81,30 @@ Partial Class FGodMode
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(80, 79)
+        Me.Button2.Location = New System.Drawing.Point(80, 100)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(70, 23)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "&ABORT"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(16, 65)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(71, 17)
+        Me.RadioButton3.TabIndex = 2
+        Me.RadioButton3.Text = "&Clone To:"
+        Me.ToolTip1.SetToolTip(Me.RadioButton3, "Clone the files displayed on the grid on a new directory" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Will be organized by c" &
+        "onsole type)")
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
         'FGodMode
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(155, 106)
+        Me.ClientSize = New System.Drawing.Size(155, 130)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
@@ -111,4 +125,5 @@ Partial Class FGodMode
     Friend WithEvents Button1 As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Button2 As Button
+    Friend WithEvents RadioButton3 As RadioButton
 End Class
