@@ -2,13 +2,21 @@
 
 Public Class FGodMode
     Public DestFile As String = ""
+    Public noADV As Boolean
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Dim RRenameFile As String = MsgBox("I will perform rom operations.." & vbCrLf & "THIS OPERATION IS IRREVERSIBLE!!", MsgBoxStyle.Exclamation + vbYesNo, "Manage the romset?")
+        Dim RRenameFile As String
+        If noADV = False Then
+            RRenameFile = MsgBox("I will perform rom operations.." & vbCrLf & "THIS OPERATION IS IRREVERSIBLE!!", MsgBoxStyle.Exclamation + vbYesNo, "Manage the romset?")
+        Else
+            RRenameFile = vbYes
+        End If
+
         If RRenameFile = vbYes Then
             If RadioButton1.Checked = True Then
                 RenameLikeDat = 1
+                noADV = False
             ElseIf RadioButton2.Checked = True Then
                 Dim folder As New FolderBrowserDialog
                 folder.Description = "Choose the folder where the files will be sorted"
@@ -17,6 +25,8 @@ Public Class FGodMode
                 If folder.ShowDialog = Windows.Forms.DialogResult.OK Then
                     DestFile = folder.SelectedPath
                     RenameLikeDat = 2
+                    folder.RootFolder = folder.SelectedPath
+                    noADV = False
                 End If
             ElseIf RadioButton3.Checked = True Then
                 If MedGuiR.DataGridView1.Rows.Count = 0 Then
@@ -63,8 +73,9 @@ Public Class FGodMode
                     My.Computer.FileSystem.CopyFile(dr.Cells(4).Value.ToString, Path.Combine(newfolder, cleanedRomName), True)
                 End If
             Next
+            folder.RootFolder = folder.SelectedPath
         End If
-
+        noADV = True
     End Sub
 
 End Class
