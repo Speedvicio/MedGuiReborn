@@ -61,12 +61,12 @@ Partial Class KeyAssign
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.TextBox19 = New System.Windows.Forms.TextBox()
         Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -362,20 +362,9 @@ Partial Class KeyAssign
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(12, 278)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(364, 52)
+        Me.Label19.Size = New System.Drawing.Size(475, 78)
         Me.Label19.TabIndex = 55
         Me.Label19.Text = resources.GetString("Label19.Text")
-        '
-        'Button1
-        '
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Location = New System.Drawing.Point(368, 272)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(23, 23)
-        Me.Button1.TabIndex = 56
-        Me.ToolTip1.SetToolTip(Me.Button1, "Manage Per-Configuration")
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
         '
         'ToolTip1
         '
@@ -420,11 +409,22 @@ Partial Class KeyAssign
         Me.TextBox20.Size = New System.Drawing.Size(100, 20)
         Me.TextBox20.TabIndex = 57
         '
+        'Button1
+        '
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Location = New System.Drawing.Point(368, 272)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(23, 23)
+        Me.Button1.TabIndex = 56
+        Me.ToolTip1.SetToolTip(Me.Button1, "Manage Per-Configuration")
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
+        '
         'KeyAssign
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(482, 347)
+        Me.ClientSize = New System.Drawing.Size(489, 371)
         Me.Controls.Add(Me.Label20)
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.TextBox19)
@@ -512,10 +512,10 @@ Partial Class KeyAssign
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label19 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents TextBox19 As TextBox
     Friend WithEvents TextBox20 As TextBox
+    Friend WithEvents Button1 As Button
 End Class

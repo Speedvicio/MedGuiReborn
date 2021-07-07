@@ -1015,6 +1015,8 @@ MedExtra & "Backup\" & p_c & ".cfg", _KPar & "= " & tasti & vbCrLf, True)
         F1 = Me
         CenterForm()
         ColorizeForm()
+        My.Computer.FileSystem.CopyFile(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg", MedExtra & "Backup\" & Date.Today.ToString("ddMMyyyy") & "_ByUpdate.cfg", True)
+        MsgBox("I have created a mednafen.cfg backup to prevent incorrect key assignment", vbOKOnly + MsgBoxStyle.Information, "Backup " & DMedConf & ".cfg...")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
