@@ -1619,6 +1619,7 @@ Public Class MedGuiR
         If CheckBox2.Checked = True Then
             For i = 0 To DataGridView1.Rows.Count - 1
                 DataGridView1.Rows(i).Cells(0).Selected = True
+                DownloadCover()
             Next
             MsgBox("Task completed!", vbOKOnly + MsgBoxStyle.Information)
             Exit Sub
