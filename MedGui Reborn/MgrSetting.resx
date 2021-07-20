@@ -152,6 +152,20 @@ wasapi - WASAPI(Exclusive Mode)
 Experimental exclusive-mode WASAPI driver, usable on Windows Vista and newer.
  Use it for lower-latency sound. May not work properly on all sound cards.</value>
   </data>
+  <data name="ComboBox67.ToolTip" xml:space="preserve">
+    <value>Deinterlacer to use for interlaced video.
+
+    weave - Good for low-motion video; can be used in conjunction with negative .scanlines setting values.
+
+    bob - Good for causing a headache. All glory to Bob.
+
+    bob_offset - Good for high-motion video, but is a bit flickery; reduces the subjective vertical resolution.
+
+    blend - Blend fields together; reduces vertical and temporal resolution.
+
+    blend_rg - Like the "blend" deinterlacer, but the blending is done in a manner that respects gamma, reducing unwanted brightness changes,
+    at the cost of increased CPU usage.</value>
+  </data>
   <data name="ComboBox66.ToolTip" xml:space="preserve">
     <value>Preferred source data pixel format for emulated video.
 

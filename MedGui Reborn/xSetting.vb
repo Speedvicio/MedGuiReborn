@@ -364,6 +364,10 @@ Module xSetting
 
         If row.Contains("video.glformat ") Then xValue = Trim(Replace(row, "video.glformat", "")) : MgrSetting.ComboBox66.Text = xValue
 
+        If row.Contains("video.force_bbclear ") Then xValue = Trim(Replace(row, "video.force_bbclear", "")) : MgrSetting.CheckBox110.Checked = CBool(xValue)
+
+        If row.Contains("video.cursorvis ") Then xValue = Trim(Replace(row, "video.cursorvis", "")) : MgrSetting.ComboBox67.Text = xValue
+
         If row.Contains("fps.autoenable ") Then xValue = Trim(Replace(row, "fps.autoenable", "")) : MgrSetting.CheckBox103.Checked = CBool(xValue)
         If row.Contains("fps.font ") Then xValue = Trim(Replace(row, "fps.font", "")) : MgrSetting.ComboBox55.Text = xValue
         If row.Contains("fps.position ") Then xValue = Trim(Replace(row, "fps.position", "")) : MgrSetting.ComboBox56.Text = xValue

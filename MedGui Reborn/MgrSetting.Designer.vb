@@ -597,9 +597,12 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.TabControl1.SuspendLayout
-        Me.TabPage1.SuspendLayout
-        Me.GroupBox1.SuspendLayout
+        Me.CheckBox110 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox67 = New System.Windows.Forms.ComboBox()
+        Me.Label189 = New System.Windows.Forms.Label()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -931,6 +934,9 @@ Partial Class MgrSetting
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ComboBox67)
+        Me.GroupBox2.Controls.Add(Me.Label189)
+        Me.GroupBox2.Controls.Add(Me.CheckBox110)
         Me.GroupBox2.Controls.Add(Me.Label188)
         Me.GroupBox2.Controls.Add(Me.ComboBox66)
         Me.GroupBox2.Controls.Add(Me.ComboBox56)
@@ -1136,9 +1142,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox41.FormattingEnabled = True
         Me.ComboBox41.Items.AddRange(New Object() {"weave", "bob", "bob_offset", "blend", "blend_rg"})
-        Me.ComboBox41.Location = New System.Drawing.Point(153, 146)
+        Me.ComboBox41.Location = New System.Drawing.Point(76, 146)
         Me.ComboBox41.Name = "ComboBox41"
-        Me.ComboBox41.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox41.Size = New System.Drawing.Size(69, 21)
         Me.ComboBox41.TabIndex = 31
         Me.ComboBox41.Text = "weave"
         Me.ToolTip1.SetToolTip(Me.ComboBox41, resources.GetString("ComboBox41.ToolTip"))
@@ -1267,9 +1273,9 @@ Partial Class MgrSetting
         'ComboBox6
         '
         Me.ComboBox6.FormattingEnabled = True
-        Me.ComboBox6.Location = New System.Drawing.Point(153, 119)
+        Me.ComboBox6.Location = New System.Drawing.Point(158, 119)
         Me.ComboBox6.Name = "ComboBox6"
-        Me.ComboBox6.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox6.Size = New System.Drawing.Size(136, 21)
         Me.ComboBox6.TabIndex = 17
         Me.ComboBox6.Text = "0x0"
         Me.ToolTip1.SetToolTip(Me.ComboBox6, "Full-screen Resolution")
@@ -1308,16 +1314,16 @@ Partial Class MgrSetting
         Me.CheckBox5.AutoSize = True
         Me.CheckBox5.Location = New System.Drawing.Point(9, 69)
         Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(134, 17)
+        Me.CheckBox5.Size = New System.Drawing.Size(89, 17)
         Me.CheckBox5.TabIndex = 13
-        Me.CheckBox5.Text = "&OpenGl Syncronization"
+        Me.CheckBox5.Text = "&OpenGl Sync"
         Me.ToolTip1.SetToolTip(Me.CheckBox5, resources.GetString("CheckBox5.ToolTip"))
         Me.CheckBox5.UseVisualStyleBackColor = True
         '
         'CheckBox4
         '
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(215, 69)
+        Me.CheckBox4.Location = New System.Drawing.Point(108, 69)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(79, 17)
         Me.CheckBox4.TabIndex = 12
@@ -1328,7 +1334,7 @@ Partial Class MgrSetting
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(215, 46)
+        Me.CheckBox3.Location = New System.Drawing.Point(108, 46)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(77, 17)
         Me.CheckBox3.TabIndex = 11
@@ -1362,9 +1368,9 @@ Partial Class MgrSetting
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Location = New System.Drawing.Point(9, 46)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(138, 17)
+        Me.CheckBox2.Size = New System.Drawing.Size(93, 17)
         Me.CheckBox2.TabIndex = 1
-        Me.CheckBox2.Text = "&Blit Time Syncronization"
+        Me.CheckBox2.Text = "&Blit Time Sync"
         Me.ToolTip1.SetToolTip(Me.CheckBox2, resources.GetString("CheckBox2.ToolTip"))
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
@@ -4560,10 +4566,11 @@ Partial Class MgrSetting
         'ComboBox24
         '
         Me.ComboBox24.FormattingEnabled = True
-        Me.ComboBox24.Items.AddRange(New Object() {"anaglyph", "cscope", "sidebyside", "vli", "hli"})
+        Me.ComboBox24.Items.AddRange(New Object() {"anaglyph", "cscope", "hli", "left", "right", "sidebyside", "vli"})
         Me.ComboBox24.Location = New System.Drawing.Point(189, 65)
         Me.ComboBox24.Name = "ComboBox24"
         Me.ComboBox24.Size = New System.Drawing.Size(109, 21)
+        Me.ComboBox24.Sorted = True
         Me.ComboBox24.TabIndex = 38
         Me.ComboBox24.Text = "anaglyph"
         Me.ToolTip1.SetToolTip(Me.ComboBox24, resources.GetString("ComboBox24.ToolTip"))
@@ -7023,6 +7030,37 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'CheckBox110
+        '
+        Me.CheckBox110.AutoSize = True
+        Me.CheckBox110.Location = New System.Drawing.Point(186, 46)
+        Me.CheckBox110.Name = "CheckBox110"
+        Me.CheckBox110.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox110.TabIndex = 110
+        Me.CheckBox110.Text = "&Clean Bbuffer"
+        Me.ToolTip1.SetToolTip(Me.CheckBox110, "Enable frameskip during emulation rendering.")
+        Me.CheckBox110.UseVisualStyleBackColor = True
+        '
+        'ComboBox67
+        '
+        Me.ComboBox67.FormattingEnabled = True
+        Me.ComboBox67.Items.AddRange(New Object() {"hidden", "vinsibile"})
+        Me.ComboBox67.Location = New System.Drawing.Point(238, 146)
+        Me.ComboBox67.Name = "ComboBox67"
+        Me.ComboBox67.Size = New System.Drawing.Size(56, 21)
+        Me.ComboBox67.TabIndex = 112
+        Me.ComboBox67.Text = "hidden"
+        Me.ToolTip1.SetToolTip(Me.ComboBox67, resources.GetString("ComboBox67.ToolTip"))
+        '
+        'Label189
+        '
+        Me.Label189.AutoSize = True
+        Me.Label189.Location = New System.Drawing.Point(155, 149)
+        Me.Label189.Name = "Label189"
+        Me.Label189.Size = New System.Drawing.Size(72, 13)
+        Me.Label189.TabIndex = 111
+        Me.Label189.Text = "Mouse Cursor"
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7781,4 +7819,7 @@ Partial Class MgrSetting
     Friend WithEvents Label184 As Label
     Friend WithEvents Label188 As Label
     Friend WithEvents ComboBox66 As ComboBox
+    Friend WithEvents ComboBox67 As ComboBox
+    Friend WithEvents Label189 As Label
+    Friend WithEvents CheckBox110 As CheckBox
 End Class
