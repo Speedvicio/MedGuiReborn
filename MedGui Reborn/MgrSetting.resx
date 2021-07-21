@@ -117,6 +117,62 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="TrackBar13.ToolTip" xml:space="preserve">
+    <value>Number of pixels to separate L/R views by.
+
+This setting refers to pixels before vb.xscale(fs) scaling is taken into consideration. 
+For example, a value of "100" here will result in a separation of 300 screen pixels if vb.xscale(fs) is set to "3".</value>
+  </data>
+  <data name="ComboBox25.ToolTip" xml:space="preserve">
+    <value>Anaglyph preset colors.
+
+disabled - Disabled
+Forces usage of custom anaglyph colors.
+
+red_blue - Red/Blue
+Classic red/blue anaglyph.
+
+red_cyan - Red/Cyan
+Improved quality red/cyan anaglyph.
+
+red_electriccyan - Red/Electric Cyan
+Alternate version of red/cyan
+
+red_green - Red/Green
+
+green_magenta - Green/Magenta
+
+yellow_blue - Yellow/Blue</value>
+  </data>
+  <data name="CheckBox40.ToolTip" xml:space="preserve">
+    <value>Allow draw skipping.
+
+If vb.instant_display_hack is set to "1", and this setting is set to "1", 
+then frame-skipping the drawing to the emulated framebuffer will be allowed. 
+THIS WILL CAUSE GRAPHICAL GLITCHES, AND THEORETICALLY(but unlikely) 
+GAME CRASHES, ESPECIALLY WITH DIRECT FRAMEBUFFER DRAWING GAMES.</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
+  <data name="ComboBox24.ToolTip" xml:space="preserve">
+    <value>3D mode.
+
+anaglyph - Anaglyph
+Used in conjunction with classic dual-lens-color glasses.
+
+cscope - CyberScope
+Intended for use with the CyberScope 3D device.
+
+sidebyside - Side-by-Side
+The left-eye image is displayed on the left, and the right-eye image is displayed on the right.
+
+vli - Vertical Line Interlaced
+Vertical lines alternate between left view and right view.
+
+hli - Horizontal Line Interlaced
+Horizontal lines alternate between left view and right view.</value>
+  </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
@@ -151,20 +207,6 @@ Shared-mode WASAPI driver, usable on Windows Vista and newer.
 wasapi - WASAPI(Exclusive Mode)
 Experimental exclusive-mode WASAPI driver, usable on Windows Vista and newer.
  Use it for lower-latency sound. May not work properly on all sound cards.</value>
-  </data>
-  <data name="ComboBox67.ToolTip" xml:space="preserve">
-    <value>Deinterlacer to use for interlaced video.
-
-    weave - Good for low-motion video; can be used in conjunction with negative .scanlines setting values.
-
-    bob - Good for causing a headache. All glory to Bob.
-
-    bob_offset - Good for high-motion video, but is a bit flickery; reduces the subjective vertical resolution.
-
-    blend - Blend fields together; reduces vertical and temporal resolution.
-
-    blend_rg - Like the "blend" deinterlacer, but the blending is done in a manner that respects gamma, reducing unwanted brightness changes,
-    at the cost of increased CPU usage.</value>
   </data>
   <data name="ComboBox66.ToolTip" xml:space="preserve">
     <value>Preferred source data pixel format for emulated video.
@@ -561,59 +603,6 @@ Probably an invalid region, but available for testing purposes anyway.</value>
 
 With a Mednafen sound output rate of about 32041Hz or higher: Quality "0" resampler has approximately 0.125ms of latency, 
 quality "5" resampler has approximately 1.25ms of latency, and quality "10" resampler has approximately 3.99ms of latency.</value>
-  </data>
-  <data name="TrackBar13.ToolTip" xml:space="preserve">
-    <value>Number of pixels to separate L/R views by.
-
-This setting refers to pixels before vb.xscale(fs) scaling is taken into consideration. 
-For example, a value of "100" here will result in a separation of 300 screen pixels if vb.xscale(fs) is set to "3".</value>
-  </data>
-  <data name="ComboBox25.ToolTip" xml:space="preserve">
-    <value>Anaglyph preset colors.
-
-disabled - Disabled
-Forces usage of custom anaglyph colors.
-
-red_blue - Red/Blue
-Classic red/blue anaglyph.
-
-red_cyan - Red/Cyan
-Improved quality red/cyan anaglyph.
-
-red_electriccyan - Red/Electric Cyan
-Alternate version of red/cyan
-
-red_green - Red/Green
-
-green_magenta - Green/Magenta
-
-yellow_blue - Yellow/Blue</value>
-  </data>
-  <data name="CheckBox40.ToolTip" xml:space="preserve">
-    <value>Allow draw skipping.
-
-If vb.instant_display_hack is set to "1", and this setting is set to "1", 
-then frame-skipping the drawing to the emulated framebuffer will be allowed. 
-THIS WILL CAUSE GRAPHICAL GLITCHES, AND THEORETICALLY(but unlikely) 
-GAME CRASHES, ESPECIALLY WITH DIRECT FRAMEBUFFER DRAWING GAMES.</value>
-  </data>
-  <data name="ComboBox24.ToolTip" xml:space="preserve">
-    <value>3D mode.
-
-anaglyph - Anaglyph
-Used in conjunction with classic dual-lens-color glasses.
-
-cscope - CyberScope
-Intended for use with the CyberScope 3D device.
-
-sidebyside - Side-by-Side
-The left-eye image is displayed on the left, and the right-eye image is displayed on the right.
-
-vli - Vertical Line Interlaced
-Vertical lines alternate between left view and right view.
-
-hli - Horizontal Line Interlaced
-Horizontal lines alternate between left view and right view.</value>
   </data>
   <data name="NumericUpDown26.ToolTip" xml:space="preserve">
     <value>LED on duration to linear RGB conversion coefficient.
@@ -1014,6 +1003,20 @@ and won't exactly replicate the colors these ICs would reproduce when fed an App
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ComboBox67.ToolTip" xml:space="preserve">
+    <value>Deinterlacer to use for interlaced video.
+
+    weave - Good for low-motion video; can be used in conjunction with negative .scanlines setting values.
+
+    bob - Good for causing a headache. All glory to Bob.
+
+    bob_offset - Good for high-motion video, but is a bit flickery; reduces the subjective vertical resolution.
+
+    blend - Blend fields together; reduces vertical and temporal resolution.
+
+    blend_rg - Like the "blend" deinterlacer, but the blending is done in a manner that respects gamma, reducing unwanted brightness changes,
+    at the cost of increased CPU usage.</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
   </metadata>

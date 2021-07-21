@@ -301,6 +301,16 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
             ComboBox66.Enabled = False
         End If
 
+        If Val(vmedClear) > 12700 Then
+            ComboBox67.Enabled = True
+            CheckBox110.Enabled = True
+            ComboBox24.Items.Clear()
+            ComboBox24.Items.AddRange(New String() {"anaglyph", "cscope", "hli", "sidebyside", "vli", "left", "right"})
+        Else
+            ComboBox67.Enabled = False
+            CheckBox110.Enabled = False
+        End If
+
     End Sub
 
     Public Sub wswan_set()

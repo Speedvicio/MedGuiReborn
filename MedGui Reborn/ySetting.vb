@@ -345,6 +345,8 @@
                     End If
                 Case Is = 12700
                     video = video & " -video.glformat " & MgrSetting.ComboBox66.Text
+                Case Is = 12701
+                    video = video & " -video.force_bbclear " & MgrSetting.CheckBox110.CheckState & " -video.cursorvis " & MgrSetting.ComboBox67.Text
             End Select
         Next
     End Sub

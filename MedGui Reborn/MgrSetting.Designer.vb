@@ -4566,7 +4566,7 @@ Partial Class MgrSetting
         'ComboBox24
         '
         Me.ComboBox24.FormattingEnabled = True
-        Me.ComboBox24.Items.AddRange(New Object() {"anaglyph", "cscope", "hli", "left", "right", "sidebyside", "vli"})
+        Me.ComboBox24.Items.AddRange(New Object() {"anaglyph", "cscope", "hli", "sidebyside", "vli"})
         Me.ComboBox24.Location = New System.Drawing.Point(189, 65)
         Me.ComboBox24.Name = "ComboBox24"
         Me.ComboBox24.Size = New System.Drawing.Size(109, 21)
@@ -7033,6 +7033,7 @@ Partial Class MgrSetting
         'CheckBox110
         '
         Me.CheckBox110.AutoSize = True
+        Me.CheckBox110.Enabled = False
         Me.CheckBox110.Location = New System.Drawing.Point(186, 46)
         Me.CheckBox110.Name = "CheckBox110"
         Me.CheckBox110.Size = New System.Drawing.Size(90, 17)
@@ -7043,6 +7044,7 @@ Partial Class MgrSetting
         '
         'ComboBox67
         '
+        Me.ComboBox67.Enabled = False
         Me.ComboBox67.FormattingEnabled = True
         Me.ComboBox67.Items.AddRange(New Object() {"hidden", "vinsibile"})
         Me.ComboBox67.Location = New System.Drawing.Point(238, 146)
