@@ -234,7 +234,7 @@ Partial Class UCI
         Me.txtPort.Name = "txtPort"
         Me.txtPort.Size = New System.Drawing.Size(44, 20)
         Me.txtPort.TabIndex = 26
-        Me.txtPort.Text = "6697"
+        Me.txtPort.Text = "6667"
         Me.ToolTip1.SetToolTip(Me.txtPort, "Server Port")
         '
         'Button1

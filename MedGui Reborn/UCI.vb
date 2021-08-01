@@ -397,6 +397,8 @@ Public Class UCI
         F1 = Me
         CenterForm()
         ColorizeForm()
+
+        If cmbChannel.Text = "#mednafen" Or cmbChannel.Text = "#MedPlay" Then cmbServer.Text = "irc.oftc.net"
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
