@@ -333,7 +333,7 @@ tryagain:
         UCI.Show()
 
         UCI.txtNick.Text = TextBox1.Text
-        UCI.cmbServer.Text = "irc.freenode.net"
+        UCI.cmbServer.Text = "irc.oftc.net"
         UCI.cmbChannel.Text = "#MedPlay"
         UCI.btnIRCConnect()
     End Sub
