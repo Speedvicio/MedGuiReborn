@@ -73,7 +73,10 @@ Public Class FGodMode
                     My.Computer.FileSystem.CopyFile(dr.Cells(4).Value.ToString, Path.Combine(newfolder, cleanedRomName), True)
                 End If
             Next
-            folder.RootFolder = folder.SelectedPath
+            Try
+                folder.RootFolder = folder.SelectedPath
+            Catch
+            End Try
         End If
         noADV = True
     End Sub
