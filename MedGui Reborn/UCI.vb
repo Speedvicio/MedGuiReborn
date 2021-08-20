@@ -197,14 +197,15 @@ Public Class UCI
 
         Try
             Select Case True
-                Case Message.Contains("This nickname is registered.")
+                Case Message.Contains("This nickname is registered")
                     Dim InputPsw As Object
                     InputPsw = InputBox("This nickname is registered, input the password", "Input your password...")
                     If InputPsw.trim = "" Then
                         Exit Sub
                     Else
                         NickPsw = InputPsw.trim
-                        txtSend.Text = "/msg NickServ identify " & txtNick.Text & " " & NickPsw
+                        'freenode identify way    txtSend.Text = "/msg NickServ identify " & txtNick.Text & " " & NickPsw
+                        txtSend.Text = "/msg NickServ identify " & NickPsw
                     End If
                     'irc.ServerPass = InputPsw
                     If txtSend.Text.Trim <> "" Then btnSend.PerformClick()
@@ -227,6 +228,9 @@ Public Class UCI
                     Dim Op As String = Replace(message, "+o", "")
                     lstUsers.Items.Remove(Op.Trim)
                     lstUsers.Items.Add("@" & Op.Trim)
+                Case message.Contains("ChanServ gives channel operator status to " & txtNick.Text.Trim)
+                    lstUsers.Items.Remove(txtNick.Text.Trim)
+                    lstUsers.Items.Add("@" & txtNick.Text.Trim)
                 Case message.Contains("End of /WHOIS list")
                     rtbOutput.SelectionColor = Color.DarkRed
                 Case message = ("Connected!")
