@@ -24,12 +24,13 @@ Partial Class FGodMode
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -44,6 +45,18 @@ Partial Class FGodMode
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "File Operations"
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(16, 65)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(71, 17)
+        Me.RadioButton3.TabIndex = 2
+        Me.RadioButton3.Text = "&Clone To:"
+        Me.ToolTip1.SetToolTip(Me.RadioButton3, "Clone the files displayed on the grid on a new directory" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Will be organized by c" &
+        "onsole type)")
+        Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'RadioButton2
         '
@@ -88,23 +101,20 @@ Partial Class FGodMode
         Me.Button2.Text = "&ABORT"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'ProgressBar1
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(16, 65)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(71, 17)
-        Me.RadioButton3.TabIndex = 2
-        Me.RadioButton3.Text = "&Clone To:"
-        Me.ToolTip1.SetToolTip(Me.RadioButton3, "Clone the files displayed on the grid on a new directory" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Will be organized by c" &
-        "onsole type)")
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.ProgressBar1.Location = New System.Drawing.Point(4, 129)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(146, 23)
+        Me.ProgressBar1.Step = 1
+        Me.ProgressBar1.TabIndex = 3
         '
         'FGodMode
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(155, 130)
+        Me.ClientSize = New System.Drawing.Size(155, 160)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
@@ -126,4 +136,5 @@ Partial Class FGodMode
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Button2 As Button
     Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class
