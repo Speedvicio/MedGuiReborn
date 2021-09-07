@@ -99,7 +99,7 @@ Module scan
             Select Case LCase(ext)
                 Case ".bin", ".iso"
                     dettaglio = My.Computer.FileSystem.GetFileInfo(percorso)
-                    If dettaglio.Length > 10485760 And Dir(Replace(percorso, dettaglio.Extension, ".cue")) <> "" Then
+                    If dettaglio.Length > 16000000 And Dir(Replace(percorso, dettaglio.Extension, ".cue")) <> "" Then
                         ext = ".cue"
                         percorso = Replace(percorso, dettaglio.Extension, ".cue")
                     End If
@@ -160,7 +160,7 @@ Module scan
                     Case Else
                         decrunch_size = dettaglio.Length
 
-                        If decrunch_size <= 10485760 Then
+                        If decrunch_size <= 16000000 Then
                             'If LCase(dettaglio.Extension) = ".bin" Then
                             Dim parsebin As String = ""
                             Using fs As New FileStream(percorso, FileMode.Open, FileAccess.Read)
