@@ -44,13 +44,18 @@ Module Extract
     Public Sub contr_os()
 
         Dim arch = System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE", EnvironmentVariableTarget.Machine)
-        If arch = "AMD64" Then
-            c_os = "64"
-            'sevenzdll = "7z64.dll"
+
+        If UCase(My.Computer.Info.OSFullName.Contains("XP")) Then
             sevenzdll = "7z.dll"
         Else
-            c_os = "32"
-            sevenzdll = "7z.dll"
+            If arch = "AMD64" Then
+                c_os = "64"
+                'sevenzdll = "7z64.dll"
+                sevenzdll = "7z_zst.dll"
+            Else
+                c_os = "32"
+                sevenzdll = "7z_zst.dll"
+            End If
         End If
 
         'If IntPtr.Size = 8 Then
