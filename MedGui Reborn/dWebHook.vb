@@ -1,7 +1,5 @@
 ﻿Imports System.Collections.Specialized
 Imports System.Net
-Imports System.IO
-Imports System.Web.Script.Serialization
 
 'This code by Kowalski7 & Literallycj
 'https://github.com/Kowalski7/Discord-Webhook-Announcer/blob/11d604db1a356bd6aa52e8e60d38d67a296503b7/Discord%20Webhook%20Announcer/main.vb#L96
