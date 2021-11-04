@@ -312,7 +312,7 @@ Public Class Mcheat
         Select Case LCase(Path.GetExtension(percorso))
             Case ".zip", ".rar", ".7z"
                 simple_extract()
-            Case ".cue", ".toc", ".ccd", ".m3u"
+            Case ".cue", ".toc", ".ccd", ".m3u", ".zst"
                 Dim savetype As String
                 Select Case CheatConsole
                     Case "psx"

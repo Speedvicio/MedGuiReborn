@@ -864,7 +864,7 @@ Public Class MedGuiR
         If StartRom = "" Then StartRom = Application.StartupPath
         fdlg.Title = "Select rom"
         fdlg.InitialDirectory = ssr
-        fdlg.Filter = "All supported format (*.zip,*.7z,*.rar,*.cue,*.toc,*.m3u,*.ccd,*.cfs,*.ciso,*.iso,*.ecm,*.pbp,*.chd)|*.zip;*.7z;*.rar;*.cue;*.toc;*.m3u;*.ccd;*.cfs;*.ciso;*.iso;*.ecm;*.pbp;*.chd|File CUE (*.cue)|*.cue|File TOC (*.toc)|*.toc|File M3U (*.m3u)|*.m3u|File CCD (*.ccd)|*.ccd|File MAI (*.mai)|*.mai|File ZIP (*.zip)|*.zip|File 7z (*.7z)|*.7z|File rar (*.rar)|*.rar|Compressed CD (*.ecm,*.pbp,*.cfs,*.ciso,*.chd)|*.ecm;*.pbp;*.cfs;*.ciso;*.chd|PS-X EXE (*.exe)|*.exe|All files (*.*)|*.*"
+        fdlg.Filter = "All supported format (*.zip,*.7z,*.rar,*.zst,*.cue,*.toc,*.m3u,*.ccd,*.cfs,*.ciso,*.iso,*.ecm,*.pbp,*.chd)|*.zip;*.7z;*.rar;*.zst;*.cue;*.toc;*.m3u;*.ccd;*.cfs;*.ciso;*.iso;*.ecm;*.pbp;*.chd|File CUE (*.cue)|*.cue|File TOC (*.toc)|*.toc|File M3U (*.m3u)|*.m3u|File CCD (*.ccd)|*.ccd|File MAI (*.mai)|*.mai|File ZIP (*.zip)|*.zip|File 7z (*.7z)|*.7z|File rar (*.rar)|*.rar|File Zstandard (*.zst)|*.zst|Compressed CD (*.ecm,*.pbp,*.cfs,*.ciso,*.chd)|*.ecm;*.pbp;*.cfs;*.ciso;*.chd|PS-X EXE (*.exe)|*.exe|All files (*.*)|*.*"
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
@@ -1143,7 +1143,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -2686,7 +2686,7 @@ inputagain:
             Select Case LCase(Path.GetExtension(percorso))
                 Case ".zip", ".rar", ".7z"
                     simple_extract()
-                Case ".cue", ".toc", ".ccd", ".m3u"
+                Case ".cue", ".toc", ".ccd", ".m3u", ".zst"
                     BackupHash = ""
                     GoTo SKIPHASH
             End Select

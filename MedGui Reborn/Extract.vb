@@ -145,13 +145,17 @@ Module Extract
             fileTXT = ""
             For Each ArchiveFileInfo In szip.ArchiveFileData
                 If ArchiveFileInfo.IsDirectory Then
-                    If checkpismo = False Then
-                        consoles = ""
-                        ext = ""
-                    Else
-                        If LCase(Path.GetExtension(percorso)) = ".zip" Then
-                            MountPismo()
-                            RecuScan()
+                    If LCase(Path.GetExtension(percorso)) = ".zip" Then
+                        If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12700 Then
+                            'load cd zipped
+                        Else
+                            If checkpismo = False Then
+                                consoles = ""
+                                ext = ""
+                            Else
+                                MountPismo()
+                                RecuScan()
+                            End If
                         End If
                     End If
                     Continue For
@@ -166,15 +170,19 @@ Module Extract
                 End If
                 Select Case LCase(ext)
                     Case ".iso", ".m3u", ".toc", ".cue", ".ccd"
-                        If checkpismo = False Then
-                            consoles = ""
-                            ext = ""
-                            Exit Sub
-                        Else
-                            If LCase(Path.GetExtension(percorso)) = ".zip" Then
-                                MountPismo()
-                                RecuScan()
-                                Exit Sub
+                        If LCase(Path.GetExtension(percorso)) = ".zip" Then
+                            If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12700 Then
+                                'load cd zipped
+                            Else
+                                If checkpismo = False Then
+                                    consoles = ""
+                                    ext = ""
+                                    Exit Sub
+                                Else
+                                    MountPismo()
+                                    RecuScan()
+                                    Exit Sub
+                                End If
                             End If
                         End If
                     Case ".ecm", ".pbp", ".zip", ".rar", ".7z", ".chd"
@@ -183,16 +191,19 @@ Module Extract
                         Exit Sub
                     Case ".bin", ".img"
                         If ArchiveFileInfo.Size > 10485760 Then
-
-                            If checkpismo = False Then
-                                consoles = ""
-                                ext = ""
-                                Exit Sub
-                            Else
-                                If LCase(Path.GetExtension(percorso)) = ".zip" Then
-                                    MountPismo()
-                                    RecuScan()
-                                    Exit Sub
+                            If LCase(Path.GetExtension(percorso)) = ".zip" Then
+                                If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12700 Then
+                                    'load cd zipped
+                                Else
+                                    If checkpismo = False Then
+                                        consoles = ""
+                                        ext = ""
+                                        Exit Sub
+                                    Else
+                                        MountPismo()
+                                        RecuScan()
+                                        Exit Sub
+                                    End If
                                 End If
                             End If
                         Else
@@ -202,6 +213,8 @@ Module Extract
                         consoles = "apple2"
                         LMain()
                         Exit Sub
+                    Case "zst"
+                        'zst ?
                     Case Else
                         fileTXT = ""
                 End Select

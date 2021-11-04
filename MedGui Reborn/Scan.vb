@@ -354,7 +354,7 @@ Module scan
                         End If
                     End If
                 End If
-            Case ".toc"
+            Case ".toc", ".zst"
                 If skipother = False Then
                     If stopiso = False Then
                         If stopscan = False Then cd_consoles()

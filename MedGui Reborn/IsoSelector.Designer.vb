@@ -197,7 +197,7 @@ Partial Class IsoSelector
         Me.MaximizeBox = False
         Me.Name = "IsoSelector"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "ISO/CD Type"
+        Me.Text = "ISO/CD/ZSTD File Type"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
