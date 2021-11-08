@@ -66,10 +66,10 @@ You can found the last stable release on:
 * [SourceForge](https://sourceforge.net/projects/medguireborn/files/Exe/) page
 
 ### MedGui Reborn in addiction use this external exe/library:
-* [SevenZipSharp.dll](https://sevenzipsharp.codeplex.com/) for the support at compressed archive
+* [SevenZipSharp.dll](https://github.com/phillipp/SevenZipSharp) for the support at compressed archive
 * [7z.dll](http://www.7-zip.org/download.html) for the support at compressed archive
 * [NoIntro DATs](http://datomatic.no-intro.org/?page=download) for get real name of the rom
-* A modified version of [IrcClient.dll](http://tech.reboot.pro/showthread.php?tid=1706) for IRC Chat support
+* A modified version of [IrcClient.dll](https://github.com/cshivers/IrcClient-csharp) for IRC Chat support
 * [TheGamesDB](http://thegamesdb.net/) API for Boxart Scraping
 * [SoX](http://sox.sourceforge.net/) for convert/play wav<>ogg file
 * [FMod.dll](https://www.fmod.com/) to play mod in About screen
@@ -80,9 +80,9 @@ You can found the last stable release on:
 * [unecm.exe](https://web.archive.org/web/20130504220128/http://www.neillcorlett.com/cmdpack) to unpack ecm file format
 * [DiscTools.dll](https://github.com/Asnivor/DiscTools) to detect PSX serial number and PC-FX cue/ccd file
 * ps1titles_us_eu_jp.txt from CaptainCPS-X for get real PSX Name
-* [vgmPlay.exe](http://mjsstuf.x10host.com/pages/vgmPlay/vgmPlay.htm) to convert vgm/vgz file in bin format
+* [vgmPlay.exe](https://github.com/TheDeadFish/vgmPlay-vgmConv) to convert vgm/vgz file in bin format
 * [Modland](http://ftp.modland.com/) server for get all chip music
-* [An FTP client library for .NET 2.0](https://www.codeproject.com/Articles/11991/An-FTP-client-library-for-NET) for perform all ftp job on MedClient session
+* [An FTP client library for .NET 2.0](https://github.com/conficient/ftpclient) for perform all ftp job on MedClient session
 * [Mico and Sico](https://sourceforge.net/projects/micosico/?source=directory) to convert png to ico
 * A modified version of [GBS2GB](http://www.angelfire.com/nc/ugetab/) to convert gbs in gb format
 * Superb console icon set by [Yoshi-kun](http://yspixel.jpn.org/icon/index.html)
