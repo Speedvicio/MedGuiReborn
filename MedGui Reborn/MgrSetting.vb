@@ -301,7 +301,7 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
             ComboBox66.Enabled = False
         End If
 
-        If Val(vmedClear) > 12700 Then
+        If Val(vmedClear) > 12710 Then
             ComboBox67.Enabled = True
             CheckBox110.Enabled = True
             ComboBox24.Items.Clear()
@@ -309,6 +309,8 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         Else
             ComboBox67.Enabled = False
             CheckBox110.Enabled = False
+            ComboBox24.Items.Remove("left")
+            ComboBox24.Items.Remove("right")
         End If
 
     End Sub

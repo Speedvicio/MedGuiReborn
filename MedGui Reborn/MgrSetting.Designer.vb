@@ -41,6 +41,9 @@ Partial Class MgrSetting
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox67 = New System.Windows.Forms.ComboBox()
+        Me.Label189 = New System.Windows.Forms.Label()
+        Me.CheckBox110 = New System.Windows.Forms.CheckBox()
         Me.Label188 = New System.Windows.Forms.Label()
         Me.ComboBox66 = New System.Windows.Forms.ComboBox()
         Me.ComboBox56 = New System.Windows.Forms.ComboBox()
@@ -597,12 +600,9 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox110 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox67 = New System.Windows.Forms.ComboBox()
-        Me.Label189 = New System.Windows.Forms.Label()
-        Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.TabControl1.SuspendLayout
+        Me.TabPage1.SuspendLayout
+        Me.GroupBox1.SuspendLayout
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -767,7 +767,6 @@ Partial Class MgrSetting
         Me.TabControl1.Controls.Add(Me.TabPage27)
         Me.TabControl1.Controls.Add(Me.TabPage29)
         Me.TabControl1.Controls.Add(Me.TabPage30)
-        Me.TabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -979,6 +978,41 @@ Partial Class MgrSetting
         Me.GroupBox2.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
+        '
+        'ComboBox67
+        '
+        Me.ComboBox67.Enabled = False
+        Me.ComboBox67.FormattingEnabled = True
+        Me.ComboBox67.Items.AddRange(New Object() {"hidden", "vinsibile"})
+        Me.ComboBox67.Location = New System.Drawing.Point(238, 146)
+        Me.ComboBox67.Name = "ComboBox67"
+        Me.ComboBox67.Size = New System.Drawing.Size(56, 21)
+        Me.ComboBox67.TabIndex = 112
+        Me.ComboBox67.Text = "hidden"
+        Me.ToolTip1.SetToolTip(Me.ComboBox67, resources.GetString("ComboBox67.ToolTip"))
+        '
+        'Label189
+        '
+        Me.Label189.AutoSize = True
+        Me.Label189.Location = New System.Drawing.Point(155, 149)
+        Me.Label189.Name = "Label189"
+        Me.Label189.Size = New System.Drawing.Size(72, 13)
+        Me.Label189.TabIndex = 111
+        Me.Label189.Text = "Mouse Cursor"
+        '
+        'CheckBox110
+        '
+        Me.CheckBox110.AutoSize = True
+        Me.CheckBox110.Enabled = False
+        Me.CheckBox110.Location = New System.Drawing.Point(186, 46)
+        Me.CheckBox110.Name = "CheckBox110"
+        Me.CheckBox110.Size = New System.Drawing.Size(90, 17)
+        Me.CheckBox110.TabIndex = 110
+        Me.CheckBox110.Text = "&Clean Bbuffer"
+        Me.ToolTip1.SetToolTip(Me.CheckBox110, "Force backbuffer clear before drawing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Enabling may result in a noticeable neg" &
+        "ative impact on performance with the ""softfb"" video driver, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and with the ""open" &
+        "gl"" video driver on underpowered GPUs.")
+        Me.CheckBox110.UseVisualStyleBackColor = True
         '
         'Label188
         '
@@ -4566,7 +4600,7 @@ Partial Class MgrSetting
         'ComboBox24
         '
         Me.ComboBox24.FormattingEnabled = True
-        Me.ComboBox24.Items.AddRange(New Object() {"anaglyph", "cscope", "hli", "sidebyside", "vli"})
+        Me.ComboBox24.Items.AddRange(New Object() {"anaglyph", "cscope", "hli", "left", "right", "sidebyside", "vli"})
         Me.ComboBox24.Location = New System.Drawing.Point(189, 65)
         Me.ComboBox24.Name = "ComboBox24"
         Me.ComboBox24.Size = New System.Drawing.Size(109, 21)
@@ -7029,39 +7063,6 @@ Partial Class MgrSetting
         Me.CheckBox59.TabIndex = 6
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
-        '
-        'CheckBox110
-        '
-        Me.CheckBox110.AutoSize = True
-        Me.CheckBox110.Enabled = False
-        Me.CheckBox110.Location = New System.Drawing.Point(186, 46)
-        Me.CheckBox110.Name = "CheckBox110"
-        Me.CheckBox110.Size = New System.Drawing.Size(90, 17)
-        Me.CheckBox110.TabIndex = 110
-        Me.CheckBox110.Text = "&Clean Bbuffer"
-        Me.ToolTip1.SetToolTip(Me.CheckBox110, "Enable frameskip during emulation rendering.")
-        Me.CheckBox110.UseVisualStyleBackColor = True
-        '
-        'ComboBox67
-        '
-        Me.ComboBox67.Enabled = False
-        Me.ComboBox67.FormattingEnabled = True
-        Me.ComboBox67.Items.AddRange(New Object() {"hidden", "vinsibile"})
-        Me.ComboBox67.Location = New System.Drawing.Point(238, 146)
-        Me.ComboBox67.Name = "ComboBox67"
-        Me.ComboBox67.Size = New System.Drawing.Size(56, 21)
-        Me.ComboBox67.TabIndex = 112
-        Me.ComboBox67.Text = "hidden"
-        Me.ToolTip1.SetToolTip(Me.ComboBox67, resources.GetString("ComboBox67.ToolTip"))
-        '
-        'Label189
-        '
-        Me.Label189.AutoSize = True
-        Me.Label189.Location = New System.Drawing.Point(155, 149)
-        Me.Label189.Name = "Label189"
-        Me.Label189.Size = New System.Drawing.Size(72, 13)
-        Me.Label189.TabIndex = 111
-        Me.Label189.Text = "Mouse Cursor"
         '
         'MgrSetting
         '
