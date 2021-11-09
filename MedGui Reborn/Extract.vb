@@ -146,10 +146,29 @@ Module Extract
             For Each ArchiveFileInfo In szip.ArchiveFileData
                 If ArchiveFileInfo.IsDirectory Then
                     If LCase(Path.GetExtension(percorso)) = ".zip" Then
-                        If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12700 Then
+                        If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
                             'load cd zipped
+                            Dim IsACDC As MsgBoxResult
+                            IsACDC = MsgBox("Is this a CD images from ZIP archives?" & vbCrLf &
+                                         vbCrLf & "Yes = Use Mednafen native load cd image in deflate or zstd compression" & vbCrLf &
+                                          vbCrLf & "Not = Use Pismo File Mount to load cd image or annidate roms in deflate compression" & vbCrLf &
+                                           vbCrLf & "Cancel = Do not nothing, I have not Pismo installed and this is a archive with annidate roms", MsgBoxStyle.YesNoCancel + MsgBoxStyle.Information, "Chose your destiny...")
+
+                            If IsACDC = MsgBoxResult.Yes Then
+                                If skipother = False Then
+                                    If stopiso = False Then
+                                        If stopscan = False Then cd_consoles()
+                                    End If
+                                End If
+                            ElseIf IsACDC = MsgBoxResult.No Then
+                                GoTo HERE
+                            Else
+                                consoles = ""
+                                ext = ""
+                                Exit Sub
+                            End If
                         Else
-                            If checkpismo = False Then
+HERE:                       If checkpismo = False Then
                                 consoles = ""
                                 ext = ""
                             Else
@@ -171,8 +190,14 @@ Module Extract
                 Select Case LCase(ext)
                     Case ".iso", ".m3u", ".toc", ".cue", ".ccd"
                         If LCase(Path.GetExtension(percorso)) = ".zip" Then
-                            If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12700 Then
+                            If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
                                 'load cd zipped
+                                If skipother = False Then
+                                    If stopiso = False Then
+                                        If stopscan = False Then cd_consoles()
+                                        Exit For
+                                    End If
+                                End If
                             Else
                                 If checkpismo = False Then
                                     consoles = ""
@@ -192,18 +217,14 @@ Module Extract
                     Case ".bin", ".img"
                         If ArchiveFileInfo.Size > 10485760 Then
                             If LCase(Path.GetExtension(percorso)) = ".zip" Then
-                                If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12700 Then
-                                    'load cd zipped
+                                If checkpismo = False Then
+                                    consoles = ""
+                                    ext = ""
+                                    Exit Sub
                                 Else
-                                    If checkpismo = False Then
-                                        consoles = ""
-                                        ext = ""
-                                        Exit Sub
-                                    Else
-                                        MountPismo()
-                                        RecuScan()
-                                        Exit Sub
-                                    End If
+                                    MountPismo()
+                                    RecuScan()
+                                    Exit Sub
                                 End If
                             End If
                         Else
@@ -306,7 +327,7 @@ Module Extract
     End Sub
 
     Public Function DecompressArchive(archive As String, final_path As String)
-        SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
+        SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
         Dim szip As SevenZipExtractor = New SevenZipExtractor(archive)
         SoxStatus.Text = "Waiting for extraction..."
         SoxStatus.Label1.Text = "..."

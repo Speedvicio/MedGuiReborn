@@ -322,7 +322,11 @@ Module scan
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\Bandai - WonderSwan Color.dat"
             Case ".zip", ".rar", ".7z"
                 scan_compressed()
-                ext = ""
+
+                'CONTROLLA SE DISABILITANDO CREA CASINI IN FUTURO
+                'ext = ""
+                '''''''''''''''''''''''''''''''''''''''''''''''''
+
                         'Case ".rar", ".7z"
                         'ClearFile()
                         'extract_7z()
