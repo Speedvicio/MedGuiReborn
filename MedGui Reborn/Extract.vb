@@ -215,7 +215,7 @@ HERE:                       If checkpismo = False Then
                         ext = ""
                         Exit Sub
                     Case ".bin", ".img"
-                        If ArchiveFileInfo.Size > 10485760 Then
+                        If ArchiveFileInfo.Size > 16000000 Then
                             If LCase(Path.GetExtension(percorso)) = ".zip" Then
                                 If checkpismo = False Then
                                     consoles = ""
@@ -236,6 +236,8 @@ HERE:                       If checkpismo = False Then
                         Exit Sub
                     Case "zst"
                         'zst ?
+                        'consoles = "generic"
+                        'LMain()
                     Case Else
                         fileTXT = ""
                 End Select

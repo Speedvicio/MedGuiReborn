@@ -33,11 +33,13 @@ Module RData
                 reader.Dispose()
                 reader.Close()
             End Using
+            Exit Sub
 Boing:
 
             If status <> "Ok" Then
                 status = "?"
                 country = "?"
+                romname = Path.GetFileNameWithoutExtension(romname)
                 Dim indice3 As Integer
                 indice3 = romname.IndexOf("(")
 

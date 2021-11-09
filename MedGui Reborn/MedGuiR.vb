@@ -414,7 +414,16 @@ Public Class MedGuiR
                 End If
             End If
 
-            Arg = pArg & net & custom & LoadCD & " -force_module " & consoles & tpce & M3UDisk & " " & Chr(34) & percorso & Chr(34)
+            Dim Fmodule As String = Nothing
+
+            If consoles = "generic" Then
+                Fmodule = Nothing
+            Else
+                Fmodule = " -force_module " & consoles & tpce
+            End If
+
+
+            Arg = pArg & net & custom & LoadCD & Fmodule & M3UDisk & " " & Chr(34) & percorso & Chr(34)
 
             'VerifyPerSystem()
 

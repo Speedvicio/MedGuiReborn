@@ -358,7 +358,7 @@ Module scan
                         End If
                     End If
                 End If
-            Case ".toc", ".zst"
+            Case ".toc"
                 If skipother = False Then
                     If stopiso = False Then
                         If stopscan = False Then cd_consoles()
@@ -430,6 +430,11 @@ Module scan
                     ext = ""
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                 End If
+            Case ".zst"
+                consoles = "generic"
+                gif = "game"
+                real_name = "Generic - Zstandard compressed file"
+                fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
             Case Else
                 consoles = ""
                 ext = ""
