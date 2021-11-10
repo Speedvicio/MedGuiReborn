@@ -416,12 +416,11 @@ Public Class MedGuiR
 
             Dim Fmodule As String = Nothing
 
-            If consoles = "generic" Then
+            If consoles = "generic" And Val(vmedClear) > 12710 Then
                 Fmodule = Nothing
             Else
                 Fmodule = " -force_module " & consoles & tpce
             End If
-
 
             Arg = pArg & net & custom & LoadCD & Fmodule & M3UDisk & " " & Chr(34) & percorso & Chr(34)
 

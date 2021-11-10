@@ -117,6 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CheckBox72.ToolTip" xml:space="preserve">
+    <value>When this setting is set to "1", the default, paths to files referenced from files like CUE sheets and PSF rips are checked 
+for certain characters that can be used in directory traversal, and if found, loading is aborted. 
+Set it to "0" if you want to allow constructs like absolute paths in CUE sheets, but only if you understand the security implications of doing so
+(see "Security Issues" section in the documentation)</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
+  <data name="CheckBox10.ToolTip" xml:space="preserve">
+    <value>Cache entire CD images in memory.
+
+Enable supports loading from ZIP archives for CD-based games (only on Mednafen &gt; v.1.27.1
+Supported ZIP archive compression methods:
+
+    0 - Stored
+    8 - Deflate
+    93 - Zstandard (note that the ZIP CRC32 value is not validated, for performance reasons) 
+
+Reads the entire CD image(s) into memory at startup(which will cause a small delay). 
+Can help obviate emulation hiccups due to emulated CD access. 
+May cause more harm than good on low memory systems, systems with swap enabled, and/or when the disc images in question are on a fast SSD.
+
+Caution: When using a 32-bit build of Mednafen on Windows or a 32-bit operating system, Mednafen may run out of address space(and error out, 
+possibly in the middle of emulation) if this option is enabled when loading large disc sets(e.g. 3+ discs) via M3U files.</value>
+  </data>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
@@ -344,19 +370,6 @@ Darkest.
 
 slenderman - Slenderman
 Spookiest?</value>
-  </data>
-  <data name="CheckBox72.ToolTip" xml:space="preserve">
-    <value>When this setting is set to "1", the default, paths to files referenced from files like CUE sheets and PSF rips are checked 
-for certain characters that can be used in directory traversal, and if found, loading is aborted. 
-Set it to "0" if you want to allow constructs like absolute paths in CUE sheets, but only if you understand the security implications of doing so
-(see "Security Issues" section in the documentation)</value>
-  </data>
-  <data name="CheckBox10.ToolTip" xml:space="preserve">
-    <value>Cache entire CD images in memory.
-
-Reads the entire CD image(s) into memory at startup(which will cause a small delay). 
-Can help obviate emulation hiccups due to emulated CD access. 
-May cause more harm than good on low memory systems, systems with swap enabled, and/or when the disc images in question are on a fast SSD.</value>
   </data>
   <data name="Button27.ToolTip" xml:space="preserve">
     <value>- Scan and compare all bioses in "firmware folder" by hash.

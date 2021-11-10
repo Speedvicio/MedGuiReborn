@@ -431,17 +431,19 @@ Module scan
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                 End If
             Case ".zst"
-                consoles = "generic"
-                gif = "game"
-                real_name = "Generic - Zstandard compressed file"
-                fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+                If Val(vmedClear) > 12710 Then
+                    consoles = "generic"
+                    gif = "game"
+                    real_name = "Generic Zstd compressed file"
+                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+                End If
             Case Else
                 consoles = ""
                 ext = ""
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
         End Select
 
-        icon_console = MedExtra & "Resource\System\" & UCase(gif) & ".gif"
+        icon_console = MedExtra & "Resource\System\" & UCase(gif) & ".ico"
 
     End Sub
 

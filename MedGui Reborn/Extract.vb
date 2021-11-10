@@ -147,12 +147,13 @@ Module Extract
                 If ArchiveFileInfo.IsDirectory Then
                     If LCase(Path.GetExtension(percorso)) = ".zip" Then
                         If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
+                            If skipother = True Then Continue For '// controlla che skipother non combini casini
                             'load cd zipped
                             Dim IsACDC As MsgBoxResult
                             IsACDC = MsgBox("Is this a CD images from ZIP archives?" & vbCrLf &
                                          vbCrLf & "Yes = Use Mednafen native load cd image in deflate or zstd compression" & vbCrLf &
-                                          vbCrLf & "Not = Use Pismo File Mount to load cd image or annidate roms in deflate compression" & vbCrLf &
-                                           vbCrLf & "Cancel = Do not nothing, I have not Pismo installed and this is a archive with annidate roms", MsgBoxStyle.YesNoCancel + MsgBoxStyle.Information, "Chose your destiny...")
+                                          vbCrLf & "No = Use Pismo File Mount to load cd image or annidate roms in deflate compression" & vbCrLf &
+                                           vbCrLf & "Cancel = Do not nothing, I have not Pismo installed and this is a archive with annidate roms", MsgBoxStyle.YesNoCancel + MsgBoxStyle.Information, "Choose the destiny for " & Path.GetFileName(percorso))
 
                             If IsACDC = MsgBoxResult.Yes Then
                                 If skipother = False Then
