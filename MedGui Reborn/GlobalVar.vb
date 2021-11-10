@@ -466,7 +466,7 @@ ReCheckConfig:
         get_ext()
 
         Try
-            If Counter <= 1 And skipother = False Then '// controlla se skipother non combina casini in futuro
+            If Counter <= 0 And skipother = False Then '// controlla se skipother non combina casini in futuro
                 scan.decript()
                 MedGuiR.DataGridView1.Rows(0).Cells(3).ToolTipText = "CRC " & base_file
             End If

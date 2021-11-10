@@ -148,26 +148,32 @@ Module Extract
                     If LCase(Path.GetExtension(percorso)) = ".zip" Then
                         If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
                             If skipother = True Then Continue For '// controlla che skipother non combini casini
-                            'load cd zipped
-                            Dim IsACDC As MsgBoxResult
-                            IsACDC = MsgBox("Is this a CD images from ZIP archives?" & vbCrLf &
-                                         vbCrLf & "Yes = Use Mednafen native load cd image in deflate or zstd compression" & vbCrLf &
-                                          vbCrLf & "No = Use Pismo File Mount to load cd image or annidate roms in deflate compression" & vbCrLf &
-                                           vbCrLf & "Cancel = Do not nothing, I have not Pismo installed and this is a archive with annidate roms", MsgBoxStyle.YesNoCancel + MsgBoxStyle.Information, "Choose the destiny for " & Path.GetFileName(percorso))
 
-                            If IsACDC = MsgBoxResult.Yes Then
-                                If skipother = False Then
-                                    If stopiso = False Then
-                                        If stopscan = False Then cd_consoles()
-                                    End If
-                                End If
-                            ElseIf IsACDC = MsgBoxResult.No Then
-                                GoTo HERE
-                            Else
-                                consoles = ""
-                                ext = ""
-                                Exit Sub
-                            End If
+                            consoles = "generic"
+                            gif = "game"
+                            real_name = "Generic Zstd compressed file"
+                            fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+
+                            'load cd zipped
+                            'Dim IsACDC As MsgBoxResult
+                            'IsACDC = MsgBox("Is this a CD images from ZIP archives?" & vbCrLf &
+                            'vbCrLf & "Yes = Use Mednafen native load cd image in deflate or zstd compression" & vbCrLf &
+                            'vbCrLf & "No = Use Pismo File Mount to load cd image or annidate roms in deflate compression" & vbCrLf &
+                            'vbCrLf & "Cancel = Do not nothing, I have not Pismo installed and this is a archive with annidate roms", MsgBoxStyle.YesNoCancel + MsgBoxStyle.Information, "Choose the destiny for " & Path.GetFileName(percorso))
+
+                            'if IsACDC = MsgBoxResult.Yes Then
+                            'If skipother = False Then
+                            'If stopiso = False Then
+                            'If stopscan = False Then cd_consoles()
+                            'End If
+                            'End If
+                            'ElseIf IsACDC = MsgBoxResult.No Then
+                            '   GoTo HERE
+                            'Else
+                            '   consoles = ""
+                            '  ext = ""
+                            ' Exit Sub
+                            'End If
                         Else
 HERE:                       If checkpismo = False Then
                                 consoles = ""
@@ -178,7 +184,8 @@ HERE:                       If checkpismo = False Then
                             End If
                         End If
                     End If
-                    Continue For
+                    'Continue For //fa parte della porzione commentata sopra, l'exit sub successivo è stato inserito dopo
+                    Exit Sub
                 End If
                 ext = LCase(Path.GetExtension(ArchiveFileInfo.FileName))
                 If ext = "" Or ext Is Nothing Then
@@ -263,6 +270,7 @@ HERE:                       If checkpismo = False Then
                 decrunch_size = ArchiveFileInfo.Size
                 'szip.Dispose()
                 romname = Path.GetFileNameWithoutExtension(ArchiveFileInfo.FileName)
+                Counter = +1
                 LMain()
             Next
             szip.Dispose()
