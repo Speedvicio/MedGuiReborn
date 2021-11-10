@@ -33,7 +33,7 @@ Module RData
                 reader.Dispose()
                 reader.Close()
             End Using
-            Exit Sub
+
 Boing:
 
             If status <> "Ok" Then
