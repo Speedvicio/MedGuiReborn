@@ -706,6 +706,8 @@ Module scan
                 gif = "psx"
             Case Is = "Audio CD"
                 gif = "cdplay"
+            Case Is = "Generic Zstd compressed file"   
+                gif = "game"                                                                             
             Case Else
                 gif = "unknow"
         End Select
