@@ -442,8 +442,14 @@ Module scan
                 ext = ""
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
         End Select
-
-        icon_console = MedExtra & "Resource\System\" & UCase(gif) & ".ico"
+                                        
+        Dim IsIcon as string                            
+        If File.Exists (MedExtra & "Resource\System\" & UCase(gif) & ".ico")
+            IsIcon = ".ico" 
+        Else
+            IsIcon = ".gif"
+        End If
+        icon_console = MedExtra & "Resource\System\" & UCase(gif) & IsIcon
 
     End Sub
 
