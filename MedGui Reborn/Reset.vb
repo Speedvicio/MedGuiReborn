@@ -1,10 +1,13 @@
-﻿Public Class Reset
+﻿Imports System.IO
+
+Public Class Reset
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         If CheckBox1.Checked = True Or CheckBox2.Checked = True Or CheckBox3.Checked = True _
                         Or CheckBox4.Checked = True Or CheckBox5.Checked = True _
-                        Or CheckBox6.Checked = True Or CheckBox7.Checked = True Then
+                        Or CheckBox6.Checked = True Or CheckBox7.Checked = True _
+                        Or CheckBox8.Checked = True Then
 
             Dim ResRisp = MsgBox("Do you want to Delete this options?" & vbCrLf &
                 "MedGuiR will be closed, after the cleaning please reopen it", vbOKCancel + vbCritical, "Delete Setting Configurations...")
@@ -37,6 +40,10 @@
                 If CheckBox7.Checked = True Then
                     CleanSetting(MedExtra & "Cheats", "*.*")
                 End If
+
+                If CheckBox8.Checked = True Then
+                    Purge_BoxArts()
+                End If
             Else
                 Exit Sub
             End If
@@ -68,6 +75,18 @@
         F1 = Me
         CenterForm()
         ColorizeForm()
+    End Sub
+
+    Private Sub Purge_BoxArts()
+        Dim dettagliofile() As String = Directory.GetFiles(MedExtra & "BoxArt\", "*.png", SearchOption.AllDirectories)
+        For i = 0 To UBound(dettagliofile)
+            Try
+                If New FileInfo(dettagliofile(i)).Length <= 13312 Then
+                    File.Delete(dettagliofile(i))
+                End If
+            Catch
+            End Try
+        Next
     End Sub
 
 End Class

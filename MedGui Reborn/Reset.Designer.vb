@@ -23,6 +23,7 @@ Partial Class Reset
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
@@ -31,12 +32,13 @@ Partial Class Reset
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.CheckBox8)
         Me.Panel1.Controls.Add(Me.CheckBox7)
         Me.Panel1.Controls.Add(Me.CheckBox6)
         Me.Panel1.Controls.Add(Me.CheckBox5)
@@ -46,8 +48,18 @@ Partial Class Reset
         Me.Panel1.Controls.Add(Me.CheckBox1)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(152, 182)
+        Me.Panel1.Size = New System.Drawing.Size(152, 199)
         Me.Panel1.TabIndex = 0
+        '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Location = New System.Drawing.Point(12, 152)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(88, 17)
+        Me.CheckBox7.TabIndex = 8
+        Me.CheckBox7.Text = "C&heat Cache"
+        Me.CheckBox7.UseVisualStyleBackColor = True
         '
         'CheckBox6
         '
@@ -111,7 +123,7 @@ Partial Class Reset
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 200)
+        Me.Button1.Location = New System.Drawing.Point(12, 217)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(73, 23)
         Me.Button1.TabIndex = 4
@@ -120,28 +132,28 @@ Partial Class Reset
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(91, 200)
+        Me.Button2.Location = New System.Drawing.Point(91, 217)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(73, 23)
         Me.Button2.TabIndex = 5
         Me.Button2.Text = "&Abort"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'CheckBox7
+        'CheckBox8
         '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(12, 152)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(88, 17)
-        Me.CheckBox7.TabIndex = 8
-        Me.CheckBox7.Text = "C&heat Cache"
-        Me.CheckBox7.UseVisualStyleBackColor = True
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.Location = New System.Drawing.Point(12, 175)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(96, 17)
+        Me.CheckBox8.TabIndex = 9
+        Me.CheckBox8.Text = "P&urge Box-Arts"
+        Me.CheckBox8.UseVisualStyleBackColor = True
         '
         'Reset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(174, 229)
+        Me.ClientSize = New System.Drawing.Size(174, 252)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
@@ -167,4 +179,5 @@ Partial Class Reset
     Friend WithEvents CheckBox4 As CheckBox
     Friend WithEvents CheckBox6 As CheckBox
     Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox8 As CheckBox
 End Class

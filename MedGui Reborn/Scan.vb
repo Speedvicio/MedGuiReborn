@@ -442,10 +442,10 @@ Module scan
                 ext = ""
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
         End Select
-                                        
-        Dim IsIcon as string                            
-        If File.Exists (MedExtra & "Resource\System\" & UCase(gif) & ".ico")
-            IsIcon = ".ico" 
+
+        Dim IsIcon As String
+        If File.Exists(MedExtra & "Resource\System\" & UCase(gif) & ".ico") Then
+            IsIcon = ".ico"
         Else
             IsIcon = ".gif"
         End If
@@ -712,8 +712,8 @@ Module scan
                 gif = "psx"
             Case Is = "Audio CD"
                 gif = "cdplay"
-            Case Is = "Generic Zstd compressed file"   
-                gif = "game"                                                                             
+            Case Is = "Generic Zstd compressed file"
+                gif = "game"
             Case Else
                 gif = "unknow"
         End Select

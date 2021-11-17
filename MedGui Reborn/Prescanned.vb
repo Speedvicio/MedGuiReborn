@@ -46,14 +46,14 @@ SKIP_LIST:
                             MedGuiR.DataGridView1.Rows.Add(SplitLine)
                             real_name = SplitLine(5)
                             detect_icon()
-                            
-                            Dim IsIcon as string
-                            If File.Exists (MedExtra & "Resource\System\" & UCase(gif) & ".ico")
-                               IsIcon = ".ico" 
+
+                            Dim IsIcon As String
+                            If File.Exists(MedExtra & "Resource\System\" & UCase(gif) & ".ico") Then
+                                IsIcon = ".ico"
                             Else
-                               IsIcon = ".gif"
+                                IsIcon = ".gif"
                             End If
-                            
+
                             MedGuiR.DataGridView1.Rows(cr - 1).Cells(1).Value() = New Bitmap(MedExtra & "Resource\System\" & UCase(gif) & IsIcon)
                             MedGuiR.DataGridView1.Rows(cr - 1).Cells(9).Value() = cr - 1
 

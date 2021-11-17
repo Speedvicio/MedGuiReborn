@@ -45,18 +45,19 @@ Module Extract
 
         Dim arch = System.Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE", EnvironmentVariableTarget.Machine)
 
-        If UCase(My.Computer.Info.OSFullName.Contains("XP")) Then
-            sevenzdll = "7z.dll"
-        Else
-            If arch = "AMD64" Then
-                c_os = "64"
-                'sevenzdll = "7z64.dll"
-                sevenzdll = "7z_zst.dll"
-            Else
-                c_os = "32"
-                sevenzdll = "7z_zst.dll"
-            End If
-        End If
+        'If UCase(My.Computer.Info.OSFullName.Contains("XP")) Then
+        'sevenzdll = "7z.dll"
+        'Else
+        'If arch = "AMD64" Then
+        'c_os = "64"
+        'sevenzdll = "7z_zst.dll"
+        'Else
+        'c_os = "32"
+        'sevenzdll = "7z_zst.dll"
+        'End If
+        'End If
+
+        sevenzdll = "Proxy7z.dll"
 
         'If IntPtr.Size = 8 Then
         'c_os = "64"
