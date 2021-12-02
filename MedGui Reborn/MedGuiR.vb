@@ -776,8 +776,8 @@ Public Class MedGuiR
             RescanToolStripMenuItem.Enabled = True
         End If
         Select_system()
-        Datagrid_filter()
         type_csv = SY.Text
+        Datagrid_filter()
         Purge_Grid()
         TempFolder = ""
 
@@ -855,7 +855,7 @@ Public Class MedGuiR
                 RebuildToolStripButton.Enabled = False
                 DataGridView1.Rows.Clear()
                 LoadGridDataInFile()
-                DataGridView1.Sort(DataGridView1.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+                'DataGridView1.Sort(DataGridView1.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
                 Datagrid_filter()
             End If
 
@@ -1602,19 +1602,19 @@ Public Class MedGuiR
     End Sub
 
     Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox7.CheckedChanged
-        Datagrid_filter()
+        If FirstStart = False Then Datagrid_filter()
     End Sub
 
     Private Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
-        Datagrid_filter()
+        If FirstStart = False Then Datagrid_filter()
     End Sub
 
     Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
-        Datagrid_filter()
+        If FirstStart = False Then Datagrid_filter()
     End Sub
 
     Private Sub CheckBox5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox5.CheckedChanged
-        Datagrid_filter()
+        If FirstStart = False Then Datagrid_filter()
     End Sub
 
     Private Sub CheckBox8_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox8.CheckedChanged
@@ -1834,7 +1834,9 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                 Coluns_filter = 5
         End Select
 
-        DataGridView1.Sort(DataGridView1.Columns(Coluns_filter), System.ComponentModel.ListSortDirection.Ascending)
+        If type_csv <> "last" Then
+            DataGridView1.Sort(DataGridView1.Columns(Coluns_filter), System.ComponentModel.ListSortDirection.Ascending)
+        End If
 
         If Me.Text.Contains(" @ Files " & DataGridView1.RowCount) Then
         Else
@@ -2208,7 +2210,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                 DataGridView1.Rows.Clear()
                 LoadGridDataInFile()
                 Datagrid_filter()
-                DataGridView1.Sort(DataGridView1.Columns(9), System.ComponentModel.ListSortDirection.Descending)
+                'DataGridView1.Sort(DataGridView1.Columns(9), System.ComponentModel.ListSortDirection.Descending)
             End If
 
             T_MedExtra = MedExtra
@@ -2356,7 +2358,7 @@ inputagain:
         DataGridView1.Rows.Clear()
         type_csv = ListBox2.SelectedItem
         LoadGridDataInFile()
-        DataGridView1.Sort(DataGridView1.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+        'DataGridView1.Sort(DataGridView1.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
         T_MedExtra = MedExtra
         Datagrid_filter()
         type_csv = ListBox2.SelectedItem

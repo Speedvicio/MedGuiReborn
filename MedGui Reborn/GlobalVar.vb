@@ -15,6 +15,8 @@ Module GlobalVar
         DirectoryRMIni()
         UCIRMini()
         RJoypadMini()
+        GridRMIni()
+        NetPlayMini()
 
         If MedGuiR.ComboBox1.Text = "" Then MedGuiR.ComboBox1.Text = "NoIntro"
         'If File.Exists(MedExtra & "Scanned\" & Startup_Path & ".csv") = False Then
@@ -29,9 +31,6 @@ Module GlobalVar
             'MedGuiR.SY.SelectedItem = Startup_Path
             MedGuiR.ModuleToolStripComboBox2.SelectedItem = Startup_Path
         End If
-
-        GridRMIni()
-        NetPlayMini()
 
         If forMax = False Then
             MedGuiR.WindowState = FormWindowState.Normal
