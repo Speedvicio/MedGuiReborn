@@ -57,16 +57,12 @@ Module Extract
         'End If
         'End If
 
+        If IntPtr.Size = 8 Then
+            c_os = "64"
+        ElseIf IntPtr.Size = 4 Then
+            c_os = "32"
+        End If
         sevenzdll = "Proxy7z.dll"
-
-        'If IntPtr.Size = 8 Then
-        'c_os = "64"
-        'sevenzdll = "7z64.dll"
-        'ElseIf IntPtr.Size = 4 Then
-        'c_os = "32"
-        'sevenzdll = "7z.dll"
-        'End If
-
         SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
     End Sub
 
