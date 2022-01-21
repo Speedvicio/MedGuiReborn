@@ -73,6 +73,8 @@ Boing:
                                     DetectChipmodule()
                                     country = "(Soundtrack)"
                                 End If
+                            Case ".21", ".30", ".31", ".sd0"
+                                country = "(Soundtrack)"
                         End Select
                         MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
                     End If

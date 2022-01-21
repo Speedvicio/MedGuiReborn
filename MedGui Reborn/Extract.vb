@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Text.RegularExpressions
 Imports SevenZip
 
 Module Extract
@@ -192,6 +193,17 @@ HERE:                       If checkpismo = False Then
                         Continue For
                     End If
                 End If
+
+                If Regex.IsMatch(LCase(ext), ".*([\d]+).*") = True Then
+                    Select Case LCase(ext)
+                        Case ".21", ".30", ".31", ".sd0"
+                            If ArchiveFileInfo.FileName.Contains("mpr-") Or ArchiveFileInfo.FileName.Contains("epr-") Then
+                                LMain()
+                                Exit Sub
+                            End If
+                    End Select
+                End If
+
                 Select Case LCase(ext)
                     Case ".iso", ".m3u", ".toc", ".cue", ".ccd"
                         If LCase(Path.GetExtension(percorso)) = ".zip" Then

@@ -115,6 +115,13 @@ Module scan
 
     Public Sub estensione()
         Select Case LCase(ext)
+            Case ".21", ".30", ".31", ".sd0"
+                If Val(vmedClear) > 12800 Then
+                    consoles = "sasplay"
+                    gif = "game"
+                    real_name = "Sega Arcade SCSP Player"
+                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+                End If
             Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai"
                 consoles = "apple2"
                 gif = "apple2"
