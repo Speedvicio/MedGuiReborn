@@ -120,7 +120,7 @@ Module scan
                     consoles = "sasplay"
                     gif = "game"
                     real_name = "Sega Arcade SCSP Player"
-                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
+                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
                 End If
             Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai"
                 consoles = "apple2"

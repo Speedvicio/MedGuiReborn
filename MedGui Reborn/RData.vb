@@ -74,6 +74,7 @@ Boing:
                                     country = "(Soundtrack)"
                                 End If
                             Case ".21", ".30", ".31", ".sd0"
+                                ReadSasplay()
                                 country = "(Soundtrack)"
                         End Select
                         MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
@@ -194,6 +195,25 @@ Boing:
         'Catch
         'stopscan = False
         'End Try
+    End Sub
+
+    Public Sub ReadSasplay()
+        Try
+            Using reader As New StreamReader(MedExtra & "\Plugins\db\sasplay.txt")
+                While Not reader.EndOfStream
+                    Dim Priga As String = reader.ReadLine
+                    Dim epr As String = Path.GetFileNameWithoutExtension(percorso)
+                    If Priga.Contains(LCase(epr) & " ") Then
+                        romname = Trim((Replace(Priga, epr, "")))
+                        Exit While
+                    End If
+                End While
+                reader.Dispose()
+                reader.Close()
+            End Using
+        Catch ex As Exception
+            MGRWriteLog("sasplay - Read_sasplay:" & ex.Message)
+        End Try
     End Sub
 
 End Module

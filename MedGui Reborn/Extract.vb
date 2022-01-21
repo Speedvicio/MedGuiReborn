@@ -198,6 +198,7 @@ HERE:                       If checkpismo = False Then
                     Select Case LCase(ext)
                         Case ".21", ".30", ".31", ".sd0"
                             If ArchiveFileInfo.FileName.Contains("mpr-") Or ArchiveFileInfo.FileName.Contains("epr-") Then
+                                consoles = "sasplay"
                                 LMain()
                                 Exit Sub
                             End If

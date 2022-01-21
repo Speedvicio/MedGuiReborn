@@ -300,7 +300,7 @@ Public Class MedGuiR
                     If szip.ArchiveFileData.Count > 1 Then
                         For Each ArchiveFileInfo In szip.ArchiveFileData
                             Select Case LCase(Path.GetExtension(ArchiveFileInfo.FileName))
-                                Case ".mai"
+                                Case ".mai", ".21", ".30", ".31", ".sd0"
                                     existMAI = True
                                     Exit For
                             End Select
