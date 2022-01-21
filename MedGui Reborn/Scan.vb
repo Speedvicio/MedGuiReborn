@@ -719,7 +719,7 @@ Module scan
                 gif = "psx"
             Case Is = "Audio CD"
                 gif = "cdplay"
-            Case Is = "Generic Zstd compressed file"
+            Case Is = "Generic Zstd compressed file", "Sega Arcade SCSP Player"
                 gif = "game"
             Case Else
                 gif = "unknow"
