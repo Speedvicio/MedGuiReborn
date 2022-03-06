@@ -11,6 +11,8 @@ Module Extract
         'Call contr_os()
         'Dim szip As SevenZipExtractor = New SevenZipExtractor(percorso)
 
+        ClearFile()
+
         Dim dimarch As New System.IO.FileInfo(percorso)
         Console.WriteLine(dimarch.Exists)
         Dim dimension As Integer
@@ -225,7 +227,14 @@ HERE:                       If checkpismo = False Then
                                     Exit Sub
                                 End If
                             End If
+
+                        ElseIf LCase(Path.GetExtension(percorso)) = ".7z" Or LCase(Path.GetExtension(percorso)) = ".rar" Then
+                            If LCase(ext) = ".iso" Then
+                                extract_7z()
+                                Exit Sub
+                            End If
                         End If
+
                     Case ".ecm", ".pbp", ".zip", ".rar", ".7z", ".chd"
                         consoles = ""
                         ext = ""
