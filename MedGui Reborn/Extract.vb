@@ -18,7 +18,7 @@ Module Extract
         Dim msgdim As String
 
         If dimension > 100 Then
-            msgdim = MsgBox("The selected filer are " & dimension & " MB, the extraction might take a long time" & vbCrLf &
+            msgdim = MsgBox("The selected file is " & dimension & " MB, the extraction might take a long time" & vbCrLf &
 "Do you want to continue the operation?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation)
             If msgdim = vbNo Then
                 stopscan = True
@@ -233,15 +233,32 @@ HERE:                       If checkpismo = False Then
                     Case ".bin", ".img"
                         If ArchiveFileInfo.Size > 16000000 Then
                             If LCase(Path.GetExtension(percorso)) = ".zip" Then
-                                If checkpismo = False Then
-                                    consoles = ""
-                                    ext = ""
-                                    Exit Sub
+                                If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
+                                    'load cd zipped
+                                    If skipother = False Then
+                                        If stopiso = False Then
+                                            If stopscan = False Then cd_consoles()
+                                            Exit For
+                                        End If
+                                    End If
                                 Else
-                                    MountPismo()
-                                    RecuScan()
-                                    Exit Sub
+                                    If checkpismo = False Then
+                                        consoles = ""
+                                        ext = ""
+                                        Exit Sub
+                                    Else
+                                        MountPismo()
+                                        RecuScan()
+                                        Exit Sub
+                                    End If
                                 End If
+
+                                'estrai i file 7z e rar su cartella temporanea controlla se incasina gli archivi multipli
+                            ElseIf LCase(Path.GetExtension(percorso)) = ".7z" Or LCase(Path.GetExtension(percorso)) = ".rar" Then
+                                extract_7z()
+                                Exit Sub
+                                'test
+
                             End If
                         Else
                             fileTXT = ""
