@@ -171,6 +171,7 @@ Public Class MedGuiR
                         MedPadToolStripMenuItem.Enabled = False
                     End If
                     DataGridView1.ContextMenuStrip = AdvancedMenu
+                    DataGridView1.ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y)
                     'If last_consoles <> consoles Or Setting.Visible = False Then SwSetting = True : improm() : last_consoles = consoles
                 End If
             End If
@@ -1151,7 +1152,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -2487,6 +2488,7 @@ inputagain:
                 Directory.CreateDirectory(Path.GetDirectoryName(pathimage))
             End If
             File.Copy(fdlg.FileName, pathimage, True)
+            PictureBox1.Load(pathimage)
         End If
     End Sub
 
