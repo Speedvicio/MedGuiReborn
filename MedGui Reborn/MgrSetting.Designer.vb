@@ -984,7 +984,7 @@ Partial Class MgrSetting
         '
         Me.ComboBox67.Enabled = False
         Me.ComboBox67.FormattingEnabled = True
-        Me.ComboBox67.Items.AddRange(New Object() {"hidden", "vinsibile"})
+        Me.ComboBox67.Items.AddRange(New Object() {"hidden", "visible"})
         Me.ComboBox67.Location = New System.Drawing.Point(238, 146)
         Me.ComboBox67.Name = "ComboBox67"
         Me.ComboBox67.Size = New System.Drawing.Size(56, 21)
@@ -1716,7 +1716,8 @@ Partial Class MgrSetting
         Me.ComboBox53.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox53.TabIndex = 11
         Me.ComboBox53.Text = "goatron"
-        Me.ToolTip1.SetToolTip(Me.ComboBox53, resources.GetString("ComboBox53.ToolTip"))
+        Me.ToolTip1.SetToolTip(Me.ComboBox53, "Mask pattern." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    goatron - Goatron" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    Brightest." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    borg - Borg" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    Da" &
+        "rkest." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    slenderman - Slenderman" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    Spookiest?")
         '
         'TabPage4
         '
