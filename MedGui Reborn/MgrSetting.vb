@@ -684,7 +684,8 @@ ErrorHandler:
 
         Dim objStreamWriter As IO.StreamWriter
         Dim per_sett As String = "; << Sound Config >>" & vbCrLf & sound & vbCrLf & vbCrLf & "; << Video Config >>" & vbCrLf & Cvideo &
-           vbCrLf & vbCrLf & "; << Filters Config >>" & vbCrLf & Cfilters & vbCrLf & vbCrLf & "; << Specific Console Config >>" & vbCrLf & sperset
+           vbCrLf & vbCrLf & "; << Filters Config >>" & vbCrLf & Cfilters & vbCrLf & vbCrLf &
+         "; << Bios Config >>" & vbCrLf & Replace(specBios, """", "") & vbCrLf & vbCrLf & "; << Specific Console Config >>" & vbCrLf & sperset
 
         per_sett = Replace(per_sett, " -", vbCrLf)
         per_sett = Replace(per_sett, "*", "-")

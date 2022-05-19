@@ -1,7 +1,7 @@
 ﻿Module ySetting
 
     Public pArg, sound, video, filters, various, netplay_, record, custom, apple2, lynx, gameboy, neogeop, famicom, pcengine, pcfx,
-    genesis, mastersystem, snes, vboy, wswan, psx, minput, tminput, ss As String
+    genesis, mastersystem, snes, vboy, wswan, psx, minput, tminput, ss, specBios As String
 
     Public Sub parMednafen()
         Dim lfm As String
@@ -249,23 +249,29 @@
             Case "gg"
                 pArg = sound & video & filters & various & netplay_
             Case "gba"
-                pArg = sound & video & filters & various & " -gba.bios " & Chr(34) & MgrSetting.TextBox10.Text & Chr(34) & netplay_
+                specBios = " -gba.bios " & Chr(34) & MgrSetting.TextBox10.Text & Chr(34)
+                pArg = sound & video & filters & various & specBios & netplay_
             Case "md"
-                pArg = sound & video & filters & various & " -md.cdbios " & Chr(34) & MgrSetting.TextBox14.Text & Chr(34) & netplay_ & genesis
+                specBios = " -md.cdbios " & Chr(34) & MgrSetting.TextBox14.Text & Chr(34)
+                pArg = sound & video & filters & various & specBios & netplay_ & genesis
             Case "ngp"
                 pArg = sound & video & filters & various & netplay_ & neogeop
             Case "nes"
-                pArg = sound & video & filters & various & " -nes.ggrom " & Chr(34) & MgrSetting.TextBox11.Text & Chr(34) & netplay_ & famicom
+                specBios = " -nes.ggrom " & Chr(34) & MgrSetting.TextBox11.Text & Chr(34)
+                pArg = sound & video & filters & various & specBios & netplay_ & famicom
             Case "pce", "pce_fast"
-                pArg = sound & video & filters & various & " -pce" & MedGuiR.tpce & ".cdbios " & Chr(34) & MgrSetting.TextBox12.Text & Chr(34) & " -pce.gecdbios " & Chr(34) & MgrSetting.TextBox18.Text & Chr(34) & netplay_ & pcengine
+                specBios = " -pce" & MedGuiR.tpce & ".cdbios " & Chr(34) & MgrSetting.TextBox12.Text & Chr(34) & " -pce.gecdbios " & Chr(34) & MgrSetting.TextBox18.Text & Chr(34)
+                pArg = sound & video & filters & various & specBios & netplay_ & pcengine
             Case "psx"
-                pArg = sound & video & filters & various & " -psx.bios_eu " & Chr(34) & MgrSetting.TextBox15.Text & Chr(34) & " -psx.bios_jp " & Chr(34) & MgrSetting.TextBox16.Text & Chr(34) & " -psx.bios_na " & Chr(34) & MgrSetting.TextBox17.Text & Chr(34) & netplay_ & psx
+                specBios = " -psx.bios_eu " & Chr(34) & MgrSetting.TextBox15.Text & Chr(34) & " -psx.bios_jp " & Chr(34) & MgrSetting.TextBox16.Text & Chr(34) & " -psx.bios_na " & Chr(34) & MgrSetting.TextBox17.Text & Chr(34)
+                pArg = sound & video & filters & various & specBios & netplay_ & psx
             Case "sms"
                 pArg = sound & video & filters & various & netplay_ & mastersystem
             Case "snes", "snes_faust"
                 pArg = sound & video & filters & various & netplay_ & snes
             Case "ss"
-                pArg = sound & video & filters & various & " -ss.bios_jp " & Chr(34) & MgrSetting.TextBox22.Text & Chr(34) & " -ss.bios_na_eu " & Chr(34) & MgrSetting.TextBox23.Text & Chr(34) & netplay_ & ss
+                specBios = " -ss.bios_jp " & Chr(34) & MgrSetting.TextBox22.Text & Chr(34) & " -ss.bios_na_eu " & Chr(34) & MgrSetting.TextBox23.Text & Chr(34)
+                pArg = sound & video & filters & various & specBios & netplay_ & ss
             Case "ssfplay"
                 pArg = sound & video & filters & various & netplay_
             Case "vb"
@@ -273,7 +279,8 @@
             Case "wswan"
                 pArg = sound & video & filters & various & netplay_ & wswan
             Case "pcfx"
-                pArg = sound & video & filters & various & " -pcfx.bios " & Chr(34) & MgrSetting.TextBox13.Text & Chr(34) & netplay_ & pcfx
+                specBios = " -pcfx.bios " & Chr(34) & MgrSetting.TextBox13.Text & Chr(34)
+                pArg = sound & video & filters & various & specBios & netplay_ & pcfx
             Case "cdplay"
                 pArg = sound & video & filters & various
         End Select
