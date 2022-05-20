@@ -22,6 +22,10 @@ Public Class MgrSetting
             Case 10
                 TabControl1.TabPages.Insert(10, TabPage10)
                 TabControl1.SelectedTab = TabPage10
+
+                TextBox11.Enabled = True
+                Button7.Enabled = True
+
             Case 11
                 TabControl1.TabPages.Insert(10, TabPage11)
                 TabControl1.TabPages.Insert(11, TabPage12)
@@ -45,9 +49,19 @@ Public Class MgrSetting
                     NumericUpDown25.Enabled = False
                     ComboBox15.Enabled = True
                 End If
+
+                TextBox12.Enabled = True
+                TextBox18.Enabled = True
+                Button8.Enabled = True
+                Button4.Enabled = True
+
             Case 12
                 TabControl1.TabPages.Insert(10, TabPage13)
                 TabControl1.SelectedTab = TabPage13
+
+                TextBox14.Enabled = True
+                Button10.Enabled = True
+
             Case 13
                 TabControl1.TabPages.Insert(10, TabPage14)
                 TabControl1.SelectedTab = TabPage14
@@ -68,16 +82,34 @@ Public Class MgrSetting
                 TabControl1.TabPages.Insert(11, TabPage21)
                 TabControl1.SelectedTab = TabPage20
                 TabControl1.SelectedTab = TabPage21
+
+                TextBox13.Enabled = True
+                Button9.Enabled = True
+
             Case 18
                 TabControl1.TabPages.Insert(10, TabPage22)
                 TabControl1.TabPages.Insert(11, TabPage23)
                 TabControl1.SelectedTab = TabPage22
                 TabControl1.SelectedTab = TabPage23
+
+                TextBox15.Enabled = True
+                TextBox16.Enabled = True
+                TextBox17.Enabled = True
+                Button11.Enabled = True
+                Button12.Enabled = True
+                Button13.Enabled = True
+
             Case 19
                 TabControl1.TabPages.Insert(10, TabPage25)
                 TabControl1.TabPages.Insert(11, TabPage27)
                 TabControl1.SelectedTab = TabPage25
                 TabControl1.SelectedTab = TabPage27
+
+                TextBox23.Enabled = True
+                TextBox22.Enabled = True
+                Button29.Enabled = True
+                Button28.Enabled = True
+
             Case 20
                 TabControl1.TabPages.Insert(10, TabPage26)
                 TabControl1.TabPages.Insert(11, TabPage32)
@@ -88,6 +120,23 @@ Public Class MgrSetting
                 TabControl1.TabPages.Insert(11, TabPage30)
                 TabControl1.SelectedTab = TabPage29
                 TabControl1.SelectedTab = TabPage30
+
+                TextBox4.Enabled = True
+                TextBox19.Enabled = True
+                TextBox20.Enabled = True
+                TextBox21.Enabled = True
+                TextBox24.Enabled = True
+                TextBox25.Enabled = True
+                Button16.Enabled = True
+                Button17.Enabled = True
+                Button23.Enabled = True
+                Button24.Enabled = True
+                Button26.Enabled = True
+                Button25.Enabled = True
+
+            Case 22
+                TextBox10.Enabled = True
+                Button6.Enabled = True
         End Select
 
         If uWine = False Then
@@ -367,6 +416,28 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         oxfsr = NumericUpDown6.Value
         oyfsr = NumericUpDown6.Value
 
+        DisableBioses()
+    End Sub
+
+    Private Sub DisableBioses()
+        For Each cont As Control In GroupBox19.Controls
+            If TypeOf cont Is TextBox Then
+                CType(cont, TextBox).Enabled = False
+            ElseIf TypeOf cont Is Button Then
+                CType(cont, Button).Enabled = False
+            End If
+        Next
+
+        For Each cont As Control In GroupBox22.Controls
+            If TypeOf cont Is TextBox Then
+                CType(cont, TextBox).Enabled = False
+            ElseIf TypeOf cont Is Button Then
+                CType(cont, Button).Enabled = False
+            End If
+        Next
+
+        Button40.Enabled = True
+        Button27.Enabled = True
     End Sub
 
     Private Sub Button41_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button41.Click

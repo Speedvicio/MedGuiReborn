@@ -234,6 +234,8 @@ Module xSetting
             Case ".cue", ".m3u", ".toc", ".ccd", ".exe" '".ssf", ".minissf", ".psf", ".psf1", ".minipsf",
                 SetIso()
                 'If row.Contains(consoles & ".correct_aspect ") Then xValue = Trim(Replace(row, consoles & ".correct_aspect", "")) : MsgBox(xValue)
+            Case ".gba"
+                MgrSetting.tab_index = 22
         End Select
 
         If row.Contains(p_c & ".forcemono ") Then xValue = Trim(Replace(row, p_c & ".forcemono", "")) : MgrSetting.CheckBox13.Checked = CBool(xValue)
@@ -271,7 +273,13 @@ Module xSetting
         'BIOS
         If row.Contains("gba.bios ") Then xValue = Trim(Replace(row, "gba.bios", "")) : MgrSetting.TextBox10.Text = xValue
         If row.Contains("nes.ggrom ") Then xValue = Trim(Replace(row, "nes.ggrom", "")) : MgrSetting.TextBox11.Text = xValue
-        If row.Contains(p_c & ".cdbios ") Then xValue = Trim(Replace(row, p_c & ".cdbios", "")) : MgrSetting.TextBox12.Text = xValue
+        Dim pcd_bios As String
+        If MedGuiR.CheckBox1.Checked = True Then
+            pcd_bios = "pce_fast"
+        Else
+            pcd_bios = "pce"
+        End If
+        If row.Contains(pcd_bios & ".cdbios ") Then xValue = Trim(Replace(row, pcd_bios & ".cdbios", "")) : MgrSetting.TextBox12.Text = xValue
         If row.Contains("pcfx.bios ") Then xValue = Trim(Replace(row, "pcfx.bios", "")) : MgrSetting.TextBox13.Text = xValue
         If row.Contains("md.cdbios ") Then xValue = Trim(Replace(row, "md.cdbios", "")) : MgrSetting.TextBox14.Text = xValue
         If row.Contains("pce.gecdbios ") Then xValue = Trim(Replace(row, "pce.gecdbios", "")) : MgrSetting.TextBox18.Text = xValue
