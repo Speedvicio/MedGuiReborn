@@ -86,6 +86,12 @@
             MgrSetting.Button19.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\keyboard.png"))
             MgrSetting.Button22.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
             MgrSetting.Button21.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
+            MgrSetting.Button16.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
+            MgrSetting.Button17.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
+            MgrSetting.Button23.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
+            MgrSetting.Button24.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
+            MgrSetting.Button25.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
+            MgrSetting.Button26.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\rom.png"))
 
             IsoSelector.Button11.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\dtl.png"))
             IsoSelector.Button1.BackgroundImage = (New Bitmap(MedExtra & "Resource\System\SS.gif"))

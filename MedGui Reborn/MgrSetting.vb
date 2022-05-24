@@ -24,6 +24,7 @@ Public Class MgrSetting
                 TabControl1.SelectedTab = TabPage10
 
                 TextBox11.Enabled = True
+                TextBox11.BackColor = Color.LightGoldenrodYellow
                 Button7.Enabled = True
 
             Case 11
@@ -52,6 +53,8 @@ Public Class MgrSetting
 
                 TextBox12.Enabled = True
                 TextBox18.Enabled = True
+                TextBox12.BackColor = Color.LightGoldenrodYellow
+                TextBox18.BackColor = Color.LightGoldenrodYellow
                 Button8.Enabled = True
                 Button4.Enabled = True
 
@@ -60,6 +63,7 @@ Public Class MgrSetting
                 TabControl1.SelectedTab = TabPage13
 
                 TextBox14.Enabled = True
+                TextBox14.BackColor = Color.LightGoldenrodYellow
                 Button10.Enabled = True
 
             Case 13
@@ -84,6 +88,7 @@ Public Class MgrSetting
                 TabControl1.SelectedTab = TabPage21
 
                 TextBox13.Enabled = True
+                TextBox13.BackColor = Color.LightGoldenrodYellow
                 Button9.Enabled = True
 
             Case 18
@@ -95,6 +100,9 @@ Public Class MgrSetting
                 TextBox15.Enabled = True
                 TextBox16.Enabled = True
                 TextBox17.Enabled = True
+                TextBox15.BackColor = Color.LightGoldenrodYellow
+                TextBox16.BackColor = Color.LightGoldenrodYellow
+                TextBox17.BackColor = Color.LightGoldenrodYellow
                 Button11.Enabled = True
                 Button12.Enabled = True
                 Button13.Enabled = True
@@ -107,6 +115,8 @@ Public Class MgrSetting
 
                 TextBox23.Enabled = True
                 TextBox22.Enabled = True
+                TextBox23.BackColor = Color.LightGoldenrodYellow
+                TextBox22.BackColor = Color.LightGoldenrodYellow
                 Button29.Enabled = True
                 Button28.Enabled = True
 
@@ -127,6 +137,12 @@ Public Class MgrSetting
                 TextBox21.Enabled = True
                 TextBox24.Enabled = True
                 TextBox25.Enabled = True
+                TextBox19.BackColor = Color.LightGoldenrodYellow
+                TextBox20.BackColor = Color.LightGoldenrodYellow
+                TextBox21.BackColor = Color.LightGoldenrodYellow
+                TextBox24.BackColor = Color.LightGoldenrodYellow
+                TextBox25.BackColor = Color.LightGoldenrodYellow
+                TextBox4.BackColor = Color.LightGoldenrodYellow
                 Button16.Enabled = True
                 Button17.Enabled = True
                 Button23.Enabled = True
@@ -136,6 +152,7 @@ Public Class MgrSetting
 
             Case 22
                 TextBox10.Enabled = True
+                TextBox10.BackColor = Color.LightGoldenrodYellow
                 Button6.Enabled = True
         End Select
 
@@ -423,6 +440,7 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         For Each cont As Control In GroupBox19.Controls
             If TypeOf cont Is TextBox Then
                 CType(cont, TextBox).Enabled = False
+                CType(cont, TextBox).BackColor = Color.Empty
             ElseIf TypeOf cont Is Button Then
                 CType(cont, Button).Enabled = False
             End If
@@ -431,6 +449,7 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         For Each cont As Control In GroupBox22.Controls
             If TypeOf cont Is TextBox Then
                 CType(cont, TextBox).Enabled = False
+                CType(cont, TextBox).BackColor = Color.Empty
             ElseIf TypeOf cont Is Button Then
                 CType(cont, Button).Enabled = False
             End If

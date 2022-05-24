@@ -289,6 +289,14 @@ Module xSetting
         If row.Contains("ss.bios_jp ") Then xValue = Trim(Replace(row, "ss.bios_jp", "")) : MgrSetting.TextBox22.Text = xValue
         If row.Contains("ss.bios_na_eu ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox23.Text = xValue
 
+        'AppleII not enabled atm
+        'If row.Contains("apple2-int-auto.rom ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox4.Text = xValue
+        'If row.Contains("apple2-asoft-auto.rom ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox19.Text = xValue
+        'If row.Contains("disk2-13boot.rom ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox20.Text = xValue
+        'If row.Contains("disk2-13seq.rom ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox21.Text = xValue
+        'If row.Contains("disk2-16boot.rom ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox24.Text = xValue
+        'If row.Contains("disk2-16seq.rom ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox25.Text = xValue
+
         'MEDNAFEN PATH
         If row.Contains("filesys.path_cheat ") Then xValue = Trim(Replace(row, "filesys.path_cheat", "")) : MgrSetting.TextBox34.Text = xValue
         If row.Contains("filesys.path_firmware ") Then xValue = Trim(Replace(row, "filesys.path_firmware", "")) : MgrSetting.TextBox33.Text = xValue
