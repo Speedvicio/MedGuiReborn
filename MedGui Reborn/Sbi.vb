@@ -55,13 +55,13 @@ Module Sbi
             If File.Exists(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z") Then GoTo PatchSkip
 
             'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Patch/Psx/Sbi/" & "[" & patchname & "].7z", MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", "anonymous", "anonymous", True, 1000, True)
-            FTPDownloadFile(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", UpdateServer & "/MedGuiR/Patch/Psx/Sbi/" & "[" & patchname & "].7z", "anonymous", "anonymous")
+            FTPDownloadFile(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", UpdateServer & "/MedGuiR/sbi/" & "[" & patchname & "].7z", "anonymous", "anonymous")
 
             Dim infoReader As FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z")
 
             If Dir(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z") = "" Or infoReader.Length < 100 Then
-                MsgBox("No " & patchname & " patch found, please try later.", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Download error")
+                MsgBox("No " & patchname & " patch found, please try later.", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Download error")
                 System.IO.File.Delete(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z")
                 Exit Sub
             End If
@@ -86,8 +86,12 @@ PatchSkip:
             MsgBox("All done, patch applied!", vbOKOnly + vbInformation)
         Catch exio As IOException
             MGRWriteLog("Sbi - get_SbiPatch:" & exio.Message)
+            Message.Close()
+            MsgBox("No " & patchname & " patch found, please try later.", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Download error")
         Catch ex As Exception
             MGRWriteLog("Sbi - get_SbiPatch:" & ex.Message)
+            Message.Close()
+            MsgBox("No " & patchname & " patch found, please try later.", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Download error")
         End Try
 
     End Sub
