@@ -122,6 +122,13 @@ Module scan
                     real_name = "Sega Arcade SCSP Player"
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
                 End If
+            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".13"
+                If Val(vmedClear) > 12900 Then
+                    consoles = "stv"
+                    gif = "game"
+                    real_name = "Sega Titan Video"
+                    fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
+                End If
             Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai"
                 consoles = "apple2"
                 gif = "apple2"

@@ -74,8 +74,11 @@ Boing:
                                     country = "(Soundtrack)"
                                 End If
                             Case ".21", ".30", ".31", ".sd0"
-                                ReadSasplay()
+                                ReadArcade("sasplay.txt")
                                 country = "(Soundtrack)"
+                            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".13"
+                                ReadArcade("STV.txt")
+                                country = "?"
                         End Select
                         MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
                     End If
@@ -197,9 +200,9 @@ Boing:
         'End Try
     End Sub
 
-    Public Sub ReadSasplay()
+    Public Sub ReadArcade(ArcadeDAT As String)
         Try
-            Using reader As New StreamReader(MedExtra & "\Plugins\db\sasplay.txt")
+            Using reader As New StreamReader(MedExtra & "\Plugins\db\" & ArcadeDAT)
                 While Not reader.EndOfStream
                     Dim Priga As String = reader.ReadLine
                     Dim epr As String = Path.GetFileNameWithoutExtension(percorso)
@@ -212,7 +215,7 @@ Boing:
                 reader.Close()
             End Using
         Catch ex As Exception
-            MGRWriteLog("sasplay - Read_sasplay:" & ex.Message)
+            MGRWriteLog("Arcade Games - Read_Arcade:" & ex.Message)
         End Try
     End Sub
 

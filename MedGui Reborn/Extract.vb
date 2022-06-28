@@ -202,6 +202,12 @@ HERE:                       If checkpismo = False Then
                                 LMain()
                                 Exit Sub
                             End If
+                        Case ".1", ".13"
+                            If ArchiveFileInfo.FileName.Contains("mpr") Or ArchiveFileInfo.FileName.Contains("epr") Then
+                                consoles = "stv"
+                                LMain()
+                                Exit Sub
+                            End If
                     End Select
                 End If
 
