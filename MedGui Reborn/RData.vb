@@ -76,7 +76,7 @@ Boing:
                             Case ".21", ".30", ".31", ".sd0"
                                 ReadArcade("sasplay.txt")
                                 country = "(Soundtrack)"
-                            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".13"
+                            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".ic8"
                                 ReadArcade("STV.txt")
                                 country = "?"
                         End Select

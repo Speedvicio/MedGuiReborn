@@ -118,14 +118,14 @@ Module scan
             Case ".21", ".30", ".31", ".sd0"
                 If Val(vmedClear) > 12800 Then
                     consoles = "sasplay"
-                    gif = "game"
+                    gif = "arcade"
                     real_name = "Sega Arcade SCSP Player"
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
                 End If
-            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".13"
+            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".ic8"
                 If Val(vmedClear) > 12900 Then
                     consoles = "stv"
-                    gif = "game"
+                    gif = "arcade"
                     real_name = "Sega Titan Video"
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
                 End If
@@ -710,6 +710,8 @@ Module scan
                 gif = "snes"
             Case "Sega Saturn", "Sega Saturn - Music Module"
                 gif = "ss"
+            Case "Sega Arcade SCSP Player", "Sega Titan Video"
+                gif = "arcade"
             Case "Virtual Boy"
                 gif = "vb"
             Case "Bandai - WonderSwan", "Bandai - WonderSwan - Music Module"

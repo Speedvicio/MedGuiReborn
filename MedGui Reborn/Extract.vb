@@ -202,8 +202,8 @@ HERE:                       If checkpismo = False Then
                                 LMain()
                                 Exit Sub
                             End If
-                        Case ".1", ".13"
-                            If ArchiveFileInfo.FileName.Contains("mpr") Or ArchiveFileInfo.FileName.Contains("epr") Then
+                        Case ".1", ".2", ".3", ".u1", ".ic8"
+                            If ArchiveFileInfo.FileName.Contains("mpr") Or ArchiveFileInfo.FileName.Contains("epr") Or ArchiveFileInfo.FileName.Contains("gfx") Then
                                 consoles = "stv"
                                 LMain()
                                 Exit Sub
