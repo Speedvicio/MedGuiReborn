@@ -90,7 +90,7 @@ Module MedPlay
     End Sub
 
     Private Sub DiscordMessage(Message As String, lunghezza As Integer)
-        If MuteNotification = False Then
+        If MuteNotification = False And GlobalVar.TypeOS.Contains("XP") = False Then
             Dim MyString As New String("- ", lunghezza)
             dcWeb = New dWebHook
             dcWeb.WebHook = VSTripleDES.DecryptData("LFIbuEfNFTOhwkOCQdewqUZhJKgXsw33gVO1Fjge3Otr+UFju7NazjBNxS8XOCW+RTIccRmQU/alYQ2Yhn7z8eStQ/Tb5Jxb9h6933gTar+PPOZFuDehMobqhEqUPhPzMHdTxVZ18Obq/WfpuqhTsPYaz4VXPaJrWVR4I5+ZesdmnIhZ7Ui3O75ilwefqZaAD4OIVSDKWOmx4586JKUcOH10b8KhVPWViQe5lsfaSyR3zsevvIgptTuf9wqt80xSjquamdV2RO9v4CCbX3LTN3fsh62mrUsol3J3ejxaA597aiHYooPhZIfoLqkGNo/aeYMtXWWrsM8=")
@@ -107,6 +107,7 @@ Module MedPlay
                 ftp.FtpDelete(ftp.CurrentDirectory & "Rom_" & Nick & "/" & NRomName)
                 ftp.FtpDeleteDirectory(ftp.CurrentDirectory & "Rom_" & Nick)
             End If
+
             DiscordMessage("User: " & Nick & " has left MedClient Netplay session.", Nick.Trim.Length + 36)
         Catch
             MsgBox("Unable to detect server ftp, verify data access or try to connect later", vbOKOnly + MsgBoxStyle.Exclamation, "FTP Connection error...")

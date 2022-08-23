@@ -1,9 +1,11 @@
 ﻿Imports System.IO
+Imports System.Net
 
 Module GlobalVar
 
     Public Startup_Path, UCInick, UCIserver, UCIport, UCIchannel, vmedClear, MedShader, UpdateServer, MGRH,
-    JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf, SScart As String, forMax, stopiso, noftp As Boolean
+    JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf, SScart As String, forMax, stopiso, noftp As Boolean,
+    TypeOS As String = UCase(My.Computer.Info.OSFullName)
 
     Public NewAPI As Boolean = True
     Public uWine As Boolean = False
@@ -435,7 +437,28 @@ ReCheckConfig:
 
     Public Sub OS_Version()
         Try
-            If UCase(My.Computer.Info.OSFullName.Contains("XP")) Then
+            'Specifies the TLS 1.X security protocol.
+            'Ssl3    48
+            'SystemDefault   0
+            'Tls     192
+            'Tls11   768
+            'Tls12   3072
+            'Tls13   12288
+
+            Dim TypeTls As SecurityProtocolType
+            Select Case True
+                Case TypeOS.Contains("XP")
+                    TypeTls = 768
+                Case TypeOS.Contains("7"), TypeOS.Contains("8"), TypeOS.Contains("10"), TypeOS.Contains("11")
+                    TypeTls = 3072
+                Case Else
+                    TypeTls = 12288
+            End Select
+
+            'Forced Tls12 security protocol because August net framework patch create problems with Discord connection
+            ServicePointManager.SecurityProtocol = TypeTls
+
+            If TypeOS.Contains("XP") Then
                 Exit Sub
             Else
                 Application.EnableVisualStyles()

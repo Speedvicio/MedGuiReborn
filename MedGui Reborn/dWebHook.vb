@@ -14,16 +14,6 @@ Public Class dWebHook
     Public Property ProfilePicture As String
 
     Public Sub New()
-        'Specifies the TLS 1.X security protocol.
-        'Ssl3    48
-        'SystemDefault   0
-        'Tls     192
-        'Tls11   768
-        'Tls12   3072
-        'Tls13   12288
-
-        'Forced Tls12 security protocol because August net framework patch create problems with Discord connection
-        ServicePointManager.SecurityProtocol = 3072
         client = New WebClient()
     End Sub
 
