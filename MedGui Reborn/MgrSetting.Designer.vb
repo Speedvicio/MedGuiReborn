@@ -192,24 +192,6 @@ Partial Class MgrSetting
         Me.GroupBox22 = New System.Windows.Forms.GroupBox()
         Me.Button40 = New System.Windows.Forms.Button()
         Me.Button27 = New System.Windows.Forms.Button()
-        Me.Button26 = New System.Windows.Forms.Button()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.Label149 = New System.Windows.Forms.Label()
-        Me.Button25 = New System.Windows.Forms.Button()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.Label148 = New System.Windows.Forms.Label()
-        Me.Button24 = New System.Windows.Forms.Button()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.Label147 = New System.Windows.Forms.Label()
-        Me.Button23 = New System.Windows.Forms.Button()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.Label146 = New System.Windows.Forms.Label()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.Label145 = New System.Windows.Forms.Label()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.Button28 = New System.Windows.Forms.Button()
         Me.TextBox22 = New System.Windows.Forms.TextBox()
         Me.Label114 = New System.Windows.Forms.Label()
@@ -600,6 +582,34 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button26 = New System.Windows.Forms.Button()
+        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.Label149 = New System.Windows.Forms.Label()
+        Me.Button25 = New System.Windows.Forms.Button()
+        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.Label148 = New System.Windows.Forms.Label()
+        Me.Button24 = New System.Windows.Forms.Button()
+        Me.TextBox21 = New System.Windows.Forms.TextBox()
+        Me.Label147 = New System.Windows.Forms.Label()
+        Me.Button23 = New System.Windows.Forms.Button()
+        Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.Label146 = New System.Windows.Forms.Label()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.Label145 = New System.Windows.Forms.Label()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button42 = New System.Windows.Forms.Button()
+        Me.TextBox35 = New System.Windows.Forms.TextBox()
+        Me.Label190 = New System.Windows.Forms.Label()
+        Me.Button43 = New System.Windows.Forms.Button()
+        Me.TextBox36 = New System.Windows.Forms.TextBox()
+        Me.Label191 = New System.Windows.Forms.Label()
+        Me.Button44 = New System.Windows.Forms.Button()
+        Me.TextBox37 = New System.Windows.Forms.TextBox()
+        Me.Label192 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
         Me.GroupBox1.SuspendLayout
@@ -731,6 +741,7 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -767,7 +778,6 @@ Partial Class MgrSetting
         Me.TabControl1.Controls.Add(Me.TabPage27)
         Me.TabControl1.Controls.Add(Me.TabPage29)
         Me.TabControl1.Controls.Add(Me.TabPage30)
-        Me.TabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -2531,26 +2541,18 @@ Partial Class MgrSetting
         '
         'GroupBox22
         '
+        Me.GroupBox22.Controls.Add(Me.Button44)
+        Me.GroupBox22.Controls.Add(Me.TextBox37)
+        Me.GroupBox22.Controls.Add(Me.Label192)
+        Me.GroupBox22.Controls.Add(Me.Button42)
+        Me.GroupBox22.Controls.Add(Me.TextBox35)
+        Me.GroupBox22.Controls.Add(Me.Label190)
+        Me.GroupBox22.Controls.Add(Me.Button43)
+        Me.GroupBox22.Controls.Add(Me.TextBox36)
+        Me.GroupBox22.Controls.Add(Me.Label191)
+        Me.GroupBox22.Controls.Add(Me.Panel2)
         Me.GroupBox22.Controls.Add(Me.Button40)
         Me.GroupBox22.Controls.Add(Me.Button27)
-        Me.GroupBox22.Controls.Add(Me.Button26)
-        Me.GroupBox22.Controls.Add(Me.TextBox25)
-        Me.GroupBox22.Controls.Add(Me.Label149)
-        Me.GroupBox22.Controls.Add(Me.Button25)
-        Me.GroupBox22.Controls.Add(Me.TextBox24)
-        Me.GroupBox22.Controls.Add(Me.Label148)
-        Me.GroupBox22.Controls.Add(Me.Button24)
-        Me.GroupBox22.Controls.Add(Me.TextBox21)
-        Me.GroupBox22.Controls.Add(Me.Label147)
-        Me.GroupBox22.Controls.Add(Me.Button23)
-        Me.GroupBox22.Controls.Add(Me.TextBox20)
-        Me.GroupBox22.Controls.Add(Me.Label146)
-        Me.GroupBox22.Controls.Add(Me.Button17)
-        Me.GroupBox22.Controls.Add(Me.TextBox19)
-        Me.GroupBox22.Controls.Add(Me.Label145)
-        Me.GroupBox22.Controls.Add(Me.Button16)
-        Me.GroupBox22.Controls.Add(Me.TextBox4)
-        Me.GroupBox22.Controls.Add(Me.Label11)
         Me.GroupBox22.Controls.Add(Me.Button28)
         Me.GroupBox22.Controls.Add(Me.TextBox22)
         Me.GroupBox22.Controls.Add(Me.Label114)
@@ -2583,180 +2585,6 @@ Partial Class MgrSetting
         Me.Button27.Text = "Check All &Bioses"
         Me.ToolTip1.SetToolTip(Me.Button27, resources.GetString("Button27.ToolTip"))
         Me.Button27.UseVisualStyleBackColor = True
-        '
-        'Button26
-        '
-        Me.Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button26.Location = New System.Drawing.Point(275, 201)
-        Me.Button26.Name = "Button26"
-        Me.Button26.Size = New System.Drawing.Size(23, 23)
-        Me.Button26.TabIndex = 26
-        Me.Button26.UseVisualStyleBackColor = True
-        Me.Button26.Visible = False
-        '
-        'TextBox25
-        '
-        Me.TextBox25.Location = New System.Drawing.Point(112, 203)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox25.TabIndex = 25
-        Me.TextBox25.Visible = False
-        '
-        'Label149
-        '
-        Me.Label149.AutoSize = True
-        Me.Label149.ForeColor = System.Drawing.Color.Black
-        Me.Label149.Location = New System.Drawing.Point(6, 206)
-        Me.Label149.Name = "Label149"
-        Me.Label149.Size = New System.Drawing.Size(82, 13)
-        Me.Label149.TabIndex = 24
-        Me.Label149.Text = "DISK II 16-S P6"
-        Me.Label149.Visible = False
-        '
-        'Button25
-        '
-        Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button25.Location = New System.Drawing.Point(275, 175)
-        Me.Button25.Name = "Button25"
-        Me.Button25.Size = New System.Drawing.Size(23, 23)
-        Me.Button25.TabIndex = 23
-        Me.Button25.UseVisualStyleBackColor = True
-        Me.Button25.Visible = False
-        '
-        'TextBox24
-        '
-        Me.TextBox24.Location = New System.Drawing.Point(112, 177)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox24.TabIndex = 22
-        Me.TextBox24.Visible = False
-        '
-        'Label148
-        '
-        Me.Label148.AutoSize = True
-        Me.Label148.ForeColor = System.Drawing.Color.Black
-        Me.Label148.Location = New System.Drawing.Point(6, 180)
-        Me.Label148.Name = "Label148"
-        Me.Label148.Size = New System.Drawing.Size(82, 13)
-        Me.Label148.TabIndex = 21
-        Me.Label148.Text = "DISK II 16-S P5"
-        Me.Label148.Visible = False
-        '
-        'Button24
-        '
-        Me.Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button24.Location = New System.Drawing.Point(275, 149)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(23, 23)
-        Me.Button24.TabIndex = 20
-        Me.Button24.UseVisualStyleBackColor = True
-        Me.Button24.Visible = False
-        '
-        'TextBox21
-        '
-        Me.TextBox21.Location = New System.Drawing.Point(112, 151)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox21.TabIndex = 19
-        Me.TextBox21.Visible = False
-        '
-        'Label147
-        '
-        Me.Label147.AutoSize = True
-        Me.Label147.ForeColor = System.Drawing.Color.Black
-        Me.Label147.Location = New System.Drawing.Point(6, 154)
-        Me.Label147.Name = "Label147"
-        Me.Label147.Size = New System.Drawing.Size(82, 13)
-        Me.Label147.TabIndex = 18
-        Me.Label147.Text = "DISK II 13-S P6"
-        Me.Label147.Visible = False
-        '
-        'Button23
-        '
-        Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button23.Location = New System.Drawing.Point(275, 123)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(23, 23)
-        Me.Button23.TabIndex = 17
-        Me.Button23.UseVisualStyleBackColor = True
-        Me.Button23.Visible = False
-        '
-        'TextBox20
-        '
-        Me.TextBox20.Location = New System.Drawing.Point(112, 125)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox20.TabIndex = 16
-        Me.TextBox20.Visible = False
-        '
-        'Label146
-        '
-        Me.Label146.AutoSize = True
-        Me.Label146.ForeColor = System.Drawing.Color.Black
-        Me.Label146.Location = New System.Drawing.Point(6, 128)
-        Me.Label146.Name = "Label146"
-        Me.Label146.Size = New System.Drawing.Size(82, 13)
-        Me.Label146.TabIndex = 15
-        Me.Label146.Text = "DISK II 13-S P5"
-        Me.Label146.Visible = False
-        '
-        'Button17
-        '
-        Me.Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button17.Location = New System.Drawing.Point(275, 97)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(23, 23)
-        Me.Button17.TabIndex = 14
-        Me.Button17.UseVisualStyleBackColor = True
-        Me.Button17.Visible = False
-        '
-        'TextBox19
-        '
-        Me.TextBox19.Location = New System.Drawing.Point(112, 99)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox19.TabIndex = 13
-        Me.TextBox19.Visible = False
-        '
-        'Label145
-        '
-        Me.Label145.AutoSize = True
-        Me.Label145.ForeColor = System.Drawing.Color.Black
-        Me.Label145.Location = New System.Drawing.Point(6, 102)
-        Me.Label145.Name = "Label145"
-        Me.Label145.Size = New System.Drawing.Size(59, 13)
-        Me.Label145.TabIndex = 12
-        Me.Label145.Text = "APPLE ][ +"
-        Me.Label145.Visible = False
-        '
-        'Button16
-        '
-        Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button16.Location = New System.Drawing.Point(275, 71)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(23, 23)
-        Me.Button16.TabIndex = 11
-        Me.Button16.UseVisualStyleBackColor = True
-        Me.Button16.Visible = False
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(112, 73)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox4.TabIndex = 10
-        Me.TextBox4.Visible = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(6, 76)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(50, 13)
-        Me.Label11.TabIndex = 9
-        Me.Label11.Text = "APPLE ]["
-        Me.Label11.Visible = False
         '
         'Button28
         '
@@ -7066,6 +6894,284 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Button26)
+        Me.Panel2.Controls.Add(Me.TextBox25)
+        Me.Panel2.Controls.Add(Me.Label149)
+        Me.Panel2.Controls.Add(Me.Button25)
+        Me.Panel2.Controls.Add(Me.TextBox24)
+        Me.Panel2.Controls.Add(Me.Label148)
+        Me.Panel2.Controls.Add(Me.Button24)
+        Me.Panel2.Controls.Add(Me.TextBox21)
+        Me.Panel2.Controls.Add(Me.Label147)
+        Me.Panel2.Controls.Add(Me.Button23)
+        Me.Panel2.Controls.Add(Me.TextBox20)
+        Me.Panel2.Controls.Add(Me.Label146)
+        Me.Panel2.Controls.Add(Me.Button17)
+        Me.Panel2.Controls.Add(Me.TextBox19)
+        Me.Panel2.Controls.Add(Me.Label145)
+        Me.Panel2.Controls.Add(Me.Button16)
+        Me.Panel2.Controls.Add(Me.TextBox4)
+        Me.Panel2.Controls.Add(Me.Label11)
+        Me.Panel2.Location = New System.Drawing.Point(9, 184)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(289, 35)
+        Me.Panel2.TabIndex = 29
+        Me.Panel2.Visible = False
+        '
+        'Button26
+        '
+        Me.Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button26.Location = New System.Drawing.Point(267, 104)
+        Me.Button26.Name = "Button26"
+        Me.Button26.Size = New System.Drawing.Size(23, 23)
+        Me.Button26.TabIndex = 44
+        Me.Button26.UseVisualStyleBackColor = True
+        Me.Button26.Visible = False
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Location = New System.Drawing.Point(104, 106)
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox25.TabIndex = 43
+        Me.TextBox25.Visible = False
+        '
+        'Label149
+        '
+        Me.Label149.AutoSize = True
+        Me.Label149.ForeColor = System.Drawing.Color.Black
+        Me.Label149.Location = New System.Drawing.Point(-2, 109)
+        Me.Label149.Name = "Label149"
+        Me.Label149.Size = New System.Drawing.Size(82, 13)
+        Me.Label149.TabIndex = 42
+        Me.Label149.Text = "DISK II 16-S P6"
+        Me.Label149.Visible = False
+        '
+        'Button25
+        '
+        Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button25.Location = New System.Drawing.Point(267, 78)
+        Me.Button25.Name = "Button25"
+        Me.Button25.Size = New System.Drawing.Size(23, 23)
+        Me.Button25.TabIndex = 41
+        Me.Button25.UseVisualStyleBackColor = True
+        Me.Button25.Visible = False
+        '
+        'TextBox24
+        '
+        Me.TextBox24.Location = New System.Drawing.Point(104, 80)
+        Me.TextBox24.Name = "TextBox24"
+        Me.TextBox24.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox24.TabIndex = 40
+        Me.TextBox24.Visible = False
+        '
+        'Label148
+        '
+        Me.Label148.AutoSize = True
+        Me.Label148.ForeColor = System.Drawing.Color.Black
+        Me.Label148.Location = New System.Drawing.Point(-2, 83)
+        Me.Label148.Name = "Label148"
+        Me.Label148.Size = New System.Drawing.Size(82, 13)
+        Me.Label148.TabIndex = 39
+        Me.Label148.Text = "DISK II 16-S P5"
+        Me.Label148.Visible = False
+        '
+        'Button24
+        '
+        Me.Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button24.Location = New System.Drawing.Point(267, 52)
+        Me.Button24.Name = "Button24"
+        Me.Button24.Size = New System.Drawing.Size(23, 23)
+        Me.Button24.TabIndex = 38
+        Me.Button24.UseVisualStyleBackColor = True
+        Me.Button24.Visible = False
+        '
+        'TextBox21
+        '
+        Me.TextBox21.Location = New System.Drawing.Point(104, 54)
+        Me.TextBox21.Name = "TextBox21"
+        Me.TextBox21.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox21.TabIndex = 37
+        Me.TextBox21.Visible = False
+        '
+        'Label147
+        '
+        Me.Label147.AutoSize = True
+        Me.Label147.ForeColor = System.Drawing.Color.Black
+        Me.Label147.Location = New System.Drawing.Point(-2, 57)
+        Me.Label147.Name = "Label147"
+        Me.Label147.Size = New System.Drawing.Size(82, 13)
+        Me.Label147.TabIndex = 36
+        Me.Label147.Text = "DISK II 13-S P6"
+        Me.Label147.Visible = False
+        '
+        'Button23
+        '
+        Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button23.Location = New System.Drawing.Point(267, 26)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(23, 23)
+        Me.Button23.TabIndex = 35
+        Me.Button23.UseVisualStyleBackColor = True
+        Me.Button23.Visible = False
+        '
+        'TextBox20
+        '
+        Me.TextBox20.Location = New System.Drawing.Point(104, 28)
+        Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox20.TabIndex = 34
+        Me.TextBox20.Visible = False
+        '
+        'Label146
+        '
+        Me.Label146.AutoSize = True
+        Me.Label146.ForeColor = System.Drawing.Color.Black
+        Me.Label146.Location = New System.Drawing.Point(-2, 31)
+        Me.Label146.Name = "Label146"
+        Me.Label146.Size = New System.Drawing.Size(82, 13)
+        Me.Label146.TabIndex = 33
+        Me.Label146.Text = "DISK II 13-S P5"
+        Me.Label146.Visible = False
+        '
+        'Button17
+        '
+        Me.Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button17.Location = New System.Drawing.Point(267, 0)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(23, 23)
+        Me.Button17.TabIndex = 32
+        Me.Button17.UseVisualStyleBackColor = True
+        Me.Button17.Visible = False
+        '
+        'TextBox19
+        '
+        Me.TextBox19.Location = New System.Drawing.Point(104, 2)
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox19.TabIndex = 31
+        Me.TextBox19.Visible = False
+        '
+        'Label145
+        '
+        Me.Label145.AutoSize = True
+        Me.Label145.ForeColor = System.Drawing.Color.Black
+        Me.Label145.Location = New System.Drawing.Point(-2, 5)
+        Me.Label145.Name = "Label145"
+        Me.Label145.Size = New System.Drawing.Size(59, 13)
+        Me.Label145.TabIndex = 30
+        Me.Label145.Text = "APPLE ][ +"
+        Me.Label145.Visible = False
+        '
+        'Button16
+        '
+        Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button16.Location = New System.Drawing.Point(267, -26)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(23, 23)
+        Me.Button16.TabIndex = 29
+        Me.Button16.UseVisualStyleBackColor = True
+        Me.Button16.Visible = False
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(104, -24)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox4.TabIndex = 28
+        Me.TextBox4.Visible = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(-2, -21)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(50, 13)
+        Me.Label11.TabIndex = 27
+        Me.Label11.Text = "APPLE ]["
+        Me.Label11.Visible = False
+        '
+        'Button42
+        '
+        Me.Button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button42.Location = New System.Drawing.Point(276, 97)
+        Me.Button42.Name = "Button42"
+        Me.Button42.Size = New System.Drawing.Size(23, 23)
+        Me.Button42.TabIndex = 35
+        Me.Button42.UseVisualStyleBackColor = True
+        '
+        'TextBox35
+        '
+        Me.TextBox35.Location = New System.Drawing.Point(113, 99)
+        Me.TextBox35.Name = "TextBox35"
+        Me.TextBox35.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox35.TabIndex = 34
+        '
+        'Label190
+        '
+        Me.Label190.AutoSize = True
+        Me.Label190.ForeColor = System.Drawing.Color.Black
+        Me.Label190.Location = New System.Drawing.Point(7, 102)
+        Me.Label190.Name = "Label190"
+        Me.Label190.Size = New System.Drawing.Size(56, 13)
+        Me.Label190.TabIndex = 33
+        Me.Label190.Text = "ST-V USA"
+        '
+        'Button43
+        '
+        Me.Button43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button43.Location = New System.Drawing.Point(276, 71)
+        Me.Button43.Name = "Button43"
+        Me.Button43.Size = New System.Drawing.Size(23, 23)
+        Me.Button43.TabIndex = 32
+        Me.Button43.UseVisualStyleBackColor = True
+        '
+        'TextBox36
+        '
+        Me.TextBox36.Location = New System.Drawing.Point(113, 73)
+        Me.TextBox36.Name = "TextBox36"
+        Me.TextBox36.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox36.TabIndex = 31
+        '
+        'Label191
+        '
+        Me.Label191.AutoSize = True
+        Me.Label191.ForeColor = System.Drawing.Color.Black
+        Me.Label191.Location = New System.Drawing.Point(7, 76)
+        Me.Label191.Name = "Label191"
+        Me.Label191.Size = New System.Drawing.Size(57, 13)
+        Me.Label191.TabIndex = 30
+        Me.Label191.Text = "ST-V EUR"
+        '
+        'Button44
+        '
+        Me.Button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button44.Location = New System.Drawing.Point(275, 123)
+        Me.Button44.Name = "Button44"
+        Me.Button44.Size = New System.Drawing.Size(23, 23)
+        Me.Button44.TabIndex = 38
+        Me.Button44.UseVisualStyleBackColor = True
+        '
+        'TextBox37
+        '
+        Me.TextBox37.Location = New System.Drawing.Point(112, 125)
+        Me.TextBox37.Name = "TextBox37"
+        Me.TextBox37.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox37.TabIndex = 37
+        '
+        'Label192
+        '
+        Me.Label192.AutoSize = True
+        Me.Label192.ForeColor = System.Drawing.Color.Black
+        Me.Label192.Location = New System.Drawing.Point(6, 128)
+        Me.Label192.Name = "Label192"
+        Me.Label192.Size = New System.Drawing.Size(53, 13)
+        Me.Label192.TabIndex = 36
+        Me.Label192.Text = "ST-V JAP"
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7247,6 +7353,8 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -7670,24 +7778,6 @@ Partial Class MgrSetting
     Friend WithEvents CheckBox105 As CheckBox
     Friend WithEvents TabPage30 As TabPage
     Friend WithEvents GroupBox26 As GroupBox
-    Friend WithEvents Button26 As Button
-    Friend WithEvents TextBox25 As TextBox
-    Friend WithEvents Label149 As Label
-    Friend WithEvents Button25 As Button
-    Friend WithEvents TextBox24 As TextBox
-    Friend WithEvents Label148 As Label
-    Friend WithEvents Button24 As Button
-    Friend WithEvents TextBox21 As TextBox
-    Friend WithEvents Label147 As Label
-    Friend WithEvents Button23 As Button
-    Friend WithEvents TextBox20 As TextBox
-    Friend WithEvents Label146 As Label
-    Friend WithEvents Button17 As Button
-    Friend WithEvents TextBox19 As TextBox
-    Friend WithEvents Label145 As Label
-    Friend WithEvents Button16 As Button
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents ComboBox60 As ComboBox
     Friend WithEvents Label144 As Label
     Friend WithEvents ComboBox58 As ComboBox
@@ -7827,4 +7917,32 @@ Partial Class MgrSetting
     Friend WithEvents ComboBox67 As ComboBox
     Friend WithEvents Label189 As Label
     Friend WithEvents CheckBox110 As CheckBox
+    Friend WithEvents Button44 As Button
+    Friend WithEvents TextBox37 As TextBox
+    Friend WithEvents Label192 As Label
+    Friend WithEvents Button42 As Button
+    Friend WithEvents TextBox35 As TextBox
+    Friend WithEvents Label190 As Label
+    Friend WithEvents Button43 As Button
+    Friend WithEvents TextBox36 As TextBox
+    Friend WithEvents Label191 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Button26 As Button
+    Friend WithEvents TextBox25 As TextBox
+    Friend WithEvents Label149 As Label
+    Friend WithEvents Button25 As Button
+    Friend WithEvents TextBox24 As TextBox
+    Friend WithEvents Label148 As Label
+    Friend WithEvents Button24 As Button
+    Friend WithEvents TextBox21 As TextBox
+    Friend WithEvents Label147 As Label
+    Friend WithEvents Button23 As Button
+    Friend WithEvents TextBox20 As TextBox
+    Friend WithEvents Label146 As Label
+    Friend WithEvents Button17 As Button
+    Friend WithEvents TextBox19 As TextBox
+    Friend WithEvents Label145 As Label
+    Friend WithEvents Button16 As Button
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Label11 As Label
 End Class

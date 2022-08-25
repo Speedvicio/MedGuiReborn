@@ -79,7 +79,7 @@ Public Class MDM
                     Case "writeDat"
                         MDMr_name = Replace(File, MDMpath & "\", "")
                         filepath = File
-                        MD5CalcFile()
+                        SHA1CalcFile()
                         GetCRC32()
                         w_dat()
                 End Select
@@ -115,7 +115,7 @@ Public Class MDM
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         If ListBox1.SelectedItem <> "" Then
             filepath = MDMpath & "\" & ListBox1.SelectedItem
-            MD5CalcFile()
+            SHA1CalcFile()
             GetCRC32()
             Dim indice = ListBox1.SelectedItem.LastIndexOf(".")
             TextBox1.Text = ListBox1.SelectedItem.remove(indice)

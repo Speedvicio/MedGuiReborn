@@ -528,7 +528,7 @@ ReCheckConfig:
 
     Public Sub DetectMedGuiR()
         filepath = Application.StartupPath & "\MedGuiR.exe"
-        MD5CalcFile()
+        SHA1CalcFile()
 
         PurgeConfigBackup()
 

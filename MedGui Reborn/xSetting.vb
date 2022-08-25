@@ -288,6 +288,9 @@ Module xSetting
         If row.Contains("psx.bios_na ") Then xValue = Trim(Replace(row, "psx.bios_na", "")) : MgrSetting.TextBox17.Text = xValue
         If row.Contains("ss.bios_jp ") Then xValue = Trim(Replace(row, "ss.bios_jp", "")) : MgrSetting.TextBox22.Text = xValue
         If row.Contains("ss.bios_na_eu ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox23.Text = xValue
+        If row.Contains("ss.bios_stv_eu ") Then xValue = Trim(Replace(row, "ss.bios_stv_eu", "")) : MgrSetting.TextBox36.Text = xValue
+        If row.Contains("ss.bios_stv_jp ") Then xValue = Trim(Replace(row, "ss.bios_stv_jp", "")) : MgrSetting.TextBox37.Text = xValue
+        If row.Contains("ss.bios_stv_na ") Then xValue = Trim(Replace(row, "ss.bios_stv_na", "")) : MgrSetting.TextBox35.Text = xValue
 
         'AppleII not enabled atm
         'If row.Contains("apple2-int-auto.rom ") Then xValue = Trim(Replace(row, "ss.bios_na_eu", "")) : MgrSetting.TextBox4.Text = xValue

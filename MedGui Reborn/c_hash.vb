@@ -5,7 +5,7 @@ Module c_hash
     Public filepath, r_md5, r_crc, r_sha As String
 
     ' specify the path to a file and this routine will calculate your hash
-    Public Sub MD5CalcFile()
+    Public Sub SHA1CalcFile()
         ' open file (as read-only)
         Using reader As New System.IO.FileStream(filepath, IO.FileMode.Open, IO.FileAccess.Read)
             Using md5 As New System.Security.Cryptography.MD5CryptoServiceProvider

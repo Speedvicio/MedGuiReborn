@@ -115,10 +115,19 @@ Public Class MgrSetting
 
                 TextBox23.Enabled = True
                 TextBox22.Enabled = True
+                TextBox35.Enabled = True
+                TextBox36.Enabled = True
+                TextBox37.Enabled = True
                 TextBox23.BackColor = Color.LightGoldenrodYellow
                 TextBox22.BackColor = Color.LightGoldenrodYellow
+                TextBox35.BackColor = Color.LightGoldenrodYellow
+                TextBox36.BackColor = Color.LightGoldenrodYellow
+                TextBox37.BackColor = Color.LightGoldenrodYellow
                 Button29.Enabled = True
                 Button28.Enabled = True
+                Button42.Enabled = True
+                Button43.Enabled = True
+                Button44.Enabled = True
 
             Case 20
                 TabControl1.TabPages.Insert(10, TabPage26)
@@ -403,6 +412,7 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
     End Sub
 
     Private Sub Setting_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        TabControl1.DrawMode = TabDrawMode.OwnerDrawFixed
 
         Dim customCulture As Globalization.CultureInfo = CType(Threading.Thread.CurrentThread.CurrentCulture.Clone(), Globalization.CultureInfo)
         customCulture.NumberFormat.NumberDecimalSeparator = "."
@@ -619,6 +629,27 @@ ErrorHandler:
         If pPath <> "" Then TextBox22.Text = pPath : controlbios()
     End Sub
 
+    Private Sub Button43_Click(sender As Object, e As EventArgs) Handles Button43.Click
+        tPath = "Select ST-V Eur Bios"
+        fPath = "Select ST-V Eur Bios (*.zip;*.ic8)|*.zip;*.ic8"
+        xPath()
+        If pPath <> "" Then TextBox36.Text = pPath : controlbios()
+    End Sub
+
+    Private Sub Button42_Click(sender As Object, e As EventArgs) Handles Button42.Click
+        tPath = "Select ST-V Usa Bios"
+        fPath = "Select ST-V Usa Bios (*.zip;*.ic8)|*.zip;*.ic8"
+        xPath()
+        If pPath <> "" Then TextBox35.Text = pPath : controlbios()
+    End Sub
+
+    Private Sub Button44_Click(sender As Object, e As EventArgs) Handles Button44.Click
+        tPath = "Select ST-V Jap Bios"
+        fPath = "Select ST-V Jap Bios (*.zip;*.ic8)|*.zip;*.ic8"
+        xPath()
+        If pPath <> "" Then TextBox37.Text = pPath : controlbios()
+    End Sub
+
     Private Sub Button29_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button29.Click
         tPath = "Select Saturn Usa/Eur Bios"
         fPath = "Select Saturn Usa/Eur Bios (*.zip;*.bin)|*.zip;*.bin"
@@ -640,42 +671,42 @@ ErrorHandler:
         If pPath <> "" Then TextBox1.Text = pPath
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub Button16_Click(sender As Object, e As EventArgs)
         tPath = "Select Apple ][ Concatenated Bios"
         fPath = "Select Apple ][ Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
         xPath()
         If pPath <> "" Then TextBox4.Text = pPath : controlbios()
     End Sub
 
-    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+    Private Sub Button17_Click(sender As Object, e As EventArgs)
         tPath = "Select Apple ][ + Concatenated Bios"
         fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
         xPath()
         If pPath <> "" Then TextBox19.Text = pPath : controlbios()
     End Sub
 
-    Private Sub Button23_Click_1(sender As Object, e As EventArgs) Handles Button23.Click
+    Private Sub Button23_Click_1(sender As Object, e As EventArgs)
         tPath = "Disk II Interface 13-Sector P5 Boot ROM, 341-0009"
         fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
         xPath()
         If pPath <> "" Then TextBox20.Text = pPath : controlbios()
     End Sub
 
-    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+    Private Sub Button24_Click(sender As Object, e As EventArgs)
         tPath = "Disk II Interface 13-Sector P6 Sequencer ROM, 341-0010"
         fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
         xPath()
         If pPath <> "" Then TextBox21.Text = pPath : controlbios()
     End Sub
 
-    Private Sub Button25_Click(sender As Object, e As EventArgs) Handles Button25.Click
+    Private Sub Button25_Click(sender As Object, e As EventArgs)
         tPath = "Disk II Interface 16-Sector P5 Boot ROM, 341-0027"
         fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
         xPath()
         If pPath <> "" Then TextBox24.Text = pPath : controlbios()
     End Sub
 
-    Private Sub Button26_Click(sender As Object, e As EventArgs) Handles Button26.Click
+    Private Sub Button26_Click(sender As Object, e As EventArgs)
         tPath = "Disk II Interface 16-Sector P6 Sequencer ROM, 341-0028"
         fPath = "Select Apple ][ + Concatenated Bios (*.zip;*.rom)|*.zip;*.rom"
         xPath()
@@ -1301,7 +1332,7 @@ ErrorHandler:
     Private Sub controlbios()
         Try
             filepath = pPath
-            MD5CalcFile()
+            SHA1CalcFile()
 
             Select Case tPath
                 Case "Select PCFX Bios"
@@ -1316,6 +1347,12 @@ ErrorHandler:
                     If r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3" Then Exit Sub
                 Case "Select Saturn Jap Bios"
                     If r_sha = "df94c5b4d47eb3cc404d88b33a8fda237eaf4720" Then Exit Sub
+                Case "Select ST-V Jap Bios"
+                    If r_sha = LCase("EFF0F54C70BCE05FF3A289BF30B1027E1C8CD117") Then Exit Sub
+                Case "Select ST-V Usa Bios"
+                    If r_sha = LCase("EAF1C3E5D602E1139D2090A78D7E19F04F916794") Then Exit Sub
+                Case "Select ST-V Eur Bios"
+                    If r_sha = LCase("AF79CFF317E5B57D49E463AF16A9F616ED1EEE08") Then Exit Sub
                 Case "Select Apple ][ Concatenated Bios"
                     If r_sha = "2dfaf376fc6a0b106320911c1ebfc1512601dc6c" Then Exit Sub
                 Case "Select Apple ][ + Concatenated Bios"
@@ -1344,7 +1381,7 @@ ErrorHandler:
         For Each foundbios As String In My.Computer.FileSystem.GetFiles(ExtractPath("path_firmware"))
             r_sha = ""
             filepath = foundbios
-            MD5CalcFile()
+            SHA1CalcFile()
 
             Select Case True
                 Case r_sha = "1a77fd83e337f906aecab27a1604db064cf10074"
@@ -1403,6 +1440,15 @@ ErrorHandler:
                     'Label75.ForeColor = Color.ForestGreen
                     TextBox17.Text = foundbios
                     pops_bios = True
+                Case r_sha = LCase("EFF0F54C70BCE05FF3A289BF30B1027E1C8CD117")
+                    Label192.ForeColor = Color.ForestGreen
+                    TextBox37.Text = foundbios
+                Case r_sha = LCase("EAF1C3E5D602E1139D2090A78D7E19F04F916794")
+                    Label190.ForeColor = Color.ForestGreen
+                    TextBox35.Text = foundbios
+                Case r_sha = LCase("AF79CFF317E5B57D49E463AF16A9F616ED1EEE08")
+                    Label191.ForeColor = Color.ForestGreen
+                    TextBox36.Text = foundbios
             End Select
         Next
     End Sub
@@ -1478,7 +1524,7 @@ ErrorHandler:
         tProcess = "mednafen"
         wDir = MedGuiR.TextBox4.Text
 
-        Dim MPath(12) As String
+        Dim MPath(15) As String
         MPath(0) = "md.cdbios us_scd1_9210.bin"
         MPath(1) = "pce.cdbios syscard3.pce"
         MPath(2) = "pce.gecdbios gecard.pce"
@@ -1492,8 +1538,11 @@ ErrorHandler:
         MPath(10) = "ss.cart.kof95_path mpr-18811-mx.ic1"
         MPath(11) = "ss.cart.ultraman_path mpr-19367-mx.ic1"
         MPath(12) = "gba.bios " & Chr(34) & Nothing & Chr(34)
+        MPath(13) = "ss.bios_stv_eu epr-17954a.ic8"
+        MPath(14) = "ss.bios_stv_jp epr-20091.ic8"
+        MPath(15) = "ss.bios_stv_na epr-17952a.ic8"
 
-        For i = 0 To 12
+        For i = 0 To 15
             Arg = "-" & MPath(i)
             StartProcess()
             execute.WaitForExit()

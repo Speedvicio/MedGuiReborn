@@ -360,7 +360,7 @@ Public Class Mcheat
                 RemoveHeader(64)
         End Select
 
-        MD5CalcFile()
+        SHA1CalcFile()
         GetCRC32()
 
         MedGuiR.SetSpecialModule()

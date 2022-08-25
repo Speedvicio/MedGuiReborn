@@ -354,6 +354,9 @@
                     video = video & " -video.glformat " & MgrSetting.ComboBox66.Text
                 Case Is = 12800
                     video = video & " -video.force_bbclear " & MgrSetting.CheckBox110.CheckState & " -video.cursorvis " & MgrSetting.ComboBox67.Text
+                Case Is = 13100
+                    ss = ss & " -ss.bios_stv_eu " & Chr(34) & MgrSetting.TextBox36.Text & Chr(34) & " -ss.bios_stv_jp " & Chr(34) & MgrSetting.TextBox37.Text & Chr(34) &
+                    " -ss.bios_stv_na " & Chr(34) & MgrSetting.TextBox35.Text & Chr(34)
             End Select
         Next
     End Sub
