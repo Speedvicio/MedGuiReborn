@@ -2413,7 +2413,7 @@ Partial Class MedGuiR
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 13)
         Me.Label6.TabIndex = 30
-        Me.Label6.Text = "MedGuiR v.0.119"
+        Me.Label6.Text = "MedGuiR v.0.120"
         '
         'Label7
         '
