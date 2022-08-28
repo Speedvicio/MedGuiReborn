@@ -190,6 +190,34 @@ Partial Class MgrSetting
         Me.Label68 = New System.Windows.Forms.Label()
         Me.TabPage24 = New System.Windows.Forms.TabPage()
         Me.GroupBox22 = New System.Windows.Forms.GroupBox()
+        Me.Button44 = New System.Windows.Forms.Button()
+        Me.TextBox37 = New System.Windows.Forms.TextBox()
+        Me.Label192 = New System.Windows.Forms.Label()
+        Me.Button42 = New System.Windows.Forms.Button()
+        Me.TextBox35 = New System.Windows.Forms.TextBox()
+        Me.Label190 = New System.Windows.Forms.Label()
+        Me.Button43 = New System.Windows.Forms.Button()
+        Me.TextBox36 = New System.Windows.Forms.TextBox()
+        Me.Label191 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button26 = New System.Windows.Forms.Button()
+        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.Label149 = New System.Windows.Forms.Label()
+        Me.Button25 = New System.Windows.Forms.Button()
+        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.Label148 = New System.Windows.Forms.Label()
+        Me.Button24 = New System.Windows.Forms.Button()
+        Me.TextBox21 = New System.Windows.Forms.TextBox()
+        Me.Label147 = New System.Windows.Forms.Label()
+        Me.Button23 = New System.Windows.Forms.Button()
+        Me.TextBox20 = New System.Windows.Forms.TextBox()
+        Me.Label146 = New System.Windows.Forms.Label()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.TextBox19 = New System.Windows.Forms.TextBox()
+        Me.Label145 = New System.Windows.Forms.Label()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Button40 = New System.Windows.Forms.Button()
         Me.Button27 = New System.Windows.Forms.Button()
         Me.Button28 = New System.Windows.Forms.Button()
@@ -582,167 +610,139 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button26 = New System.Windows.Forms.Button()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.Label149 = New System.Windows.Forms.Label()
-        Me.Button25 = New System.Windows.Forms.Button()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.Label148 = New System.Windows.Forms.Label()
-        Me.Button24 = New System.Windows.Forms.Button()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.Label147 = New System.Windows.Forms.Label()
-        Me.Button23 = New System.Windows.Forms.Button()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.Label146 = New System.Windows.Forms.Label()
-        Me.Button17 = New System.Windows.Forms.Button()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.Label145 = New System.Windows.Forms.Label()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Button42 = New System.Windows.Forms.Button()
-        Me.TextBox35 = New System.Windows.Forms.TextBox()
-        Me.Label190 = New System.Windows.Forms.Label()
-        Me.Button43 = New System.Windows.Forms.Button()
-        Me.TextBox36 = New System.Windows.Forms.TextBox()
-        Me.Label191 = New System.Windows.Forms.Label()
-        Me.Button44 = New System.Windows.Forms.Button()
-        Me.TextBox37 = New System.Windows.Forms.TextBox()
-        Me.Label192 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout
         Me.TabPage1.SuspendLayout
         Me.GroupBox1.SuspendLayout
-        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage28.SuspendLayout()
-        Me.GroupBox21.SuspendLayout()
-        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage4.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage31.SuspendLayout()
-        Me.GroupBox27.SuspendLayout()
-        Me.TabPage5.SuspendLayout()
-        Me.GroupBox19.SuspendLayout()
-        Me.TabPage24.SuspendLayout()
-        Me.GroupBox22.SuspendLayout()
-        Me.TabPage6.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage7.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage19.SuspendLayout()
-        Me.GroupBox7.SuspendLayout()
-        Me.TabPage8.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
-        Me.TabPage9.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
-        Me.TabPage10.SuspendLayout()
-        Me.GroupBox10.SuspendLayout()
-        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage11.SuspendLayout()
-        Me.GroupBox11.SuspendLayout()
-        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage12.SuspendLayout()
-        Me.GroupBox12.SuspendLayout()
-        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage13.SuspendLayout()
-        Me.GroupBox13.SuspendLayout()
-        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage14.SuspendLayout()
-        Me.GroupBox14.SuspendLayout()
-        CType(Me.TrackBar20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar18, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar17, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage15.SuspendLayout()
-        Me.GroupBox15.SuspendLayout()
-        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage16.SuspendLayout()
-        Me.GroupBox16.SuspendLayout()
-        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage17.SuspendLayout()
-        Me.GroupBox17.SuspendLayout()
-        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage18.SuspendLayout()
-        Me.GroupBox18.SuspendLayout()
-        Me.TabPage20.SuspendLayout()
-        Me.GroupBox20.SuspendLayout()
-        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage21.SuspendLayout()
-        Me.TabPage22.SuspendLayout()
-        CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage23.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage26.SuspendLayout()
-        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage32.SuspendLayout()
-        Me.GroupBox28.SuspendLayout()
-        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage25.SuspendLayout()
-        Me.GroupBox24.SuspendLayout()
-        Me.TabPage27.SuspendLayout()
-        Me.GroupBox23.SuspendLayout()
-        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage29.SuspendLayout()
-        Me.GroupBox25.SuspendLayout()
-        CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage30.SuspendLayout()
-        Me.GroupBox26.SuspendLayout()
-        CType(Me.NumericUpDown40, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown39, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown38, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown37, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
-        Me.SuspendLayout()
+        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage2.SuspendLayout
+        Me.GroupBox2.SuspendLayout
+        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage3.SuspendLayout
+        Me.GroupBox5.SuspendLayout
+        CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage28.SuspendLayout
+        Me.GroupBox21.SuspendLayout
+        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage4.SuspendLayout
+        Me.GroupBox4.SuspendLayout
+        CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage31.SuspendLayout
+        Me.GroupBox27.SuspendLayout
+        Me.TabPage5.SuspendLayout
+        Me.GroupBox19.SuspendLayout
+        Me.TabPage24.SuspendLayout
+        Me.GroupBox22.SuspendLayout
+        Me.Panel2.SuspendLayout
+        Me.TabPage6.SuspendLayout
+        Me.GroupBox6.SuspendLayout
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage7.SuspendLayout
+        Me.GroupBox3.SuspendLayout
+        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage19.SuspendLayout
+        Me.GroupBox7.SuspendLayout
+        Me.TabPage8.SuspendLayout
+        Me.GroupBox8.SuspendLayout
+        Me.TabPage9.SuspendLayout
+        Me.GroupBox9.SuspendLayout
+        Me.TabPage10.SuspendLayout
+        Me.GroupBox10.SuspendLayout
+        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage11.SuspendLayout
+        Me.GroupBox11.SuspendLayout
+        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar12, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar11, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage12.SuspendLayout
+        Me.GroupBox12.SuspendLayout
+        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage13.SuspendLayout
+        Me.GroupBox13.SuspendLayout
+        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage14.SuspendLayout
+        Me.GroupBox14.SuspendLayout
+        CType(Me.TrackBar20, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar19, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar18, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar17, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage15.SuspendLayout
+        Me.GroupBox15.SuspendLayout
+        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage16.SuspendLayout
+        Me.GroupBox16.SuspendLayout
+        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage17.SuspendLayout
+        Me.GroupBox17.SuspendLayout
+        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage18.SuspendLayout
+        Me.GroupBox18.SuspendLayout
+        Me.TabPage20.SuspendLayout
+        Me.GroupBox20.SuspendLayout
+        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage21.SuspendLayout
+        Me.TabPage22.SuspendLayout
+        CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage23.SuspendLayout
+        Me.Panel1.SuspendLayout
+        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage26.SuspendLayout
+        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage32.SuspendLayout
+        Me.GroupBox28.SuspendLayout
+        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage25.SuspendLayout
+        Me.GroupBox24.SuspendLayout
+        Me.TabPage27.SuspendLayout
+        Me.GroupBox23.SuspendLayout
+        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage29.SuspendLayout
+        Me.GroupBox25.SuspendLayout
+        CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.TabPage30.SuspendLayout
+        Me.GroupBox26.SuspendLayout
+        CType(Me.NumericUpDown40, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown39, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown38, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown37, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'TabControl1
         '
@@ -2565,6 +2565,284 @@ Partial Class MgrSetting
         Me.GroupBox22.TabIndex = 4
         Me.GroupBox22.TabStop = False
         Me.ToolTip1.SetToolTip(Me.GroupBox22, "Select per Console Bios" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Empty use default Mednafen Firmware folder)")
+        '
+        'Button44
+        '
+        Me.Button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button44.Location = New System.Drawing.Point(275, 123)
+        Me.Button44.Name = "Button44"
+        Me.Button44.Size = New System.Drawing.Size(23, 23)
+        Me.Button44.TabIndex = 38
+        Me.Button44.UseVisualStyleBackColor = True
+        '
+        'TextBox37
+        '
+        Me.TextBox37.Location = New System.Drawing.Point(112, 125)
+        Me.TextBox37.Name = "TextBox37"
+        Me.TextBox37.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox37.TabIndex = 37
+        '
+        'Label192
+        '
+        Me.Label192.AutoSize = True
+        Me.Label192.ForeColor = System.Drawing.Color.Black
+        Me.Label192.Location = New System.Drawing.Point(6, 128)
+        Me.Label192.Name = "Label192"
+        Me.Label192.Size = New System.Drawing.Size(53, 13)
+        Me.Label192.TabIndex = 36
+        Me.Label192.Text = "ST-V JAP"
+        '
+        'Button42
+        '
+        Me.Button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button42.Location = New System.Drawing.Point(276, 97)
+        Me.Button42.Name = "Button42"
+        Me.Button42.Size = New System.Drawing.Size(23, 23)
+        Me.Button42.TabIndex = 35
+        Me.Button42.UseVisualStyleBackColor = True
+        '
+        'TextBox35
+        '
+        Me.TextBox35.Location = New System.Drawing.Point(113, 99)
+        Me.TextBox35.Name = "TextBox35"
+        Me.TextBox35.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox35.TabIndex = 34
+        '
+        'Label190
+        '
+        Me.Label190.AutoSize = True
+        Me.Label190.ForeColor = System.Drawing.Color.Black
+        Me.Label190.Location = New System.Drawing.Point(7, 102)
+        Me.Label190.Name = "Label190"
+        Me.Label190.Size = New System.Drawing.Size(56, 13)
+        Me.Label190.TabIndex = 33
+        Me.Label190.Text = "ST-V USA"
+        '
+        'Button43
+        '
+        Me.Button43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button43.Location = New System.Drawing.Point(276, 71)
+        Me.Button43.Name = "Button43"
+        Me.Button43.Size = New System.Drawing.Size(23, 23)
+        Me.Button43.TabIndex = 32
+        Me.Button43.UseVisualStyleBackColor = True
+        '
+        'TextBox36
+        '
+        Me.TextBox36.Location = New System.Drawing.Point(113, 73)
+        Me.TextBox36.Name = "TextBox36"
+        Me.TextBox36.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox36.TabIndex = 31
+        '
+        'Label191
+        '
+        Me.Label191.AutoSize = True
+        Me.Label191.ForeColor = System.Drawing.Color.Black
+        Me.Label191.Location = New System.Drawing.Point(7, 76)
+        Me.Label191.Name = "Label191"
+        Me.Label191.Size = New System.Drawing.Size(57, 13)
+        Me.Label191.TabIndex = 30
+        Me.Label191.Text = "ST-V EUR"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Button26)
+        Me.Panel2.Controls.Add(Me.TextBox25)
+        Me.Panel2.Controls.Add(Me.Label149)
+        Me.Panel2.Controls.Add(Me.Button25)
+        Me.Panel2.Controls.Add(Me.TextBox24)
+        Me.Panel2.Controls.Add(Me.Label148)
+        Me.Panel2.Controls.Add(Me.Button24)
+        Me.Panel2.Controls.Add(Me.TextBox21)
+        Me.Panel2.Controls.Add(Me.Label147)
+        Me.Panel2.Controls.Add(Me.Button23)
+        Me.Panel2.Controls.Add(Me.TextBox20)
+        Me.Panel2.Controls.Add(Me.Label146)
+        Me.Panel2.Controls.Add(Me.Button17)
+        Me.Panel2.Controls.Add(Me.TextBox19)
+        Me.Panel2.Controls.Add(Me.Label145)
+        Me.Panel2.Controls.Add(Me.Button16)
+        Me.Panel2.Controls.Add(Me.TextBox4)
+        Me.Panel2.Controls.Add(Me.Label11)
+        Me.Panel2.Location = New System.Drawing.Point(9, 184)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(289, 35)
+        Me.Panel2.TabIndex = 29
+        Me.Panel2.Visible = False
+        '
+        'Button26
+        '
+        Me.Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button26.Location = New System.Drawing.Point(267, 104)
+        Me.Button26.Name = "Button26"
+        Me.Button26.Size = New System.Drawing.Size(23, 23)
+        Me.Button26.TabIndex = 44
+        Me.Button26.UseVisualStyleBackColor = True
+        Me.Button26.Visible = False
+        '
+        'TextBox25
+        '
+        Me.TextBox25.Location = New System.Drawing.Point(104, 106)
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox25.TabIndex = 43
+        Me.TextBox25.Visible = False
+        '
+        'Label149
+        '
+        Me.Label149.AutoSize = True
+        Me.Label149.ForeColor = System.Drawing.Color.Black
+        Me.Label149.Location = New System.Drawing.Point(-2, 109)
+        Me.Label149.Name = "Label149"
+        Me.Label149.Size = New System.Drawing.Size(82, 13)
+        Me.Label149.TabIndex = 42
+        Me.Label149.Text = "DISK II 16-S P6"
+        Me.Label149.Visible = False
+        '
+        'Button25
+        '
+        Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button25.Location = New System.Drawing.Point(267, 78)
+        Me.Button25.Name = "Button25"
+        Me.Button25.Size = New System.Drawing.Size(23, 23)
+        Me.Button25.TabIndex = 41
+        Me.Button25.UseVisualStyleBackColor = True
+        Me.Button25.Visible = False
+        '
+        'TextBox24
+        '
+        Me.TextBox24.Location = New System.Drawing.Point(104, 80)
+        Me.TextBox24.Name = "TextBox24"
+        Me.TextBox24.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox24.TabIndex = 40
+        Me.TextBox24.Visible = False
+        '
+        'Label148
+        '
+        Me.Label148.AutoSize = True
+        Me.Label148.ForeColor = System.Drawing.Color.Black
+        Me.Label148.Location = New System.Drawing.Point(-2, 83)
+        Me.Label148.Name = "Label148"
+        Me.Label148.Size = New System.Drawing.Size(82, 13)
+        Me.Label148.TabIndex = 39
+        Me.Label148.Text = "DISK II 16-S P5"
+        Me.Label148.Visible = False
+        '
+        'Button24
+        '
+        Me.Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button24.Location = New System.Drawing.Point(267, 52)
+        Me.Button24.Name = "Button24"
+        Me.Button24.Size = New System.Drawing.Size(23, 23)
+        Me.Button24.TabIndex = 38
+        Me.Button24.UseVisualStyleBackColor = True
+        Me.Button24.Visible = False
+        '
+        'TextBox21
+        '
+        Me.TextBox21.Location = New System.Drawing.Point(104, 54)
+        Me.TextBox21.Name = "TextBox21"
+        Me.TextBox21.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox21.TabIndex = 37
+        Me.TextBox21.Visible = False
+        '
+        'Label147
+        '
+        Me.Label147.AutoSize = True
+        Me.Label147.ForeColor = System.Drawing.Color.Black
+        Me.Label147.Location = New System.Drawing.Point(-2, 57)
+        Me.Label147.Name = "Label147"
+        Me.Label147.Size = New System.Drawing.Size(82, 13)
+        Me.Label147.TabIndex = 36
+        Me.Label147.Text = "DISK II 13-S P6"
+        Me.Label147.Visible = False
+        '
+        'Button23
+        '
+        Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button23.Location = New System.Drawing.Point(267, 26)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(23, 23)
+        Me.Button23.TabIndex = 35
+        Me.Button23.UseVisualStyleBackColor = True
+        Me.Button23.Visible = False
+        '
+        'TextBox20
+        '
+        Me.TextBox20.Location = New System.Drawing.Point(104, 28)
+        Me.TextBox20.Name = "TextBox20"
+        Me.TextBox20.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox20.TabIndex = 34
+        Me.TextBox20.Visible = False
+        '
+        'Label146
+        '
+        Me.Label146.AutoSize = True
+        Me.Label146.ForeColor = System.Drawing.Color.Black
+        Me.Label146.Location = New System.Drawing.Point(-2, 31)
+        Me.Label146.Name = "Label146"
+        Me.Label146.Size = New System.Drawing.Size(82, 13)
+        Me.Label146.TabIndex = 33
+        Me.Label146.Text = "DISK II 13-S P5"
+        Me.Label146.Visible = False
+        '
+        'Button17
+        '
+        Me.Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button17.Location = New System.Drawing.Point(267, 0)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(23, 23)
+        Me.Button17.TabIndex = 32
+        Me.Button17.UseVisualStyleBackColor = True
+        Me.Button17.Visible = False
+        '
+        'TextBox19
+        '
+        Me.TextBox19.Location = New System.Drawing.Point(104, 2)
+        Me.TextBox19.Name = "TextBox19"
+        Me.TextBox19.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox19.TabIndex = 31
+        Me.TextBox19.Visible = False
+        '
+        'Label145
+        '
+        Me.Label145.AutoSize = True
+        Me.Label145.ForeColor = System.Drawing.Color.Black
+        Me.Label145.Location = New System.Drawing.Point(-2, 5)
+        Me.Label145.Name = "Label145"
+        Me.Label145.Size = New System.Drawing.Size(59, 13)
+        Me.Label145.TabIndex = 30
+        Me.Label145.Text = "APPLE ][ +"
+        Me.Label145.Visible = False
+        '
+        'Button16
+        '
+        Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button16.Location = New System.Drawing.Point(267, -26)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(23, 23)
+        Me.Button16.TabIndex = 29
+        Me.Button16.UseVisualStyleBackColor = True
+        Me.Button16.Visible = False
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(104, -24)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(157, 20)
+        Me.TextBox4.TabIndex = 28
+        Me.TextBox4.Visible = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(-2, -21)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(50, 13)
+        Me.Label11.TabIndex = 27
+        Me.Label11.Text = "APPLE ]["
+        Me.Label11.Visible = False
         '
         'Button40
         '
@@ -5673,13 +5951,13 @@ Partial Class MgrSetting
         'ComboBox46
         '
         Me.ComboBox46.FormattingEnabled = True
-        Me.ComboBox46.Items.AddRange(New Object() {"none", "gamepad"})
+        Me.ComboBox46.Items.AddRange(New Object() {"none", "gamepad", "mouse"})
         Me.ComboBox46.Location = New System.Drawing.Point(176, 137)
         Me.ComboBox46.Name = "ComboBox46"
         Me.ComboBox46.Size = New System.Drawing.Size(122, 21)
         Me.ComboBox46.TabIndex = 53
         Me.ComboBox46.Text = "gamepad"
-        Me.ToolTip1.SetToolTip(Me.ComboBox46, "Input device for Port 1/1A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad")
+        Me.ToolTip1.SetToolTip(Me.ComboBox46, "Input device for Port 1/1A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mouse - Mouse")
         '
         'Label109
         '
@@ -5693,13 +5971,13 @@ Partial Class MgrSetting
         'ComboBox47
         '
         Me.ComboBox47.FormattingEnabled = True
-        Me.ComboBox47.Items.AddRange(New Object() {"none", "gamepad"})
+        Me.ComboBox47.Items.AddRange(New Object() {"none", "gamepad", "mouse"})
         Me.ComboBox47.Location = New System.Drawing.Point(176, 167)
         Me.ComboBox47.Name = "ComboBox47"
         Me.ComboBox47.Size = New System.Drawing.Size(122, 21)
         Me.ComboBox47.TabIndex = 51
         Me.ComboBox47.Text = "gamepad"
-        Me.ToolTip1.SetToolTip(Me.ComboBox47, "Input device for Port 2/2A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad")
+        Me.ToolTip1.SetToolTip(Me.ComboBox47, "Input device for Port 2/2A" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "none - none" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "gamepad - Gamepad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mouse - Mouse")
         '
         'TabPage32
         '
@@ -6894,284 +7172,6 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Button26)
-        Me.Panel2.Controls.Add(Me.TextBox25)
-        Me.Panel2.Controls.Add(Me.Label149)
-        Me.Panel2.Controls.Add(Me.Button25)
-        Me.Panel2.Controls.Add(Me.TextBox24)
-        Me.Panel2.Controls.Add(Me.Label148)
-        Me.Panel2.Controls.Add(Me.Button24)
-        Me.Panel2.Controls.Add(Me.TextBox21)
-        Me.Panel2.Controls.Add(Me.Label147)
-        Me.Panel2.Controls.Add(Me.Button23)
-        Me.Panel2.Controls.Add(Me.TextBox20)
-        Me.Panel2.Controls.Add(Me.Label146)
-        Me.Panel2.Controls.Add(Me.Button17)
-        Me.Panel2.Controls.Add(Me.TextBox19)
-        Me.Panel2.Controls.Add(Me.Label145)
-        Me.Panel2.Controls.Add(Me.Button16)
-        Me.Panel2.Controls.Add(Me.TextBox4)
-        Me.Panel2.Controls.Add(Me.Label11)
-        Me.Panel2.Location = New System.Drawing.Point(9, 184)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(289, 35)
-        Me.Panel2.TabIndex = 29
-        Me.Panel2.Visible = False
-        '
-        'Button26
-        '
-        Me.Button26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button26.Location = New System.Drawing.Point(267, 104)
-        Me.Button26.Name = "Button26"
-        Me.Button26.Size = New System.Drawing.Size(23, 23)
-        Me.Button26.TabIndex = 44
-        Me.Button26.UseVisualStyleBackColor = True
-        Me.Button26.Visible = False
-        '
-        'TextBox25
-        '
-        Me.TextBox25.Location = New System.Drawing.Point(104, 106)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox25.TabIndex = 43
-        Me.TextBox25.Visible = False
-        '
-        'Label149
-        '
-        Me.Label149.AutoSize = True
-        Me.Label149.ForeColor = System.Drawing.Color.Black
-        Me.Label149.Location = New System.Drawing.Point(-2, 109)
-        Me.Label149.Name = "Label149"
-        Me.Label149.Size = New System.Drawing.Size(82, 13)
-        Me.Label149.TabIndex = 42
-        Me.Label149.Text = "DISK II 16-S P6"
-        Me.Label149.Visible = False
-        '
-        'Button25
-        '
-        Me.Button25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button25.Location = New System.Drawing.Point(267, 78)
-        Me.Button25.Name = "Button25"
-        Me.Button25.Size = New System.Drawing.Size(23, 23)
-        Me.Button25.TabIndex = 41
-        Me.Button25.UseVisualStyleBackColor = True
-        Me.Button25.Visible = False
-        '
-        'TextBox24
-        '
-        Me.TextBox24.Location = New System.Drawing.Point(104, 80)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox24.TabIndex = 40
-        Me.TextBox24.Visible = False
-        '
-        'Label148
-        '
-        Me.Label148.AutoSize = True
-        Me.Label148.ForeColor = System.Drawing.Color.Black
-        Me.Label148.Location = New System.Drawing.Point(-2, 83)
-        Me.Label148.Name = "Label148"
-        Me.Label148.Size = New System.Drawing.Size(82, 13)
-        Me.Label148.TabIndex = 39
-        Me.Label148.Text = "DISK II 16-S P5"
-        Me.Label148.Visible = False
-        '
-        'Button24
-        '
-        Me.Button24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button24.Location = New System.Drawing.Point(267, 52)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(23, 23)
-        Me.Button24.TabIndex = 38
-        Me.Button24.UseVisualStyleBackColor = True
-        Me.Button24.Visible = False
-        '
-        'TextBox21
-        '
-        Me.TextBox21.Location = New System.Drawing.Point(104, 54)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox21.TabIndex = 37
-        Me.TextBox21.Visible = False
-        '
-        'Label147
-        '
-        Me.Label147.AutoSize = True
-        Me.Label147.ForeColor = System.Drawing.Color.Black
-        Me.Label147.Location = New System.Drawing.Point(-2, 57)
-        Me.Label147.Name = "Label147"
-        Me.Label147.Size = New System.Drawing.Size(82, 13)
-        Me.Label147.TabIndex = 36
-        Me.Label147.Text = "DISK II 13-S P6"
-        Me.Label147.Visible = False
-        '
-        'Button23
-        '
-        Me.Button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button23.Location = New System.Drawing.Point(267, 26)
-        Me.Button23.Name = "Button23"
-        Me.Button23.Size = New System.Drawing.Size(23, 23)
-        Me.Button23.TabIndex = 35
-        Me.Button23.UseVisualStyleBackColor = True
-        Me.Button23.Visible = False
-        '
-        'TextBox20
-        '
-        Me.TextBox20.Location = New System.Drawing.Point(104, 28)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox20.TabIndex = 34
-        Me.TextBox20.Visible = False
-        '
-        'Label146
-        '
-        Me.Label146.AutoSize = True
-        Me.Label146.ForeColor = System.Drawing.Color.Black
-        Me.Label146.Location = New System.Drawing.Point(-2, 31)
-        Me.Label146.Name = "Label146"
-        Me.Label146.Size = New System.Drawing.Size(82, 13)
-        Me.Label146.TabIndex = 33
-        Me.Label146.Text = "DISK II 13-S P5"
-        Me.Label146.Visible = False
-        '
-        'Button17
-        '
-        Me.Button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button17.Location = New System.Drawing.Point(267, 0)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(23, 23)
-        Me.Button17.TabIndex = 32
-        Me.Button17.UseVisualStyleBackColor = True
-        Me.Button17.Visible = False
-        '
-        'TextBox19
-        '
-        Me.TextBox19.Location = New System.Drawing.Point(104, 2)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox19.TabIndex = 31
-        Me.TextBox19.Visible = False
-        '
-        'Label145
-        '
-        Me.Label145.AutoSize = True
-        Me.Label145.ForeColor = System.Drawing.Color.Black
-        Me.Label145.Location = New System.Drawing.Point(-2, 5)
-        Me.Label145.Name = "Label145"
-        Me.Label145.Size = New System.Drawing.Size(59, 13)
-        Me.Label145.TabIndex = 30
-        Me.Label145.Text = "APPLE ][ +"
-        Me.Label145.Visible = False
-        '
-        'Button16
-        '
-        Me.Button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button16.Location = New System.Drawing.Point(267, -26)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(23, 23)
-        Me.Button16.TabIndex = 29
-        Me.Button16.UseVisualStyleBackColor = True
-        Me.Button16.Visible = False
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(104, -24)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox4.TabIndex = 28
-        Me.TextBox4.Visible = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.ForeColor = System.Drawing.Color.Black
-        Me.Label11.Location = New System.Drawing.Point(-2, -21)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(50, 13)
-        Me.Label11.TabIndex = 27
-        Me.Label11.Text = "APPLE ]["
-        Me.Label11.Visible = False
-        '
-        'Button42
-        '
-        Me.Button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button42.Location = New System.Drawing.Point(276, 97)
-        Me.Button42.Name = "Button42"
-        Me.Button42.Size = New System.Drawing.Size(23, 23)
-        Me.Button42.TabIndex = 35
-        Me.Button42.UseVisualStyleBackColor = True
-        '
-        'TextBox35
-        '
-        Me.TextBox35.Location = New System.Drawing.Point(113, 99)
-        Me.TextBox35.Name = "TextBox35"
-        Me.TextBox35.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox35.TabIndex = 34
-        '
-        'Label190
-        '
-        Me.Label190.AutoSize = True
-        Me.Label190.ForeColor = System.Drawing.Color.Black
-        Me.Label190.Location = New System.Drawing.Point(7, 102)
-        Me.Label190.Name = "Label190"
-        Me.Label190.Size = New System.Drawing.Size(56, 13)
-        Me.Label190.TabIndex = 33
-        Me.Label190.Text = "ST-V USA"
-        '
-        'Button43
-        '
-        Me.Button43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button43.Location = New System.Drawing.Point(276, 71)
-        Me.Button43.Name = "Button43"
-        Me.Button43.Size = New System.Drawing.Size(23, 23)
-        Me.Button43.TabIndex = 32
-        Me.Button43.UseVisualStyleBackColor = True
-        '
-        'TextBox36
-        '
-        Me.TextBox36.Location = New System.Drawing.Point(113, 73)
-        Me.TextBox36.Name = "TextBox36"
-        Me.TextBox36.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox36.TabIndex = 31
-        '
-        'Label191
-        '
-        Me.Label191.AutoSize = True
-        Me.Label191.ForeColor = System.Drawing.Color.Black
-        Me.Label191.Location = New System.Drawing.Point(7, 76)
-        Me.Label191.Name = "Label191"
-        Me.Label191.Size = New System.Drawing.Size(57, 13)
-        Me.Label191.TabIndex = 30
-        Me.Label191.Text = "ST-V EUR"
-        '
-        'Button44
-        '
-        Me.Button44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button44.Location = New System.Drawing.Point(275, 123)
-        Me.Button44.Name = "Button44"
-        Me.Button44.Size = New System.Drawing.Size(23, 23)
-        Me.Button44.TabIndex = 38
-        Me.Button44.UseVisualStyleBackColor = True
-        '
-        'TextBox37
-        '
-        Me.TextBox37.Location = New System.Drawing.Point(112, 125)
-        Me.TextBox37.Name = "TextBox37"
-        Me.TextBox37.Size = New System.Drawing.Size(157, 20)
-        Me.TextBox37.TabIndex = 37
-        '
-        'Label192
-        '
-        Me.Label192.AutoSize = True
-        Me.Label192.ForeColor = System.Drawing.Color.Black
-        Me.Label192.Location = New System.Drawing.Point(6, 128)
-        Me.Label192.Name = "Label192"
-        Me.Label192.Size = New System.Drawing.Size(53, 13)
-        Me.Label192.TabIndex = 36
-        Me.Label192.Text = "ST-V JAP"
-        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7192,171 +7192,171 @@ Partial Class MgrSetting
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.PerformLayout
+        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.PerformLayout
+        CType(Me.NumericUpDown28, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown27, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.PerformLayout
+        CType(Me.TrackBar9, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar8, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage28.ResumeLayout(False)
         Me.GroupBox21.ResumeLayout(False)
-        Me.GroupBox21.PerformLayout()
-        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox21.PerformLayout
+        CType(Me.NumericUpDown24, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown23, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown22, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage4.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.PerformLayout
+        CType(Me.TrackBar7, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar6, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage31.ResumeLayout(False)
         Me.GroupBox27.ResumeLayout(False)
-        Me.GroupBox27.PerformLayout()
+        Me.GroupBox27.PerformLayout
         Me.TabPage5.ResumeLayout(False)
         Me.GroupBox19.ResumeLayout(False)
-        Me.GroupBox19.PerformLayout()
+        Me.GroupBox19.PerformLayout
         Me.TabPage24.ResumeLayout(False)
         Me.GroupBox22.ResumeLayout(False)
-        Me.GroupBox22.PerformLayout()
+        Me.GroupBox22.PerformLayout
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout
         Me.TabPage6.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.PerformLayout
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown21, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown20, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage7.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.PerformLayout
+        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar5, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage19.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
-        Me.GroupBox7.PerformLayout()
+        Me.GroupBox7.PerformLayout
         Me.TabPage8.ResumeLayout(False)
         Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
+        Me.GroupBox8.PerformLayout
         Me.TabPage9.ResumeLayout(False)
         Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox9.PerformLayout()
+        Me.GroupBox9.PerformLayout
         Me.TabPage10.ResumeLayout(False)
         Me.GroupBox10.ResumeLayout(False)
-        Me.GroupBox10.PerformLayout()
-        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox10.PerformLayout
+        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage11.ResumeLayout(False)
         Me.GroupBox11.ResumeLayout(False)
-        Me.GroupBox11.PerformLayout()
-        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox11.PerformLayout
+        CType(Me.NumericUpDown25, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar12, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar11, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar10, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage12.ResumeLayout(False)
         Me.GroupBox12.ResumeLayout(False)
-        Me.GroupBox12.PerformLayout()
-        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox12.PerformLayout
+        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage13.ResumeLayout(False)
         Me.GroupBox13.ResumeLayout(False)
-        Me.GroupBox13.PerformLayout()
-        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox13.PerformLayout
+        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage14.ResumeLayout(False)
         Me.GroupBox14.ResumeLayout(False)
-        Me.GroupBox14.PerformLayout()
-        CType(Me.TrackBar20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar18, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar17, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox14.PerformLayout
+        CType(Me.TrackBar20, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar19, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar18, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar17, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage15.ResumeLayout(False)
         Me.GroupBox15.ResumeLayout(False)
-        Me.GroupBox15.PerformLayout()
-        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox15.PerformLayout
+        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage16.ResumeLayout(False)
         Me.GroupBox16.ResumeLayout(False)
-        Me.GroupBox16.PerformLayout()
-        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox16.PerformLayout
+        CType(Me.TrackBar13, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage17.ResumeLayout(False)
         Me.GroupBox17.ResumeLayout(False)
-        Me.GroupBox17.PerformLayout()
-        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox17.PerformLayout
+        CType(Me.NumericUpDown26, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage18.ResumeLayout(False)
         Me.GroupBox18.ResumeLayout(False)
-        Me.GroupBox18.PerformLayout()
+        Me.GroupBox18.PerformLayout
         Me.TabPage20.ResumeLayout(False)
         Me.GroupBox20.ResumeLayout(False)
-        Me.GroupBox20.PerformLayout()
-        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox20.PerformLayout
+        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar14, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage21.ResumeLayout(False)
-        Me.TabPage21.PerformLayout()
+        Me.TabPage21.PerformLayout
         Me.TabPage22.ResumeLayout(False)
-        Me.TabPage22.PerformLayout()
-        CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage22.PerformLayout
+        CType(Me.TrackBar15, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage23.ResumeLayout(False)
-        Me.TabPage23.PerformLayout()
+        Me.TabPage23.PerformLayout
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.PerformLayout
+        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage26.ResumeLayout(False)
-        Me.TabPage26.PerformLayout()
-        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage26.PerformLayout
+        CType(Me.NumericUpDown42, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown18, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage32.ResumeLayout(False)
         Me.GroupBox28.ResumeLayout(False)
-        Me.GroupBox28.PerformLayout()
-        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox28.PerformLayout
+        CType(Me.NumericUpDown48, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown47, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown46, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown45, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown44, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown43, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage25.ResumeLayout(False)
         Me.GroupBox24.ResumeLayout(False)
-        Me.GroupBox24.PerformLayout()
+        Me.GroupBox24.PerformLayout
         Me.TabPage27.ResumeLayout(False)
         Me.GroupBox23.ResumeLayout(False)
-        Me.GroupBox23.PerformLayout()
-        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox23.PerformLayout
+        CType(Me.NumericUpDown19, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage29.ResumeLayout(False)
         Me.GroupBox25.ResumeLayout(False)
-        Me.GroupBox25.PerformLayout()
-        CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox25.PerformLayout
+        CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown31, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown30, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown29, System.ComponentModel.ISupportInitialize).EndInit
         Me.TabPage30.ResumeLayout(False)
         Me.GroupBox26.ResumeLayout(False)
-        Me.GroupBox26.PerformLayout()
-        CType(Me.NumericUpDown40, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown39, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown38, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown37, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.GroupBox26.PerformLayout
+        CType(Me.NumericUpDown40, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown39, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown38, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown37, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.PerformLayout
 
     End Sub
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl

@@ -57,6 +57,8 @@ Module Scrape
                     ConsoleID = "Sony Playstation"
                 Case "Sega Saturn"
                     ConsoleID = "Sega Saturn"
+                Case "Sega Titan Video"
+                    ConsoleID = "Arcade"
             End Select
         Catch
         End Try
@@ -97,6 +99,8 @@ Module Scrape
             Select Case ConsoleID
                 Case "Sega Saturn", "Sony Playstation"
                     TGDB_cleanstring = Trim(cleanpsx(TGDB_cleanstring))
+                Case "Arcade"
+                    TGDB_cleanstring = Trim(CleanRom(TGDB_cleanstring))
             End Select
 
             If TGDB_cleanstring.Contains(", The") Then TGDB_cleanstring = Replace(TGDB_cleanstring, ", The", "") : TGDB_cleanstring = "The " & TGDB_cleanstring

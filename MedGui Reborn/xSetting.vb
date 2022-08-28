@@ -236,6 +236,8 @@ Module xSetting
                 'If row.Contains(consoles & ".correct_aspect ") Then xValue = Trim(Replace(row, consoles & ".correct_aspect", "")) : MsgBox(xValue)
             Case ".gba"
                 MgrSetting.tab_index = 22
+            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".ic8", ".u1", ".ic13", ".nv"
+                SetIso()
         End Select
 
         If row.Contains(p_c & ".forcemono ") Then xValue = Trim(Replace(row, p_c & ".forcemono", "")) : MgrSetting.CheckBox13.Checked = CBool(xValue)

@@ -2861,7 +2861,7 @@ Partial Class MedGuiR
         Me.TabPage2.Location = New System.Drawing.Point(4, 4)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(282, 325)
+        Me.TabPage2.Size = New System.Drawing.Size(263, 325)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "General"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -2873,7 +2873,7 @@ Partial Class MedGuiR
         Me.TabPage10.Location = New System.Drawing.Point(4, 4)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(282, 325)
+        Me.TabPage10.Size = New System.Drawing.Size(263, 325)
         Me.TabPage10.TabIndex = 9
         Me.TabPage10.Text = "Net Play"
         Me.TabPage10.UseVisualStyleBackColor = True
@@ -3009,7 +3009,7 @@ Partial Class MedGuiR
         Me.TabPage3.Location = New System.Drawing.Point(4, 4)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(282, 325)
+        Me.TabPage3.Size = New System.Drawing.Size(263, 325)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Rom Path 1"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -3020,7 +3020,7 @@ Partial Class MedGuiR
         Me.TabPage4.Location = New System.Drawing.Point(4, 4)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(282, 325)
+        Me.TabPage4.Size = New System.Drawing.Size(263, 325)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Rom Path 2"
         Me.TabPage4.UseVisualStyleBackColor = True

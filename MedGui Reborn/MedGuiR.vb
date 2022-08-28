@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Text.RegularExpressions
 
 Public Class MedGuiR
 
@@ -302,7 +303,12 @@ Public Class MedGuiR
                     If szip.ArchiveFileData.Count > 1 Then
                         For Each ArchiveFileInfo In szip.ArchiveFileData
                             Select Case LCase(Path.GetExtension(ArchiveFileInfo.FileName))
-                                Case ".mai", ".21", ".30", ".31", ".sd0"
+                                Case ".bin"
+                                    If Regex.IsMatch(ArchiveFileInfo.FileName, ".*([\d]+).*") = True And ArchiveFileInfo.FileName.Contains("ic") Then
+                                        existMAI = True
+                                        Exit For
+                                    End If
+                                Case ".mai", ".21", ".30", ".31", ".sd0", ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".ic8", ".u1", ".ic13", ".nv"
                                     existMAI = True
                                     Exit For
                             End Select

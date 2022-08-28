@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Text.RegularExpressions
 
 Module RData
     Public percorso, base_file, riga, fileTXT, ext, romname, country, full_path, status As String
@@ -72,13 +73,18 @@ Boing:
                                 If real_name = "Sega - 8/16 bit console - Music Module" Then
                                     DetectChipmodule()
                                     country = "(Soundtrack)"
+                                ElseIf real_name = "Sega Titan Video" Then
+                                    ReadArcade("STV.txt")
+                                    country = Replace(romname, CleanRom(romname), "")
+                                    romname = CleanRom(romname)
                                 End If
                             Case ".21", ".30", ".31", ".sd0"
                                 ReadArcade("sasplay.txt")
                                 country = "(Soundtrack)"
-                            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".ic8"
+                            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".ic8", ".u1", ".ic13", ".nv"
                                 ReadArcade("STV.txt")
-                                country = "?"
+                                country = Replace(romname, CleanRom(romname), "")
+                                romname = CleanRom(romname)
                         End Select
                         MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
                     End If

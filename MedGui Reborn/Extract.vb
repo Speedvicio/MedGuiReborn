@@ -202,9 +202,9 @@ HERE:                       If checkpismo = False Then
                                 LMain()
                                 Exit Sub
                             End If
-                        Case ".1", ".2", ".3", ".u1", ".ic8"
+                        Case ".1", ".2", ".3", ".u1", ".ic8", ".ic13", ".nv"
                             If ArchiveFileInfo.FileName.Contains("mpr") Or ArchiveFileInfo.FileName.Contains("epr") Or ArchiveFileInfo.FileName.Contains("gfx") Then
-                                consoles = "stv"
+                                consoles = "ss"
                                 LMain()
                                 Exit Sub
                             End If
@@ -275,6 +275,13 @@ HERE:                       If checkpismo = False Then
                                 'test
 
                             End If
+                        ElseIf Regex.IsMatch(ArchiveFileInfo.FileName, ".*([\d]+).*") = True And ArchiveFileInfo.FileName.Contains("ic") Then
+                            consoles = "ss"
+                            fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
+                            real_name = "Sega Titan Video"
+                            LMain()
+                            skipother = True
+                            Exit Sub
                         Else
                             fileTXT = ""
                         End If

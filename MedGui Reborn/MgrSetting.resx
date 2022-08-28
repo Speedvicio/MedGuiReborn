@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Button27.ToolTip" xml:space="preserve">
-    <value>- Scan and compare all bioses in "firmware folder" by hash.
-
-if the hash of a bios matches the one requested by the mednafen, 
-it will be highlighted in green and autoselected by default.
-
-On PSX you can use also POPS PSP bios or NO$CASH PSX-XBOO bios.
-If MedGui detect POPS PSP bios, it will be used as default PSX bios on Mednafen.</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
@@ -359,6 +347,15 @@ May cause more harm than good on low memory systems, systems with swap enabled, 
 
 Caution: When using a 32-bit build of Mednafen on Windows or a 32-bit operating system, Mednafen may run out of address space(and error out, 
 possibly in the middle of emulation) if this option is enabled when loading large disc sets(e.g. 3+ discs) via M3U files.</value>
+  </data>
+  <data name="Button27.ToolTip" xml:space="preserve">
+    <value>- Scan and compare all bioses in "firmware folder" by hash.
+
+if the hash of a bios matches the one requested by the mednafen, 
+it will be highlighted in green and autoselected by default.
+
+On PSX you can use also POPS PSP bios or NO$CASH PSX-XBOO bios.
+If MedGui detect POPS PSP bios, it will be used as default PSX bios on Mednafen.</value>
   </data>
   <data name="NumericUpDown7.ToolTip" xml:space="preserve">
     <value>Local player count.
