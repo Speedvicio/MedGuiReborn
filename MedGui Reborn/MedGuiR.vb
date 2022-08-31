@@ -357,16 +357,23 @@ Public Class MedGuiR
 
             SetSpecialModule()
 
+            Dim extramsg As String = ""
+            If real_name = "Sega Saturn" Then
+                extramsg = "This time you can listen only good music from your game"
+                consoles = "cdplay"
+            End If
+
             If consoles = "ss" Then
                 If c_os = "32" Then
-                    MsgBox("Saturn emulation is supported only on Windows 64 bit version" & vbCrLf &
-                       "This time you can listen only good music from your game", vbOKOnly + vbInformation, "Saturn emulation not supported...")
-                    consoles = "cdplay"
+                    MsgBox(real_name & " emulation is supported only on Windows 64 bit version" & vbCrLf &
+                      extramsg, vbOKOnly + vbInformation, real_name & " emulation not supported...")
+                    If extramsg = "" Then Exit Sub
                 End If
+
                 If c_os = "64" And Label57.Text = "x86" Then
                     MsgBox("You are running Mednafen 32 bit version on  Windows 64 bit version" & vbCrLf &
-       "Saturn emulation is supported only by Mednafen 64 bit version" & vbCrLf &
-       "Please upgrade your Mednafen to a 64 bit version", vbOKOnly + vbInformation, "Saturn emulation not supported...")
+       real_name & " emulation is supported only by Mednafen 64 bit version" & vbCrLf &
+       "Please upgrade your Mednafen to a 64 bit version", vbOKOnly + vbInformation, real_name & " emulation not supported...")
                     TabControl1.SelectedTab = TabPage2
                 End If
             End If
@@ -1159,7 +1166,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
