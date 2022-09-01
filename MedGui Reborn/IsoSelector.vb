@@ -101,7 +101,6 @@ Public Class IsoSelector
     End Sub
 
     Public Sub DetectM3U()
-        Dim percorsoM3U As String = percorso
 
         Dim righe As String() = File.ReadAllLines(percorso)
 
@@ -116,7 +115,6 @@ Public Class IsoSelector
         Next
 
         detectcdtype()
-        percorso = percorsoM3U
     End Sub
 
     Private Sub unrecognizedwithAsni()
