@@ -38,7 +38,12 @@ Module scan
                             Select Case LCase(Path.GetExtension(fileName))
                                 Case ".zip", ".rar", ".7z"
                                 Case Else
-                                    decript()
+                                    If consoles = "ss" And LCase(dettaglio.Extension) = ".bin" Then
+                                    ElseIf consoles = "psx" And LCase(dettaglio.Extension) = ".bin" Then
+                                    ElseIf consoles = "pcfx" And LCase(dettaglio.Extension) = ".bin" Then
+                                    Else
+                                        decript()
+                                    End If
                             End Select
                         End If
 
