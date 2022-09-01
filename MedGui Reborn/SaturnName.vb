@@ -8,9 +8,11 @@ Module SaturnName
     Public Function cleansaturn(ByVal cleanstring As String) As String
         Dim i1, i2, i3 As Integer
         Dim i4() As String
-        i3 = cleanstring.IndexOf("-1/")
-        If i3 < 0 Then i3 = cleanstring.IndexOf("-1\")
-        clearregionsaturn = Mid(cleanstring, i3 + 5, 10).Trim
+        i3 = cleanstring.IndexOf("CD-")
+        If i3 < 0 Then
+            i3 = cleanstring.IndexOf("-1\")
+        End If
+        clearregionsaturn = Mid(cleanstring, i3 + 7, 30).Trim
         i1 = cleanstring.IndexOf("V") - 10
         cleanstring = cleanstring.Remove(0, i1).Trim
         i4 = Split(cleanstring, "CD-")
@@ -51,11 +53,13 @@ Module SaturnName
 
     Private Sub ReadDbSaturn()
         SaturnUndetected()
+        Dim SepRiga() As String
 
         Using reader As New StreamReader(MedExtra & "\Plugins\db\Sega - Saturn.txt")
             While Not reader.EndOfStream
                 Dim Sriga As String = reader.ReadLine
-                If Sriga.Contains(SnSaturn) And Sriga.Contains(cdn) Then
+                SepRiga = Sriga.Split(" ")
+                If SepRiga(0).Trim = SnSaturn And Sriga.Contains(cdn) Then
                     r_ss = Trim((Replace(Sriga, SnSaturn, "")))
 
                     Select Case True
@@ -71,7 +75,7 @@ Module SaturnName
                             v_ss = "JAP"
                         Case Else
                             'SaturnUndetected()
-                            'v_ss = clearregionsaturn
+                            v_ss = clearregionsaturn
                     End Select
 
                     r_ss = r_ss & " [" & SnSaturn & "]"
@@ -133,7 +137,7 @@ Module SaturnName
     Private Sub SegaCountry()
         Select Case True
             Case SnSaturn.EndsWith("-50")
-                v_ss = "GENERAL"
+                v_ss = "EUR-General"
             Case SnSaturn.EndsWith("-09")
                 v_ss = "French"
             Case SnSaturn.EndsWith("-15")
