@@ -88,6 +88,9 @@
     <Reference Include="IrcClient">
       <HintPath>.\IrcClient.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.6\lib\net20\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net20\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -101,6 +104,7 @@
     <Reference Include="System" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
   </ItemGroup>
@@ -159,6 +163,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Extract.vb" />
+    <Compile Include="My Project\AudioList.vb" />
     <Compile Include="VirtualKbrd.designer.vb">
       <DependentUpon>VirtualKbrd.vb</DependentUpon>
     </Compile>

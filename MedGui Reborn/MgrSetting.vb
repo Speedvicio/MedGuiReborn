@@ -1,6 +1,8 @@
 ﻿Imports System.IO
+Imports System.Management
 Imports System.Net
 Imports System.Net.NetworkInformation
+Imports NAudio.Wave
 
 Public Class MgrSetting
     Public tab_index, mxSet As Integer, colour, SpecificServer, per_conf_path_name As String, NetVerified, NoCheck, TPerC, isARGB As Boolean
@@ -444,6 +446,21 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         oyfsr = NumericUpDown6.Value
 
         DisableBioses()
+        PopulateAudio()
+    End Sub
+
+    Private Sub PopulateAudio()
+        ComboBox68.Items.Clear()
+        ComboBox68.Items.Add("default")
+
+        'For n As Integer = -1 To WaveOut.DeviceCount - 1
+        'Dim caps = WaveOut.GetCapabilities(n)
+        'ComboBox68.Items.Add(caps.ProductName)
+        'Next
+
+        For Each dev In DirectSoundOut.Devices
+            ComboBox68.Items.Add(dev.Description)
+        Next
     End Sub
 
     Private Sub DisableBioses()

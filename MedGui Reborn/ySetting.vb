@@ -19,7 +19,7 @@
         'Sound
         sound = " -sound " & MgrSetting.CheckBox1.CheckState & lfm &
         " -sound.buffer_time " & MgrSetting.TrackBar1.Value & " -sound.period_time " & MgrSetting.TrackBar3.Value & " -sound.volume " & MgrSetting.TrackBar2.Value &
-        " -sound.driver " & MgrSetting.ComboBox2.Text & " -sound.rate " & MgrSetting.ComboBox1.Text
+        " -sound.driver " & MgrSetting.ComboBox2.Text & " -sound.rate " & MgrSetting.ComboBox1.Text & " -sound.device " & Chr(34) & MgrSetting.ComboBox68.Text.ToString & Chr(34)
 
         'Video
         Dim xfs, yfs As String

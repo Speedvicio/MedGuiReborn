@@ -368,6 +368,7 @@ Module xSetting
         If row.Contains("sound ") And row.Contains("snes_faust.spex.sound ") = False Then xValue = Trim(Replace(row, "sound", "")) : MgrSetting.CheckBox1.Checked = CBool(xValue)
         If row.Contains("sound.buffer_time ") Then xValue = Trim(Replace(row, "sound.buffer_time", "")) : MgrSetting.TrackBar1.Value = Val(xValue)
         If row.Contains("sound.driver ") Then xValue = Trim(Replace(row, "sound.driver", "")) : MgrSetting.ComboBox2.Text = xValue
+        If row.Contains("sound.device ") Then xValue = Trim(Replace(row, "sound.device", "")) : MgrSetting.ComboBox68.Text = xValue
         If row.Contains("sound.period_time ") Then xValue = Trim(Replace(row, "sound.period_time", "")) : MgrSetting.TrackBar3.Value = Val(xValue)
         If row.Contains("sound.rate ") Then xValue = Trim(Replace(row, "sound.rate", "")) : MgrSetting.ComboBox1.Text = xValue
         If row.Contains("sound.volume ") Then xValue = Trim(Replace(row, "sound.volume", "")) : MgrSetting.TrackBar2.Value = Val(xValue)
