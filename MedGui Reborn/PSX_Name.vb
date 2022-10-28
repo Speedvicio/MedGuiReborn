@@ -72,6 +72,7 @@ Module PSX_Name
             Dim CDinspector = DiscInspector.ScanPSX(percorso)
             Serial_PSX = UCase(CDinspector.Data.SerialNumber)
         Catch ex As Exception
+            Serial_PSX = ""
         Finally
             'MedGuiR.Show()
             'Application.DoEvents()

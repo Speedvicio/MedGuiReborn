@@ -195,7 +195,7 @@ Module scan
                                 real_name = "Sega - 8/16 bit console - Music Module"
                                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                                 If MedGuiR.DataGridView1.Rows.Count > 0 Then MedGuiR.DataGridView1.CurrentRow.Cells(0).Value() = romname
-                            ElseIf parsebin.Contains("SEGA MEGA DRIVE") Or parsebin.Contains("SEGA GENESIS") Or parsebin.Contains("SEGA ") Then
+                            ElseIf parsebin.Contains("SEGA MEGA DRIVE") Or parsebin.Contains("SEGA GENESIS") Then 'Or parsebin.Contains("SEGA ") Then
                                 consoles = "md"
                                 gif = "md"
                                 real_name = "Sega - Mega Drive - Genesis"

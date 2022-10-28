@@ -142,6 +142,7 @@ Module Extract
 
             fileTXT = ""
             For Each ArchiveFileInfo In szip.ArchiveFileData
+                romname = Path.GetFileNameWithoutExtension(ArchiveFileInfo.FileName)
                 If ArchiveFileInfo.IsDirectory Then
                     If LCase(Path.GetExtension(percorso)) = ".zip" Then
                         If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
@@ -316,7 +317,6 @@ HERE:                       If checkpismo = False Then
 
                 decrunch_size = ArchiveFileInfo.Size
                 'szip.Dispose()
-                romname = Path.GetFileNameWithoutExtension(ArchiveFileInfo.FileName)
                 Counter = +1
                 LMain()
             Next

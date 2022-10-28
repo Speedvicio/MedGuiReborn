@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 
 Module RData
-    Public percorso, base_file, riga, fileTXT, ext, romname, country, full_path, status As String
+    Public percorso, base_file, riga, fileTXT, ext, romname, country, full_path, status, old_fullpath As String
     Public OthersDat As Boolean
     Public RenameLikeDat As Integer = 0
 
@@ -86,7 +86,10 @@ Boing:
                                 country = Replace(romname, CleanRom(romname), "")
                                 romname = CleanRom(romname)
                         End Select
-                        MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
+                        If old_fullpath <> full_path & base_file Then
+                            MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
+                        End If
+                        old_fullpath = full_path & base_file
                     End If
                     Exit Sub
                 End If
@@ -141,9 +144,10 @@ Boing:
                 If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or LCase(romname).Contains("enhancement chip") Then
                 ElseIf UCase(country).Contains("[BIOS]") Or UCase(country).Contains(" BIOS ") Or LCase(country).Contains("enhancement chip") Then
                 Else
-                    If ext <> "" Then
+                    If ext <> "" And old_fullpath <> full_path & base_file Then
                         MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(rrom.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
                     End If
+                    old_fullpath = full_path & base_file
                 End If
                 'MedGuiR.remove_double()
                 'If Counter = 0 Then stopscan = True

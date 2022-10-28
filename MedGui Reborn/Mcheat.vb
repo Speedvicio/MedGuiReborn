@@ -393,6 +393,8 @@ skiphash:
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim attempt As Boolean = False
+
         If Directory.Exists(MedExtra & "Cheats\" & CheatConsole) Then
         Else
             Directory.CreateDirectory(MedExtra & "Cheats\" & CheatConsole)
@@ -404,7 +406,7 @@ skiphash:
 
         Try
 
-            ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+RETRY:      ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
             Dim prova As New CookieAwareWebClient
             prova.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko")
             prova.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen", cheatpath)
@@ -438,7 +440,12 @@ skiphash:
     "https://gamehacking.org/" & searchcheatcode,
     "keyword")
             Else
-                MsgBox(ex.ToString)
+                If ex.ToString.Contains("(403)") And attempt = False Then
+                    attempt = True
+                    GoTo RETRY
+                Else
+                    MsgBox(ex.ToString)
+                End If
             End If
         End Try
     End Sub

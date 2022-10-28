@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports System.Management
 Imports System.Net
 Imports System.Net.NetworkInformation
 Imports NAudio.Wave

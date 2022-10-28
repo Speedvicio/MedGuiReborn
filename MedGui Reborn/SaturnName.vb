@@ -25,6 +25,7 @@ Module SaturnName
 
     Public Sub ReadIsoSaturn()
         cdn = ""
+        r_ss = ""
 
         Try
             DetectIsoSaturn()
