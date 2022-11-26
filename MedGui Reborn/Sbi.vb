@@ -88,10 +88,12 @@ PatchSkip:
             MGRWriteLog("Sbi - get_SbiPatch:" & exio.Message)
             Message.Close()
             MsgBox("No " & patchname & " patch found, please try later.", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Download error")
+            SoxStatus.Close()
         Catch ex As Exception
             MGRWriteLog("Sbi - get_SbiPatch:" & ex.Message)
             Message.Close()
             MsgBox("No " & patchname & " patch found, please try later.", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Download error")
+            SoxStatus.Close()
         End Try
 
     End Sub

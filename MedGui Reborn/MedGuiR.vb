@@ -2490,6 +2490,10 @@ inputagain:
     End Sub
 
     Private Sub AdvancedSettingToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AdvancedSettingToolStripMenuItem.Click
+        If consoles = "generic" Then
+            MsgBox("You can't set options on GENERIC detection", vbOKOnly + MsgBoxStyle.Critical, "Can't open setting...")
+            Exit Sub
+        End If
         RebuilDesync()
         If last_consoles <> consoles Or MgrSetting.Visible = False Then SwSetting = True : improm() : last_consoles = consoles
     End Sub

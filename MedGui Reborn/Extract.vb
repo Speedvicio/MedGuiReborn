@@ -391,7 +391,13 @@ HERE:                       If checkpismo = False Then
         SoxStatus.Label1.Text = "..."
         SoxStatus.Show()
 
-        szip.ExtractArchive(final_path)
+        Try
+            szip.ExtractArchive(final_path)
+        Catch
+            szip.Dispose()
+            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            SoxStatus.Close()
+        End Try
 
         szip.Dispose()
         SoxStatus.Close()

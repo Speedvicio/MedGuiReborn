@@ -91,9 +91,13 @@ Module Updater
         Catch exio As IOException
             MGRWriteLog("Updater - get_update: " & exio.Message)
             upd.Close()
+            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            SoxStatus.Close()
         Catch ex As Exception
             MGRWriteLog("Updater - get_update: " & ex.Message)
             upd.Close()
+            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            SoxStatus.Close()
         End Try
 
     End Sub
@@ -141,8 +145,12 @@ Module Updater
             'End If
         Catch exio As IOException
             MGRWriteLog("Updater - get_Datupdate: " & exio.Message)
+            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            SoxStatus.Close()
         Catch ex As Exception
             MGRWriteLog("Updater - get_Datupdate: " & ex.Message)
+            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            SoxStatus.Close()
         End Try
 
     End Sub
@@ -184,8 +192,12 @@ Module Updater
             MsgBox("ModLand DATs Updated!")
         Catch exio As IOException
             MGRWriteLog("Updater - get_Datupdate: " & exio.Message)
+            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            SoxStatus.Close()
         Catch ex As Exception
             MGRWriteLog("Updater - get_Datupdate: " & ex.Message)
+            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            SoxStatus.Close()
         End Try
 
     End Sub
