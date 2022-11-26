@@ -827,6 +827,7 @@ ErrorHandler:
         per_sett = Replace(per_sett, " -", vbCrLf)
         per_sett = Replace(per_sett, "*", "-")
         per_sett = per_sett & CheckInputConfig(per_conf_path_name)
+        per_sett = per_sett.Replace("""", "")
 
         If IO.File.Exists(per_conf_path_name & ".cfg") Then IO.File.Delete(per_conf_path_name & ".cfg")
 
