@@ -88,7 +88,7 @@ Module UpdateMednafen
 
             DecompressArchive(MedExtra & "Update\LastMednafen.zip", MedGuiR.TextBox4.Text)
         Catch
-            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            MsgBox("unexpected error while Download/extract", vbOKOnly + MsgBoxStyle.Critical)
             SoxStatus.Close()
         End Try
 

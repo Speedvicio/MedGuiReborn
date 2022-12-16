@@ -147,7 +147,7 @@
             IO.File.Delete(MedExtra & "Update\firmware.zip")
             MsgBox("Firmware extracted on Default Mednafen path!", vbOKOnly + MsgBoxStyle.Information)
         Catch
-            MsgBox("unexpected error while extracting", vbOKOnly + MsgBoxStyle.Critical)
+            MsgBox("unexpected error while Download/extract", vbOKOnly + MsgBoxStyle.Critical)
             SoxStatus.Close()
         End Try
     End Sub
