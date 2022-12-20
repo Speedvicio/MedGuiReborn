@@ -1355,11 +1355,11 @@ ErrorHandler:
                 Case "Select PCFX Bios"
                     If r_sha = "1a77fd83e337f906aecab27a1604db064cf10074" Then Exit Sub
                 Case "Select PSX Eur Bios"
-                    If r_sha = "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Or r_sha = LCase("71AD544EDBD2FE10F56FE0F690DF9BC20E7D7414") Or r_sha = LCase("904E953FC4C129B16471B7439463EF7A515A8ED8") Then Exit Sub
+                    If r_sha = "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Or r_sha = LCase("9E9F405FB9EDB4ABE1C5926D56DA5782732A8598") Or r_sha = LCase("71AD544EDBD2FE10F56FE0F690DF9BC20E7D7414") Or r_sha = LCase("904E953FC4C129B16471B7439463EF7A515A8ED8") Then Exit Sub
                 Case "Select PSX Usa Bios"
-                    If r_sha = "0555c6fae8906f3f09baf5988f00e55f88e9f30b" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Or r_sha = LCase("71AD544EDBD2FE10F56FE0F690DF9BC20E7D7414") Or r_sha = LCase("904E953FC4C129B16471B7439463EF7A515A8ED8") Then Exit Sub
+                    If r_sha = "0555c6fae8906f3f09baf5988f00e55f88e9f30b" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Or r_sha = LCase("9E9F405FB9EDB4ABE1C5926D56DA5782732A8598") Or r_sha = LCase("71AD544EDBD2FE10F56FE0F690DF9BC20E7D7414") Or r_sha = LCase("904E953FC4C129B16471B7439463EF7A515A8ED8") Then Exit Sub
                 Case "Select PSX Jap Bios"
-                    If r_sha = "b05def971d8ec59f346f2d9ac21fb742e3eb6917" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Or r_sha = LCase("71AD544EDBD2FE10F56FE0F690DF9BC20E7D7414") Or r_sha = LCase("904E953FC4C129B16471B7439463EF7A515A8ED8") Then Exit Sub
+                    If r_sha = "b05def971d8ec59f346f2d9ac21fb742e3eb6917" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Or r_sha = LCase("9E9F405FB9EDB4ABE1C5926D56DA5782732A8598") Or r_sha = LCase("71AD544EDBD2FE10F56FE0F690DF9BC20E7D7414") Or r_sha = LCase("904E953FC4C129B16471B7439463EF7A515A8ED8") Then Exit Sub
                 Case "Select Saturn Usa/Eur Bios"
                     If r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3" Then Exit Sub
                 Case "Select Saturn Jap Bios"
