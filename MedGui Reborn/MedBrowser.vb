@@ -34,6 +34,7 @@
         F1 = Me
         CenterForm()
         ColorizeForm()
+        WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
     End Sub
 
 End Class

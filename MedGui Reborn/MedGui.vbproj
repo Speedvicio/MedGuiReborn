@@ -365,6 +365,7 @@
     <Compile Include="VSTripleDES.vb" />
     <Compile Include="VUMeter.vb" />
     <Compile Include="dWebHook.vb" />
+    <Compile Include="WebBrowserFix.vb" />
     <Compile Include="Writelog.vb" />
     <Compile Include="xSetting.vb" />
     <Compile Include="ySetting.vb" />
