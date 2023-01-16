@@ -384,7 +384,7 @@ tryagain:
         UCI.FormBorderStyle = FormBorderStyle.Sizable
         UCI.Dock = DockStyle.None
         NotifyIcon1.Dispose()
-        MuteNotification = False
+        'MuteNotification = False
         MedGuiR.Button53.Enabled = True
     End Sub
 

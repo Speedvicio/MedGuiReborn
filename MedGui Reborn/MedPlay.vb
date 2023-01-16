@@ -9,6 +9,7 @@ Module MedPlay
     Public ftp As New FTPclient
     Dim dcWeb As dWebHook
     Public MuteNotification As Boolean = False
+    Public muteDiscord As Boolean
 
     Public Sub SetFTPData()
         ftp.CurrentDirectory = "/" & MedGuiR.TextBox23.Text
@@ -65,8 +66,7 @@ Module MedPlay
 
             ftp.Upload(MedExtra & "\MedPlay\" & Nick, Nick)
 
-            DiscordMessage("MedClient Netplay session opened:" & vbCrLf & "User: " & Nick & vbCrLf &
-                              "Game: " & NGameName & vbCrLf & "Platform: " & UCase(NModule), 33)
+            DiscordMessage("Game: " & NGameName & vbCrLf & "Platform: " & UCase(NModule), Nick.Trim.Length + 26, Nick & ": Join a Netplay Session")
 
             If MedGuiR.CheckBox19.Checked = True Then
                 Select Case LCase(Path.GetExtension(percorso))
@@ -89,12 +89,18 @@ Module MedPlay
         End Try
     End Sub
 
-    Private Sub DiscordMessage(Message As String, lunghezza As Integer)
-        If MuteNotification = False And GlobalVar.TypeOS.Contains("XP") = False Then
-            Dim MyString As New String("- ", lunghezza)
-            dcWeb = New dWebHook
-            dcWeb.WebHook = VSTripleDES.DecryptData("LFIbuEfNFTOhwkOCQdewqUZhJKgXsw33gVO1Fjge3Otr+UFju7NazjBNxS8XOCW+RTIccRmQU/alYQ2Yhn7z8eStQ/Tb5Jxb9h6933gTar+PPOZFuDehMobqhEqUPhPzMHdTxVZ18Obq/WfpuqhTsPYaz4VXPaJrWVR4I5+ZesdmnIhZ7Ui3O75ilwefqZaAD4OIVSDKWOmx4586JKUcOH10b8KhVPWViQe5lsfaSyR3zsevvIgptTuf9wqt80xSjquamdV2RO9v4CCbX3LTN3fsh62mrUsol3J3ejxaA597aiHYooPhZIfoLqkGNo/aeYMtXWWrsM8=")
-            dcWeb.SendMessage(Message & vbCrLf & MyString)
+    Private Sub DiscordMessage(Message As String, lunghezza As Integer, username As String)
+        If MuteNotification = False Then
+            If GlobalVar.TypeOS.Contains("XP") = False Then
+                If muteDiscord = False Then
+                    ServicePointManager.SecurityProtocol = DirectCast(0, SecurityProtocolType)
+                    Dim MyString As New String("- ", lunghezza)
+                    dcWeb = New dWebHook
+                    dcWeb.UserName = username
+                    dcWeb.WebHook = VSTripleDES.DecryptData("LFIbuEfNFTOhwkOCQdewqUZhJKgXsw33gVO1Fjge3Otr+UFju7NazjBNxS8XOCW+RTIccRmQU/alYQ2Yhn7z8eStQ/Tb5Jxb9h6933gTar+PPOZFuDehMobqhEqUPhPzMHdTxVZ18Obq/WfpuqhTsPYaz4VXPaJrWVR4I5+ZesdmnIhZ7Ui3O75ilwefqZaAD4OIVSDKWOmx4586JKUcOH10b8KhVPWViQe5lsfaSyR3zsevvIgptTuf9wqt80xSjquamdV2RO9v4CCbX3LTN3fsh62mrUsol3J3ejxaA597aiHYooPhZIfoLqkGNo/aeYMtXWWrsM8=")
+                    dcWeb.SendMessage(Message & vbCrLf & MyString)
+                End If
+            End If
         End If
     End Sub
 
@@ -108,7 +114,7 @@ Module MedPlay
                 ftp.FtpDeleteDirectory(ftp.CurrentDirectory & "Rom_" & Nick)
             End If
 
-            DiscordMessage("User: " & Nick & " has left MedClient Netplay session.", Nick.Trim.Length + 36)
+            DiscordMessage("Game: " & NGameName & vbCrLf & "Platform: " & UCase(NModule), Nick.Trim.Length + 26, Nick & ": Left a Netplay Session")
         Catch
             MsgBox("Unable to detect server ftp, verify data access or try to connect later", vbOKOnly + MsgBoxStyle.Exclamation, "FTP Connection error...")
             ftperror = True

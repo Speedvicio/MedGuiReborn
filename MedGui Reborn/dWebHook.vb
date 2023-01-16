@@ -14,6 +14,7 @@ Public Class dWebHook
     Public Property ProfilePicture As String
 
     Public Sub New()
+        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
         client = New WebClient()
     End Sub
 
@@ -29,6 +30,7 @@ Public Class dWebHook
             client.UploadValues(WebHook, discordValues)
         Catch
             MsgBox("Unable to send message!" & vbNewLine & vbNewLine & "This issue can be caused by one or more of the following:" & vbNewLine & "- The webhook link is incorrect." & vbNewLine & "- There is no connection to the Internet." & vbNewLine & "- Another program or firewall is blocking this application's access to the Internet." & vbNewLine & "- Discord's servers are down." & vbNewLine & vbNewLine & "If you believe everything is in working order and this problem persists, please submit an issue on this program's Github page.", vbCritical + vbOKOnly, "Discord Webhook Announcer")
+            muteDiscord = True
         End Try
         discordValues.Remove("username")
         discordValues.Remove("avatar_url")
