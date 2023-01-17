@@ -1173,6 +1173,7 @@ ErrorHandler:
         cmbServer.Items.Clear()
         ComboBox54.Items.Clear()
         MedGuiR.ServerToolStripComboBox2.Items.Clear()
+        MedClient.ComboBox1.Items.Clear()
 
         Try
             Dim fullPath As String = MedExtra & "ListServer.txt"
@@ -1199,6 +1200,7 @@ ErrorHandler:
                         'port = line(1)
                         cmbServer.Items.Add(Sserver)
                         MedGuiR.ServerToolStripComboBox2.Items.Add(Sserver)
+                        MedClient.ComboBox1.Items.Add(Sserver)
                     End While
                 Catch ex As Exception
                 Finally

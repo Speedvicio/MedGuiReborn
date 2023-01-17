@@ -27,6 +27,7 @@ Public Class MedClient
         FtpDownloadOnConnect()
         If ftperror = True Then Exit Sub
         NetIn = True
+        MgrSetting.ListServer_reload()
         ParseMednafenConfig()
         TextBox1.Text = Nick
         ParseUsedData()
@@ -41,6 +42,8 @@ Public Class MedClient
         Me.WindowState = 2
         CheckBox1.Checked = True
         ConsoleComboBox.Text = MedGuiR.SY.Text
+        CheckBox2.Checked = MedGuiR.CheckBox19.CheckState
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles TimerNetPlay.Tick
@@ -499,17 +502,29 @@ tryagain:
     End Sub
 
     Private Sub StartMedFromClient(Gpath As String)
+        If percorso = Gpath Then Exit Sub
+        Dim MenuNet As String = ""
+        MenuNet = (" -netplay.nick " & TextBox1.Text.Trim & " -netplay.host " & ComboBox1.Text &
+        " -netplay.password " & TextBox2.Text.Trim).TrimEnd
+
+        tProcess = "mednafen"
+        wDir = MedGuiR.TextBox4.Text
+        Arg = MenuNet
+        StartProcess()
+
+        Threading.Thread.Sleep(2000)
+
         MedGuiR.SY.Text = ""
         MedGuiR.DataGridView1.Rows.Clear()
         percorso = Gpath
         SingleScan()
-
-        'Arg = "-netplay.nick " & TextBox1.Text.Trim & " -netplay.host " & "" &
-        '" -netplay.port " & "" & " -netplay.gamekey " & "" & " -netplay.password " & TextBox1.Text.Trim
-
         MedGuiR.CheckBox18.Checked = True
         MedGuiR.NetToolStripButton.BackColor = Color.Red
         MedGuiR.StartStatic_emu()
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        MedGuiR.CheckBox19.CheckState = CheckBox2.CheckState
     End Sub
 
     Private Sub ConsoleComboBox_TextChanged(sender As Object, e As EventArgs) Handles ConsoleComboBox.TextChanged

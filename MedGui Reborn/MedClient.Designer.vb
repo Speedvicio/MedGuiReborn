@@ -23,8 +23,8 @@ Partial Class MedClient
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedClient))
         Me.TimerNetPlay = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
@@ -69,6 +69,9 @@ Partial Class MedClient
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,6 +84,7 @@ Partial Class MedClient
         Me.SplitContainer2.Panel2.SuspendLayout()
         Me.SplitContainer2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -183,17 +187,17 @@ Partial Class MedClient
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(754, 196)
         Me.DataGridView1.TabIndex = 42
@@ -454,6 +458,7 @@ Partial Class MedClient
         'SplitContainer2.Panel1
         '
         Me.SplitContainer2.Panel1.Controls.Add(Me.GroupBox1)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.GroupBox4)
         '
         'SplitContainer2.Panel2
         '
@@ -464,12 +469,13 @@ Partial Class MedClient
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.RichTextBox1)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(200, 168)
-        Me.GroupBox1.TabIndex = 48
+        Me.GroupBox1.Size = New System.Drawing.Size(187, 92)
+        Me.GroupBox1.TabIndex = 52
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Using Mednafen's netplay console"
         '
@@ -480,9 +486,41 @@ Partial Class MedClient
         Me.RichTextBox1.Location = New System.Drawing.Point(3, 16)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(194, 149)
+        Me.RichTextBox1.Size = New System.Drawing.Size(181, 73)
         Me.RichTextBox1.TabIndex = 0
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox4.Controls.Add(Me.CheckBox2)
+        Me.GroupBox4.Controls.Add(Me.ComboBox1)
+        Me.GroupBox4.Location = New System.Drawing.Point(7, 95)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(187, 70)
+        Me.GroupBox4.TabIndex = 51
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Server List"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(6, 46)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(76, 17)
+        Me.CheckBox2.TabIndex = 1
+        Me.CheckBox2.Text = "&Send Rom"
+        Me.ToolTip1.SetToolTip(Me.CheckBox2, "Upload a copy of your rom on the external server")
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(6, 19)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(175, 21)
+        Me.ComboBox1.TabIndex = 0
+        Me.ToolTip1.SetToolTip(Me.ComboBox1, "Select a Server to connect." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(You can input one manually)")
         '
         'GroupBox3
         '
@@ -527,6 +565,8 @@ Partial Class MedClient
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         Me.SplitContainer2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -572,10 +612,13 @@ Partial Class MedClient
     Friend WithEvents EzColoursToolStripComboBox As ToolStripComboBox
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents SplitContainer2 As SplitContainer
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Button4 As Button
     Friend WithEvents GameListBox As ListBox
     Friend WithEvents ConsoleComboBox As ComboBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

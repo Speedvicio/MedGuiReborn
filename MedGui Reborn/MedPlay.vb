@@ -136,6 +136,7 @@ Module MedPlay
                         Case row.Contains("netplay.host")
                             Server = splitrow(1)
                             MedGuiR.ServerToolStripComboBox2.Text = Server.Trim
+                            MedClient.ComboBox1.Text = Server.Trim
                         Case row.Contains("netplay.port")
                             port = splitrow(1)
                             MedGuiR.PortToolStripTextBox1.Text = port.Trim
