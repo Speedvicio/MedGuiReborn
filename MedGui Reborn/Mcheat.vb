@@ -410,7 +410,7 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProt
             Dim prova As New CookieAwareWebClient
             prova.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
             Dim test = "https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen"
-            prova.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen", cheatpath)
+            prova.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=Mednafen", cheatpath)
 
             If File.Exists(cheatpath) Then ReadImported(cheatpath)
             'Dim W As New WebClient
@@ -422,7 +422,7 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProt
             '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
             'get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
         Catch ex As Exception
-            If ex.ToString.Contains("(401)") Or ex.ToString.Contains("(403)") Or ex.ToString.Contains("(404)") Or ex.ToString.Contains("(500)") Then
+            If ex.ToString.Contains("(401)") Or ex.ToString.Contains("(404)") Or ex.ToString.Contains("(500)") Then
                 linkcheat = False
                 DetectGameHacking()
                 MessageBox.Show(
