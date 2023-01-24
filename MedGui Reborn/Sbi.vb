@@ -9,8 +9,12 @@ Module Sbi
         If File.Exists(Replace(percorso, Path.GetExtension(percorso), "") & ".sbi") Then Exit Sub
 
         If File.Exists(MedExtra & "Plugins\db\Sbi_List.txt") = False And My.Computer.Network.IsAvailable = True Then
-            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Sbi_List.txt", MedExtra & "Plugins\db\Sbi_List.txt", "anonymous", "anonymous", True, 1000, True)
-            FTPDownloadFile(MedExtra & "Plugins\db\Sbi_List.txt", UpdateServer & "/MedGuiR/Sbi_List.txt", "anonymous", "anonymous")
+            If UpdateServer.StartsWith("https://") Then
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Sbi_List.txt", MedExtra & "Plugins\db\Sbi_List.txt", "anonymous", "anonymous", True, 1000, True)
+            ElseIf UpdateServer.StartsWith("ftp://") Then
+                FTPDownloadFile(MedExtra & "Plugins\db\Sbi_List.txt", UpdateServer & "/MedGuiR/Sbi_List.txt", "anonymous", "anonymous")
+            End If
+
         ElseIf File.Exists(MedExtra & "Plugins\db\Sbi_List.txt") = False And My.Computer.Network.IsAvailable = False Then
             Exit Sub
         End If
@@ -54,8 +58,11 @@ Module Sbi
 
             If File.Exists(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z") Then GoTo PatchSkip
 
-            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Patch/Psx/Sbi/" & "[" & patchname & "].7z", MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", "anonymous", "anonymous", True, 1000, True)
-            FTPDownloadFile(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", UpdateServer & "/MedGuiR/sbi/" & "[" & patchname & "].7z", "anonymous", "anonymous")
+            If UpdateServer.StartsWith("https://") Then
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Patch/Psx/Sbi/" & "[" & patchname & "].7z", MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", "anonymous", "anonymous", True, 1000, True)
+            ElseIf UpdateServer.StartsWith("ftp://") Then
+                FTPDownloadFile(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", UpdateServer & "/MedGuiR/sbi/" & "[" & patchname & "].7z", "anonymous", "anonymous")
+            End If
 
             Dim infoReader As FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z")
@@ -106,8 +113,13 @@ PatchSkip:
             If File.Exists(esav) Then Exit Sub
 
             If File.Exists(MedExtra & "Plugins\db\GBAmemtype.txt") = False And My.Computer.Network.IsAvailable = True Then
-                'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/GBAmemtype.txt", MedExtra & "Plugins\db\GBAmemtype.txt", "anonymous", "anonymous", True, 1000, True)
-                FTPDownloadFile(MedExtra & "Plugins\db\GBAmemtype.txt", UpdateServer & "/MedGuiR/GBAmemtype.txt", "anonymous", "anonymous")
+
+                If UpdateServer.StartsWith("https://") Then
+                    My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/GBAmemtype.txt", MedExtra & "Plugins\db\GBAmemtype.txt", "anonymous", "anonymous", True, 1000, True)
+                ElseIf UpdateServer.StartsWith("ftp://") Then
+                    FTPDownloadFile(MedExtra & "Plugins\db\GBAmemtype.txt", UpdateServer & "/MedGuiR/GBAmemtype.txt", "anonymous", "anonymous")
+                End If
+
             ElseIf File.Exists(MedExtra & "Plugins\db\GBAmemtype.txt") = False And My.Computer.Network.IsAvailable = False Then
                 Exit Sub
             End If

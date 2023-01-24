@@ -9,8 +9,11 @@ Module Updater
         If UpdateServer Is Nothing Or UpdateServer = "" Then Test_Server()
         If File.Exists(MedExtra & "Update\update.txt") Then File.Delete(MedExtra & "Update\update.txt")
         Try
-            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 1000, True)
-            FTPDownloadFile(MedExtra & "Update\update.txt", UpdateServer & "/MedGuiR/update.txt", "anonymous", "anonymous")
+            If UpdateServer.StartsWith("https://") Then
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/update.txt", MedExtra & "Update\update.txt", "anonymous", "anonymous", True, 1000, True)
+            ElseIf UpdateServer.StartsWith("ftp://") Then
+                FTPDownloadFile(MedExtra & "Update\update.txt", UpdateServer & "/MedGuiR/update.txt", "anonymous", "anonymous")
+            End If
         Catch
             MsgBox("Unable to detect/retrieve updated version." & vbCrLf &
        "Please try again later", vbOKOnly + MsgBoxStyle.Critical, "Unable to update...")
@@ -47,8 +50,13 @@ Module Updater
                            "Do you want download it?", MsgBoxStyle.YesNo + MsgBoxStyle.Information)
 
                     If upd_mr = vbYes Then
-                        'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", MedExtra & "Update\MedGuiR.zip", "anonymous", "anonymous", True, 1000, True)
-                        FTPDownloadFile(MedExtra & "Update\MedGuiR.zip", UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", "anonymous", "anonymous")
+                        Dim test = UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip"
+
+                        If UpdateServer.StartsWith("https://") Then
+                            My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", MedExtra & "Update\MedGuiR.zip", "anonymous", "anonymous", True, 1000, True)
+                        ElseIf UpdateServer.StartsWith("ftp://") Then
+                            FTPDownloadFile(MedExtra & "Update\MedGuiR.zip", UpdateServer & "/MedGuiR/MedGuiR_v" & Med_new & ".zip", "anonymous", "anonymous")
+                        End If
                         'Call contr_os()
 
                         'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
@@ -71,7 +79,7 @@ Module Updater
                         OwMedinstR()
 
                         File.Delete(MedExtra & "Update\MedGuiR.zip")
-                        Process.Start(Application.StartupPath & "\MedInstR.exe")
+                        If File.Exists(MedExtra & "Update\MedGuiR.exe") Then Process.Start(Application.StartupPath & "\MedInstR.exe")
 
                     ElseIf upd_mr = vbNo Then
                         upd.Close()
@@ -107,8 +115,11 @@ Module Updater
                 Directory.CreateDirectory(MedExtra & "Update\")
             End If
 
-            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/DATs.zip", MedExtra & "Update\DATs.zip", "anonymous", "anonymous", True, 1000, True)
-            FTPDownloadFile(MedExtra & "Update\DATs.zip", UpdateServer & "/MedGuiR/DATs.zip", "anonymous", "anonymous")
+            If UpdateServer.StartsWith("https://") Then
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/DATs.zip", MedExtra & "Update\DATs.zip", "anonymous", "anonymous", True, 1000, True)
+            ElseIf UpdateServer.StartsWith("ftp://") Then
+                FTPDownloadFile(MedExtra & "Update\DATs.zip", UpdateServer & "/MedGuiR/DATs.zip", "anonymous", "anonymous")
+            End If
 
             Dim infoReader As System.IO.FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Update\DATs.zip")

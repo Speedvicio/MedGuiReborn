@@ -157,8 +157,13 @@ Module BoxArt
         If dimg < webimagelenght Then
             Try
                 Dim cover As String
-                cover = UpdateServer & "/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
-                My.Computer.Network.DownloadFile(cover, MedExtra & "BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png", "", "", True, 1000, True)
+                cover = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
+
+                If UpdateServer.StartsWith("https://") Then
+                    My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/BoxArt/" & cover, MedExtra & "BoxArt/" & cover, "", "", True, 1000, True)
+                ElseIf UpdateServer.StartsWith("ftp://") Then
+                    FTPDownloadFile(MedExtra & "BoxArt/" & cover, UpdateServer & "/MedGuiR/BoxArt/" & cover, "anonymous", "anonymous")
+                End If
             Catch ex As Exception
                 If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
                     SearchScrape()

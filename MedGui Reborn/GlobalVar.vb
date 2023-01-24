@@ -63,7 +63,7 @@ Module GlobalVar
         If My.Computer.Network.IsAvailable = True Then
 
             Try
-                Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("http://medgui.orgfree.com/"), Net.HttpWebRequest)
+                Dim request As Net.HttpWebRequest = DirectCast(Net.HttpWebRequest.Create("https://github.com/Speedvicio/MedGui_Resource/tree/main/MedGuiR"), Net.HttpWebRequest)
                 request.UserAgent = "Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2.3) Gecko/20100401 Firefox/4.0 (.NET CLR 3.5.30729"
                 'request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0"
                 request.KeepAlive = True
@@ -78,7 +78,7 @@ Module GlobalVar
         End If
 
         If webexist = True Then
-            UpdateServer = "http://medgui.orgfree.com/"
+            UpdateServer = "https://raw.githubusercontent.com/Speedvicio/MedGui_Resource/main"
         Else
             UpdateServer = "ftp://anonymous@speedvicio.ddns.net"
         End If
@@ -516,10 +516,14 @@ ReCheckConfig:
 
     Public Sub DownloadRomext()
         If My.Computer.Network.IsAvailable = True Then
-            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/RomExt.ini", MedExtra & "\RomExt.ini", "anonymous", "anonymous", True, 1000, True)
-            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/ext", MedExtra & "DATs\ext", "anonymous", "anonymous", True, 1000, True)
-            FTPDownloadFile(MedExtra & "\RomExt.ini", UpdateServer & "/MedGuiR/RomExt.ini", "anonymous", "anonymous")
-            FTPDownloadFile(MedExtra & "DATs\ext", UpdateServer & "/MedGuiR/ext", "anonymous", "anonymous")
+
+            If UpdateServer.StartsWith("https://") Then
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/RomExt.ini", MedExtra & "\RomExt.ini", "anonymous", "anonymous", True, 1000, True)
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/ext", MedExtra & "DATs\ext", "anonymous", "anonymous", True, 1000, True)
+            ElseIf UpdateServer.StartsWith("ftp://") Then
+                FTPDownloadFile(MedExtra & "\RomExt.ini", UpdateServer & "/MedGuiR/RomExt.ini", "anonymous", "anonymous")
+                FTPDownloadFile(MedExtra & "DATs\ext", UpdateServer & "/MedGuiR/ext", "anonymous", "anonymous")
+            End If
         Else
             MsgBox("RomExt.ini missing!, please download MedGui Reborn full package from Sourceforge", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Essential file missing")
             Exit Sub

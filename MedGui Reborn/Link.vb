@@ -128,8 +128,12 @@
     Public Sub DownExtractBios()
         Try
             If UpdateServer = "" Then Test_Server()
-            'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/firmware.zip", MedExtra & "Update\firmware.zip", "anonymous", "anonymous", True, 1000, True)
-            FTPDownloadFile(MedExtra & "Update\firmware.zip", UpdateServer & "/MedGuiR/firmware.zip", "anonymous", "anonymous")
+
+            If UpdateServer.StartsWith("https://") Then
+                My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/firmware.zip", MedExtra & "Update\firmware.zip", "anonymous", "anonymous", True, 1000, True)
+            ElseIf UpdateServer.StartsWith("ftp://") Then
+                FTPDownloadFile(MedExtra & "Update\firmware.zip", UpdateServer & "/MedGuiR/firmware.zip", "anonymous", "anonymous")
+            End If
 
             'SevenZip.SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
             'Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(MedExtra & "Update\firmware.zip")

@@ -35,8 +35,13 @@ Module UpdateMednafen
             'End If
         Else
             Try
-                'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Mednafen/ChangeLog.txt", MedExtra & "Update\MednafenUpdate.txt", "anonymous", "anonymous", True, 1000, True)
-                FTPDownloadFile(MedExtra & "Update\MednafenUpdate.txt", UpdateServer & "/MedGuiR/Mednafen/ChangeLog.txt", "anonymous", "anonymous")
+
+                If UpdateServer.StartsWith("https://") Then
+                    My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Mednafen/ChangeLog.txt", MedExtra & "Update\MednafenUpdate.txt", "anonymous", "anonymous", True, 1000, True)
+                ElseIf UpdateServer.StartsWith("ftp://") Then
+                    FTPDownloadFile(MedExtra & "Update\MednafenUpdate.txt", UpdateServer & "/MedGuiR/Mednafen/ChangeLog.txt", "anonymous", "anonymous")
+                End If
+
                 UpMedServ = UpdateServer & "/MedGuiR/Mednafen/mednafen-"
             Catch
                 MsgBox("Unable to detect last Mednafen version", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation)
@@ -76,8 +81,12 @@ Module UpdateMednafen
     Public Sub UpdateLastMednafen()
         contr_os()
         Try
-            My.Computer.Network.DownloadFile(UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", MedExtra & "Update\LastMednafen.zip", "", "", True, 1000, True)
-            'FTPDownloadFile(MedExtra & "Update\LastMednafen.zip", UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", "anonymous", "anonymous")
+
+            If UpMedServ.StartsWith("https://") Then
+                My.Computer.Network.DownloadFile(UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", MedExtra & "Update\LastMednafen.zip", "", "", True, 1000, True)
+            ElseIf UpMedServ.StartsWith("ftp://") Then
+                FTPDownloadFile(MedExtra & "Update\LastMednafen.zip", UpMedServ & LastMednafenFull.Trim & "-win" & c_os & ".zip", "anonymous", "anonymous")
+            End If
 
             'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
             'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\LastMednafen.zip")
