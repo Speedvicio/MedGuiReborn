@@ -1169,7 +1169,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -1761,6 +1761,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
             MyFiles = e.Data.GetData(DataFormats.FileDrop)
 
             For Each Frecord In MyFiles
+                old_fullpath = ""
                 If Directory.Exists(Frecord) Then
                     T_MedExtra = ""
                     type_csv = ""
@@ -1771,8 +1772,6 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                     Else
                         TempFolder = Path.GetDirectoryName(MyFiles(i))
                     End If
-
-                    old_fullpath = ""
 
                     If CheckBox14.Checked = True Then
                         RecuScan()
