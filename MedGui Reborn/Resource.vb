@@ -222,44 +222,16 @@
 
             MedBrowser.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\net.png"))
         Catch ex As Exception
-            'MsgBox("Missing Resource image on Resource folder", MsgBoxStyle.Exclamation)
-            Test_Server()
-            If My.Computer.Network.IsAvailable = True Then MissingResource()
+            MissingResource()
         End Try
     End Sub
 
     Public Sub MissingResource()
-        Try
-            If My.Computer.Network.IsAvailable = True Then
-                'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/Resource.zip", MedExtra & "Update\Resource.zip", "anonymous", "anonymous", True, 1000, True)
-                FTPDownloadFile(MedExtra & "Update\Resource.zip", UpdateServer & "/MedGuiR/Resource.zip", "anonymous", "anonymous")
-
-                'SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\7z.dll")
-                'Dim szip As SevenZipExtractor = New SevenZipExtractor(MedExtra & "Update\Resource.zip")
-                'szip.ExtractArchive(Application.StartupPath)
-                'SoxStatus.Text = "Waiting for extraction..."
-                'SoxStatus.Label1.Text = "..."
-                'SoxStatus.Show()
-
-                DecompressArchive(MedExtra & "Update\Resource.zip", Application.StartupPath)
-
-                Threading.Thread.Sleep(5000)
-
-                'szip.Dispose()
-                'SoxStatus.Close()
-
-                IO.File.Delete(MedExtra & "Update\Resource.zip")
-                Read_Resource()
-            Else
-                Message.Label1.Text = "Resource file missing, download full MedGui Reborn package from here:" & vbCrLf
-                Message.LinkLabel1.Text = "https://github.com/Speedvicio/MedGuiReborn/releases" & vbCrLf
-                Message.ShowDialog()
-            End If
-        Catch
-            MsgBox("Missing resource extracted, please reboot MedGuiR", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation)
-            MedGuiR.Close()
-            Exit Sub
-        End Try
+        Message.Label1.Text = "Essential resources missing, download full MedGui Reborn package from here:"
+        Message.LinkLabel1.Text = "https://github.com/Speedvicio/MedGuiReborn/releases" & vbCrLf
+        Message.ShowDialog()
+        MedGuiR.ResetAll = True
+        MedGuiR.Close()
     End Sub
 
 End Module

@@ -99,125 +99,22 @@ Module GlobalVar
 
         Try
             Test_Server()
+            Dim plugin() As String
+            plugin = New String(11) {"\SevenZipSharp.dll", "\MedGuiR\Plugins\Proxy7z.dll", "\IrcClient.dll", "\FTPclient.dll", "\DiscTools.dll",
+                "\LinqBridge.dll", "\Newtonsoft.Json.dll", "\PeakMeterCtrl.dll", "\CoreAudioApi.dll", "\fmod.dll", "\NAudio.dll", "\MedGuiR\Plugins\7zPlugins\7z.dll"}
 
-            If File.Exists(Application.StartupPath & "\SevenZipSharp.dll") = False Then
-                noftp = True
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/SevenZipSharp.txt", Application.StartupPath & "\SevenZipSharp.dll", "anonymous", "anonymous", True, 1000, True)
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/7z.txt", MedExtra & "Plugins\7z.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\SevenZipSharp.dll", UpdateServer & "/MedGuiR/SevenZipSharp.txt", "anonymous", "anonymous")
-                    'FTPDownloadFile(MedExtra & "Plugins\7z.dll", UpdateServer & "/MedGuiR/7z.txt", "anonymous", "anonymous")
-                    MsgBox("SevenZipSharp.dll downloaded, please reboot MedGuiR", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation)
+            For i = 0 To 11
+                If File.Exists(Application.StartupPath & plugin(i)) = False Then
+                    MissingResource()
                     MedGuiR.Close()
-                    Exit Sub
-                Else
-                    MsgBox("SevenZipSharp.dll missing!, please download MedGui Reborn full package from Sourceforge", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Library missing")
-                    MedGuiR.Close()
+                    Threading.Thread.Sleep(2000)
                     Exit Sub
                 End If
-            End If
-
-            If File.Exists(MedExtra & "\Plugins\7z.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/7z.txt", MedExtra & "Plugins\7z.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(MedExtra & "Plugins\7z.dll", UpdateServer & "/MedGuiR/7z.txt", "anonymous", "anonymous")
-                Else
-                    MsgBox("7z.dll missing!, please download MedGui Reborn full package from Sourceforge", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Library missing")
-                    Exit Sub
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\IrcClient.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/IrcClient.txt", Application.StartupPath & "\IrcClient.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\IrcClient.dll", UpdateServer & "/MedGuiR/IrcClient.txt", "anonymous", "anonymous")
-                Else
-                    MedGuiR.IRCToolStripButton.Enabled = False
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\FTPclient.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/FTPclient.txt", Application.StartupPath & "\FTPclient.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\FTPclient.dll", UpdateServer & "/MedGuiR/FTPclient.txt", "anonymous", "anonymous")
-                Else
-                    MedGuiR.Button53.Enabled = False
-                    MedGuiR.CheckBox18.Checked = False
-                    MedGuiR.CheckBox18.Enabled = False
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\DiscSN.dll") Then
-                File.Delete(Application.StartupPath & "\DiscSN.dll")
-            End If
-
-            If File.Exists(Application.StartupPath & "\DiscTools.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/DiscTools.txt", Application.StartupPath & "\DiscTools.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\DiscTools.dll", UpdateServer & "/MedGuiR/DiscTools.txt", "anonymous", "anonymous")
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\LinqBridge.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/LinqBridge.txt", Application.StartupPath & "\LinqBridge.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\LinqBridge.dll", UpdateServer & "/MedGuiR/LinqBridge.txt", "anonymous", "anonymous")
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\Newtonsoft.Json.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/LinqBridge.txt", Application.StartupPath & "\LinqBridge.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\Newtonsoft.Json.dll", UpdateServer & "/MedGuiR/Newtonsoft.Json.txt", "anonymous", "anonymous")
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\PeakMeterCtrl.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/PeakMeterCtrl.txt", Application.StartupPath & "\PeakMeterCtrl.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\PeakMeterCtrl.dll", UpdateServer & "/MedGuiR/PeakMeterCtrl.txt", "anonymous", "anonymous")
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\CoreAudioApi.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/CoreAudioApi.txt", Application.StartupPath & "\CoreAudioApi.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\CoreAudioApi.dll", UpdateServer & "/MedGuiR/CoreAudioApi.txt", "anonymous", "anonymous")
-                End If
-            End If
-
-            If File.Exists(Application.StartupPath & "\fmod.dll") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/fmod.txt", Application.StartupPath & "\fmod.dll", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(Application.StartupPath & "\fmod.dll", UpdateServer & "/MedGuiR/fmod.txt", "anonymous", "anonymous")
-                End If
-            End If
-
-            If File.Exists(MedExtra & "\Plugins\unecm.exe") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/unecm.txt", MedExtra & "Plugins\unecm.exe", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(MedExtra & "Plugins\unecm.exe", UpdateServer & "/MedGuiR/unecm.txt", "anonymous", "anonymous")
-                Else
-                    MsgBox("unecm.exe missing!, please download MedGui Reborn full package from Sourceforge", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Executable missing")
-                    Exit Sub
-                End If
-            End If
-
-            If File.Exists(MedExtra & "\Plugins\mico.exe") = False Then
-                If My.Computer.Network.IsAvailable = True Then
-                    'My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/mico.txt", MedExtra & "Plugins\mico.exe", "anonymous", "anonymous", True, 1000, True)
-                    FTPDownloadFile(MedExtra & "Plugins\mico.exe", UpdateServer & "/MedGuiR/mico.txt", "anonymous", "anonymous")
-                Else
-                    MsgBox("mico.exe missing!, please download MedGui Reborn full package from Sourceforge", MsgBoxStyle.OkOnly + MsgBoxStyle.Critical, "Executable missing")
-                    Exit Sub
-                End If
-            End If
+            Next
 
             If File.Exists(MedExtra & "FAQ\MedClientTutorial\Start.html") Then
                 MedGuiR.Button57.Enabled = True
             End If
-
-            'MissingResource()
 
             Dim MednafenDetected As Boolean = False
             If File.Exists(MedGuiR.TextBox4.Text & "\mednafen.exe") = False Then
