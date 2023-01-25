@@ -57,6 +57,9 @@ Public Class MedClient
         Dim process_med() As Process
         process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
         If process_med.Length > 0 Then
+            GroupBox1.Enabled = False
+            GroupBox3.Enabled = False
+            GroupBox4.Enabled = False
             CheckBox1.Checked = False
             TextBox1.Enabled = False
             If checkmed = False Then
@@ -72,6 +75,9 @@ Public Class MedClient
             'If contdes = 1 Then
             'File.Delete(MedGuiR.TextBox4.Text & "\" & consoles & ".cfg”)
             'End If
+            GroupBox1.Enabled = True
+            GroupBox3.Enabled = True
+            GroupBox4.Enabled = True
 
             If Gamekey.Trim <> "" Then
                 Dim rispGamekey As String
@@ -84,7 +90,6 @@ Public Class MedClient
                     StartProcess()
                 End If
             End If
-
         End If
     End Sub
 
@@ -502,7 +507,7 @@ tryagain:
     End Sub
 
     Private Sub StartMedFromClient(Gpath As String)
-        If percorso = Gpath Then Exit Sub
+        old_fullpath = ""
         Dim MenuNet As String = ""
         MenuNet = (" -netplay.nick " & TextBox1.Text.Trim & " -netplay.host " & ComboBox1.Text &
         " -netplay.password " & TextBox2.Text.Trim).TrimEnd
@@ -512,7 +517,7 @@ tryagain:
         Arg = MenuNet
         StartProcess()
 
-        Threading.Thread.Sleep(2000)
+        Threading.Thread.Sleep(3000)
 
         MedGuiR.SY.Text = ""
         MedGuiR.DataGridView1.Rows.Clear()
