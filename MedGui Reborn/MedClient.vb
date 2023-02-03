@@ -57,7 +57,7 @@ Public Class MedClient
         Dim process_med() As Process
         process_med = Process.GetProcessesByName("mednafen", My.Computer.Name)
         If process_med.Length > 0 Then
-            GroupBox1.Enabled = False
+            GroupBox2.Enabled = False
             GroupBox3.Enabled = False
             GroupBox4.Enabled = False
             CheckBox1.Checked = False
@@ -75,7 +75,7 @@ Public Class MedClient
             'If contdes = 1 Then
             'File.Delete(MedGuiR.TextBox4.Text & "\" & consoles & ".cfg”)
             'End If
-            GroupBox1.Enabled = True
+            GroupBox2.Enabled = True
             GroupBox3.Enabled = True
             GroupBox4.Enabled = True
 

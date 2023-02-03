@@ -388,6 +388,7 @@ Partial Class Mcheat
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "BSFree"
         Me.ToolTip1.SetToolTip(Me.LinkLabel2, "Open in default browser BSFree cheat code page")
+        Me.LinkLabel2.Visible = False
         '
         'Label10
         '
@@ -544,7 +545,7 @@ Partial Class Mcheat
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Mcheat"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Cheat Manager (Experimental)"
+        Me.Text = "Cheat Manager"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
