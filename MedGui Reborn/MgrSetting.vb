@@ -38,6 +38,7 @@ Public Class MgrSetting
                     CheckBox70.Enabled = True
                     CheckBox71.Enabled = True
                     CheckBox28.Enabled = False
+                    CheckBox31.Enabled = False
                     CheckBox33.Enabled = False
                     NumericUpDown14.Enabled = False
                     NumericUpDown25.Enabled = True
@@ -46,6 +47,7 @@ Public Class MgrSetting
                     CheckBox70.Enabled = False
                     CheckBox71.Enabled = False
                     CheckBox28.Enabled = True
+                    CheckBox31.Enabled = True
                     CheckBox33.Enabled = True
                     NumericUpDown14.Enabled = True
                     NumericUpDown25.Enabled = False
