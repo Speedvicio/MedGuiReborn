@@ -66,7 +66,7 @@ Public Class IsoSelector
             'If Val(DiscToolV) > 1025 Then
             'CDinspector = DiscInspector.ScanDiscQuickNoCorrection(percorso)
             'Else
-            CDinspector = DiscInspector.ScanDiscQuick(percorso)
+            CDinspector = DiscInspector.ScanDiscQuick(R_RelPath(percorso))
             'End If
             cdconsoletype = CDinspector.DiscTypeString
         Catch
@@ -102,14 +102,14 @@ Public Class IsoSelector
 
     Public Sub DetectM3U()
 
-        Dim righe As String() = File.ReadAllLines(percorso)
+        Dim righe As String() = File.ReadAllLines(R_RelPath(percorso))
 
         For i = 0 To 10
             If LCase(righe(i)).Contains("\") Then
-                percorso = righe(i)
+                percorso = R_RelPath(righe(i))
                 Exit For
             ElseIf Trim(righe(i)) <> "" Then
-                percorso = Path.Combine(Path.GetDirectoryName(percorso), righe(i))
+                percorso = Path.Combine(Path.GetDirectoryName(R_RelPath(percorso)), righe(i))
                 Exit For
             End If
         Next
@@ -122,10 +122,10 @@ Public Class IsoSelector
         Dim offset As Long
         Dim rvimage As String
 
-        Select Case LCase(Path.GetExtension(percorso))
+        Select Case LCase(Path.GetExtension(R_RelPath(percorso)))
             'If LCase(Path.GetExtension(n_psx)) = ".cue" Then
             Case ".cue" ', ".toc"
-                Dim righe As String() = File.ReadAllLines(percorso)
+                Dim righe As String() = File.ReadAllLines(R_RelPath(percorso))
                 Dim result As String
 
                 For i = 0 To 10
@@ -145,19 +145,19 @@ Public Class IsoSelector
                     SPosition = result.IndexOf("E ") + 2
                     word2 = result.Substring(SPosition, result.IndexOf(" B", SPosition) - SPosition).Trim
                 End If
-                rvimage = Replace(percorso, Path.GetFileName(percorso), "") & word2
+                rvimage = Replace(R_RelPath(percorso), Path.GetFileName(R_RelPath(percorso)), "") & word2
             Case ".ccd"
-                rvimage = Replace(percorso, ".ccd", "") & ".img"
+                rvimage = Replace(R_RelPath(percorso), ".ccd", "") & ".img"
             Case Else
                 Exit Sub
         End Select
 
         If File.Exists(rvimage) = False Then
             If skipother = False Then
-                MsgBox("Bad or corrupted " & LCase(Path.GetExtension(percorso)) & " file." & vbCrLf &
-                   "Open " & percorso & " with a text editor and fix the reference to the binary file", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly,
-                   "Bad or copputed " & LCase(Path.GetExtension(percorso)) & "...")
-                Process.Start("notepad.exe", percorso.ToString)
+                MsgBox("Bad or corrupted " & LCase(Path.GetExtension(R_RelPath(percorso))) & " file." & vbCrLf &
+                   "Open " & R_RelPath(percorso) & " with a text editor and fix the reference to the binary file", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly,
+                   "Bad or copputed " & LCase(Path.GetExtension(R_RelPath(percorso))) & "...")
+                Process.Start("notepad.exe", R_RelPath(percorso).ToString)
                 stopscan = True
             End If
             Exit Sub
@@ -268,7 +268,7 @@ Public Class IsoSelector
     End Sub
 
     Private Sub M3UIndex()
-        NumericUpDown1.Maximum = File.ReadAllLines(MedGuiR.TextBox1.Text).Length
+        NumericUpDown1.Maximum = File.ReadAllLines(R_RelPath(MedGuiR.TextBox1.Text)).Length
     End Sub
 
 End Class

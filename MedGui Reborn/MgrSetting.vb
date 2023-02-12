@@ -745,7 +745,7 @@ ErrorHandler:
             psc_mex = "Specific " & UCase(p_c)
         ElseIf CheckBox59.Checked = True Then
             save_per_config()
-            psc_mex = IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text)
+            psc_mex = IO.Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text))
         Else
             Dim splitP_C(1) As String
             Mednafen_Save_setting()
@@ -771,7 +771,7 @@ ErrorHandler:
         per_conf_path_name = ""
 
         If CheckBox59.Checked = True Then 'Or IO.File.Exists(MedGuiR.TextBox4.Text & "\pgconfig\" & System.IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c & ".cfg") = True Then
-            per_conf_path_name = IO.Path.Combine(ExtractPath("path_pgconfig"), IO.Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c)
+            per_conf_path_name = IO.Path.Combine(ExtractPath("path_pgconfig"), IO.Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text)) & "." & p_c)
         ElseIf CheckBox6.Checked = True Then 'Or IO.File.Exists(MedGuiR.TextBox4.Text & "\" & p_c & ".cfg") = True Then
             per_conf_path_name = IO.Path.Combine(MedGuiR.TextBox4.Text, p_c)
         End If

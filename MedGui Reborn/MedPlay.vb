@@ -69,16 +69,16 @@ Module MedPlay
             DiscordMessage("Game: " & NGameName & vbCrLf & "Platform: " & UCase(NModule), Nick.Trim.Length + 26, Nick & ": Join a Netplay Session")
 
             If MedGuiR.CheckBox19.Checked = True Then
-                Select Case LCase(Path.GetExtension(percorso))
+                Select Case LCase(Path.GetExtension(R_RelPath(percorso)))
                     Case ".cue", ".ccd", ".m3u"
                     Case Else
-                        If percorso.Length > 10485760 Then
+                        If R_RelPath(percorso).Length > 10485760 Then
                             MsgBox("You can't upload file > of 10 mb", vbOKOnly + MsgBoxStyle.Exclamation, "Upload error...")
                             ftperror = True
                             MedClient.Close()
                         End If
                         ftp.FtpCreateDirectory(ftp.CurrentDirectory & "Rom_" & Nick)
-                        ftp.Upload(percorso, ftp.CurrentDirectory & "Rom_" & Nick & "/" & Path.GetFileName(percorso))
+                        ftp.Upload(R_RelPath(percorso), ftp.CurrentDirectory & "Rom_" & Nick & "/" & Path.GetFileName(R_RelPath(percorso)))
                 End Select
 
             End If
@@ -197,7 +197,7 @@ Module MedPlay
         Dim submedv(1) As String
         submedv = MedGuiR.Label8.Text.Split("v.")
         NMednafenV = submedv(1).Substring(1, submedv(1).Length - 1).Trim
-        NRomName = Path.GetFileName(percorso)
+        NRomName = Path.GetFileName(R_RelPath(percorso))
         Dim fiso As StreamWriter
         Dim ContentUp = VSTripleDES.EncryptData("Nick=" & Nick) & vbCrLf & VSTripleDES.EncryptData("Server=" & Server) & vbCrLf & VSTripleDES.EncryptData("Port=" & port) & vbCrLf &
         VSTripleDES.EncryptData("GameName=" & NGameName) & vbCrLf & VSTripleDES.EncryptData("Module=" & NModule) & vbCrLf & VSTripleDES.EncryptData("Password=" & Password) & vbCrLf &
@@ -221,7 +221,7 @@ Module MedPlay
     End Sub
 
     Public Sub CheckCRCNet()
-        Select Case LCase(Path.GetExtension(percorso))
+        Select Case LCase(Path.GetExtension(R_RelPath(percorso)))
             Case ".zip"
                 stopzip = True
                 scan_ext_compressed()
@@ -229,7 +229,7 @@ Module MedPlay
             Case ".cue", ".ccd", ".m3u"
                 NCRC = "image"
             Case Else
-                filepath = percorso
+                filepath = R_RelPath(percorso)
                 GetCRC32()
                 NCRC = base_file
         End Select

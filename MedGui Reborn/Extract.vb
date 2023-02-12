@@ -13,7 +13,7 @@ Module Extract
 
         ClearFile()
 
-        Dim dimarch As New System.IO.FileInfo(percorso)
+        Dim dimarch As New System.IO.FileInfo(R_RelPath(percorso))
         Console.WriteLine(dimarch.Exists)
         Dim dimension As Integer
         dimension = (Decimal.Round(dimarch.Length.ToString) / (1024 * 1024))
@@ -29,7 +29,7 @@ Module Extract
             End If
         End If
 
-        DecompressArchive(percorso, MedExtra & "RomTemp")
+        DecompressArchive(R_RelPath(percorso), MedExtra & "RomTemp")
 
         'szip.ExtractArchive(MedExtra & "RomTemp")
         'SoxStatus.Text = "Waiting for extraction..."
@@ -130,7 +130,7 @@ Module Extract
     Public Sub scan_ext_compressed()
         SevenZipExtractor.SetLibraryPath(MedExtra & "Plugins\" & sevenzdll)
         Try
-            Dim szip As SevenZipExtractor = New SevenZipExtractor(percorso)
+            Dim szip As SevenZipExtractor = New SevenZipExtractor(R_RelPath(percorso))
             'If szip.ArchiveFileData.Count > 1 And SevenZCounter = 0 And stopiso = False Then
             'ClearFile()
             'extract_7z()
@@ -144,7 +144,7 @@ Module Extract
             For Each ArchiveFileInfo In szip.ArchiveFileData
                 romname = Path.GetFileNameWithoutExtension(ArchiveFileInfo.FileName)
                 If ArchiveFileInfo.IsDirectory Then
-                    If LCase(Path.GetExtension(percorso)) = ".zip" Then
+                    If LCase(Path.GetExtension(R_RelPath(percorso))) = ".zip" Then
                         If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
                             If skipother = True Then Continue For '// controlla che skipother non combini casini
 
@@ -214,7 +214,7 @@ HERE:                       If checkpismo = False Then
 
                 Select Case LCase(ext)
                     Case ".iso", ".m3u", ".toc", ".cue", ".ccd"
-                        If LCase(Path.GetExtension(percorso)) = ".zip" Then
+                        If LCase(Path.GetExtension(R_RelPath(percorso))) = ".zip" Then
                             If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
                                 'load cd zipped
                                 If skipother = False Then
@@ -235,7 +235,7 @@ HERE:                       If checkpismo = False Then
                                 End If
                             End If
 
-                        ElseIf LCase(Path.GetExtension(percorso)) = ".7z" Or LCase(Path.GetExtension(percorso)) = ".rar" Then
+                        ElseIf LCase(Path.GetExtension(R_RelPath(percorso))) = ".7z" Or LCase(Path.GetExtension(R_RelPath(percorso))) = ".rar" Then
                             If LCase(ext) = ".iso" Then
                                 extract_7z()
                                 Exit Sub
@@ -248,7 +248,7 @@ HERE:                       If checkpismo = False Then
                         Exit Sub
                     Case ".bin", ".img"
                         If ArchiveFileInfo.Size > 16000000 Then
-                            If LCase(Path.GetExtension(percorso)) = ".zip" Then
+                            If LCase(Path.GetExtension(R_RelPath(percorso))) = ".zip" Then
                                 If detect_module("cd.image_memcache 1") = True And Val(vmedClear) > 12710 Then
                                     'load cd zipped
                                     If skipother = False Then
@@ -270,7 +270,7 @@ HERE:                       If checkpismo = False Then
                                 End If
 
                                 'estrai i file 7z e rar su cartella temporanea controlla se incasina gli archivi multipli
-                            ElseIf LCase(Path.GetExtension(percorso)) = ".7z" Or LCase(Path.GetExtension(percorso)) = ".rar" Then
+                            ElseIf LCase(Path.GetExtension(R_RelPath(percorso))) = ".7z" Or LCase(Path.GetExtension(R_RelPath(percorso))) = ".rar" Then
                                 extract_7z()
                                 Exit Sub
                                 'test
@@ -336,7 +336,7 @@ HERE:                       If checkpismo = False Then
         'MedGuiR.CheckBox3.Checked = False
         ClearFile()
 
-        Dim szip As SevenZipExtractor = New SevenZipExtractor(percorso)
+        Dim szip As SevenZipExtractor = New SevenZipExtractor(R_RelPath(percorso))
 
         Select Case LCase(MedGuiR.DataGridView1.CurrentRow.Cells(7).Value)
             Case ".psf", ".minipsf", ".minigsf", ".ssf", ".minissf"
@@ -347,7 +347,7 @@ HERE:                       If checkpismo = False Then
             Case ".rsn"
                 'If LCase(MedGuiR.DataGridView1.CurrentRow.Cells(7).Value) = ".rsn" Then
 
-                DecompressArchive(percorso, MedExtra & "RomTemp")
+                DecompressArchive(R_RelPath(percorso), MedExtra & "RomTemp")
 
                 'szip.ExtractArchive(MedExtra & "RomTemp")
                 'SoxStatus.Text = "Waiting for extraction..."
@@ -378,7 +378,7 @@ HERE:                       If checkpismo = False Then
                 szip.Dispose()
                 Dim fileEntries As String() = Directory.GetFiles(MedExtra & "RomTemp")
                 For Each fileName As String In fileEntries
-                    percorso = fileName
+                    percorso = R_RelPath(fileName)
                 Next
         End Select 'If
 
@@ -416,8 +416,8 @@ HERE:                       If checkpismo = False Then
     Public Sub MountPismo()
         'checkpismo = False
         Shell("pfm unmount", AppWinStyle.Hide, True)
-        Shell("pfm mount -i " & Chr(34) & percorso & Chr(34), AppWinStyle.Hide, True)
-        Dim cleanpath As String = System.Text.RegularExpressions.Regex.Replace(Path.GetFileName(percorso), "[^0-9a-zA-Z-._ ]+", "")
+        Shell("pfm mount -i " & Chr(34) & R_RelPath(percorso) & Chr(34), AppWinStyle.Hide, True)
+        Dim cleanpath As String = System.Text.RegularExpressions.Regex.Replace(Path.GetFileName(R_RelPath(percorso)), "[^0-9a-zA-Z-._ ]+", "")
         TempFolder = Path.Combine("C:\Volumes", cleanpath)
         T_MedExtra = Nothing
     End Sub

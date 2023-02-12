@@ -380,7 +380,7 @@ ReCheckConfig:
         TempFolder = "RomTemp"
         type_csv = ""
         MedGuiR.Text = "MedGui Reborn"
-        MedGuiR.TextBox1.Text = percorso
+        MedGuiR.TextBox1.Text = R_RelPath(percorso)
         Counter = 0
         get_ext()
 

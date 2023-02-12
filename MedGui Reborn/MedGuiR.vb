@@ -91,7 +91,7 @@ Public Class MedGuiR
 
         If inputName.Trim <> "" Then
             SY.Text = ""
-            percorso = inputName
+            percorso = R_RelPath(inputName)
             SingleScan()
             RealcdIsoName()
         End If
@@ -153,14 +153,14 @@ Public Class MedGuiR
 
                     If type_csv <> "" Then RenameEntryStripMenuItem.Enabled = True Else RenameEntryStripMenuItem.Enabled = False
 
-                    If percorso.Trim <> "" Then
-                        If File.Exists(percorso & ".ips") Then
+                    If R_RelPath(percorso).Trim <> "" Then
+                        If File.Exists(R_RelPath(percorso) & ".ips") Then
                             RIPSToolStripMenuItem.Enabled = True
                         Else
                             RIPSToolStripMenuItem.Enabled = False
                         End If
 
-                        If File.Exists(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi") Then
+                        If File.Exists(Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & ".sbi") Then
                             RSBIToolStripMenuItem.Enabled = True
                         Else
                             RSBIToolStripMenuItem.Enabled = False
@@ -296,13 +296,13 @@ Public Class MedGuiR
             End If
 
             verMednafen()
-            percorso = TextBox1.Text
+            percorso = R_RelPath(TextBox1.Text)
             If ssetting = 0 Then percorso = ""
 
-            Select Case LCase(Path.GetExtension(percorso))
+            Select Case LCase(Path.GetExtension(R_RelPath(percorso)))
                 Case ".zip"
                     Dim existMAI As Boolean = False
-                    Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(percorso)
+                    Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(R_RelPath(percorso))
                     If szip.ArchiveFileData.Count > 1 Then
                         For Each ArchiveFileInfo In szip.ArchiveFileData
                             Select Case LCase(Path.GetExtension(ArchiveFileInfo.FileName))
@@ -332,8 +332,8 @@ Public Class MedGuiR
                     scan.GBS2GB()
                 Case ".iso", ".bin"
                     'If percorso.Contains(".bin.ecm") Then TextBox1.Text = Replace(percorso, "bin.", "")
-                    If Dir(Replace(TextBox1.Text, dettaglio.Extension, ".cue")) <> "" And dettaglio.Length > 10485760 Then
-                        percorso = (Replace(TextBox1.Text, dettaglio.Extension, ".cue"))
+                    If Dir(Replace(R_RelPath(TextBox1.Text), dettaglio.Extension, ".cue")) <> "" And dettaglio.Length > 10485760 Then
+                        percorso = Replace(R_RelPath(TextBox1.Text), dettaglio.Extension, ".cue")
                         If Label34.Text <> "" Then Label34.Text = ""
                     End If
                 Case Is <> ".spc", ".rsn"
@@ -413,7 +413,7 @@ Public Class MedGuiR
 
             If LoadCD = "" And DataGridView1.SelectedRows.Count <> 0 Then consoles = DataGridView1.CurrentRow.Cells(6).Value()
 
-            If Len(TextBox1.Text) >= 3 Then LoadCD = "" Else percorso = "\\.\" & percorso
+            If Len(R_RelPath(TextBox1.Text)) >= 3 Then LoadCD = "" Else percorso = "\\.\" & R_RelPath(percorso)
             LoadCD = Nothing
             'If TextBox1.Text.Contains("\\.\*") Then  Else  : LoadCD = ""
 
@@ -426,7 +426,7 @@ Public Class MedGuiR
 
             If skipm3u = False Then
                 If DataGridView1.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = Nothing Then
-                    M3UDisk = InputBox("Input the disk that you want to load from 1 to " & System.IO.File.ReadAllLines(TextBox1.Text).Length, "Select a CD", "1")
+                    M3UDisk = InputBox("Input the disk that you want to load from 1 to " & System.IO.File.ReadAllLines(R_RelPath(TextBox1.Text)).Length, "Select a CD", "1")
                     If M3UDisk = "" Then Exit Sub
                     M3UDisk = " -which_medium " & (M3UDisk - 1)
                 End If
@@ -440,7 +440,7 @@ Public Class MedGuiR
                 Fmodule = " -force_module " & consoles & tpce
             End If
 
-            Arg = pArg & net & custom & LoadCD & Fmodule & M3UDisk & " " & Chr(34) & percorso & Chr(34)
+            Arg = pArg & net & custom & LoadCD & Fmodule & M3UDisk & " " & Chr(34) & R_RelPath(percorso) & Chr(34)
 
             'VerifyPerSystem()
 
@@ -460,8 +460,8 @@ Public Class MedGuiR
 
     Private Sub VerifyPerSystem()
         Dim sucamilla As String = ""
-        If File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(TextBox1.Text) & "." & p_c & ".cfg")) = True Then
-            sucamilla = Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(TextBox1.Text) & "." & p_c)
+        If File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(R_RelPath(TextBox1.Text)) & "." & p_c & ".cfg")) = True Then
+            sucamilla = Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(R_RelPath(TextBox1.Text)) & "." & p_c)
         ElseIf File.Exists(TextBox4.Text & "\" & p_c & ".cfg") = True Then
             sucamilla = p_c
         End If
@@ -517,10 +517,10 @@ Public Class MedGuiR
         'If last_rom = DataGridView1.CurrentRow.Cells(4).Value() Then Exit Sub
 
         Try
-            TextBox1.Text = DataGridView1.CurrentRow.Cells(4).Value()
+            TextBox1.Text = R_RelPath(DataGridView1.CurrentRow.Cells(4).Value())
             romName = Trim(DataGridView1.CurrentRow.Cells(0).Value())
-            percorso = TextBox1.Text
-            last_rom = TextBox1.Text
+            percorso = R_RelPath(TextBox1.Text)
+            last_rom = R_RelPath(TextBox1.Text)
             prevcrc = DataGridView1.CurrentRow.Cells(8).Value()
             Specific_Info()
             consoles = DataGridView1.CurrentRow.Cells(6).Value()
@@ -593,7 +593,7 @@ Public Class MedGuiR
         rec()
         pArg = record
         StartEmu()
-        If last_rom <> "" Then TextBox1.Text = last_rom
+        If last_rom <> "" Then TextBox1.Text = R_RelPath(last_rom)
     End Sub
 
     Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
@@ -601,7 +601,7 @@ Public Class MedGuiR
         rec()
         pArg = record
         StartEmu()
-        TextBox1.Text = last_rom
+        TextBox1.Text = R_RelPath(last_rom)
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
@@ -630,8 +630,9 @@ Public Class MedGuiR
         If Button11.BackColor = Color.Red Then multimedia = MedExtra & "Media\Audio\" & romName & ".wav" : ver_rec() : srec = " -soundrecord " & Chr(34) & MedExtra & "Media\Audio\" & romName & ".wav" & Chr(34) Else srec = ""
         If Button12.BackColor = Color.Red Then multimedia = MedExtra & "Media\Movie\" & romName & ".mov" : ver_rec() : mrec = " -qtrecord " & Chr(34) & MedExtra & "Media\Movie\" & romName & ".mov" & Chr(34) Else mrec = ""
 
-        record = " -qtrecord.vcodec " & MgrSetting.ComboBox4.Text & " -qtrecord.h_double_threshold " & MgrSetting.TrackBar5.Value & " -qtrecord.w_double_threshold " & MgrSetting.TrackBar4.Value &
-        mrec & srec
+        '" -qtrecord.vcodec " & MgrSetting.ComboBox4.Text & " -qtrecord.h_double_threshold " & MgrSetting.TrackBar5.Value & " -qtrecord.w_double_threshold " & MgrSetting.TrackBar4.Value &
+
+        record = mrec & srec
         If Button11.BackColor = Color.FromKnownColor(KnownColor.Transparent) And Button12.BackColor = Color.FromKnownColor(KnownColor.Transparent) Then record = Nothing
     End Sub
 
@@ -895,7 +896,7 @@ Public Class MedGuiR
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
             If DataGridView1.Rows.Count > 0 Then DataGridView1.Rows.Clear()
-            percorso = fdlg.FileName
+            percorso = R_RelPath(fdlg.FileName)
             SevenZCounter = 0
             SingleScan()
         Else
@@ -1075,8 +1076,8 @@ Public Class MedGuiR
         isof.Filter = tiso1
         isof.RestoreDirectory = True
         If isof.ShowDialog() = DialogResult.OK Then
-            percorso = isof.FileName
-            Label34.Text = percorso
+            percorso = R_RelPath(isof.FileName)
+            Label34.Text = R_RelPath(percorso)
             biso = Path.GetFileName(Label34.Text)
             tempiso = Replace(Label34.Text, Path.GetExtension(Label34.Text), "." & miso)
             'n_psx = isof.SafeFileName
@@ -1156,7 +1157,7 @@ Public Class MedGuiR
         fiso.Dispose()
         fiso.Close()
         MsgBox(UCase(miso) & " Created!", MsgBoxStyle.OkOnly + MsgBoxStyle.Information)
-        If consoles = "psx" Then percorso = tempiso : Change_PSX()
+        If consoles = "psx" Then percorso = R_RelPath(tempiso) : Change_PSX()
         tempiso = ""
     End Sub
 
@@ -1782,7 +1783,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                     'Datagrid_filter()
                 Else
                     'For i = 0 To MyFiles.Length - 1
-                    percorso = Frecord
+                    percorso = R_RelPath(Frecord)
                     SingleScan()
                     'If ext <> ".m3u" Then RealcdIsoName()
                     'Next
@@ -2106,8 +2107,8 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
-        If File.Exists(percorso) Then
-            Process.Start("explorer.exe", " /select ," & Chr(34) & percorso & Chr(34))
+        If File.Exists(R_RelPath(percorso)) Then
+            Process.Start("explorer.exe", " /select ," & Chr(34) & R_RelPath(percorso) & Chr(34))
         Else
             MsgBox("This file not exist", MsgBoxStyle.Exclamation + vbOKOnly, "Unrecognized file")
         End If
@@ -2524,11 +2525,11 @@ inputagain:
     End Sub
 
     Private Sub RIPSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RIPSToolStripMenuItem.Click
-        If File.Exists(percorso & ".ips") Then My.Computer.FileSystem.DeleteFile(percorso & ".ips", FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
+        If File.Exists(R_RelPath(percorso) & ".ips") Then My.Computer.FileSystem.DeleteFile(R_RelPath(percorso) & ".ips", FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
     End Sub
 
     Private Sub RSBIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RSBIToolStripMenuItem.Click
-        If File.Exists(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi") Then My.Computer.FileSystem.DeleteFile(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi", FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
+        If File.Exists(Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & ".sbi") Then My.Computer.FileSystem.DeleteFile(Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & ".sbi", FileIO.UIOption.AllDialogs, FileIO.RecycleOption.SendToRecycleBin, FileIO.UICancelOption.DoNothing)
     End Sub
 
     Private Sub IPSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IPSToolStripMenuItem.Click
@@ -2542,24 +2543,24 @@ inputagain:
 
             Select Case LCase(Path.GetExtension(fdlg.SafeFileName))
                 Case ".ips"
-                    If File.Exists(percorso & ".ips") Then
-                        orisp = MsgBox(Path.GetFileName(percorso) & ".ips exist" & vbCrLf & "Do you want to overwrite it?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "IPS exist...")
+                    If File.Exists(R_RelPath(percorso) & ".ips") Then
+                        orisp = MsgBox(Path.GetFileName(R_RelPath(percorso)) & ".ips exist" & vbCrLf & "Do you want to overwrite it?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "IPS exist...")
                     End If
                     If orisp <> vbNo Then
-                        My.Computer.FileSystem.CopyFile(fdlg.FileName, percorso & ".ips", overwrite:=True)
+                        My.Computer.FileSystem.CopyFile(fdlg.FileName, R_RelPath(percorso) & ".ips", overwrite:=True)
                         MsgBox("IPS Patch moved in the same game folder", MsgBoxStyle.Information + vbOKOnly, "Patch moved...")
                     End If
                 Case ".sbi"
-                    If File.Exists(Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi") Then
-                        orisp = MsgBox(Path.GetFileNameWithoutExtension(percorso) & ".sbi exist" & vbCrLf & "Do you want to overwrite it?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "SBI exist...")
+                    If File.Exists(Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & ".sbi") Then
+                        orisp = MsgBox(Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & ".sbi exist" & vbCrLf & "Do you want to overwrite it?", MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation, "SBI exist...")
                     End If
                     If orisp <> vbNo Then
-                        My.Computer.FileSystem.CopyFile(fdlg.FileName, Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) & ".sbi", overwrite:=True)
+                        My.Computer.FileSystem.CopyFile(fdlg.FileName, Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & ".sbi", overwrite:=True)
                         MsgBox("SBI Patch moved in the same game folder", MsgBoxStyle.Information + vbOKOnly, "Patch moved...")
                     End If
                 Case ".bps"
                     If File.Exists(MedExtra & "\Plugins\flips.exe") Then
-                        Dim viewex = LCase(Path.GetExtension(percorso))
+                        Dim viewex = LCase(Path.GetExtension(R_RelPath(percorso)))
                         Select Case viewex
                             Case ".zip", ".rar", ".7z"
                                 simple_extract()
@@ -2567,21 +2568,21 @@ inputagain:
 
                         tProcess = "flips"
                         wDir = (MedExtra & "Plugins")
-                        Arg = "-a " & Chr(34) & fdlg.FileName & Chr(34) & " " & Chr(34) & percorso & Chr(34) & " " & Chr(34) & Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) _
-                        & "_patched" & Path.GetExtension(percorso) & Chr(34)
+                        Arg = "-a " & Chr(34) & fdlg.FileName & Chr(34) & " " & Chr(34) & R_RelPath(percorso) & Chr(34) & " " & Chr(34) & Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) _
+                        & "_patched" & Path.GetExtension(R_RelPath(percorso)) & Chr(34)
                         StartProcess()
                         execute.WaitForExit()
                         Dim respatch As String
-                        If percorso.Contains("\RomTemp\") Then
-                            File.Delete(percorso)
+                        If R_RelPath(percorso).Contains("\RomTemp\") Then
+                            File.Delete(R_RelPath(percorso))
                             respatch = "File patched and putted into MedGuiR RomTemp folder"
                         Else
                             respatch = "File patched and putted into the same rom folder"
                         End If
-                        percorso = Path.GetDirectoryName(percorso) & "\" & Path.GetFileNameWithoutExtension(percorso) _
-                        & "_patched" & Path.GetExtension(percorso)
+                        percorso = Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) _
+                        & "_patched" & Path.GetExtension(R_RelPath(percorso))
                         MsgBox(respatch, MsgBoxStyle.Information + vbOKOnly, "File patched...")
-                        Process.Start("explorer.exe", " /select ," & Chr(34) & percorso & Chr(34))
+                        Process.Start("explorer.exe", " /select ," & Chr(34) & R_RelPath(percorso) & Chr(34))
                         SingleScan()
                     End If
 
@@ -2718,7 +2719,7 @@ inputagain:
                              "Yes = File name + hash" & vbCrLf &
                              "No = File name", vbYesNo + MsgBoxStyle.Information, "Import with hash...")
 
-            Select Case LCase(Path.GetExtension(percorso))
+            Select Case LCase(Path.GetExtension(R_RelPath(percorso)))
                 Case ".zip", ".rar", ".7z"
                     simple_extract()
                 Case ".cue", ".toc", ".ccd", ".m3u", ".zst"
@@ -2727,7 +2728,7 @@ inputagain:
             End Select
 
             If BCKRisp = vbYes Then
-                filepath = percorso
+                filepath = R_RelPath(percorso)
 
                 Select Case mmodule
                     Case "nes"
@@ -2753,7 +2754,7 @@ inputagain:
 
 SKIPHASH:
         Dim MCSlot As String = ""
-        Dim matchs = {Path.GetFileNameWithoutExtension(percorso),
+        Dim matchs = {Path.GetFileNameWithoutExtension(R_RelPath(percorso)),
          MCSlot, BackupExt}
 
         Select Case mmodule
@@ -2777,10 +2778,10 @@ SKIPHASH:
         End Select
 
         If Directory.Exists(ExtractPath("path_sav")) Then
-            If File.Exists(Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt)) Then
+            If File.Exists(Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & BackupHash & MCSlot & BackupExt)) Then
                 BCKRisp = MsgBox("Save already exist, do you want to overwrite it?", vbYesNo + MsgBoxStyle.Exclamation, "Save file exist...")
                 If BCKRisp = vbYes Then
-                    File.Copy(BackupPath, Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt), True)
+                    File.Copy(BackupPath, Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & BackupHash & MCSlot & BackupExt), True)
                     Select Case mmodule
                         Case "gba"
                             File.Delete(BackupPath)
@@ -2790,7 +2791,7 @@ SKIPHASH:
                     Exit Sub
                 End If
             Else
-                File.Copy(BackupPath, Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(percorso) & BackupHash & MCSlot & BackupExt), True)
+                File.Copy(BackupPath, Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & BackupHash & MCSlot & BackupExt), True)
             End If
             MsgBox("Backup/Save Imported!", vbOKOnly + MsgBoxStyle.Information, "Backup/Save Imported...")
         Else
@@ -3476,7 +3477,7 @@ MisScan:
                 portpad = "Built-In"
         End Select
 
-        Dim FileParameter As String = "-folder=" & Chr(34) & TextBox4.Text & Chr(34) & " -console=" & p_c & " -port=" & Chr(34) & portpad & Chr(34) & " -file=" & Chr(34) & Path.GetFileNameWithoutExtension(percorso) & Chr(34)
+        Dim FileParameter As String = "-folder=" & Chr(34) & TextBox4.Text & Chr(34) & " -console=" & p_c & " -port=" & Chr(34) & portpad & Chr(34) & " -file=" & Chr(34) & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & Chr(34)
 
         If File.Exists(MedExtra & "\Plugins\Controller\MedPad.exe") Then
             tProcess = "MedPad"

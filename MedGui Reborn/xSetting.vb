@@ -26,10 +26,10 @@ Module xSetting
     Public Sub ReadPSValue()
         set_special_module()
 
-        If IO.File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c & ".cfg")) = True Then
+        If IO.File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text)) & "." & p_c & ".cfg")) = True Then
             MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
             ReadXValue()
-            MedConfSpecific = Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text) & "." & p_c)
+            MedConfSpecific = Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text)) & "." & p_c)
             MgrSetting.CheckBox6.Checked = False
             MgrSetting.CheckBox59.Checked = True
             MsgBox("Detected a specific game config, global settings will be ignored", vbOKOnly + MsgBoxStyle.Information)

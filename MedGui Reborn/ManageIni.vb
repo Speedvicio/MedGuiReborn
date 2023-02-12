@@ -11,7 +11,7 @@ Module ManageIni
 
         Try
 
-            MedGuiR.TextBox4.Text = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Mednafen_path")
+            MedGuiR.TextBox4.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "General", "Mednafen_path"))
             Startup_Path = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Startup_Path")
             MedGuiR.ComboBox1.Text = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Dat")
 
@@ -100,7 +100,7 @@ Module ManageIni
             MedGuiR.TextBox25.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Username"))
             MedGuiR.TextBox24.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Password"))
             MedGuiR.TextBox23.Text = VSTripleDES.DecryptData(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Start_Path"))
-            MedGuiR.TextBox21.Text = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom")
+            MedGuiR.TextBox21.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom"))
             MedGuiR.CheckBox18.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Data_On")
         Catch ex As Exception
             MGRWriteLog("ManageIni - NetPlay: " & ex.Message)
@@ -194,29 +194,30 @@ Module ManageIni
 
         Try
 
-            MedGuiR.TextBox9.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Default")
+            Dim test As String = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Default"))
+            MedGuiR.TextBox9.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Default"))
             If MedGuiR.TextBox9.Text.Trim = "" Or Directory.Exists(MedGuiR.TextBox9.Text.Trim) = False Then
                 If Directory.Exists(Path.Combine(Application.StartupPath, "ROMS")) = False Then
                     My.Computer.FileSystem.CreateDirectory(Path.Combine(Application.StartupPath, "ROMS"))
                 End If
                 MedGuiR.TextBox9.Text = Path.Combine(Application.StartupPath, "ROMS")
             End If
-            MedGuiR.TextBox22.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Apple2")
-            MedGuiR.TextBox8.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Lynx")
-            MedGuiR.TextBox7.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameBoy")
-            MedGuiR.TextBox5.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameBoyAdvance")
-            MedGuiR.TextBox6.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "NeoGeoPocket")
-            MedGuiR.TextBox11.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Famicom")
-            MedGuiR.TextBox10.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "PCEngine")
-            MedGuiR.TextBox15.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "PCFX")
-            MedGuiR.TextBox14.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameGear")
-            MedGuiR.TextBox13.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Megadrive")
-            MedGuiR.TextBox19.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "MasterSystem")
-            MedGuiR.TextBox18.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Playstation")
-            MedGuiR.TextBox17.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "SNES")
-            MedGuiR.TextBox20.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Saturn")
-            MedGuiR.TextBox12.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "VirtualBoy")
-            MedGuiR.TextBox16.Text = RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "WonderSwan")
+            MedGuiR.TextBox22.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Apple2"))
+            MedGuiR.TextBox8.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Lynx"))
+            MedGuiR.TextBox7.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameBoy"))
+            MedGuiR.TextBox5.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameBoyAdvance"))
+            MedGuiR.TextBox6.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "NeoGeoPocket"))
+            MedGuiR.TextBox11.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Famicom"))
+            MedGuiR.TextBox10.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "PCEngine"))
+            MedGuiR.TextBox15.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "PCFX"))
+            MedGuiR.TextBox14.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "GameGear"))
+            MedGuiR.TextBox13.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Megadrive"))
+            MedGuiR.TextBox19.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "MasterSystem"))
+            MedGuiR.TextBox18.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Playstation"))
+            MedGuiR.TextBox17.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "SNES"))
+            MedGuiR.TextBox20.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "Saturn"))
+            MedGuiR.TextBox12.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "VirtualBoy"))
+            MedGuiR.TextBox16.Text = R_RelPath(RIni.IniRead(MedExtra & "\Mini.ini", "Game Directory", "WonderSwan"))
         Catch ex As Exception
             MGRWriteLog("ManageIni - DirectoryRMini: " & ex.Message)
         Finally
@@ -227,7 +228,7 @@ Module ManageIni
     Public Sub RWIni()
 
         Try
-            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Mednafen_path", MedGuiR.TextBox4.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Mednafen_path", W_RelPath(MedGuiR.TextBox4.Text))
             If type_csv = "fav" Then
                 WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Startup_Path", "fav")
             Else
@@ -262,7 +263,7 @@ Module ManageIni
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Username", VSTripleDES.EncryptData(MedGuiR.TextBox25.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Password", VSTripleDES.EncryptData(MedGuiR.TextBox24.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Start_Path", VSTripleDES.EncryptData(MedGuiR.TextBox23.Text))
-            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom", MedGuiR.TextBox21.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom", W_RelPath(MedGuiR.TextBox21.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Data_On", MedGuiR.CheckBox18.CheckState)
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Nick", UCInick)
@@ -305,27 +306,43 @@ Module ManageIni
             WIni.IniWrite(MedExtra & "\Mini.ini", "Form Style", "Background_Color", DefBack.ToArgb)
             WIni.IniWrite(MedExtra & "\Mini.ini", "Form Style", "Forecolor_Color", DefFore.ToArgb)
 
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Default", MedGuiR.TextBox9.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Apple2", MedGuiR.TextBox22.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Lynx", MedGuiR.TextBox8.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoy", MedGuiR.TextBox7.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoyAdvance", MedGuiR.TextBox5.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "NeoGeoPocket", MedGuiR.TextBox6.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Famicom", MedGuiR.TextBox11.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "PCEngine", MedGuiR.TextBox10.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "PCFX", MedGuiR.TextBox15.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameGear", MedGuiR.TextBox14.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Megadrive", MedGuiR.TextBox13.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "MasterSystem", MedGuiR.TextBox19.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Playstation", MedGuiR.TextBox18.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "SNES", MedGuiR.TextBox17.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Saturn", MedGuiR.TextBox20.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "VirtualBoy", MedGuiR.TextBox12.Text)
-            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "WonderSwan", MedGuiR.TextBox16.Text)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Default", W_RelPath(MedGuiR.TextBox9.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Apple2", W_RelPath(MedGuiR.TextBox22.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Lynx", W_RelPath(MedGuiR.TextBox8.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoy", W_RelPath(MedGuiR.TextBox7.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameBoyAdvance", W_RelPath(MedGuiR.TextBox5.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "NeoGeoPocket", W_RelPath(MedGuiR.TextBox6.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Famicom", W_RelPath(MedGuiR.TextBox11.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "PCEngine", W_RelPath(MedGuiR.TextBox10.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "PCFX", W_RelPath(MedGuiR.TextBox15.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "GameGear", W_RelPath(MedGuiR.TextBox14.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Megadrive", W_RelPath(MedGuiR.TextBox13.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "MasterSystem", W_RelPath(MedGuiR.TextBox19.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Playstation", W_RelPath(MedGuiR.TextBox18.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "SNES", W_RelPath(MedGuiR.TextBox17.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "Saturn", W_RelPath(MedGuiR.TextBox20.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "VirtualBoy", W_RelPath(MedGuiR.TextBox12.Text))
+            WIni.IniWrite(MedExtra & "\Mini.ini", "Game Directory", "WonderSwan", W_RelPath(MedGuiR.TextBox16.Text))
         Catch ex As Exception
             MGRWriteLog("ManageIni - MedGuiR: " & ex.Message)
         End Try
     End Sub
+
+    Public Function W_RelPath(path As String) As String
+        If path.StartsWith(Application.StartupPath) Then
+            W_RelPath = path.Replace(Application.StartupPath, "..")
+        Else
+            W_RelPath = path
+        End If
+    End Function
+
+    Public Function R_RelPath(path As String) As String
+        If path.StartsWith("..\") Then
+            R_RelPath = path.Replace("..", Application.StartupPath)
+        Else
+            R_RelPath = path
+        End If
+    End Function
 
     Public Sub TGDBIni()
         Try

@@ -37,6 +37,8 @@ Module Prescanned
                         TextLine = objReader.ReadLine()
                         SplitLine = Split(TextLine, "|")
 
+                        SplitLine(4) = R_RelPath(SplitLine(4))
+
                         If MedGuiR.CheckBox22.Checked = True Then GoTo SKIP_LIST
                         If File.Exists(SplitLine(4)) = False And cr - 1 = 0 Then
                             cr = cr - 1
@@ -161,7 +163,7 @@ SKIP_LIST:
 
                     If Not TypeOf MedGuiR.DataGridView1.CurrentRow.Cells.Item(I).Value Is DBNull Then
 
-                        cellvalue = MedGuiR.DataGridView1.Item(I, j).Value.ToString
+                        cellvalue = W_RelPath(MedGuiR.DataGridView1.Item(I, j).Value.ToString)
 
                         If cellvalue = "System.Drawing.Bitmap" Then cellvalue = "_image_console_"
                     Else

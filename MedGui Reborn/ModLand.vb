@@ -168,8 +168,8 @@ Public Class ModLand
                     Case ".wsr", ".psf", ".psf1", ".minipsf", ".gsf", ".minigsf", ".hes", ".nsf", ".spc", ".rsn", ".vgz", ".vgm", ".gbs", ".ssf", ".minissf"
                         DownloadDriver()
                         MedGuiR.SY.Text = ""
-                        percorso = MedExtra & "Media/Module" & download
-                        MedGuiR.TextBox1.Text = percorso
+                        percorso = R_RelPath(MedExtra & "Media/Module" & download)
+                        MedGuiR.TextBox1.Text = R_RelPath(percorso)
                         SingleScan()
                         MedGuiR.DataGridView1.CurrentCell = MedGuiR.DataGridView1(0, MedGuiR.DataGridView1.RowCount - 1)
                         MedGuiR.DataGridView1.Focus()

@@ -201,9 +201,9 @@ Public Class MedClient
         Dim Trom As String = DataGridView1.CurrentRow.Cells(1).Value() & "_" & DataGridView1.CurrentRow.Cells(2).Value() & Path.GetExtension(DataGridView1.CurrentRow.Cells(9).Value())
 
         If File.Exists(MedGuiR.TextBox21.Text & "\" & Trom) Then
-            percorso = MedGuiR.TextBox21.Text & "\" & Trom
+            percorso = R_RelPath(MedGuiR.TextBox21.Text & "\" & Trom)
         ElseIf File.Exists(MedGuiR.TextBox21.Text & "\" & DataGridView1.CurrentRow.Cells(9).Value()) Then
-            percorso = MedGuiR.TextBox21.Text & "\" & DataGridView1.CurrentRow.Cells(9).Value()
+            percorso = R_RelPath(MedGuiR.TextBox21.Text & "\" & DataGridView1.CurrentRow.Cells(9).Value())
         Else
 
 tryagain:
@@ -215,7 +215,7 @@ tryagain:
             StartNetPath()
             OpenFileDialog1.InitialDirectory = InitialNetPath
             If OpenFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-                percorso = (OpenFileDialog1.FileName)
+                percorso = R_RelPath((OpenFileDialog1.FileName))
                 CheckCRCNet()
 
                 If NCRC.Trim = DataGridView1.CurrentRow.Cells(8).Value().ToString.Trim Or NCRC.Trim = "image" Then
@@ -230,7 +230,7 @@ tryagain:
         End If
 
         If NModule = "psx" Then
-            MedGuiR.TextBox1.Text = percorso
+            MedGuiR.TextBox1.Text = R_RelPath(percorso)
             BackupMCR()
         End If
 
@@ -238,7 +238,7 @@ tryagain:
         QuestionMultitap()
 
         Arg = egkey & " -netplay.host " & Server & " -netplay.nick " & Nick & epass & " -netplay.port " &
-              port & " -connect" & pargMT & " -force_module " & NModule & " " & NNetParameters & " " & Chr(34) & percorso & Chr(34)
+              port & " -connect" & pargMT & " -force_module " & NModule & " " & NNetParameters & " " & Chr(34) & R_RelPath(percorso) & Chr(34)
 
         tProcess = "mednafen"
         wDir = MedGuiR.TextBox4.Text
@@ -472,7 +472,7 @@ tryagain:
                     allItems.Add(Path.GetFileName(FullGame(4).ToString))
                 Else
                     If FullGame(4).ToString.Contains("\" & GSplit) Then
-                        ReadCsvList = FullGame(4).ToString
+                        ReadCsvList = R_RelPath(FullGame(4).ToString)
                         Exit For
                     End If
                 End If
@@ -521,7 +521,7 @@ tryagain:
 
         MedGuiR.SY.Text = ""
         MedGuiR.DataGridView1.Rows.Clear()
-        percorso = Gpath
+        percorso = R_RelPath(Gpath)
         SingleScan()
         MedGuiR.CheckBox18.Checked = True
         MedGuiR.NetToolStripButton.BackColor = Color.Red

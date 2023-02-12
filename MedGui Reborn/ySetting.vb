@@ -1,7 +1,7 @@
 ﻿Module ySetting
 
     Public pArg, sound, video, filters, various, netplay_, record, custom, apple2, lynx, gameboy, neogeop, famicom, pcengine, pcfx,
-    genesis, mastersystem, snes, vboy, wswan, psx, minput, tminput, ss, specBios As String
+    genesis, mastersystem, snes, vboy, wswan, psx, minput, tminput, ss, specBios, s_record As String
 
     Public Sub parMednafen()
         Dim lfm As String
@@ -81,7 +81,7 @@
         'If Setting.CheckBox7.Checked = True Then srec = " -soundrecord " & Chr(34) & MedExtra & "Media\Audio\" & Setting.TextBox3.Text & ".wav" & Chr(34) Else srec = ""
         'If Setting.CheckBox6.Checked = True Then mrec = " -qtrecord " & (Chr(34) & MedExtra & "Media\Movie\" & Setting.TextBox3.Text & ".mov" & Chr(34)) Else mrec = ""
 
-        'record = " -qtrecord.vcodec " & Setting.ComboBox4.Text & " -qtrecord.h_double_threshold " & Setting.TrackBar5.Value & " -qtrecord.w_double_threshold " & Setting.TrackBar4.Value & _
+        s_record = " -qtrecord.vcodec " & MgrSetting.ComboBox4.Text & " -qtrecord.h_double_threshold " & MgrSetting.TrackBar5.Value & " -qtrecord.w_double_threshold " & MgrSetting.TrackBar4.Value '&
         'mrec & srec
 
         'Apple II/+
@@ -241,48 +241,48 @@
 
         Select Case consoles
             Case "apple2"
-                pArg = sound & video & filters & various & netplay_ & apple2
+                pArg = sound & video & filters & various & s_record & netplay_ & apple2
             Case "lynx"
-                pArg = sound & video & filters & various & netplay_ & lynx
+                pArg = sound & video & filters & various & s_record & netplay_ & lynx
             Case "gb", "gbc"
-                pArg = sound & video & filters & various & netplay_ & gameboy
+                pArg = sound & video & filters & various & s_record & netplay_ & gameboy
             Case "gg"
-                pArg = sound & video & filters & various & netplay_
+                pArg = sound & video & filters & various & s_record & netplay_
             Case "gba"
                 specBios = " -gba.bios " & Chr(34) & MgrSetting.TextBox10.Text & Chr(34)
-                pArg = sound & video & filters & various & specBios & netplay_
+                pArg = sound & video & filters & various & s_record & specBios & netplay_
             Case "md"
                 specBios = " -md.cdbios " & Chr(34) & MgrSetting.TextBox14.Text & Chr(34)
-                pArg = sound & video & filters & various & specBios & netplay_ & genesis
+                pArg = sound & video & filters & various & s_record & specBios & netplay_ & genesis
             Case "ngp"
-                pArg = sound & video & filters & various & netplay_ & neogeop
+                pArg = sound & video & filters & various & s_record & netplay_ & neogeop
             Case "nes"
                 specBios = " -nes.ggrom " & Chr(34) & MgrSetting.TextBox11.Text & Chr(34)
-                pArg = sound & video & filters & various & specBios & netplay_ & famicom
+                pArg = sound & video & filters & various & s_record & specBios & netplay_ & famicom
             Case "pce", "pce_fast"
                 specBios = " -pce" & MedGuiR.tpce & ".cdbios " & Chr(34) & MgrSetting.TextBox12.Text & Chr(34) & " -pce.gecdbios " & Chr(34) & MgrSetting.TextBox18.Text & Chr(34)
-                pArg = sound & video & filters & various & specBios & netplay_ & pcengine
+                pArg = sound & video & filters & various & s_record & specBios & netplay_ & pcengine
             Case "psx"
                 specBios = " -psx.bios_eu " & Chr(34) & MgrSetting.TextBox15.Text & Chr(34) & " -psx.bios_jp " & Chr(34) & MgrSetting.TextBox16.Text & Chr(34) & " -psx.bios_na " & Chr(34) & MgrSetting.TextBox17.Text & Chr(34)
-                pArg = sound & video & filters & various & specBios & netplay_ & psx
+                pArg = sound & video & filters & various & s_record & specBios & netplay_ & psx
             Case "sms"
-                pArg = sound & video & filters & various & netplay_ & mastersystem
+                pArg = sound & video & filters & various & s_record & netplay_ & mastersystem
             Case "snes", "snes_faust"
-                pArg = sound & video & filters & various & netplay_ & snes
+                pArg = sound & video & filters & various & s_record & netplay_ & snes
             Case "ss"
                 specBios = " -ss.bios_jp " & Chr(34) & MgrSetting.TextBox22.Text & Chr(34) & " -ss.bios_na_eu " & Chr(34) & MgrSetting.TextBox23.Text & Chr(34)
-                pArg = sound & video & filters & various & specBios & netplay_ & ss
+                pArg = sound & video & filters & various & s_record & specBios & netplay_ & ss
             Case "ssfplay"
-                pArg = sound & video & filters & various & netplay_
+                pArg = sound & video & filters & various & s_record & netplay_
             Case "vb"
-                pArg = sound & video & filters & various & netplay_ & vboy
+                pArg = sound & video & filters & various & s_record & netplay_ & vboy
             Case "wswan"
-                pArg = sound & video & filters & various & netplay_ & wswan
+                pArg = sound & video & filters & various & s_record & netplay_ & wswan
             Case "pcfx"
                 specBios = " -pcfx.bios " & Chr(34) & MgrSetting.TextBox13.Text & Chr(34)
-                pArg = sound & video & filters & various & specBios & netplay_ & pcfx
+                pArg = sound & video & filters & various & s_record & specBios & netplay_ & pcfx
             Case "cdplay"
-                pArg = sound & video & filters & various
+                pArg = sound & video & filters & various & s_record
         End Select
     End Sub
 

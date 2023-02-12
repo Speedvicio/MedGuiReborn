@@ -49,7 +49,13 @@ Public Class Mcheat
     Private Function GetSerial(gamename As String) As String
         Dim splitrname() As String
         splitrname = gamename.Split("[")
-        Return (Replace(splitrname(1), "]", ""))
+        Dim i As Integer
+        If splitrname.Length > 2 Then
+            i = splitrname.Length - 1
+        Else
+            i = 1
+        End If
+        Return (Replace(splitrname(i), "]", ""))
     End Function
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
@@ -634,12 +640,19 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProt
                     Dim SplitMd5() As String = DeatilCheat(i).Split("]")
                     ComboBox1.Text = SplitMd5(0)
                 End If
+
+Next_STEP:
                 If DeatilCheat(i).Contains(vbLf) = False Then i += 1
                 If DeatilCheat(i).Trim = ComboBox1.Text & "] " & Label7.Text Then Continue For
                 If i > DeatilCheat.Length - 1 Then Exit For
+
                 SplitCheat = DeatilCheat(i).Split(vbLf)
 
                 If SplitCheat Is Nothing Then Continue For
+
+                If SplitCheat.Length < 2 Then
+                    GoTo Next_STEP
+                End If
 
                 For z = 1 To SplitCheat.Length - 1
                     If SplitCheat(z).Trim = "" Then Continue For

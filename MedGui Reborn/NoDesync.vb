@@ -84,7 +84,7 @@ Module NoDesync
             Dim fileEntries As String() = Directory.GetFiles(ExtractPath("path_sav"))
 
             For Each fileName As String In fileEntries
-                If fileName.Contains(Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text)) And Path.GetExtension(fileName) = ".mcr" And existMCR = False Then
+                If fileName.Contains(Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text))) And Path.GetExtension(fileName) = ".mcr" And existMCR = False Then
                     Dim rm As String
                     rm = MsgBox(cm & ".mcr save state detected, to prevent overwriting I backup it into a safe location.", MsgBoxStyle.OkOnly + MsgBoxStyle.Exclamation, "MCR savestate detected!")
                     My.Computer.FileSystem.CopyFile(fileName, MedExtra & "Backup\Save\" & Path.GetFileName(fileName), True)
@@ -102,7 +102,7 @@ Module NoDesync
         Try
             Dim fileEntries As String() = Directory.GetFiles(MedExtra & "Backup\Save\")
             For Each fileName As String In fileEntries
-                If fileName.Contains(Path.GetFileNameWithoutExtension(MedGuiR.TextBox1.Text)) And Path.GetExtension(fileName) = ".mcr" Then
+                If fileName.Contains(Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text))) And Path.GetExtension(fileName) = ".mcr" Then
                     existMCR = True
                     If MedGuiR.NetToolStripButton.BackColor = SystemColors.Control Then
                         Dim rm As String

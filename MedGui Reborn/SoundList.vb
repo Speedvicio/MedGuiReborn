@@ -8,8 +8,8 @@
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
         RichTextBox2.Clear()
         If ListBox1.SelectedItem = "" Then Exit Sub
-        percorso = MedExtra & "\RomTemp\" & ListBox1.SelectedItem
-        MedGuiR.TextBox1.Text = percorso
+        percorso = R_RelPath(MedExtra & "\RomTemp\" & ListBox1.SelectedItem)
+        MedGuiR.TextBox1.Text = R_RelPath(percorso)
         DetectChipmodule()
         RichTextBox2.Text = AllTags
         If AllTags <> "" Then ChipTAG.RichTextBox1.Text = AllTags
