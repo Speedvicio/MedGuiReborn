@@ -64,6 +64,7 @@ Module Sbi
                 FTPDownloadFile(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z", UpdateServer & "/MedGuiR/sbi/" & "[" & patchname & "].7z", "anonymous", "anonymous")
             End If
 
+PatchSkip:
             Dim infoReader As FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z")
 
@@ -72,8 +73,6 @@ Module Sbi
                 System.IO.File.Delete(MedExtra & "Patch\Psx\Sbi\" & patchname & ".7z")
                 Exit Sub
             End If
-
-PatchSkip:
 
             'Call contr_os()
 
