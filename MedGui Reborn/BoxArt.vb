@@ -55,7 +55,7 @@ Module BoxArt
                 Case ".zip"
                     MedGuiR.PictureBox2.Load(MedExtra & "\Resource\Gui\zip.png")
                     MedGuiR.ToolTip1.SetToolTip(MedGuiR.PictureBox2, "Zip Compressed Rom")
-                Case ".cue", ".ccd"
+                Case ".cue", ".ccd", ".m3u"
                     MedGuiR.PictureBox2.Load(MedExtra & "\Resource\Gui\dtl.png")
                     MedGuiR.ToolTip1.SetToolTip(MedGuiR.PictureBox2, "Disc Image File")
                     dimension = Decimal.Round((drom) / 1048576).ToString : size = " Megabyte"
