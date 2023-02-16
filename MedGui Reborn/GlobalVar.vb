@@ -4,7 +4,7 @@ Imports System.Net
 Module GlobalVar
 
     Public Startup_Path, UCInick, UCIserver, UCIport, UCIchannel, vmedClear, MedShader, UpdateServer, MGRH,
-    JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf, SScart As String, forMax, stopiso, noftp As Boolean,
+    JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf, SScart As String, forMax, stopiso, noftp, SMedClient As Boolean,
     TypeOS As String = UCase(My.Computer.Info.OSFullName)
 
     Public NewAPI As Boolean = True
@@ -27,7 +27,9 @@ Module GlobalVar
         'Startup_Path = ""
         'End If
 
-        If Startup_Path = "fav" Then
+        If SMedClient = True Then
+            'non scansionare
+        ElseIf Startup_Path = "fav" Then
             MedGuiR.FavouritesToolStripButton.PerformClick()
         Else
             'MedGuiR.SY.SelectedItem = Startup_Path

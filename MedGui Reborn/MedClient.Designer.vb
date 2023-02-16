@@ -73,6 +73,7 @@ Partial Class MedClient
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,9 +95,9 @@ Partial Class MedClient
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(762, 35)
+        Me.Button1.Location = New System.Drawing.Point(903, 35)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 23)
+        Me.Button1.Size = New System.Drawing.Size(59, 23)
         Me.Button1.TabIndex = 37
         Me.Button1.Text = "&Refresh"
         Me.ToolTip1.SetToolTip(Me.Button1, "Refresh opened NetPlay session")
@@ -536,12 +537,26 @@ Partial Class MedClient
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Game List"
         '
+        'CheckBox4
+        '
+        Me.CheckBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(762, 39)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(99, 17)
+        Me.CheckBox4.TabIndex = 54
+        Me.CheckBox4.Text = "&Load at Startup"
+        Me.ToolTip1.SetToolTip(Me.CheckBox4, "Load MedClient at Startup")
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
         'MedClient
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(970, 575)
+        Me.Controls.Add(Me.CheckBox4)
         Me.Controls.Add(Me.SplitContainer2)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Controls.Add(Me.Button3)
@@ -622,4 +637,5 @@ Partial Class MedClient
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CheckBox4 As CheckBox
 End Class
