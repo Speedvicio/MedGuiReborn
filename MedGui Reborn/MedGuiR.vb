@@ -785,6 +785,7 @@ Public Class MedGuiR
     Private Sub ToolStripComboBox1_SelectedIndexChanged1(sender As Object, e As EventArgs) Handles SY.SelectedIndexChanged
         ModuleToolStripComboBox2.Text = SY.Text
         ChangeModule()
+        Startup_Path = SY.Text
     End Sub
 
     Private Sub ChangeModule()
@@ -3441,6 +3442,10 @@ MisScan:
             End If
         End If
         DataGridView1.Focus()
+    End Sub
+
+    Private Sub SY_Click(sender As Object, e As EventArgs) Handles SY.Click
+
     End Sub
 
     Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged

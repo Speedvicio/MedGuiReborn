@@ -41,7 +41,13 @@ Public Class MedClient
         RMedClIni()
         Me.WindowState = 2
         CheckBox1.Checked = True
-        ConsoleComboBox.Text = MedGuiR.SY.Text
+
+        If CheckBox4.Checked = True Then
+            ConsoleComboBox.Text = Startup_Path
+        Else
+            ConsoleComboBox.Text = MedGuiR.SY.Text
+        End If
+
         CheckBox2.Checked = MedGuiR.CheckBox19.CheckState
 
     End Sub
@@ -394,6 +400,9 @@ tryagain:
         NotifyIcon1.Dispose()
         'MuteNotification = False
         MedGuiR.Button53.Enabled = True
+
+        If CheckBox4.Checked = True Then Startup_Path = ConsoleComboBox.Text
+
     End Sub
 
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick

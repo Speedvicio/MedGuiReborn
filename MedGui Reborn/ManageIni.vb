@@ -236,7 +236,7 @@ Module ManageIni
             If type_csv = "fav" Then
                 WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Startup_Path", "fav")
             Else
-                WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Startup_Path", MedGuiR.SY.SelectedItem)
+                WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Startup_Path", Startup_Path)
             End If
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Dat", MedGuiR.ComboBox1.Text)
             'WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Mantain_RomTemp", MedGuiR.CheckBox3.CheckState)
