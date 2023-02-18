@@ -337,19 +337,26 @@ tryagain:
     End Sub
 
     Private Sub AddUCI()
-        If UCI.Visible = True Then UCI.Close()
+        'If UCI.Visible = True Then UCI.Close()
 
-        UCI.TopLevel = False
-        UCI.TopMost = True
-        Panel1.Controls.Add(UCI)
-        UCI.Dock = DockStyle.Fill
-        UCI.FormBorderStyle = FormBorderStyle.None
-        UCI.Show()
+        'UCI.TopLevel = False
+        'UCI.TopMost = True
+        'Panel1.Controls.Add(UCI)
+        'UCI.Dock = DockStyle.Fill
+        'UCI.FormBorderStyle = FormBorderStyle.None
+        'UCI.Show()
 
-        UCI.txtNick.Text = TextBox1.Text
-        UCI.cmbServer.Text = "irc.oftc.net"
-        UCI.cmbChannel.Text = "#MedPlay"
-        UCI.btnIRCConnect()
+        'UCI.txtNick.Text = TextBox1.Text
+        'UCI.cmbServer.Text = "irc.oftc.net"
+        'UCI.cmbChannel.Text = "#MedPlay"
+        'UCI.btnIRCConnect()
+
+        WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
+        Dim browser As New WebBrowser
+        Panel1.Controls.Add(browser)
+        browser.Dock = DockStyle.Fill
+        browser.ScriptErrorsSuppressed = True
+        browser.Navigate("http://webchat.oftc.net/?nick=" & Nick & "&channels=MedPlay&uio=Mj10cnVlJjk9dHJ1ZSYxMT02MiYxMj10cnVleb")
     End Sub
 
     Private Sub StartNetPath()
