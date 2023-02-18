@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -426,6 +426,7 @@ Partial Class MedGuiR
         Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox25 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -480,23 +481,23 @@ Partial Class MedGuiR
         Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.RowTemplate.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
@@ -504,9 +505,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -1559,9 +1560,9 @@ Partial Class MedGuiR
         '
         'Button53
         '
-        Me.Button53.Location = New System.Drawing.Point(101, 149)
+        Me.Button53.Location = New System.Drawing.Point(108, 149)
         Me.Button53.Name = "Button53"
-        Me.Button53.Size = New System.Drawing.Size(112, 23)
+        Me.Button53.Size = New System.Drawing.Size(106, 23)
         Me.Button53.TabIndex = 53
         Me.Button53.Text = "Open &Client"
         Me.ToolTip1.SetToolTip(Me.Button53, "Open NetPlay Finder (MedClient)")
@@ -1644,7 +1645,7 @@ Partial Class MedGuiR
         'Button56
         '
         Me.Button56.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button56.Location = New System.Drawing.Point(72, 149)
+        Me.Button56.Location = New System.Drawing.Point(80, 149)
         Me.Button56.Name = "Button56"
         Me.Button56.Size = New System.Drawing.Size(23, 23)
         Me.Button56.TabIndex = 57
@@ -2457,7 +2458,7 @@ Partial Class MedGuiR
         Me.IconStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SY, Me.RebuildToolStripButton, Me.toolStripSeparator, Me.RecentToolStripButton1, Me.LoadCDToolStripButton, Me.FavouritesToolStripButton, Me.FoldeRomToolStripButton, Me.LoadRomToolStripButton, Me.TextBox1, Me.toolStripSeparator1, Me.NetToolStripButton, Me.ServerToolStripButton, Me.IRCToolStripButton, Me.ModLandToolStripButton, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.TextBox3, Me.FlagToolStripSplitButton, Me.FindToolStripButton})
         Me.IconStrip.Location = New System.Drawing.Point(12, 6)
         Me.IconStrip.Name = "IconStrip"
-        Me.IconStrip.Size = New System.Drawing.Size(755, 25)
+        Me.IconStrip.Size = New System.Drawing.Size(701, 25)
         Me.IconStrip.TabIndex = 34
         Me.IconStrip.Text = "ToolStrip1"
         Me.IconStrip.Visible = False
@@ -2880,6 +2881,7 @@ Partial Class MedGuiR
         '
         'GroupBox9
         '
+        Me.GroupBox9.Controls.Add(Me.CheckBox25)
         Me.GroupBox9.Controls.Add(Me.ComboBox7)
         Me.GroupBox9.Controls.Add(Me.Button57)
         Me.GroupBox9.Controls.Add(Me.Button56)
@@ -2908,9 +2910,9 @@ Partial Class MedGuiR
         '
         Me.ComboBox7.FormattingEnabled = True
         Me.ComboBox7.Items.AddRange(New Object() {"speedvicio.ddns.net", "Speedvicio.us.to"})
-        Me.ComboBox7.Location = New System.Drawing.Point(72, 18)
+        Me.ComboBox7.Location = New System.Drawing.Point(80, 18)
         Me.ComboBox7.Name = "ComboBox7"
-        Me.ComboBox7.Size = New System.Drawing.Size(170, 21)
+        Me.ComboBox7.Size = New System.Drawing.Size(162, 21)
         Me.ComboBox7.TabIndex = 59
         Me.ComboBox7.Text = "speedvicio.ddns.net"
         '
@@ -2925,9 +2927,9 @@ Partial Class MedGuiR
         '
         'TextBox21
         '
-        Me.TextBox21.Location = New System.Drawing.Point(72, 123)
+        Me.TextBox21.Location = New System.Drawing.Point(80, 123)
         Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(141, 20)
+        Me.TextBox21.Size = New System.Drawing.Size(133, 20)
         Me.TextBox21.TabIndex = 51
         '
         'Label49
@@ -2951,9 +2953,9 @@ Partial Class MedGuiR
         'TextBox23
         '
         Me.TextBox23.Enabled = False
-        Me.TextBox23.Location = New System.Drawing.Point(72, 97)
+        Me.TextBox23.Location = New System.Drawing.Point(80, 97)
         Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Size = New System.Drawing.Size(170, 20)
+        Me.TextBox23.Size = New System.Drawing.Size(162, 20)
         Me.TextBox23.TabIndex = 47
         Me.TextBox23.Text = "NetPlay"
         '
@@ -2969,10 +2971,10 @@ Partial Class MedGuiR
         'TextBox24
         '
         Me.TextBox24.Enabled = False
-        Me.TextBox24.Location = New System.Drawing.Point(72, 71)
+        Me.TextBox24.Location = New System.Drawing.Point(80, 71)
         Me.TextBox24.Name = "TextBox24"
         Me.TextBox24.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox24.Size = New System.Drawing.Size(170, 20)
+        Me.TextBox24.Size = New System.Drawing.Size(162, 20)
         Me.TextBox24.TabIndex = 45
         Me.TextBox24.Text = "Mednafen"
         '
@@ -2988,9 +2990,9 @@ Partial Class MedGuiR
         'TextBox25
         '
         Me.TextBox25.Enabled = False
-        Me.TextBox25.Location = New System.Drawing.Point(72, 45)
+        Me.TextBox25.Location = New System.Drawing.Point(80, 45)
         Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(170, 20)
+        Me.TextBox25.Size = New System.Drawing.Size(162, 20)
         Me.TextBox25.TabIndex = 43
         Me.TextBox25.Text = "medguir"
         '
@@ -4180,6 +4182,17 @@ Partial Class MedGuiR
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
         '
+        'CheckBox25
+        '
+        Me.CheckBox25.AutoSize = True
+        Me.CheckBox25.Location = New System.Drawing.Point(9, 153)
+        Me.CheckBox25.Name = "CheckBox25"
+        Me.CheckBox25.Size = New System.Drawing.Size(66, 17)
+        Me.CheckBox25.TabIndex = 60
+        Me.CheckBox25.Text = "&Use UCI"
+        Me.ToolTip1.SetToolTip(Me.CheckBox25, "Set Ultra Crappy IRC as default IRC client")
+        Me.CheckBox25.UseVisualStyleBackColor = True
+        '
         'MedGuiR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4664,4 +4677,5 @@ Partial Class MedGuiR
     Friend WithEvents ToolStripSeparator24 As ToolStripSeparator
     Friend WithEvents GENREToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GENREComboBox1 As ToolStripComboBox
+    Friend WithEvents CheckBox25 As CheckBox
 End Class

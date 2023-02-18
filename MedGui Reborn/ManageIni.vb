@@ -106,6 +106,10 @@ Module ManageIni
             'Start MedClient
             MedClient.CheckBox4.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Start_MedClient")
             SMedClient = MedClient.CheckBox4.CheckState
+
+            'Set UCI as def client
+            MedGuiR.CheckBox25.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Use_UCI")
+            D_UCI = MedGuiR.CheckBox25.CheckState
         Catch ex As Exception
             MGRWriteLog("ManageIni - NetPlay: " & ex.Message)
         Finally
@@ -269,6 +273,7 @@ Module ManageIni
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Start_Path", VSTripleDES.EncryptData(MedGuiR.TextBox23.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "DownloadedRom", W_RelPath(MedGuiR.TextBox21.Text))
             WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Data_On", MedGuiR.CheckBox18.CheckState)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "NetPlay", "Use_UCI", MedGuiR.CheckBox25.CheckState)
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Nick", UCInick)
             WIni.IniWrite(MedExtra & "\Mini.ini", "UCI", "UCI_Server", UCIserver)

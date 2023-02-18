@@ -14,6 +14,13 @@ Public Class MedClient
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If MedGuiR.CheckBox25.Checked = True Then
+            D_UCI = True
+        Else
+            D_UCI = False
+        End If
+
         MedGuiR.Button53.Enabled = False
         Me.Icon = gIcon
         NotifyIcon1.Icon = gIcon
@@ -337,26 +344,28 @@ tryagain:
     End Sub
 
     Private Sub AddUCI()
-        'If UCI.Visible = True Then UCI.Close()
+        If D_UCI = True Then
+            If UCI.Visible = True Then UCI.Close()
 
-        'UCI.TopLevel = False
-        'UCI.TopMost = True
-        'Panel1.Controls.Add(UCI)
-        'UCI.Dock = DockStyle.Fill
-        'UCI.FormBorderStyle = FormBorderStyle.None
-        'UCI.Show()
+            UCI.TopLevel = False
+            UCI.TopMost = True
+            Panel1.Controls.Add(UCI)
+            UCI.Dock = DockStyle.Fill
+            UCI.FormBorderStyle = FormBorderStyle.None
+            UCI.Show()
 
-        'UCI.txtNick.Text = TextBox1.Text
-        'UCI.cmbServer.Text = "irc.oftc.net"
-        'UCI.cmbChannel.Text = "#MedPlay"
-        'UCI.btnIRCConnect()
-
-        WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
-        Dim browser As New WebBrowser
-        Panel1.Controls.Add(browser)
-        browser.Dock = DockStyle.Fill
-        browser.ScriptErrorsSuppressed = True
-        browser.Navigate("http://webchat.oftc.net/?nick=" & Nick & "&channels=MedPlay&uio=Mj10cnVlJjk9dHJ1ZSYxMT02MiYxMj10cnVleb")
+            UCI.txtNick.Text = TextBox1.Text
+            UCI.cmbServer.Text = "irc.oftc.net"
+            UCI.cmbChannel.Text = "#MedPlay"
+            UCI.btnIRCConnect()
+        Else
+            WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
+            Dim browser As New WebBrowser
+            Panel1.Controls.Add(browser)
+            browser.Dock = DockStyle.Fill
+            browser.ScriptErrorsSuppressed = True
+            browser.Navigate("http://webchat.oftc.net/?nick=" & Nick & "&channels=MedPlay&uio=Mj10cnVlJjk9dHJ1ZSYxMT02MiYxMj10cnVleb")
+        End If
     End Sub
 
     Private Sub StartNetPath()
