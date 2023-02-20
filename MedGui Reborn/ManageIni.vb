@@ -108,8 +108,13 @@ Module ManageIni
             SMedClient = MedClient.CheckBox4.CheckState
 
             'Set UCI as def client
-            MedGuiR.CheckBox25.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Use_UCI")
-            D_UCI = MedGuiR.CheckBox25.CheckState
+            D_UCI = RIni.IniRead(MedExtra & "\Mini.ini", "NetPlay", "Use_UCI")
+
+            If D_UCI = True Then
+                MedGuiR.CheckBox25.Checked = True
+            Else
+                MedGuiR.CheckBox25.Checked = False
+            End If
         Catch ex As Exception
             MGRWriteLog("ManageIni - NetPlay: " & ex.Message)
         Finally

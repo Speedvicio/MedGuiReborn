@@ -5,6 +5,7 @@ Public Class MedClient
     Public checkmed As Boolean
     Private InitialNetPath, NMedVersion() As String
     Dim rnd2 As New Random()
+    Dim browser As New WebBrowser
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         CloseNetSession()
@@ -360,11 +361,10 @@ tryagain:
             UCI.btnIRCConnect()
         Else
             WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
-            Dim browser As New WebBrowser
             Panel1.Controls.Add(browser)
             browser.Dock = DockStyle.Fill
             browser.ScriptErrorsSuppressed = True
-            browser.Navigate("http://webchat.oftc.net/?nick=" & Nick & "&channels=MedPlay&uio=Mj10cnVlJjk9dHJ1ZSYxMT02MiYxMj10cnVleb")
+            browser.Navigate("http://webchat.oftc.net/?channels=MedPlay&uio=MT11bmRlZmluZWQmMj10cnVlJjk9dHJ1ZSYxMT02MiYxMj10cnVl09")
         End If
     End Sub
 
