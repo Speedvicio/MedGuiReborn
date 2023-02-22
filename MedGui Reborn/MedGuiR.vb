@@ -1506,7 +1506,7 @@ Public Class MedGuiR
 
     Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Button9.Click
         Try
-            '_link = "http://gamesdbase.com/list.aspx?in=1&searchtext=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & "&searchtype=1"
+            '_link = "http://www.gamesdatabase.org/list.aspx?in=1&searchtext=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & "&searchtype=1"
             Dim webSystem As String
             Select Case DataGridView1.CurrentRow.Cells(5).Value()
                 Case "Atari - Lynx"
@@ -1543,7 +1543,7 @@ Public Class MedGuiR
                     webSystem = "nintendo_famicom_disk_system"
             End Select
 
-            _link = "http://gamesdbase.com/list.aspx?DM=0&searchtext=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "and") & "&searchtype=1&system=" & webSystem & "&sort=Game"
+            _link = "http://www.gamesdatabase.org/list.aspx?DM=0&searchtext=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "and") & "&searchtype=1&system=" & webSystem & "&sort=Game"
             open_link()
         Catch
         End Try
@@ -3490,7 +3490,10 @@ MisScan:
                 portpad = "Built-In"
         End Select
 
-        Dim FileParameter As String = "-folder=" & Chr(34) & TextBox4.Text & Chr(34) & " -console=" & p_c & " -port=" & Chr(34) & portpad & Chr(34) & " -file=" & Chr(34) & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & Chr(34)
+        Dim FileParameter As String = ""
+        If DataGridView1.Rows.Count > 0 Then
+            FileParameter = "-folder=" & Chr(34) & TextBox4.Text & Chr(34) & " -console=" & p_c & " -port=" & Chr(34) & portpad & Chr(34) & " -file=" & Chr(34) & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & Chr(34)
+        End If
 
         If File.Exists(MedExtra & "\Plugins\Controller\MedPad.exe") Then
             tProcess = "MedPad"

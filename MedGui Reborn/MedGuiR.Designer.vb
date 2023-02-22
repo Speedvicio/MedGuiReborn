@@ -204,6 +204,7 @@ Partial Class MedGuiR
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.CheckBox23 = New System.Windows.Forms.CheckBox()
         Me.CheckBox24 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox25 = New System.Windows.Forms.CheckBox()
         Me.Button59 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label57 = New System.Windows.Forms.Label()
@@ -426,7 +427,6 @@ Partial Class MedGuiR
         Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CheckBox25 = New System.Windows.Forms.CheckBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2248,6 +2248,17 @@ Partial Class MedGuiR
         Me.CheckBox24.UseVisualStyleBackColor = False
         Me.CheckBox24.Visible = False
         '
+        'CheckBox25
+        '
+        Me.CheckBox25.AutoSize = True
+        Me.CheckBox25.Location = New System.Drawing.Point(9, 153)
+        Me.CheckBox25.Name = "CheckBox25"
+        Me.CheckBox25.Size = New System.Drawing.Size(66, 17)
+        Me.CheckBox25.TabIndex = 60
+        Me.CheckBox25.Text = "&Use UCI"
+        Me.ToolTip1.SetToolTip(Me.CheckBox25, "Set Ultra Crappy IRC as default IRC client")
+        Me.CheckBox25.UseVisualStyleBackColor = True
+        '
         'Button59
         '
         Me.Button59.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -4014,14 +4025,14 @@ Partial Class MedGuiR
         'EmulatorToolStripMenuItem
         '
         Me.EmulatorToolStripMenuItem.Name = "EmulatorToolStripMenuItem"
-        Me.EmulatorToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.EmulatorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.EmulatorToolStripMenuItem.Text = "&Emulator"
         Me.EmulatorToolStripMenuItem.ToolTipText = "Configure Mednafen Setting"
         '
         'ControllerToolStripMenuItem
         '
         Me.ControllerToolStripMenuItem.Name = "ControllerToolStripMenuItem"
-        Me.ControllerToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.ControllerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ControllerToolStripMenuItem.Text = "&Joypad"
         Me.ControllerToolStripMenuItem.ToolTipText = "Configure Emulator Input"
         '
@@ -4181,17 +4192,6 @@ Partial Class MedGuiR
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
-        '
-        'CheckBox25
-        '
-        Me.CheckBox25.AutoSize = True
-        Me.CheckBox25.Location = New System.Drawing.Point(9, 153)
-        Me.CheckBox25.Name = "CheckBox25"
-        Me.CheckBox25.Size = New System.Drawing.Size(66, 17)
-        Me.CheckBox25.TabIndex = 60
-        Me.CheckBox25.Text = "&Use UCI"
-        Me.ToolTip1.SetToolTip(Me.CheckBox25, "Set Ultra Crappy IRC as default IRC client")
-        Me.CheckBox25.UseVisualStyleBackColor = True
         '
         'MedGuiR
         '
