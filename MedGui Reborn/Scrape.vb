@@ -4,6 +4,7 @@ Imports System.Net
 Module Scrape
     Public SBoxF, SboxR As String, ScrapeForce, xmlAttemp As Integer
     Dim ConsoleID, TGDB_cleanstring, path_temp As String, ScrapeCount As Integer
+    Dim W As New CookieAwareWebClient
 
     Private Sub GetConsoleID()
         ConsoleID = ""
@@ -66,6 +67,7 @@ Module Scrape
     End Sub
 
     Public Sub GetParseXML()
+        W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
 
         If NewAPI = True Then
             xmlAttemp = 8
@@ -134,7 +136,6 @@ Module Scrape
             If File.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml") And ScrapeForce = 3 Then
 
                 If NewAPI = False Then
-                    Dim W As New Net.WebClient
                     W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
                     path_temp = "Temp\"
@@ -162,7 +163,6 @@ Module Scrape
             ElseIf ScrapeForce = 1 Then
 
                 If NewAPI = False Then
-                    Dim W As New Net.WebClient
                     W.DownloadFile("http://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
                     path_temp = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\"
@@ -206,9 +206,9 @@ Module Scrape
         Dim counTGDB As Integer
         Dim GameName, ReleaseDate, SystemConsole As String
         TGDBXml = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml"
+        W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
 
         Using reader As New System.Xml.XmlTextReader(TGDBXml)
-            Dim W As New Net.WebClient
 
             TheGamesDB.Show()
             TheGamesDB.Label4.Text = "Genre: "
