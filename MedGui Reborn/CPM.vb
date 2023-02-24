@@ -452,7 +452,7 @@ ErrorHandler:
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
-        _link = "http://tcrf.net/CGB_Bootstrap_ROM#Manual_Select_Palette_Configurations"
+        _link = "https://tcrf.net/CGB_Bootstrap_ROM#Manual_Select_Palette_Configurations"
         open_link()
     End Sub
 

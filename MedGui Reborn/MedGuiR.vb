@@ -988,12 +988,12 @@ Public Class MedGuiR
     End Sub
 
     Private Sub LinkLabel13_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel13.LinkClicked
-        _link = "http://mednafen.fobby.net"
+        _link = "https://mednafen.fobby.net"
         open_link()
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        _link = "http://datomatic.no-intro.org/?page=news"
+        _link = "https://datomatic.no-intro.org/?page=news"
         open_link()
     End Sub
 
@@ -1008,27 +1008,27 @@ Public Class MedGuiR
     End Sub
 
     Private Sub LinkLabel4_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel4.LinkClicked
-        _link = "http://sox.sourceforge.net/"
+        _link = "https://sox.sourceforge.net/"
         open_link()
     End Sub
 
     Private Sub LinkLabel5_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel5.LinkClicked
-        _link = "http://forum.fobby.net/index.php?t=tree&th=924&start=0&"
+        _link = "https://forum.fobby.net/index.php?t=tree&th=924&start=0&"
         open_link()
     End Sub
 
     Private Sub LinkLabel6_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        _link = "http://emumovies.com/forums/index.php/page/portal"
+        _link = "https://emumovies.com/forums/index.php/page/portal"
         open_link()
     End Sub
 
     Private Sub LinkLabel7_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        _link = "http://tech.reboot.pro/showthread.php?tid=1706"
+        _link = "https://tech.reboot.pro/showthread.php?tid=1706"
         open_link()
     End Sub
 
     Private Sub LinkLabel9_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
-        _link = "http://www.mednafen-it.org/"
+        _link = "https://www.mednafen-it.org/"
         open_link()
     End Sub
 
@@ -1038,7 +1038,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub LinkLabel11_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel11.LinkClicked
-        _link = "http://www.imgburn.com"
+        _link = "https://www.imgburn.com"
         open_link()
     End Sub
 
@@ -1506,7 +1506,7 @@ Public Class MedGuiR
 
     Private Sub Button9_Click_1(sender As Object, e As EventArgs) Handles Button9.Click
         Try
-            '_link = "http://www.gamesdatabase.org/list.aspx?in=1&searchtext=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & "&searchtype=1"
+            '_link = "https://www.gamesdatabase.org/list.aspx?in=1&searchtext=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & "&searchtype=1"
             Dim webSystem As String
             Select Case DataGridView1.CurrentRow.Cells(5).Value()
                 Case "Atari - Lynx"
@@ -1543,7 +1543,7 @@ Public Class MedGuiR
                     webSystem = "nintendo_famicom_disk_system"
             End Select
 
-            _link = "http://www.gamesdatabase.org/list.aspx?DM=0&searchtext=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "and") & "&searchtype=1&system=" & webSystem & "&sort=Game"
+            _link = "https://www.gamesdatabase.org/list.aspx?DM=0&searchtext=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "and") & "&searchtype=1&system=" & webSystem & "&sort=Game"
             open_link()
         Catch
         End Try
@@ -1551,7 +1551,7 @@ Public Class MedGuiR
 
     Private Sub Button8_Click_1(sender As Object, e As EventArgs) Handles Button8.Click
         Try
-            '_link = "http://thegamesdb.net/search/?string=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & " function=Search"
+            '_link = "https://thegamesdb.net/search/?string=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & " function=Search"
 
             TGDBPlatform()
             _link = "https://thegamesdb.net/search.php?name=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") & "&platform_id%5B%5D=" & tgdbCID
@@ -1619,7 +1619,7 @@ Public Class MedGuiR
 
     Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
         Try
-            _link = "http://en.wikipedia.org/wiki/" & Replace(Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), " ", "_"), "&", "%26")
+            _link = "https://en.wikipedia.org/wiki/" & Replace(Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), " ", "_"), "&", "%26")
             open_link()
         Catch
         End Try
@@ -2137,7 +2137,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Private Sub Button48_Click(sender As Object, e As EventArgs) Handles Button48.Click
-        _link = "http://redump.org/discs/quicksearch/" & Serial_PSX
+        _link = "https://redump.org/discs/quicksearch/" & Serial_PSX
         open_link()
     End Sub
 
