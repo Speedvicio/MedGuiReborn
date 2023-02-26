@@ -2425,7 +2425,7 @@ Partial Class MedGuiR
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(91, 13)
         Me.Label6.TabIndex = 30
-        Me.Label6.Text = "MedGuiR v.0.122"
+        Me.Label6.Text = "MedGuiR v.0.123"
         '
         'Label7
         '
@@ -4025,14 +4025,14 @@ Partial Class MedGuiR
         'EmulatorToolStripMenuItem
         '
         Me.EmulatorToolStripMenuItem.Name = "EmulatorToolStripMenuItem"
-        Me.EmulatorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EmulatorToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.EmulatorToolStripMenuItem.Text = "&Emulator"
         Me.EmulatorToolStripMenuItem.ToolTipText = "Configure Mednafen Setting"
         '
         'ControllerToolStripMenuItem
         '
         Me.ControllerToolStripMenuItem.Name = "ControllerToolStripMenuItem"
-        Me.ControllerToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ControllerToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.ControllerToolStripMenuItem.Text = "&Joypad"
         Me.ControllerToolStripMenuItem.ToolTipText = "Configure Emulator Input"
         '
