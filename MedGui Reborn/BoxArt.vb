@@ -124,7 +124,7 @@ Module BoxArt
     End Sub
 
     Public Sub DownloadCover()
-        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+        ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
 
         Dim dimg As Integer
         If IO.File.Exists(pathimage) = False Then
@@ -142,7 +142,11 @@ Module BoxArt
             Exit Sub
         End Try
 
-        httpGetFileSize()
+        If UpdateServer.StartsWith("https://") Then
+            httpGetFileSize()
+        Else
+            webimagelenght = 1
+        End If
 
         If webimagelenght <= 0 Then
             If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
@@ -176,7 +180,7 @@ Module BoxArt
     End Sub
 
     Public Sub httpGetFileSize()
-        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+        ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
 
         Try
 

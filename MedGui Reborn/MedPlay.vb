@@ -93,7 +93,7 @@ Module MedPlay
         If MuteNotification = False Then
             If GlobalVar.TypeOS.Contains("XP") = False Then
                 If muteDiscord = False Then
-                    ServicePointManager.SecurityProtocol = DirectCast(0, SecurityProtocolType)
+                    ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
                     Dim MyString As New String("- ", lunghezza)
                     dcWeb = New dWebHook
                     dcWeb.UserName = username

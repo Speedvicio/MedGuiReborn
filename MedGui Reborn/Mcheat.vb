@@ -412,7 +412,7 @@ skiphash:
 
         Try
 
-RETRY:      ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
             Dim prova As New CookieAwareWebClient
             prova.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
             Dim test = "https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen"

@@ -67,6 +67,7 @@ Module Scrape
     End Sub
 
     Public Sub GetParseXML()
+        ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
         W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
 
         If NewAPI = True Then
@@ -185,7 +186,7 @@ Module Scrape
     End Sub
 
     Private Sub TheGamesDb_newapi()
-        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+        ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
         '<TheGamesDb newapi>
         MedGuiR.TGDBPlatform()
         Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/v1/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
@@ -202,6 +203,7 @@ Module Scrape
     End Sub
 
     Public Sub ReadXml()
+        ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
         Dim TGDBXml, BaseUrl, tBack, tFront, fBack, fFront, GameID As String
         Dim counTGDB As Integer
         Dim GameName, ReleaseDate, SystemConsole As String

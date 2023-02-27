@@ -8,7 +8,7 @@ Public Class CookieAwareWebClient
     Private lastPage As String
 
     Protected Overrides Function GetWebRequest(ByVal address As System.Uri) As WebRequest
-        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+        ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
 
         Dim R = MyBase.GetWebRequest(address)
         If TypeOf R Is HttpWebRequest Then

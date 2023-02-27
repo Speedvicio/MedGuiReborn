@@ -10,6 +10,7 @@ Module GlobalVar
     Public NewAPI As Boolean = True
     Public uWine As Boolean = False
     Public gIcon As Icon
+    Public TypeTls As SecurityProtocolType
 
     Public Sub Startup_setting()
         GeneralRMIni()
@@ -344,14 +345,13 @@ ReCheckConfig:
             'Tls12   3072
             'Tls13   12288
 
-            Dim TypeTls As SecurityProtocolType
             Select Case True
                 Case TypeOS.Contains("XP")
-                    TypeTls = 768
+                    TypeTls = 0
                 Case TypeOS.Contains("7"), TypeOS.Contains("8"), TypeOS.Contains("10"), TypeOS.Contains("11")
                     TypeTls = 3072
                 Case Else
-                    TypeTls = 12288
+                    TypeTls = 0
             End Select
 
             'Forced Tls12 security protocol because August net framework patch create problems with Discord connection

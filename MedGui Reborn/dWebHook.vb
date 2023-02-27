@@ -14,7 +14,7 @@ Public Class dWebHook
     Public Property ProfilePicture As String
 
     Public Sub New()
-        ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+        ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
         client = New WebClient()
     End Sub
 

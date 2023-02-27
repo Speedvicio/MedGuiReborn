@@ -18,7 +18,7 @@ Module UpdateMednafen
             'Else
 
             Try
-                ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
+                ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
                 Dim W As New WebClient
                 W.DownloadFile("https://mednafen.github.io/documentation/ChangeLog", MedExtra & "Update\MednafenUpdate.txt")
                 UpMedServ = "https://raw.githubusercontent.com/mednafen/mednafen.github.io/master/releases/files/mednafen-"
