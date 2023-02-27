@@ -1968,6 +1968,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
             If TextBox1.Text.Contains("\RomTemp\") = False Then
                 type_csv = "last"
                 SaveGridDataInRow()
+                type_csv = SY.Text
             End If
 
             If CheckBox18.Checked = True And NetToolStripButton.BackColor = Color.Red Then
