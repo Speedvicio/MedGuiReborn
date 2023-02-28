@@ -37,7 +37,6 @@ Partial Class Mcheat
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -50,7 +49,6 @@ Partial Class Mcheat
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -68,6 +66,8 @@ Partial Class Mcheat
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,6 +94,7 @@ Partial Class Mcheat
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.CheckBox2)
         Me.Panel1.Controls.Add(Me.Button2)
@@ -102,7 +103,6 @@ Partial Class Mcheat
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.TextBox3)
         Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.CheckBox1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -156,7 +156,7 @@ Partial Class Mcheat
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Checked = True
         Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox2.Location = New System.Drawing.Point(9, 184)
+        Me.CheckBox2.Location = New System.Drawing.Point(39, 184)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(84, 17)
         Me.CheckBox2.TabIndex = 17
@@ -165,7 +165,7 @@ Partial Class Mcheat
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(127, 180)
+        Me.Button2.Location = New System.Drawing.Point(129, 152)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(70, 23)
         Me.Button2.TabIndex = 16
@@ -205,7 +205,7 @@ Partial Class Mcheat
         Me.TextBox3.Location = New System.Drawing.Point(79, 154)
         Me.TextBox3.MaxLength = 8
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(58, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(44, 20)
         Me.TextBox3.TabIndex = 11
         Me.TextBox3.Text = "00"
         '
@@ -218,19 +218,6 @@ Partial Class Mcheat
         Me.TextBox1.Size = New System.Drawing.Size(118, 20)
         Me.TextBox1.TabIndex = 9
         Me.TextBox1.Text = "00000000"
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(143, 156)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(56, 17)
-        Me.CheckBox1.TabIndex = 8
-        Me.CheckBox1.Text = "Acti&ve"
-        Me.ToolTip1.SetToolTip(Me.CheckBox1, "Enable/Disable cheat")
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -355,16 +342,6 @@ Partial Class Mcheat
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Code List"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(297, 253)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(61, 23)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "&Add"
-        Me.ToolTip1.SetToolTip(Me.Button1, "Add code on Mednafen cheat/file folder")
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
@@ -394,7 +371,7 @@ Partial Class Mcheat
         '
         Me.Label10.Location = New System.Drawing.Point(9, 282)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(497, 69)
+        Me.Label10.Size = New System.Drawing.Size(497, 85)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = resources.GetString("Label10.Text")
         '
@@ -516,11 +493,35 @@ Partial Class Mcheat
         Me.Label12.TabIndex = 28
         Me.Label12.Text = "Filter Cheats"
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Location = New System.Drawing.Point(302, 257)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(56, 17)
+        Me.CheckBox1.TabIndex = 29
+        Me.CheckBox1.Text = "Acti&ve"
+        Me.ToolTip1.SetToolTip(Me.CheckBox1, "Enable/Disable cheat")
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(129, 180)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(68, 23)
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "&Add"
+        Me.ToolTip1.SetToolTip(Me.Button1, "Add code on Mednafen cheat/file folder")
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Mcheat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(778, 376)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Button6)
@@ -535,7 +536,6 @@ Partial Class Mcheat
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.Label7)
@@ -562,7 +562,6 @@ Partial Class Mcheat
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
@@ -574,7 +573,6 @@ Partial Class Mcheat
     Friend WithEvents Label7 As Label
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents NumericUpDown1 As NumericUpDown
@@ -601,4 +599,6 @@ Partial Class Mcheat
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Button1 As Button
 End Class

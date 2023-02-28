@@ -204,7 +204,7 @@ Public Class Mcheat
         WorkingWithCheat(ListBox1.SelectedItem.ToString, Label11.Text, False)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         AddCheat()
     End Sub
 
@@ -543,6 +543,10 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityP
             End If
         Next
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        AddCheat()
     End Sub
 
     Private Sub ReadImported(cheatpath As String)

@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Net
 Imports EZNotifications
 
 Public Class MedClient
@@ -361,6 +362,7 @@ tryagain:
             UCI.btnIRCConnect()
         Else
             WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
+            ServicePointManager.ServerCertificateValidationCallback = Function() True
             Panel1.Controls.Add(browser)
             browser.Dock = DockStyle.Fill
             browser.ScriptErrorsSuppressed = True

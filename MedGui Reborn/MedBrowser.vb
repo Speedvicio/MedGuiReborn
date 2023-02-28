@@ -1,4 +1,6 @@
-﻿Public Class MedBrowser
+﻿Imports System.Net
+
+Public Class MedBrowser
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         WebBrowser1.GoBack()
@@ -35,6 +37,8 @@
         CenterForm()
         ColorizeForm()
         WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
+        ServicePointManager.ServerCertificateValidationCallback = Function() True
+        WebBrowser1.ScriptErrorsSuppressed = True
     End Sub
 
 End Class
