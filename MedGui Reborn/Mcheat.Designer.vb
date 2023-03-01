@@ -27,6 +27,7 @@ Partial Class Mcheat
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RadioButton7 = New System.Windows.Forms.RadioButton()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
@@ -62,12 +63,11 @@ Partial Class Mcheat
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,6 +115,16 @@ Partial Class Mcheat
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(204, 214)
         Me.Panel1.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(129, 180)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(68, 23)
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "&Add"
+        Me.ToolTip1.SetToolTip(Me.Button1, "Add code on Mednafen cheat/file folder")
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -371,7 +381,7 @@ Partial Class Mcheat
         '
         Me.Label10.Location = New System.Drawing.Point(9, 282)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(497, 85)
+        Me.Label10.Size = New System.Drawing.Size(497, 61)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = resources.GetString("Label10.Text")
         '
@@ -459,6 +469,19 @@ Partial Class Mcheat
         Me.ToolTip1.SetToolTip(Me.Button6, "Import cht file in Mednafen format")
         Me.Button6.UseVisualStyleBackColor = True
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Location = New System.Drawing.Point(302, 257)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(56, 17)
+        Me.CheckBox1.TabIndex = 29
+        Me.CheckBox1.Text = "Acti&ve"
+        Me.ToolTip1.SetToolTip(Me.CheckBox1, "Enable/Disable cheat")
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -492,29 +515,6 @@ Partial Class Mcheat
         Me.Label12.Size = New System.Drawing.Size(65, 13)
         Me.Label12.TabIndex = 28
         Me.Label12.Text = "Filter Cheats"
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(302, 257)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(56, 17)
-        Me.CheckBox1.TabIndex = 29
-        Me.CheckBox1.Text = "Acti&ve"
-        Me.ToolTip1.SetToolTip(Me.CheckBox1, "Enable/Disable cheat")
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(129, 180)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(68, 23)
-        Me.Button1.TabIndex = 19
-        Me.Button1.Text = "&Add"
-        Me.ToolTip1.SetToolTip(Me.Button1, "Add code on Mednafen cheat/file folder")
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Mcheat
         '

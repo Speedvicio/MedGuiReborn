@@ -30,14 +30,14 @@ Public Class MedBrowser
         End If
     End Sub
 
-    Private Sub MedBrowser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub MedBrowser_Load(sender As Object, f As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
         Read_Resource()
         F1 = Me
         CenterForm()
         ColorizeForm()
         WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
-        ServicePointManager.ServerCertificateValidationCallback = Function() True
+        ServicePointManager.ServerCertificateValidationCallback = Function(s, c, h, e) True
         WebBrowser1.ScriptErrorsSuppressed = True
     End Sub
 

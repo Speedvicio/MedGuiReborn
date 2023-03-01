@@ -362,7 +362,7 @@ tryagain:
             UCI.btnIRCConnect()
         Else
             WebBrowserFix.SetBrowserEmulationVersion(My.Application.Info.AssemblyName)
-            ServicePointManager.ServerCertificateValidationCallback = Function() True
+            ServicePointManager.ServerCertificateValidationCallback = Function(s, c, h, e) True
             Panel1.Controls.Add(browser)
             browser.Dock = DockStyle.Fill
             browser.ScriptErrorsSuppressed = True
