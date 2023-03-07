@@ -3055,10 +3055,6 @@ SKIPHASH:
         ModLandToolStripButton.PerformClick()
     End Sub
 
-    Private Sub ToolStripTextBox2_Click(sender As Object, e As EventArgs) Handles FNameToolStripTextBox.Click
-
-    End Sub
-
     Private Sub RadioButton1_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles RadioButton1.CheckedChanged
         Button30.Enabled = False
         Button31.Enabled = True

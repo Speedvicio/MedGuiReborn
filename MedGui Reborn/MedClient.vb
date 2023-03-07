@@ -366,7 +366,7 @@ tryagain:
             Panel1.Controls.Add(browser)
             browser.Dock = DockStyle.Fill
             browser.ScriptErrorsSuppressed = True
-            browser.Navigate("https://webchat.oftc.net/?channels=MedPlay&uio=MT11bmRlZmluZWQmMj10cnVlJjk9dHJ1ZSYxMT02MiYxMj10cnVl09")
+            browser.Navigate("https://webchat.oftc.net/?nick=" & Nick & "&channels=MedPlay&prompt=1&uio=MT11bmRlZmluZWQmMj10cnVlJjk9dHJ1ZSYxMT02MiYxMj10cnVl09")
         End If
     End Sub
 
