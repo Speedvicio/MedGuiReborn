@@ -41,6 +41,16 @@ Public Class MedClient
         TextBox1.Text = Nick
         ParseUsedData()
 
+        'This populate combobox with all prescanned file
+
+        'ConsoleComboBox.Items.Clear()
+        'ConsoleComboBox.Items.Add("")
+        'For Each file As String In Directory.GetFiles(MedExtra & "\Scanned")
+        'If Path.GetExtension(file) = ".csv" Then
+        'ConsoleComboBox.Items.Add(Path.GetFileNameWithoutExtension(file))
+        'End If
+        'Next
+
         F1 = Me
         CenterForm()
         ColorizeForm()

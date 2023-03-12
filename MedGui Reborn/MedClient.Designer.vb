@@ -322,7 +322,7 @@ Partial Class MedClient
         'ConsoleComboBox
         '
         Me.ConsoleComboBox.FormattingEnabled = True
-        Me.ConsoleComboBox.Items.AddRange(New Object() {"", "def", "apple2", "gb", "gba", "gg", "lynx", "md", "nes", "ngp", "pce", "pcfx", "psx", "sms", "snes", "ss", "vb", "wswan"})
+        Me.ConsoleComboBox.Items.AddRange(New Object() {"", "def", "fav", "apple2", "gb", "gba", "gg", "lynx", "md", "nes", "ngp", "pce", "pcfx", "psx", "sms", "snes", "ss", "vb", "wswan"})
         Me.ConsoleComboBox.Location = New System.Drawing.Point(7, 20)
         Me.ConsoleComboBox.Name = "ConsoleComboBox"
         Me.ConsoleComboBox.Size = New System.Drawing.Size(158, 21)
