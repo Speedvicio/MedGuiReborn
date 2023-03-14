@@ -158,9 +158,10 @@ Module BoxArt
             End If
         End If
 
+        Dim cover As String
+
         If dimg < webimagelenght Then
             Try
-                Dim cover As String
                 cover = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
 
                 If UpdateServer.StartsWith("https://") Then
@@ -172,6 +173,7 @@ Module BoxArt
                 If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
                     SearchScrape()
                 Else
+                    If IO.File.Exists(MedExtra & "BoxArt/" & cover) Then IO.File.Delete(MedExtra & "BoxArt/" & cover)
                     EmptyBoxart(MedGuiR.PictureBox1)
                 End If
             End Try
@@ -192,7 +194,11 @@ Module BoxArt
             myFtpWebResponse.Close()
         Catch ex As WebException
             If MedGuiR.CheckBox2.Checked = False Then
-                MessageBox.Show(ex.Message)
+                If ex.Message.Contains("404") Then
+                    MessageBox.Show("File unavailable")
+                Else
+                    MessageBox.Show(ex.Message)
+                End If
                 If (ex.Response IsNot Nothing) Then
                     Dim hr As HttpWebResponse = DirectCast(ex.Response, HttpWebResponse)
                 End If
