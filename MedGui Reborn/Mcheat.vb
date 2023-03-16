@@ -373,6 +373,9 @@ Public Class Mcheat
         If CheatConsole = "snes" And MedGuiR.tpce = "_faust" Then
             CheatConsole = "snes_faust"
             ComboBox1.Items.Add(r_sha.Substring(0, 32))
+        ElseIf CheatConsole = "pce" And MedGuiR.tpce = "_fast" Then
+            CheatConsole = "pce_fast"
+            ComboBox1.Items.Add(r_md5)
         Else
             ComboBox1.Items.Add(r_md5)
         End If
