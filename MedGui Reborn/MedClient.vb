@@ -562,6 +562,8 @@ tryagain:
         SingleScan()
         MedGuiR.CheckBox18.Checked = True
         MedGuiR.NetToolStripButton.BackColor = Color.Red
+        MedGuiR.AutoConnectToolStripMenuItem.Checked = True
+        MedGuiR.ConnectedToolStripMenuItem.BackColor = Color.Green
         MedGuiR.StartStatic_emu()
     End Sub
 

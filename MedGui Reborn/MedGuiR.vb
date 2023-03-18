@@ -900,7 +900,7 @@ Public Class MedGuiR
         If StartRom = "" Then StartRom = Application.StartupPath
         fdlg.Title = "Select rom"
         fdlg.InitialDirectory = ssr
-        fdlg.Filter = "All supported format (*.zip,*.7z,*.rar,*.zst,*.cue,*.toc,*.m3u,*.ccd,*.cfs,*.ciso,*.iso,*.ecm,*.pbp,*.chd)|*.zip;*.7z;*.rar;*.zst;*.cue;*.toc;*.m3u;*.ccd;*.cfs;*.ciso;*.iso;*.ecm;*.pbp;*.chd|File CUE (*.cue)|*.cue|File TOC (*.toc)|*.toc|File M3U (*.m3u)|*.m3u|File CCD (*.ccd)|*.ccd|File MAI (*.mai)|*.mai|File ZIP (*.zip)|*.zip|File 7z (*.7z)|*.7z|File rar (*.rar)|*.rar|File Zstandard (*.zst)|*.zst|Compressed CD (*.ecm,*.pbp,*.cfs,*.ciso,*.chd)|*.ecm;*.pbp;*.cfs;*.ciso;*.chd|PS-X EXE (*.exe)|*.exe|All files (*.*)|*.*"
+        fdlg.Filter = "All supported format (*.zip,*.7z,*.rar,*.zst,*.cue,*.toc,*.m3u,*.ccd,*.cfs,*.ciso,*.iso,*.ecm,*.pbp,*.chd,*.mai)|*.zip;*.7z;*.rar;*.zst;*.cue;*.toc;*.m3u;*.ccd;*.cfs;*.ciso;*.iso;*.ecm;*.pbp;*.chd|Virtual image (*.cue,*.toc,*.m3u,*.ccd)|*.cue;*.toc;*.m3u;*.ccd|Compressed archive (*.zip,*.7z,*.rar,*.zst)|*.zip;*.7z;*.rar;*.zst|Compressed Virtual Image (*.ecm,*.pbp,*.cfs,*.ciso,*.chd)|*.ecm;*.pbp;*.cfs;*.ciso;*.chd|File MAI (*.mai)|*.mai|PS-X EXE (*.exe)|*.exe|All files (*.*)|*.*"
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
@@ -1179,7 +1179,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
