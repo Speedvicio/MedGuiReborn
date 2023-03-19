@@ -300,7 +300,7 @@ SKIP_LIST:
     End Sub
 
     Public Function CleanBadEntries(filter As String)
-        Dim CleanFilter() As String = LCase(filter).Split(",")
+        Dim CleanFilter() As String = LCase(filter).Split("*")
 REDO:
         Dim initialrow As Integer = MedGuiR.DataGridView1.Rows.Count
 
