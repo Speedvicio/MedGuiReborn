@@ -146,11 +146,11 @@ Public Class MedGuiR
                     ParseMednafenConfig()
 
                     'inserisci #menu in questa linea
-                    If type_csv = "fav" Or type_csv = "last" Then
-                        RemoveFromFavoritesToolStripMenuItem.Enabled = True
-                    Else
-                        RemoveFromFavoritesToolStripMenuItem.Enabled = False
-                    End If
+                    'If type_csv = "fav" Or type_csv = "last" Then
+                    'RemoveFromFavoritesToolStripMenuItem.Enabled = True
+                    'Else
+                    'RemoveFromFavoritesToolStripMenuItem.Enabled = False
+                    'End If
 
                     Select Case SY.Text
                         Case "ss", "psx", "pcfx", ""
@@ -653,6 +653,7 @@ Public Class MedGuiR
             ElseIf ow_file = vbNo Then
                 Dim rn_file
                 rn_file = InputBox("Select a new name for multimedia file", , romName & "_")
+                If rn_file = "" Then Exit Sub
                 romName = rn_file
             ElseIf ow_file = vbCancel Then
             End If
@@ -3441,8 +3442,12 @@ MisScan:
         DataGridView1.Focus()
     End Sub
 
-    Private Sub SY_Click(sender As Object, e As EventArgs) Handles SY.Click
-
+    Private Sub CleanEntriesMenuItem1_Click(sender As Object, e As EventArgs) Handles CleanEntriesMenuItem1.Click
+        Dim filter_e As String = InputBox("Enter criteria for removing lines separated by *" & vbCrLf &
+ "Example: (Taiwan) (Unl)*(USA) (Proto 2)", "Select filter for list clean")
+        If filter_e = "" Then Exit Sub
+        CleanBadEntries(filter_e)
+        SaveGridDataInFile()
     End Sub
 
     Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
@@ -3636,6 +3641,12 @@ MisScan:
 
     Private Sub GENREToolStripComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GENREToolStripComboBox2.SelectedIndexChanged
         SearchGridGenreInRow()
+    End Sub
+
+    Private Sub Label3_DoubleClick(sender As Object, e As EventArgs) Handles Label3.DoubleClick
+        Dim tdebug As String = Replace(Label3.Text, "Version: ", "")
+        tdebug = Replace(tdebug, "&&", "&").Trim
+        If tdebug.Length > 0 Then Clipboard.SetDataObject(tdebug)
     End Sub
 
 End Class

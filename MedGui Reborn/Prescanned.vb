@@ -299,4 +299,22 @@ SKIP_LIST:
         Next
     End Sub
 
+    Public Function CleanBadEntries(filter As String)
+        Dim CleanFilter() As String = LCase(filter).Split(",")
+REDO:
+        Dim initialrow As Integer = MedGuiR.DataGridView1.Rows.Count
+
+        For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
+            For i = 0 To CleanFilter.Length - 1
+                If LCase(dr.Cells(2).Value.ToString) = CleanFilter(i).Trim Then MedGuiR.DataGridView1.Rows.Remove(dr)
+            Next
+        Next
+        Dim endrow As Integer = MedGuiR.DataGridView1.Rows.Count
+
+        If initialrow = endrow Then
+        Else
+            GoTo REDO
+        End If
+    End Function
+
 End Module

@@ -357,6 +357,7 @@ Partial Class MedGuiR
         Me.RenameEntryStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddToFavoritesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemoveFromFavoritesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CleanEntriesMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.ImportFromFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddShortuctToDesktopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -2469,7 +2470,7 @@ Partial Class MedGuiR
         Me.IconStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SY, Me.RebuildToolStripButton, Me.toolStripSeparator, Me.RecentToolStripButton1, Me.LoadCDToolStripButton, Me.FavouritesToolStripButton, Me.FoldeRomToolStripButton, Me.LoadRomToolStripButton, Me.TextBox1, Me.toolStripSeparator1, Me.NetToolStripButton, Me.ServerToolStripButton, Me.IRCToolStripButton, Me.ModLandToolStripButton, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.TextBox3, Me.FlagToolStripSplitButton, Me.FindToolStripButton})
         Me.IconStrip.Location = New System.Drawing.Point(12, 6)
         Me.IconStrip.Name = "IconStrip"
-        Me.IconStrip.Size = New System.Drawing.Size(755, 25)
+        Me.IconStrip.Size = New System.Drawing.Size(701, 25)
         Me.IconStrip.TabIndex = 34
         Me.IconStrip.Text = "ToolStrip1"
         Me.IconStrip.Visible = False
@@ -2844,6 +2845,7 @@ Partial Class MedGuiR
         Me.Label3.Size = New System.Drawing.Size(48, 13)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Version: "
+        Me.ToolTip1.SetToolTip(Me.Label3, "Double left mouse click to copy on clipboard")
         '
         'Label2
         '
@@ -2855,6 +2857,7 @@ Partial Class MedGuiR
         Me.Label2.Size = New System.Drawing.Size(69, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Game Name:"
+        Me.ToolTip1.SetToolTip(Me.Label2, "Double left mouse click to copy on clipboard")
         '
         'Label1
         '
@@ -3543,9 +3546,9 @@ Partial Class MedGuiR
         '
         'AdvancedMenu
         '
-        Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.ADVManageToolStripMenuItem, Me.ToolStripSeparator22, Me.RenameEntryStripMenuItem, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.FormToolStripMenuItem, Me.GridToolStripMenuItem, Me.ResetToolStripMenuItem, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
+        Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.ADVManageToolStripMenuItem, Me.ToolStripSeparator22, Me.RenameEntryStripMenuItem, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.CleanEntriesMenuItem1, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.FormToolStripMenuItem, Me.GridToolStripMenuItem, Me.ResetToolStripMenuItem, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 538)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 560)
         '
         'StartGameToolStripMenuItem
         '
@@ -3719,6 +3722,13 @@ Partial Class MedGuiR
         Me.RemoveFromFavoritesToolStripMenuItem.Size = New System.Drawing.Size(208, 22)
         Me.RemoveFromFavoritesToolStripMenuItem.Text = "Remove from &List"
         Me.RemoveFromFavoritesToolStripMenuItem.ToolTipText = "Remove selected game from favourites"
+        '
+        'CleanEntriesMenuItem1
+        '
+        Me.CleanEntriesMenuItem1.Name = "CleanEntriesMenuItem1"
+        Me.CleanEntriesMenuItem1.Size = New System.Drawing.Size(208, 22)
+        Me.CleanEntriesMenuItem1.Text = "Clean &Bad entries"
+        Me.CleanEntriesMenuItem1.ToolTipText = "Clean entries from list"
         '
         'ToolStripSeparator7
         '
@@ -4678,4 +4688,5 @@ Partial Class MedGuiR
     Friend WithEvents GENREToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents GENREComboBox1 As ToolStripComboBox
     Friend WithEvents CheckBox25 As CheckBox
+    Friend WithEvents CleanEntriesMenuItem1 As ToolStripMenuItem
 End Class

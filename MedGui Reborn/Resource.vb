@@ -174,6 +174,7 @@
             MedGuiR.RenameEntryStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\save.png"))
             MedGuiR.AddToFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\favourite.png"))
             MedGuiR.RemoveFromFavoritesToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
+            MedGuiR.CleanEntriesMenuItem1.Image = (New Bitmap(MedExtra & "Resource\Gui\clean.png"))
             MedGuiR.AdvancedSettingToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\setting.png"))
             MedGuiR.EmulatorToolStripMenuItem.Image = MedGuiR.AdvancedSettingToolStripMenuItem.Image
             MedGuiR.AddShortuctToDesktopToolStripMenuItem.Image = (New Bitmap(MedExtra & "Resource\Gui\buggy.png"))
