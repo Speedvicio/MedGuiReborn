@@ -85,6 +85,9 @@ Boing:
                                 ReadArcade("STV.txt")
                                 country = Replace(romname, CleanRom(romname), "")
                                 romname = CleanRom(romname)
+                            Case ".m3u"
+                                'country = "M3U - " & country
+                                romname += " [M3U]"
                         End Select
                         If old_fullpath <> full_path & base_file Then
                             MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
