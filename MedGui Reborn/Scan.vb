@@ -47,9 +47,8 @@ Module scan
                             End Select
                         End If
 
-                        'If fileName.EndsWith(".zip") = False Then Cripto.decripta()
                         Try
-                            MedGuiR.DataGridView1.Rows(Counter - 1).Cells(3).ToolTipText = "CRC " & base_file
+                            MedGuiR.MainGrid.Rows(Counter - 1).Cells(3).ToolTipText = "CRC " & base_file
                         Catch
                         End Try
                     End If
@@ -73,11 +72,6 @@ Module scan
             MedGuiR.Label95.Refresh()
             defreeze += 1
             If (defreeze Mod 50) = 0 Then Application.DoEvents()
-
-            'SoxStatus.Text = "Waiting for Rom Scan..."
-            'SoxStatus.Label1.Text = ""
-            'SoxStatus.Label1.Text = romname
-            'SoxStatus.Show()
 
         Next
         MedGuiR.ProgressBar1.Value = 0
@@ -110,11 +104,8 @@ Module scan
                     End If
             End Select
 
-            'romname = Replace(dettaglio.Name, ext, "")
-
             estensione()
         Catch ex As Exception
-            'MsgBox("Select a Game", MsgBoxStyle.OkOnly + vbExclamation, "Error")
         End Try
     End Sub
 
@@ -135,7 +126,7 @@ Module scan
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
                     skipother = True
                 End If
-            Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai"
+            Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai", ".hdv"
                 consoles = "apple2"
                 gif = "apple2"
                 real_name = "Apple II/II+"
@@ -181,7 +172,6 @@ Module scan
                         decrunch_size = dettaglio.Length
 
                         If decrunch_size <= 16000000 Then
-                            'If LCase(dettaglio.Extension) = ".bin" Then
                             Dim parsebin As String = ""
                             Using fs As New FileStream(percorso, FileMode.Open, FileAccess.Read)
                                 For offset = 0 To 352
@@ -194,7 +184,7 @@ Module scan
                                 gif = "md"
                                 real_name = "Sega - 8/16 bit console - Music Module"
                                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
-                                If MedGuiR.DataGridView1.Rows.Count > 0 Then MedGuiR.DataGridView1.CurrentRow.Cells(0).Value() = romname
+                                If MedGuiR.MainGrid.Rows.Count > 0 Then MedGuiR.MainGrid.CurrentRow.Cells(0).Value() = romname
                             ElseIf parsebin.Contains("SEGA MEGA DRIVE") Or parsebin.Contains("SEGA GENESIS") Then 'Or parsebin.Contains("SEGA ") Then
                                 consoles = "md"
                                 gif = "md"
@@ -226,8 +216,6 @@ Module scan
                 real_name = "Sega - 8/16 bit console - Music Module"
                 fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
 
-                        'VGtoBIN()
-                        'Exit Sub
             Case ".gbs"
                 consoles = "gb"
                 gif = "gb"
@@ -389,6 +377,7 @@ Module scan
                     If stopiso = False Then Make_Temp_CUE()
                 End If
             Case ".cfs", ".ciso"
+                Pismo()
                 If checkpismo = False Then
                     MsgBox("I can't mount .cfs, you need to install Pismo File Mount Audit Package", MsgBoxStyle.Exclamation + vbOKOnly, "Missing Pismo File Mount...")
                     consoles = ""
@@ -419,7 +408,7 @@ Module scan
                     ext = ""
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                 End If
-                'Make_Temp_CUE()
+
             Case ".pbp"
                 If File.Exists(MedExtra & "Plugins\copstation\popstation.exe") Then
 
@@ -477,10 +466,9 @@ Module scan
         If File.Exists(MedExtra & "Plugins\gbs2gb\GBS2GB.exe") Then
             wDir = (MedExtra & "Plugins\gbs2gb")
             tProcess = "GBS2GB"
-            Arg = percorso 'Chr(34) & percorso & Chr(34)
+            Arg = percorso
             StartProcess()
 
-            'MsgBox(percorso.Substring(0, percorso.Length - 1))
             execute.WaitForExit()
             If File.Exists(percorso.Substring(0, percorso.Length - 1)) Then
                 My.Computer.FileSystem.MoveFile(percorso.Substring(0, percorso.Length - 1), MedExtra & "RomTemp\" & Path.GetFileName(percorso.Substring(0, percorso.Length - 1)), True)
@@ -505,15 +493,7 @@ Module scan
             PVG = ""
             Vg_append = ""
 
-            'If SevenZCounter = 1 Then
-            'If percorso.Contains("\RomTemp\") Then
-            'For Each f As IO.FileInfo In My.Computer.FileSystem.GetDirectoryInfo(MedExtra & "RomTemp").GetFiles("*.vg*")
-            'PVG = PVG & " " & Chr(34) & f.FullName & Chr(34)
-            'MedGuiR.DataGridView1.Rows.Clear()
-            'Next
-            'Else
             PVG = Chr(34) & percorso & Chr(34)
-            'End If
 
             Arg = PVG
             StartProcess()
@@ -533,7 +513,6 @@ Module scan
             If File.Exists(MedExtra & "Plugins\vgmPlay\vgmPlay.bin") Then
                 My.Computer.FileSystem.MoveFile(MedExtra & "Plugins\vgmPlay\vgmPlay.bin", MedExtra & "RomTemp\" & Path.GetFileNameWithoutExtension(Vg_append) & ".bin", True)
                 percorso = MedExtra & "RomTemp\" & Path.GetFileNameWithoutExtension(Vg_append) & ".bin"
-                'percorso = MedExtra & "Plugins\vgmPlay\vgmPlay.bin"
             Else
                 Exit Sub
             End If
@@ -542,7 +521,6 @@ Module scan
         Else
             MsgBox("I can't convert vgz/vgm file, vgmPlay missing!", MsgBoxStyle.Exclamation + vbOKOnly, "Missing plugin..")
         End If
-        'If SevenZCounter = 1 Then LMain() : SevenZCounter = 0 : SoxStatus.Close()
 
     End Sub
 
@@ -584,7 +562,6 @@ Module scan
         File.Copy(MedExtra & "Plugins\copstation\cygz.dll", Path.Combine(wDir, "cygz.dll"), True)
 
         If cleanPBP <> "EBOOT" Then My.Computer.FileSystem.RenameFile(percorso, "EBOOT.PBP")
-        'File.Copy(percorso, Path.Combine(wDir, "EBOOT.PBP"), True)
 
         tProcess = "popstation"
         Arg = "-iso " & Chr(34) & cleanPBP & ".iso" & Chr(34)
@@ -664,7 +641,6 @@ Module scan
 
         If RIso = vbCancel Then stopscan = True : Exit Sub
 
-        'If percorso.Contains(".bin.ecm") Then percorso = Replace(percorso, dettaglio.Extension, "")
         MedGuiR.Label34.Text = percorso
         biso = Path.GetFileName(MedGuiR.Label34.Text)
 
@@ -758,7 +734,7 @@ Module scan
 
                 If countallfiles = 0 Then
                     MsgBox("No files founded in " & root & " Folder...", vbInformation + vbOKOnly)
-                    MedGuiR.DataGridView1.Rows.Clear()
+                    MedGuiR.MainGrid.Rows.Clear()
                     TempFolder = ""
                     Exit Sub
                 Else
@@ -776,7 +752,7 @@ Module scan
             End If
 
             If ResRecu = vbYes Then
-                MedGuiR.DataGridView1.Rows.Clear()
+                MedGuiR.MainGrid.Rows.Clear()
                 stopiso = True
                 scansiona()
                 For Each subdirectory As String In subdirectoryEntries
@@ -806,16 +782,6 @@ Module scan
     Private Sub PopulateDataGridRecursive()
         stopiso = True
         scansiona()
-        'Dim Files() As String
-        'Dim f As FileInfo
-        'Files = Directory.GetFiles(TempFolder)
-        'For Each sFile As String In Files
-        'f = New FileInfo(sFile)
-        'percorso = f.FullName
-        'get_ext()
-        'estensione()
-        'MedGuiR.DataGridView1.Rows.Add(f.Name.Trim, New Bitmap(icon_console), "?", "?", full_path, real_name, consoles, ext, "?")
-        'Next
     End Sub
 
 End Module

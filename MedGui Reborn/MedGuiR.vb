@@ -18,7 +18,7 @@ Public Class MedGuiR
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TabControl1.DrawMode = TabDrawMode.OwnerDrawFixed
         checkpismo = False
-        DataGridView1.DoubleBuffered(True)
+        MainGrid.DoubleBuffered(True)
 
         gIcon = My.Resources.MedGuiR
         Me.Icon = gIcon
@@ -70,9 +70,8 @@ Public Class MedGuiR
             MedClient.Show()
             MedClient.WindowState = FormWindowState.Maximized
         Else
-            DataGridView1.Focus()
+            MainGrid.Focus()
         End If
-
     End Sub
 
     Private Sub ParseCommandLineArgs()
@@ -121,7 +120,7 @@ Public Class MedGuiR
         If MedClient.NotifyIcon1.Visible = True Then MedClient.NotifyIcon1.Dispose()
     End Sub
 
-    Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEnter
+    Private Sub DataGridView1_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles MainGrid.CellEnter
         SelectRom()
     End Sub
 
@@ -129,8 +128,8 @@ Public Class MedGuiR
     'SelectRom()
     'End Sub
 
-    Private Sub DataGridView1_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles DataGridView1.MouseClick
-        DataGridView1.ContextMenuStrip = Nothing
+    Private Sub DataGridView1_MouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MainGrid.MouseClick
+        MainGrid.ContextMenuStrip = Nothing
         Try
             If e.Button = Windows.Forms.MouseButtons.Right Then
                 'verMednafen()
@@ -139,7 +138,7 @@ Public Class MedGuiR
                     (e.X, e.Y)
                 If ht.ColumnIndex <> -1 And ht.RowIndex <> -1 Then
                     sender.Item(ht.ColumnIndex, ht.RowIndex).Selected = True
-                    DataGridView1.CurrentCell = DataGridView1.Item(ht.ColumnIndex, ht.RowIndex)
+                    MainGrid.CurrentCell = MainGrid.Item(ht.ColumnIndex, ht.RowIndex)
                     'SelectRom()
 
                     MgrSetting.ListServer_reload()
@@ -183,8 +182,8 @@ Public Class MedGuiR
                     Else
                         MedPadToolStripMenuItem.Enabled = False
                     End If
-                    DataGridView1.ContextMenuStrip = AdvancedMenu
-                    DataGridView1.ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y)
+                    MainGrid.ContextMenuStrip = AdvancedMenu
+                    MainGrid.ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y)
                     'If last_consoles <> consoles Or Setting.Visible = False Then SwSetting = True : improm() : last_consoles = consoles
                 End If
             End If
@@ -200,10 +199,10 @@ Public Class MedGuiR
     End Sub
 
     Private Sub AdvancedMenu_Closed(sender As Object, e As ToolStripDropDownClosedEventArgs) Handles AdvancedMenu.Closed
-        DataGridView1.ContextMenuStrip = Nothing
+        MainGrid.ContextMenuStrip = Nothing
     End Sub
 
-    Private Sub DataGridView1_MouseLeave(sender As Object, e As EventArgs) Handles DataGridView1.MouseLeave
+    Private Sub DataGridView1_MouseLeave(sender As Object, e As EventArgs) Handles MainGrid.MouseLeave
         'If DataGridView1.ContextMenuStrip IsNot Nothing Then DataGridView1.ContextMenuStrip.Close()
     End Sub
 
@@ -268,8 +267,8 @@ Public Class MedGuiR
 
     Private Sub improm()
         MgrSetting.Close()
-        real_name = DataGridView1.CurrentRow.Cells(5).Value()
-        ext = DataGridView1.CurrentRow.Cells(7).Value()
+        real_name = MainGrid.CurrentRow.Cells(5).Value()
+        ext = MainGrid.CurrentRow.Cells(7).Value()
 
         ReadPSValue()
 
@@ -286,7 +285,7 @@ Public Class MedGuiR
                 ExtraText = ""
             End If
 
-            MgrSetting.Text = ExtraText & DataGridView1.CurrentRow.Cells(5).Value()
+            MgrSetting.Text = ExtraText & MainGrid.CurrentRow.Cells(5).Value()
         Else
             MgrSetting.Text = "Global Console Setting"
         End If
@@ -294,6 +293,7 @@ Public Class MedGuiR
 
     Public Sub StartEmu()
         Try
+            Pismo()
             If ErLog.Visible = True Then ErLog.Close()
 
             If File.Exists(TextBox4.Text & "\mednafen.exe") = False Then
@@ -331,8 +331,6 @@ Public Class MedGuiR
                 Case ".rsn"
                     simple_extract()
                     PopulateChip()
-                    'LoadChipInfo()
-                    'SoundList.Show()
                     Exit Sub
                 Case ".vgm", ".vgz"
                     scan.VGtoBIN()
@@ -344,11 +342,20 @@ Public Class MedGuiR
                         percorso = Replace(R_RelPath(TextBox1.Text), dettaglio.Extension, ".cue")
                         If Label34.Text <> "" Then Label34.Text = ""
                     End If
+                Case ".cfs"
+                    Dim Grow As Integer = MainGrid.Rows.Count
+                    If checkpismo = True Then
+                        MountPismo()
+                        RecuScan()
+                    End If
+                    If Grow < MainGrid.Rows.Count Then
+                        MainGrid.Rows.RemoveAt(MainGrid.Rows.Count - 1)
+                    End If
                 Case Is <> ".spc", ".rsn"
                     SoundList.Close()
             End Select
 
-            consoles = DataGridView1.CurrentRow.Cells(6).Value()
+            consoles = MainGrid.CurrentRow.Cells(6).Value()
 
             If consoles = "psx" Then Sbi_Scan()
 
@@ -419,7 +426,7 @@ Public Class MedGuiR
                 RebuilDesync()
             End If
 
-            If LoadCD = "" And DataGridView1.SelectedRows.Count <> 0 Then consoles = DataGridView1.CurrentRow.Cells(6).Value()
+            If LoadCD = "" And MainGrid.SelectedRows.Count <> 0 Then consoles = MainGrid.CurrentRow.Cells(6).Value()
 
             If Len(R_RelPath(TextBox1.Text)) >= 3 Then LoadCD = "" Else percorso = "\\.\" & R_RelPath(percorso)
             LoadCD = Nothing
@@ -433,7 +440,7 @@ Public Class MedGuiR
             End If
 
             If skipm3u = False Then
-                If DataGridView1.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = Nothing Then
+                If MainGrid.CurrentRow.Cells(7).Value() = ".m3u" And M3UDisk = Nothing Then
                     M3UDisk = InputBox("Input the disk that you want to load from 1 to " & System.IO.File.ReadAllLines(R_RelPath(TextBox1.Text)).Length, "Select a CD", "1")
                     If M3UDisk = "" Then Exit Sub
                     M3UDisk = " -which_medium " & (M3UDisk - 1)
@@ -513,7 +520,7 @@ Public Class MedGuiR
 
         missingame = False
 
-        If File.Exists(DataGridView1.CurrentRow.Cells(4).Value()) Then
+        If File.Exists(MainGrid.CurrentRow.Cells(4).Value()) Then
         Else
             Dim RMiss = MsgBox("Missing game" & vbCrLf &
          "Press Del or Canc key to remove from the Games list.",
@@ -525,21 +532,21 @@ Public Class MedGuiR
         'If last_rom = DataGridView1.CurrentRow.Cells(4).Value() Then Exit Sub
 
         Try
-            TextBox1.Text = R_RelPath(DataGridView1.CurrentRow.Cells(4).Value())
-            romName = Trim(DataGridView1.CurrentRow.Cells(0).Value())
+            TextBox1.Text = R_RelPath(MainGrid.CurrentRow.Cells(4).Value())
+            romName = Trim(MainGrid.CurrentRow.Cells(0).Value())
             percorso = R_RelPath(TextBox1.Text)
             last_rom = R_RelPath(TextBox1.Text)
-            prevcrc = DataGridView1.CurrentRow.Cells(8).Value()
+            prevcrc = MainGrid.CurrentRow.Cells(8).Value()
             Specific_Info()
-            consoles = DataGridView1.CurrentRow.Cells(6).Value()
+            consoles = MainGrid.CurrentRow.Cells(6).Value()
         Catch ex As Exception
             MGRWriteLog("MedGuiR - SelectRom: " & Date.Today.ToString & " " & ex.Message)
         End Try
 
-        If prevcrc = DataGridView1.CurrentRow.Cells(8).Value() Then Exit Sub
+        If prevcrc = MainGrid.CurrentRow.Cells(8).Value() Then Exit Sub
         If CheckBox2.Checked = True Then
             Try
-                Dim dimBA As New System.IO.FileInfo(MedExtra & "BoxArt\" & DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png")
+                Dim dimBA As New System.IO.FileInfo(MedExtra & "BoxArt\" & MainGrid.CurrentRow.Cells(5).Value() & "\" & rn & ".png")
                 Console.WriteLine(dimBA.Exists)
                 Dim dimension As Integer
                 dimension = (Decimal.Round(dimBA.Length.ToString) / 1024)
@@ -556,7 +563,7 @@ Public Class MedGuiR
 
     Private Sub RemoveRow()
         Try
-            DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+            MainGrid.Rows.Remove(MainGrid.CurrentRow)
             SaveGridDataInFile()
             If My.Computer.FileSystem.GetFileInfo(MedExtra & "Scanned\" & type_csv & ".csv").Length = 0 Then
                 System.IO.File.Delete(MedExtra & "Scanned\" & type_csv & ".csv")
@@ -567,8 +574,8 @@ Public Class MedGuiR
         missingame = False
     End Sub
 
-    Private Sub DataGridView1_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles DataGridView1.KeyUp
-        If DataGridView1.CurrentRow Is Nothing Then Exit Sub
+    Private Sub DataGridView1_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles MainGrid.KeyUp
+        If MainGrid.CurrentRow Is Nothing Then Exit Sub
         If FormIsON = False Then Exit Sub
         Select Case e.KeyCode
             Case Keys.Enter
@@ -588,7 +595,7 @@ Public Class MedGuiR
         End Select
     End Sub
 
-    Private Sub DataGridView1_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles DataGridView1.KeyDown
+    Private Sub DataGridView1_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles MainGrid.KeyDown
         Select Case e.KeyCode
             Case Keys.Enter, Keys.Cancel, Keys.Delete, Keys.F, Keys.S
                 e.SuppressKeyPress = True
@@ -604,7 +611,7 @@ Public Class MedGuiR
         If last_rom <> "" Then TextBox1.Text = R_RelPath(last_rom)
     End Sub
 
-    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles MainGrid.CellContentDoubleClick
         ssetting = 1
         rec()
         pArg = record
@@ -661,29 +668,29 @@ Public Class MedGuiR
         End If
     End Sub
 
-    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
+    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles MainGrid.SelectionChanged
         Try
             record = ""
             'SelectRom()
             'ReadPSValue()
-            consoles = DataGridView1.CurrentRow.Cells(6).Value()
+            consoles = MainGrid.CurrentRow.Cells(6).Value()
 
             If CheckBox10.Checked = True Then TextBox35.Text = rn
-            If CheckBox10.Checked = True And CheckBox11.Checked = True Then TextBox35.Text = rn & " " & DataGridView1.CurrentRow.Cells(2).Value()
+            If CheckBox10.Checked = True And CheckBox11.Checked = True Then TextBox35.Text = rn & " " & MainGrid.CurrentRow.Cells(2).Value()
 
-            Select Case DataGridView1.CurrentRow.Cells(7).Value()
+            Select Case MainGrid.CurrentRow.Cells(7).Value()
                 Case ".wsr", ".psf", ".psf1", ".minipsf", ".gsf", ".minigsf", ".hes", ".nsf", ".spc", ".rsn", ".vgz", ".vgm", ".gbs", ".ssf", ".minissf"
-                    DataGridView1.CurrentRow.Cells(2).Value() = "(Soundtrack)"
-                    Label3.Text = "Version: " & DataGridView1.CurrentRow.Cells(2).Value()
+                    MainGrid.CurrentRow.Cells(2).Value() = "(Soundtrack)"
+                    Label3.Text = "Version: " & MainGrid.CurrentRow.Cells(2).Value()
                     DetectChipmodule()
-                    If AllTags <> "" Then DataGridView1.CurrentRow.Cells(0).ToolTipText = AllTags : ChipTAG.RichTextBox1.Text = AllTags
+                    If AllTags <> "" Then MainGrid.CurrentRow.Cells(0).ToolTipText = AllTags : ChipTAG.RichTextBox1.Text = AllTags
             End Select
         Catch
         End Try
     End Sub
 
     Public Sub remove_double()
-        If DataGridView1.RowCount > 1 Then
+        If MainGrid.RowCount > 1 Then
 
             'For i = 1 To DataGridView1.RowCount - 1
             'If DataGridView1.Rows(i - 1).Cells(4).Value = DataGridView1.Rows(i).Cells(4).Value Then
@@ -691,16 +698,16 @@ Public Class MedGuiR
             ' End If
             'Next
             Try
-                For i = 0 To DataGridView1.RowCount - 1
-                    If i > DataGridView1.RowCount Then
-                        i = DataGridView1.RowCount - 1
-                        If DataGridView1.Rows(i).Cells(6).Value = "" Then
-                            DataGridView1.Rows.RemoveAt(i)
+                For i = 0 To MainGrid.RowCount - 1
+                    If i > MainGrid.RowCount Then
+                        i = MainGrid.RowCount - 1
+                        If MainGrid.Rows(i).Cells(6).Value = "" Then
+                            MainGrid.Rows.RemoveAt(i)
                         End If
                         Exit Sub
                     Else
-                        If DataGridView1.Rows(i).Cells(6).Value = "" Then
-                            DataGridView1.Rows.RemoveAt(i)
+                        If MainGrid.Rows(i).Cells(6).Value = "" Then
+                            MainGrid.Rows.RemoveAt(i)
                         End If
                     End If
                 Next
@@ -712,15 +719,14 @@ Public Class MedGuiR
     Public Sub ScanFolder()
         If Directory.Exists(T_MedExtra & TempFolder) = False Then
             If SY.Text.Trim <> "" Then MsgBox("Nothing to Scan...", MsgBoxStyle.Exclamation + vbOKOnly, "Directory not exist...")
-            DataGridView1.Rows.Clear()
+            MainGrid.Rows.Clear()
             Exit Sub
         End If
 
-        'If Dir(T_MedExtra & TempFolder & "\*.*") = "" Then
         Dim fcount As Integer = Directory.GetFiles(T_MedExtra & TempFolder & "\", "*.*", SearchOption.AllDirectories).Length
         If fcount = 0 Then
             MsgBox("No files founded in " & TempFolder & " Folder...", vbInformation + vbOKOnly)
-            DataGridView1.Rows.Clear()
+            MainGrid.Rows.Clear()
             TempFolder = ""
             Exit Sub
         End If
@@ -730,7 +736,8 @@ Public Class MedGuiR
         SevenZCounter = 0
         stopscan = False
         stopiso = True
-        DataGridView1.Rows.Clear()
+        'controllo cfs implementato dopo release 0.123 vedi se crea casini
+        'MainGrid.Rows.Clear()
         scansiona()
         SoxStatus.Close()
     End Sub
@@ -739,7 +746,6 @@ Public Class MedGuiR
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\world.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = ""
-        'SearchGridDataInRow()
         SearchGridGenreInRow()
     End Sub
 
@@ -747,7 +753,6 @@ Public Class MedGuiR
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\eu.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "eu"
-        'SearchGridDataInRow()
         SearchGridGenreInRow()
     End Sub
 
@@ -755,7 +760,6 @@ Public Class MedGuiR
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\us.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "us"
-        'SearchGridDataInRow()
         SearchGridGenreInRow()
     End Sub
 
@@ -763,7 +767,6 @@ Public Class MedGuiR
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\jp.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "ja"
-        'SearchGridDataInRow()
         SearchGridGenreInRow()
     End Sub
 
@@ -771,7 +774,6 @@ Public Class MedGuiR
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Flags\pd.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "pd"
-        'SearchGridDataInRow()
         SearchGridGenreInRow()
     End Sub
 
@@ -779,7 +781,6 @@ Public Class MedGuiR
         FlagToolStripSplitButton.Image = (New Bitmap(MedExtra & "Resource\Gui\modland.png"))
         FilterToolStripMenuItem.Image = FlagToolStripSplitButton.Image
         regioni = "soundtrack"
-        'SearchGridDataInRow()
         SearchGridGenreInRow()
     End Sub
 
@@ -793,14 +794,13 @@ Public Class MedGuiR
         If type_csv = SY.Text Then Exit Sub
         If SY.Text = "" Then 'Or SY.Text = "psx" Or SY.Text = "ss" Or SY.Text = "pcfx"
             Me.Text = "MedGui Reborn"
-            DataGridView1.Rows.Clear()
+            MainGrid.Rows.Clear()
             Datagrid_filter()
             RebuildToolStripButton.Enabled = False
             RescanToolStripMenuItem.Enabled = False
             type_csv = SY.Text
             Exit Sub
         Else
-            Button55.Enabled = False
             RebuildToolStripButton.Enabled = True
             RescanToolStripMenuItem.Enabled = True
         End If
@@ -826,7 +826,6 @@ Public Class MedGuiR
             Exit Sub
         End If
 
-        'If Dir(MedExtra & "Scanned\" & SY.Text & ".csv") <> "" Then
         Dim risp As String
         risp = MsgBox("Do you want To Rebuild " & UCase(SY.Text) & ".CSV?", vbInformation + vbOKCancel)
         If risp = vbCancel Then Exit Sub
@@ -834,21 +833,17 @@ Public Class MedGuiR
         TextBox3.Text = ""
         SetSRom()
         TempFolder = StartRom
-        ''Select Case SY.Text
-        ''Case "psx", "ss"
-        'ScanCueCcd()
-        ''Case Else
+
         If CheckBox14.Checked = True Then
             RecuScan()
         Else
             ScanFolder()
         End If
-        ''End Select
 
         SaveGridDataInFile()
         Datagrid_filter()
         ReleaseMemory()
-        'End If
+
     End Sub
 
     Private Sub LoadCDToolStripButton_Click(sender As Object, e As EventArgs) Handles LoadCDToolStripButton.Click
@@ -882,9 +877,8 @@ Public Class MedGuiR
             Else
                 Me.Text = "MedGui Reborn - Favorites Roms"
                 RebuildToolStripButton.Enabled = False
-                DataGridView1.Rows.Clear()
+                MainGrid.Rows.Clear()
                 LoadGridDataInFile()
-                'DataGridView1.Sort(DataGridView1.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
                 Datagrid_filter()
             End If
 
@@ -905,7 +899,7 @@ Public Class MedGuiR
         fdlg.FilterIndex = 1
         fdlg.RestoreDirectory = True
         If fdlg.ShowDialog() = DialogResult.OK Then
-            If DataGridView1.Rows.Count > 0 Then DataGridView1.Rows.Clear()
+            If MainGrid.Rows.Count > 0 Then MainGrid.Rows.Clear()
             percorso = R_RelPath(fdlg.FileName)
             SevenZCounter = 0
             SingleScan()
@@ -920,7 +914,7 @@ Public Class MedGuiR
         Datagrid_filter()
 
         Try
-            Me.DataGridView1.CurrentCell = Me.DataGridView1(1, 0)
+            Me.MainGrid.CurrentCell = Me.MainGrid(1, 0)
         Catch
         End Try
     End Sub
@@ -936,7 +930,6 @@ Public Class MedGuiR
     End Sub
 
     Private Sub FindToolStripButton_Click(sender As Object, e As EventArgs) Handles FindToolStripButton.Click
-        'SearchGridDataInRow()
         SearchGridGenreInRow()
         Datagrid_filter()
         TextBox3.Focus()
@@ -953,8 +946,7 @@ Public Class MedGuiR
 
     Private Sub TextBox3_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox3.KeyUp
         If e.KeyCode = Keys.Enter Then
-            e.SuppressKeyPress = True    ' evita il Beep!
-            'SearchGridDataInRow()
+            e.SuppressKeyPress = True
             SearchGridGenreInRow()
             Datagrid_filter()
             TextBox3.Focus()
@@ -968,17 +960,7 @@ Public Class MedGuiR
     End Sub
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
-        'If Len(TextBox3.Text) > 2 Or TextBox3.Text.Trim = "" Then
-        'SearchGridDataInRow()
-        'Datagrid_filter()
-        'End If
-        'If TextBox3.Text.Length > 2 And Trim(TextBox3.Text) <> "" Then
-        'RebuildToolStripButton.Enabled = False
-        'ElseIf Trim(TextBox3.Text) = "" And SY.Text <> "" Then
-        'RebuildToolStripButton.Enabled = True
-        'End If
         If TextBox3.Text.Trim = "" Then
-            'SearchGridDataInRow()
             SearchGridGenreInRow()
             Datagrid_filter()
         End If
@@ -1045,7 +1027,6 @@ Public Class MedGuiR
 
     Private Sub LinkLabel8_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel8.LinkClicked
         Try
-            'System.Diagnostics.Process.Start(Application.StartupPath & "\HOW-TO r1.txt")
             _link = (Application.StartupPath & "\HOW-TO r1.txt")
             open_link()
         Catch ex As Exception
@@ -1090,21 +1071,6 @@ Public Class MedGuiR
             Label34.Text = R_RelPath(percorso)
             biso = Path.GetFileName(Label34.Text)
             tempiso = Replace(Label34.Text, Path.GetExtension(Label34.Text), "." & miso)
-            'n_psx = isof.SafeFileName
-            'percorso = isof.FileName
-
-            'If File.Exists(MedExtra & "\Plugins\psxt001z.exe") = True And File.Exists(MedExtra & "\Plugins\db\ps1titles_us_eu_jp.txt") = True Then
-            'Change_PSX()
-            'renamePSX()
-            'End If
-
-            'If r_psx = "" Then
-            'Label34.Text = isof.FileName
-            'Else
-            'Label34.Text = Path.GetDirectoryName(percorso) & "\" & r_psx & Path.GetExtension(percorso)
-            'End If
-
-            'biso = Path.GetFileName(Label34.Text)
         End If
     End Sub
 
@@ -1113,12 +1079,12 @@ Public Class MedGuiR
         strimg = ""
         isof.Filter = tiso1
         isof.RestoreDirectory = True
-        'If isof.ShowDialog() = DialogResult.OK Then Label35.Text = isof.FileName : biso1 = isof.SafeFileName
+
         For i = 1 To NumericUpDown1.Value
             isof.Title = "Select " & tiso & " file n°" & i
             If isof.ShowDialog() = DialogResult.OK Then
                 Label34.Text = ""
-                'tempiso = Replace(isof.FileName, Path.GetExtension(isof.FileName), "." & miso)
+
                 If i = 1 Then
                     strimg = isof.SafeFileName
                 Else
@@ -1159,8 +1125,6 @@ Public Class MedGuiR
 
     Public Sub Make_CUE()
         Dim fiso As StreamWriter
-        'tempiso = Replace(Label34.Text, Microsoft.VisualBasic.Right(Label34.Text, 3), miso)
-        'If tempiso = "" Then MsgBox("Please choose first the CD image file!", vbExclamation + MsgBoxStyle.OkOnly) : Exit Sub
         fiso = File.CreateText(tempiso)
         fiso.WriteLine(strimg)
         fiso.Flush()
@@ -1208,15 +1172,6 @@ Public Class MedGuiR
 
     Private Sub Button22_Click(sender As Object, e As EventArgs)
         About.ShowDialog()
-        'tProcess = "xmplay"
-        'KillProcess()
-        'Arg = " module.zip" & " -play -tray"
-        'wDir = (MedExtra & "Resource\Music")
-        'StartProcess()
-
-        'Dim vxmp As String
-        'vxmp = MsgBox(Label6.Text & vbCrLf & "A GUI for Mednafen Window" & vbCrLf & "By Speedvicio", vbOKOnly + vbInformation, "About")
-        'If vxmp = vbOK Then KillProcess()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -1447,7 +1402,6 @@ Public Class MedGuiR
 
     Public Sub list_DATs()
         Dim Directories() As String
-
         Dim u As DirectoryInfo
         ComboBox1.Items.Clear()
         Directories = Directory.GetDirectories(MedExtra & "DATs\")
@@ -1498,8 +1452,8 @@ Public Class MedGuiR
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            _link = "https://www.youtube.com/results?search_query=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") _
-                & "+" & DataGridView1.CurrentRow.Cells(5).Value() & "&sm=3"
+            _link = "https://www.youtube.com/results?search_query=" & Replace(Trim(cleanpsx(MainGrid.CurrentRow.Cells(0).Value())), "&", "%26") _
+                & "+" & MainGrid.CurrentRow.Cells(5).Value() & "&sm=3"
             open_link()
         Catch
         End Try
@@ -1509,7 +1463,7 @@ Public Class MedGuiR
         Try
             '_link = "https://www.gamesdatabase.org/list.aspx?in=1&searchtext=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & "&searchtype=1"
             Dim webSystem As String
-            Select Case DataGridView1.CurrentRow.Cells(5).Value()
+            Select Case MainGrid.CurrentRow.Cells(5).Value()
                 Case "Atari - Lynx"
                     webSystem = "atari_lynx"
                 Case "Bandai - WonderSwan"
@@ -1544,7 +1498,7 @@ Public Class MedGuiR
                     webSystem = "nintendo_famicom_disk_system"
             End Select
 
-            _link = "https://www.gamesdatabase.org/list.aspx?DM=0&searchtext=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "and") & "&searchtype=1&system=" & webSystem & "&sort=Game"
+            _link = "https://www.gamesdatabase.org/list.aspx?DM=0&searchtext=" & Replace(Trim(cleanpsx(MainGrid.CurrentRow.Cells(0).Value())), "&", "and") & "&searchtype=1&system=" & webSystem & "&sort=Game"
             open_link()
         Catch
         End Try
@@ -1555,7 +1509,7 @@ Public Class MedGuiR
             '_link = "https://thegamesdb.net/search/?string=" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & " function=Search"
 
             TGDBPlatform()
-            _link = "https://thegamesdb.net/search.php?name=" & Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), "&", "%26") & "&platform_id%5B%5D=" & tgdbCID
+            _link = "https://thegamesdb.net/search.php?name=" & Replace(Trim(cleanpsx(MainGrid.CurrentRow.Cells(0).Value())), "&", "%26") & "&platform_id%5B%5D=" & tgdbCID
             open_link()
         Catch
         End Try
@@ -1563,7 +1517,7 @@ Public Class MedGuiR
 
     Public Sub TGDBPlatform()
         tgdbCID = ""
-        Select Case DataGridView1.CurrentRow.Cells(5).Value()
+        Select Case MainGrid.CurrentRow.Cells(5).Value()
             Case "Apple II/II+"
                 tgdbCID = "4942"
             Case "Atari - Lynx"
@@ -1591,7 +1545,7 @@ Public Class MedGuiR
             Case "Sega - Game Gear"
                 tgdbCID = "20"
             Case "Sega - Mega Drive - Genesis"
-                If LCase(DataGridView1.CurrentRow.Cells(2).Value().ToString).Contains("us") Then
+                If LCase(MainGrid.CurrentRow.Cells(2).Value().ToString).Contains("us") Then
                     tgdbCID = "18"
                 Else
                     tgdbCID = "36"
@@ -1620,7 +1574,7 @@ Public Class MedGuiR
 
     Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
         Try
-            _link = "https://en.wikipedia.org/wiki/" & Replace(Replace(Trim(cleanpsx(DataGridView1.CurrentRow.Cells(0).Value())), " ", "_"), "&", "%26")
+            _link = "https://en.wikipedia.org/wiki/" & Replace(Replace(Trim(cleanpsx(MainGrid.CurrentRow.Cells(0).Value())), " ", "_"), "&", "%26")
             open_link()
         Catch
         End Try
@@ -1654,8 +1608,8 @@ Public Class MedGuiR
         If My.Computer.Network.IsAvailable = False Then MsgBox("Connections is not Available", vbOKOnly + vbExclamation) : Exit Sub
 
         If CheckBox2.Checked = True Then
-            For i = 0 To DataGridView1.Rows.Count - 1
-                DataGridView1.Rows(i).Cells(0).Selected = True
+            For i = 0 To MainGrid.Rows.Count - 1
+                MainGrid.Rows(i).Cells(0).Selected = True
                 DownloadCover()
             Next
             MsgBox("Task completed!", vbOKOnly + MsgBoxStyle.Information)
@@ -1680,10 +1634,10 @@ Public Class MedGuiR
 
     Private Sub Button34_Click(sender As Object, e As EventArgs) Handles Button34.Click
 
-        If DataGridView1.CurrentRow.Cells(5).Value() = "Nintendo - Game Boy Advance" Then
+        If MainGrid.CurrentRow.Cells(5).Value() = "Nintendo - Game Boy Advance" Then
 
             Dim SGBA As StreamWriter
-            SGBA = File.CreateText(Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(DataGridView1.CurrentRow.Cells(4).Value()) & ".type"))
+            SGBA = File.CreateText(Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(MainGrid.CurrentRow.Cells(4).Value()) & ".type"))
             SGBA.WriteLine(ComboBox3.Text & " " & ComboBox4.Text)
             If CheckBox12.Checked = True And ComboBox3.Text <> "rtc" Then SGBA.WriteLine("rtc")
             SGBA.Flush()
@@ -1736,7 +1690,7 @@ Public Class MedGuiR
 
     Private Sub TextBox35_KeyUp(sender As Object, e As KeyEventArgs) Handles TextBox35.KeyUp
         If e.KeyCode = Keys.Enter Then
-            e.SuppressKeyPress = True    ' evita il Beep!
+            e.SuppressKeyPress = True
             select_link()
             open_link()
         End If
@@ -1753,19 +1707,19 @@ Public Class MedGuiR
     End Sub
 
     Private Sub DataGridView1_DragEnter(ByVal sender As Object, ByVal e As _
-System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
+System.Windows.Forms.DragEventArgs) Handles MainGrid.DragEnter
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             e.Effect = DragDropEffects.All
         End If
     End Sub
 
     Private Sub DataGridView1_DragDrop(ByVal sender As Object, ByVal e As _
-    System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragDrop
+    System.Windows.Forms.DragEventArgs) Handles MainGrid.DragDrop
         If e.Data.GetDataPresent(DataFormats.FileDrop) Then
             SevenZCounter = 0
             stopscan = False
 
-            If DataGridView1.Rows.Count > 0 Then DataGridView1.Rows.Clear()
+            If MainGrid.Rows.Count > 0 Then MainGrid.Rows.Clear()
             Dim MyFiles() As String
             Dim i As Integer
 
@@ -1790,13 +1744,9 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                         ScanFolder()
                     End If
                     Me.Text = "MedGui Reborn"
-                    'Datagrid_filter()
                 Else
-                    'For i = 0 To MyFiles.Length - 1
                     percorso = R_RelPath(Frecord)
                     SingleScan()
-                    'If ext <> ".m3u" Then RealcdIsoName()
-                    'Next
                 End If
             Next
 
@@ -1809,7 +1759,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         Try
             ScrapeForce = 0
             If My.Computer.Network.IsAvailable = False And
-            File.Exists(MedExtra & "Scraped\" & DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(DataGridView1.CurrentRow.Cells(0).Value()) & ".xml") = False _
+            File.Exists(MedExtra & "Scraped\" & MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MainGrid.CurrentRow.Cells(0).Value()) & ".xml") = False _
             Then MsgBox("Connections is not Available", vbOKOnly + vbExclamation) : Exit Sub
             Scrape.GetParseXML()
         Catch
@@ -1819,37 +1769,35 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     Public Sub Datagrid_filter()
 
         If CheckBox7.Checked = True Then
-            DataGridView1.Columns(1).Visible = False
+            MainGrid.Columns(1).Visible = False
         Else
-            DataGridView1.Columns(1).Visible = True
+            MainGrid.Columns(1).Visible = True
         End If
 
         If CheckBox6.Checked = True Then
-            DataGridView1.Columns(2).Visible = False
+            MainGrid.Columns(2).Visible = False
         Else
-            DataGridView1.Columns(2).Visible = True
+            MainGrid.Columns(2).Visible = True
         End If
 
         If CheckBox4.Checked = True Then
-            DataGridView1.Columns(3).Visible = False
+            MainGrid.Columns(3).Visible = False
         Else
-            DataGridView1.Columns(3).Visible = True
+            MainGrid.Columns(3).Visible = True
         End If
 
         If CheckBox5.Checked = True Then
-            DataGridView1.Columns(5).Visible = False
+            MainGrid.Columns(5).Visible = False
         Else
-            DataGridView1.Columns(5).Visible = True
+            MainGrid.Columns(5).Visible = True
         End If
 
         If CheckBox8.Checked = True Then
-            DataGridView1.AutoResizeColumns()
+            MainGrid.AutoResizeColumns()
             ResizeGrid()
-            'Me.CenterToScreen()
         Else
             Me.Width = 784
-            DataGridView1.Width = 439
-            'Me.CenterToScreen()
+            MainGrid.Width = 439
         End If
 
         Dim Coluns_filter As Integer
@@ -1865,49 +1813,46 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         End Select
 
         If type_csv <> "last" Then
-            DataGridView1.Sort(DataGridView1.Columns(Coluns_filter), System.ComponentModel.ListSortDirection.Ascending)
+            MainGrid.Sort(MainGrid.Columns(Coluns_filter), System.ComponentModel.ListSortDirection.Ascending)
         End If
 
-        If Me.Text.Contains(" @ Files " & DataGridView1.RowCount) Then
+        If Me.Text.Contains(" @ Files " & MainGrid.RowCount) Then
         Else
-            Me.Text = Me.Text & " @ Files " & DataGridView1.RowCount
+            Me.Text = Me.Text & " @ Files " & MainGrid.RowCount
         End If
         ReleaseMemory()
     End Sub
 
     Public Sub ResizeGrid()
         Dim tGwidth, wCol2, wCol3, wCol4, wCol6 As Integer
-        Dim wCol1 As Integer = DataGridView1.Columns.Item("Column1").Width
-        If DataGridView1.Columns.Item("Column2").Visible = True Then
-            wCol2 = DataGridView1.Columns.Item("Column2").Width : Else : wCol2 = 0
+        Dim wCol1 As Integer = MainGrid.Columns.Item("Column1").Width
+        If MainGrid.Columns.Item("Column2").Visible = True Then
+            wCol2 = MainGrid.Columns.Item("Column2").Width : Else : wCol2 = 0
         End If
-        If DataGridView1.Columns.Item("Column3").Visible = True Then
-            wCol3 = DataGridView1.Columns.Item("Column3").Width : Else : wCol3 = 0
+        If MainGrid.Columns.Item("Column3").Visible = True Then
+            wCol3 = MainGrid.Columns.Item("Column3").Width : Else : wCol3 = 0
         End If
-        If DataGridView1.Columns.Item("Column4").Visible = True Then
-            wCol4 = DataGridView1.Columns.Item("Column4").Width : Else : wCol4 = 0
+        If MainGrid.Columns.Item("Column4").Visible = True Then
+            wCol4 = MainGrid.Columns.Item("Column4").Width : Else : wCol4 = 0
         End If
-        If DataGridView1.Columns.Item("Column6").Visible = True Then
-            wCol6 = DataGridView1.Columns.Item("Column6").Width : Else : wCol6 = 0
+        If MainGrid.Columns.Item("Column6").Visible = True Then
+            wCol6 = MainGrid.Columns.Item("Column6").Width : Else : wCol6 = 0
         End If
         Dim eDataGD As Integer
-        If DataGridView1.Controls(1).Visible = True Then
+        If MainGrid.Controls(1).Visible = True Then
             eDataGD = 61
         Else
             eDataGD = 43
         End If
 
         tGwidth = wCol1 + wCol2 + wCol3 + wCol4 + wCol6 + eDataGD
-        'Me.Width = Me.Width - DataGridView1.Width
         If tGwidth + 345 > Screen.PrimaryScreen.Bounds.Width Then
             tGwidth = Screen.PrimaryScreen.Bounds.Width - 345
         End If
-        DataGridView1.Width = tGwidth
-        'Me.Width = Me.Width + DataGridView1.Width
+        MainGrid.Width = tGwidth
         Me.Width = 345 + tGwidth
         If tGwidth < 439 Then Me.Width = 784
-        'Me.CenterToScreen()
-        DataGridView1.PerformLayout()
+        MainGrid.PerformLayout()
     End Sub
 
     Private Sub Button40_Click(sender As Object, e As EventArgs) Handles Button40.Click
@@ -2109,7 +2054,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
     End Sub
 
     Private Sub CheckBox11_Click(sender As Object, e As EventArgs) Handles CheckBox11.Click
-        TextBox35.Text = rn & " " & DataGridView1.CurrentRow.Cells(2).Value()
+        TextBox35.Text = rn & " " & MainGrid.CurrentRow.Cells(2).Value()
         If CheckBox11.Checked = False Then TextBox35.Text = rn
     End Sub
 
@@ -2147,15 +2092,6 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         Me.Text = "MedGui Reborn"
         SetSRom()
 
-        'Select Case SY.Text
-        'Case "psx", "pcfx", "ss"
-        'DataGridView1.Rows.Clear()
-        'Me.Text = "MedGui Reborn - " & UCase(SY.Text) & " Folder"
-        'Exit Sub
-        'End Select
-
-        'If SY.Text = "psx" Or SY.Text = "pcfx" Then DataGridView1.Rows.Clear() : Me.Text = "MedGui Reborn - " & UCase(SY.Text) & " Folder" : Exit Sub
-
         If StartRom <> "" Then
             TempFolder = StartRom
             Me.Text = "MedGui Reborn - " & UCase(SY.Text) & " Folder"
@@ -2172,9 +2108,8 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
                 SaveGridDataInFile()
             Else
 
-                If DataGridView1.RowCount >= 0 Then DataGridView1.Refresh() : DataGridView1.Rows.Clear()
+                If MainGrid.RowCount >= 0 Then MainGrid.Refresh() : MainGrid.Rows.Clear()
                 LoadGridDataInFile()
-                'SearchGridDataInRow()
                 SearchGridGenreInRow()
 
             End If
@@ -2182,16 +2117,15 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
             TempFolder = "RomTemp"
             Me.Text = "MedGui Reborn - " & TempFolder
             T_MedExtra = MedExtra
-            DataGridView1.Rows.Clear()
+            MainGrid.Rows.Clear()
             scansiona()
         Else
-            DataGridView1.Rows.Clear()
+            MainGrid.Rows.Clear()
         End If
         If SY.Text <> "" Then RebuildToolStripButton.Enabled = True
 
-        'Datagrid_filter()
-        Try : DataGridView1.Focus() : DataGridView1.Rows(0).Cells(0).Selected = True : Catch ex As Exception : MGRWriteLog("MedGuiR - Select_system: " & ex.Message)
-            SY.Focus() : End Try 'Datagrid_filter() :
+        Try : MainGrid.Focus() : MainGrid.Rows(0).Cells(0).Selected = True : Catch ex As Exception : MGRWriteLog("MedGuiR - Select_system: " & ex.Message)
+            SY.Focus() : End Try
     End Sub
 
     Private Sub Button36_Click(sender As System.Object, e As System.EventArgs) Handles Button36.Click
@@ -2238,16 +2172,14 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
             Else
                 Me.Text = "MedGui Reborn - Recent Roms"
                 RebuildToolStripButton.Enabled = False
-                DataGridView1.Rows.Clear()
+                MainGrid.Rows.Clear()
                 LoadGridDataInFile()
                 Datagrid_filter()
-                'DataGridView1.Sort(DataGridView1.Columns(9), System.ComponentModel.ListSortDirection.Descending)
             End If
 
             T_MedExtra = MedExtra
-            'Datagrid_filter()
             Purge_Grid()
-            DataGridView1.Focus()
+            MainGrid.Focus()
         End If
     End Sub
 
@@ -2294,7 +2226,7 @@ System.Windows.Forms.DragEventArgs) Handles DataGridView1.DragEnter
         Dim delrec = MsgBox("Do you want to clear " & DSca & " Roms?", MsgBoxStyle.OkCancel + MsgBoxStyle.Information)
         If delrec = MsgBoxResult.Ok Then
             File.Delete(MedExtra & "Scanned\" & type_csv & ".csv")
-            DataGridView1.Rows.Clear()
+            MainGrid.Rows.Clear()
             Select_system()
         End If
     End Sub
@@ -2364,7 +2296,9 @@ inputagain:
     Private Sub ListBox2_KeyUp(sender As Object, e As KeyEventArgs) Handles ListBox2.KeyUp
         Select Case e.KeyCode
             Case Keys.Enter
+                If ListBox2.SelectedItem = "" Then Exit Sub
                 Populate_List2()
+                TempFolder = ""
         End Select
     End Sub
 
@@ -2387,36 +2321,19 @@ inputagain:
         If ListBox2.SelectedItem = "" Then Exit Sub
         SY.Text = ""
         Me.Text = "MedGui Reborn - " & ListBox2.SelectedItem & " Rom"
-        DataGridView1.Rows.Clear()
+        MainGrid.Rows.Clear()
         type_csv = ListBox2.SelectedItem
         LoadGridDataInFile()
-        'DataGridView1.Sort(DataGridView1.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
         T_MedExtra = MedExtra
         Datagrid_filter()
         type_csv = ListBox2.SelectedItem
         Purge_Grid()
         CustomScanFolder()
-
-        If Me.Text.Contains(ListBox2.SelectedItem & " Rom") And DataGridView1.RowCount > 0 Then
-            Button55.Enabled = True
-        Else
-            Button55.Enabled = False
-        End If
     End Sub
 
     Private Sub ListBox2_DoubleClick(sender As Object, e As System.EventArgs) Handles ListBox2.DoubleClick
         If ListBox2.SelectedItem = "" Then Exit Sub
-        Dim varcomodo As String = ListBox2.SelectedItem
         Populate_List2()
-
-        If Len(varcomodo) > 4 Then
-            If varcomodo.Substring(0, 4).Contains("R - ") Then
-                Button55.Enabled = False
-                'MsgBox("You can't rebuild recursive custom prescan", MsgBoxStyle.Exclamation + vbOKOnly, "Unable to rebuild this...")
-                'Exit Sub
-            End If
-        End If
-        ListBox2.SelectedItem = varcomodo
         TempFolder = ""
     End Sub
 
@@ -2426,7 +2343,7 @@ inputagain:
         If dels = vbOK Then
             File.Delete(MedExtra & "Scanned\" & ListBox2.Text & ".csv")
             CustomScanFolder()
-            DataGridView1.Rows.Clear()
+            MainGrid.Rows.Clear()
             Select_system()
         End If
     End Sub
@@ -2485,7 +2402,7 @@ inputagain:
     End Sub
 
     Private Sub RemoveFromFavoritesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RemoveFromFavoritesToolStripMenuItem.Click
-        DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+        MainGrid.Rows.Remove(MainGrid.CurrentRow)
         SaveGridDataInFile()
         If My.Computer.FileSystem.GetFileInfo(MedExtra & "Scanned\" & type_csv & ".csv").Length = 0 Then
             System.IO.File.Delete(MedExtra & "Scanned\" & type_csv & ".csv")
@@ -2654,24 +2571,7 @@ inputagain:
     End Sub
 
     Private Sub Button55_Click(sender As Object, e As EventArgs) Handles Button55.Click
-
-        Dim RPsc = MsgBox("Do you want to rebuild " & ListBox2.SelectedItem & ".CSV?", MsgBoxStyle.Information + vbOKCancel, "Rebuild Prescan...")
-        If RPsc = MsgBoxResult.Ok Then
-            Me.Text = "MedGui Reborn  - " & ListBox2.SelectedItem
-            T_MedExtra = ""
-            type_csv = ""
-            TempFolder = Path.GetDirectoryName(DataGridView1.Rows(0).Cells(4).Value())
-
-            If CheckBox14.Checked = True Then
-                RecuScan()
-            Else
-                ScanFolder()
-            End If
-            type_csv = ListBox2.SelectedItem
-            SaveGridDataInFile()
-            Datagrid_filter()
-        End If
-        TempFolder = ""
+        CustomScanFolder()
     End Sub
 
     Private Sub Button56_Click(sender As Object, e As EventArgs) Handles Button56.Click
@@ -2715,7 +2615,7 @@ inputagain:
         Dim BackupExt As String = ""
         Dim BackupPath As String = ""
         Dim BCKRisp As MsgBoxResult
-        Dim mmodule As String = LCase(DataGridView1.CurrentRow.Cells(6).Value)
+        Dim mmodule As String = LCase(MainGrid.CurrentRow.Cells(6).Value)
 
         Dim fdlg As OpenFileDialog = New OpenFileDialog()
         fdlg.Title = "Select a Save/Backup to import"
@@ -2857,13 +2757,13 @@ SKIPHASH:
 
     Private Sub FontToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles FontToolStripMenuItem1.Click
         If FontDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.RowsDefaultCellStyle.Font = FontDialog1.Font
-            DataGridView1.RowsDefaultCellStyle.ForeColor = FontDialog1.Color
-            DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            DataGridView1.Refresh()
+            MainGrid.RowsDefaultCellStyle.Font = FontDialog1.Font
+            MainGrid.RowsDefaultCellStyle.ForeColor = FontDialog1.Color
+            MainGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            MainGrid.Refresh()
 
             If CheckBox8.Checked = True Then
-                DataGridView1.AutoResizeColumns()
+                MainGrid.AutoResizeColumns()
                 ResizeGrid()
             End If
 
@@ -2876,31 +2776,31 @@ SKIPHASH:
 
     Private Sub CellsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CellsToolStripMenuItem.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.RowsDefaultCellStyle.BackColor = ColorDialog1.Color
+            MainGrid.RowsDefaultCellStyle.BackColor = ColorDialog1.Color
         End If
     End Sub
 
     Private Sub FontToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles FontToolStripMenuItem2.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.RowsDefaultCellStyle.SelectionForeColor = ColorDialog1.Color
+            MainGrid.RowsDefaultCellStyle.SelectionForeColor = ColorDialog1.Color
         End If
     End Sub
 
     Private Sub CellsToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CellsToolStripMenuItem1.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.RowsDefaultCellStyle.SelectionBackColor = ColorDialog1.Color
+            MainGrid.RowsDefaultCellStyle.SelectionBackColor = ColorDialog1.Color
         End If
     End Sub
 
     Private Sub GridToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GridColToolStripMenuItem.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.GridColor = ColorDialog1.Color
+            MainGrid.GridColor = ColorDialog1.Color
         End If
     End Sub
 
     Private Sub BackgroudToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackgroudToolStripMenuItem.Click
         If ColorDialog1.ShowDialog <> DialogResult.Cancel Then
-            DataGridView1.BackgroundColor = ColorDialog1.Color
+            MainGrid.BackgroundColor = ColorDialog1.Color
         End If
     End Sub
 
@@ -2943,17 +2843,17 @@ SKIPHASH:
         FontDialog1.ShowEffects = True
         FontDialog1.MaxSize = 18
 
-        DataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black
-        DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
-        DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
-        DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
-        DataGridView1.RowsDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
-        DataGridView1.GridColor = Color.FromKnownColor(KnownColor.ControlDark)
-        DataGridView1.BackgroundColor = Color.FromKnownColor(KnownColor.AppWorkspace)
-        DataGridView1.Refresh()
+        MainGrid.RowsDefaultCellStyle.ForeColor = Color.Black
+        MainGrid.RowsDefaultCellStyle.BackColor = Color.White
+        MainGrid.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+        MainGrid.RowsDefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
+        MainGrid.RowsDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+        MainGrid.GridColor = Color.FromKnownColor(KnownColor.ControlDark)
+        MainGrid.BackgroundColor = Color.FromKnownColor(KnownColor.AppWorkspace)
+        MainGrid.Refresh()
 
         If CheckBox8.Checked = True Then
-            DataGridView1.AutoResizeColumns()
+            MainGrid.AutoResizeColumns()
             ResizeGrid()
         End If
 
@@ -3028,7 +2928,7 @@ SKIPHASH:
     End Sub
 
     Private Sub ClientOptionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientOptionToolStripMenuItem.Click
-        If DataGridView1.Rows.Count < 1 Then
+        If MainGrid.Rows.Count < 1 Then
             MsgBox("You need to load a game on the grid to select a server", vbOKOnly + vbCritical, "No games on grid...")
             Exit Sub
         End If
@@ -3080,7 +2980,7 @@ SKIPHASH:
     End Sub
 
     Private Sub SavesCutomPlaylistToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveCustomPlaylistToolStripMenuItem.Click
-        If DataGridView1.Rows.Count < 2 Then
+        If MainGrid.Rows.Count < 2 Then
             MsgBox("You need to load more than 2 games on the grid to save playlist", vbOKOnly + vbCritical, "No games on grid...")
             Exit Sub
         End If
@@ -3103,7 +3003,7 @@ SKIPHASH:
     End Sub
 
     Private Sub EmulatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmulatorToolStripMenuItem.Click
-        If DataGridView1.Rows.Count < 1 Then
+        If MainGrid.Rows.Count < 1 Then
             MsgBox("You need to load a game on the grid to configure options", vbOKOnly + vbCritical, "No games on grid...")
             Exit Sub
         End If
@@ -3115,7 +3015,7 @@ SKIPHASH:
     End Sub
 
     Private Sub CheatToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CheatToolStripMenuItem1.Click
-        If DataGridView1.Rows.Count < 1 Then
+        If MainGrid.Rows.Count < 1 Then
             MsgBox("You need to load a game on the grid to open cheat manager", vbOKOnly + vbCritical, "No games on grid...")
             Exit Sub
         End If
@@ -3180,7 +3080,7 @@ CHECKDEAD:
                 Case JA 'verde - invia
                     SendKeys.Send("{ENTER}")
                 Case JB 'rosso - rim preferiti
-                    If DataGridView1.Focused = True Then
+                    If MainGrid.Focused = True Then
                         SendKeys.Send("{DELETE}")
                     ElseIf Me.Focused = True Then
                     ElseIf VirtualKbrd.Visible Then
@@ -3194,7 +3094,7 @@ CHECKDEAD:
                     End If
                 Case JX 'blu - seleziona
                     'SendKeys.Send("{SPACE}")
-                    If DataGridView1.Focused = True Then
+                    If MainGrid.Focused = True Then
                         'SendKeys.Send("+")
                         NetToolStripButton.PerformClick()
                     ElseIf VirtualKbrd.Visible = True Then
@@ -3203,7 +3103,7 @@ CHECKDEAD:
                         SendKeys.Send(" ")
                     End If
                 Case JY 'giallo - agg preferiti
-                    If DataGridView1.Focused = True Then
+                    If MainGrid.Focused = True Then
                         SendKeys.Send("{F}")
                     End If
                     If VirtualKbrd.Visible = True Then
@@ -3215,31 +3115,31 @@ CHECKDEAD:
                         End If
                     End If
                 Case JL 'L - menu indietro
-                    If DataGridView1.Focused = False Then
+                    If MainGrid.Focused = False Then
                         SendKeys.Send("+{TAB}")
                     Else
-                        If DataGridView1.CurrentRow.Index - 10 <= 0 Then
-                            DataGridView1.CurrentCell = DataGridView1(0, 0)
+                        If MainGrid.CurrentRow.Index - 10 <= 0 Then
+                            MainGrid.CurrentCell = MainGrid(0, 0)
                         Else
-                            DataGridView1.CurrentCell = DataGridView1(0, DataGridView1.CurrentRow.Index - 10)
+                            MainGrid.CurrentCell = MainGrid(0, MainGrid.CurrentRow.Index - 10)
                         End If
                     End If
                 Case JR 'R - menu avanti
-                    If DataGridView1.Focused = False Then
+                    If MainGrid.Focused = False Then
                         SendKeys.Send("{TAB}")
                     Else
-                        If DataGridView1.CurrentRow.Index + 10 >= DataGridView1.RowCount - 1 Then
-                            DataGridView1.CurrentCell = DataGridView1(0, DataGridView1.RowCount - 1)
+                        If MainGrid.CurrentRow.Index + 10 >= MainGrid.RowCount - 1 Then
+                            MainGrid.CurrentCell = MainGrid(0, MainGrid.RowCount - 1)
                         Else
-                            DataGridView1.CurrentCell = DataGridView1(0, DataGridView1.CurrentRow.Index + 10)
+                            MainGrid.CurrentCell = MainGrid(0, MainGrid.CurrentRow.Index + 10)
                         End If
                     End If
                 Case JSELECT 'menu select
                     If VirtualKbrd.Visible = True Then
                         VirtualKbrd.btnCaps.PerformClick()
                     Else
-                        If DataGridView1.Focused = False Then
-                            DataGridView1.Focus()
+                        If MainGrid.Focused = False Then
+                            MainGrid.Focus()
                         Else
                             If IconStrip.Visible = True Then
                                 SY.Focus()
@@ -3252,7 +3152,7 @@ CHECKDEAD:
                     If VirtualKbrd.Visible = True Then
                         VirtualKbrd.Close()
                     Else
-                        If DataGridView1.Rows.Count > 9 Then VirtualKbrd.ShowDialog()
+                        If MainGrid.Rows.Count > 9 Then VirtualKbrd.ShowDialog()
                     End If
                     'If TabControl1.Focused = False Then
                     'TabControl1.Select()
@@ -3284,7 +3184,7 @@ CHECKDEAD:
             deadPOV = ""
             countPOV = 0
             TimerControlJoy.Start()
-            DataGridView1.Focus()
+            MainGrid.Focus()
         Else
             CheckBox16.Checked = False
             ComboBox6.Enabled = True
@@ -3351,10 +3251,10 @@ CHECKDEAD:
     Private Sub RenameEntryStripMenuItem_Click(sender As Object, e As EventArgs) Handles RenameEntryStripMenuItem.Click
 
         Dim newEntry As String
-        newEntry = InputBox("Input the new name for this game ", "Rename Entry...", DataGridView1.CurrentRow.Cells(0).Value)
+        newEntry = InputBox("Input the new name for this game ", "Rename Entry...", MainGrid.CurrentRow.Cells(0).Value)
         If newEntry.Trim = "" Then Exit Sub
-        DataGridView1.CurrentRow.Cells(0).Value = newEntry
-        DataGridView1.Refresh()
+        MainGrid.CurrentRow.Cells(0).Value = newEntry
+        MainGrid.Refresh()
         SaveGridDataInFile()
     End Sub
 
@@ -3396,21 +3296,21 @@ CHECKDEAD:
     Private Sub Purge_Grid()
         If CheckBox22.Checked = True Then
             SoxStatus.Close()
-            DataGridView1.Focus()
+            MainGrid.Focus()
             Exit Sub
         End If
 
         Dim countmissing As Integer = 0
 
-        If DataGridView1.RowCount <= 0 And File.Exists(MedExtra & "Scanned\" & type_csv & ".csv") = True Then
+        If MainGrid.RowCount <= 0 And File.Exists(MedExtra & "Scanned\" & type_csv & ".csv") = True Then
             If type_csv = "last" Or type_csv = "fav" Then File.Delete(MedExtra & "Scanned\" & type_csv & ".csv") : Exit Sub
             Dim InvPre = MsgBox(type_csv & ".csv has unrecognized files or empty values." & vbCrLf &
                    "Do you want to delete it?", MsgBoxStyle.Exclamation + vbYesNo, "Invalid prescanned file...")
             If InvPre = MsgBoxResult.Yes Then File.Delete(MedExtra & "Scanned\" & type_csv & ".csv") : Exit Sub
         End If
 
-        For i = 0 To DataGridView1.RowCount - 1
-            If File.Exists(DataGridView1.Rows(i).Cells(4).Value()) = False Then
+        For i = 0 To MainGrid.RowCount - 1
+            If File.Exists(MainGrid.Rows(i).Cells(4).Value()) = False Then
                 countmissing = countmissing + 1
             End If
             If countmissing > 0 Then Exit For
@@ -3422,24 +3322,24 @@ CHECKDEAD:
          MsgBoxStyle.YesNo + MsgBoxStyle.Exclamation)
 
             If RMiss = vbYes Then
-                countmissing = DataGridView1.RowCount
+                countmissing = MainGrid.RowCount
                 Me.Text = Replace(Me.Text, " @ Files " & countmissing, "")
 MisScan:
                 For i = 0 To countmissing - 1
                     If i > countmissing Then Exit For
-                    If File.Exists(DataGridView1.Rows(i).Cells(4).Value()) = False Then
-                        DataGridView1.Rows.RemoveAt(i)
+                    If File.Exists(MainGrid.Rows(i).Cells(4).Value()) = False Then
+                        MainGrid.Rows.RemoveAt(i)
                         countmissing = countmissing - 1
                         GoTo MisScan
                     End If
                 Next
 
                 SaveGridDataInFile()
-                Me.Text = Me.Text & " @ Files " & DataGridView1.RowCount
+                Me.Text = Me.Text & " @ Files " & MainGrid.RowCount
 
             End If
         End If
-        DataGridView1.Focus()
+        MainGrid.Focus()
     End Sub
 
     Private Sub CleanEntriesMenuItem1_Click(sender As Object, e As EventArgs) Handles CleanEntriesMenuItem1.Click
@@ -3450,17 +3350,9 @@ MisScan:
         SaveGridDataInFile()
     End Sub
 
-    Private Sub ListBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox2.SelectedIndexChanged
-        If Me.Text.Contains(ListBox2.SelectedItem & " Rom") And DataGridView1.RowCount > 0 Then
-            Button55.Enabled = True
-        Else
-            Button55.Enabled = False
-        End If
-
-        If Len(ListBox2.SelectedItem) > 4 Then
-            If ListBox2.SelectedItem.substring(0, 4).contains("R - ") Then
-                Button55.Enabled = False
-            End If
+    Private Sub Button22_Click_1(sender As Object, e As EventArgs) Handles Button22.Click
+        If File.Exists(Path.Combine(Application.StartupPath, "MedGuiR CSV Creator.exe")) Then
+            Process.Start(Path.Combine(Application.StartupPath, "MedGuiR CSV Creator.exe"))
         End If
     End Sub
 
@@ -3493,7 +3385,7 @@ MisScan:
         End Select
 
         Dim FileParameter As String = ""
-        If DataGridView1.Rows.Count > 0 Then
+        If MainGrid.Rows.Count > 0 Then
             FileParameter = "-folder=" & Chr(34) & TextBox4.Text & Chr(34) & " -console=" & p_c & " -port=" & Chr(34) & portpad & Chr(34) & " -file=" & Chr(34) & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & Chr(34)
         End If
 
@@ -3523,12 +3415,12 @@ MisScan:
             GridColToolStripMenuItem.Enabled = False
             ResetToDefaultToolStripMenuItem.Enabled = False
 
-            DataGridView1.RowsDefaultCellStyle.ForeColor = Color.Black
-            DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
-            DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Black
-            DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
-            DataGridView1.RowsDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
-            DataGridView1.Refresh()
+            MainGrid.RowsDefaultCellStyle.ForeColor = Color.Black
+            MainGrid.RowsDefaultCellStyle.BackColor = Color.White
+            MainGrid.RowsDefaultCellStyle.SelectionForeColor = Color.Black
+            MainGrid.RowsDefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
+            MainGrid.RowsDefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+            MainGrid.Refresh()
         End If
     End Sub
 

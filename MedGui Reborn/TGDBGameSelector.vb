@@ -10,7 +10,7 @@ Public Class TGDBGameSelector
 
     Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
         Try
-            Dim di As IO.DirectoryInfo = New IO.DirectoryInfo(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()))
+            Dim di As IO.DirectoryInfo = New IO.DirectoryInfo(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()))
             For Each File As IO.FileInfo In di.GetFiles()
                 If File.Extension = ".jpg" Then
                     File.Delete()
@@ -28,7 +28,7 @@ Public Class TGDBGameSelector
             Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
             Dim File As IO.StreamWriter
-            File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
+            File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml", False)
             Dim splitXml As String() = Split(str.OuterXml, "<pages>")
             File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
             File.Close()

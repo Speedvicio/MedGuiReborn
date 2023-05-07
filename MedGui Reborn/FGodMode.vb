@@ -29,7 +29,7 @@ Public Class FGodMode
                     noADV = False
                 End If
             ElseIf RadioButton3.Checked = True Then
-                If MedGuiR.DataGridView1.Rows.Count = 0 Then
+                If MedGuiR.MainGrid.Rows.Count = 0 Then
                     MsgBox("Nothing to do here...", MsgBoxStyle.Exclamation + vbOKOnly, "Grid empty...")
                     RenameLikeDat = 0
                     Exit Sub
@@ -65,8 +65,8 @@ Public Class FGodMode
         folder.ShowNewFolderButton = True
 
         If folder.ShowDialog = Windows.Forms.DialogResult.OK Then
-            ProgressBar1.Maximum = MedGuiR.DataGridView1.Rows.Count
-            For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
+            ProgressBar1.Maximum = MedGuiR.MainGrid.Rows.Count
+            For Each dr As DataGridViewRow In MedGuiR.MainGrid.Rows
                 If dr.Visible = True Then
                     Dim newfolder As String = Path.Combine(folder.SelectedPath, dr.Cells(5).Value.ToString)
                     If Directory.Exists(newfolder) = False Then My.Computer.FileSystem.CreateDirectory(newfolder)

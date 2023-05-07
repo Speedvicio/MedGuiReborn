@@ -612,9 +612,13 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.TabControl1.SuspendLayout
-        Me.TabPage1.SuspendLayout
-        Me.GroupBox1.SuspendLayout
+        Me.ComboBox69 = New System.Windows.Forms.ComboBox()
+        Me.Label194 = New System.Windows.Forms.Label()
+        Me.CheckBox109 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox112 = New System.Windows.Forms.CheckBox()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -6654,6 +6658,9 @@ Partial Class MgrSetting
         '
         'GroupBox25
         '
+        Me.GroupBox25.Controls.Add(Me.CheckBox112)
+        Me.GroupBox25.Controls.Add(Me.ComboBox69)
+        Me.GroupBox25.Controls.Add(Me.Label194)
         Me.GroupBox25.Controls.Add(Me.ComboBox62)
         Me.GroupBox25.Controls.Add(Me.Label178)
         Me.GroupBox25.Controls.Add(Me.NumericUpDown41)
@@ -6684,8 +6691,8 @@ Partial Class MgrSetting
         '
         Me.ComboBox62.Enabled = False
         Me.ComboBox62.FormattingEnabled = True
-        Me.ComboBox62.Items.AddRange(New Object() {"custom", "rgb", "la7620", "rgb_alt1", "rgb_alt2"})
-        Me.ComboBox62.Location = New System.Drawing.Point(158, 249)
+        Me.ComboBox62.Items.AddRange(New Object() {"composite", "rgb", "rgb_tfr", "rgb_alt", "rgb_alt_trf"})
+        Me.ComboBox62.Location = New System.Drawing.Point(158, 224)
         Me.ComboBox62.Name = "ComboBox62"
         Me.ComboBox62.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox62.TabIndex = 115
@@ -6696,7 +6703,7 @@ Partial Class MgrSetting
         '
         Me.Label178.AutoSize = True
         Me.Label178.Enabled = False
-        Me.Label178.Location = New System.Drawing.Point(6, 252)
+        Me.Label178.Location = New System.Drawing.Point(6, 227)
         Me.Label178.Name = "Label178"
         Me.Label178.Size = New System.Drawing.Size(110, 13)
         Me.Label178.TabIndex = 114
@@ -6706,7 +6713,7 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown41.DecimalPlaces = 2
         Me.NumericUpDown41.Increment = New Decimal(New Integer() {10, 0, 0, 131072})
-        Me.NumericUpDown41.Location = New System.Drawing.Point(159, 40)
+        Me.NumericUpDown41.Location = New System.Drawing.Point(159, 66)
         Me.NumericUpDown41.Maximum = New Decimal(New Integer() {150, 0, 0, 131072})
         Me.NumericUpDown41.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown41.Name = "NumericUpDown41"
@@ -6718,7 +6725,7 @@ Partial Class MgrSetting
         'Label165
         '
         Me.Label165.AutoSize = True
-        Me.Label165.Location = New System.Drawing.Point(6, 42)
+        Me.Label165.Location = New System.Drawing.Point(6, 69)
         Me.Label165.Name = "Label165"
         Me.Label165.Size = New System.Drawing.Size(130, 13)
         Me.Label165.TabIndex = 112
@@ -6728,7 +6735,7 @@ Partial Class MgrSetting
         '
         Me.ComboBox61.FormattingEnabled = True
         Me.ComboBox61.Items.AddRange(New Object() {"custom", "mednafen", "la7620", "cxa2025as_usa", "cxa2060bs_usa", "cxa2095s_usa", "cxa2025as_japan", "cxa2060bs_japan", "cxa2095s_japan"})
-        Me.ComboBox61.Location = New System.Drawing.Point(158, 93)
+        Me.ComboBox61.Location = New System.Drawing.Point(158, 119)
         Me.ComboBox61.Name = "ComboBox61"
         Me.ComboBox61.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox61.TabIndex = 102
@@ -6738,7 +6745,7 @@ Partial Class MgrSetting
         'Label156
         '
         Me.Label156.AutoSize = True
-        Me.Label156.Location = New System.Drawing.Point(6, 96)
+        Me.Label156.Location = New System.Drawing.Point(6, 122)
         Me.Label156.Name = "Label156"
         Me.Label156.Size = New System.Drawing.Size(103, 13)
         Me.Label156.TabIndex = 101
@@ -6748,31 +6755,31 @@ Partial Class MgrSetting
         '
         Me.NumericUpDown33.DecimalPlaces = 1
         Me.NumericUpDown33.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumericUpDown33.Location = New System.Drawing.Point(158, 198)
+        Me.NumericUpDown33.Location = New System.Drawing.Point(251, 172)
         Me.NumericUpDown33.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown33.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumericUpDown33.Name = "NumericUpDown33"
-        Me.NumericUpDown33.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown33.Size = New System.Drawing.Size(46, 20)
         Me.NumericUpDown33.TabIndex = 99
         '
         'Label155
         '
         Me.Label155.AutoSize = True
-        Me.Label155.Location = New System.Drawing.Point(5, 200)
+        Me.Label155.Location = New System.Drawing.Point(170, 174)
         Me.Label155.Name = "Label155"
-        Me.Label155.Size = New System.Drawing.Size(109, 13)
+        Me.Label155.Size = New System.Drawing.Size(55, 13)
         Me.Label155.TabIndex = 98
-        Me.Label155.Text = "Color video saturation"
+        Me.Label155.Text = "Saturation"
         '
         'NumericUpDown32
         '
         Me.NumericUpDown32.DecimalPlaces = 1
         Me.NumericUpDown32.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumericUpDown32.Location = New System.Drawing.Point(158, 172)
+        Me.NumericUpDown32.Location = New System.Drawing.Point(119, 172)
         Me.NumericUpDown32.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown32.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumericUpDown32.Name = "NumericUpDown32"
-        Me.NumericUpDown32.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown32.Size = New System.Drawing.Size(46, 20)
         Me.NumericUpDown32.TabIndex = 97
         '
         'Label154
@@ -6780,25 +6787,25 @@ Partial Class MgrSetting
         Me.Label154.AutoSize = True
         Me.Label154.Location = New System.Drawing.Point(5, 174)
         Me.Label154.Name = "Label154"
-        Me.Label154.Size = New System.Drawing.Size(100, 13)
+        Me.Label154.Size = New System.Drawing.Size(71, 13)
         Me.Label154.TabIndex = 96
-        Me.Label154.Text = "Color video hue/tint"
+        Me.Label154.Text = "Color hue/tint"
         '
         'NumericUpDown31
         '
         Me.NumericUpDown31.DecimalPlaces = 1
         Me.NumericUpDown31.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumericUpDown31.Location = New System.Drawing.Point(159, 146)
+        Me.NumericUpDown31.Location = New System.Drawing.Point(251, 146)
         Me.NumericUpDown31.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown31.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumericUpDown31.Name = "NumericUpDown31"
-        Me.NumericUpDown31.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown31.Size = New System.Drawing.Size(46, 20)
         Me.NumericUpDown31.TabIndex = 95
         '
         'Label153
         '
         Me.Label153.AutoSize = True
-        Me.Label153.Location = New System.Drawing.Point(6, 148)
+        Me.Label153.Location = New System.Drawing.Point(170, 148)
         Me.Label153.Name = "Label153"
         Me.Label153.Size = New System.Drawing.Size(75, 13)
         Me.Label153.TabIndex = 94
@@ -6806,11 +6813,11 @@ Partial Class MgrSetting
         '
         'NumericUpDown30
         '
-        Me.NumericUpDown30.Location = New System.Drawing.Point(159, 223)
+        Me.NumericUpDown30.Location = New System.Drawing.Point(119, 198)
         Me.NumericUpDown30.Maximum = New Decimal(New Integer() {3, 0, 0, 0})
         Me.NumericUpDown30.Minimum = New Decimal(New Integer() {3, 0, 0, -2147483648})
         Me.NumericUpDown30.Name = "NumericUpDown30"
-        Me.NumericUpDown30.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown30.Size = New System.Drawing.Size(46, 20)
         Me.NumericUpDown30.TabIndex = 60
         Me.ToolTip1.SetToolTip(Me.NumericUpDown30, "Color video luma filter." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Filters numbered closer to 0 have a stronger lowpass " &
         "effect. Negative-numbered filters have ringing.")
@@ -6819,27 +6826,27 @@ Partial Class MgrSetting
         'Label152
         '
         Me.Label152.AutoSize = True
-        Me.Label152.Location = New System.Drawing.Point(6, 225)
+        Me.Label152.Location = New System.Drawing.Point(6, 200)
         Me.Label152.Name = "Label152"
-        Me.Label152.Size = New System.Drawing.Size(107, 13)
+        Me.Label152.Size = New System.Drawing.Size(55, 13)
         Me.Label152.TabIndex = 59
-        Me.Label152.Text = "Color video luma filter"
+        Me.Label152.Text = "Luma filter"
         '
         'NumericUpDown29
         '
         Me.NumericUpDown29.DecimalPlaces = 1
         Me.NumericUpDown29.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumericUpDown29.Location = New System.Drawing.Point(158, 120)
+        Me.NumericUpDown29.Location = New System.Drawing.Point(119, 146)
         Me.NumericUpDown29.Maximum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.NumericUpDown29.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
         Me.NumericUpDown29.Name = "NumericUpDown29"
-        Me.NumericUpDown29.Size = New System.Drawing.Size(68, 20)
+        Me.NumericUpDown29.Size = New System.Drawing.Size(46, 20)
         Me.NumericUpDown29.TabIndex = 58
         '
         'Label151
         '
         Me.Label151.AutoSize = True
-        Me.Label151.Location = New System.Drawing.Point(5, 122)
+        Me.Label151.Location = New System.Drawing.Point(6, 148)
         Me.Label151.Name = "Label151"
         Me.Label151.Size = New System.Drawing.Size(85, 13)
         Me.Label151.TabIndex = 57
@@ -6849,9 +6856,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox60.FormattingEnabled = True
         Me.ComboBox60.Items.AddRange(New Object() {"paddle", "atari"})
-        Me.ComboBox60.Location = New System.Drawing.Point(158, 66)
+        Me.ComboBox60.Location = New System.Drawing.Point(158, 39)
         Me.ComboBox60.Name = "ComboBox60"
-        Me.ComboBox60.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox60.Size = New System.Drawing.Size(69, 21)
         Me.ComboBox60.TabIndex = 42
         Me.ComboBox60.Text = "paddle"
         Me.ToolTip1.SetToolTip(Me.ComboBox60, resources.GetString("ComboBox60.ToolTip"))
@@ -6859,7 +6866,7 @@ Partial Class MgrSetting
         'Label144
         '
         Me.Label144.AutoSize = True
-        Me.Label144.Location = New System.Drawing.Point(6, 69)
+        Me.Label144.Location = New System.Drawing.Point(6, 42)
         Me.Label144.Name = "Label144"
         Me.Label144.Size = New System.Drawing.Size(114, 13)
         Me.Label144.TabIndex = 41
@@ -6871,7 +6878,7 @@ Partial Class MgrSetting
         Me.ComboBox58.Items.AddRange(New Object() {"none", "paddle", "joystick", "gamepad", "atari"})
         Me.ComboBox58.Location = New System.Drawing.Point(159, 13)
         Me.ComboBox58.Name = "ComboBox58"
-        Me.ComboBox58.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox58.Size = New System.Drawing.Size(66, 21)
         Me.ComboBox58.TabIndex = 40
         Me.ComboBox58.Text = "joystick"
         Me.ToolTip1.SetToolTip(Me.ComboBox58, resources.GetString("ComboBox58.ToolTip"))
@@ -6898,6 +6905,7 @@ Partial Class MgrSetting
         '
         'GroupBox26
         '
+        Me.GroupBox26.Controls.Add(Me.CheckBox109)
         Me.GroupBox26.Controls.Add(Me.CheckBox108)
         Me.GroupBox26.Controls.Add(Me.CheckBox107)
         Me.GroupBox26.Controls.Add(Me.Label163)
@@ -6929,12 +6937,10 @@ Partial Class MgrSetting
         Me.CheckBox108.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox108.Location = New System.Drawing.Point(9, 221)
         Me.CheckBox108.Name = "CheckBox108"
-        Me.CheckBox108.Size = New System.Drawing.Size(279, 17)
+        Me.CheckBox108.Size = New System.Drawing.Size(86, 17)
         Me.CheckBox108.TabIndex = 102
-        Me.CheckBox108.Text = "Enable hack to treat mixed-mode text as monochrome"
-        Me.ToolTip1.SetToolTip(Me.CheckBox108, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
-        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
-        "le in graphics mode.")
+        Me.CheckBox108.Text = "Enable hack"
+        Me.ToolTip1.SetToolTip(Me.CheckBox108, "Enable hack to treat mixed-mode text as monochrome.")
         Me.CheckBox108.UseVisualStyleBackColor = True
         '
         'CheckBox107
@@ -6942,14 +6948,14 @@ Partial Class MgrSetting
         Me.CheckBox107.AutoSize = True
         Me.CheckBox107.Checked = True
         Me.CheckBox107.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox107.Location = New System.Drawing.Point(9, 244)
+        Me.CheckBox107.Location = New System.Drawing.Point(133, 221)
         Me.CheckBox107.Name = "CheckBox107"
         Me.CheckBox107.Size = New System.Drawing.Size(165, 17)
         Me.CheckBox107.TabIndex = 101
         Me.CheckBox107.Text = "Enable color video smoothing"
-        Me.ToolTip1.SetToolTip(Me.CheckBox107, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
-        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
-        "le in graphics mode.")
+        Me.ToolTip1.SetToolTip(Me.CheckBox107, "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video bl" &
+        "urrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegibl" &
+        "e in graphics mode.")
         Me.CheckBox107.UseVisualStyleBackColor = True
         '
         'Label163
@@ -7194,6 +7200,56 @@ Partial Class MgrSetting
         Me.CheckBox59.TabIndex = 6
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
+        '
+        'ComboBox69
+        '
+        Me.ComboBox69.FormattingEnabled = True
+        Me.ComboBox69.Items.AddRange(New Object() {"Apple IIe", "Enhanced IIe"})
+        Me.ComboBox69.Location = New System.Drawing.Point(158, 93)
+        Me.ComboBox69.Name = "ComboBox69"
+        Me.ComboBox69.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox69.TabIndex = 117
+        Me.ComboBox69.Text = "Apple IIe"
+        Me.ToolTip1.SetToolTip(Me.ComboBox69, resources.GetString("ComboBox69.ToolTip"))
+        '
+        'Label194
+        '
+        Me.Label194.AutoSize = True
+        Me.Label194.Location = New System.Drawing.Point(6, 96)
+        Me.Label194.Name = "Label194"
+        Me.Label194.Size = New System.Drawing.Size(72, 13)
+        Me.Label194.TabIndex = 116
+        Me.Label194.Text = "AppleII Model"
+        '
+        'CheckBox109
+        '
+        Me.CheckBox109.AutoSize = True
+        Me.CheckBox109.Checked = True
+        Me.CheckBox109.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox109.Location = New System.Drawing.Point(9, 244)
+        Me.CheckBox109.Name = "CheckBox109"
+        Me.CheckBox109.Size = New System.Drawing.Size(68, 17)
+        Me.CheckBox109.TabIndex = 103
+        Me.CheckBox109.Text = "Multiload"
+        Me.ToolTip1.SetToolTip(Me.CheckBox109, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
+        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
+        "le in graphics mode.")
+        Me.CheckBox109.UseVisualStyleBackColor = True
+        '
+        'CheckBox112
+        '
+        Me.CheckBox112.AutoSize = True
+        Me.CheckBox112.Checked = True
+        Me.CheckBox112.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox112.Location = New System.Drawing.Point(173, 199)
+        Me.CheckBox112.Name = "CheckBox112"
+        Me.CheckBox112.Size = New System.Drawing.Size(89, 17)
+        Me.CheckBox112.TabIndex = 118
+        Me.CheckBox112.Text = "Key Ghosting"
+        Me.ToolTip1.SetToolTip(Me.CheckBox112, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
+        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
+        "le in graphics mode.")
+        Me.CheckBox112.UseVisualStyleBackColor = True
         '
         'MgrSetting
         '
@@ -7970,4 +8026,8 @@ Partial Class MgrSetting
     Friend WithEvents Label11 As Label
     Friend WithEvents ComboBox68 As ComboBox
     Friend WithEvents Label193 As Label
+    Friend WithEvents ComboBox69 As ComboBox
+    Friend WithEvents Label194 As Label
+    Friend WithEvents CheckBox109 As CheckBox
+    Friend WithEvents CheckBox112 As CheckBox
 End Class

@@ -23,11 +23,11 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.MainGrid = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -182,6 +182,7 @@ Partial Class MedGuiR
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button22 = New System.Windows.Forms.Button()
         Me.Button49 = New System.Windows.Forms.Button()
         Me.TextBox20 = New System.Windows.Forms.TextBox()
         Me.Label46 = New System.Windows.Forms.Label()
@@ -205,6 +206,8 @@ Partial Class MedGuiR
         Me.CheckBox23 = New System.Windows.Forms.CheckBox()
         Me.CheckBox24 = New System.Windows.Forms.CheckBox()
         Me.CheckBox25 = New System.Windows.Forms.CheckBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button59 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label57 = New System.Windows.Forms.Label()
@@ -264,8 +267,6 @@ Partial Class MedGuiR
         Me.Label47 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
@@ -428,7 +429,7 @@ Partial Class MedGuiR
         Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MainGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AudioStrip.SuspendLayout()
@@ -471,44 +472,44 @@ Partial Class MedGuiR
         Me.RE_tar_DDIT.SuspendLayout()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'MainGrid
         '
-        Me.DataGridView1.AllowDrop = True
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.MainGrid.AllowDrop = True
+        Me.MainGrid.AllowUserToAddRows = False
+        Me.MainGrid.AllowUserToDeleteRows = False
+        Me.MainGrid.AllowUserToOrderColumns = True
+        Me.MainGrid.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView1.Location = New System.Drawing.Point(11, 37)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.DataGridView1.RowTemplate.ReadOnly = True
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(439, 304)
-        Me.DataGridView1.TabIndex = 4
+        Me.MainGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
+        Me.MainGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.MainGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MainGrid.DefaultCellStyle = DataGridViewCellStyle2
+        Me.MainGrid.Location = New System.Drawing.Point(11, 37)
+        Me.MainGrid.MultiSelect = False
+        Me.MainGrid.Name = "MainGrid"
+        Me.MainGrid.ReadOnly = True
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.MainGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.MainGrid.RowTemplate.ReadOnly = True
+        Me.MainGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.MainGrid.Size = New System.Drawing.Size(439, 304)
+        Me.MainGrid.TabIndex = 4
         '
         'Column1
         '
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -1412,11 +1413,11 @@ Partial Class MedGuiR
         '
         Me.Button47.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button47.Location = New System.Drawing.Point(221, 221)
+        Me.Button47.Location = New System.Drawing.Point(221, 250)
         Me.Button47.Name = "Button47"
         Me.Button47.Size = New System.Drawing.Size(23, 23)
         Me.Button47.TabIndex = 83
-        Me.ToolTip1.SetToolTip(Me.Button47, "Delete Selected Custom Path")
+        Me.ToolTip1.SetToolTip(Me.Button47, "Delete Selected Custom Scan")
         Me.Button47.UseVisualStyleBackColor = True
         '
         'ListBox2
@@ -1634,13 +1635,11 @@ Partial Class MedGuiR
         'Button55
         '
         Me.Button55.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button55.Enabled = False
         Me.Button55.Location = New System.Drawing.Point(221, 192)
         Me.Button55.Name = "Button55"
         Me.Button55.Size = New System.Drawing.Size(23, 23)
         Me.Button55.TabIndex = 90
-        Me.ToolTip1.SetToolTip(Me.Button55, "Rebuild  previous Prescanned Custom Folder" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(It not work with Prescanned Recursiv" &
-        "e Folder)")
+        Me.ToolTip1.SetToolTip(Me.Button55, "Reload Custom Scan Folder")
         Me.Button55.UseVisualStyleBackColor = True
         '
         'Button56
@@ -2029,6 +2028,7 @@ Partial Class MedGuiR
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.Button22)
         Me.Panel3.Controls.Add(Me.Button55)
         Me.Panel3.Controls.Add(Me.CheckBox14)
         Me.Panel3.Controls.Add(Me.Button49)
@@ -2058,6 +2058,17 @@ Partial Class MedGuiR
         Me.Panel3.TabIndex = 1
         Me.ToolTip1.SetToolTip(Me.Panel3, resources.GetString("Panel3.ToolTip"))
         '
+        'Button22
+        '
+        Me.Button22.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button22.Location = New System.Drawing.Point(221, 221)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(23, 23)
+        Me.Button22.TabIndex = 91
+        Me.ToolTip1.SetToolTip(Me.Button22, "Open MedGuiR CSV Creator")
+        Me.Button22.UseVisualStyleBackColor = True
+        '
         'Button49
         '
         Me.Button49.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -2086,11 +2097,11 @@ Partial Class MedGuiR
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(148, 176)
+        Me.Label45.Location = New System.Drawing.Point(145, 176)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(67, 13)
+        Me.Label45.Size = New System.Drawing.Size(70, 13)
         Me.Label45.TabIndex = 84
-        Me.Label45.Text = "Custom Path"
+        Me.Label45.Text = "Custom Scan"
         '
         'Button24
         '
@@ -2259,6 +2270,30 @@ Partial Class MedGuiR
         Me.CheckBox25.Text = "&Use UCI"
         Me.ToolTip1.SetToolTip(Me.CheckBox25, "Set Ultra Crappy IRC as default IRC client")
         Me.CheckBox25.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(6, 260)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(48, 13)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Version: "
+        Me.ToolTip1.SetToolTip(Me.Label3, "Double left mouse click to copy on clipboard")
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(6, 222)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(69, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Game Name:"
+        Me.ToolTip1.SetToolTip(Me.Label2, "Double left mouse click to copy on clipboard")
         '
         'Button59
         '
@@ -2834,30 +2869,6 @@ Partial Class MedGuiR
         Me.Label4.Size = New System.Drawing.Size(81, 13)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "No-Intro Status:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(6, 260)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(48, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Version: "
-        Me.ToolTip1.SetToolTip(Me.Label3, "Double left mouse click to copy on clipboard")
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(6, 222)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Game Name:"
-        Me.ToolTip1.SetToolTip(Me.Label2, "Double left mouse click to copy on clipboard")
         '
         'Label1
         '
@@ -4218,14 +4229,14 @@ Partial Class MedGuiR
         Me.Controls.Add(Me.Label95)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.MainGrid)
         Me.Controls.Add(Me.IconStrip)
         Me.Controls.Add(Me.RE_tar_DDIT)
         Me.MainMenuStrip = Me.RE_tar_DDIT
         Me.Name = "MedGuiR"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MedGui Reborn"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MainGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.AudioStrip.ResumeLayout(False)
@@ -4288,7 +4299,7 @@ Partial Class MedGuiR
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents MainGrid As System.Windows.Forms.DataGridView
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents Label95 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
@@ -4507,16 +4518,6 @@ Partial Class MedGuiR
     Friend WithEvents Label41 As System.Windows.Forms.Label
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents RecentToolStripButton1 As ToolStripButton
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewImageColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents Column8 As DataGridViewTextBoxColumn
-    Friend WithEvents Hash As DataGridViewTextBoxColumn
-    Friend WithEvents Index As DataGridViewTextBoxColumn
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents Button47 As System.Windows.Forms.Button
     Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
@@ -4689,4 +4690,15 @@ Partial Class MedGuiR
     Friend WithEvents GENREComboBox1 As ToolStripComboBox
     Friend WithEvents CheckBox25 As CheckBox
     Friend WithEvents CleanEntriesMenuItem1 As ToolStripMenuItem
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewImageColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Hash As DataGridViewTextBoxColumn
+    Friend WithEvents Index As DataGridViewTextBoxColumn
+    Friend WithEvents Button22 As Button
 End Class

@@ -108,7 +108,7 @@ PatchSkip:
         Try
             Dim tmem, tsize, trtc, esav As String
             Dim fmem As Boolean = False
-            esav = Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value()) & ".type")
+            esav = Path.Combine(ExtractPath("path_sav"), Path.GetFileNameWithoutExtension(MedGuiR.MainGrid.CurrentRow.Cells(4).Value()) & ".type")
             If File.Exists(esav) Then Exit Sub
 
             If File.Exists(MedExtra & "Plugins\db\GBAmemtype.txt") = False And My.Computer.Network.IsAvailable = True Then
@@ -123,7 +123,7 @@ PatchSkip:
                 Exit Sub
             End If
 
-            If MedGuiR.DataGridView1.CurrentRow.Cells(4).Value().Contains("Pokemon -") Then
+            If MedGuiR.MainGrid.CurrentRow.Cells(4).Value().Contains("Pokemon -") Then
                 tmem = "flash"
                 tsize = "128"
                 trtc = "rtc"
@@ -135,7 +135,7 @@ PatchSkip:
                     oRead = File.OpenText(MedExtra & "Plugins\db\GBAmemtype.txt")
                     While oRead.Peek <> -1
                         Dim LineMem = oRead.ReadLine
-                        If LineMem.Contains(MedGuiR.DataGridView1.CurrentRow.Cells(8).Value()) Then
+                        If LineMem.Contains(MedGuiR.MainGrid.CurrentRow.Cells(8).Value()) Then
                             fmem = True
 
                             Dim splitsave() As String = LineMem.Split("=")

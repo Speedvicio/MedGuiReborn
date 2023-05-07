@@ -438,8 +438,8 @@ Public Class UCI
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            txtSend.Text = txtSend.Text & " " & rn & " " & MedGuiR.DataGridView1.CurrentRow.Cells(2).Value() & " FOR " &
-                MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
+            txtSend.Text = txtSend.Text & " " & rn & " " & MedGuiR.MainGrid.CurrentRow.Cells(2).Value() & " FOR " &
+                MedGuiR.MainGrid.CurrentRow.Cells(5).Value()
             btnSend.Focus()
         Catch
             MsgBox("Select a Game from MedGui Reborn grid", vbInformation)

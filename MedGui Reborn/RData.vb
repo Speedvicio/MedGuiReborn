@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-Imports System.Text.RegularExpressions
 
 Module RData
     Public percorso, base_file, riga, fileTXT, ext, romname, country, full_path, status, old_fullpath As String
@@ -51,14 +50,6 @@ Boing:
                     romname = Replace(romname, country, "")
                 End If
 
-                'If MedGuiR.CheckBox22.Checked = True Then
-                'If Len(romname) > 50 Then
-                'Dim splitromname() As String
-                'splitromname = romname.Split(" - ")
-                'romname = splitromname(0)
-                'End If
-                'End If
-
                 If UCase(romname).Contains("[BIOS]") Or UCase(romname).Contains(" BIOS ") Or LCase(romname).Contains("enhancement chip") Then
                 ElseIf UCase(country).Contains("[BIOS]") Or UCase(country).Contains(" BIOS ") Or LCase(country).Contains("enhancement chip") Then
                 Else
@@ -90,7 +81,7 @@ Boing:
                                 romname += " [M3U]"
                         End Select
                         If old_fullpath <> full_path & base_file Then
-                            MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
+                            MedGuiR.MainGrid.Rows.Add(RemoveAmpersand(romname.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
                         End If
                         old_fullpath = full_path & base_file
                     End If
@@ -148,7 +139,7 @@ Boing:
                 ElseIf UCase(country).Contains("[BIOS]") Or UCase(country).Contains(" BIOS ") Or LCase(country).Contains("enhancement chip") Then
                 Else
                     If ext <> "" And old_fullpath <> full_path & base_file Then
-                        MedGuiR.DataGridView1.Rows.Add(RemoveAmpersand(rrom.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
+                        MedGuiR.MainGrid.Rows.Add(RemoveAmpersand(rrom.Trim), New Bitmap(icon_console), country, status, full_path, real_name, consoles, ext, base_file)
                     End If
                     old_fullpath = full_path & base_file
                 End If

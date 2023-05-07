@@ -557,7 +557,7 @@ tryagain:
         Threading.Thread.Sleep(3000)
 
         MedGuiR.SY.Text = ""
-        MedGuiR.DataGridView1.Rows.Clear()
+        MedGuiR.MainGrid.Rows.Clear()
         percorso = R_RelPath(Gpath)
         SingleScan()
         MedGuiR.CheckBox18.Checked = True

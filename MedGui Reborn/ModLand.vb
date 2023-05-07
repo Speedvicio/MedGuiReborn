@@ -171,8 +171,8 @@ Public Class ModLand
                         percorso = R_RelPath(MedExtra & "Media/Module" & download)
                         MedGuiR.TextBox1.Text = R_RelPath(percorso)
                         SingleScan()
-                        MedGuiR.DataGridView1.CurrentCell = MedGuiR.DataGridView1(0, MedGuiR.DataGridView1.RowCount - 1)
-                        MedGuiR.DataGridView1.Focus()
+                        MedGuiR.MainGrid.CurrentCell = MedGuiR.MainGrid(0, MedGuiR.MainGrid.RowCount - 1)
+                        MedGuiR.MainGrid.Focus()
                     Case ".mod", ".s3m", ".xm", ".it", ".midi"
                         If File.Exists(Path.Combine(MedExtra, "Plugins\Player\AmicoX.exe")) Then
                             DownloadDriver()

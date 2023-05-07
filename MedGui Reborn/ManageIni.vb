@@ -178,21 +178,21 @@ Module ManageIni
         Try
 
             Dim font1 As Font = CType(fcvt.ConvertFromInvariantString(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Font_Type")), Font)
-            MedGuiR.DataGridView1.RowsDefaultCellStyle.Font = font1
-            MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color"))
-            MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color"))
-            MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color"))
-            MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color"))
-            MedGuiR.DataGridView1.BackgroundColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Background_Color"))
-            MedGuiR.DataGridView1.GridColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color"))
-            MedGuiR.DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-            MedGuiR.DataGridView1.Refresh()
+            MedGuiR.MainGrid.RowsDefaultCellStyle.Font = font1
+            MedGuiR.MainGrid.RowsDefaultCellStyle.ForeColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color"))
+            MedGuiR.MainGrid.RowsDefaultCellStyle.BackColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color"))
+            MedGuiR.MainGrid.RowsDefaultCellStyle.SelectionForeColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color"))
+            MedGuiR.MainGrid.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color"))
+            MedGuiR.MainGrid.BackgroundColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Background_Color"))
+            MedGuiR.MainGrid.GridColor = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color"))
+            MedGuiR.MainGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            MedGuiR.MainGrid.Refresh()
 
             MedGuiR.FontDialog1.Font = font1
             MedGuiR.FontDialog1.Color = Color.FromArgb(RIni.IniRead(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color"))
 
             If MedGuiR.CheckBox8.Checked = True Then
-                MedGuiR.DataGridView1.AutoResizeColumns()
+                MedGuiR.MainGrid.AutoResizeColumns()
                 MedGuiR.ResizeGrid()
             End If
         Catch ex As Exception
@@ -308,13 +308,13 @@ Module ManageIni
             WIni.IniWrite(MedExtra & "\Mini.ini", "Grid", "Customizable", MedGuiR.GridToolStripMenuItem.CheckState)
 
             If MedGuiR.GridToolStripMenuItem.Checked = True Then
-                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Font_Type", fcvt.ConvertToInvariantString(MedGuiR.DataGridView1.RowsDefaultCellStyle.Font))
-                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.ForeColor.ToArgb)
-                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor.ToArgb)
-                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionForeColor.ToArgb)
-                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color", MedGuiR.DataGridView1.RowsDefaultCellStyle.SelectionBackColor.ToArgb)
-                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color", MedGuiR.DataGridView1.GridColor.ToArgb)
-                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Background_Color", MedGuiR.DataGridView1.BackgroundColor.ToArgb)
+                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Font_Type", fcvt.ConvertToInvariantString(MedGuiR.MainGrid.RowsDefaultCellStyle.Font))
+                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Font_Color", MedGuiR.MainGrid.RowsDefaultCellStyle.ForeColor.ToArgb)
+                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Normal_Cell_Color", MedGuiR.MainGrid.RowsDefaultCellStyle.BackColor.ToArgb)
+                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Font_Color", MedGuiR.MainGrid.RowsDefaultCellStyle.SelectionForeColor.ToArgb)
+                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Highlight_Cell_Color", MedGuiR.MainGrid.RowsDefaultCellStyle.SelectionBackColor.ToArgb)
+                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Grid_Color", MedGuiR.MainGrid.GridColor.ToArgb)
+                WIni.IniWrite(MedExtra & "\Mini.ini", "Grid Style", "Background_Color", MedGuiR.MainGrid.BackgroundColor.ToArgb)
             End If
 
             WIni.IniWrite(MedExtra & "\Mini.ini", "Form Style", "Background_Color", DefBack.ToArgb)

@@ -333,28 +333,20 @@ HERE:                       If checkpismo = False Then
 
     Public Sub simple_extract()
 
-        'MedGuiR.CheckBox3.Checked = False
         ClearFile()
 
         Dim szip As SevenZipExtractor = New SevenZipExtractor(R_RelPath(percorso))
 
-        Select Case LCase(MedGuiR.DataGridView1.CurrentRow.Cells(7).Value)
+        Select Case LCase(MedGuiR.MainGrid.CurrentRow.Cells(7).Value)
             Case ".psf", ".minipsf", ".minigsf", ".ssf", ".minissf"
-                MedGuiR.DataGridView1.Rows.Clear()
+                MedGuiR.MainGrid.Rows.Clear()
                 extract_7z()
                 szip.Dispose()
                 MedGuiR.Datagrid_filter()
             Case ".rsn"
-                'If LCase(MedGuiR.DataGridView1.CurrentRow.Cells(7).Value) = ".rsn" Then
 
                 DecompressArchive(R_RelPath(percorso), MedExtra & "RomTemp")
 
-                'szip.ExtractArchive(MedExtra & "RomTemp")
-                'SoxStatus.Text = "Waiting for extraction..."
-                'SoxStatus.Label1.Text = "..."
-                'SoxStatus.Show()
-                'szip.Dispose()
-                'SoxStatus.Close()
             Case Else
 
                 For Each ArchiveFileInfo In szip.ArchiveFileData
@@ -367,7 +359,7 @@ HERE:                       If checkpismo = False Then
                             base_file = "0" & base_file.Trim
                     End Select
 
-                    If base_file = MedGuiR.DataGridView1.CurrentRow.Cells(8).Value Then
+                    If base_file = MedGuiR.MainGrid.CurrentRow.Cells(8).Value Then
                         Dim fs As FileStream = File.OpenWrite(Path.Combine(MedExtra & "RomTemp\", ArchiveFileInfo.FileName))
                         szip.ExtractFile(ArchiveFileInfo.FileName, fs)
                         fs.Close()

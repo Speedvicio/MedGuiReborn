@@ -31,9 +31,9 @@ Module Snaps
 
         Try
             If MedGuiR.RadioButton4.Checked = True Then
-                Rsnap = SnapsFolder & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\Named_" & TSnaps & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value() & MedGuiR.DataGridView1.CurrentRow.Cells(2).Value()) & ".png"
+                Rsnap = SnapsFolder & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\Named_" & TSnaps & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value() & MedGuiR.MainGrid.CurrentRow.Cells(2).Value()) & ".png"
             Else
-                Rsnap = MedExtra & "Snaps\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\CRC_" & TSnaps & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(8).Value()) & ".png"
+                Rsnap = MedExtra & "Snaps\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\CRC_" & TSnaps & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(8).Value()) & ".png"
             End If
 
             If (Not System.IO.Directory.Exists(Rsnap)) Then

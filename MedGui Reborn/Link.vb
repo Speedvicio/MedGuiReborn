@@ -84,7 +84,7 @@
     Private Sub SelectHack()
         Try
             Dim webSystem As String
-            Select Case MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
+            Select Case MedGuiR.MainGrid.CurrentRow.Cells(5).Value()
                 Case "Bandai - WonderSwan", "Bandai - WonderSwan Color"
                     webSystem = "21"
                 Case "SNK - Neo Geo Pocket", "SNK - Neo Geo Pocket Color"

@@ -389,7 +389,7 @@ ReCheckConfig:
         Try
             If Counter <= 0 And skipother = False Then '// controlla se skipother non combina casini in futuro
                 scan.decript()
-                MedGuiR.DataGridView1.Rows(0).Cells(3).ToolTipText = "CRC " & base_file
+                MedGuiR.MainGrid.Rows(0).Cells(3).ToolTipText = "CRC " & base_file
             End If
         Catch ex As Exception
             MGRWriteLog("GlobalVar - SingleScan: " & ex.Message)

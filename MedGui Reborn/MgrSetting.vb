@@ -750,7 +750,7 @@ ErrorHandler:
             Dim splitP_C(1) As String
             Mednafen_Save_setting()
             If p_c.Contains("_") Then splitP_C = Split(p_c, "_")
-            psc_mex = UCase(splitP_C(1)) & " " & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
+            psc_mex = UCase(splitP_C(1)) & " " & MedGuiR.MainGrid.CurrentRow.Cells(5).Value()
         End If
 
         If xcv = vbCancel Then Exit Sub

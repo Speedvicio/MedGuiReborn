@@ -28,7 +28,7 @@ ErrorHandler:
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() <> "Nintendo - Game Boy" Then
+        If MedGuiR.MainGrid.CurrentRow.Cells(5).Value() <> "Nintendo - Game Boy" Then
             MsgBox("You can make custom palette only for GB system (NO GBC)", vbCritical + vbOKOnly)
             Exit Sub
         End If
@@ -41,9 +41,9 @@ ErrorHandler:
         saveFileDialog1.RestoreDirectory = True
 
         If RadioButton1.Checked = True Then
-            saveFileDialog1.FileName = MedGuiR.DataGridView1.CurrentRow.Cells(6).Value()
+            saveFileDialog1.FileName = MedGuiR.MainGrid.CurrentRow.Cells(6).Value()
         ElseIf RadioButton2.Checked = True Then
-            saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value())
+            saveFileDialog1.FileName = Path.GetFileNameWithoutExtension(MedGuiR.MainGrid.CurrentRow.Cells(4).Value())
         ElseIf RadioButton3.Checked = True Then
             saveFileDialog1.FileName = ""
         End If

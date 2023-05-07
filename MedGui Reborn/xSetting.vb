@@ -59,7 +59,7 @@ Module xSetting
         set_special_module()
 
         Select Case LCase(ext)
-            Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai"
+            Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai", ".hdv"
                 If row.Contains(consoles & ".video.mixed_text_mono ") Then xValue = Trim(Replace(row, consoles & ".video.mixed_text_mono", "")) : MgrSetting.CheckBox108.Checked = CBool(xValue)
                 If row.Contains(consoles & ".video.color_smooth ") Then xValue = Trim(Replace(row, consoles & ".video.color_smooth", "")) : MgrSetting.CheckBox107.Checked = CBool(xValue)
                 If row.Contains(consoles & ".input.port1.joystick.axis_scale ") Then xValue = Trim(Replace(row, consoles & ".input.port1.joystick.axis_scale", "")) : MgrSetting.NumericUpDown41.Value = Val(xValue)

@@ -11,7 +11,7 @@ Module BoxArt
 
         Try
             Dim drom As Integer
-            Select Case LCase(Right(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value(), 3))
+            Select Case LCase(Right(MedGuiR.MainGrid.CurrentRow.Cells(4).Value(), 3))
                 Case "zip", "rar", ".7z"
                     Dim szip As SevenZip.SevenZipExtractor = New SevenZip.SevenZipExtractor(percorso)
                     For Each ArchiveFileInfo In szip.ArchiveFileData
@@ -22,18 +22,18 @@ Module BoxArt
                             Case 7
                                 base_file = "0" & base_file.Trim
                         End Select
-                        If base_file = MedGuiR.DataGridView1.CurrentRow.Cells(8).Value Then
+                        If base_file = MedGuiR.MainGrid.CurrentRow.Cells(8).Value Then
                             drom = ArchiveFileInfo.Size
                         End If
                     Next
                 Case "cue"
-                    Dim FSI1 As New System.IO.FileInfo(Replace(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value(), System.IO.Path.GetExtension(percorso), ".bin"))
+                    Dim FSI1 As New System.IO.FileInfo(Replace(MedGuiR.MainGrid.CurrentRow.Cells(4).Value(), System.IO.Path.GetExtension(percorso), ".bin"))
                     If (FSI1.Exists) = True Then drom = FSI1.Length.ToString
                 Case "ccd"
-                    Dim FSI1 As New System.IO.FileInfo(Replace(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value(), System.IO.Path.GetExtension(percorso), ".img"))
+                    Dim FSI1 As New System.IO.FileInfo(Replace(MedGuiR.MainGrid.CurrentRow.Cells(4).Value(), System.IO.Path.GetExtension(percorso), ".img"))
                     If (FSI1.Exists) = True Then drom = FSI1.Length.ToString
                 Case Else
-                    Dim FSI1 As New System.IO.FileInfo(MedGuiR.DataGridView1.CurrentRow.Cells(4).Value())
+                    Dim FSI1 As New System.IO.FileInfo(MedGuiR.MainGrid.CurrentRow.Cells(4).Value())
                     If (FSI1.Exists) = True Then drom = FSI1.Length.ToString
             End Select
 
@@ -67,25 +67,25 @@ Module BoxArt
                     MedGuiR.ToolTip1.SetToolTip(MedGuiR.PictureBox2, "Uncompressed Rom")
             End Select
 
-            rn = Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())
-            MedGuiR.Label1.Text = "Console: " & vbCrLf & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
+            rn = Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())
+            MedGuiR.Label1.Text = "Console: " & vbCrLf & MedGuiR.MainGrid.CurrentRow.Cells(5).Value()
             'MedGuiR.PictureBox2.Image = New Bitmap(icon_console)
             MedGuiR.Label2.Text = "Game Name: " '& vbCrLf & Replace(cleanpsx(rn), "&", "&&")
             MedGuiR.Label47.Text = Replace(cleanpsx(rn), "&", "&&")
             ResizeTextLabel2()
-            If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "Sony PlayStation" Then psx_version()
+            If MedGuiR.MainGrid.CurrentRow.Cells(5).Value() = "Sony PlayStation" Then psx_version()
             'If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "Sega Saturn" Then MedGuiR.DataGridView1.CurrentRow.Cells(2).Value() = "(" & v_ss & ")"
-            MedGuiR.Label3.Text = "Version: " & Replace(MedGuiR.DataGridView1.CurrentRow.Cells(2).Value(), ".", "")
-            MedGuiR.Label4.Text = "No-Intro Status: " & MedGuiR.DataGridView1.CurrentRow.Cells(3).Value()
+            MedGuiR.Label3.Text = "Version: " & Replace(MedGuiR.MainGrid.CurrentRow.Cells(2).Value(), ".", "")
+            MedGuiR.Label4.Text = "No-Intro Status: " & MedGuiR.MainGrid.CurrentRow.Cells(3).Value()
             MedGuiR.Label5.Text = "Size: " & dimension & size
-            pathimage = (MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png")
-            snap = (MedExtra & "Snaps\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\CRC_Snaps\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(8).Value()) & ".png")
-            title = (MedExtra & "Snaps\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\CRC_Titles\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(8).Value()) & ".png")
+            pathimage = (MedExtra & "BoxArt\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & rn & ".png")
+            snap = (MedExtra & "Snaps\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\CRC_Snaps\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(8).Value()) & ".png")
+            title = (MedExtra & "Snaps\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\CRC_Titles\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(8).Value()) & ".png")
             'GC.Collect()
             MedGuiR.PictureBox1.Height = 149
             If System.IO.File.Exists(pathimage) = True Then
                 MedGuiR.PictureBox1.Load(pathimage)
-            ElseIf System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
+            ElseIf System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
                 SearchScrape()
             Else
                 EmptyBoxart(MedGuiR.PictureBox1)
@@ -136,7 +136,7 @@ Module BoxArt
         End If
 
         Try
-            Dim bugger = (MedGuiR.DataGridView1.CurrentRow.Cells(5).Value)
+            Dim bugger = (MedGuiR.MainGrid.CurrentRow.Cells(5).Value)
         Catch
             MsgBox("Select a Rom from List", MsgBoxStyle.Exclamation + vbOKOnly)
             Exit Sub
@@ -149,7 +149,7 @@ Module BoxArt
         End If
 
         If webimagelenght <= 0 Then
-            If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
+            If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
                 SearchScrape()
             Else
                 If MedGuiR.CheckBox2.Checked = False Then
@@ -162,7 +162,7 @@ Module BoxArt
 
         If dimg < webimagelenght Then
             Try
-                cover = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
+                cover = MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "/" & rn & ".png"
 
                 If UpdateServer.StartsWith("https://") Then
                     My.Computer.Network.DownloadFile(UpdateServer & "/MedGuiR/BoxArt/" & cover, MedExtra & "BoxArt/" & cover, "", "", True, 1000, True)
@@ -170,7 +170,7 @@ Module BoxArt
                     FTPDownloadFile(MedExtra & "BoxArt/" & cover, UpdateServer & "/MedGuiR/BoxArt/" & cover, "anonymous", "anonymous")
                 End If
             Catch ex As Exception
-                If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
+                If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
                     SearchScrape()
                 Else
                     If IO.File.Exists(MedExtra & "BoxArt/" & cover) Then IO.File.Delete(MedExtra & "BoxArt/" & cover)
@@ -187,7 +187,7 @@ Module BoxArt
         Try
 
             Dim myFtpWebRequest As WebRequest
-            myFtpWebRequest = WebRequest.Create(UpdateServer & "/MedGuiR/BoxArt/" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "/" & rn & ".png")
+            myFtpWebRequest = WebRequest.Create(UpdateServer & "/MedGuiR/BoxArt/" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "/" & rn & ".png")
             Dim myFtpWebResponse As HttpWebResponse
             myFtpWebResponse = myFtpWebRequest.GetResponse()
             webimagelenght = myFtpWebResponse.ContentLength
@@ -209,7 +209,7 @@ Module BoxArt
     Private Sub SearchScrape()
 
         For Each foundFile As String In My.Computer.FileSystem.GetFiles(
-    MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()))
+    MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()))
             If foundFile.Contains("tfront") Then MedGuiR.PictureBox1.Load(foundFile) : pathimage = foundFile : Exit Sub
         Next
 
@@ -221,7 +221,7 @@ Module BoxArt
     End Sub
 
     Public Function EmptyBoxart(boxart As PictureBox)
-        real_name = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
+        real_name = MedGuiR.MainGrid.CurrentRow.Cells(5).Value()
         detect_icon()
         Dim PathEmptyBox As String = MedExtra & "Resource\Logos\" & gif & ".png"
         If IO.File.Exists(PathEmptyBox) Then

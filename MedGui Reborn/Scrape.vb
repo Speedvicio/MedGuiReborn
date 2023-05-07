@@ -10,7 +10,7 @@ Module Scrape
         ConsoleID = ""
         Try
 
-            Select Case MedGuiR.DataGridView1.CurrentRow.Cells(5).Value()
+            Select Case MedGuiR.MainGrid.CurrentRow.Cells(5).Value()
                 Case "Atari - Lynx"
                     ConsoleID = "Atari Lynx"
                 Case "Bandai - WonderSwan Color"
@@ -40,8 +40,8 @@ Module Scrape
                 Case "Sega - Master System - Mark III"
                     ConsoleID = "Sega Master System"
                 Case "Sega - Mega Drive - Genesis"
-                    If UCase(MedGuiR.DataGridView1.CurrentRow.Cells(2).Value()).ToString.Contains("(US") Or
-    UCase(MedGuiR.DataGridView1.CurrentRow.Cells(2).Value()).ToString.Contains("(JA") Then
+                    If UCase(MedGuiR.MainGrid.CurrentRow.Cells(2).Value()).ToString.Contains("(US") Or
+    UCase(MedGuiR.MainGrid.CurrentRow.Cells(2).Value()).ToString.Contains("(JA") Then
                         ConsoleID = "Sega Genesis"
                     Else
                         ConsoleID = "Sega Mega Drive"
@@ -78,7 +78,7 @@ Module Scrape
 
         path_temp = ""
         Try
-            If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "" Then Exit Sub
+            If MedGuiR.MainGrid.CurrentRow.Cells(5).Value() = "" Then Exit Sub
         Catch
             Exit Sub
         End Try
@@ -86,9 +86,9 @@ Module Scrape
         GetConsoleID()
 
         Try
-            If Directory.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())) Then
+            If Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
             Else
-                Directory.CreateDirectory(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()))
+                Directory.CreateDirectory(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()))
             End If
 
             If Directory.Exists(MedExtra & "Scraped\Temp\") Then
@@ -96,7 +96,7 @@ Module Scrape
                 Directory.CreateDirectory(MedExtra & "Scraped\Temp\")
             End If
 
-            TGDB_cleanstring = Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value())
+            TGDB_cleanstring = Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())
 
             'If ConsoleID = "Sony Playstation" Then cleanstring = Trim(cleanpsx(cleanstring))
             Select Case ConsoleID
@@ -130,14 +130,14 @@ Module Scrape
             Dim search As String
             search = "exactname="
 
-            If File.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml") = False Then
+            If File.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml") = False Then
                 ScrapeForce = 1
             End If
 
-            If File.Exists(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml") And ScrapeForce = 3 Then
+            If File.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml") And ScrapeForce = 3 Then
 
                 If NewAPI = False Then
-                    W.DownloadFile("https://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                    W.DownloadFile("https://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\Temp\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
                     path_temp = "Temp\"
                     TheGamesDb_newapi()
@@ -146,27 +146,27 @@ Module Scrape
                 Dim infoReader As FileInfo
                 Dim OldXML, NewXML As Integer
                 Dim DateXML As Date
-                infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml")
                 OldXML = Val(infoReader.Length)
                 DateXML = infoReader.CreationTime.ToShortDateString
-                infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                infoReader = My.Computer.FileSystem.GetFileInfo(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml")
                 NewXML = Val(infoReader.Length)
 
                 If OldXML < NewXML Or DateTime.Compare(DateXML, "01/01/2019") < 0 Then
-                    File.Delete(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
-                    My.Computer.FileSystem.MoveFile(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml",
-                         MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                    File.Delete(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml")
+                    My.Computer.FileSystem.MoveFile(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml",
+                         MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
-                    File.Delete(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                    File.Delete(MedExtra & "Scraped\Temp\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml")
                 End If
 
             ElseIf ScrapeForce = 0 Then
             ElseIf ScrapeForce = 1 Then
 
                 If NewAPI = False Then
-                    W.DownloadFile("https://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
+                    W.DownloadFile("https://legacy.thegamesdb.net/api/GetGame.php?" & search & TGDB_cleanstring.ToString & "&platform=" & ConsoleID, MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml")
                 Else
-                    path_temp = MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\"
+                    path_temp = MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\"
                     TheGamesDb_newapi()
                 End If
             End If
@@ -195,7 +195,7 @@ Module Scrape
         Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
 
         Dim File As StreamWriter
-        File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\" & path_temp & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml", False)
+        File = My.Computer.FileSystem.OpenTextFileWriter(MedExtra & "Scraped\" & path_temp & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml", False)
         Dim splitXml As String() = Split(str.OuterXml, "<pages>")
         File.WriteLine(str.OuterXml.Remove(splitXml(0).Length, str.OuterXml.Length - splitXml(0).Length - 7))
         File.Close()
@@ -207,7 +207,7 @@ Module Scrape
         Dim TGDBXml, BaseUrl, tBack, tFront, fBack, fFront, GameID As String
         Dim counTGDB As Integer
         Dim GameName, ReleaseDate, SystemConsole As String
-        TGDBXml = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml"
+        TGDBXml = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml"
         W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
 
         Using reader As New System.Xml.XmlTextReader(TGDBXml)
@@ -315,7 +315,7 @@ Module Scrape
 
                             If reader.Value.Contains("boxart/original/back/") Then
                                 fBack = reader.Value
-                                Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
+                                Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
 
                                 If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(BaseUrl & fBack, SIF)
@@ -323,7 +323,7 @@ Module Scrape
 
                             ElseIf reader.Value.Contains("boxart/original/front/") Then
                                 fFront = reader.Value
-                                Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
+                                Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
 
                                 If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                     W.DownloadFile(BaseUrl & fFront, SIF)
@@ -335,7 +335,7 @@ Module Scrape
                             If counTGDB = 1 Then
                                 If reader.Value.Contains("boxart/back/") Then
                                     fBack = reader.Value
-                                    SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
+                                    SIF = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\back_" & Path.GetFileName(fBack)
 
                                     If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                         W.DownloadFile(BaseUrl & fBack, SIF)
@@ -343,13 +343,13 @@ Module Scrape
 
                                     'thumb
                                     tBack = reader.Value
-                                    SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
+                                    SIF = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
 
                                     If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                         W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tBack, SIF)
                                     End If
 
-                                    SboxR = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
+                                    SboxR = (MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
 
                                     Try
                                         TheGamesDB.PictureBox2.Load(SboxR)
@@ -359,7 +359,7 @@ Module Scrape
 
                                 ElseIf reader.Value.Contains("boxart/front/") Then
                                     fFront = reader.Value
-                                    SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
+                                    SIF = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\front_" & Path.GetFileName(fFront)
 
                                     If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                         W.DownloadFile(BaseUrl & fFront, SIF)
@@ -367,13 +367,13 @@ Module Scrape
 
                                     'thumb
                                     tFront = reader.Value
-                                    SIF = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
+                                    SIF = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
 
                                     If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                         W.DownloadFile(Replace(BaseUrl, "original", "thumb") & tFront, SIF)
                                     End If
 
-                                    SBoxF = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
+                                    SBoxF = (MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
 
                                     Try
                                         TheGamesDB.PictureBox1.Load(SBoxF)
@@ -381,7 +381,7 @@ Module Scrape
                                         SoxStatus.Close()
                                     End Try
 
-                                    If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
+                                    If File.Exists(MedExtra & "BoxArt\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
                                         If File.Exists(SBoxF) Then
                                             MedGuiR.PictureBox1.BackColor = DefBack
                                             MedGuiR.PictureBox1.Load(SBoxF)
@@ -404,13 +404,13 @@ Module Scrape
                             Select Case True
                                 Case reader.Value.Contains("boxart/thumb/original/back/")
                                     tBack = reader.Value
-                                    Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
+                                    Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack)
 
                                     If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                         W.DownloadFile(BaseUrl & tBack, SIF)
                                     End If
 
-                                    SboxR = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
+                                    SboxR = (MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\tback_" & Path.GetFileName(tBack))
 
                                     Try
                                         TheGamesDB.PictureBox2.Load(SboxR)
@@ -420,13 +420,13 @@ Module Scrape
 
                                 Case reader.Value.Contains("boxart/thumb/original/front/")
                                     tFront = reader.Value
-                                    Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
+                                    Dim SIF As String = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront)
 
                                     If ScrapeForce > 0 Or File.Exists(SIF) = False Then
                                         W.DownloadFile(BaseUrl & tFront, SIF)
                                     End If
 
-                                    SBoxF = (MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
+                                    SBoxF = (MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & "\tfront_" & Path.GetFileName(tFront))
 
                                     Try
                                         TheGamesDB.PictureBox1.Load(SBoxF)
@@ -434,7 +434,7 @@ Module Scrape
                                         SoxStatus.Close()
                                     End Try
 
-                                    If File.Exists(MedExtra & "BoxArt\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
+                                    If File.Exists(MedExtra & "BoxArt\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & rn & ".png") = False Then
                                         If File.Exists(SBoxF) Then
                                             MedGuiR.PictureBox1.BackColor = DefBack
                                             MedGuiR.PictureBox1.Load(SBoxF)
@@ -462,8 +462,8 @@ Module Scrape
             MsgBox("No TheGamesDB compatible rom name or info not Available", vbOKOnly + vbInformation)
             TheGamesDB.Close()
             Try
-                File.Delete(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()) & ".xml")
-                Directory.Delete(MedExtra & "Scraped\" & MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.DataGridView1.CurrentRow.Cells(0).Value()))
+                File.Delete(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml")
+                Directory.Delete(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()))
             Catch
             End Try
         End If

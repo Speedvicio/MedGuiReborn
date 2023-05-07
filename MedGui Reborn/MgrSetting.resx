@@ -120,6 +120,108 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
+  <data name="ComboBox69.ToolTip" xml:space="preserve">
+    <value>Color decoder matrix.
+
+The matrixes that correspond to the nominal demodulation angles and gains for various ICs are intended to get colors within the ballpark of what consumer-oriented NTSC TVs would display, 
+and won't exactly replicate the colors these ICs would reproduce when fed an Apple II video signal.
+
+    custom - Custom
+
+    mednafen - Mednafen
+
+    la7620 - Sanyo LA7620-like.
+
+    cxa2025as_usa - Sony CXA2025AS-like, USA setting
+
+    cxa2060bs_usa - Sony CXA2060BS-like, USA setting.
+
+    cxa2095s_usa - Sony CXA2095S-like, USA setting.
+
+    cxa2025as_japan - Sony CXA2025AS-like, Japan setting.
+
+    cxa2060bs_japan - Sony CXA2060BS-like, Japan setting.
+
+    cxa2095s_japan - Sony CXA2095S-like, Japan setting.</value>
+  </data>
+  <data name="ComboBox62.ToolTip" xml:space="preserve">
+    <value>Video rendering mode.
+
+When an RGB mode is enabled, settings "apple2.video.force_mono", "apple2.video.mixed_text_mono", "apple2.video.mono_lumafilter", 
+"apple2.video.color_lumafilter", and "apple2.video.color_smooth" are effectively ignored.
+
+    composite - Composite
+    Internal video dimensions of 584x192.
+
+    rgb - RGB
+    Internal video dimensions of 292x192; suitable for use with scalers like hq2x.
+
+    rgb_tfr - RGB, with HGR text fringe reduction.
+    Internal video dimensions of 292x192; suitable for use with scalers like hq2x. Reduced brightness of colored pixels horizontally sandwiched between white pixels in HGR mode.
+
+    rgb_alt - RGB (alternate algorithm)
+    Internal video dimensions of 584x192.
+
+    rgb_alt_tfr - RGB (alternate algorithm), with HGR text fringe reduction.
+    Internal video dimensions of 584x192. Reduced brightness of colored pixels horizontally sandwiched between white pixels in HGR mode.</value>
+  </data>
+  <data name="ComboBox61.ToolTip" xml:space="preserve">
+    <value>Color decoder matrix.
+
+The matrixes that correspond to the nominal demodulation angles and gains for various ICs are intended to get colors within the ballpark of what consumer-oriented NTSC TVs would display, 
+and won't exactly replicate the colors these ICs would reproduce when fed an Apple II video signal.
+
+    custom - Custom
+
+    mednafen - Mednafen
+
+    la7620 - Sanyo LA7620-like.
+
+    cxa2025as_usa - Sony CXA2025AS-like, USA setting
+
+    cxa2060bs_usa - Sony CXA2060BS-like, USA setting.
+
+    cxa2095s_usa - Sony CXA2095S-like, USA setting.
+
+    cxa2025as_japan - Sony CXA2025AS-like, Japan setting.
+
+    cxa2060bs_japan - Sony CXA2060BS-like, Japan setting.
+
+    cxa2095s_japan - Sony CXA2095S-like, Japan setting.</value>
+  </data>
+  <data name="ComboBox60.ToolTip" xml:space="preserve">
+    <value>Input device for Virtual Gameport 2
+
+    paddle - Paddle
+    1-axis, 1-button rotary dial paddle. Only usable on virtual port 2 if it's also selected on virtual port 1.
+
+    atari - Atari Joystick
+    Atari joyport digital joystick. Only usable on virtual port 2 if it's also selected on virtual port 1. Limited compatibility with software.</value>
+  </data>
+  <data name="ComboBox58.ToolTip" xml:space="preserve">
+    <value>Input device for Virtual Gameport 1
+
+    none - None(all game I/O devices disabled)
+    Will disable all game I/O devices if selected.
+
+    paddle - Paddle
+    1-axis, 1-button rotary dial paddle. Only usable on virtual port 2 if it's also selected on virtual port 1.
+
+    joystick - Joystick
+    2-axis, 2-button joystick, with 4-state resistance switch.
+
+    gamepad - Gamepad
+    Gamepad with D-pad and 2 buttons. Seen by emulated software as a 2-axis,
+    2-button analog joystick(albeit with only axis extremes), 
+    but provides more configuration options for the user.
+
+    atari - Atari Joystick
+    Atari joyport digital joystick. Only usable on virtual port 2 if it's also selected on virtual port 1. 
+    Limited compatibility with software.</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
   <data name="TrackBar3.ToolTip" xml:space="preserve">
     <value>Desired period size in microseconds.
 
@@ -931,78 +1033,6 @@ Emulated keyboard key state is not updated unless input grabbing(by default, map
 jpkeyboard - Keyboard (JP)
 89-key Japanese keyboard(e.g. HSS-0129).
 Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
-  </data>
-  <data name="ComboBox62.ToolTip" xml:space="preserve">
-    <value>Video rendering mode.
-
-When an RGB mode is enabled, settings "apple2.video.force_mono", "apple2.video.mixed_text_mono", "
-apple2.video.mono_lumafilter", "apple2.video.color_lumafilter", and "apple2.video.color_smooth" are effectively ignored.
-
-    composite - Composite
-    Internal video dimensions of 584x192.
-
-    rgb - RGB
-    Internal video dimensions of 292x192; suitable for use with scalers like hq2x.
-
-    rgb_alt1 - RGB (alternate algorithm 1)
-    Internal video dimensions of 584x192.
-
-    rgb_alt2 - RGB (alternate algorithm 2)
-    Internal video dimensions of 584x192.</value>
-  </data>
-  <data name="ComboBox61.ToolTip" xml:space="preserve">
-    <value>Color decoder matrix.
-
-The matrixes that correspond to the nominal demodulation angles and gains for various ICs are intended to get colors within the ballpark of what consumer-oriented NTSC TVs would display, 
-and won't exactly replicate the colors these ICs would reproduce when fed an Apple II video signal.
-
-    custom - Custom
-
-    mednafen - Mednafen
-
-    la7620 - Sanyo LA7620-like.
-
-    cxa2025as_usa - Sony CXA2025AS-like, USA setting
-
-    cxa2060bs_usa - Sony CXA2060BS-like, USA setting.
-
-    cxa2095s_usa - Sony CXA2095S-like, USA setting.
-
-    cxa2025as_japan - Sony CXA2025AS-like, Japan setting.
-
-    cxa2060bs_japan - Sony CXA2060BS-like, Japan setting.
-
-    cxa2095s_japan - Sony CXA2095S-like, Japan setting.</value>
-  </data>
-  <data name="ComboBox60.ToolTip" xml:space="preserve">
-    <value>Input device for Virtual Gameport 2
-
-    paddle - Paddle
-    1-axis, 1-button rotary dial paddle. Only usable on virtual port 2 if it's also selected on virtual port 1.
-
-    atari - Atari Joystick
-    Atari joyport digital joystick. Only usable on virtual port 2 if it's also selected on virtual port 1. Limited compatibility with software.</value>
-  </data>
-  <data name="ComboBox58.ToolTip" xml:space="preserve">
-    <value>Input device for Virtual Gameport 1
-
-    none - None(all game I/O devices disabled)
-    Will disable all game I/O devices if selected.
-
-    paddle - Paddle
-    1-axis, 1-button rotary dial paddle. Only usable on virtual port 2 if it's also selected on virtual port 1.
-
-    joystick - Joystick
-    2-axis, 2-button joystick, with 4-state resistance switch.
-
-    gamepad - Gamepad
-    Gamepad with D-pad and 2 buttons. Seen by emulated software as a 2-axis,
-    2-button analog joystick(albeit with only axis extremes), 
-    but provides more configuration options for the user.
-
-    atari - Atari Joystick
-    Atari joyport digital joystick. Only usable on virtual port 2 if it's also selected on virtual port 1. 
-    Limited compatibility with software.</value>
   </data>
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

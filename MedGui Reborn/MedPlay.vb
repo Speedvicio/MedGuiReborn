@@ -189,7 +189,7 @@ Module MedPlay
     Public Sub WriteNetPlaySession()
 
         If NetIn = False Then
-            NGameName = MedGuiR.DataGridView1.CurrentRow.Cells(0).Value().Trim & " " & Replace(MedGuiR.DataGridView1.CurrentRow.Cells(2).Value(), ".", "").Trim
+            NGameName = MedGuiR.MainGrid.CurrentRow.Cells(0).Value().Trim & " " & Replace(MedGuiR.MainGrid.CurrentRow.Cells(2).Value(), ".", "").Trim
             NModule = consoles & MedGuiR.tpce
             CheckCRCNet()
         End If

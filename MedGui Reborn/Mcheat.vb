@@ -36,7 +36,7 @@ Public Class Mcheat
             Case "pcfx"
                 searchcheatcode = "search"
             Case "pce"
-                If MedGuiR.DataGridView1.CurrentRow.Cells(5).Value() = "TurboGrafx 16 (CD)" Then
+                If MedGuiR.MainGrid.CurrentRow.Cells(5).Value() = "TurboGrafx 16 (CD)" Then
                     searchcheatcode = "search"
                 Else
                     searchcheatcode = "crc32" & charcheats & base_file
@@ -314,7 +314,7 @@ Public Class Mcheat
             Button5.Enabled = False
         End If
 
-        CheatConsole = LCase(MedGuiR.DataGridView1.CurrentRow.Cells(6).Value)
+        CheatConsole = LCase(MedGuiR.MainGrid.CurrentRow.Cells(6).Value)
         Select Case LCase(Path.GetExtension(percorso))
             Case ".zip", ".rar", ".7z"
                 simple_extract()

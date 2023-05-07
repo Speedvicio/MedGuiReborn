@@ -45,7 +45,7 @@ Module Prescanned
                         Else
 SKIP_LIST:
                             SplitLine(1) = Nothing
-                            MedGuiR.DataGridView1.Rows.Add(SplitLine)
+                            MedGuiR.MainGrid.Rows.Add(SplitLine)
                             real_name = SplitLine(5)
                             detect_icon()
 
@@ -56,26 +56,26 @@ SKIP_LIST:
                                 IsIcon = ".gif"
                             End If
 
-                            MedGuiR.DataGridView1.Rows(cr - 1).Cells(1).Value() = New Bitmap(MedExtra & "Resource\System\" & UCase(gif) & IsIcon)
-                            MedGuiR.DataGridView1.Rows(cr - 1).Cells(9).Value() = cr - 1
+                            MedGuiR.MainGrid.Rows(cr - 1).Cells(1).Value() = New Bitmap(MedExtra & "Resource\System\" & UCase(gif) & IsIcon)
+                            MedGuiR.MainGrid.Rows(cr - 1).Cells(9).Value() = cr - 1
 
                             If MedGuiR.CheckBox22.Checked = False Then
 
                                 If File.Exists(SplitLine(4)) = False Then
                                     If MedGuiR.GridToolStripMenuItem.Checked = False Then
-                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.DarkRed
-                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.White
-                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.Black
-                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Strikeout)
+                                        MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.DarkRed
+                                        MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.White
+                                        MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.Black
+                                        MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Strikeout)
                                     End If
-                                    MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Name, MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Size, FontStyle.Strikeout)
+                                    MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.MainGrid.RowsDefaultCellStyle.Font.Name, MedGuiR.MainGrid.RowsDefaultCellStyle.Font.Size, FontStyle.Strikeout)
                                 Else
                                     If MedGuiR.GridToolStripMenuItem.Checked = False Then
-                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.Black
-                                        MedGuiR.DataGridView1.RowsDefaultCellStyle.BackColor = Color.White
-                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.Black
-                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
-                                        MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
+                                        MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.ForeColor = Color.Black
+                                        MedGuiR.MainGrid.RowsDefaultCellStyle.BackColor = Color.White
+                                        MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.SelectionForeColor = Color.Black
+                                        MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.SelectionBackColor = Color.PaleGoldenrod
+                                        MedGuiR.MainGrid.Rows(cr - 1).DefaultCellStyle.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
                                     End If
                                     'MedGuiR.DataGridView1.Rows(cr - 1).DefaultCellStyle.Font = New Font(MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Name, MedGuiR.DataGridView1.RowsDefaultCellStyle.Font.Size, FontStyle.Regular)
                                 End If
@@ -157,13 +157,13 @@ SKIP_LIST:
 
             Dim objWriter As New System.IO.StreamWriter(MedExtra & "Scanned\" & type_csv & ".csv", False)
 
-            For j = 0 To (MedGuiR.DataGridView1.Rows.Count - 1)
+            For j = 0 To (MedGuiR.MainGrid.Rows.Count - 1)
 
-                For I = 0 To (MedGuiR.DataGridView1.Columns.Count - 2)
+                For I = 0 To (MedGuiR.MainGrid.Columns.Count - 2)
 
-                    If Not TypeOf MedGuiR.DataGridView1.CurrentRow.Cells.Item(I).Value Is DBNull Then
+                    If Not TypeOf MedGuiR.MainGrid.CurrentRow.Cells.Item(I).Value Is DBNull Then
 
-                        cellvalue = W_RelPath(MedGuiR.DataGridView1.Item(I, j).Value.ToString)
+                        cellvalue = W_RelPath(MedGuiR.MainGrid.Item(I, j).Value.ToString)
 
                         If cellvalue = "System.Drawing.Bitmap" Then cellvalue = "_image_console_"
                     Else
@@ -202,9 +202,9 @@ SKIP_LIST:
         Try
             If type_csv = "" Then Exit Sub
 
-            For I = 0 To (MedGuiR.DataGridView1.Columns.Count - 2)
-                If Not TypeOf MedGuiR.DataGridView1.CurrentRow.Cells.Item(I).Value Is DBNull Then
-                    cellvalue = MedGuiR.DataGridView1.Item(I, MedGuiR.DataGridView1.CurrentRow.Index).Value.ToString
+            For I = 0 To (MedGuiR.MainGrid.Columns.Count - 2)
+                If Not TypeOf MedGuiR.MainGrid.CurrentRow.Cells.Item(I).Value Is DBNull Then
+                    cellvalue = MedGuiR.MainGrid.Item(I, MedGuiR.MainGrid.CurrentRow.Index).Value.ToString
                     If cellvalue = "System.Drawing.Bitmap" Then cellvalue = "_image_console_"
                 Else
                     cellvalue = ""
@@ -239,7 +239,7 @@ SKIP_LIST:
 
     'Disabled because improved by SearchGridGenreInRow
     Public Sub SearchGridDataInRow()
-        For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
+        For Each dr As DataGridViewRow In MedGuiR.MainGrid.Rows
             If LCase(dr.Cells(0).Value.ToString).Contains(Trim(LCase(MedGuiR.TextBox3.Text))) _
                And LCase(dr.Cells(2).Value.ToString).Contains(Trim(LCase(MedGuiR.regioni))) Then
                 dr.Visible = True
@@ -251,7 +251,7 @@ SKIP_LIST:
 
     Public Sub SearchGridGenreInRow()
         Dim Genre As String = MedGuiR.GENREToolStripComboBox2.Text.Trim
-        For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
+        For Each dr As DataGridViewRow In MedGuiR.MainGrid.Rows
             If MedGuiR.GENREToolStripComboBox2.Text.Trim = "All" Then
                 If LCase(dr.Cells(0).Value.ToString).Contains(Trim(LCase(MedGuiR.TextBox3.Text))) _
                And LCase(dr.Cells(2).Value.ToString).Contains(Trim(LCase(MedGuiR.regioni))) Then
@@ -302,14 +302,14 @@ SKIP_LIST:
     Public Function CleanBadEntries(filter As String)
         Dim CleanFilter() As String = LCase(filter).Split("*")
 REDO:
-        Dim initialrow As Integer = MedGuiR.DataGridView1.Rows.Count
+        Dim initialrow As Integer = MedGuiR.MainGrid.Rows.Count
 
-        For Each dr As DataGridViewRow In MedGuiR.DataGridView1.Rows
+        For Each dr As DataGridViewRow In MedGuiR.MainGrid.Rows
             For i = 0 To CleanFilter.Length - 1
-                If LCase(dr.Cells(2).Value.ToString) = CleanFilter(i).Trim Then MedGuiR.DataGridView1.Rows.Remove(dr)
+                If LCase(dr.Cells(2).Value.ToString) = CleanFilter(i).Trim Then MedGuiR.MainGrid.Rows.Remove(dr)
             Next
         Next
-        Dim endrow As Integer = MedGuiR.DataGridView1.Rows.Count
+        Dim endrow As Integer = MedGuiR.MainGrid.Rows.Count
 
         If initialrow = endrow Then
         Else
