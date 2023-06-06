@@ -565,6 +565,9 @@ Partial Class MgrSetting
         Me.Label106 = New System.Windows.Forms.Label()
         Me.TabPage29 = New System.Windows.Forms.TabPage()
         Me.GroupBox25 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox112 = New System.Windows.Forms.CheckBox()
+        Me.ComboBox69 = New System.Windows.Forms.ComboBox()
+        Me.Label194 = New System.Windows.Forms.Label()
         Me.ComboBox62 = New System.Windows.Forms.ComboBox()
         Me.Label178 = New System.Windows.Forms.Label()
         Me.NumericUpDown41 = New System.Windows.Forms.NumericUpDown()
@@ -587,6 +590,7 @@ Partial Class MgrSetting
         Me.Label150 = New System.Windows.Forms.Label()
         Me.TabPage30 = New System.Windows.Forms.TabPage()
         Me.GroupBox26 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox109 = New System.Windows.Forms.CheckBox()
         Me.CheckBox108 = New System.Windows.Forms.CheckBox()
         Me.CheckBox107 = New System.Windows.Forms.CheckBox()
         Me.Label163 = New System.Windows.Forms.Label()
@@ -612,10 +616,6 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox69 = New System.Windows.Forms.ComboBox()
-        Me.Label194 = New System.Windows.Forms.Label()
-        Me.CheckBox109 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox112 = New System.Windows.Forms.CheckBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -1491,15 +1491,13 @@ Partial Class MgrSetting
         'ComboBox57
         '
         Me.ComboBox57.FormattingEnabled = True
-        Me.ComboBox57.Items.AddRange(New Object() {"0", "native", "super"})
+        Me.ComboBox57.Items.AddRange(New Object() {"0", "native", "super", "switchres"})
         Me.ComboBox57.Location = New System.Drawing.Point(171, 248)
         Me.ComboBox57.Name = "ComboBox57"
         Me.ComboBox57.Size = New System.Drawing.Size(127, 21)
         Me.ComboBox57.TabIndex = 23
         Me.ComboBox57.Text = "0"
-        Me.ToolTip1.SetToolTip(Me.ComboBox57, "Video resolution switch" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Standard Mednafen resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Native Resolution" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) &
-        "Same resolution as emulated system." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Super Resolution: " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Requires only four 25" &
-        "60 pixel width resolutions." & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9))
+        Me.ToolTip1.SetToolTip(Me.ComboBox57, resources.GetString("ComboBox57.ToolTip"))
         Me.ComboBox57.Visible = False
         '
         'CheckBox15
@@ -6687,6 +6685,41 @@ Partial Class MgrSetting
         Me.GroupBox25.TabIndex = 4
         Me.GroupBox25.TabStop = False
         '
+        'CheckBox112
+        '
+        Me.CheckBox112.AutoSize = True
+        Me.CheckBox112.Checked = True
+        Me.CheckBox112.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox112.Location = New System.Drawing.Point(173, 199)
+        Me.CheckBox112.Name = "CheckBox112"
+        Me.CheckBox112.Size = New System.Drawing.Size(89, 17)
+        Me.CheckBox112.TabIndex = 118
+        Me.CheckBox112.Text = "Key Ghosting"
+        Me.ToolTip1.SetToolTip(Me.CheckBox112, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
+        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
+        "le in graphics mode.")
+        Me.CheckBox112.UseVisualStyleBackColor = True
+        '
+        'ComboBox69
+        '
+        Me.ComboBox69.FormattingEnabled = True
+        Me.ComboBox69.Items.AddRange(New Object() {"Apple IIe", "Enhanced IIe"})
+        Me.ComboBox69.Location = New System.Drawing.Point(158, 93)
+        Me.ComboBox69.Name = "ComboBox69"
+        Me.ComboBox69.Size = New System.Drawing.Size(139, 21)
+        Me.ComboBox69.TabIndex = 117
+        Me.ComboBox69.Text = "Apple IIe"
+        Me.ToolTip1.SetToolTip(Me.ComboBox69, resources.GetString("ComboBox69.ToolTip"))
+        '
+        'Label194
+        '
+        Me.Label194.AutoSize = True
+        Me.Label194.Location = New System.Drawing.Point(6, 96)
+        Me.Label194.Name = "Label194"
+        Me.Label194.Size = New System.Drawing.Size(72, 13)
+        Me.Label194.TabIndex = 116
+        Me.Label194.Text = "AppleII Model"
+        '
         'ComboBox62
         '
         Me.ComboBox62.Enabled = False
@@ -6929,6 +6962,21 @@ Partial Class MgrSetting
         Me.GroupBox26.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox26.TabIndex = 5
         Me.GroupBox26.TabStop = False
+        '
+        'CheckBox109
+        '
+        Me.CheckBox109.AutoSize = True
+        Me.CheckBox109.Checked = True
+        Me.CheckBox109.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox109.Location = New System.Drawing.Point(9, 244)
+        Me.CheckBox109.Name = "CheckBox109"
+        Me.CheckBox109.Size = New System.Drawing.Size(68, 17)
+        Me.CheckBox109.TabIndex = 103
+        Me.CheckBox109.Text = "Multiload"
+        Me.ToolTip1.SetToolTip(Me.CheckBox109, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
+        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
+        "le in graphics mode.")
+        Me.CheckBox109.UseVisualStyleBackColor = True
         '
         'CheckBox108
         '
@@ -7200,56 +7248,6 @@ Partial Class MgrSetting
         Me.CheckBox59.TabIndex = 6
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
-        '
-        'ComboBox69
-        '
-        Me.ComboBox69.FormattingEnabled = True
-        Me.ComboBox69.Items.AddRange(New Object() {"Apple IIe", "Enhanced IIe"})
-        Me.ComboBox69.Location = New System.Drawing.Point(158, 93)
-        Me.ComboBox69.Name = "ComboBox69"
-        Me.ComboBox69.Size = New System.Drawing.Size(139, 21)
-        Me.ComboBox69.TabIndex = 117
-        Me.ComboBox69.Text = "Apple IIe"
-        Me.ToolTip1.SetToolTip(Me.ComboBox69, resources.GetString("ComboBox69.ToolTip"))
-        '
-        'Label194
-        '
-        Me.Label194.AutoSize = True
-        Me.Label194.Location = New System.Drawing.Point(6, 96)
-        Me.Label194.Name = "Label194"
-        Me.Label194.Size = New System.Drawing.Size(72, 13)
-        Me.Label194.TabIndex = 116
-        Me.Label194.Text = "AppleII Model"
-        '
-        'CheckBox109
-        '
-        Me.CheckBox109.AutoSize = True
-        Me.CheckBox109.Checked = True
-        Me.CheckBox109.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox109.Location = New System.Drawing.Point(9, 244)
-        Me.CheckBox109.Name = "CheckBox109"
-        Me.CheckBox109.Size = New System.Drawing.Size(68, 17)
-        Me.CheckBox109.TabIndex = 103
-        Me.CheckBox109.Text = "Multiload"
-        Me.ToolTip1.SetToolTip(Me.CheckBox109, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
-        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
-        "le in graphics mode.")
-        Me.CheckBox109.UseVisualStyleBackColor = True
-        '
-        'CheckBox112
-        '
-        Me.CheckBox112.AutoSize = True
-        Me.CheckBox112.Checked = True
-        Me.CheckBox112.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox112.Location = New System.Drawing.Point(173, 199)
-        Me.CheckBox112.Name = "CheckBox112"
-        Me.CheckBox112.Size = New System.Drawing.Size(89, 17)
-        Me.CheckBox112.TabIndex = 118
-        Me.CheckBox112.Text = "Key Ghosting"
-        Me.ToolTip1.SetToolTip(Me.CheckBox112, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
-        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
-        "le in graphics mode.")
-        Me.CheckBox112.UseVisualStyleBackColor = True
         '
         'MgrSetting
         '
