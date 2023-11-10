@@ -4230,7 +4230,7 @@ Partial Class MedGuiR
         Me.RescanToolStripMenuItem.Name = "RescanToolStripMenuItem"
         Me.RescanToolStripMenuItem.Size = New System.Drawing.Size(82, 36)
         Me.RescanToolStripMenuItem.Text = "&Rescan"
-        Me.RescanToolStripMenuItem.ToolTipText = "Rebuild Game Palylist"
+        Me.RescanToolStripMenuItem.ToolTipText = "Rebuild Game Playlist"
         '
         'ToolStripMenuItem4
         '
