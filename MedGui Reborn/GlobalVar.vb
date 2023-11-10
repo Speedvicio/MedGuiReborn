@@ -106,9 +106,10 @@ Module GlobalVar
             plugin = New String(11) {"\SevenZipSharp.dll", "\MedGuiR\Plugins\Proxy7z.dll", "\IrcClient.dll", "\FTPclient.dll", "\DiscTools.dll",
                 "\LinqBridge.dll", "\Newtonsoft.Json.dll", "\PeakMeterCtrl.dll", "\CoreAudioApi.dll", "\fmod.dll", "\NAudio.dll", "\MedGuiR\Plugins\7zPlugins\7z.dll"}
 
-            For i = 0 To 11
-                If File.Exists(Application.StartupPath & plugin(i)) = False Then
-                    MissingResource()
+            For i = 0 To plugin.Length - 1
+                Dim file_path = Application.StartupPath & plugin(i)
+                If File.Exists(file_path) = False Then
+                    MissingResource(file_path)
                     MedGuiR.Close()
                     Threading.Thread.Sleep(2000)
                     Exit Sub
@@ -438,7 +439,7 @@ ReCheckConfig:
         Try
             If r_sha <> MGRH Then
                 My.Computer.FileSystem.CopyFile(MedGuiR.TextBox4.Text & "\" & DMedConf & ".cfg", MedExtra & "Backup\" & Date.Today.ToString("ddMMyyyy") & "_ByUpdate.cfg", True)
-                MsgBox("New MedGui Reborn version detected, i have created a backup to prevent corruption of " & DMedConf & ".cfg", vbOKOnly + MsgBoxStyle.Information, "Backup " & DMedConf & ".cfg...")
+                MsgBox("A new MedGui Reborn version was detected since the last launch. Backup of " & DMedConf & ".cfg was created in " & MedExtra & "Backup\ in case of possible corruption.", vbOKOnly + MsgBoxStyle.Information, "Backup " & DMedConf & ".cfg...")
             End If
         Catch
         End Try
