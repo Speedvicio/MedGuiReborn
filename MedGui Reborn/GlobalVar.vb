@@ -106,10 +106,9 @@ Module GlobalVar
             plugin = New String(11) {"\SevenZipSharp.dll", "\MedGuiR\Plugins\Proxy7z.dll", "\IrcClient.dll", "\FTPclient.dll", "\DiscTools.dll",
                 "\LinqBridge.dll", "\Newtonsoft.Json.dll", "\PeakMeterCtrl.dll", "\CoreAudioApi.dll", "\fmod.dll", "\NAudio.dll", "\MedGuiR\Plugins\7zPlugins\7z.dll"}
 
-            For i = 0 To plugin.Length - 1
-                Dim file_path = Application.StartupPath & plugin(i)
-                If File.Exists(file_path) = False Then
-                    MissingResource(file_path)
+            For i = 0 To 11
+                If File.Exists(Application.StartupPath & plugin(i)) = False Then
+                    MissingResource()
                     MedGuiR.Close()
                     Threading.Thread.Sleep(2000)
                     Exit Sub
