@@ -381,14 +381,36 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
 
         If Val(vmedClear) > 12710 Then
             ComboBox67.Enabled = True
+            ComboBox69.Enabled = True
             CheckBox110.Enabled = True
             ComboBox24.Items.Clear()
             ComboBox24.Items.AddRange(New String() {"anaglyph", "cscope", "hli", "sidebyside", "vli", "left", "right"})
         Else
             ComboBox67.Enabled = False
+            ComboBox69.Enabled = False
             CheckBox110.Enabled = False
             ComboBox24.Items.Remove("left")
             ComboBox24.Items.Remove("right")
+        End If
+
+        If Val(vmedClear) > 13100 Then
+            ComboBox37.Items.Add("popnmusic")
+            ComboBox38.Items.Add("popnmusic")
+            CheckBox109.Enabled = True
+            CheckBox113.Enabled = True
+            NumericUpDown49.Enabled = True
+            ComboBox70.Enabled = True
+            ComboBox62.Items.Clear()
+            ComboBox62.Items.AddRange(New String() {"composite", "rgb", "rgb_tfr", "rgb_alt", "rgb_alt_trf", "rgb_qd", "rgb_qd_tfr", "rgb_video7"})
+        Else
+            ComboBox37.Items.Remove("popnmusic")
+            ComboBox38.Items.Remove("popnmusic")
+            ComboBox70.Enabled = False
+            CheckBox113.Enabled = False
+            CheckBox109.Enabled = False
+            NumericUpDown49.Enabled = False
+            ComboBox62.Items.Clear()
+            ComboBox62.Items.AddRange(New String() {"composite", "RGB", "rgb_tfr", "rgb_alt", "rgb_alt_tfr"})
         End If
 
     End Sub

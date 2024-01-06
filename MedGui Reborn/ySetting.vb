@@ -359,7 +359,7 @@
                     " -ss.bios_stv_na " & Chr(34) & MgrSetting.TextBox35.Text & Chr(34)
                 Case Is = 13200
                     various = various & " -input.grab.strategy  " & MgrSetting.ComboBox70.Text
-                    apple2 = apple2 & " -apple2.video.mode " & MgrSetting.ComboBox69.Text & " -apple2.input.kb.ghosting " & MgrSetting.CheckBox113.CheckState &
+                    apple2 = apple2 & " -apple2.model " & MgrSetting.ComboBox69.Text & " -apple2.input.kb.ghosting " & MgrSetting.CheckBox113.CheckState &
                     " -apple2.multiload " & MgrSetting.CheckBox109.CheckState
             End Select
         Next

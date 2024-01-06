@@ -567,6 +567,10 @@ Partial Class MgrSetting
         Me.Label106 = New System.Windows.Forms.Label()
         Me.TabPage29 = New System.Windows.Forms.TabPage()
         Me.GroupBox25 = New System.Windows.Forms.GroupBox()
+        Me.NumericUpDown50 = New System.Windows.Forms.NumericUpDown()
+        Me.Label197 = New System.Windows.Forms.Label()
+        Me.NumericUpDown49 = New System.Windows.Forms.NumericUpDown()
+        Me.Label196 = New System.Windows.Forms.Label()
         Me.ComboBox69 = New System.Windows.Forms.ComboBox()
         Me.Label194 = New System.Windows.Forms.Label()
         Me.ComboBox62 = New System.Windows.Forms.ComboBox()
@@ -591,6 +595,7 @@ Partial Class MgrSetting
         Me.Label150 = New System.Windows.Forms.Label()
         Me.TabPage30 = New System.Windows.Forms.TabPage()
         Me.GroupBox26 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox113 = New System.Windows.Forms.CheckBox()
         Me.CheckBox109 = New System.Windows.Forms.CheckBox()
         Me.CheckBox108 = New System.Windows.Forms.CheckBox()
         Me.CheckBox107 = New System.Windows.Forms.CheckBox()
@@ -617,11 +622,6 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox113 = New System.Windows.Forms.CheckBox()
-        Me.NumericUpDown49 = New System.Windows.Forms.NumericUpDown()
-        Me.Label196 = New System.Windows.Forms.Label()
-        Me.NumericUpDown50 = New System.Windows.Forms.NumericUpDown()
-        Me.Label197 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -739,6 +739,8 @@ Partial Class MgrSetting
         CType(Me.TrackBar16, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage29.SuspendLayout()
         Me.GroupBox25.SuspendLayout()
+        CType(Me.NumericUpDown50, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown49, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -754,8 +756,6 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown49, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown50, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -1801,6 +1801,7 @@ Partial Class MgrSetting
         '
         'ComboBox70
         '
+        Me.ComboBox70.Enabled = False
         Me.ComboBox70.FormattingEnabled = True
         Me.ComboBox70.Items.AddRange(New Object() {"auto", "full", "kb_auto", "mouse_auto"})
         Me.ComboBox70.Location = New System.Drawing.Point(219, 17)
@@ -6718,8 +6719,49 @@ Partial Class MgrSetting
         Me.GroupBox25.TabIndex = 4
         Me.GroupBox25.TabStop = False
         '
+        'NumericUpDown50
+        '
+        Me.NumericUpDown50.Location = New System.Drawing.Point(251, 224)
+        Me.NumericUpDown50.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.NumericUpDown50.Name = "NumericUpDown50"
+        Me.NumericUpDown50.Size = New System.Drawing.Size(46, 20)
+        Me.NumericUpDown50.TabIndex = 121
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown50, resources.GetString("NumericUpDown50.ToolTip"))
+        '
+        'Label197
+        '
+        Me.Label197.AutoSize = True
+        Me.Label197.Location = New System.Drawing.Point(135, 226)
+        Me.Label197.Name = "Label197"
+        Me.Label197.Size = New System.Drawing.Size(110, 13)
+        Me.Label197.TabIndex = 120
+        Me.Label197.Text = "Video smoothing level"
+        '
+        'NumericUpDown49
+        '
+        Me.NumericUpDown49.DecimalPlaces = 1
+        Me.NumericUpDown49.Enabled = False
+        Me.NumericUpDown49.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown49.Location = New System.Drawing.Point(251, 198)
+        Me.NumericUpDown49.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.NumericUpDown49.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
+        Me.NumericUpDown49.Name = "NumericUpDown49"
+        Me.NumericUpDown49.Size = New System.Drawing.Size(46, 20)
+        Me.NumericUpDown49.TabIndex = 119
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown49, resources.GetString("NumericUpDown49.ToolTip"))
+        '
+        'Label196
+        '
+        Me.Label196.AutoSize = True
+        Me.Label196.Location = New System.Drawing.Point(170, 200)
+        Me.Label196.Name = "Label196"
+        Me.Label196.Size = New System.Drawing.Size(57, 13)
+        Me.Label196.TabIndex = 118
+        Me.Label196.Text = "Sharpness"
+        '
         'ComboBox69
         '
+        Me.ComboBox69.Enabled = False
         Me.ComboBox69.FormattingEnabled = True
         Me.ComboBox69.Items.AddRange(New Object() {"ii", "ii+", "ii_ii+", "iie", "iie_enh"})
         Me.ComboBox69.Location = New System.Drawing.Point(158, 93)
@@ -6927,9 +6969,9 @@ Partial Class MgrSetting
         '
         Me.ComboBox58.FormattingEnabled = True
         Me.ComboBox58.Items.AddRange(New Object() {"none", "paddle", "joystick", "gamepad", "atari"})
-        Me.ComboBox58.Location = New System.Drawing.Point(159, 13)
+        Me.ComboBox58.Location = New System.Drawing.Point(158, 13)
         Me.ComboBox58.Name = "ComboBox58"
-        Me.ComboBox58.Size = New System.Drawing.Size(66, 21)
+        Me.ComboBox58.Size = New System.Drawing.Size(69, 21)
         Me.ComboBox58.TabIndex = 40
         Me.ComboBox58.Text = "joystick"
         Me.ToolTip1.SetToolTip(Me.ComboBox58, resources.GetString("ComboBox58.ToolTip"))
@@ -6982,11 +7024,27 @@ Partial Class MgrSetting
         Me.GroupBox26.TabIndex = 5
         Me.GroupBox26.TabStop = False
         '
+        'CheckBox113
+        '
+        Me.CheckBox113.AutoSize = True
+        Me.CheckBox113.Checked = True
+        Me.CheckBox113.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox113.Enabled = False
+        Me.CheckBox113.Location = New System.Drawing.Point(128, 244)
+        Me.CheckBox113.Name = "CheckBox113"
+        Me.CheckBox113.Size = New System.Drawing.Size(170, 17)
+        Me.CheckBox113.TabIndex = 104
+        Me.CheckBox113.Text = "Enable key ghosting emulation"
+        Me.ToolTip1.SetToolTip(Me.CheckBox113, "Enable key ghosting emulation." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "When enabled, spurious emulated keypresses will" &
+        " be generated " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "when certain combinations of keys are held down simultaneously.")
+        Me.CheckBox113.UseVisualStyleBackColor = True
+        '
         'CheckBox109
         '
         Me.CheckBox109.AutoSize = True
         Me.CheckBox109.Checked = True
         Me.CheckBox109.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox109.Enabled = False
         Me.CheckBox109.Location = New System.Drawing.Point(9, 244)
         Me.CheckBox109.Name = "CheckBox109"
         Me.CheckBox109.Size = New System.Drawing.Size(68, 17)
@@ -7264,59 +7322,6 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
-        'CheckBox113
-        '
-        Me.CheckBox113.AutoSize = True
-        Me.CheckBox113.Checked = True
-        Me.CheckBox113.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox113.Location = New System.Drawing.Point(128, 244)
-        Me.CheckBox113.Name = "CheckBox113"
-        Me.CheckBox113.Size = New System.Drawing.Size(170, 17)
-        Me.CheckBox113.TabIndex = 104
-        Me.CheckBox113.Text = "Enable key ghosting emulation"
-        Me.ToolTip1.SetToolTip(Me.CheckBox113, "Enable key ghosting emulation." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "When enabled, spurious emulated keypresses will" &
-        " be generated " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "when certain combinations of keys are held down simultaneously.")
-        Me.CheckBox113.UseVisualStyleBackColor = True
-        '
-        'NumericUpDown49
-        '
-        Me.NumericUpDown49.DecimalPlaces = 1
-        Me.NumericUpDown49.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
-        Me.NumericUpDown49.Location = New System.Drawing.Point(251, 198)
-        Me.NumericUpDown49.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
-        Me.NumericUpDown49.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
-        Me.NumericUpDown49.Name = "NumericUpDown49"
-        Me.NumericUpDown49.Size = New System.Drawing.Size(46, 20)
-        Me.NumericUpDown49.TabIndex = 119
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown49, resources.GetString("NumericUpDown49.ToolTip"))
-        '
-        'Label196
-        '
-        Me.Label196.AutoSize = True
-        Me.Label196.Location = New System.Drawing.Point(170, 200)
-        Me.Label196.Name = "Label196"
-        Me.Label196.Size = New System.Drawing.Size(57, 13)
-        Me.Label196.TabIndex = 118
-        Me.Label196.Text = "Sharpness"
-        '
-        'NumericUpDown50
-        '
-        Me.NumericUpDown50.Location = New System.Drawing.Point(251, 224)
-        Me.NumericUpDown50.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
-        Me.NumericUpDown50.Name = "NumericUpDown50"
-        Me.NumericUpDown50.Size = New System.Drawing.Size(46, 20)
-        Me.NumericUpDown50.TabIndex = 121
-        Me.ToolTip1.SetToolTip(Me.NumericUpDown50, resources.GetString("NumericUpDown50.ToolTip"))
-        '
-        'Label197
-        '
-        Me.Label197.AutoSize = True
-        Me.Label197.Location = New System.Drawing.Point(135, 226)
-        Me.Label197.Name = "Label197"
-        Me.Label197.Size = New System.Drawing.Size(110, 13)
-        Me.Label197.TabIndex = 120
-        Me.Label197.Text = "Video smoothing level"
-        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7484,6 +7489,8 @@ Partial Class MgrSetting
         Me.TabPage29.ResumeLayout(False)
         Me.GroupBox25.ResumeLayout(False)
         Me.GroupBox25.PerformLayout()
+        CType(Me.NumericUpDown50, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown49, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown33, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown32, System.ComponentModel.ISupportInitialize).EndInit()
@@ -7500,8 +7507,6 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown49, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown50, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

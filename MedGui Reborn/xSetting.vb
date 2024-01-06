@@ -63,6 +63,7 @@ Module xSetting
                 If row.Contains(consoles & ".video.mixed_text_mono ") Then xValue = Trim(Replace(row, consoles & ".video.mixed_text_mono", "")) : MgrSetting.CheckBox108.Checked = CBool(xValue)
                 If row.Contains(consoles & ".video.correct_aspect ") Then xValue = Trim(Replace(row, consoles & ".video.correct_aspect", "")) : MgrSetting.CheckBox107.Checked = CBool(xValue)
                 If row.Contains(consoles & ".input.port1.joystick.axis_scale ") Then xValue = Trim(Replace(row, consoles & ".input.port1.joystick.axis_scale", "")) : MgrSetting.NumericUpDown41.Value = Val(xValue)
+                If row.Contains(consoles & ".video.mode ") Then xValue = Trim(Replace(row, consoles & ".video.mode", "")) : MgrSetting.ComboBox62.Text = xValue
                 If row.Contains(consoles & ".video.brightness ") Then xValue = Trim(Replace(row, consoles & ".video.brightness", "")) : MgrSetting.NumericUpDown29.Value = Val(xValue)
                 If row.Contains(consoles & ".video.contrast ") Then xValue = Trim(Replace(row, consoles & ".video.contrast", "")) : MgrSetting.NumericUpDown31.Value = Val(xValue)
                 If row.Contains(consoles & ".video.hue ") Then xValue = Trim(Replace(row, consoles & ".video.hue", "")) : MgrSetting.NumericUpDown32.Value = Val(xValue)
@@ -79,7 +80,7 @@ Module xSetting
                 If row.Contains(consoles & ".input.port2 ") Then xValue = Trim(Replace(row, consoles & ".input.port2", "")) : MgrSetting.ComboBox60.Text = xValue
                 If row.Contains(consoles & ".video.matrix ") Then xValue = Trim(Replace(row, consoles & ".video.matrix", "")) : MgrSetting.ComboBox61.Text = xValue
                 If row.Contains(consoles & ".video.force_mono ") Then xValue = Trim(Replace(row, consoles & ".video.force_mono", "")) : MgrSetting.Label163.Text = (xValue) : MgrSetting.Label163.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label163.ForeColor = ColorTranslator.FromHtml(xValue)
-                If row.Contains(consoles & ".video.mode ") Then xValue = Trim(Replace(row, consoles & ".video.mode", "")) : MgrSetting.ComboBox69.Text = xValue
+                If row.Contains(consoles & ".model ") Then xValue = Trim(Replace(row, consoles & ".model", "")) : MgrSetting.ComboBox69.Text = xValue
                 If row.Contains(consoles & ".input.kb.ghosting ") Then xValue = Trim(Replace(row, consoles & ".input.kb.ghosting", "")) : MgrSetting.CheckBox113.Checked = CBool(xValue)
                 If row.Contains(consoles & ".multiload ") Then xValue = Trim(Replace(row, consoles & ".multiload", "")) : MgrSetting.CheckBox109.Checked = CBool(xValue)
                 If row.Contains(consoles & ".video.color_smooth ") Then xValue = Trim(Replace(row, consoles & ".video.color_smooth", "")) : MgrSetting.NumericUpDown50.Value = Val(xValue)

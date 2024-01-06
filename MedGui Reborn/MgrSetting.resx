@@ -120,15 +120,6 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
-  <data name="CheckBox109.ToolTip" xml:space="preserve">
-    <value>Enable automatic multiload from archives.
-
-When loading a disk image from an archive(e.g. ZIP file) without a MAI file present, 
-also automatically load all other files with the same extension in the same directory in that archive.</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>140, 17</value>
-  </metadata>
   <data name="TrackBar3.ToolTip" xml:space="preserve">
     <value>Desired period size in microseconds.
 
@@ -777,7 +768,11 @@ If the game you want to play supports the "GunCon", you should use that instead.
 NOTE: Currently does not work properly when on any of ports 1B-1D and 2B-2D.
 
 dancepad - Dance Pad
-Dingo Dingo Rodeo!</value>
+Dingo Dingo Rodeo!
+
+
+popnmusic - Pop'n Music
+Konami's Pop'n Music controller.</value>
   </data>
   <data name="ComboBox37.ToolTip" xml:space="preserve">
     <value>Input device for Port 1/1A
@@ -812,7 +807,11 @@ If the game you want to play supports the "GunCon", you should use that instead.
 NOTE: Currently does not work properly when on any of ports 1B-1D and 2B-2D.
 
 dancepad - Dance Pad
-Dingo Dingo Rodeo!</value>
+Dingo Dingo Rodeo!
+
+
+popnmusic - Pop'n Music
+Konami's Pop'n Music controller.</value>
   </data>
   <data name="ComboBox59.ToolTip" xml:space="preserve">
     <value>Horizontal blending/doubling filter.
@@ -975,6 +974,21 @@ jpkeyboard - Keyboard (JP)
 89-key Japanese keyboard(e.g. HSS-0129).
 Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
   </data>
+  <data name="NumericUpDown50.ToolTip" xml:space="preserve">
+    <value>Composite color video smoothing level.
+
+When a non-zero value, reduces vertical stripes in composite video without increasing blurriness, at the cost of some pixel irregularities. 
+Larger values select more-aggressive smoothing. May make small text illegible in graphics mode.</value>
+  </data>
+  <data name="NumericUpDown49.ToolTip" xml:space="preserve">
+    <value>Composite color video sharpness.
+
+Positive values will increase perceptual sharpness(and ringing), negative values will blur the image. 
+When a non-zero value is specified, CPU usage will increase due to the continuous extra calculations required.
+
+Note that this filter is applied after composite-&gt;RGB conversion(after the effects of the hue, saturation, 
+brightness, contrast, color luma filter, and color smoothing settings), and in a roughly linear luminance space.</value>
+  </data>
   <data name="ComboBox69.ToolTip" xml:space="preserve">
     <value>Nominal model of Apple II to emulate.
 
@@ -1089,24 +1103,15 @@ and won't exactly replicate the colors these ICs would reproduce when fed an App
     Atari joyport digital joystick. Only usable on virtual port 2 if it's also selected on virtual port 1. 
     Limited compatibility with software.</value>
   </data>
+  <data name="CheckBox109.ToolTip" xml:space="preserve">
+    <value>Enable automatic multiload from archives.
+
+When loading a disk image from an archive(e.g. ZIP file) without a MAI file present, 
+also automatically load all other files with the same extension in the same directory in that archive.</value>
+  </data>
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="NumericUpDown49.ToolTip" xml:space="preserve">
-    <value>Composite color video sharpness.
-
-Positive values will increase perceptual sharpness(and ringing), negative values will blur the image. 
-When a non-zero value is specified, CPU usage will increase due to the continuous extra calculations required.
-
-Note that this filter is applied after composite-&gt;RGB conversion(after the effects of the hue, saturation, 
-brightness, contrast, color luma filter, and color smoothing settings), and in a roughly linear luminance space.</value>
-  </data>
-  <data name="NumericUpDown50.ToolTip" xml:space="preserve">
-    <value>Composite color video smoothing level.
-
-When a non-zero value, reduces vertical stripes in composite video without increasing blurriness, at the cost of some pixel irregularities. 
-Larger values select more-aggressive smoothing. May make small text illegible in graphics mode.</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
   </metadata>
