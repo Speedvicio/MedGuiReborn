@@ -834,6 +834,8 @@ Public Class MedGuiR
         SetSRom()
         TempFolder = StartRom
 
+        MainGrid.Rows.Clear()
+
         If CheckBox14.Checked = True Then
             RecuScan()
         Else

@@ -3269,7 +3269,7 @@ Partial Class MgrSetting
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(111, 13)
         Me.Label28.TabIndex = 11
-        Me.Label28.Text = "Net-Play Local Palyer:"
+        Me.Label28.Text = "Net-Play Local Player:"
         '
         'Label27
         '

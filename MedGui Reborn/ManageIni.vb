@@ -16,9 +16,9 @@ Module ManageIni
             MedGuiR.ComboBox1.Text = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Dat")
 
             If (RIni.IniRead(MedExtra & "\Mini.ini", "General", "TextMenu")) = "" Then
-                Dim Rtxt = MsgBox("Do you want to start MedGui with top icon menu or old style text menu?" & vbCrLf &
-                                  "YES = ICON MENU" & vbCrLf & "NO = TEXTUAL MENU (Raccomended)", vbYesNo + MsgBoxStyle.Information, "Select top menu...")
-                If Rtxt = MsgBoxResult.Yes Then
+                Dim Rtxt = MsgBox("Do you want to start MedGui with the newer text-style top menu or older icon-based menu?" & vbCrLf &
+                                  "YES = TEXT MENU (Recommended)" & vbCrLf & "NO = ICON MENU", vbYesNo + MsgBoxStyle.Information, "Select top menu...")
+                If Rtxt = MsgBoxResult.No Then
                     MedGuiR.CheckBox23.Checked = False
                 Else
                     MedGuiR.CheckBox23.Checked = True
