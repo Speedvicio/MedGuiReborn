@@ -189,7 +189,7 @@ Public Class MAImaker
         Dim text3 As String = "disk2.drive2.disks " & String.Join(" ", c)
 
         concatenate = "MEDNAFEN_SYSTEM_APPLE2" & vbCrLf & vbCrLf & "ram " & NumericUpDown1.Value & vbCrLf &
-            "firmware " & ComboBox1.Text & vbCrLf & "romcard " & ComboBox2.Text & vbCrLf &
+            "firmware " & ComboBox1.Text & vbCrLf & "romcard " & ComboBox2.Text & vbCrLf & "model " & ComboBox5.Text & vbCrLf &
             "gameio " & ComboBox4.Text & resistance & vbCrLf & "gameio.resistance 93551 125615 149425 164980" & vbCrLf &
             "disk2.enable " & Convert.ToInt32(CheckBox1.Checked) & vbCrLf & "disk2.drive1.enable " & Convert.ToInt32(CheckBox2.Checked) & vbCrLf &
             "disk2.drive2.enable " & Convert.ToInt32(CheckBox3.Checked) & vbCrLf & "disk2.firmware " & ComboBox3.Text & vbCrLf & "disk2.disks." &

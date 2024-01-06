@@ -93,7 +93,7 @@
             " -apple2.video.matrix.blue.i " & Replace(MgrSetting.NumericUpDown35.Value, ",", ".") & " -apple2.video.matrix.blue.q " & Replace(MgrSetting.NumericUpDown36.Value, ",", ".") &
             " -apple2.video.matrix.green.i " & Replace(MgrSetting.NumericUpDown37.Value, ",", ".") & " -apple2.video.matrix.green.q " & Replace(MgrSetting.NumericUpDown38.Value, ",", ".") &
             " -apple2.video.matrix.red.i " & Replace(MgrSetting.NumericUpDown39.Value, ",", ".") & " -apple2.video.matrix.red.q " & Replace(MgrSetting.NumericUpDown40.Value, ",", ".") &
-            " -apple2.video.mixed_text_mono " & MgrSetting.CheckBox108.CheckState & " -apple2.video.color_smooth " & MgrSetting.CheckBox107.CheckState
+            " -apple2.video.mixed_text_mono " & MgrSetting.CheckBox108.CheckState & " -apple2.video.correct_aspect " & MgrSetting.CheckBox107.CheckState & " -apple2.video.color_smooth " & MgrSetting.NumericUpDown50.Value
 
         'Lynx
         lynx = " -lynx.lowpass " & MgrSetting.CheckBox18.CheckState & " -lynx.rotateinput " & MgrSetting.CheckBox17.CheckState
@@ -357,6 +357,10 @@
                 Case Is = 13100
                     ss = ss & " -ss.bios_stv_eu " & Chr(34) & MgrSetting.TextBox36.Text & Chr(34) & " -ss.bios_stv_jp " & Chr(34) & MgrSetting.TextBox37.Text & Chr(34) &
                     " -ss.bios_stv_na " & Chr(34) & MgrSetting.TextBox35.Text & Chr(34)
+                Case Is = 13200
+                    various = various & " -input.grab.strategy  " & MgrSetting.ComboBox70.Text
+                    apple2 = apple2 & " -apple2.video.mode " & MgrSetting.ComboBox69.Text & " -apple2.input.kb.ghosting " & MgrSetting.CheckBox113.CheckState &
+                    " -apple2.multiload " & MgrSetting.CheckBox109.CheckState
             End Select
         Next
     End Sub

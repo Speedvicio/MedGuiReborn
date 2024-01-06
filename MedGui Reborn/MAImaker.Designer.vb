@@ -23,6 +23,7 @@ Partial Class MAImaker
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MAImaker))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -67,6 +68,8 @@ Partial Class MAImaker
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -76,6 +79,8 @@ Partial Class MAImaker
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.ComboBox5)
+        Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.GroupBox2)
         Me.Panel1.Controls.Add(Me.ComboBox3)
         Me.Panel1.Controls.Add(Me.Label6)
@@ -472,16 +477,17 @@ Partial Class MAImaker
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(46, 19)
+        Me.Label1.Location = New System.Drawing.Point(205, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(64, 13)
+        Me.Label1.Size = New System.Drawing.Size(34, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "RAM in KiB:"
+        Me.Label1.Text = "RAM:"
+        Me.ToolTip1.SetToolTip(Me.Label1, "RAM in KiB")
         '
         'NumericUpDown1
         '
         Me.NumericUpDown1.Increment = New Decimal(New Integer() {4, 0, 0, 0})
-        Me.NumericUpDown1.Location = New System.Drawing.Point(120, 17)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(252, 17)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {64, 0, 0, 0})
         Me.NumericUpDown1.Minimum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
@@ -519,6 +525,26 @@ Partial Class MAImaker
         Me.Label12.Size = New System.Drawing.Size(23, 13)
         Me.Label12.TabIndex = 3
         Me.Label12.Text = "OR"
+        '
+        'ComboBox5
+        '
+        Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Items.AddRange(New Object() {"ii", "ii+", "ii_ii+", "iie", "iie_enh"})
+        Me.ComboBox5.Location = New System.Drawing.Point(120, 16)
+        Me.ComboBox5.Name = "ComboBox5"
+        Me.ComboBox5.Size = New System.Drawing.Size(79, 21)
+        Me.ComboBox5.TabIndex = 119
+        Me.ComboBox5.Text = "ii_ii+"
+        Me.ToolTip1.SetToolTip(Me.ComboBox5, resources.GetString("ComboBox5.ToolTip"))
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(12, 19)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(72, 13)
+        Me.Label13.TabIndex = 118
+        Me.Label13.Text = "AppleII Model"
         '
         'MAImaker
         '
@@ -590,4 +616,6 @@ Partial Class MAImaker
     Friend WithEvents Label10 As Label
     Friend WithEvents Button11 As Button
     Friend WithEvents Label12 As Label
+    Friend WithEvents ComboBox5 As ComboBox
+    Friend WithEvents Label13 As Label
 End Class

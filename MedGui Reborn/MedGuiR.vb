@@ -3353,6 +3353,8 @@ MisScan:
     Private Sub Button22_Click_1(sender As Object, e As EventArgs) Handles Button22.Click
         If File.Exists(Path.Combine(Application.StartupPath, "MedGuiR CSV Creator.exe")) Then
             Process.Start(Path.Combine(Application.StartupPath, "MedGuiR CSV Creator.exe"))
+        Else
+            MsgBox("MedGuiR CSV Creator not detected", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Missing MedGuiR CSV Creator")
         End If
     End Sub
 

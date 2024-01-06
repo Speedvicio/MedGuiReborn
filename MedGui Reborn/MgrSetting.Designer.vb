@@ -113,6 +113,8 @@ Partial Class MgrSetting
         Me.ComboBox53 = New System.Windows.Forms.ComboBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox70 = New System.Windows.Forms.ComboBox()
+        Me.Label195 = New System.Windows.Forms.Label()
         Me.CheckBox106 = New System.Windows.Forms.CheckBox()
         Me.CheckBox105 = New System.Windows.Forms.CheckBox()
         Me.Label143 = New System.Windows.Forms.Label()
@@ -565,7 +567,6 @@ Partial Class MgrSetting
         Me.Label106 = New System.Windows.Forms.Label()
         Me.TabPage29 = New System.Windows.Forms.TabPage()
         Me.GroupBox25 = New System.Windows.Forms.GroupBox()
-        Me.CheckBox112 = New System.Windows.Forms.CheckBox()
         Me.ComboBox69 = New System.Windows.Forms.ComboBox()
         Me.Label194 = New System.Windows.Forms.Label()
         Me.ComboBox62 = New System.Windows.Forms.ComboBox()
@@ -616,6 +617,11 @@ Partial Class MgrSetting
         Me.Button18 = New System.Windows.Forms.Button()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox59 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox113 = New System.Windows.Forms.CheckBox()
+        Me.NumericUpDown49 = New System.Windows.Forms.NumericUpDown()
+        Me.Label196 = New System.Windows.Forms.Label()
+        Me.NumericUpDown50 = New System.Windows.Forms.NumericUpDown()
+        Me.Label197 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -748,6 +754,8 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown49, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown50, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -1766,6 +1774,8 @@ Partial Class MgrSetting
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.ComboBox70)
+        Me.GroupBox4.Controls.Add(Me.Label195)
         Me.GroupBox4.Controls.Add(Me.CheckBox106)
         Me.GroupBox4.Controls.Add(Me.CheckBox105)
         Me.GroupBox4.Controls.Add(Me.Label143)
@@ -1788,6 +1798,26 @@ Partial Class MgrSetting
         Me.GroupBox4.Size = New System.Drawing.Size(304, 278)
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
+        '
+        'ComboBox70
+        '
+        Me.ComboBox70.FormattingEnabled = True
+        Me.ComboBox70.Items.AddRange(New Object() {"auto", "full", "kb_auto", "mouse_auto"})
+        Me.ComboBox70.Location = New System.Drawing.Point(219, 17)
+        Me.ComboBox70.Name = "ComboBox70"
+        Me.ComboBox70.Size = New System.Drawing.Size(79, 21)
+        Me.ComboBox70.TabIndex = 22
+        Me.ComboBox70.Text = "full"
+        Me.ToolTip1.SetToolTip(Me.ComboBox70, resources.GetString("ComboBox70.ToolTip"))
+        '
+        'Label195
+        '
+        Me.Label195.AutoSize = True
+        Me.Label195.Location = New System.Drawing.Point(139, 20)
+        Me.Label195.Name = "Label195"
+        Me.Label195.Size = New System.Drawing.Size(73, 13)
+        Me.Label195.TabIndex = 21
+        Me.Label195.Text = "Input Strategy"
         '
         'CheckBox106
         '
@@ -1929,7 +1959,7 @@ Partial Class MgrSetting
         '
         Me.CheckBox12.AutoSize = True
         Me.CheckBox12.Enabled = False
-        Me.CheckBox12.Location = New System.Drawing.Point(6, 19)
+        Me.CheckBox12.Location = New System.Drawing.Point(6, 197)
         Me.CheckBox12.Name = "CheckBox12"
         Me.CheckBox12.Size = New System.Drawing.Size(145, 17)
         Me.CheckBox12.TabIndex = 7
@@ -1963,7 +1993,7 @@ Partial Class MgrSetting
         'CheckBox9
         '
         Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(173, 19)
+        Me.CheckBox9.Location = New System.Drawing.Point(6, 19)
         Me.CheckBox9.Name = "CheckBox9"
         Me.CheckBox9.Size = New System.Drawing.Size(71, 17)
         Me.CheckBox9.TabIndex = 0
@@ -6656,7 +6686,10 @@ Partial Class MgrSetting
         '
         'GroupBox25
         '
-        Me.GroupBox25.Controls.Add(Me.CheckBox112)
+        Me.GroupBox25.Controls.Add(Me.NumericUpDown50)
+        Me.GroupBox25.Controls.Add(Me.Label197)
+        Me.GroupBox25.Controls.Add(Me.NumericUpDown49)
+        Me.GroupBox25.Controls.Add(Me.Label196)
         Me.GroupBox25.Controls.Add(Me.ComboBox69)
         Me.GroupBox25.Controls.Add(Me.Label194)
         Me.GroupBox25.Controls.Add(Me.ComboBox62)
@@ -6685,30 +6718,15 @@ Partial Class MgrSetting
         Me.GroupBox25.TabIndex = 4
         Me.GroupBox25.TabStop = False
         '
-        'CheckBox112
-        '
-        Me.CheckBox112.AutoSize = True
-        Me.CheckBox112.Checked = True
-        Me.CheckBox112.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox112.Location = New System.Drawing.Point(173, 199)
-        Me.CheckBox112.Name = "CheckBox112"
-        Me.CheckBox112.Size = New System.Drawing.Size(89, 17)
-        Me.CheckBox112.TabIndex = 118
-        Me.CheckBox112.Text = "Key Ghosting"
-        Me.ToolTip1.SetToolTip(Me.CheckBox112, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
-        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
-        "le in graphics mode.")
-        Me.CheckBox112.UseVisualStyleBackColor = True
-        '
         'ComboBox69
         '
         Me.ComboBox69.FormattingEnabled = True
-        Me.ComboBox69.Items.AddRange(New Object() {"Apple IIe", "Enhanced IIe"})
+        Me.ComboBox69.Items.AddRange(New Object() {"ii", "ii+", "ii_ii+", "iie", "iie_enh"})
         Me.ComboBox69.Location = New System.Drawing.Point(158, 93)
         Me.ComboBox69.Name = "ComboBox69"
         Me.ComboBox69.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox69.TabIndex = 117
-        Me.ComboBox69.Text = "Apple IIe"
+        Me.ComboBox69.Text = "ii_ii+"
         Me.ToolTip1.SetToolTip(Me.ComboBox69, resources.GetString("ComboBox69.ToolTip"))
         '
         'Label194
@@ -6724,8 +6742,8 @@ Partial Class MgrSetting
         '
         Me.ComboBox62.Enabled = False
         Me.ComboBox62.FormattingEnabled = True
-        Me.ComboBox62.Items.AddRange(New Object() {"composite", "rgb", "rgb_tfr", "rgb_alt", "rgb_alt_trf"})
-        Me.ComboBox62.Location = New System.Drawing.Point(158, 224)
+        Me.ComboBox62.Items.AddRange(New Object() {"composite", "rgb", "rgb_tfr", "rgb_alt", "rgb_alt_trf", "rgb_qd", "rgb_qd_tfr", "rgb_video7"})
+        Me.ComboBox62.Location = New System.Drawing.Point(158, 251)
         Me.ComboBox62.Name = "ComboBox62"
         Me.ComboBox62.Size = New System.Drawing.Size(139, 21)
         Me.ComboBox62.TabIndex = 115
@@ -6736,7 +6754,7 @@ Partial Class MgrSetting
         '
         Me.Label178.AutoSize = True
         Me.Label178.Enabled = False
-        Me.Label178.Location = New System.Drawing.Point(6, 227)
+        Me.Label178.Location = New System.Drawing.Point(6, 254)
         Me.Label178.Name = "Label178"
         Me.Label178.Size = New System.Drawing.Size(110, 13)
         Me.Label178.TabIndex = 114
@@ -6938,6 +6956,7 @@ Partial Class MgrSetting
         '
         'GroupBox26
         '
+        Me.GroupBox26.Controls.Add(Me.CheckBox113)
         Me.GroupBox26.Controls.Add(Me.CheckBox109)
         Me.GroupBox26.Controls.Add(Me.CheckBox108)
         Me.GroupBox26.Controls.Add(Me.CheckBox107)
@@ -6973,9 +6992,7 @@ Partial Class MgrSetting
         Me.CheckBox109.Size = New System.Drawing.Size(68, 17)
         Me.CheckBox109.TabIndex = 103
         Me.CheckBox109.Text = "Multiload"
-        Me.ToolTip1.SetToolTip(Me.CheckBox109, "" & Global.Microsoft.VisualBasic.ChrW(9) & "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video b" &
-        "lurrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegib" &
-        "le in graphics mode.")
+        Me.ToolTip1.SetToolTip(Me.CheckBox109, resources.GetString("CheckBox109.ToolTip"))
         Me.CheckBox109.UseVisualStyleBackColor = True
         '
         'CheckBox108
@@ -6996,14 +7013,12 @@ Partial Class MgrSetting
         Me.CheckBox107.AutoSize = True
         Me.CheckBox107.Checked = True
         Me.CheckBox107.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox107.Location = New System.Drawing.Point(133, 221)
+        Me.CheckBox107.Location = New System.Drawing.Point(128, 221)
         Me.CheckBox107.Name = "CheckBox107"
-        Me.CheckBox107.Size = New System.Drawing.Size(165, 17)
+        Me.CheckBox107.Size = New System.Drawing.Size(118, 17)
         Me.CheckBox107.TabIndex = 101
-        Me.CheckBox107.Text = "Enable color video smoothing"
-        Me.ToolTip1.SetToolTip(Me.CheckBox107, "Enable color video smoothing." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reduces vertical stripes without making video bl" &
-        "urrier, at the cost of some pixel irregularities. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "May make small text illegibl" &
-        "e in graphics mode.")
+        Me.CheckBox107.Text = "Correct aspect ratio"
+        Me.ToolTip1.SetToolTip(Me.CheckBox107, "Correct aspect ratio")
         Me.CheckBox107.UseVisualStyleBackColor = True
         '
         'Label163
@@ -7249,6 +7264,59 @@ Partial Class MgrSetting
         Me.CheckBox59.Text = "Per &Game Config"
         Me.CheckBox59.UseVisualStyleBackColor = True
         '
+        'CheckBox113
+        '
+        Me.CheckBox113.AutoSize = True
+        Me.CheckBox113.Checked = True
+        Me.CheckBox113.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox113.Location = New System.Drawing.Point(128, 244)
+        Me.CheckBox113.Name = "CheckBox113"
+        Me.CheckBox113.Size = New System.Drawing.Size(170, 17)
+        Me.CheckBox113.TabIndex = 104
+        Me.CheckBox113.Text = "Enable key ghosting emulation"
+        Me.ToolTip1.SetToolTip(Me.CheckBox113, "Enable key ghosting emulation." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "When enabled, spurious emulated keypresses will" &
+        " be generated " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "when certain combinations of keys are held down simultaneously.")
+        Me.CheckBox113.UseVisualStyleBackColor = True
+        '
+        'NumericUpDown49
+        '
+        Me.NumericUpDown49.DecimalPlaces = 1
+        Me.NumericUpDown49.Increment = New Decimal(New Integer() {1, 0, 0, 65536})
+        Me.NumericUpDown49.Location = New System.Drawing.Point(251, 198)
+        Me.NumericUpDown49.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.NumericUpDown49.Minimum = New Decimal(New Integer() {1, 0, 0, -2147483648})
+        Me.NumericUpDown49.Name = "NumericUpDown49"
+        Me.NumericUpDown49.Size = New System.Drawing.Size(46, 20)
+        Me.NumericUpDown49.TabIndex = 119
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown49, resources.GetString("NumericUpDown49.ToolTip"))
+        '
+        'Label196
+        '
+        Me.Label196.AutoSize = True
+        Me.Label196.Location = New System.Drawing.Point(170, 200)
+        Me.Label196.Name = "Label196"
+        Me.Label196.Size = New System.Drawing.Size(57, 13)
+        Me.Label196.TabIndex = 118
+        Me.Label196.Text = "Sharpness"
+        '
+        'NumericUpDown50
+        '
+        Me.NumericUpDown50.Location = New System.Drawing.Point(251, 224)
+        Me.NumericUpDown50.Maximum = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.NumericUpDown50.Name = "NumericUpDown50"
+        Me.NumericUpDown50.Size = New System.Drawing.Size(46, 20)
+        Me.NumericUpDown50.TabIndex = 121
+        Me.ToolTip1.SetToolTip(Me.NumericUpDown50, resources.GetString("NumericUpDown50.ToolTip"))
+        '
+        'Label197
+        '
+        Me.Label197.AutoSize = True
+        Me.Label197.Location = New System.Drawing.Point(135, 226)
+        Me.Label197.Name = "Label197"
+        Me.Label197.Size = New System.Drawing.Size(110, 13)
+        Me.Label197.TabIndex = 120
+        Me.Label197.Text = "Video smoothing level"
+        '
         'MgrSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -7432,6 +7500,8 @@ Partial Class MgrSetting
         CType(Me.NumericUpDown36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDown34, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown49, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown50, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -8027,5 +8097,11 @@ Partial Class MgrSetting
     Friend WithEvents ComboBox69 As ComboBox
     Friend WithEvents Label194 As Label
     Friend WithEvents CheckBox109 As CheckBox
-    Friend WithEvents CheckBox112 As CheckBox
+    Friend WithEvents ComboBox70 As ComboBox
+    Friend WithEvents Label195 As Label
+    Friend WithEvents CheckBox113 As CheckBox
+    Friend WithEvents NumericUpDown49 As NumericUpDown
+    Friend WithEvents Label196 As Label
+    Friend WithEvents NumericUpDown50 As NumericUpDown
+    Friend WithEvents Label197 As Label
 End Class

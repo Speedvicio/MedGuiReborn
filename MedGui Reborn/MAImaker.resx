@@ -120,6 +120,17 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="ComboBox5.ToolTip" xml:space="preserve">
+    <value># Specify nominal model of Apple II to emulate.
+#
+#  Options: ii ii+ iie iie_enh
+#    ii:  Apple II with 48KiB RAM, Integer BASIC, AppleSoft BASIC ROM card, and Autostart.
+#    ii+: Apple II+ with 64KiB RAM, AppleSoft BASIC, and Autostart.
+#    iie: Apple IIe with 128KiB RAM and DHGR support.
+#    iie_enh: Enhanced Apple IIe with 128KiB RAM and DHGR support.
+#
+#  Default: ii+</value>
+  </data>
   <metadata name="SaveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>116, 17</value>
   </metadata>

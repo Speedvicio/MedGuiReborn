@@ -120,6 +120,15 @@
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
+  <data name="CheckBox109.ToolTip" xml:space="preserve">
+    <value>Enable automatic multiload from archives.
+
+When loading a disk image from an archive(e.g. ZIP file) without a MAI file present, 
+also automatically load all other files with the same extension in the same directory in that archive.</value>
+  </data>
+  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>140, 17</value>
+  </metadata>
   <data name="TrackBar3.ToolTip" xml:space="preserve">
     <value>Desired period size in microseconds.
 
@@ -339,6 +348,25 @@ ipynotxsharper - Sharper version of "ipynotx".
 goat - Simple approximation of a color TV CRT look.
 Intended for fullscreen modes with a vertical resolution of around 1000 to 1500 pixels. 
 Doesn't simulate halation and electron beam energy distribution nuances.</value>
+  </data>
+  <data name="ComboBox70.ToolTip" xml:space="preserve">
+    <value>Input grabbing strategy.
+
+Selects the conditions for and extent of system keyboard and mouse grabbing when input grabbing is toggled on.
+
+Note that regardless of this setting, system keyboard grabbing is temporarily disabled while in the cheat interface, 
+debugger, or netplay console text entry.
+
+    auto - Auto.
+    Grab the system mouse only when an emulated mouse or other device that requires relative ball motion is active, 
+    and grab the system keyboard only when an emulated keyboard is active.
+
+    full - Full.
+    Grab the system mouse and keyboard regardless of whether or not an emulated keyboard or mouse/ball device is active.
+
+    kb_auto - Keyboard auto, mouse regardless of emulated devices.
+
+    mouse_auto - Mouse auto, keyboard regardless of emulated devices.</value>
   </data>
   <data name="CheckBox72.ToolTip" xml:space="preserve">
     <value>When this setting is set to "1", the default, paths to files referenced from files like CUE sheets and PSF rips are checked 
@@ -948,49 +976,64 @@ jpkeyboard - Keyboard (JP)
 Emulated keyboard key state is not updated unless input grabbing(by default, mapped to CTRL+SHIFT+Menu) is toggled on; refer to the main documentation for details.</value>
   </data>
   <data name="ComboBox69.ToolTip" xml:space="preserve">
-    <value>Color decoder matrix.
+    <value>Nominal model of Apple II to emulate.
 
-The matrixes that correspond to the nominal demodulation angles and gains for various ICs are intended to get colors within the ballpark of what consumer-oriented NTSC TVs would display, 
-and won't exactly replicate the colors these ICs would reproduce when fed an Apple II video signal.
+This setting is ignored when using a MAI file.
 
-    custom - Custom
+    ii - Apple II
+    Apple II, with 48KiB RAM, Integer BASIC, AppleSoft BASIC ROM card, and Autostart.
 
-    mednafen - Mednafen
+    ii+ - Apple II+
+    Apple II+, with 64KiB RAM, AppleSoft BASIC, and Autostart.
 
-    la7620 - Sanyo LA7620-like.
+    ii_ii+ - Apple II/II+
+    Apple II/II+, with 64KiB RAM, AppleSoft BASIC, and Autostart; however, 
+    when loading a 13-sector disk image, 
+    48KiB of RAM and an Integer BASIC ROM card are automatically selected.
 
-    cxa2025as_usa - Sony CXA2025AS-like, USA setting
+    iie - Apple IIe
+    Apple IIe with 128KiB RAM and DHGR support.
 
-    cxa2060bs_usa - Sony CXA2060BS-like, USA setting.
-
-    cxa2095s_usa - Sony CXA2095S-like, USA setting.
-
-    cxa2025as_japan - Sony CXA2025AS-like, Japan setting.
-
-    cxa2060bs_japan - Sony CXA2060BS-like, Japan setting.
-
-    cxa2095s_japan - Sony CXA2095S-like, Japan setting.</value>
+    iie_enh - Enhanced Apple IIe
+    Enhanced Apple IIe with 128KiB RAM and DHGR support.</value>
   </data>
   <data name="ComboBox62.ToolTip" xml:space="preserve">
     <value>Video rendering mode.
 
-When an RGB mode is enabled, settings "apple2.video.force_mono", "apple2.video.mixed_text_mono", "apple2.video.mono_lumafilter", 
+When an RGB mode is enabled, settings "apple2.video.postsharp", "apple2.video.force_mono", "apple2.video.mixed_text_mono", "apple2.video.mono_lumafilter", 
 "apple2.video.color_lumafilter", and "apple2.video.color_smooth" are effectively ignored.
+
+When selecting an RGB mode, setting "apple2.shader" to "autoipsharper" is recommended.
 
     composite - Composite
     Internal video dimensions of 584x192.
 
     rgb - RGB
-    Internal video dimensions of 292x192; suitable for use with scalers like hq2x.
+    Internal video dimensions of 292x192 for single-resolution modes, and 584x192 for double-resolution; suitable for use with scalers like hq2x.
 
-    rgb_tfr - RGB, with HGR text fringe reduction.
-    Internal video dimensions of 292x192; suitable for use with scalers like hq2x. Reduced brightness of colored pixels horizontally sandwiched between white pixels in HGR mode.
+    rgb_tfr - RGB, with (D)HGR text fringe reduction.
+    Internal video dimensions of 292x192 for single-resolution modes, and 584x192 for double-resolution; suitable for use with scalers like hq2x. 
+    Reduced brightness of colored pixels horizontally sandwiched between white pixels in (D)HGR mode.
 
     rgb_alt - RGB (alternate algorithm)
     Internal video dimensions of 584x192.
 
-    rgb_alt_tfr - RGB (alternate algorithm), with HGR text fringe reduction.
-    Internal video dimensions of 584x192. Reduced brightness of colored pixels horizontally sandwiched between white pixels in HGR mode.</value>
+    rgb_alt_tfr - RGB (alternate algorithm), with (D)HGR text fringe reduction.
+    Internal video dimensions of 584x192. Reduced brightness of colored pixels horizontally sandwiched between white pixels in (D)HGR mode.
+
+    rgb_qd - RGB, with 1/4 resolution DHGR.
+    Internal video dimensions of 292x192 for single-resolution modes, 584x192 for 80-column text, and 146x192 for DHGR; 
+    suitable for use with scalers like hq2x. Enables palette generation tweak to provides two distinct grays.
+
+    rgb_qd_tfr - RGB, with HGR text fringe reduction and 1/4 resolution DHGR.
+    Internal video dimensions of 292x192 for single-resolution modes, 584x192 for 80-column text, and 146x192 for DHGR; 
+    suitable for use with scalers like hq2x. Reduced brightness of colored pixels horizontally sandwiched between white pixels in HGR mode. 
+    Enables palette generation tweak to provides two distinct grays.
+
+    rgb_video7 - RGB, IIe Video 7-like algorithm.
+    Internal video dimensions of 584x192. Enables palette generation tweak to provides two distinct grays.
+
+    Useful with Sierra AGI games, like "King's Quest" and "Space Quest".</value>
   </data>
   <data name="ComboBox61.ToolTip" xml:space="preserve">
     <value>Color decoder matrix.
@@ -1049,6 +1092,21 @@ and won't exactly replicate the colors these ICs would reproduce when fed an App
   <metadata name="ColorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="NumericUpDown49.ToolTip" xml:space="preserve">
+    <value>Composite color video sharpness.
+
+Positive values will increase perceptual sharpness(and ringing), negative values will blur the image. 
+When a non-zero value is specified, CPU usage will increase due to the continuous extra calculations required.
+
+Note that this filter is applied after composite-&gt;RGB conversion(after the effects of the hue, saturation, 
+brightness, contrast, color luma filter, and color smoothing settings), and in a roughly linear luminance space.</value>
+  </data>
+  <data name="NumericUpDown50.ToolTip" xml:space="preserve">
+    <value>Composite color video smoothing level.
+
+When a non-zero value, reduces vertical stripes in composite video without increasing blurriness, at the cost of some pixel irregularities. 
+Larger values select more-aggressive smoothing. May make small text illegible in graphics mode.</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>56</value>
   </metadata>

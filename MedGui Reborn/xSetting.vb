@@ -61,7 +61,7 @@ Module xSetting
         Select Case LCase(ext)
             Case ".po", ".dsk", ".do", ".woz", ".d13", ".mai", ".hdv"
                 If row.Contains(consoles & ".video.mixed_text_mono ") Then xValue = Trim(Replace(row, consoles & ".video.mixed_text_mono", "")) : MgrSetting.CheckBox108.Checked = CBool(xValue)
-                If row.Contains(consoles & ".video.color_smooth ") Then xValue = Trim(Replace(row, consoles & ".video.color_smooth", "")) : MgrSetting.CheckBox107.Checked = CBool(xValue)
+                If row.Contains(consoles & ".video.correct_aspect ") Then xValue = Trim(Replace(row, consoles & ".video.correct_aspect", "")) : MgrSetting.CheckBox107.Checked = CBool(xValue)
                 If row.Contains(consoles & ".input.port1.joystick.axis_scale ") Then xValue = Trim(Replace(row, consoles & ".input.port1.joystick.axis_scale", "")) : MgrSetting.NumericUpDown41.Value = Val(xValue)
                 If row.Contains(consoles & ".video.brightness ") Then xValue = Trim(Replace(row, consoles & ".video.brightness", "")) : MgrSetting.NumericUpDown29.Value = Val(xValue)
                 If row.Contains(consoles & ".video.contrast ") Then xValue = Trim(Replace(row, consoles & ".video.contrast", "")) : MgrSetting.NumericUpDown31.Value = Val(xValue)
@@ -79,7 +79,10 @@ Module xSetting
                 If row.Contains(consoles & ".input.port2 ") Then xValue = Trim(Replace(row, consoles & ".input.port2", "")) : MgrSetting.ComboBox60.Text = xValue
                 If row.Contains(consoles & ".video.matrix ") Then xValue = Trim(Replace(row, consoles & ".video.matrix", "")) : MgrSetting.ComboBox61.Text = xValue
                 If row.Contains(consoles & ".video.force_mono ") Then xValue = Trim(Replace(row, consoles & ".video.force_mono", "")) : MgrSetting.Label163.Text = (xValue) : MgrSetting.Label163.BackColor = ColorTranslator.FromHtml(xValue) : MgrSetting.Label163.ForeColor = ColorTranslator.FromHtml(xValue)
-                If row.Contains(consoles & ".video.mode ") Then xValue = Trim(Replace(row, consoles & ".video.mode", "")) : MgrSetting.ComboBox62.Text = xValue
+                If row.Contains(consoles & ".video.mode ") Then xValue = Trim(Replace(row, consoles & ".video.mode", "")) : MgrSetting.ComboBox69.Text = xValue
+                If row.Contains(consoles & ".input.kb.ghosting ") Then xValue = Trim(Replace(row, consoles & ".input.kb.ghosting", "")) : MgrSetting.CheckBox113.Checked = CBool(xValue)
+                If row.Contains(consoles & ".multiload ") Then xValue = Trim(Replace(row, consoles & ".multiload", "")) : MgrSetting.CheckBox109.Checked = CBool(xValue)
+                If row.Contains(consoles & ".video.color_smooth ") Then xValue = Trim(Replace(row, consoles & ".video.color_smooth", "")) : MgrSetting.NumericUpDown50.Value = Val(xValue)
                 MgrSetting.tab_index = 21
             Case ".lnx"
                 If row.Contains(consoles & ".lowpass ") Then xValue = Trim(Replace(row, consoles & ".lowpass", "")) : MgrSetting.CheckBox18.Checked = CBool(xValue)
@@ -364,6 +367,7 @@ Module xSetting
         If row.Contains("filesys.path_firmware ") Then xValue = Trim(Replace(row, "filesys.path_firmware", "")) ': firmwarepath = xValue
         If row.Contains("fftoggle ") Then xValue = Trim(Replace(row, "fftoggle", "")) : MgrSetting.CheckBox105.Checked = CBool(xValue)
         If row.Contains("sftoggle ") Then xValue = Trim(Replace(row, "sftoggle", "")) : MgrSetting.CheckBox106.Checked = CBool(xValue)
+        If row.Contains("input.grab.strategy ") Then xValue = Trim(Replace(row, "input.grab.strategy", "")) : MgrSetting.ComboBox70.Text = xValue
 
         If row.Contains("sound ") And row.Contains("snes_faust.spex.sound ") = False Then xValue = Trim(Replace(row, "sound", "")) : MgrSetting.CheckBox1.Checked = CBool(xValue)
         If row.Contains("sound.buffer_time ") Then xValue = Trim(Replace(row, "sound.buffer_time", "")) : MgrSetting.TrackBar1.Value = Val(xValue)
