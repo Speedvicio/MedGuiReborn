@@ -428,6 +428,9 @@ Slower with lower-quality scaling than OpenGL, but if you don't have hardware-ac
         ComboBox6.Items.AddRange(SupportedScrnSizes.GetSizesAsStrings)
         ListServer_reload()
         versave = False
+        
+        Resource.AlreadyReadResources = False
+
         Read_Resource()
         'If My.Computer.Network.IsAvailable = True And NetVerified = False Then check_NetPlayServer()
         F1 = Me
