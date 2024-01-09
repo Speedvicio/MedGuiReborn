@@ -64,6 +64,7 @@
             MedGuiR.Button56.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.Button57.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\help.png"))
             MedGuiR.Button60.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\mia.ico"))
+            MedGuiR.Button61.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\add.png"))
             MedGuiR.PictureBox7.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\update.png"))
             MedGuiR.Button22.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\csv.png"))
 

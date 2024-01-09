@@ -26,8 +26,14 @@ Module xSetting
     Public Sub ReadPSValue()
         set_special_module()
 
-        If IO.File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text)) & "." & p_c & ".cfg")) = True Then
+        If MedGuiR.CheckBox26.Checked = False Then
             MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
+        Else
+            MedConfSpecific = MedGuiR.TextBox26.Text.Trim.Substring(0, MedGuiR.TextBox26.Text.Trim.Length - 4)
+        End If
+
+        If IO.File.Exists(Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text)) & "." & p_c & ".cfg")) = True Then
+            'MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
             ReadXValue()
             MedConfSpecific = Path.Combine(ExtractPath("path_pgconfig"), Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text)) & "." & p_c)
             MgrSetting.CheckBox6.Checked = False
@@ -39,7 +45,7 @@ Module xSetting
                 MedGuiR.RebuilDesync()
                 'File.Delete(MedGuiR.TextBox4.Text & "\" & consoles & ".cfg”)
             Else
-                MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
+                'MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
                 ReadXValue()
                 MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, p_c)
                 MgrSetting.CheckBox59.Checked = False
@@ -47,7 +53,7 @@ Module xSetting
                 MsgBox("Detected a specific console config, global settings will be ignored", vbOKOnly + MsgBoxStyle.Information)
             End If
         Else
-            MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
+            'MedConfSpecific = Path.Combine(MedGuiR.TextBox4.Text, DMedConf)
             MgrSetting.CheckBox59.Checked = False
             MgrSetting.CheckBox6.Checked = False
         End If

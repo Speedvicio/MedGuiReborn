@@ -769,6 +769,11 @@ ErrorHandler:
             save_per_config()
             psc_mex = IO.Path.GetFileNameWithoutExtension(R_RelPath(MedGuiR.TextBox1.Text))
         Else
+            If MedGuiR.CheckBox26.Checked = True Then
+                MsgBox("You cannot modify a custom config. Mednafen file.", MsgBoxStyle.Exclamation + vbOKOnly, "Custom config. file error")
+                versave = True
+                Exit Sub
+            End If
             Dim splitP_C(1) As String
             Mednafen_Save_setting()
             If p_c.Contains("_") Then splitP_C = Split(p_c, "_")

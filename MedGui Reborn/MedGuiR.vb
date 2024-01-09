@@ -455,7 +455,13 @@ Public Class MedGuiR
                 Fmodule = " -force_module " & consoles & tpce
             End If
 
-            Arg = pArg & net & custom & LoadCD & Fmodule & M3UDisk & " " & Chr(34) & R_RelPath(percorso) & Chr(34)
+            Dim OVconfig As String = Nothing
+
+            If CheckBox26.Checked = True And File.Exists(TextBox26.Text) Then
+                OVconfig = " -ovconfig " & Chr(34) & (TextBox26.Text) & Chr(34)
+            End If
+
+            Arg = pArg & net & custom & LoadCD & Fmodule & OVconfig & M3UDisk & " " & Chr(34) & R_RelPath(percorso) & Chr(34)
 
             'VerifyPerSystem()
 
@@ -3357,6 +3363,19 @@ MisScan:
             Process.Start(Path.Combine(Application.StartupPath, "MedGuiR CSV Creator.exe"))
         Else
             MsgBox("MedGuiR CSV Creator not detected", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Missing MedGuiR CSV Creator")
+        End If
+    End Sub
+
+    Private Sub Button61_Click(sender As Object, e As EventArgs) Handles Button61.Click
+        Dim Cdlg As OpenFileDialog = New OpenFileDialog()
+        Cdlg.Title = "Select global override settings from specified file"
+
+        Cdlg.Filter = "Custom Mednafen configuration file (*.cfg)|*.cfg"
+        Cdlg.RestoreDirectory = True
+        If Cdlg.ShowDialog() = DialogResult.OK Then
+            TextBox26.Text = Cdlg.FileName
+        Else
+            Exit Sub
         End If
     End Sub
 

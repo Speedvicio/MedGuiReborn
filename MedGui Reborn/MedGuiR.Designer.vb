@@ -23,9 +23,9 @@ Partial Class MedGuiR
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MedGuiR))
         Me.MainGrid = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -219,7 +219,6 @@ Partial Class MedGuiR
         Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.CheckBox6 = New System.Windows.Forms.CheckBox()
         Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -429,6 +428,9 @@ Partial Class MedGuiR
         Me.XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SucaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckBox26 = New System.Windows.Forms.CheckBox()
+        Me.Button61 = New System.Windows.Forms.Button()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
         CType(Me.MainGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -483,23 +485,23 @@ Partial Class MedGuiR
         Me.MainGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
         Me.MainGrid.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MainGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Hash, Me.Index})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MainGrid.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MainGrid.DefaultCellStyle = DataGridViewCellStyle8
         Me.MainGrid.Location = New System.Drawing.Point(11, 37)
         Me.MainGrid.MultiSelect = False
         Me.MainGrid.Name = "MainGrid"
         Me.MainGrid.ReadOnly = True
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        Me.MainGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.PaleGoldenrod
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        Me.MainGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.MainGrid.RowTemplate.ReadOnly = True
         Me.MainGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MainGrid.Size = New System.Drawing.Size(439, 304)
@@ -507,9 +509,9 @@ Partial Class MedGuiR
         '
         'Column1
         '
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle7
         Me.Column1.HeaderText = "Rom Name"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
@@ -763,9 +765,9 @@ Partial Class MedGuiR
         'Button21
         '
         Me.Button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button21.Location = New System.Drawing.Point(221, 139)
+        Me.Button21.Location = New System.Drawing.Point(222, 134)
         Me.Button21.Name = "Button21"
-        Me.Button21.Size = New System.Drawing.Size(23, 23)
+        Me.Button21.Size = New System.Drawing.Size(20, 20)
         Me.Button21.TabIndex = 36
         Me.ToolTip1.SetToolTip(Me.Button21, "Restore a Mednafen Configuration File")
         Me.Button21.UseVisualStyleBackColor = True
@@ -773,9 +775,9 @@ Partial Class MedGuiR
         'Button20
         '
         Me.Button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button20.Location = New System.Drawing.Point(221, 112)
+        Me.Button20.Location = New System.Drawing.Point(196, 134)
         Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(23, 23)
+        Me.Button20.Size = New System.Drawing.Size(20, 20)
         Me.Button20.TabIndex = 33
         Me.ToolTip1.SetToolTip(Me.Button20, "Backup current Mednafen Configuration File")
         Me.Button20.UseVisualStyleBackColor = True
@@ -1344,7 +1346,7 @@ Partial Class MedGuiR
         'CheckBox17
         '
         Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.Location = New System.Drawing.Point(6, 107)
+        Me.CheckBox17.Location = New System.Drawing.Point(6, 133)
         Me.CheckBox17.Name = "CheckBox17"
         Me.CheckBox17.Size = New System.Drawing.Size(61, 17)
         Me.CheckBox17.TabIndex = 44
@@ -1356,7 +1358,7 @@ Partial Class MedGuiR
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(6, 128)
+        Me.CheckBox3.Location = New System.Drawing.Point(6, 153)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(59, 17)
         Me.CheckBox3.TabIndex = 43
@@ -1391,9 +1393,9 @@ Partial Class MedGuiR
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"NoIntro"})
-        Me.ComboBox1.Location = New System.Drawing.Point(95, 58)
+        Me.ComboBox1.Location = New System.Drawing.Point(114, 58)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(91, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(72, 21)
         Me.ComboBox1.TabIndex = 28
         Me.ComboBox1.Text = "NoIntro"
         Me.ToolTip1.SetToolTip(Me.ComboBox1, "Select NoIntro/Custom Dat")
@@ -1612,7 +1614,7 @@ Partial Class MedGuiR
         Me.CheckBox21.AutoSize = True
         Me.CheckBox21.Checked = True
         Me.CheckBox21.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox21.Location = New System.Drawing.Point(73, 128)
+        Me.CheckBox21.Location = New System.Drawing.Point(176, 155)
         Me.CheckBox21.Name = "CheckBox21"
         Me.CheckBox21.Size = New System.Drawing.Size(66, 17)
         Me.CheckBox21.TabIndex = 47
@@ -2240,7 +2242,7 @@ Partial Class MedGuiR
         'CheckBox23
         '
         Me.CheckBox23.AutoSize = True
-        Me.CheckBox23.Location = New System.Drawing.Point(6, 149)
+        Me.CheckBox23.Location = New System.Drawing.Point(93, 155)
         Me.CheckBox23.Name = "CheckBox23"
         Me.CheckBox23.Size = New System.Drawing.Size(77, 17)
         Me.CheckBox23.TabIndex = 49
@@ -2307,6 +2309,9 @@ Partial Class MedGuiR
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button61)
+        Me.Panel1.Controls.Add(Me.TextBox26)
+        Me.Panel1.Controls.Add(Me.CheckBox26)
         Me.Panel1.Controls.Add(Me.CheckBox23)
         Me.Panel1.Controls.Add(Me.Label57)
         Me.Panel1.Controls.Add(Me.CheckBox21)
@@ -2319,7 +2324,6 @@ Partial Class MedGuiR
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button44)
         Me.Panel1.Controls.Add(Me.Button21)
-        Me.Panel1.Controls.Add(Me.Label33)
         Me.Panel1.Controls.Add(Me.Label32)
         Me.Panel1.Controls.Add(Me.Button20)
         Me.Panel1.Controls.Add(Me.PictureBox3)
@@ -2436,23 +2440,14 @@ Partial Class MedGuiR
         Me.CheckBox7.Text = "Hide &Console"
         Me.CheckBox7.UseVisualStyleBackColor = True
         '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(146, 144)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(69, 13)
-        Me.Label33.TabIndex = 35
-        Me.Label33.Text = "Restore Conf"
-        '
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(145, 117)
+        Me.Label32.Location = New System.Drawing.Point(150, 138)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(69, 13)
+        Me.Label32.Size = New System.Drawing.Size(40, 13)
         Me.Label32.TabIndex = 34
-        Me.Label32.Text = "Backup Conf"
+        Me.Label32.Text = "Config."
         '
         'Label6
         '
@@ -2483,9 +2478,9 @@ Partial Class MedGuiR
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(95, 85)
+        Me.TextBox4.Location = New System.Drawing.Point(114, 85)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(120, 20)
+        Me.TextBox4.Size = New System.Drawing.Size(101, 20)
         Me.TextBox4.TabIndex = 26
         '
         'Label9
@@ -4214,6 +4209,34 @@ Partial Class MedGuiR
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(180, 22)
         '
+        'CheckBox26
+        '
+        Me.CheckBox26.AutoSize = True
+        Me.CheckBox26.Location = New System.Drawing.Point(6, 113)
+        Me.CheckBox26.Name = "CheckBox26"
+        Me.CheckBox26.Size = New System.Drawing.Size(102, 17)
+        Me.CheckBox26.TabIndex = 50
+        Me.CheckBox26.Text = "&Override Config."
+        Me.ToolTip1.SetToolTip(Me.CheckBox26, "Load global override settings from specified file")
+        Me.CheckBox26.UseVisualStyleBackColor = True
+        '
+        'Button61
+        '
+        Me.Button61.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button61.Location = New System.Drawing.Point(221, 109)
+        Me.Button61.Name = "Button61"
+        Me.Button61.Size = New System.Drawing.Size(23, 23)
+        Me.Button61.TabIndex = 52
+        Me.ToolTip1.SetToolTip(Me.Button61, "Select Mednafen global override settings file.")
+        Me.Button61.UseVisualStyleBackColor = True
+        '
+        'TextBox26
+        '
+        Me.TextBox26.Location = New System.Drawing.Point(114, 111)
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(101, 20)
+        Me.TextBox26.TabIndex = 51
+        '
         'MedGuiR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4352,7 +4375,6 @@ Partial Class MedGuiR
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Button44 As System.Windows.Forms.Button
     Friend WithEvents Button21 As System.Windows.Forms.Button
-    Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label
     Friend WithEvents Button20 As System.Windows.Forms.Button
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
@@ -4701,4 +4723,7 @@ Partial Class MedGuiR
     Friend WithEvents Hash As DataGridViewTextBoxColumn
     Friend WithEvents Index As DataGridViewTextBoxColumn
     Friend WithEvents Button22 As Button
+    Friend WithEvents Button61 As Button
+    Friend WithEvents TextBox26 As TextBox
+    Friend WithEvents CheckBox26 As CheckBox
 End Class
