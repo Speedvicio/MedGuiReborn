@@ -111,14 +111,14 @@ Module scan
 
     Public Sub estensione()
         Select Case LCase(ext)
-            Case ".21", ".30", ".31", ".sd0"
+            Case ".21", ".30", ".31", ".sd0", ".6" ',".ic13", ".4", ".5",".7"
                 If Val(vmedClear) > 12800 Then
                     consoles = "sasplay"
                     gif = "arcade"
                     real_name = "Sega Arcade SCSP Player"
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
                 End If
-            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".ic8", ".u1", ".ic13", ".nv"
+            Case ".1", ".2", ".3", ".ic8", ".ic2", ".u1", ".nv", ".stv"
                 If Val(vmedClear) > 12900 Then
                     consoles = "ss"
                     gif = "arcade"

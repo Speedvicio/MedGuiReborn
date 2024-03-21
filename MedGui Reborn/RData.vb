@@ -69,10 +69,10 @@ Boing:
                                     country = Replace(romname, CleanRom(romname), "")
                                     romname = CleanRom(romname)
                                 End If
-                            Case ".21", ".30", ".31", ".sd0"
+                            Case ".21", ".30", ".31", ".sd0", ".6" ',".ic13", ".4", ".5",".7"
                                 ReadArcade("sasplay.txt")
                                 country = "(Soundtrack)"
-                            Case ".1", ".2", ".3", ".4", ".5", ".6", ".7", ".ic8", ".u1", ".ic13", ".nv"
+                            Case ".1", ".2", ".3", ".ic2", ".ic8", ".u1", ".nv", ".stv"
                                 ReadArcade("STV.txt")
                                 country = Replace(romname, CleanRom(romname), "")
                                 romname = CleanRom(romname)

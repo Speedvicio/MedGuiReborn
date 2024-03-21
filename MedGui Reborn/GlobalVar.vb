@@ -204,7 +204,7 @@ Module GlobalVar
 
         tProcess = "mednafen"
         wDir = MedGuiR.TextBox4.Text
-        Arg = Nothing
+        Arg = "COPYING" 'Nothing
         StartProcess()
 
 ReCheckConfig:

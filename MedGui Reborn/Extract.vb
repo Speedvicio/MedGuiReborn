@@ -197,14 +197,16 @@ HERE:                       If checkpismo = False Then
 
                 If Regex.IsMatch(LCase(ext), ".*([\d]+).*") = True Then
                     Select Case LCase(ext)
-                        Case ".21", ".30", ".31", ".sd0"
-                            If ArchiveFileInfo.FileName.Contains("mpr-") Or ArchiveFileInfo.FileName.Contains("epr-") Then
+                        Case ".21", ".30", ".31", ".sd0", ".6" ',".ic13", ".4", ".5",".7"
+                            If ArchiveFileInfo.FileName.StartsWith("mpr-") Or ArchiveFileInfo.FileName.StartsWith("epr-") Or ArchiveFileInfo.FileName.StartsWith("opr-") Then
                                 consoles = "sasplay"
-                                LMain()
-                                Exit Sub
+                            Else
+                                consoles = "ss"
                             End If
-                        Case ".1", ".2", ".3", ".u1", ".ic8", ".ic13", ".nv"
-                            If ArchiveFileInfo.FileName.Contains("mpr") Or ArchiveFileInfo.FileName.Contains("epr") Or ArchiveFileInfo.FileName.Contains("gfx") Then
+                            LMain()
+                            Exit Sub
+                        Case ".1", ".2", ".3", ".u1", ".ic2", ".ic8", ".nv", ".stv"
+                            If ArchiveFileInfo.FileName.StartsWith("mpr") Or ArchiveFileInfo.FileName.StartsWith("epr") Or ArchiveFileInfo.FileName.Contains("gfx") Then
                                 consoles = "ss"
                                 LMain()
                                 Exit Sub
@@ -276,7 +278,7 @@ HERE:                       If checkpismo = False Then
                                 'test
 
                             End If
-                        ElseIf Regex.IsMatch(ArchiveFileInfo.FileName, ".*([\d]+).*") = True And ArchiveFileInfo.FileName.Contains("ic") Then
+                        ElseIf ArchiveFileInfo.FileName.StartsWith("ic") And Regex.IsMatch(ArchiveFileInfo.FileName, ".*([\d]+).*") = True Then
                             consoles = "ss"
                             fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\CUE.dat"
                             real_name = "Sega Titan Video"
@@ -284,7 +286,8 @@ HERE:                       If checkpismo = False Then
                             skipother = True
                             Exit Sub
                         Else
-                            fileTXT = ""
+                            'Continue For
+                            'fileTXT = ""
                         End If
                     Case ".mai"
                         consoles = "apple2"
