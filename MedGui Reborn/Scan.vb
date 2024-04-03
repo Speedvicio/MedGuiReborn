@@ -425,20 +425,28 @@ Module scan
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                 End If
             Case ".chd"
-                If File.Exists(MedExtra & "Plugins\chdman.exe") Then
+                If emu4crt = False Then
+                    If File.Exists(MedExtra & "Plugins\chdman.exe") Then
 
-                    If skipother = False Then
-                        If stopiso = False Then
-                            stopscan = True
-                            unCHD()
+                        If skipother = False Then
+                            If stopiso = False Then
+                                stopscan = True
+                                unCHD()
+                            End If
                         End If
+                    Else
+                        MsgBox("I can't extract .CHD, missing chdman.exe into Plugins folder", MsgBoxStyle.Exclamation + vbOKOnly, "Missing chdman...")
+                        consoles = ""
+                        ext = ""
+                        fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                     End If
                 Else
-                    MsgBox("I can't extract .CHD, missing chdman.exe into Plugins folder", MsgBoxStyle.Exclamation + vbOKOnly, "Missing chdman...")
-                    consoles = ""
-                    ext = ""
+                    consoles = "generic"
+                    gif = "game"
+                    real_name = "Generic CHD compressed file"
                     fileTXT = MedExtra & "DATs\" & MedGuiR.ComboBox1.Text & "\none.dat"
                 End If
+
             Case ".zst"
                 If Val(vmedClear) > 12710 Then
                     consoles = "generic"

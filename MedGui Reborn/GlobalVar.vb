@@ -4,7 +4,7 @@ Imports System.Net
 Module GlobalVar
 
     Public Startup_Path, UCInick, UCIserver, UCIport, UCIchannel, vmedClear, MedShader, UpdateServer, MGRH,
-    JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf, SScart As String, forMax, stopiso, noftp, SMedClient, D_UCI As Boolean,
+    JUP, JDOWN, JLEFT, JRIGHT, JSTART, JSELECT, JA, JX, JY, JB, JL, JR, p_c, x864, DMedConf, SScart As String, forMax, stopiso, noftp, SMedClient, D_UCI, emu4crt As Boolean,
     TypeOS As String = UCase(My.Computer.Info.OSFullName)
 
     Public NewAPI As Boolean = True
@@ -256,8 +256,19 @@ ReCheckConfig:
             Message.ShowDialog()
             MedGuiR.Close()
         Else
+            If detect_module("video.resolution_switch") = True Then
+                emu4crt = True
+            Else
+                emu4crt = False
+            End If
             vmedFull = Replace(vmedFull, "-UNSTABLE", "-U")
-            MedGuiR.Label8.Text = "Mednafen v." & vmedFull
+            Dim T_exe As String
+            If emu4crt = True Then
+                T_exe = "EMU4CRT"
+            Else
+                T_exe = "Mednafen"
+            End If
+            MedGuiR.Label8.Text = T_exe & " v." & vmedFull
             MedGuiR.Label57.Text = x864
         End If
 
