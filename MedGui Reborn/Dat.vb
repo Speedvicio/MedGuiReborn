@@ -1,4 +1,6 @@
 ﻿Imports System.IO
+Imports System.Xml
+Imports GenericParsing
 
 Module Dat
 
@@ -29,6 +31,31 @@ Module Dat
             sw.Dispose()
             sw.Close()
         End Using
+    End Sub
+
+    Public Sub ConvDat(dat As String)
+
+        Dim xmldoc As New XmlDocument()
+        xmldoc.Load(dat)
+        Dim nodes As XmlNodeList = xmldoc.DocumentElement.SelectNodes("game")
+        MDM.Enabled = False
+        Using sw As StreamWriter = File.AppendText(MedExtra & "\DATs\MDM\" & MDM.ComboBox1.Text & ".dat")
+            For Each node As XmlNode In nodes
+                sw.WriteLine(vbCrLf & "game (")
+                sw.WriteLine(vbTab & "name " & Chr(34) & node.Attributes("name").InnerText & Chr(34))
+                sw.WriteLine(vbTab & "description " & Chr(34) & node.FirstChild.InnerText & Chr(34))
+                Dim Xname = (node.LastChild.Attributes("name").InnerText)
+                Dim Xcrc = (node.LastChild.Attributes("crc").InnerText)
+                Dim Xmd5 = (node.LastChild.Attributes("md5").InnerText)
+                Dim Xsha1 = (node.LastChild.Attributes("sha1").InnerText)
+                sw.WriteLine(vbTab & "rom ( name " & Chr(34) & Xname & Chr(34) & " crc " & Xcrc & " md5 " & Xmd5 & " sha1 " & Xsha1 & " )")
+                sw.WriteLine(")")
+            Next
+            sw.Dispose()
+            sw.Close()
+        End Using
+        MsgBox("Dat Created!", vbOKOnly + MsgBoxStyle.Information)
+        MDM.Enabled = True
     End Sub
 
 End Module

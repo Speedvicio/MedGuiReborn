@@ -40,6 +40,7 @@ Partial Class MDM
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,9 +56,9 @@ Partial Class MDM
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(88, 14)
+        Me.ComboBox1.Location = New System.Drawing.Point(56, 14)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(192, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(166, 21)
         Me.ComboBox1.Sorted = True
         Me.ComboBox1.TabIndex = 1
         Me.ToolTip1.SetToolTip(Me.ComboBox1, "Filter rom by console system (empty value = all extensions")
@@ -65,7 +66,7 @@ Partial Class MDM
         'Button1
         '
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Location = New System.Drawing.Point(228, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(23, 23)
         Me.Button1.TabIndex = 2
@@ -86,7 +87,7 @@ Partial Class MDM
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(41, 17)
+        Me.Label1.Location = New System.Drawing.Point(9, 17)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(41, 13)
         Me.Label1.TabIndex = 4
@@ -213,11 +214,23 @@ Partial Class MDM
         Me.ToolTip1.ReshowDelay = 0
         Me.ToolTip1.ShowAlways = True
         '
+        'Button4
+        '
+        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button4.Enabled = False
+        Me.Button4.Location = New System.Drawing.Point(257, 12)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(23, 23)
+        Me.Button4.TabIndex = 6
+        Me.ToolTip1.SetToolTip(Me.Button4, "Select a Dat file to convert")
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'MDM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(538, 276)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
@@ -252,4 +265,5 @@ Partial Class MDM
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Button4 As Button
 End Class

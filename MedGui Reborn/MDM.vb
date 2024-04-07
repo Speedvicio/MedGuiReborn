@@ -130,6 +130,19 @@ Public Class MDM
         MedGuiR.list_DATs()
     End Sub
 
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+
+        fd.Title = "Select a Dat to convert"
+        fd.Filter = "Dat files (*.dat)|*.dat"
+        fd.FilterIndex = 2
+        fd.RestoreDirectory = True
+
+        If fd.ShowDialog() = DialogResult.OK Then
+            ConvDat(fd.FileName)
+        End If
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Icon = gIcon
         cleaning()
@@ -160,6 +173,11 @@ Public Class MDM
             extension()
             MDMoperations = "populate"
             scans()
+        End If
+        If ComboBox1.Text <> "" Then
+            Button4.Enabled = True
+        Else
+            Button4.Enabled = False
         End If
     End Sub
 

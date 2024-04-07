@@ -194,6 +194,7 @@
             MedGuiR.PreviousToolStripMenuItem.Image = flip
 
             MDM.Button1.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\folder.png"))
+            MDM.Button4.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\dat.png"))
 
             CPM.Button5.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\save.png"))
             CPM.Button6.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\delete.png"))
