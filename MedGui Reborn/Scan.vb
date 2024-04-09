@@ -735,20 +735,18 @@ Module scan
         Dim subdirectoryEntries As String() = Directory.GetDirectories(root)
         If subdirectoryEntries.Length > 0 Then
 
-            Dim countallfiles As Integer = 0
+            Dim countallfiles As Integer = Directory.GetFiles(root, "*.*").Length
             For i = 0 To subdirectoryEntries.Length - 1
                 Dim fcount As Integer = Directory.GetFiles(subdirectoryEntries(i).ToString & "\", "*.*", SearchOption.AllDirectories).Length
                 countallfiles = countallfiles + fcount
-
-                If countallfiles = 0 Then
-                    MsgBox("No files founded in " & root & " Folder...", vbInformation + vbOKOnly)
-                    MedGuiR.MainGrid.Rows.Clear()
-                    TempFolder = ""
-                    Exit Sub
-                Else
-                    Exit For
-                End If
             Next
+
+            If countallfiles = 0 Then
+                MsgBox("No files founded in " & root & " Folder...", vbInformation + vbOKOnly)
+                MedGuiR.MainGrid.Rows.Clear()
+                TempFolder = ""
+                Exit Sub
+            End If
 
             If MedGuiR.FirstStart = True Then Exit Sub
 
