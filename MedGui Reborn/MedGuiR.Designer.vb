@@ -3582,7 +3582,7 @@ Partial Class MedGuiR
         '
         Me.AdvancedMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartGameToolStripMenuItem, Me.NetPlayToolStripMenuItem, Me.ToolStripSeparator8, Me.AdvancedSettingToolStripMenuItem, Me.ToolStripSeparator11, Me.MedPadToolStripMenuItem, Me.ToolStripSeparator6, Me.BCKPToolStripMenuItem, Me.ToolStripSeparator13, Me.IPSToolStripMenuItem, Me.RIPSToolStripMenuItem, Me.RSBIToolStripMenuItem, Me.ToolStripSeparator10, Me.CheatToolStripMenuItem, Me.ToolStripSeparator14, Me.ADVManageToolStripMenuItem, Me.ToolStripSeparator22, Me.RenameEntryStripMenuItem, Me.AddToFavoritesToolStripMenuItem, Me.RemoveFromFavoritesToolStripMenuItem, Me.CleanEntriesMenuItem1, Me.ToolStripSeparator7, Me.ImportFromFile, Me.AddShortuctToDesktopToolStripMenuItem, Me.ToolStripSeparator9, Me.FormToolStripMenuItem, Me.GridToolStripMenuItem, Me.ResetToolStripMenuItem, Me.ToolStripSeparator12, Me.mMetroMed, Me.ToolStripSeparator15, Me.TestPCToolStripMenuItem, Me.ToolStripSeparator16, Me.AboutToolStripMenuItem})
         Me.AdvancedMenu.Name = "AdvancedMenu"
-        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 560)
+        Me.AdvancedMenu.Size = New System.Drawing.Size(209, 582)
         '
         'StartGameToolStripMenuItem
         '
@@ -3762,7 +3762,7 @@ Partial Class MedGuiR
         Me.CleanEntriesMenuItem1.Name = "CleanEntriesMenuItem1"
         Me.CleanEntriesMenuItem1.Size = New System.Drawing.Size(208, 22)
         Me.CleanEntriesMenuItem1.Text = "Clean &Bad entries"
-        Me.CleanEntriesMenuItem1.ToolTipText = "Clean entries from list"
+        Me.CleanEntriesMenuItem1.ToolTipText = "Clean entries from list using criteria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Example: (USA)+(Alt)"
         '
         'ToolStripSeparator7
         '

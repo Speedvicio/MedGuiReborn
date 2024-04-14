@@ -300,13 +300,13 @@ SKIP_LIST:
     End Sub
 
     Public Function CleanBadEntries(filter As String)
-        Dim CleanFilter() As String = LCase(filter).Split("*")
+        Dim CleanFilter() As String = LCase(filter).Split("+")
 REDO:
         Dim initialrow As Integer = MedGuiR.MainGrid.Rows.Count
 
         For Each dr As DataGridViewRow In MedGuiR.MainGrid.Rows
             For i = 0 To CleanFilter.Length - 1
-                If LCase(dr.Cells(2).Value.ToString) = CleanFilter(i).Trim Then MedGuiR.MainGrid.Rows.Remove(dr)
+                If LCase(dr.Cells(2).Value.ToString).Contains(CleanFilter(i).Trim) Then MedGuiR.MainGrid.Rows.Remove(dr) : i = CleanFilter.Length - 1
             Next
         Next
         Dim endrow As Integer = MedGuiR.MainGrid.Rows.Count

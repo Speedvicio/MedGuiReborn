@@ -3351,10 +3351,14 @@ MisScan:
     End Sub
 
     Private Sub CleanEntriesMenuItem1_Click(sender As Object, e As EventArgs) Handles CleanEntriesMenuItem1.Click
-        Dim filter_e As String = InputBox("Enter criteria for removing lines separated by *" & vbCrLf &
- "Example: (Taiwan) (Unl)*(USA) (Proto 2)", "Select filter for list clean")
-        If filter_e = "" Then Exit Sub
-        CleanBadEntries(filter_e)
+        Dim filter_e As String = InputBox("Enter criteria for removing lines, you can use + for multiple criteria" & vbCrLf &
+ "Example: (Taiwan)+(Proto 2)", "Select filter for list clean", "(Unl)+(Alt)+(Alt 1)+(Alt 2)+(Proto)+(Proto 1)+(Proto 2)+(Beta)+(Beta 1)+(Program)")
+        If filter_e.Trim = "" And filter_e.Trim.Contains("(") = False And filter_e.Trim.Contains(")") = False Then
+            MsgBox("Criteria must be in parentheses" & vbCrLf &
+ "Example: (Alt 2)", MsgBoxStyle.Exclamation + MsgBoxStyle.OkOnly, "Selected bad filter")
+            Exit Sub
+        End If
+        CleanBadEntries(filter_e.Trim)
         SaveGridDataInFile()
     End Sub
 
