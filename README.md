@@ -2,9 +2,9 @@
 
 **MedGui Reborn** ia a Windows Front-End/Gui for [Mednafen](http://mednafen.fobby.net/) multi-system emulator.
 <p align="center">
-<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/MedGui%20Reborn%20main.jpg/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/MedGui%20Reborn%20main.jpg/1" heigth="200" /></a><br><br>
-<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/2.jpg/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/2.jpg/1" heigth="200" /></a><br><br>
-<a href="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/pic2.jpg/1"><img src="https://a.fsdn.com/con/app/proj/medguireborn/screenshots/pic2.jpg/1" heigth="200" /></a><br><br>
+<a href="https://sourceforge.net/p/medguireborn/screenshot/MedGui%20Reborn%20main-441a0d94.jpg"><img src="https://sourceforge.net/p/medguireborn/screenshot/MedGui%20Reborn%20main-441a0d94.jpg" heigth="200" /></a><br><br>
+<a href="https://sourceforge.net/p/medguireborn/screenshot/2-49391418.jpg"><img src="https://sourceforge.net/p/medguireborn/screenshot/2-49391418.jpg" heigth="200" /></a><br><br>
+<a href="https://sourceforge.net/p/medguireborn/screenshot/pic2-57a72b1a.jpg"><img src="https://sourceforge.net/p/medguireborn/screenshot/pic2-57a72b1a.jpg" heigth="200" /></a><br><br>
 </p>
 ### Video Tuttorial
 
