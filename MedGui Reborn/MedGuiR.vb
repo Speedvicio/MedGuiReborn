@@ -648,8 +648,9 @@ Public Class MedGuiR
     Private Sub rec()
         'Record
         Dim mrec, srec As String
-        If Button11.BackColor = Color.Red Then multimedia = MedExtra & "Media\Audio\" & romName & ".wav" : ver_rec() : srec = " -soundrecord " & Chr(34) & MedExtra & "Media\Audio\" & romName & ".wav" & Chr(34) Else srec = ""
-        If Button12.BackColor = Color.Red Then multimedia = MedExtra & "Media\Movie\" & romName & ".mov" : ver_rec() : mrec = " -qtrecord " & Chr(34) & MedExtra & "Media\Movie\" & romName & ".mov" & Chr(34) Else mrec = ""
+
+        If Button11.BackColor = Color.Red Then multimedia = Chr(34) & MedExtra & "Media\Audio\" & MainGrid.CurrentRow.Cells(5).Value() & "\" & romName & ".wav" & Chr(34) : ver_rec() : srec = " -soundrecord " & Chr(34) & MedExtra & "Media\Audio\" & MainGrid.CurrentRow.Cells(5).Value() & "\" & romName & ".wav" & Chr(34) Else srec = ""
+        If Button12.BackColor = Color.Red Then multimedia = Chr(34) & MedExtra & "Media\Movie\" & MainGrid.CurrentRow.Cells(5).Value() & "\" & romName & ".mov" & Chr(34) : ver_rec() : mrec = " -qtrecord " & Chr(34) & MedExtra & "Media\Movie\" & MainGrid.CurrentRow.Cells(5).Value() & "\" & romName & ".mov" & Chr(34) Else mrec = ""
 
         '" -qtrecord.vcodec " & MgrSetting.ComboBox4.Text & " -qtrecord.h_double_threshold " & MgrSetting.TrackBar5.Value & " -qtrecord.w_double_threshold " & MgrSetting.TrackBar4.Value &
 
@@ -1152,7 +1153,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 

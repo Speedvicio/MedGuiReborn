@@ -1,4 +1,5 @@
-﻿Imports System.Net
+﻿Imports System.IO
+Imports System.Net
 
 Module BoxArt
     Dim webimagelenght As Integer
@@ -27,13 +28,13 @@ Module BoxArt
                         End If
                     Next
                 Case "cue"
-                    Dim FSI1 As New System.IO.FileInfo(Replace(MedGuiR.MainGrid.CurrentRow.Cells(4).Value(), System.IO.Path.GetExtension(percorso), ".bin"))
+                    Dim FSI1 As New FileInfo(Replace(MedGuiR.MainGrid.CurrentRow.Cells(4).Value(), Path.GetExtension(percorso), ".bin"))
                     If (FSI1.Exists) = True Then drom = FSI1.Length.ToString
                 Case "ccd"
-                    Dim FSI1 As New System.IO.FileInfo(Replace(MedGuiR.MainGrid.CurrentRow.Cells(4).Value(), System.IO.Path.GetExtension(percorso), ".img"))
+                    Dim FSI1 As New FileInfo(Replace(MedGuiR.MainGrid.CurrentRow.Cells(4).Value(), Path.GetExtension(percorso), ".img"))
                     If (FSI1.Exists) = True Then drom = FSI1.Length.ToString
                 Case Else
-                    Dim FSI1 As New System.IO.FileInfo(MedGuiR.MainGrid.CurrentRow.Cells(4).Value())
+                    Dim FSI1 As New FileInfo(MedGuiR.MainGrid.CurrentRow.Cells(4).Value())
                     If (FSI1.Exists) = True Then drom = FSI1.Length.ToString
             End Select
 
@@ -42,7 +43,7 @@ Module BoxArt
             If dimension < 1024 Then size = " Kilobit"
             If dimension >= 1024 Then dimension = (dimension / 1024).ToString : size = " Megabit"
 
-            Select Case LCase(System.IO.Path.GetExtension(percorso))
+            Select Case LCase(Path.GetExtension(percorso))
                 Case ".mai"
                     MedGuiR.PictureBox2.Load(MedExtra & "\Resource\Gui\mai.png")
                     MedGuiR.ToolTip1.SetToolTip(MedGuiR.PictureBox2, "Apple II+ MAI File")
@@ -78,20 +79,25 @@ Module BoxArt
             MedGuiR.Label3.Text = "Version: " & Replace(MedGuiR.MainGrid.CurrentRow.Cells(2).Value(), ".", "")
             MedGuiR.Label4.Text = "No-Intro Status: " & MedGuiR.MainGrid.CurrentRow.Cells(3).Value()
             MedGuiR.Label5.Text = "Size: " & dimension & size
+
+            If Directory.Exists(Path.Combine(MedExtra & "Media\Movie\", MedGuiR.MainGrid.CurrentRow.Cells(5).Value())) = False Then
+                Directory.CreateDirectory(Path.Combine(MedExtra & "Media\Movie\", MedGuiR.MainGrid.CurrentRow.Cells(5).Value()))
+            End If
+
             pathimage = (MedExtra & "BoxArt\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & rn & ".png")
             snap = (MedExtra & "Snaps\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\CRC_Snaps\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(8).Value()) & ".png")
             title = (MedExtra & "Snaps\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\CRC_Titles\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(8).Value()) & ".png")
             'GC.Collect()
             MedGuiR.PictureBox1.Height = 149
-            If System.IO.File.Exists(pathimage) = True Then
+            If File.Exists(pathimage) = True Then
                 MedGuiR.PictureBox1.Load(pathimage)
-            ElseIf System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
+            ElseIf Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
                 SearchScrape()
             Else
                 EmptyBoxart(MedGuiR.PictureBox1)
             End If
 
-            If System.IO.File.Exists(snap) = True Then
+            If File.Exists(snap) = True Then
                 MedGuiR.PictureBox1.Height = 97
                 MedGuiR.PictureBox5.Load(snap)
             Else
@@ -127,10 +133,10 @@ Module BoxArt
         ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
 
         Dim dimg As Integer
-        If IO.File.Exists(pathimage) = False Then
+        If File.Exists(pathimage) = False Then
             dimg = 0
         Else
-            Dim infoReader As System.IO.FileInfo
+            Dim infoReader As FileInfo
             infoReader = My.Computer.FileSystem.GetFileInfo(pathimage)
             dimg = Val(infoReader.Length)
         End If
@@ -149,7 +155,7 @@ Module BoxArt
         End If
 
         If webimagelenght <= 0 Then
-            If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
+            If Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
                 SearchScrape()
             Else
                 If MedGuiR.CheckBox2.Checked = False Then
@@ -170,10 +176,10 @@ Module BoxArt
                     FTPDownloadFile(MedExtra & "BoxArt/" & cover, UpdateServer & "/MedGuiR/BoxArt/" & cover, "anonymous", "anonymous")
                 End If
             Catch ex As Exception
-                If System.IO.Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
+                If Directory.Exists(MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value())) Then
                     SearchScrape()
                 Else
-                    If IO.File.Exists(MedExtra & "BoxArt/" & cover) Then IO.File.Delete(MedExtra & "BoxArt/" & cover)
+                    If File.Exists(MedExtra & "BoxArt/" & cover) Then File.Delete(MedExtra & "BoxArt/" & cover)
                     EmptyBoxart(MedGuiR.PictureBox1)
                 End If
             End Try
@@ -224,7 +230,7 @@ Module BoxArt
         real_name = MedGuiR.MainGrid.CurrentRow.Cells(5).Value()
         detect_icon()
         Dim PathEmptyBox As String = MedExtra & "Resource\Logos\" & gif & ".png"
-        If IO.File.Exists(PathEmptyBox) Then
+        If File.Exists(PathEmptyBox) Then
             Select Case gif
                 Case "apple2", "cdplay", "fds", "gb", "gba", "gbc", "gg", "nes", "ngp", "ngpc",
                  "pce", "pcfx", "psx", "snes", "wswan", "wswanc" ', "ss"
