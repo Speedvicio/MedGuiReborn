@@ -1153,7 +1153,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
         MednafenV()
     End Sub
 
@@ -1554,11 +1554,11 @@ Public Class MedGuiR
             Case "Sega - Game Gear"
                 tgdbCID = "20"
             Case "Sega - Mega Drive - Genesis"
-                If LCase(MainGrid.CurrentRow.Cells(2).Value().ToString).Contains("us") Then
-                    tgdbCID = "18"
-                Else
-                    tgdbCID = "36"
-                End If
+                'If LCase(MainGrid.CurrentRow.Cells(2).Value().ToString).Contains("us") Then
+                tgdbCID = "18"
+                'Else
+                'tgdbCID = "36"
+                'End If
             Case "Sega - Master System - Mark III"
                 tgdbCID = "35"
             Case "Super Nintendo Entertainment System"

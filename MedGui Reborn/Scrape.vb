@@ -40,12 +40,12 @@ Module Scrape
                 Case "Sega - Master System - Mark III"
                     ConsoleID = "Sega Master System"
                 Case "Sega - Mega Drive - Genesis"
-                    If UCase(MedGuiR.MainGrid.CurrentRow.Cells(2).Value()).ToString.Contains("(US") Or
-    UCase(MedGuiR.MainGrid.CurrentRow.Cells(2).Value()).ToString.Contains("(JA") Then
-                        ConsoleID = "Sega Genesis"
-                    Else
-                        ConsoleID = "Sega Mega Drive"
-                    End If
+                    'If UCase(MedGuiR.MainGrid.CurrentRow.Cells(2).Value()).ToString.Contains("(US") Or
+                    'UCase(MedGuiR.MainGrid.CurrentRow.Cells(2).Value()).ToString.Contains("(JA") Then
+                    ConsoleID = "Sega Genesis"
+                    'Else
+                    'ConsoleID = "Sega Mega Drive"
+                    'End If
                 Case "SNK - Neo Geo Pocket Color"
                     ConsoleID = "Neo Geo Pocket Color"
                 Case "SNK - Neo Geo Pocket"
