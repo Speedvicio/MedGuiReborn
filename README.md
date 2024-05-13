@@ -1,6 +1,6 @@
 # MedGui Reborn
 
-**MedGui Reborn** ia a Windows Front-End/Gui for [Mednafen]([http://mednafen.fobby.net/](https://mednafen.github.io/)) multi-system emulator.
+**MedGui Reborn** ia a Windows Front-End/Gui for [Mednafen](https://mednafen.github.io/) multi-system emulator.
 <p align="center">
 <a href="https://sourceforge.net/p/medguireborn/screenshot/MedGui%20Reborn%20main-441a0d94.jpg"><img src="https://sourceforge.net/p/medguireborn/screenshot/MedGui%20Reborn%20main-441a0d94.jpg" heigth="200" /></a><br><br>
 <a href="https://sourceforge.net/p/medguireborn/screenshot/2-49391418.jpg"><img src="https://sourceforge.net/p/medguireborn/screenshot/2-49391418.jpg" heigth="200" /></a><br><br>
