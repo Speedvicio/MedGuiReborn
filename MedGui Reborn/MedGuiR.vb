@@ -1153,7 +1153,7 @@ Public Class MedGuiR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         rDes = "Select Mednafen Path"
         yPath()
-        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() : 
+        If rPath <> "" Then TextBox4.Text = rPath : exist_Mednafen() :
         MednafenV()
     End Sub
 
@@ -3262,7 +3262,11 @@ CHECKDEAD:
         Dim newEntry As String
         newEntry = InputBox("Input the new name for this game ", "Rename Entry...", MainGrid.CurrentRow.Cells(0).Value)
         If newEntry.Trim = "" Then Exit Sub
-        MainGrid.CurrentRow.Cells(0).Value = newEntry
+        ModEntry(newEntry.Trim)
+    End Sub
+
+    Public Sub ModEntry(entry As String)
+        MainGrid.CurrentRow.Cells(0).Value = entry
         MainGrid.Refresh()
         SaveGridDataInFile()
     End Sub

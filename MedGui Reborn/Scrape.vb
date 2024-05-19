@@ -118,6 +118,7 @@ Module Scrape
                 If TGDB_cleanstring.Contains(": ") Then TGDB_cleanstring = Replace(TGDB_cleanstring, ": ", " ")
                 If TGDB_cleanstring.Contains(" II ") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "II", "2")
                 If TGDB_cleanstring.Contains(" III") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "III", "3")
+                'If TGDB_cleanstring.Contains("-") Then TGDB_cleanstring = Replace(TGDB_cleanstring, "-", "&&")
                 ScrapeCount = 1
             End If
 
@@ -241,6 +242,9 @@ Module Scrape
                         Case "original"
                             If counTGDB = 1 Then BaseUrl = reader.Value
                         Case "GameTitle", "game_title"
+                            'If reader.Value.Trim <> MedGuiR.MainGrid.CurrentRow.Cells(0).Value Then
+                            'MedGuiR.ModEntry(reader.Value.Trim)
+                            'End If
                             GameName = Replace(reader.Value, "&", "&&")
                             TheGamesDB.Label1.Text = "Game Title: " & GameName
                         Case "Platform", "platform", "name"
