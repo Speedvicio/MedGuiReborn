@@ -108,7 +108,7 @@ Module GlobalVar
 
             For i = 0 To 11
                 If File.Exists(Application.StartupPath & plugin(i)) = False Then
-                    MissingResource()
+                    MissingResource(plugin(i).Substring(1))
                     MedGuiR.Close()
                     Threading.Thread.Sleep(2000)
                     Exit Sub
@@ -183,6 +183,7 @@ Module GlobalVar
 "Now set up the folders containing your games in Rom Path 1/2 tabs on the right", vbOKOnly + MsgBoxStyle.Information, "Instructions")
                             MedGuiR.TabControl1.SelectedTab = MedGuiR.TabPage3
                         Else
+                            Message.Text = "Mednafen not found"
                             Message.Label1.Text = "There is no sense to open this GUI without Mednafen" & vbCrLf &
                 "Please download Last Mednafen version at:"
                             Message.LinkLabel1.Text = "http://forum.fobby.net/index.php?t=thread&frm_id=19&"
@@ -250,6 +251,7 @@ ReCheckConfig:
 
         If Len(vmedClear.Trim) < 5 Then vmedClear = vmedClear & "0"
         If Val(vmedClear) < 9380 And vmedClear <> "" Then
+            Message.Text = "Mednafen outdated"
             Message.Label1.Text = "MedGui Reborn support only Mednafen >= 0.9.38" & vbCrLf &
         "Please download Last Mednafen version at:"
             Message.LinkLabel1.Text = "http://forum.fobby.net/index.php?t=thread&frm_id=19&"

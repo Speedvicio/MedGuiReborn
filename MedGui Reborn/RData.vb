@@ -111,7 +111,6 @@ Boing:
             indice1 = riga.IndexOf(".")
         End If
 
-        Dim indice2 = riga.IndexOf(" (")
         Dim rrom As String
 
         Try

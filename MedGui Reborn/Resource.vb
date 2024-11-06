@@ -1,4 +1,6 @@
-﻿Module Resource
+﻿Imports System.Resources
+
+Module Resource
 
     Public Sub Read_Resource()
         Try
@@ -226,12 +228,15 @@
 
             MedBrowser.Button3.BackgroundImage = (New Bitmap(MedExtra & "Resource\Gui\net.png"))
         Catch ex As Exception
-            MissingResource()
+            MissingResource("")
         End Try
     End Sub
 
-    Public Sub MissingResource()
-        Message.Label1.Text = "Essential resource(s) missing, download the full MedGui Reborn package from here:"
+    Public Sub MissingResource(resm As String)
+        Message.Text = "Missing Resource(s)"
+        resm += vbCrLf & vbCrLf
+        Message.Label1.Text = "Essential resource(s) missing:" & vbCrLf & resm &
+        "Download the full MedGui Reborn package from here:"
         Message.LinkLabel1.Text = "https://github.com/Speedvicio/MedGuiReborn/releases" & vbCrLf
         Message.ShowDialog()
         MedGuiR.ResetAll = True

@@ -19,4 +19,7 @@
         ColorizeForm()
     End Sub
 
+    Private Sub Message_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Me.Text = "Advice..."
+    End Sub
 End Class
