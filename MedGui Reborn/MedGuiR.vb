@@ -132,61 +132,67 @@ Public Class MedGuiR
         MainGrid.ContextMenuStrip = Nothing
         Try
             If e.Button = Windows.Forms.MouseButtons.Right Then
+
+                If percorso IsNot Nothing = False Then
+                    MsgBox("Missing game path", vbOKOnly + MsgBoxStyle.Critical, "missing path")
+                    Exit Sub
+                End If
+
                 'verMednafen()
                 sender.ClearSelection()
-                Dim ht As DataGridView.HitTestInfo = sender.HitTest _
+                    Dim ht As DataGridView.HitTestInfo = sender.HitTest _
                     (e.X, e.Y)
-                If ht.ColumnIndex <> -1 And ht.RowIndex <> -1 Then
-                    sender.Item(ht.ColumnIndex, ht.RowIndex).Selected = True
-                    MainGrid.CurrentCell = MainGrid.Item(ht.ColumnIndex, ht.RowIndex)
-                    'SelectRom()
+                    If ht.ColumnIndex <> -1 And ht.RowIndex <> -1 Then
+                        sender.Item(ht.ColumnIndex, ht.RowIndex).Selected = True
+                        MainGrid.CurrentCell = MainGrid.Item(ht.ColumnIndex, ht.RowIndex)
+                        'SelectRom()
 
-                    MgrSetting.ListServer_reload()
-                    ParseMednafenConfig()
+                        MgrSetting.ListServer_reload()
+                        ParseMednafenConfig()
 
-                    'inserisci #menu in questa linea
-                    'If type_csv = "fav" Or type_csv = "last" Then
-                    'RemoveFromFavoritesToolStripMenuItem.Enabled = True
-                    'Else
-                    'RemoveFromFavoritesToolStripMenuItem.Enabled = False
-                    'End If
+                        'inserisci #menu in questa linea
+                        'If type_csv = "fav" Or type_csv = "last" Then
+                        'RemoveFromFavoritesToolStripMenuItem.Enabled = True
+                        'Else
+                        'RemoveFromFavoritesToolStripMenuItem.Enabled = False
+                        'End If
 
-                    Select Case SY.Text
-                        Case "ss", "psx", "pcfx", ""
-                            ADVManageToolStripMenuItem.Enabled = False
-                        Case Else
-                            ADVManageToolStripMenuItem.Enabled = True
-                    End Select
+                        Select Case SY.Text
+                            Case "ss", "psx", "pcfx", ""
+                                ADVManageToolStripMenuItem.Enabled = False
+                            Case Else
+                                ADVManageToolStripMenuItem.Enabled = True
+                        End Select
 
-                    If type_csv <> "" Then RenameEntryStripMenuItem.Enabled = True Else RenameEntryStripMenuItem.Enabled = False
+                        If type_csv <> "" Then RenameEntryStripMenuItem.Enabled = True Else RenameEntryStripMenuItem.Enabled = False
 
-                    If R_RelPath(percorso).Trim <> "" Then
-                        If File.Exists(R_RelPath(percorso) & ".ips") Then
-                            RIPSToolStripMenuItem.Enabled = True
+                        If R_RelPath(percorso).Trim <> "" Then
+                            If File.Exists(R_RelPath(percorso) & ".ips") Then
+                                RIPSToolStripMenuItem.Enabled = True
+                            Else
+                                RIPSToolStripMenuItem.Enabled = False
+                            End If
+
+                            If File.Exists(Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & ".sbi") Then
+                                RSBIToolStripMenuItem.Enabled = True
+                            Else
+                                RSBIToolStripMenuItem.Enabled = False
+                            End If
                         Else
                             RIPSToolStripMenuItem.Enabled = False
-                        End If
-
-                        If File.Exists(Path.GetDirectoryName(R_RelPath(percorso)) & "\" & Path.GetFileNameWithoutExtension(R_RelPath(percorso)) & ".sbi") Then
-                            RSBIToolStripMenuItem.Enabled = True
-                        Else
                             RSBIToolStripMenuItem.Enabled = False
                         End If
-                    Else
-                        RIPSToolStripMenuItem.Enabled = False
-                        RSBIToolStripMenuItem.Enabled = False
-                    End If
 
-                    If File.Exists(MedExtra & "\Plugins\Controller\MedPad.exe") Then
-                        MedPadToolStripMenuItem.Enabled = True
-                    Else
-                        MedPadToolStripMenuItem.Enabled = False
+                        If File.Exists(MedExtra & "\Plugins\Controller\MedPad.exe") Then
+                            MedPadToolStripMenuItem.Enabled = True
+                        Else
+                            MedPadToolStripMenuItem.Enabled = False
+                        End If
+                        MainGrid.ContextMenuStrip = AdvancedMenu
+                        MainGrid.ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y)
+                        'If last_consoles <> consoles Or Setting.Visible = False Then SwSetting = True : improm() : last_consoles = consoles
                     End If
-                    MainGrid.ContextMenuStrip = AdvancedMenu
-                    MainGrid.ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y)
-                    'If last_consoles <> consoles Or Setting.Visible = False Then SwSetting = True : improm() : last_consoles = consoles
                 End If
-            End If
         Catch
             MsgBox("A strange error occurred!" &
         vbCrLf & "Please select a game to open specific setting", MsgBoxStyle.Exclamation)

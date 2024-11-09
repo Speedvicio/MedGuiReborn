@@ -1296,13 +1296,14 @@ ErrorHandler:
                                 ComboBox54.Text = ""
                                 Sport = line(1)
                             End If
+                            cmbServer.Text = line(0)
                         Else
                             Sport = "4046"
                             ComboBox54.Text = ""
+                            cmbServer.Text = SpecificServer
                         End If
 
                         If Sport = "" Then Sport = "4046"
-                        cmbServer.Text = line(0)
                         TextBox7.Text = Sport
                         MedGuiR.PortToolStripTextBox1.Text = Sport
                         ' fai qualcosa (1)
