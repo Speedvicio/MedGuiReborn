@@ -133,15 +133,17 @@ Public Class MedGuiR
         Try
             If e.Button = Windows.Forms.MouseButtons.Right Then
 
-                If percorso IsNot Nothing = False Then
-                    MsgBox("Missing game path", vbOKOnly + MsgBoxStyle.Critical, "missing path")
-                    Exit Sub
-                End If
+                If MainGrid.Rows.Count <= 0 Then Exit Sub
 
-                'verMednafen()
-                sender.ClearSelection()
+                If percorso IsNot Nothing = False Then
+                        MsgBox("Missing game path", vbOKOnly + MsgBoxStyle.Critical, "missing path")
+                        Exit Sub
+                    End If
+
+                    'verMednafen()
+                    sender.ClearSelection()
                     Dim ht As DataGridView.HitTestInfo = sender.HitTest _
-                    (e.X, e.Y)
+                (e.X, e.Y)
                     If ht.ColumnIndex <> -1 And ht.RowIndex <> -1 Then
                         sender.Item(ht.ColumnIndex, ht.RowIndex).Selected = True
                         MainGrid.CurrentCell = MainGrid.Item(ht.ColumnIndex, ht.RowIndex)
