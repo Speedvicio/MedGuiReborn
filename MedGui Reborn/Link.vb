@@ -23,8 +23,6 @@
                 _link = "https://coolrom.com/search?q=" & MedGuiR.TextBox35.Text & "&submit"
             Case "DOMS"
                 _link = "https://www.downloadroms.io/search/?q=" & MedGuiR.TextBox35.Text
-            Case "DOPEROMS"
-                _link = "https://www.doperoms.com/search.php?s=" & MedGuiR.TextBox35.Text & "&method=ROM"
             Case "EagleForces"
                 _link = "https://eagleforces.tistory.com/search/" & MedGuiR.TextBox35.Text
             Case "Edge Emulation"
@@ -33,36 +31,18 @@
                 _link = "https://www.emuparadise.org/roms/search.php?query=" & MedGuiR.TextBox35.Text
             Case "Free-ISO"
                 _link = "https://free-iso.org/search/?q=" & MedGuiR.TextBox35.Text & "+&t=0#"
-            Case "Gametronik"
-                _link = "https://www.gametronik.com/site/search.php?q=" & MedGuiR.TextBox35.Text & "&submit"
-            Case "GamingRoms"
-                _link = "https://garoms.com/?s=" & MedGuiR.TextBox35.Text
             Case "GamulatoR"
                 _link = "https://www.gamulator.com/search?search_term_string=" & MedGuiR.TextBox35.Text
-            Case "NITROROMS"
-                _link = "https://nitroroms.com/search/All/" & MedGuiR.TextBox35.Text & "/page-1"
             Case "Planet Emu"
                 _link = "https://www.planetemu.net/?section=recherche&recherche=" & MedGuiR.TextBox35.Text & "&type=Tous%20les%20mots&rubrique=roms"
             Case "RETRO!"
                 _link = "https://www.retrostic.com/search?search_term_string=" & MedGuiR.TextBox35.Text
             Case "Rom Find"
                 _link = "https://www.romfind.com/game_search?q=" & MedGuiR.TextBox35.Text
-            Case "ROM World"
-                _link = "https://www.rom-world.com/search/?q=" & MedGuiR.TextBox35.Text & "&submit"
             Case "Rom Hustler"
                 _link = "https://romhustler.net/roms/search/?q=" & MedGuiR.TextBox35.Text
-            Case "ROMNation"
-                _link = "https://www.romnation.net/srv/roms/all/title-" & MedGuiR.TextBox35.Text & ".html"
-            Case "RomsMania"
-                _link = "https://romsmania.cc/search?name=" & MedGuiR.TextBox35.Text
             Case "ROMULATION"
                 _link = "https://www.romulation.net/roms/search?query=" & MedGuiR.TextBox35.Text
-            Case "Roms Universe"
-                _link = "https://www.romsuniverse.com/search.php?q=" & MedGuiR.TextBox35.Text
-            Case "RomsMode"
-                _link = "https://romsmode.com/search?name=" & MedGuiR.TextBox35.Text
-            Case "SnesOrama"
-                _link = "https://snesorama.us/ROMS/?s=%2A&q=" & MedGuiR.TextBox35.Text
             Case "Viim's Lair"
                 _link = "https://vimm.net/vault/?p=list&q=" & MedGuiR.TextBox35.Text & "&submitButton=Go"
             Case "WoWroMs"
@@ -71,9 +51,9 @@
                 '_link = "ftp://anonymous@speedvicio.ddns.net/update/firmware.zip"
                 DownExtractBios()
             Case "MedGui BoxArt Pack"
-                _link = "https://mega.nz/#!Z2IiWBhC!wovHeRzvXLe8OtFTnIODf4nOxPmKevq0pwdPffGFJlA"
+                _link = "https://mega.nz/folder/ZiwVSb5K#Gb0UE3Gh3bfQAJV7wXAQ2A"
             Case "MedGui Snaps Pack"
-                _link = "https://www16.zippyshare.com/v/WTvJcbYe/file.html"
+                _link = "https://mega.nz/folder/57x1nLDa#sRBobh_R0g2P7I__KeG5ig"
             Case "Hacks", "Translations"
                 SelectHack()
                 'Case "Test"
@@ -120,7 +100,11 @@
             End Select
 
             If MedGuiR.CheckBox10.Checked = False Then webSystem = ""
-            _link = "https://www.romhacking.net/?page=" & LCase(MedGuiR.WS.Text) & "&genre=&platform=" & webSystem & "&status=&languageid=12&perpage=20&title=" & MedGuiR.TextBox35.Text & "&author=&transsearch=Go"
+            If MedGuiR.WS.Text = "Hacks" Then
+                _link = "https://www.romhacking.net/?page=" & LCase(MedGuiR.WS.Text) & "&category=&platform=" & webSystem & "&game=&perpage=20&order=&title=" & MedGuiR.TextBox35.Text & "&dir=&hacksearch=Go"
+            ElseIf MedGuiR.WS.Text = "Translations" Then
+                _link = "https://www.romhacking.net/?page=" & LCase(MedGuiR.WS.Text) & "&status=&platform=" & webSystem & "&languageid=&order=&perpage=20&dir=&title=" & MedGuiR.TextBox35.Text & "&transsearch=Go"
+            End If
         Catch
         End Try
     End Sub
