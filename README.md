@@ -66,6 +66,18 @@ You can found the last stable release on:
 * [Release](https://github.com/Speedvicio/MedGuiReborn/releases) GitHub section
 * [SourceForge](https://sourceforge.net/projects/medguireborn/files/Exe/) page
 
+### F.A.Q.
+* **Q:**  My antivirus reports executables as malicious programs.<br>
+      How should I behave?
+- **A:**  The executables are all developed with Visual Studio Community, the code is probably not signed and all new releases are intercepted as possible malicious programs by any antivirus.
+      Unfortunately I have no intention of purchasing any signature certificate as the programs are all free, MedGui and then MedGuiR have been running on the web since 2007 and no one has ever complained of anomalous behaviour.<br>
+* **Q:**  The frontend has too complex interface, why don't you simplify it?<br>
+- **A:**  Mednafen runs well on very old PCs and Medgui was created to run on Windows XP and upper and on netbooks with very small displays (7" and upper).
+      I have no intention of rewriting the code solely for aesthetic reasons and in any case no particular computer knowledge is necessary for the basic functions of the frontend.<br>
+* **Q:**  MedGui tries to connect to x/y server, why?
+- **A:**  The program checks for Mednafen and MedGui updates on GitHub. Other connections concern the download of the Boxarts from thegamesdb.<br>
+      FTP connections are made on my personal servers, only for old systems that do not support TLS 1.2 and higher protocols, to guarantee updates and downloads to XP users and to be able to play online session via Mednafen (don't worry, I don't know what to do with         your data regarding online gaming sessions).
+
 ### MedGui Reborn in addiction use this external exe/library:
 * [SevenZipSharp.dll](https://github.com/phillipp/SevenZipSharp) for the support at compressed archive
 * [7z.dll](http://www.7-zip.org/download.html) for the support at compressed archive
