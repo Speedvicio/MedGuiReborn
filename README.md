@@ -81,6 +81,8 @@ You can found the last stable release on:
 ### MedGui Reborn in addiction use this external exe/library:
 * [SevenZipSharp.dll](https://github.com/phillipp/SevenZipSharp) for the support at compressed archive
 * [7z.dll](http://www.7-zip.org/download.html) for the support at compressed archive
+* [Proxy7z](https://www.tc4shell.com/en/7zip/proxy7z/) to expand 7z.dll to others compression methods
+* [Modern7z](https://www.tc4shell.com/en/7zip/modern7z/) in congiunction to Proxy7z to add support at Zstandard compression method
 * [NoIntro DATs](http://datomatic.no-intro.org/?page=download) for get real name of the rom
 * A modified version of [IrcClient.dll](https://github.com/cshivers/IrcClient-csharp) for IRC Chat support
 * [TheGamesDB](http://thegamesdb.net/) API for Boxart Scraping
