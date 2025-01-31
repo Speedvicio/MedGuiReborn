@@ -147,10 +147,11 @@ Public Class MedGuiR
                     If ht.ColumnIndex <> -1 And ht.RowIndex <> -1 Then
                         sender.Item(ht.ColumnIndex, ht.RowIndex).Selected = True
                         MainGrid.CurrentCell = MainGrid.Item(ht.ColumnIndex, ht.RowIndex)
-                        'SelectRom()
+                    'SelectRom()
 
-                        MgrSetting.ListServer_reload()
-                        ParseMednafenConfig()
+                    If ServerToolStripComboBox2.Text = "" Then MgrSetting.ListServer_reload()
+
+                    ParseMednafenConfig()
 
                         'inserisci #menu in questa linea
                         'If type_csv = "fav" Or type_csv = "last" Then
