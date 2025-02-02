@@ -149,18 +149,18 @@ Public Class MedGuiR
                         MainGrid.CurrentCell = MainGrid.Item(ht.ColumnIndex, ht.RowIndex)
                     'SelectRom()
 
-                    If ServerToolStripComboBox2.Text = "" Then MgrSetting.ListServer_reload()
+                    If ServerToolStripComboBox2.Text = "" Or ServerToolStripComboBox2.Items.Count <= 0 Then MgrSetting.ListServer_reload()
 
                     ParseMednafenConfig()
 
-                        'inserisci #menu in questa linea
-                        'If type_csv = "fav" Or type_csv = "last" Then
-                        'RemoveFromFavoritesToolStripMenuItem.Enabled = True
-                        'Else
-                        'RemoveFromFavoritesToolStripMenuItem.Enabled = False
-                        'End If
+                    'inserisci #menu in questa linea
+                    'If type_csv = "fav" Or type_csv = "last" Then
+                    'RemoveFromFavoritesToolStripMenuItem.Enabled = True
+                    'Else
+                    'RemoveFromFavoritesToolStripMenuItem.Enabled = False
+                    'End If
 
-                        Select Case SY.Text
+                    Select Case SY.Text
                             Case "ss", "psx", "pcfx", ""
                                 ADVManageToolStripMenuItem.Enabled = False
                             Case Else
