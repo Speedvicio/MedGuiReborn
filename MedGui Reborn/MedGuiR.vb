@@ -477,7 +477,7 @@ Public Class MedGuiR
             StartProcess()
 
             If MgrSetting.NoCheck = True Then MgrSetting.NoCheck = False : Exit Sub
-            Threading.Thread.Sleep(200)
+            Threading.Thread.Sleep(2000)
 
             TimerControlMednafen.Enabled = True
             TimerControlMednafen.Start()
