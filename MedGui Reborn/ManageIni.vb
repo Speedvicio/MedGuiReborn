@@ -38,6 +38,7 @@ Module ManageIni
             MedGuiR.CheckBox17.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "MedBrowser")
             MedGuiR.CheckBox20.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoUpdate")
             MedGuiR.CheckBox21.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoScanCD")
+            MedGuiR.CheckBox26.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Enable_Override")
             MedGuiR.TextBox26.Text = RIni.IniRead(MedExtra & "\Mini.ini", "General", "Global_Override")
             MedGuiR.NetToolStripButton.BackColor = Color.FromName(RIni.IniRead(MedExtra & "\Mini.ini", "General", "AutoConn"))
             MedGuiR.GridToolStripMenuItem.CheckState = RIni.IniRead(MedExtra & "\Mini.ini", "Grid", "Customizable")
@@ -263,7 +264,9 @@ Module ManageIni
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "TextMenu", MedGuiR.CheckBox23.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "AutoConn", MedGuiR.NetToolStripButton.BackColor.Name)
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "UpdateServer", UpdateServer)
+            WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Enable_Override", MedGuiR.CheckBox26.CheckState)
             WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Global_Override", MedGuiR.TextBox26.Text)
+
             'WIni.IniWrite(MedExtra & "\Mini.ini", "General", "Gui_Size", MedGuiR.Size.Width & "x" & MedGuiR.Size.Height)
 
             If MedGuiR.Width >= Screen.PrimaryScreen.Bounds.Width Then
