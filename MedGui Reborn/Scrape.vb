@@ -68,7 +68,7 @@ Module Scrape
 
     Public Sub GetParseXML()
         ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
-        W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
+        W.Headers.Add("User-Agent: Other")
 
         If NewAPI = True Then
             xmlAttemp = 8
@@ -209,7 +209,7 @@ Module Scrape
         Dim counTGDB As Integer
         Dim GameName, ReleaseDate, SystemConsole As String
         TGDBXml = MedExtra & "Scraped\" & MedGuiR.MainGrid.CurrentRow.Cells(5).Value() & "\" & Trim(MedGuiR.MainGrid.CurrentRow.Cells(0).Value()) & ".xml"
-        W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
+        W.Headers.Add("User-Agent: Other")
 
         Using reader As New System.Xml.XmlTextReader(TGDBXml)
 

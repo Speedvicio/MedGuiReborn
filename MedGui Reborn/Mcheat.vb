@@ -417,15 +417,15 @@ skiphash:
 
 RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
             Dim prova As New CookieAwareWebClient
-            prova.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Trident/7.0; rv:11.0) like Gecko")
-            Dim test = "https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen"
+            prova.Headers.Add("User-Agent: Other")
+            Dim test = "https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=Mednafen"
             prova.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=Mednafen", cheatpath)
 
             If File.Exists(cheatpath) Then ReadImported(cheatpath)
             'Dim W As New WebClient
             'W.UseDefaultCredentials = False
             'W.Headers.Add("user-agent", "Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko")
-            'W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=mednafen",
+            'W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=Mednafen",cheatpath)
             'Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
 
             '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
