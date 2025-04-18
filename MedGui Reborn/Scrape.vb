@@ -205,6 +205,8 @@ Module Scrape
 
     Public Sub ReadXml()
         ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
+        W.Headers.Add("User-Agent: Other")
+
         Dim TGDBXml, BaseUrl, tBack, tFront, fBack, fFront, GameID As String
         Dim counTGDB As Integer
         Dim GameName, ReleaseDate, SystemConsole As String
