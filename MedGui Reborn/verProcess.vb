@@ -66,28 +66,47 @@ AGAIN:
 
         Try
             With execute.StartInfo
-
+                Dim ismednafen As Boolean = False
                 'If Val(vmedClear) > 9480 Then
                 If tProcess = "mednafen" Then
                     System.Environment.SetEnvironmentVariable("MEDNAFEN_NOPOPUPS", 1, EnvironmentVariableTarget.Process)
                     .FileName = IO.Path.Combine(wDir, tProcess)
                     .WindowStyle = ProcessWindowStyle.Hidden
+                    .CreateNoWindow = True
+                    .UseShellExecute = False
+                    ismednafen = True
                 Else
                     System.Environment.SetEnvironmentVariable("MEDNAFEN_NOPOPUPS", Nothing, EnvironmentVariableTarget.Process)
                     .FileName = tProcess
                     .WorkingDirectory = wDir
                     .WindowStyle = ProcessWindowStyle.Normal
+                    .CreateNoWindow = False
+                    .UseShellExecute = True
+                    ismednafen = False
                 End If
 
                 .Arguments = Arg
 
-                Select Case tProcess
-                    Case "vgmplay", "GBS2GB"
-                    Case "mico"
-                        .WindowStyle = ProcessWindowStyle.Hidden
-                    Case Else
-                        If SoxStatus.Visible = True Then .WindowStyle = ProcessWindowStyle.Hidden Else .WindowStyle = ProcessWindowStyle.Normal
-                End Select
+                If ismednafen = False Then
+                    Select Case tProcess
+                        Case "vgmplay", "GBS2GB"
+                        Case "mico"
+                            .WindowStyle = ProcessWindowStyle.Hidden
+                            .CreateNoWindow = True
+                            .UseShellExecute = False
+                        Case Else
+                            If SoxStatus.Visible = True Then
+                                .WindowStyle = ProcessWindowStyle.Hidden
+                                .CreateNoWindow = True
+                                .UseShellExecute = False
+                            Else
+                                .WindowStyle = ProcessWindowStyle.Normal
+                                .CreateNoWindow = False
+                                .UseShellExecute = True
+                            End If
+                    End Select
+                End If
+
                 'If tProcess <> "vgmPlay" Then
                 'If SoxStatus.Visible = True Then .WindowStyle = ProcessWindowStyle.Hidden Else .WindowStyle = ProcessWindowStyle.Normal
                 'End If
