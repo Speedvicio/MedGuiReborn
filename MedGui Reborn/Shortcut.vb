@@ -35,7 +35,7 @@ Module Shortcut
             MyShortcut.arguments = "-force_module " & consoles & MedGuiR.tpce & " " & Chr(34) & percorso & Chr(34)
         End If
 
-        MyShortcut.WindowStyle = 4
+        MyShortcut.WindowStyle = 7
 
         'Use this next line to assign a icon other then the default icon for the exe
 

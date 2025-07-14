@@ -93,12 +93,12 @@ AGAIN:
                         Case "mico"
                             .WindowStyle = ProcessWindowStyle.Hidden
                             .CreateNoWindow = True
-                            .UseShellExecute = False
+                            .UseShellExecute = True
                         Case Else
                             If SoxStatus.Visible = True Then
                                 .WindowStyle = ProcessWindowStyle.Hidden
                                 .CreateNoWindow = True
-                                .UseShellExecute = False
+                                .UseShellExecute = True
                             Else
                                 .WindowStyle = ProcessWindowStyle.Normal
                                 .CreateNoWindow = False
