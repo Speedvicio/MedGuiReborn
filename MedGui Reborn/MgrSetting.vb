@@ -1393,9 +1393,9 @@ ErrorHandler:
                 Case "Select PSX Jap Bios"
                     If r_sha = "b05def971d8ec59f346f2d9ac21fb742e3eb6917" Or r_md5 = "c53ca5908936d412331790f4426c6c33" Or r_sha = LCase("9E9F405FB9EDB4ABE1C5926D56DA5782732A8598") Or r_sha = LCase("71AD544EDBD2FE10F56FE0F690DF9BC20E7D7414") Or r_sha = LCase("904E953FC4C129B16471B7439463EF7A515A8ED8") Or r_sha = LCase("C40146361EB8CF670B19FDC9759190257803CAB7") Then Exit Sub
                 Case "Select Saturn Usa/Eur Bios"
-                    If r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3" Then Exit Sub
+                    If r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3" Or r_sha = "8bbe4c3368a453ebfe5c771d262b07aeccdf0a38" Then Exit Sub
                 Case "Select Saturn Jap Bios"
-                    If r_sha = "df94c5b4d47eb3cc404d88b33a8fda237eaf4720" Then Exit Sub
+                    If r_sha = "df94c5b4d47eb3cc404d88b33a8fda237eaf4720" Or r_sha = "8bbe4c3368a453ebfe5c771d262b07aeccdf0a38" Then Exit Sub
                 Case "Select ST-V Jap Bios"
                     If r_sha = LCase("EFF0F54C70BCE05FF3A289BF30B1027E1C8CD117") Then Exit Sub
                 Case "Select ST-V Usa Bios"
@@ -1445,10 +1445,10 @@ ErrorHandler:
                 Case r_sha = "b05def971d8ec59f346f2d9ac21fb742e3eb6917" And pops_bios = False
                     Label74.ForeColor = Color.ForestGreen
                     TextBox16.Text = foundbios
-                Case r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3"
+                Case r_sha = "faa8ea183a6d7bbe5d4e03bb1332519800d3fbc3" Or r_sha = "8bbe4c3368a453ebfe5c771d262b07aeccdf0a38"
                     Label115.ForeColor = Color.ForestGreen
                     TextBox23.Text = foundbios
-                Case r_sha = "df94c5b4d47eb3cc404d88b33a8fda237eaf4720"
+                Case r_sha = "df94c5b4d47eb3cc404d88b33a8fda237eaf4720" Or r_sha = "8bbe4c3368a453ebfe5c771d262b07aeccdf0a38"
                     Label114.ForeColor = Color.ForestGreen
                     TextBox22.Text = foundbios
                 Case r_sha = "1b4c260326d905bc718812dad0f68089977f427b" Or r_sha = "bf2f90bdc3f82bc4bf28b4e9707530165dedcdd2" _
