@@ -431,7 +431,7 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityP
             '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
             'get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
         Catch ex As Exception
-            If ex.ToString.Contains("(401)") Or ex.ToString.Contains("(404)") Or ex.ToString.Contains("(500)") Then
+            If ex.ToString.Contains("(401)") Or ex.ToString.Contains("(403)") Or ex.ToString.Contains("(404)") Or ex.ToString.Contains("(500)") Then
                 linkcheat = False
                 DetectGameHacking()
                 MessageBox.Show(
@@ -501,17 +501,19 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityP
         Dim result As DialogResult = OpenFileDialog1.ShowDialog()
         If result = Windows.Forms.DialogResult.OK Then
 
-            Dim path As String = OpenFileDialog1.FileName
+            Dim path1 As String = OpenFileDialog1.FileName
             Try
-                Dim text As String = File.ReadAllText(path)
+                Dim text As String = File.ReadAllText(path1)
                 Dim tsplit() As String = text.Split(vbLf)
 
                 For i = 0 To tsplit.Length - 1
                     If tsplit(i).Contains("[") Then
-                        ReadImported(path)
+                        ReadImported(path1)
                         Exit For
                     End If
                 Next
+                Dim cheatpath As String = path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
+                File.Copy(path1, cheatpath)
             Catch ex As Exception
             End Try
         End If
