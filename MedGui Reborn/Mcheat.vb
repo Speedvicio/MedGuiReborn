@@ -419,7 +419,7 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityP
             Dim prova As New CookieAwareWebClient
             prova.Headers.Add("User-Agent: Other")
             Dim test = "https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=Mednafen"
-            prova.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=Mednafen", cheatpath)
+            prova.DownloadFile(test, cheatpath)
 
             If File.Exists(cheatpath) Then ReadImported(cheatpath)
             'Dim W As New WebClient
@@ -428,20 +428,18 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityP
             'W.DownloadFile("https://gamehacking.org/getcodes.php?" & searchcheatcode & "&format=Mednafen",cheatpath)
             'Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht"))
 
-            '//Attemp to bypass ddos protection of bitmitigate by restsharp 2.0 dll (fail)
-            'get_data("https://gamehacking.org", "getcodes.php?" & searchcheatcode & "&format=mednafen")
         Catch ex As Exception
-            If ex.ToString.Contains("(401)") Or ex.ToString.Contains("(403)") Or ex.ToString.Contains("(404)") Or ex.ToString.Contains("(500)") Then
+            If ex.ToString.Contains("(403)") And attempt = False Then
+                attempt = True
+                GoTo RETRY
+            ElseIf ex.ToString.Contains("(401)") Or ex.ToString.Contains("(403)") Or ex.ToString.Contains("(404)") Or ex.ToString.Contains("(500)") Then
                 linkcheat = False
                 DetectGameHacking()
                 MessageBox.Show(
     "Unable to contact gamehacking.org" & vbCrLf &
     "Press ? to open the link via the default browser." & vbCrLf &
     "On opened page select Format: Mednafen: " & vbCrLf &
-    "Download and import cheat OR:" & vbCrLf &
-    "1) Press the view button" & vbCrLf &
-    "2) Copy the codes" & vbCrLf &
-    "3) Press the right mouse button on the frontend Downloaded code list and paste them",
+    "Download and import cheat",
     "Unable to contact gamehacking.org (due to Bitmitigate?)",
     MessageBoxButtons.OK,
     MessageBoxIcon.Information,
@@ -450,12 +448,7 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityP
     "https://gamehacking.org/" & searchcheatcode,
     "keyword")
             Else
-                If ex.ToString.Contains("(403)") And attempt = False Then
-                    attempt = True
-                    GoTo RETRY
-                Else
-                    MsgBox(ex.ToString)
-                End If
+                MsgBox(ex.ToString)
             End If
         End Try
     End Sub
