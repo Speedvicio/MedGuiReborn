@@ -32,7 +32,7 @@ Public Class Mcheat
 
         Select Case CheatConsole
             Case "psx", "ss"
-                searchcheatcode = "serial" & charcheats & GetSerial(rn)
+                If rn.Contains("[") Then searchcheatcode = "serial" & charcheats & GetSerial(rn)
             Case "pcfx"
                 searchcheatcode = "search"
             Case "pce"
