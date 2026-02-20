@@ -190,7 +190,7 @@ Module Scrape
         ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
         '<TheGamesDb newapi>
         MedGuiR.TGDBPlatform()
-        Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/v1/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("sCIncJ8wu3H2kmUNaEd4r3oxxsji80o2gVZlp+LKd7Zwp4f4wq6P5f23EaIp9NQFVFwko+jbtvULpqijriaQapiPRCpNGjFCiOlRaxOggKCddRhcmQRC4B3et57yNohlyKuW1s5DvXoVm+iRRO2qEpzO4KnDAmADOxChXfGe7QCInElJHwS+qA==") _
+        Dim Json1 As String = New Net.WebClient().DownloadString("https://api.thegamesdb.net/v1/Games/ByGameName?apikey=" & VSTripleDES.DecryptData("7ODuw2U0FD3nvKr3RilRqcnsINRd3XtakTHLFMAfKzNiIPGgpAyK1FwQz+bzqgx4zEZNq5fgowiOV6uBxgCHQOF8BaLgIVCINK22Edn9l8/VvogDaiOmvxfvhyC+XE0ebLwcGATfC5cs3/nYsABf8BklVmDvRGxboiPiwWPCYgoHcMRzx+cykQ==") _
            & "&name=" & TGDB_cleanstring.ToString & "&fields=players%2Cpublishers%2Cgenres%2Coverview%2Ccoop&filter%5Bplatform%5D=" & MedGuiR.tgdbCID & "&include=boxart%2Cplatform")
         Threading.Thread.Sleep(1000)
         Dim str = Newtonsoft.Json.JsonConvert.DeserializeXmlNode(Json1, "Root")
