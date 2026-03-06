@@ -414,7 +414,7 @@ skiphash:
         Dim cheatpath As String = Path.Combine(MedExtra & "Cheats\" & CheatConsole, Trim(Label7.Text) & "." & ComboBox1.Text.Trim & ".cht")
 
         Try
-
+            TypeTls = 768
 RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityProtocolType)
             Dim prova As New CookieAwareWebClient
             prova.Headers.Add("User-Agent: Other")
@@ -451,6 +451,7 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityP
                 MsgBox(ex.ToString)
             End If
         End Try
+        TypeTls = 3072
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
