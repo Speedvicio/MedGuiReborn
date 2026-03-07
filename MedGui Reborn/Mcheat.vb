@@ -562,8 +562,8 @@ RETRY:      ServicePointManager.SecurityProtocol = DirectCast(TypeTls, SecurityP
 
             While oRead.Peek <> -1
                 Dim cheatcontainer As String = oRead.ReadLine().Trim
-                If cheatcontainer.Contains("Can't find a game with the CRC32") Or linecheat < 2 Or cheatcontainer.StartsWith("[0]") = False Then
-                    MsgBox(cheatcontainer, vbOKOnly + MsgBoxStyle.Information, "Cheat not available...")
+                If cheatcontainer.Contains("Can't find a game with the CRC32") Or linecheat < 2 Or cheatcontainer.StartsWith("<html>") = True Then
+                    MsgBox(cheatcontainer, vbOKOnly + MsgBoxStyle.Exclamation, "Cheat not available...")
                     oRead.Close()
                     File.Delete(cheatpath)
                     Exit Sub
